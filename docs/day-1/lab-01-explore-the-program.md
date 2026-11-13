@@ -56,7 +56,7 @@ You've used Azure DevOps for years. Show it.
 <div class="timer" data-minutes="10" data-label="Speed run"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Most answers live on a **portfolio backlog**. Pick a team whose area covers the work you're asking about: `HarborPoint Team` sees everything, `Digital Portfolio` sees both Digital teams. There's also a ready-made tree in **Shared Queries**.
+    Most answers live on a **portfolio backlog**. Pick a team whose area covers the work you're asking about: `HarborPoint Team` sees every delivery team's work, `Digital Portfolio` sees both Digital teams. There's also a ready-made tree in **Shared Queries**.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - **Boards › Backlogs**, team `HarborPoint Team`, level **Epics**: row order is the portfolio rank.
@@ -159,7 +159,7 @@ Rollup is calculated by Analytics, so a cell may be blank for a moment. Hover ov
 | `Paperless Statements & Documents` | Digital Accounts | Closed | Sprint 13 | 5 | 100% | 52 |
 | `Real-Time Fraud Alerts` *(under Fraud Detection & Security)* | Mobile Banking | Active | Sprint 16 | 20 | **4%** | 51 |
 
-Your backlog's row order may differ from this table. Read it for four things:
+Your backlog's row order may differ from this table. Read it for five things:
 
 - **States.** Two delivered, four in flight, two not started. That's the Epic's whole life story in one column.
 - **The empty row.** `Member-to-Member Transfers` has a Business Value of 20, the joint highest, and no children at all. It's planned for PI 5 and nobody has broken it down yet. That's fine in Sprint 14, and it won't be fine in Sprint 16.
@@ -238,7 +238,7 @@ Azure DevOps shows the same Feature in at least four places, each best at a diff
 !!! reef "Reef ahead: the progress bar only counts Closed"
     Look at `Biometric Login` again: 53%. It's tempting to conclude that Mobile Banking's developers are about halfway. Now drop one level down to see why. Open **Boards › Boards**, team `Mobile Banking`, level **Stories**, and look at the **Resolved** column. Bugs sit there too, because this team manages bugs with requirements, so look for the cards with Story Points: three stories, 11 points, code-complete and waiting for QA. Two of them belong to `Biometric Login` and one to `Mobile Check Deposit 2.0`. Mobile Banking has one tester.
 
-    Rollup progress counts only **Closed** children, so Resolved work shows as *not done*. If those three stories closed today, `Biometric Login` would read about 69% and `Mobile Check Deposit 2.0` about 64%. A progress bar measures **workflow discipline** as much as progress: a team that's slow to close looks slower than it is, and a team that closes early looks faster. Before you quote a percentage, find out what "done" means on that team's board.
+    Rollup progress counts only **Closed** children, so Resolved work shows as *not done*. If those three stories closed today, `Biometric Login` would read about 69% and `Mobile Check Deposit 2.0` about 65%. A progress bar measures **workflow discipline** as much as progress: a team that's slow to close looks slower than it is, and a team that closes early looks faster. Before you quote a percentage, find out what "done" means on that team's board.
 
 <!-- SHOT: lab01-mobile-stories-resolved | Boards › Boards, team Mobile Banking, Stories level | crop: the Resolved column; highlight the three story cards (Deposit limit messaging by member tier, Face ID and fingerprint enrollment, Biometric step-up for high-risk actions) among the Resolved bugs -->
 
@@ -258,7 +258,7 @@ Three different fields answer three different questions, and managers mix them u
 The area tree is HarborPoint's org chart for work:
 
 ```text
-HarborPoint                     ← HarborPoint Team (includes sub-areas: sees everything)
+HarborPoint                     ← HarborPoint Team (root plus every delivery area, with sub-areas)
 ├── Digital                     ← Digital Portfolio (includes sub-areas: sees both teams below)
 │   ├── Mobile Banking          ← Mobile Banking
 │   └── Digital Accounts        ← Digital Accounts
@@ -266,10 +266,10 @@ HarborPoint                     ← HarborPoint Team (includes sub-areas: sees e
 ├── Core Platform               ← Core Platform
 ├── Branch Experience           ← Branch Experience
 ├── Member Support              ← Member Support
-└── Training\P##                ← your P## Sandbox
+└── Training\P##                ← your P## Sandbox (left out of HarborPoint Team)
 ```
 
-A delivery team sees only its own area. `Digital Portfolio` and `HarborPoint Team` include sub-areas, which is the only reason Priya can see both Digital teams on one backlog. If an item "goes missing", the first suspect is the team selector, not the data.
+A delivery team sees only its own area. `Digital Portfolio` and `HarborPoint Team` include sub-areas, which is the only reason Priya can see both Digital teams on one backlog. `HarborPoint Team` deliberately leaves out `Training`, so participant sandboxes never clutter the program views. If an item "goes missing", the first suspect is the team selector, not the data.
 
 !!! challenge "Challenge: Priority one, built by whom?"
     One Feature serves the portfolio's **number one** priority, yet it's owned and mostly built by a **Digital** team, which makes it partly your problem. Find it, then answer:
@@ -379,7 +379,7 @@ Rollup counts only Closed work. Reporting 69% would claim untested work as done,
     5. Which of today's four lenses do you use least? What question have you been answering the slow way?
 
 !!! bonus "Extra knots"
-    1. **The program's front window.** Open **Overview › Dashboards** › `HarborPoint Program Overview`. For each widget, write down the question it answers and the lens it's built on. Which management question from Part 4 does it *not* answer? Keep your notes: on Day 2 you'll critique this dashboard.
+    1. **The program's front window.** Open **Overview › Dashboards** › `HarborPoint Program Overview`. For each widget, write down the question it answers and the lens it's built on. Which management question from Part 4 does it *not* answer? Keep your notes: in Lab 5's Extra knots, on Day 2, you'll critique this dashboard.
     2. **Who spans the most teams?** On the `HarborPoint Team` Epics backlog, expand each Epic into its Features and add **Node Name**. Which Epics are delivered by more than one owning team, and which single team appears under the most Epics?
     3. **The Feature that won't close.** On the `HarborPoint Team` Features backlog, find a Feature that shows 100% progress but is still **Active**. Check its **Target Date**. What does a Feature like that do to a portfolio report? (You'll meet it again in Lab 3 and on Day 3.)
 

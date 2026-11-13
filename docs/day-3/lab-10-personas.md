@@ -63,7 +63,7 @@ Personas are about members, but a manager starts by asking who already owns the 
     One Feature is about opening an account online. The other is about onboarding in a branch. The program-level team sees every team's Features in one backlog.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    **Boards › Backlogs**, team `HarborPoint Team`, **Features** level, **Parents** on, so you can see the Epics. Add **Progress by Story Points** (from **+ Add a rollup column** › **From quick list**), **Node Name** and **Target Date** with **Column Options**. Filter by keyword (`account opening`, then `onboarding`) to skip past everyone's sandbox Features. Expand each Feature to read its stories, and open its **Links** tab for dependencies.
+    **Boards › Backlogs**, team `HarborPoint Team`, **Features** level, **Parents** on, so you can see the Epics. Add **Progress by Story Points** (from **+ Add a rollup column** › **From quick list**), **Node Name** and **Target Date** with **Column Options**. Filter by keyword (`account opening`, then `onboarding`) to find them fast. Sandbox Features never show here, because `HarborPoint Team` leaves out the `Training` area. Expand each Feature to read its stories, and open its **Links** tab for dependencies.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | | Online Account Opening | In-Branch Digital Onboarding |
@@ -83,7 +83,7 @@ Personas are about members, but a manager starts by asking who already owns the 
 
     **Dependency link between the two Features: none.** Pre-fill in branch needs the data a member saved online, and nothing in Azure DevOps connects the two.
 
-    <!-- VERIFY: the HarborPoint Team backlog keyword filter shows both Features (sandbox Features titled P## - Member Onboarding Redesign will also match "onboarding" once participants create them; the expected rows above are the two real ones). -->
+    <!-- VERIFY: the HarborPoint Team backlog keyword filter shows both Features (HarborPoint Team excludes Training, so sandbox Features such as P## - Member Onboarding Redesign should not appear). -->
 
 <!-- SHOT: lab10-onboarding-features | Boards › Backlogs, team HarborPoint Team, Features level, Parents on, columns Node Name, Target Date, Progress by Story Points; Online Account Opening under Digital Banking Modernization and In-Branch Digital Onboarding under Branch Experience Transformation, both expanded | crop: the two Feature rows with their Epics and a few child stories; highlight the 59% and 15% progress bars -->
 
@@ -96,7 +96,7 @@ Personas are about members, but a manager starts by asking who already owns the 
 
 ## Part 2 — Develop the personas
 
-Three starter personas live in the wiki. They're rich, but each has sections marked **To be developed**. You'll finish them in your own space, so twenty managers don't overwrite one another.
+Three starter personas live in the wiki. They're rich, but each has sections marked **To be developed**. You'll finish them in your own space, so a room full of managers doesn't overwrite one another.
 
 | Persona | Who they are | What the starter page already says |
 |---|---|---|

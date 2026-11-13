@@ -176,7 +176,7 @@ Now the question Dana actually asked. Look at Mobile Banking through its Feature
 A manager's Monday is about the handful of items that won't fix themselves. Six signals usually find them.
 
 !!! challenge "Challenge: The signals hunt"
-    For **Mobile Banking**, find the evidence for each signal below. Build each one as a quick query and save it in **My Queries** as `Scratch - <signal>`, so you can open it in front of Priya. Record the count and the item or person that matters.
+    For **Mobile Banking**, find the evidence for each signal below. Build each one as a quick query and save it in **My Queries** as `Scratch - <signal>`, so you can open it in front of Priya. Record the count, the item or person that matters, and the Feature it puts at risk. The stories are evidence; the Feature is the message.
 
     | # | Signal | What you're looking for |
     |:-:|:--|:--|

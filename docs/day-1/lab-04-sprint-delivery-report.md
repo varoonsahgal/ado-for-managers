@@ -14,7 +14,7 @@ summary: "Turn queries into charts leadership can read, catch the ones that misl
 
     Charts are the obvious tool, and also the most dangerous one. A chart persuades before anyone checks it. The same data can say "on track" or "in trouble" depending on the slice, the measure and the time window you pick. In this lab you'll build the charts, deliberately make a few of them lie, and then write a one-page status report that would survive the CIO asking "how do you know?"
 
-    **Done looks like:** four saved charts in your shared folder, a planned-versus-completed comparison for both Digital teams, and the wiki page `/Training/P##/Sprint Delivery Report` with an evidence-backed RAG status, a Feature table, risks and asks.
+    **Done looks like:** five saved charts on three queries in your shared folder, a planned-versus-completed comparison for both Digital teams, and the wiki page `/Training/P##/Sprint Delivery Report` with an evidence-backed RAG status, a Feature table, risks and asks.
 
 <div class="msg" data-initials="PR" data-tone="teal" markdown>
 <p class="msg-head"><strong>Priya Raman</strong><span>Director, Digital Banking · 1:10 PM</span></p>
@@ -378,7 +378,7 @@ The time window is a choice, and it decides the story. A fivefold rise in open b
     <!-- VERIFY: only Mobile Banking shows a Resolved segment for PI 4 stories (expected: its 3 Sprint 14 stories awaiting QA). -->
 
     2. **Who's carrying the load?** Build a flat query of Mobile Banking's **Active** user stories and bugs, then a **Bar** chart by `Assigned To`. How many active items does Ethan Brooks hold, and what does that suggest about context switching on Check Deposit?
-    3. **Preview Lab 5.** On any of today's charts, open its menu and select **Add to dashboard**. It's only offered because the query is shared. Which of today's four charts would earn a place on an executive dashboard, and which wouldn't?
+    3. **Preview Lab 5.** On any of today's charts, open its menu and select **Add to dashboard**. It's only offered because the query is shared. Which of today's five charts would earn a place on an executive dashboard, and which wouldn't?
 
 ## Key takeaways
 

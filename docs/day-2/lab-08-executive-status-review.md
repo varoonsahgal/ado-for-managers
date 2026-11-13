@@ -33,7 +33,7 @@ The Executive Committee is nervous about Lighthouse. "Delays" is all I keep hear
 ## Before you set sail
 
 - **Access:** Basic, as a Contributor. You can create project dashboards and edit only the ones you create.
-- **From earlier labs** (each has a fallback below if you skipped it): your `P## - Digital Banking Exec View` dashboard from [Lab 5](lab-05-command-center.md), your `Features at risk` query from [Lab 3](../day-1/lab-03-query-toolkit.md), and your options page `/Training/P##/Fraud Alerts Options` and `Fraud Alerts dependencies` query from [Lab 7](lab-07-cross-team-bottleneck.md).
+- **From earlier labs** (each has a fallback below if you skipped it): your `P## - Digital Banking Exec View` dashboard from [Lab 5](lab-05-command-center.md), your `04 Features at risk` query from [Lab 3](../day-1/lab-03-query-toolkit.md), your `/Training/P##/Mobile Banking Help Plan` from [Lab 6](lab-06-which-team-needs-help.md), and your options page `/Training/P##/Fraud Alerts Options` and `Fraud Alerts dependencies` query from [Lab 7](lab-07-cross-team-bottleneck.md).
 - **Team data you'll read but never change:** every delivery team. Your writes go to `Shared Queries/Training/P##/`, your own dashboard, and your wiki pages under `/Training/P##/`.
 - **You'll create:** the dashboard `P## - METP Executive Status`, a few small queries, and the wiki page `/Training/P##/Executive Briefing`.
 - **Time-box:** 45 minutes. Part 1 is 8, Part 2 is 12, Part 3 is 12, Part 4 is 7 and Part 5 is 6. If you're short on time, keep the dashboard to five widgets and protect Parts 3 and 4.
@@ -113,7 +113,7 @@ Lay it out so the eye reads it in order: the BLUF panel across the top, the thre
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     You need four flat queries, plus Lab 7's direct-links query:
 
-    - `Features at risk` (Lab 3)
+    - `04 Features at risk` (Lab 3)
     - `Exec - Mobile open P1 bugs`: Bugs under the Mobile Banking area, not Closed, Priority 1
     - `Exec - Mobile open bugs`: the same without the Priority clause
     - `Exec - PI 4 committed Features`: Features tagged `PI4-Committed`. Tile 4 uses a copy with `State = Closed` added.
@@ -141,16 +141,18 @@ Lay it out so the eye reads it in order: the BLUF panel across the top, the thre
     | And/Or | Field | Operator | Value |
     |:--|:--|:--|:--|
     | | Work Item Type | = | `Feature` |
+    | And | Area Path | Not Under | `HarborPoint\Training` |
     | And | Tags | Contains | `PI4-Committed` |
 
-    **Expected result: 13.** Add `State` `=` `Closed` and **Save as** `Exec - PI 4 committed Features closed`. **Expected result: 0.**
+    **Expected result: 13.** (The sandbox fence keeps practice copies in `HarborPoint\Training` out of the count.) Add `State` `=` `Closed` and **Save as** `Exec - PI 4 committed Features closed`. **Expected result: 0.**
 
-    No `Features at risk` query from Lab 3? Build it now, flat list:
+    No `04 Features at risk` query from Lab 3? Build it now with the same name, flat list, sorted by Target Date:
 
     | Group | And/Or | Field | Operator | Value |
     |:-:|:--|:--|:--|:--|
     | | | Work Item Type | = | `Feature` |
-    | | And | State | <> | `Closed` |
+    | | And | Area Path | Not Under | `HarborPoint\Training` |
+    | | And | State | Not In | `Closed,Removed` |
     | ┌ | And | Target Date | <= | `@Today + 21` |
     | │ | Or | Risk | = | `1 - High` |
     | └ | Or | Tags | Contains | `at-risk` |
@@ -164,7 +166,7 @@ Lay it out so the eye reads it in order: the BLUF panel across the top, the thre
     | Widget | Configuration |
     |---|---|
     | **Markdown** | Width 6 (or wider), placeholder text for now |
-    | **Query Tile** `Features at risk` | **Default background color** amber. Rule: **If number of work items** `<=` `3`, green |
+    | **Query Tile** `Features at risk` (query `04 Features at risk`) | **Default background color** amber. Rule: **If number of work items** `<=` `3`, green |
     | **Query Tile** `Mobile open P1 bugs` | Default red. Rule: `<=` `0`, green |
     | **Query Tile** `PI 4 Features closed` | Default neutral grey, no rule (see the reef below) |
     | **Chart for Work Items** | Query `Exec - PI 4 committed Features`, **Chart type** **Stacked bar**, rows by `Node Name`, stacked by `State` |
@@ -231,7 +233,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
 
     1. **Bottom line** in two sentences or fewer: are we going to make it, and what do you need?
     2. **The two risks**, each with three lines of evidence and its member impact
-    3. **Options** for each risk, short (link your Lab 7 options page for detail)
+    3. **Options** for each risk, short (link your Lab 7 options page and your Lab 6 help plan for detail)
     4. **Recommended actions**, each with an owner
     5. **Decisions needed**, each naming the decider: Dana, Simone, or both
     6. **What I'll watch next week**, as measurable signals
@@ -249,7 +251,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
     >
     > **Risk 2: Mobile Banking's delivery health.** Mobile Check Deposit 2.0 misses its Sprint 14 date at 61%, with 14 of its remaining 36 points already planned for Sprint 15. Mobile delivered 44 of 62 planned points last sprint (71%, down from 87%), and open bugs rose from 8 to 42, including 3 Critical and an unowned P1. Three finished stories wait for the team's only tester. *Member impact:* defects reach members, and every Mobile date, including Fraud Alerts' integration, is about 30% optimistic.
     >
-    > **Options.** For Fraud Alerts: pull the API into Sprint 15 by deferring 8 to 10 points of Adaptive MFA work, ship a smaller MVP (alerts plus confirm/deny) in PI 4, borrow Core Platform capacity, or move the date to Sprint 17. Detail: *Fraud Alerts Options*. For Mobile: stop mid-sprint intake, reserve capacity for bugs, add or borrow test capacity, and re-plan Check Deposit honestly.
+    > **Options.** For Fraud Alerts: pull the API into Sprint 15 by deferring 8 to 10 points of Adaptive MFA work, ship a smaller MVP (alerts plus confirm/deny) in PI 4, borrow Core Platform capacity, or move the date to Sprint 17. Detail: *Fraud Alerts Options*. For Mobile: stop mid-sprint intake, reserve capacity for bugs, add or borrow test capacity, and re-plan Check Deposit honestly. Detail: *Mobile Banking Help Plan*.
     >
     > **Decisions needed.**
     > 1. **Simone, this week:** pull the risk-score API into Sprint 15 and hold Sprint 16 for the MVP, *or* move Fraud Alerts to Sprint 17 now. Both sides of the trade are your priorities.
@@ -333,7 +335,7 @@ A briefing is a snapshot. Dana's next question will be "and next week?" Ruth's P
     |---|---|---|
     | **Purpose** | Unblock and re-plan inside the PI | Decide trade-offs between priorities |
     | **Who** | You, Ruth, the six Product Owners or leads; Aisha and Hannah for cross-team items | Dana, Simone, Priya, Carmen, Hector, Marcus, Nadia, Ruth |
-    | **Looks at** | `P## - Digital Banking Command Center`, `Features at risk`, `Fraud Alerts dependencies`, open P1 bugs, your Delivery Plan | `P## - METP Executive Status`, the PI Objectives page, the Epic backlog order |
+    | **Looks at** | `P## - Digital Banking Command Center`, `04 Features at risk`, `Fraud Alerts dependencies`, open P1 bugs, your Delivery Plan | `P## - METP Executive Status`, the PI Objectives page, the Epic backlog order |
     | **Agenda** | 5 min: what changed since last week (dates, tags, scope). 15 min: red items and blocked dependencies, each leaving with an owner. 10 min: escalations to monthly | 5 min: BLUF. 15 min: the two or three decisions, with options. 10 min: priorities, rank and capacity across Epics |
     | **Output** | Updated dates and tags in Azure DevOps, a refreshed BLUF panel, an escalation list | Recorded decisions, an updated Epic rank, changes to PI objectives |
     | **Rule** | If a date moved in Azure DevOps, the dependent dates move in the same meeting | No decision without options and a named owner |

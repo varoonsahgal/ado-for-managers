@@ -177,7 +177,7 @@ A team can finish plenty and still fall behind if what it finishes is rework, or
     | Signal | Mobile Banking | Digital Accounts |
     |:--|:--|:--|
     | **Open bugs** | **8 → 42** across five sprints, more than fivefold. 3 are Severity 1-Critical, and one Priority 1 bug on Mobile Check Deposit 2.0 has no owner | **7 → 4**, falling |
-    | **Orphan share of completed points** | S9 27% · S10 30% · S11 29% · S12 36% · **S13 52%** (23 of 44 points, 6 of 12 stories) | About a fifth in Sprint 9, under 12% every sprint since (S13: 2 of 26 points) |
+    | **Orphan share of completed points** | S9 27% · S10 30% · S11 29% · S12 36% · **S13 52%** (23 of 44 points, 6 of 12 stories) | **21%** in Sprint 9, then about a tenth or less every sprint since (S13: 2 of 26 points) |
     | **Feature progress** | `Mobile Check Deposit 2.0` due **this sprint** at 61%: it will miss. `Real-Time Fraud Alerts` 4% (blocked on Security, Lab 7). `Biometric Login` 53%, due Sprint 16 | `Paperless Statements & Documents` **closed** last sprint. `Spending Insights` 88%. `Online Account Opening` 59%, due Sprint 16 |
 
     **Reading:** last sprint, more than half of Mobile's "record" velocity went to work that serves no Feature, while its most urgent Feature slipped. Its bug backlog is the debt it's taking on to look fast. Digital Accounts' smaller output lands almost entirely on its Features, and they're closing.

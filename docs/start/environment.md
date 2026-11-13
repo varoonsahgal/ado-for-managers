@@ -54,7 +54,7 @@ Almost every view in **Boards** (backlogs, boards, sprints, Velocity, CFD, `@Cur
 
 | Team | Area it covers | Backlog levels | Sprints selected | Use it to see… |
 |:--|:--|:--|:--|:--|
-| **HarborPoint Team** (project default) | `HarborPoint`, **including sub-areas** | Epics, Features, Stories | Sprint 9 – Sprint 20 | The whole program in one place. The **Epics** backlog is the portfolio's ranked priority list. Ruth's view |
+| **HarborPoint Team** (project default) | `HarborPoint` root, plus `Digital`, `Security`, `Core Platform`, `Branch Experience` and `Member Support` **including sub-areas**. `Training` is **excluded**, so sandboxes never appear in program views | Epics, Features, Stories | Sprint 9 – Sprint 20 | The whole program in one place. The **Epics** backlog is the portfolio's ranked priority list. Ruth's view |
 | **Digital Portfolio** | `HarborPoint\Digital`, **including sub-areas** | Epics, Features | Sprint 9 – Sprint 20 | Both digital teams' Features side by side. Priya's view |
 | **Mobile Banking** | `HarborPoint\Digital\Mobile Banking` | Features, Stories | Sprint 9 – Sprint 20 | One delivery team's Features, stories, sprints and metrics |
 | **Digital Accounts** | `HarborPoint\Digital\Digital Accounts` | Features, Stories | Sprint 9 – Sprint 20 | as above |
@@ -176,15 +176,15 @@ Some labs ask you to add tags to items in your sandbox. The lab names the tag.
 
 ## Your conventions
 
-Twenty managers share one project, so everything you create carries your participant ID. Save your ID on the [Welcome page](index.md#your-participant-id) and every `P##` on this site fills itself in.
+A whole room of managers shares one project, so everything you create carries your participant ID. Save your ID on the [Welcome page](index.md#your-participant-id) and every `P##` on this site fills itself in.
 
 | You create… | Where, and how it's named | Example |
 |:--|:--|:--|
-| Shared queries | `Shared Queries/Training/P##/` (scratch work can go in **My Queries**) | `Shared Queries/Training/P##/Features at risk` |
+| Shared queries | `Shared Queries/Training/P##/` (scratch work can go in **My Queries**) | `Shared Queries/Training/P##/04 Features at risk` |
 | Dashboards | Project dashboard named `P## - <name>` | `P## - Digital Banking Command Center` |
 | Delivery Plans | `P## - <name>` | `P## - Fraud Alerts Plan` |
 | Wiki pages | `/Training/P##/<page>` | `/Training/P##/Sprint Delivery Report` |
-| Work items | Only in your sandbox area `HarborPoint\Training\P##`; Feature titles start with `P## - ` | `P## - Member Onboarding Redesign` |
+| Work items | Only in your sandbox area `HarborPoint\Training\P##`; titles start with `P## - ` | `P## - Member Onboarding Redesign` |
 
 Your sandbox isn't empty. It comes with practice copies used on Day 3, such as `P## - Instant Card Controls (planning copy)` and `P## - Omnichannel Service Requests (sandbox)`, and your query folder may already hold a `Lab 11 - Inherited queries` subfolder. Leave them alone until the lab that uses them. If `Shared Queries/Training/P##/` doesn't exist yet, you'll create it in [Lab 3](../day-1/lab-03-query-toolkit.md).
 

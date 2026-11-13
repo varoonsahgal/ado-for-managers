@@ -41,6 +41,7 @@ That's my dashboard, sorry. I set it up for the Sprint 13 review and I've been o
 - **Read-only today:** everything that belongs to Member Support. That means the **Member Support - Delivery Health** dashboard (you aren't on the team, so you can view it but not edit it), Leo's queries in `Shared Queries/PMO Reporting/`, and Member Support's backlog, board, items and **Velocity** report.
 - **Yours to fix:** the miniature copy in your sandbox. Its Feature is `P## - Omnichannel Service Requests (sandbox)` in `HarborPoint\Training\P##`, and every item title starts `P## - `. Your copies of Leo's queries are in `Shared Queries/Training/P##/Lab 11 - Inherited queries/`.
 - **One shared corner:** two of your sandbox bugs were deliberately filed in the parent area `HarborPoint\Training`, alongside everyone else's. Touch only the ones with **your** prefix.
+- **Your sandbox isn't only Lab 11.** The same area holds Lab 9's `P## - Instant Card Controls (planning copy)` (20 stories, four of them unestimated) and Lab 10's `P## - Member Onboarding Redesign` stories. Every title in it starts `P## - `, so a title filter can't separate them. Any query scoped to `HarborPoint\Training\P##` picks them up. The expected counts in this lab are for the **Lab 11 set only**: add the **Parent** column and ignore rows whose parent is one of those two Features, or add the clause `Parent` `Not In` *their two IDs* to keep the numbers clean. Don't "fix" Lab 9's unestimated stories here; they're a different exercise.
 - **You'll create:** fixed queries prefixed `Fixed - ` in `Shared Queries/Training/P##/`, a `Watchlist` sub-folder, the project dashboard `P## - Sandbox Health`, and the wiki page `/Training/P##/Dashboard Remediation`.
 - **Time-box:** 60 minutes. Part 1: 18. Part 2: 5. Part 3: 12. Part 4: 10. Part 5: 7. Part 6: 8. If you fall behind, build three watchlist queries instead of six. Protect Part 6.
 
@@ -176,9 +177,9 @@ Your sandbox holds a miniature of Member Support's mess: one Feature, 13 stories
     | `Open work` | **14** rows from the Lab 11 set, plus your Lab 9 and Lab 10 work in the same area |
     | `Omnichannel stories` | **3** |
 
-    <!-- VERIFY: the inherited query names and counts against the provisioned artifacts. Counts assume the sandbox bugs are not in Sprint 13 or Sprint 14; if they are, add them. "Open work" has no type filter, so it also includes the Lab 11 Feature and any Lab 9/10 sandbox items. -->
+    <!-- VERIFY: the inherited query names and counts against the provisioned artifacts. Counts assume the sandbox bugs are not in Sprint 13 or Sprint 14; if they are, add them. "Open work" has no type filter, so it also includes the Lab 11 Feature and any Lab 9/10 sandbox items. Also verify that `Parent Not In <ids>` still returns items with no parent (the misfiled bugs, the Lab 11 Feature). -->
 
-2. **Open the full set.** Save a scratch flat query in **My Queries**: `Area Path` `Under` `HarborPoint\Training\P##` OR (`Area Path` `=` `HarborPoint\Training` AND `Title` `Contains` `P##`). Add the columns **Work Item Type**, **State**, **Assigned To**, **Iteration Path**, **Area Path**, **Story Points**, **Tags**, **Parent** and **Changed Date**. Group the second pair of clauses.
+2. **Open the full set.** Save a scratch flat query in **My Queries**: `Area Path` `Under` `HarborPoint\Training\P##` OR (`Area Path` `=` `HarborPoint\Training` AND `Title` `Contains` `P##`). Add the columns **Work Item Type**, **State**, **Assigned To**, **Iteration Path**, **Area Path**, **Story Points**, **Tags**, **Parent** and **Changed Date**. Group the second pair of clauses. Sort by **Parent** so the Lab 9 and Lab 10 rows sit together, out of your way.
 
 !!! challenge "Challenge: Repair the record"
     Fix all eight data defects in your sandbox. Each fix that changes an owner, a sprint or a state gets a one-line **Discussion** comment saying why. In real life, that comment is what stops someone undoing your fix next week.
@@ -207,11 +208,11 @@ Your sandbox holds a miniature of Member Support's mess: one Feature, 13 stories
     <!-- VERIFY: the Duplicate link-type labels in New Boards Hub ("Duplicate" / "Duplicate Of") and which one to choose on the item being removed; that State can move Active > New for User Story in the Agile process. -->
 
 !!! warning "Don't fix Member Support"
-    You've now found every defect in Member Support's real data, and every one of them is a two-click fix. Leave them. Those items are Carmen's team's record, twenty colleagues share them, and a fix made by an outsider without the team is how working agreements die. Your findings go to Carmen and Leo as a recommendation in Part 6.
+    You've now found every defect in Member Support's real data, and every one of them is a two-click fix. Leave them. Those items are Carmen's team's record, everyone in the room shares them, and a fix made by an outsider without the team is how working agreements die. Your findings go to Carmen and Leo as a recommendation in Part 6.
 
 !!! checkpoint "Checkpoint"
     - [ ] I recorded the five "before" counts before I changed anything
-    - [ ] My sandbox has no Resolved stories, no unestimated stories, no Kyle Morgan, no Active items in Sprint 12, no misfiled P1 bugs, one spelling of `omnichannel`, an Active Feature and one `Routing rules engine`
+    - [ ] My Lab 11 set has no Resolved stories, no unestimated stories, no Kyle Morgan, no Active items in Sprint 12, no misfiled P1 bugs, one spelling of `omnichannel`, an Active Feature and one `Routing rules engine`
     - [ ] Every owner, sprint or state change carries a comment
 
 ## Part 4 — Fix the queries and prove it
@@ -236,7 +237,7 @@ Now repair the instruments. Open each inherited query, change it, and use **More
     | `Fixed - Completed this sprint` | Same, plus `State` `=` `Closed` | **1**: `Chat transcript export` |
     | `Fixed - Completed last sprint` *(new)* | `@CurrentIteration - 1`, team `Member Support`, plus `State` `=` `Closed` | **4** stories, **13** points (it was 2 stories and 5 points) |
     | `Fixed - Open P1 bugs` | None. The query was right; the data was wrong | **2** |
-    | `Fixed - Open work` | `State` `Not In` `Closed,Removed`; `Work Item Type` `In` `User Story,Bug` | **10** Lab 11 rows (7 stories, 3 bugs), plus your Lab 9 and Lab 10 stories |
+    | `Fixed - Open work` | `State` `Not In` `Closed,Removed`; `Work Item Type` `In` `User Story,Bug` | **10** Lab 11 rows (7 stories, 3 bugs), plus your Lab 9 and Lab 10 stories unless you added the `Parent` `Not In` clause |
     | `Fixed - Omnichannel stories` | `State` `<>` `Removed`, plus the grouped tag clauses below | **5** |
 
     | Group | And/Or | Field | Operator | Value |

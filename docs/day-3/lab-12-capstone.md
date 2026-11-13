@@ -5,12 +5,12 @@ day: 3
 module: "Module 12 · Capstone"
 duration: 150
 sea_state: storm
-role: "Program Manager, METP"
+role: "Acting Program Manager, METP"
 summary: "Six concerns, one executive committee, two and a half hours. Investigate, analyze, visualize, plan, prioritize and recommend a realistic outlook for PI 5."
 ---
 
 !!! briefing "Mission briefing"
-    Ruth Ellison retires at the end of PI 4, and as of this afternoon her program is yours. You and your crew are acting **Program Managers for the Member Experience Transformation Program**. The Executive Committee meets in 150 minutes. They've named six concerns and they want one thing: **a realistic outlook for PI 5 (Sprints 17 to 20), and the decisions they need to make to get it.**
+    Ruth Ellison retires at the end of PI 4. You've been acting in her role since this morning, and this afternoon the whole program lands on your desk. You and your crew are acting **Program Managers for the Member Experience Transformation Program**. The Executive Committee meets in 150 minutes. They've named six concerns and they want one thing: **a realistic outlook for PI 5 (Sprints 17 to 20), and the decisions they need to make to get it.**
 
     Every view, query and metric you need, you used in Labs 1 to 11. What's new is that nobody tells you which ones, the concerns tangle into each other, and halfway through the instructor will change the facts on you. Welcome to PI planning week.
 
@@ -156,12 +156,13 @@ The evidence board says *what*. Now decide which numbers you'll build a forecast
     | And/Or | Field | Operator | Value |
     |:--|:--|:--|:--|
     | | Work Item Type | = | `Feature` |
+    | And | Area Path | Not Under | `HarborPoint\Training` |
     | And | State | Not In | `Closed,Removed` |
     | And | Iteration Path | Under | `HarborPoint\PI 5` |
 
     **Columns:** `Title`, `Node Name`, `State`, `Target Date`, `Business Value`, `Time Criticality`, `Effort`, `Risk`, `Tags`. Sort by `Target Date`.
 
-    Expect about nine Features. If Fraud Scoring Engine v2's Iteration Path moved with its Target Date, you'll see ten.
+    Expect eight Features. If Fraud Scoring Engine v2's Iteration Path moved with its Target Date, you'll see nine. The sandbox fence keeps your crew's practice copies out.
 
     For throughput, open **Velocity** in each team's **Backlogs › Analytics**, and switch Mobile Banking's to **Count of Work Items**. For Member Support, use the corrected history from your Lab 11 defect log, not the chart.
 
@@ -300,7 +301,7 @@ This is where the outlook gets built. Capacity on one side, demand on the other,
 The worksheet says what *could* fit. Now decide what *should*. This is where Hector, Priya, the survey and your personas meet.
 
 !!! challenge "Challenge: Rank the candidates and build the decision table"
-    1. **Rank the seven PI 5 candidates.** Use a transparent value model: Business Value plus Time Criticality divided by Effort, as in Lab 10, or your own model, as long as you can show the arithmetic. Then adjust the ranking, in writing, for the **Member Pulse Survey Q3** and for **at least two of your Lab 10 personas**.
+    1. **Rank the seven PI 5 candidates.** Use a transparent value model: Business Value plus Time Criticality divided by Effort (the Feature-level score from Lab 10's Extra knots), or your own model, as long as you can show the arithmetic. Then adjust the ranking, in writing, for the **Member Pulse Survey Q3** and for **at least two of your Lab 10 personas**.
     2. **Decide Hector's request.** He wants one Digital Accounts engineer moved to In-Branch Digital Onboarding. Say yes, no or "yes, but", and show the cost in your worksheet.
     3. **Build a decision table** with 3 to 5 decisions the Executive Committee must make:
 

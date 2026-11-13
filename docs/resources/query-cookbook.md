@@ -10,7 +10,8 @@ Thirty ready-to-use queries for managers, written at Feature and portfolio altit
     1. **Boards › Queries** › **All** › **New query**, then build the clauses from the table. Or open an existing shared query and use **More actions** (…) › **Save as**.
     2. Save into `Shared Queries/Training/P##/`. Only shared queries can feed dashboard widgets.
     3. Swap in your own team and area. Examples use `Mobile Banking` and `HarborPoint\Digital`; any team works.
-    4. Only **Flat list of work items** queries can be charted. Tree and direct-links queries go on a dashboard through the **Query Results** widget.
+    4. For project-wide Feature recipes (A2 to A6, C2, C3, D1, D2, D5), add the **sandbox fence** `Area Path` `Not Under` `HarborPoint\Training`, or participants' practice copies join your portfolio.
+    5. Only **Flat list of work items** queries can be charted. Tree and direct-links queries go on a dashboard through the **Query Results** widget.
 
 In the clause tables, **(blank)** means leave **Value** empty, and `@CurrentIteration [Mobile Banking]` means the macro with the team parameter set to that team.
 
@@ -50,7 +51,7 @@ In the clause tables, **(blank)** means leave **Value** empty, and `@CurrentIter
 | [F6](#f6) | Work at the root area | What belongs to no team? | Flat |
 | [G1](#g1) | My radar | What should I be watching? | Flat |
 
-<!-- SHOT: res-cookbook-editor | Boards › Queries › New query, Editor tab, Flat list of work items, clauses from recipe A2 (Work Item Type = Feature, State <> Removed, Area Path Under HarborPoint) | crop: query type dropdown and clause grid -->
+<!-- SHOT: res-cookbook-editor | Boards › Queries › New query, Editor tab, Flat list of work items, clauses from recipe A2 (Work Item Type = Feature, State <> Removed, Area Path Not Under HarborPoint\Training) | crop: query type dropdown and clause grid -->
 
 ## A · Portfolio and Features
 
@@ -99,7 +100,7 @@ Filters for linked work items:
 |:--|:--|:--|:--|
 | | Work Item Type | = | `Feature` |
 | And | State | <> | `Removed` |
-| And | Area Path | Under | `HarborPoint` |
+| And | Area Path | Not Under | `HarborPoint\Training` |
 
 **Columns:** Title, State, Assigned To, **Node Name**, Target Date, Effort, Tags.
 **Use it:** charts. **Pie** by State; **Stacked bar** of Node Name × State; **Pivot table** of Node Name × State with **Sum** of Effort. Group by **Node Name**, not Area Path, so each team gets its own bar.
@@ -112,7 +113,7 @@ Filters for linked work items:
     FROM WorkItems
     WHERE [System.WorkItemType] = 'Feature'
       AND [System.State] <> 'Removed'
-      AND [System.AreaPath] UNDER 'HarborPoint'
+      AND NOT [System.AreaPath] UNDER 'HarborPoint\Training'
     ORDER BY [Microsoft.VSTS.Scheduling.TargetDate]
     ```
 

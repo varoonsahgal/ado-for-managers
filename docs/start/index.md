@@ -73,7 +73,7 @@ These are live. Go ahead and click them.
 - [ ] The velocity chart is broken
 
 <div class="quiz-why" markdown>
-Velocity is a sum of **estimates**, not a measure of output. When the *count* of items finished stays flat while points climb, the yardstick changed, not the speed. You'll meet a team exactly like this on Day 2.
+Velocity is a sum of **estimates**, not a measure of output. When the *count* of items finished stays flat while points climb, the yardstick changed, not the speed. Check both before you believe either.
 </div>
 
 </div>
@@ -84,20 +84,20 @@ Velocity is a sum of **estimates**, not a measure of output. When the *count* of
 
 ## Your participant ID
 
-Your instructor will give you a **participant ID** (for example `P07`). Many things you create in Azure DevOps are named with it so that twenty managers can work in one project without colliding. In the labs it appears as `P##`. **Save your ID here** (or with the **Crew** chip in the header) and every `P##` on this site is filled in for you.
+Your instructor will give you a **participant ID** (for example `P07`). Many things you create in Azure DevOps are named with it so that a whole room of managers can work in one project without colliding. In the labs it appears as `P##`. **Save your ID here** (or with the **Crew** chip in the header) and every `P##` on this site is filled in for you.
 
 <div class="hp-pid-form"></div>
 
 | You create… | Where / named | Example |
 |---|---|---|
-| Shared queries | `Shared Queries/Training/P##/` | `Shared Queries/Training/P##/Features at risk` |
+| Shared queries | `Shared Queries/Training/P##/` | `Shared Queries/Training/P##/04 Features at risk` |
 | Dashboards | Project dashboard named `P## - …` | `P## - Digital Banking Command Center` |
 | Delivery Plans | `P## - …` | `P## - Fraud Alerts Plan` |
 | Wiki pages | `/Training/P##/…` | `/Training/P##/Sprint Delivery Report` |
 | Work items | Only in your sandbox area `HarborPoint\Training\P##` | `P## - Member Onboarding Redesign` |
 
 !!! warning "Look, but don't touch"
-    The six HarborPoint delivery teams' backlogs, boards, estimates, ordering and settings are **shared by everyone in the room**. Treat them as **read-only**. Anything you change, you change for twenty colleagues. All hands-on changes happen in your **sandbox** (`HarborPoint\Training\P##` and the **P## Sandbox** team), where you can't break anything that matters.
+    The six HarborPoint delivery teams' backlogs, boards, estimates, ordering and settings are **shared by everyone in the room**. Treat them as **read-only**. Anything you change, you change for everyone in the room. All hands-on changes happen in your **sandbox** (`HarborPoint\Training\P##` and the **P## Sandbox** team), where you can't break anything that matters.
 
 ## Sea states (difficulty)
 

@@ -33,7 +33,7 @@ Welcome to the hot seat. First question for you as program manager: members need
 ## Before you set sail
 
 - **Access:** Basic. Forecasting and the Capacity tab are not available with Stakeholder access.
-- **Your sandbox:** team `P## Sandbox`, area `HarborPoint\Training\P##`. It holds `P## - Instant Card Controls (planning copy)`: the same 20 stories as the real Feature, with the same points and order, and no sprints. **You may reorder, tag and re-estimate these freely.** Your sandbox team selects Sprints 15 to 20 only, so its forecast starts at Sprint 15, because Sprint 14 is already committed.
+- **Your sandbox:** team `P## Sandbox`, area `HarborPoint\Training\P##`. It holds `P## - Instant Card Controls (planning copy)`: the same 20 stories as the real Feature, with the same points and order, and no sprints. **You may reorder, tag and re-estimate these freely.** Every sandbox title starts with `P## - `; this lab drops the prefix when it names a story. Your sandbox team selects Sprints 15 to 20 only, so its forecast starts at Sprint 15, because Sprint 14 is already committed. The same area also holds the Lab 11 practice set (`P## - Omnichannel Service Requests (sandbox)`): leave it alone today, and keep it below the planning copy.
 - **Read only:** `Digital Accounts` (backlog, Velocity, Capacity) and `Mobile Banking`. View options and report settings are per user, so changing those is fine. Dragging, tagging or re-estimating on a real team's backlog is not.
 - **You'll create:** the wiki page `/Training/P##/Card Controls Outlook`.
 - **Time-box:** 55 minutes. Part 1 is 6, Part 2 is 10, Part 3 is 12, Part 4 is 8, Part 5 is 7 and Part 6 is 12. Protect Part 6.
@@ -153,7 +153,7 @@ Now let the tool do the arithmetic, story by story. The forecast tool walks the 
 2. **View options**: **Parents** Off, **In Progress Items** Off, **Completed Child Items** Off, **Side Pane** Off. Then turn **Forecasting** On.
 3. Clear any filter (**Clear and dismiss filtering**). A filter disables Forecasting.
 4. Add `Story Points` and `Tags` with **Column Options**, if they aren't showing.
-5. Check the top of the list. The first item should be `Card lock and unlock service and API`, and the 20 planning-copy stories should follow in order. If other sandbox items sit above it, select them and use **Move to bottom** from the context menu.
+5. Check the top of the list. The first item should be `P## - Card lock and unlock service and API`, and the 20 planning-copy stories should follow in order. If other sandbox items (such as the Lab 11 practice stories) sit above it, select them and use **Move to bottom** from the context menu. Anything with Story Points above the planning copy would eat into your forecast.
 6. In the banner **Forecasting based on velocity of**, select the number and type `25`.
 
 <!-- VERIFY: (a) the planning-copy stories carry the same titles as the real F5 stories (with or without a P## prefix) and sit at the top of the sandbox Stories backlog, above the Lab 11 sandbox items; (b) the Forecasting toggle is greyed out while Parents is On; (c) the forecast velocity is stored per user; (d) Move to bottom is offered in the multi-select context menu. -->

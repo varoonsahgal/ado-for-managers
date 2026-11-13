@@ -35,7 +35,7 @@ Thirty years, and every Monday somebody asks me the same five questions. What's 
 ## Before you set sail
 
 - **Access:** Basic. Contribute is already granted on `Shared Queries/Training`, so you can save shared queries there and nowhere else in **Shared Queries**.
-- **Find (or create) your folder (2 minutes):** **Boards › Queries**, **All** tab, expand `Shared Queries/Training`. Your instructor may have pre-created `P##` (it already holds a `Lab 11 - Inherited queries` sub-folder you'll use on Day 3). If it isn't there, select **New folder**, **Name** `P##`, **Folder** `Shared Queries/Training`. Every query in this lab goes there. (Lab 7 and your Day 2 dashboards reuse them.)
+- **Find (or create) your folder (2 minutes):** **Boards › Queries**, **All** tab, expand `Shared Queries/Training`. Your instructor may have pre-created `P##` (it already holds a `Lab 11 - Inherited queries` sub-folder you'll use on Day 3). If it isn't there, select **New folder**, **Name** `P##`, **Folder** `Shared Queries/Training`. Every query in this lab goes there. (Your Day 2 dashboards reuse them, and the capstone on Day 3 does too.)
 
     <!-- VERIFY: where "New folder" sits in New Boards Hub (toolbar on the All tab vs the More actions menu of the Training folder). -->
 

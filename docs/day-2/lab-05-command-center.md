@@ -139,21 +139,24 @@ Look at the number before you read on. Then write one sentence in your notes: wh
 ??? info "Skipped Lab 3? Fallback definitions"
     Save each in `Shared Queries/Training/P##/`.
 
-    **`04 Features at risk`** (Flat list of work items)
+    These match Lab 3 exactly, so later labs see the same names and results.
+
+    **`04 Features at risk`** (Flat list of work items, sorted by Target Date)
 
     | Group | And/Or | Field | Operator | Value |
     |:-:|:--|:--|:--|:--|
     | | | Work Item Type | = | `Feature` |
+    | | And | Area Path | Not Under | `HarborPoint\Training` |
+    | | And | State | Not In | `Closed,Removed` |
     | ┌ | And | Target Date | <= | `@Today + 21` |
-    | │ | And | State | <> | `Closed` |
     | │ | Or | Risk | = | `1 - High` |
     | └ | Or | Tags | Contains | `at-risk` |
 
-    Group the last four rows. Inside that group, also group Target Date with State, so "not Closed" applies only to the date test. **Expected:** 8 Features.
+    Group the last three rows. **Expected:** 8 Features.
 
-    **`06 Orphan work`** (Work items and direct links): top level `Work Item Type` `=` `User Story`; linked work items `Work Item Type` `=` `Feature`; **Filter options** **Only return items that do not have matching links**; **Types of links** **Return selected link types** with only **Parent** ticked.
+    **`06 Orphan work`** (Work items and direct links): top level `Work Item Type` `=` `User Story`, `Area Path` `Under` `HarborPoint\Digital\Mobile Banking`, `Iteration Path` `=` `@CurrentIteration` (team `Mobile Banking`); linked work items `Work Item Type` `=` `Feature`; **Filter options** **Only return items that do not have matching links**; **Types of links** **Return selected link types** with only **Parent** ticked. **Expected:** 5 stories.
 
-<!-- VERIFY: nested grouping renders as described in New Boards Hub (select the rows, then Group clauses); exact wording "Only return items that do not have matching links" / "Return selected link types". -->
+<!-- VERIFY: exact wording "Only return items that do not have matching links" / "Return selected link types". -->
 
 !!! reef "Reef ahead: the right query on the wrong page"
     Your tile says **8**, in red. On a page titled *Digital Banking*, Priya reads that as "eight Digital Features are at risk". There are three. The Lab 3 query covers the **whole program**: it also catches Member Support, Branch Experience, Security and Core Platform Features. Reusing a query is smart. Reusing it without checking its **scope** against the page it lands on is how dashboards start lying. Every widget inherits the scope of its query or its team, and the dashboard title promises a scope too. They have to match.
@@ -170,12 +173,13 @@ Fix it without breaking Lab 3:
     SELECT [System.Id], [System.Title], [System.State], [Microsoft.VSTS.Scheduling.TargetDate]
     FROM WorkItems
     WHERE [System.WorkItemType] = 'Feature'
+      AND NOT [System.AreaPath] UNDER 'HarborPoint\Training'
+      AND [System.State] NOT IN ('Closed', 'Removed')
+      AND ( [Microsoft.VSTS.Scheduling.TargetDate] <= @Today + 21
+            OR [Microsoft.VSTS.Common.Risk] = '1 - High'
+            OR [System.Tags] CONTAINS 'at-risk' )
       AND [System.AreaPath] UNDER 'HarborPoint\Digital'
-      AND (
-            ([Microsoft.VSTS.Scheduling.TargetDate] <= @Today + 21 AND [System.State] <> 'Closed')
-         OR [Microsoft.VSTS.Common.Risk] = '1 - High'
-         OR [System.Tags] CONTAINS 'at-risk'
-      )
+    ORDER BY [Microsoft.VSTS.Scheduling.TargetDate]
     ```
 
 ### 3b. The at-risk list
@@ -271,7 +275,7 @@ Now the pictures: two query charts for the shape of the work, and four Analytics
 
 ### 4a. Two query charts
 
-9. Create two flat queries and add a **Chart for Work Items** widget for each (**Add Widget** › `Chart for Work Items` › **Configure**). If you made a Digital Features query in [Lab 4](../day-1/lab-04-sprint-delivery-report.md), reuse it.
+9. Create two flat queries and add a **Chart for Work Items** widget for each (**Add Widget** › `Chart for Work Items` › **Configure**). If you built `10 Digital Features (chart)` in [Lab 4](../day-1/lab-04-sprint-delivery-report.md), it already returns the same 9 Features: reuse it instead of the first query.
 
 | Query (flat list) | Clauses | Chart |
 |:--|:--|:--|
@@ -492,7 +496,7 @@ A sprint burndown is a team's daily steering tool. It changes every day and lead
 !!! bonus "Extra knots"
     1. **Group by tags.** Add a **Chart for Work Items** on `CC - Current sprint stories (Digital)` with **Group by** `Tags` and **Selected tags** `unplanned`, `tech-debt` and `blocked`. What share of Mobile Banking's sprint is work nobody planned? (Two `unplanned` stories, 5 points, both added after day 1.)
     2. **A release burnup.** Add a **Burnup** widget for **Teams** `Mobile Banking` and `Digital Accounts`, **Work items** backlog `Stories`, **Sum** of `Story Points`, plotted by **Iteration** from Sprint 13 to Sprint 16, with **Show total scope** on. Does the scope line climb faster than the completed line? What would you say about PI 4 if it did?
-    3. **The dependency register.** If you finished Lab 7's Extra knots, add your program dependency query as a **Query Results** widget below the fold. It renders direct-links queries, which charts can't.
+    3. **Critique the program's front window.** Open `HarborPoint Program Overview` (**Overview › Dashboards**) beside your Command Center, with your Lab 1 notes if you made them. Apply today's tests to it: which question does each widget answer, does every team-scoped widget name its team, and does every widget's scope match the page title? Name one widget you'd remove and one you'd add.
 
 <!-- VERIFY: Extra knot 1 assumes Group by Tags is generally available in the Chart for Work Items widget (Learn notes a possible preview toggle); Extra knot 2 assumes the Burnup widget's Iteration plot interval accepts Sprint 13 to Sprint 16. -->
 
