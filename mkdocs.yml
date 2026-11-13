@@ -1,0 +1,173 @@
+site_name: Azure DevOps for Managers
+site_description: >-
+  Hands-on labs for managers: turn Azure DevOps data into management intelligence.
+  A three-day voyage through HarborPoint Financial, from portfolio priorities and
+  Features to dashboards, delivery metrics, forecasting and strategic decisions.
+site_author: Varoon Sahgal
+site_url: https://varoonsahgal.github.io/ado-for-managers/
+repo_url: https://github.com/varoonsahgal/ado-for-managers
+repo_name: ado-for-managers
+edit_uri: ""
+copyright: >-
+  HarborPoint Financial and everyone in it are fictional, created for training.
+  Azure DevOps is a Microsoft product.
+
+theme:
+  name: material
+  custom_dir: overrides
+  logo: assets/brand/harborpoint-mark.svg
+  favicon: assets/brand/favicon.svg
+  language: en
+  font:
+    text: Inter
+    code: JetBrains Mono
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-night
+        name: Switch to night watch (dark)
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to day watch (light)
+  features:
+    - navigation.instant
+    - navigation.instant.progress
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.sections
+    - navigation.indexes
+    - navigation.top
+    - navigation.footer
+    - toc.follow
+    - search.suggest
+    - search.highlight
+    - search.share
+    - content.code.copy
+    - content.tooltips
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/icons.css
+  - stylesheets/harbor.css
+
+extra_javascript:
+  - javascripts/harbor.js
+
+extra:
+  generator: false
+  days:
+    - n: 1
+      name: Charting the Waters
+      outline_title: Finding Answers in Azure DevOps
+      theme: From Work Items to Management Intelligence
+      goal: >-
+        Find, organize and interpret information across Azure DevOps to answer the
+        questions managers actually get asked, at the Feature and portfolio level.
+      badge: Navigator
+      url: day-1/
+    - n: 2
+      name: The Lighthouse
+      outline_title: Dashboards, Metrics, and Cross-Team Visibility
+      theme: Turning Information into Management Decisions
+      goal: >-
+        Build dashboards that answer management questions, read delivery metrics
+        without being fooled by them, and see across teams and their dependencies.
+      badge: Lighthouse Keeper
+      url: day-2/
+    - n: 3
+      name: Setting the Course
+      outline_title: Forecasting, Customer Personas, and Strategic Decisions
+      theme: Planning Ahead and Connecting Delivery to Business Value
+      goal: >-
+        Forecast honestly, prioritize by member impact, fix the data your reports
+        depend on, and brief leadership with an evidence-based outlook for the next PI.
+      badge: Harbor Master
+      url: day-3/
+  sea_states:
+    calm:   { label: Calm,   blurb: guided steps }
+    choppy: { label: Choppy, blurb: some challenges }
+    rough:  { label: Rough,  blurb: mostly challenges }
+    storm:  { label: Storm,  blurb: open-ended }
+
+plugins:
+  - search
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - md_in_html
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.betterem
+  - pymdownx.caret
+  - pymdownx.mark
+  - pymdownx.tilde
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      auto_append:
+        - includes/abbreviations.md
+      check_paths: true
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+      clickable_checkbox: true
+
+nav:
+  - Home: index.md
+  - Start Here:
+      - start/index.md
+      - Meet HarborPoint: start/harborpoint.md
+      - Your Azure DevOps Environment: start/environment.md
+  - Day 1 · Charting the Waters:
+      - day-1/index.md
+      - "Lab 1 · Explore the Program": day-1/lab-01-explore-the-program.md
+      - "Lab 2 · Monday Morning Manager": day-1/lab-02-monday-morning-manager.md
+      - "Lab 3 · Query Toolkit": day-1/lab-03-query-toolkit.md
+      - "Lab 4 · Sprint Delivery Report": day-1/lab-04-sprint-delivery-report.md
+  - Day 2 · The Lighthouse:
+      - day-2/index.md
+      - "Lab 5 · Command Center": day-2/lab-05-command-center.md
+      - "Lab 6 · Which Team Needs Help?": day-2/lab-06-which-team-needs-help.md
+      - "Lab 7 · Cross-Team Bottleneck": day-2/lab-07-cross-team-bottleneck.md
+      - "Lab 8 · Executive Status Review": day-2/lab-08-executive-status-review.md
+  - Day 3 · Setting the Course:
+      - day-3/index.md
+      - "Lab 9 · Meet the Deadline?": day-3/lab-09-meet-the-deadline.md
+      - "Lab 10 · Personas": day-3/lab-10-personas.md
+      - "Lab 11 · Why Is the Dashboard Wrong?": day-3/lab-11-dashboard-wrong.md
+      - "Lab 12 · Capstone": day-3/lab-12-capstone.md
+  - Resources:
+      - resources/index.md
+      - Query Cookbook: resources/query-cookbook.md
+      - Metrics Field Guide: resources/metrics-field-guide.md
+      - Templates: resources/templates.md
+      - Glossary: resources/glossary.md

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block extrahead %}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&display=swap">
+  <meta name="theme-color" content="#0b1d33">
+  {% if page and page.meta and page.meta.summary %}<meta property="og:description" content="{{ page.meta.summary }}">{% endif %}
+{% endblock %}
+
+{% block content %}
+  {% if page.meta and page.meta.lab %}
+    {% include "partials/hp-mission-header.html" %}
+    {{ page.content }}
+    {% include "partials/hp-logbook.html" %}
+  {% elif page.meta and page.meta.day_overview %}
+    {% include "partials/hp-day-header.html" %}
+    {{ page.content }}
+  {% else %}
+    {{ super() }}
+  {% endif %}
+{% endblock %}

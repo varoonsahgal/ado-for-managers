@@ -1,0 +1,13 @@
+{#- Shared HarborPoint template helpers -#}
+{% macro sea(state) -%}
+  {%- set s = config.extra.sea_states[state] if state in config.extra.sea_states else config.extra.sea_states["calm"] -%}
+  <span class="hp-sea hp-sea--{{ state }}" title="Sea state: {{ s.label }} ({{ s.blurb }})"><span class="hp-sea__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>{{ s.label }}</span>
+{%- endmacro %}
+
+{% macro labs_for_day(n) -%}
+  {%- set out = [] -%}
+  {%- for p in nav.pages -%}
+    {%- if p.meta and p.meta.lab and p.meta.day == n -%}{%- set _ = out.append(p) -%}{%- endif -%}
+  {%- endfor -%}
+  {{- out | map(attribute="meta.lab") | join(",") -}}
+{%- endmacro %}

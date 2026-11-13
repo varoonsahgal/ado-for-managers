@@ -1,0 +1,22 @@
+{%- import "partials/hp-macros.html" as hp with context -%}
+{%- set n = page.meta.day_overview -%}
+{%- set d = config.extra.days[n - 1] -%}
+<header class="hp-dayhead" data-day="{{ n }}">
+  <span class="hp-chip hp-chip--glass">Day {{ n }} of 3 · {{ d.outline_title }}</span>
+  <h1>{{ d.name }}</h1>
+  <p class="hp-dayhead__theme">Theme: {{ d.theme }}</p>
+  <p class="hp-dayhead__goal">{{ d.goal }}</p>
+  <div class="hp-dayhead__badge"><span class="hp-chip hp-chip--brass">{% include ".icons/material/medal.svg" %} Finish every lab to earn the {{ d.badge }} badge</span></div>
+</header>
+<div class="hp-labgrid">
+{%- for p in nav.pages -%}
+  {%- if p.meta and p.meta.lab and p.meta.day == n -%}
+  <a class="hp-labcard" href="{{ p.url | url }}" data-hp-lab="{{ p.meta.lab }}">
+    <span class="hp-labcard__num">Lab {{ p.meta.lab }}</span>
+    <span class="hp-labcard__title">{{ p.meta.title }}</span>
+    {% if p.meta.summary %}<span class="hp-labcard__sum">{{ p.meta.summary }}</span>{% endif %}
+    <span class="hp-labcard__meta"><span>{{ p.meta.duration }} min</span>{{ hp.sea(p.meta.sea_state) }}</span>
+  </a>
+  {%- endif -%}
+{%- endfor -%}
+</div>

@@ -1,0 +1,22 @@
+{%- import "partials/hp-macros.html" as hp with context -%}
+{%- set m = page.meta -%}
+{%- set d = config.extra.days[m.day - 1] -%}
+{%- set s = config.extra.sea_states[m.sea_state] if m.sea_state in config.extra.sea_states else config.extra.sea_states["calm"] -%}
+<header class="hp-mission" data-lab="{{ m.lab }}" data-day="{{ m.day }}">
+  <div class="hp-mission__eyebrow">
+    <span class="hp-chip hp-chip--glass">Day {{ m.day }} · {{ d.name }}</span>
+    <span class="hp-chip hp-chip--glass">Lab {{ m.lab }} of 12</span>
+    {% if m.module %}<span class="hp-chip hp-chip--glass">{{ m.module }}</span>{% endif %}
+  </div>
+  <h1>{{ m.title }}</h1>
+  {% if m.summary %}<p class="hp-mission__summary">{{ m.summary }}</p>{% endif %}
+  <div class="hp-mission__meta">
+    {% if m.duration %}<span class="hp-meta">{% include ".icons/material/timer-outline.svg" %} {{ m.duration }} min hands-on</span>{% endif %}
+    <span class="hp-meta hp-sea hp-sea--{{ m.sea_state }}" title="{{ s.blurb }}"><span class="hp-sea__bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Sea state: {{ s.label }} · {{ s.blurb }}</span>
+    {% if m.role %}<span class="hp-meta">{% include ".icons/material/account-tie.svg" %} You are: {{ m.role }}</span>{% endif %}
+  </div>
+  <div class="hp-mission__progress">
+    <div class="hp-progress"><span class="hp-progress__bar" data-hp-page></span></div>
+    <span class="hp-progress__label" data-hp-page>Checkpoints</span>
+  </div>
+</header>

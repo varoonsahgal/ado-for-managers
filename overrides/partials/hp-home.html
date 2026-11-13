@@ -1,0 +1,82 @@
+{%- import "partials/hp-macros.html" as hp with context -%}
+<div class="hp-home-body">
+
+  <section class="hp-section" aria-labelledby="voyage">
+    <p class="hp-kicker">Your voyage</p>
+    <h2 id="voyage">Three days, twelve ports of call</h2>
+    <p class="hp-section__lede">Each day builds on the last. Every lab is a mission set inside <strong>HarborPoint Financial</strong>: real questions, a live Azure DevOps project, and decisions a manager actually has to make. Basics are optional speed runs. Your time goes into reading the signals and making the call.</p>
+    <div class="hp-voyage-progress">
+      <strong>Your progress</strong>
+      <div class="hp-progress"><span class="hp-progress__bar" data-hp-total-bar></span></div>
+      <span class="hp-progress__label" data-hp-total-label>0 of 12 labs logged</span>
+    </div>
+    <div class="hp-days">
+      {%- for d in config.extra.days %}
+      <article class="hp-day" data-hp-day="{{ d.n }}" data-hp-labs="{{ hp.labs_for_day(d.n) }}">
+        <div class="hp-day__head">
+          <span class="hp-day__num" aria-hidden="true">{{ d.n }}</span>
+          <span class="hp-day__label">Day {{ d.n }} · {{ d.outline_title }}</span>
+          <a class="hp-day__name" href="{{ d.url | url }}">{{ d.name }}</a>
+          <p class="hp-day__theme">{{ d.theme }}</p>
+        </div>
+        <ol class="hp-day__stops">
+          {%- for p in nav.pages -%}
+            {%- if p.meta and p.meta.lab and p.meta.day == d.n %}
+          <li>
+            <a class="hp-stop" href="{{ p.url | url }}" data-hp-lab="{{ p.meta.lab }}">
+              <span class="hp-stop__dot">{{ p.meta.lab }}</span>
+              <span class="hp-stop__title">{{ p.meta.title }}</span>
+              <span class="hp-stop__meta"><span>{{ p.meta.duration }} min</span>{{ hp.sea(p.meta.sea_state) }}</span>
+            </a>
+          </li>
+            {%- endif -%}
+          {%- endfor %}
+        </ol>
+        <div class="hp-day__foot">
+          <span data-hp-day-count>0 labs logged</span>
+          <span class="hp-badge">{% include ".icons/material/medal.svg" %} {{ d.badge }}</span>
+        </div>
+      </article>
+      {%- endfor %}
+    </div>
+  </section>
+
+  <section class="hp-section" aria-labelledby="how">
+    <p class="hp-kicker">How every lab works</p>
+    <h2 id="how">Built for people who already know where the buttons are</h2>
+    <p class="hp-section__lede">You'll spend your time on interpretation and judgment, not navigation. Each lab follows the same rhythm, so you always know where you are.</p>
+    <div class="hp-features">
+      <div class="hp-feature" style="--c:#12355b"><div class="hp-feature__icon">{% include ".icons/material/compass-rose.svg" %}</div><h3>Mission briefing</h3><p>A realistic situation, a message from a HarborPoint leader, and a clear picture of what "done" looks like.</p></div>
+      <div class="hp-feature" style="--c:#e07a3f"><div class="hp-feature__icon">{% include ".icons/material/timer-outline.svg" %}</div><h3>Speed runs</h3><p>Think you know this already? Prove it against the clock, then skip ahead. The guided route is there if you want it.</p></div>
+      <div class="hp-feature" style="--c:#0f8b8d"><div class="hp-feature__icon">{% include ".icons/material/ship-wheel.svg" %}</div><h3>Harbor Pilot hints</h3><p>Stuck on a challenge? Three tiers of hints guide you in, from a gentle bearing to a full solution.</p></div>
+      <div class="hp-feature" style="--c:#c8962e"><div class="hp-feature__icon">{% include ".icons/material/lighthouse-on.svg" %}</div><h3>Lighthouse insights</h3><p>The durable lesson behind the clicks: what a metric really means, and how it can mislead.</p></div>
+      <div class="hp-feature" style="--c:#2e8b57"><div class="hp-feature__icon">{% include ".icons/material/anchor.svg" %}</div><h3>Checkpoints</h3><p>Tick off observable outcomes as you go. Your progress and badges are saved in your browser.</p></div>
+      <div class="hp-feature" style="--c:#8a6a4f"><div class="hp-feature__icon">{% include ".icons/material/notebook-edit.svg" %}</div><h3>Captain's log</h3><p>Debrief questions that connect HarborPoint's problems to the ones waiting on your desk on Monday.</p></div>
+    </div>
+  </section>
+
+  <section class="hp-section" aria-labelledby="portfolio">
+    <p class="hp-kicker">The portfolio you'll steer</p>
+    <h2 id="portfolio">Project Lighthouse: HarborPoint's transformation</h2>
+    <p class="hp-section__lede">HarborPoint is a member-owned financial cooperative modernizing how 1.9 million members bank, get help and stay safe. The Executive Committee has ranked four strategic priorities. Every Feature you inspect serves one of them, or it should.</p>
+    <div class="hp-portfolio">
+      <div class="hp-init"><span class="hp-init__rank">1</span><div class="hp-init__name">Fraud Detection &amp; Security</div><p class="hp-init__why">Protect every member: real-time fraud alerts, adaptive MFA, takeover protection.</p></div>
+      <div class="hp-init"><span class="hp-init__rank">2</span><div class="hp-init__name">Digital Banking Modernization</div><p class="hp-init__why">Digital that feels human: mobile deposit, card controls, online account opening.</p></div>
+      <div class="hp-init"><span class="hp-init__rank">3</span><div class="hp-init__name">Customer Support Modernization</div><p class="hp-init__why">Effortless support: omnichannel service requests, secure messaging and chat.</p></div>
+      <div class="hp-init"><span class="hp-init__rank">4</span><div class="hp-init__name">Branch Experience Transformation</div><p class="hp-init__why">Branches as relationship hubs: appointments, lobby check-in, in-branch onboarding.</p></div>
+      <div class="hp-init hp-init--enabler"><span class="hp-init__rank">E</span><div class="hp-init__name">Platform Foundations</div><p class="hp-init__why">The enablers underneath: notification service and member API gateway.</p></div>
+      <div class="hp-init hp-init--mandatory"><span class="hp-init__rank">!</span><div class="hp-init__name">Compliance: Examination Readiness</div><p class="hp-init__why">Mandatory, with a fixed date. Watch where it sits in the backlog, and where it sits in reality.</p></div>
+    </div>
+  </section>
+
+  <section class="hp-section">
+    <div class="hp-cta">
+      <div class="hp-cta__body">
+        <h2>Before you set sail</h2>
+        <p>Grab your participant ID from your instructor, set it with the <strong>Crew</strong> chip in the header, and skim the environment map. It takes five minutes and saves fifty.</p>
+      </div>
+      <a class="hp-btn hp-btn--brass" href="{{ 'start/' | url }}">{% include ".icons/material/compass-rose.svg" %} Start here</a>
+      <a class="hp-btn hp-btn--ghost" href="{{ 'start/environment/' | url }}">Environment map</a>
+    </div>
+  </section>
+</div>

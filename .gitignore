@@ -1,0 +1,10 @@
+.venv/
+site/
+__pycache__/
+*.pyc
+.DS_Store
+environment/out/
+environment/**/state*.json
+# Private: client outline and facilitator answer key / internal references stay local
+outline.md
+facilitator/
