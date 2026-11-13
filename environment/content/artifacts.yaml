@@ -1,0 +1,441 @@
+# HarborPoint pre-built artifacts (World Bible section 8).
+# Merged verbatim into the dataset ("artifacts") by the generator and applied by the provisioner.
+# Tokens allowed in WIQL: {project}, {participant}, {sandbox_area}.
+# Area/iteration paths are full paths starting with the project name.
+
+query_folders:
+  - path: "Shared Queries/HarborPoint Reports"
+  - path: "Shared Queries/PMO Reporting"
+  - path: "Shared Queries/Training"
+    grant_contributors: true
+  - path: "Shared Queries/Training/{participant}"
+    per_participant: true
+  - path: "Shared Queries/Training/{participant}/Lab 11 - Inherited queries"
+    per_participant: true
+
+queries:
+  # ---------------------------------------------------------------- HarborPoint Reports (good examples)
+  - path: "Shared Queries/HarborPoint Reports"
+    name: "Portfolio - Epics and Features"
+    wiql: |-
+      SELECT [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AssignedTo],
+             [System.AreaPath], [Microsoft.VSTS.Scheduling.StartDate], [Microsoft.VSTS.Scheduling.TargetDate],
+             [Microsoft.VSTS.Common.Priority], [System.Tags]
+      FROM WorkItemLinks
+      WHERE ([Source].[System.TeamProject] = @project
+             AND [Source].[System.WorkItemType] = 'Epic'
+             AND [Source].[System.State] <> 'Removed'
+             AND [Source].[System.AreaPath] NOT UNDER 'HarborPoint\Training')
+        AND ([System.Links.LinkType] = 'System.LinkTypes.Hierarchy-Forward')
+        AND ([Target].[System.TeamProject] = @project
+             AND [Target].[System.WorkItemType] = 'Feature'
+             AND [Target].[System.State] <> 'Removed')
+      ORDER BY [Microsoft.VSTS.Common.StackRank] ASC, [System.Id] ASC
+      MODE (Recursive)
+
+  - path: "Shared Queries/HarborPoint Reports"
+    name: "Portfolio - Features by target date"
+    wiql: |-
+      SELECT [System.Id], [System.Title], [System.State], [System.AssignedTo], [System.AreaPath],
+             [System.IterationPath], [Microsoft.VSTS.Scheduling.StartDate], [Microsoft.VSTS.Scheduling.TargetDate],
+             [Microsoft.VSTS.Common.Priority], [System.Tags]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.WorkItemType] = 'Feature'
+        AND [System.State] <> 'Removed'
+        AND [System.AreaPath] NOT UNDER 'HarborPoint\Training'
+      ORDER BY [Microsoft.VSTS.Scheduling.TargetDate] ASC, [Microsoft.VSTS.Common.Priority] ASC
+
+  - path: "Shared Queries/HarborPoint Reports"
+    name: "Portfolio - Features due in next 3 weeks"
+    wiql: |-
+      SELECT [System.Id], [System.Title], [System.State], [System.AssignedTo], [System.AreaPath],
+             [Microsoft.VSTS.Scheduling.TargetDate], [Microsoft.VSTS.Common.Priority], [System.Tags]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.WorkItemType] = 'Feature'
+        AND [System.State] NOT IN ('Closed', 'Removed')
+        AND [Microsoft.VSTS.Scheduling.TargetDate] <= @Today + 21
+        AND [System.AreaPath] NOT UNDER 'HarborPoint\Training'
+      ORDER BY [Microsoft.VSTS.Scheduling.TargetDate] ASC
+
+  - path: "Shared Queries/HarborPoint Reports"
+    name: "Program - Current sprint (all teams)"
+    wiql: |-
+      SELECT [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AssignedTo],
+             [System.AreaPath], [Microsoft.VSTS.Scheduling.StoryPoints], [System.Tags]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.WorkItemType] IN ('User Story', 'Bug')
+        AND [System.IterationPath] = @CurrentIteration('[HarborPoint]\HarborPoint Team')
+        AND [System.AreaPath] NOT UNDER 'HarborPoint\Training'
+      ORDER BY [System.AreaPath] ASC, [Microsoft.VSTS.Common.StackRank] ASC
+
+  - path: "Shared Queries/HarborPoint Reports"
+    name: "Program - Open bugs"
+    wiql: |-
+      SELECT [System.Id], [System.Title], [System.State], [System.AssignedTo], [System.AreaPath],
+             [Microsoft.VSTS.Common.Priority], [Microsoft.VSTS.Common.Severity], [System.Tags]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.WorkItemType] = 'Bug'
+        AND [System.State] NOT IN ('Closed', 'Removed')
+        AND [System.AreaPath] NOT UNDER 'HarborPoint\Training'
+      ORDER BY [Microsoft.VSTS.Common.Priority] ASC, [Microsoft.VSTS.Common.Severity] ASC
+
+  - path: "Shared Queries/HarborPoint Reports"
+    name: "Program - Open P1 bugs"
+    wiql: |-
+      SELECT [System.Id], [System.Title], [System.State], [System.AssignedTo], [System.AreaPath],
+             [Microsoft.VSTS.Common.Priority], [Microsoft.VSTS.Common.Severity], [System.Tags]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.WorkItemType] = 'Bug'
+        AND [Microsoft.VSTS.Common.Priority] = 1
+        AND [System.State] NOT IN ('Closed', 'Removed')
+        AND [System.AreaPath] NOT UNDER 'HarborPoint\Training'
+      ORDER BY [Microsoft.VSTS.Common.Severity] ASC, [System.AreaPath] ASC
+
+  # ---------------------------------------------------------------- PMO Reporting (Leo Fischer; deliberately flawed, Lab 11)
+  - path: "Shared Queries/PMO Reporting"
+    name: "MS - Current sprint work"
+    wiql: |-
+      SELECT [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AssignedTo],
+             [Microsoft.VSTS.Scheduling.StoryPoints], [System.Tags]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.AreaPath] UNDER 'HarborPoint\Member Support'
+        AND [System.IterationPath] = 'HarborPoint\PI 4\Sprint 13'
+      ORDER BY [System.State] ASC, [System.Id] ASC
+
+  - path: "Shared Queries/PMO Reporting"
+    name: "MS - Completed this sprint"
+    wiql: |-
+      SELECT [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AssignedTo],
+             [Microsoft.VSTS.Scheduling.StoryPoints]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.AreaPath] UNDER 'HarborPoint\Member Support'
+        AND [System.IterationPath] = 'HarborPoint\PI 4\Sprint 13'
+        AND [System.State] = 'Closed'
+      ORDER BY [System.Id] ASC
+
+  - path: "Shared Queries/PMO Reporting"
+    name: "MS - Open P1 bugs"
+    wiql: |-
+      SELECT [System.Id], [System.Title], [System.State], [System.AssignedTo],
+             [Microsoft.VSTS.Common.Priority], [Microsoft.VSTS.Common.Severity]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.WorkItemType] = 'Bug'
+        AND [System.AreaPath] UNDER 'HarborPoint\Member Support'
+        AND [Microsoft.VSTS.Common.Priority] = 1
+        AND [System.State] <> 'Closed'
+      ORDER BY [System.Id] ASC
+
+  - path: "Shared Queries/PMO Reporting"
+    name: "MS - Open work"
+    wiql: |-
+      SELECT [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AssignedTo],
+             [System.IterationPath], [Microsoft.VSTS.Scheduling.StoryPoints]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.AreaPath] UNDER 'HarborPoint\Member Support'
+        AND [System.State] <> 'Closed'
+      ORDER BY [System.WorkItemType] ASC, [System.Id] ASC
+
+  - path: "Shared Queries/PMO Reporting"
+    name: "MS - Omnichannel stories"
+    wiql: |-
+      SELECT [System.Id], [System.Title], [System.State], [System.AssignedTo],
+             [Microsoft.VSTS.Scheduling.StoryPoints], [System.Tags]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.AreaPath] UNDER 'HarborPoint\Member Support'
+        AND [System.Tags] CONTAINS 'omnichannel'
+      ORDER BY [System.State] ASC, [System.Id] ASC
+
+  # ---------------------------------------------------------------- Planted problem #12 (optional): private query
+  # Saved in the PROVISIONING USER's "My Queries" (stands in for Leo's private folder). The tile bound to it on
+  # the shared Member Support dashboard shows a permissions error to every other viewer.
+  - path: "My Queries"
+    name: "MS - Waiting for sign-off"
+    private: true
+    wiql: |-
+      SELECT [System.Id], [System.Title], [System.State], [System.AssignedTo],
+             [Microsoft.VSTS.Scheduling.StoryPoints], [System.ChangedDate]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.AreaPath] UNDER 'HarborPoint\Member Support'
+        AND [System.WorkItemType] = 'User Story'
+        AND [System.State] = 'Resolved'
+      ORDER BY [System.ChangedDate] ASC
+
+  # ---------------------------------------------------------------- Per-participant flawed copies (Lab 11 sandbox)
+  - path: "Shared Queries/Training/{participant}/Lab 11 - Inherited queries"
+    name: "Current sprint work"
+    per_participant: true
+    wiql: |-
+      SELECT [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AssignedTo],
+             [Microsoft.VSTS.Scheduling.StoryPoints], [System.Tags]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.AreaPath] UNDER '{sandbox_area}'
+        AND [System.IterationPath] = 'HarborPoint\PI 4\Sprint 13'
+      ORDER BY [System.State] ASC, [System.Id] ASC
+
+  - path: "Shared Queries/Training/{participant}/Lab 11 - Inherited queries"
+    name: "Completed this sprint"
+    per_participant: true
+    wiql: |-
+      SELECT [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AssignedTo],
+             [Microsoft.VSTS.Scheduling.StoryPoints]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.AreaPath] UNDER '{sandbox_area}'
+        AND [System.IterationPath] = 'HarborPoint\PI 4\Sprint 13'
+        AND [System.State] = 'Closed'
+      ORDER BY [System.Id] ASC
+
+  - path: "Shared Queries/Training/{participant}/Lab 11 - Inherited queries"
+    name: "Open P1 bugs"
+    per_participant: true
+    wiql: |-
+      SELECT [System.Id], [System.Title], [System.State], [System.AssignedTo],
+             [Microsoft.VSTS.Common.Priority], [Microsoft.VSTS.Common.Severity]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.WorkItemType] = 'Bug'
+        AND [System.AreaPath] UNDER '{sandbox_area}'
+        AND [Microsoft.VSTS.Common.Priority] = 1
+        AND [System.State] <> 'Closed'
+      ORDER BY [System.Id] ASC
+
+  - path: "Shared Queries/Training/{participant}/Lab 11 - Inherited queries"
+    name: "Open work"
+    per_participant: true
+    wiql: |-
+      SELECT [System.Id], [System.WorkItemType], [System.Title], [System.State], [System.AssignedTo],
+             [System.IterationPath], [Microsoft.VSTS.Scheduling.StoryPoints]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.AreaPath] UNDER '{sandbox_area}'
+        AND [System.State] <> 'Closed'
+      ORDER BY [System.WorkItemType] ASC, [System.Id] ASC
+
+  - path: "Shared Queries/Training/{participant}/Lab 11 - Inherited queries"
+    name: "Omnichannel stories"
+    per_participant: true
+    wiql: |-
+      SELECT [System.Id], [System.Title], [System.State], [System.AssignedTo],
+             [Microsoft.VSTS.Scheduling.StoryPoints], [System.Tags]
+      FROM WorkItems
+      WHERE [System.TeamProject] = @project
+        AND [System.AreaPath] UNDER '{sandbox_area}'
+        AND [System.Tags] CONTAINS 'omnichannel'
+      ORDER BY [System.State] ASC, [System.Id] ASC
+
+wiki_pages:
+  - {path: "/Home", file: "wiki/home.md"}
+  - {path: "/Program", file: "wiki/program/index.md"}
+  - {path: "/Program/Program Charter", file: "wiki/program/program-charter.md"}
+  - {path: "/Program/PI 4 Objectives", file: "wiki/program/pi-4-objectives.md"}
+  - {path: "/Program/Team Directory", file: "wiki/program/team-directory.md"}
+  - {path: "/Teams", file: "wiki/teams/index.md"}
+  - {path: "/Teams/Digital Accounts Availability", file: "wiki/teams/digital-accounts-availability.md"}
+  - {path: "/Research", file: "wiki/research/index.md"}
+  - {path: "/Research/Onboarding Research Findings", file: "wiki/research/onboarding-research-findings.md"}
+  - {path: "/Research/Member Pulse Survey Q3", file: "wiki/research/member-pulse-survey-q3.md"}
+  - {path: "/Personas", file: "wiki/personas/index.md"}
+  - {path: "/Personas/Dee Harmon", file: "wiki/personas/dee-harmon.md"}
+  - {path: "/Personas/Jordan Reyes", file: "wiki/personas/jordan-reyes.md"}
+  - {path: "/Personas/Amara Okafor", file: "wiki/personas/amara-okafor.md"}
+  - {path: "/Practices", file: "wiki/practices/index.md"}
+  - {path: "/Practices/Working Agreements and Definition of Done", file: "wiki/practices/working-agreements-and-definition-of-done.md"}
+  - {path: "/Templates", file: "wiki/templates/index.md"}
+  - {path: "/Templates/Status Report", file: "wiki/templates/status-report.md"}
+  - {path: "/Templates/Executive Briefing (BLUF)", file: "wiki/templates/executive-briefing-bluf.md"}
+  - {path: "/Templates/Persona Canvas", file: "wiki/templates/persona-canvas.md"}
+  - {path: "/Training", file: "wiki/training.md"}
+
+dashboards:
+  - name: "HarborPoint Program Overview"
+    description: "Program-level view of Project Lighthouse: priorities, Feature schedule, and quality signals."
+    team: null
+    widgets:
+      - type: markdown
+        title: "Project Lighthouse"
+        row: 1
+        column: 1
+        row_span: 2
+        column_span: 4
+        markdown: |-
+          ## Project Lighthouse (METP)
+          **FY2027 priorities**
+          1. Protect every member (Fraud Detection & Security)
+          2. Digital that feels human (Digital Banking Modernization)
+          3. Effortless support (Customer Support Modernization)
+          4. Branches as relationship hubs (Branch Experience Transformation)
+
+          Enabler: Platform Foundations · Mandatory: Compliance: Examination Readiness
+
+          **Key events:** PI 4 System Demo (end of Sprint 16) · PI 5 Planning (start of Sprint 17) · Exam fieldwork (Sprint 18)
+
+          **Links:** Wiki > Program > [Program Charter](../../_wiki/wikis/HarborPoint.wiki?pagePath=/Program/Program%20Charter) · [PI 4 Objectives](../../_wiki/wikis/HarborPoint.wiki?pagePath=/Program/PI%204%20Objectives) · Delivery Plan: **HarborPoint Program Plan**
+      - type: query_tile
+        title: "Open P1 bugs (program)"
+        row: 1
+        column: 5
+        row_span: 1
+        column_span: 1
+        query: "Shared Queries/HarborPoint Reports/Program - Open P1 bugs"
+        rules:
+          - {op: ">", value: 0, color: "#cc293d"}
+      - type: query_tile
+        title: "Features due in next 3 weeks (incl. overdue)"
+        row: 1
+        column: 6
+        row_span: 1
+        column_span: 1
+        query: "Shared Queries/HarborPoint Reports/Portfolio - Features due in next 3 weeks"
+        rules:
+          - {op: ">", value: 0, color: "#fbbd08"}
+      - type: query_tile
+        title: "Open bugs (program)"
+        row: 2
+        column: 5
+        row_span: 1
+        column_span: 1
+        query: "Shared Queries/HarborPoint Reports/Program - Open bugs"
+      - type: chart
+        title: "Features by State"
+        row: 1
+        column: 7
+        row_span: 2
+        column_span: 2
+        query: "Shared Queries/HarborPoint Reports/Portfolio - Features by target date"
+        chart: {type: pie, group_by: "System.State"}
+      - type: chart
+        title: "Open bugs by area"
+        row: 1
+        column: 9
+        row_span: 2
+        column_span: 2
+        query: "Shared Queries/HarborPoint Reports/Program - Open bugs"
+        chart: {type: bar, group_by: "System.AreaPath"}
+      - type: query_results
+        title: "Portfolio - Features by target date"
+        row: 3
+        column: 1
+        row_span: 4
+        column_span: 10
+        query: "Shared Queries/HarborPoint Reports/Portfolio - Features by target date"
+
+  - name: "Member Support - Delivery Health"
+    description: "Member Support delivery metrics for the PMO weekly pack. Maintained by Leo Fischer, PMO."
+    team: "Member Support"
+    widgets:
+      - type: markdown
+        title: "Member Support - Delivery Health"
+        row: 1
+        column: 1
+        row_span: 2
+        column_span: 3
+        markdown: |-
+          ## Member Support - Delivery Health
+          Weekly PMO view of Member Support delivery.
+
+          **Maintained by Leo Fischer, PMO.** Questions? Contact Leo.
+      - type: query_tile
+        title: "Current sprint work"
+        row: 1
+        column: 4
+        row_span: 1
+        column_span: 1
+        query: "Shared Queries/PMO Reporting/MS - Current sprint work"
+      - type: query_tile
+        title: "Completed this sprint"
+        row: 1
+        column: 5
+        row_span: 1
+        column_span: 1
+        query: "Shared Queries/PMO Reporting/MS - Completed this sprint"
+      - type: query_tile
+        title: "Open P1 bugs"
+        row: 1
+        column: 6
+        row_span: 1
+        column_span: 1
+        query: "Shared Queries/PMO Reporting/MS - Open P1 bugs"
+        rules:
+          - {op: ">", value: 0, color: "#cc293d"}
+          - {op: "=", value: 0, color: "#339933"}
+      - type: query_tile
+        title: "Open work"
+        row: 1
+        column: 7
+        row_span: 1
+        column_span: 1
+        query: "Shared Queries/PMO Reporting/MS - Open work"
+        rules:
+          - {op: ">", value: 25, color: "#cc293d"}
+      - type: query_tile
+        title: "Omnichannel stories"
+        row: 1
+        column: 8
+        row_span: 1
+        column_span: 1
+        query: "Shared Queries/PMO Reporting/MS - Omnichannel stories"
+      - type: query_tile
+        title: "Waiting for sign-off"
+        row: 2
+        column: 4
+        row_span: 1
+        column_span: 1
+        query: "My Queries/MS - Waiting for sign-off"
+      - type: chart
+        title: "Omnichannel stories by state"
+        row: 1
+        column: 9
+        row_span: 2
+        column_span: 2
+        query: "Shared Queries/PMO Reporting/MS - Omnichannel stories"
+        chart: {type: pie, group_by: "System.State"}
+      - type: velocity
+        title: "Velocity"
+        row: 3
+        column: 1
+        row_span: 2
+        column_span: 4
+        team: "Member Support"
+      - type: sprint_burndown
+        title: "Sprint burndown (current sprint)"
+        row: 3
+        column: 5
+        row_span: 2
+        column_span: 4
+        team: "Member Support"
+        iteration: 'PI 4\Sprint 13'
+
+delivery_plans:
+  - name: "HarborPoint Program Plan"
+    description: "All six delivery teams at Feature level, with PI and regulatory milestones."
+    teams:
+      - {team: "Mobile Banking", backlog: "Microsoft.FeatureCategory"}
+      - {team: "Digital Accounts", backlog: "Microsoft.FeatureCategory"}
+      - {team: "Security", backlog: "Microsoft.FeatureCategory"}
+      - {team: "Core Platform", backlog: "Microsoft.FeatureCategory"}
+      - {team: "Branch Experience", backlog: "Microsoft.FeatureCategory"}
+      - {team: "Member Support", backlog: "Microsoft.FeatureCategory"}
+    markers:
+      - {sprint: "Sprint 16", at: end, label: "PI 4 System Demo", color: "#0078d4"}
+      - {sprint: "Sprint 17", at: start, label: "PI 5 Planning", color: "#8661c5"}
+      - {sprint: "Sprint 18", at: start, label: "Regulatory exam fieldwork", color: "#cc293d"}
+    card_fields:
+      - System.AssignedTo
+      - System.State
+      - System.Tags
+      - Microsoft.VSTS.Scheduling.StartDate
+      - Microsoft.VSTS.Scheduling.TargetDate
+      - Microsoft.VSTS.Common.Priority
+      - Microsoft.VSTS.Common.Risk
