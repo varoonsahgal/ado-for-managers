@@ -108,3 +108,23 @@ lab06-bug-trend:
 lab04-status-report:
   bar: "Overview › Wiki › Training › P## › Sprint Delivery Report"
   caption: "A model one-pager: a colour **with a sentence**, scope and as-of stated up front, a Feature table, three evidenced risks and a live query table. Typing `#1365` turned into a live link to the Feature."
+
+lab05-query-tile-config:
+  bar: "Overview › Dashboards › P## - Digital Command Center › Edit › Query Tile › Configuration"
+  caption: "Two **conditional formatting** rules turn a count into a signal: amber from 1, red from 5. A count of 6 matches both, and the tile shows red. List your rules from mild to severe."
+
+lab05-velocity-config:
+  bar: "Overview › Dashboards › P## - Digital Command Center › Edit › Velocity › Configuration"
+  caption: "**Team** is the field that matters most, and the widget never shows it unless you put it in the title. Set Team first, then name the widget after it."
+
+lab05-command-center-full:
+  bar: "Overview › Dashboards › P## - Digital Command Center"
+  caption: "Top row: *is anything on fire?* Second row: *where are the Features?* Below: the diagnostics. Every team-scoped widget names its team in the title, and the tiles read **3 / 18 / 1 / 6**."
+
+lab05-exec-view:
+  bar: "Overview › Dashboards › P## - Digital Banking Exec View"
+  caption: "Six widgets, and the most important one is words: a **bottom line** and the **decision needed**. Everything else is evidence for that sentence."
+
+lab06-cycle-time-pair:
+  bar: "Overview › Dashboards › P## - Digital Command Center › Cycle Time · two teams"
+  caption: "Same widget, two teams. Mobile's moving average climbs from about 3 days to about 9, and its shaded spread widens. Digital Accounts holds at 4 to 5 days. (Watch the axes: they differ.)"

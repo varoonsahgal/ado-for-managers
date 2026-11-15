@@ -74,7 +74,7 @@ Copy this table into your page. You'll fill it in over the next three challenges
 | 3 | Commitment reliability (completed ÷ planned) | Velocity, Planned vs Completed | | | |
 | 4 | Work waiting in the flow | Cumulative Flow Diagram | | | |
 | 5 | Cycle time trend and spread | Cycle Time widget | | | |
-| 6 | Open bug trend | Query trend chart | | | |
+| 6 | Open bug trend | Burndown widgets on the Program Overview | | | |
 | 7 | Share of completed points with no parent Feature | Velocity drill-down or orphan query | | | |
 | 8 | Feature progress | Features backlog rollup | | | |
 
@@ -90,7 +90,7 @@ Copy this table into your page. You'll fill it in over the next three challenges
     One report answers all three rows. It can sum Story Points or count work items, and it shows a **Planned** bar next to **Completed**. It lives on each team's backlog, and you put a copy of it on your Command Center yesterday.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    **Boards › Backlogs**, team `Mobile Banking`, **Stories** level, **Analytics** tab, **Velocity** card › **View full report**. Toggle **Velocity by** between **Sum of Story Points** and **Count of Work Items**. Repeat for team `Digital Accounts`. Bugs live on these backlogs, so the count includes a few closed bugs. For stories only, temporarily set your Command Center Velocity widget to **Work item type** `User Story` with **Count**.
+    **Boards › Backlogs**, team `Mobile Banking`, **Stories** level, **Analytics** tab, **Velocity** card › **View full report**. Toggle **Velocity by** between **Sum of Story Points** and **Count of Work Items**. Repeat for team `Digital Accounts`. Bugs live on these backlogs too, but Velocity counts only work that was planned into a sprint, and these teams never put bugs in a sprint, so the count is a count of stories. Hover over any bar for its exact numbers.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | Sprint | 9 | 10 | 11 | 12 | 13 |
@@ -106,8 +106,6 @@ Copy this table into your page. You'll fill it in over the next three challenges
     **Reading:** Mobile's points went up by a third while the number of stories it finished didn't move. Each story simply got bigger on paper: **point inflation**. Meanwhile Mobile plans more every sprint (38 → 62) and delivers a smaller share of it, and carry-over grew from 2 stories (5 points) to 6 stories (18 points). Digital Accounts plans about 26 and delivers about 26, sprint after sprint.
 
     One-sentence answer: *No. Mobile's velocity rose because its estimates grew, not its output, and the gap between what it promises and what it delivers is widening.*
-
-<!-- VERIFY: whether Count of Work Items in the in-context Velocity report includes closed bugs for these teams (bugs managed with requirements), and the Count values shown; the story-only counts above come from the seeded data. -->
 
 <figure class="hp-shot" data-shot="lab06-velocity-points-vs-count" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Mobile Banking › Analytics › Velocity (points, then count)</span></div>
@@ -159,7 +157,13 @@ Output tells you *what* came out. Flow tells you *where it gets stuck on the way
 <figcaption markdown>Each band is a board column. The mid-blue **Resolved** band, finished code waiting for a tester, is a sliver in September and six items thick by November.</figcaption>
 </figure>
 
-<!-- SHOT: lab06-cycle-time-pair | P## - Digital Command Center, Cycle time · Mobile Banking and Cycle time · Digital Accounts widgets side by side, User Story, about 90 days | crop: both widgets; highlight Mobile's rising moving average and wider band against Digital Accounts' flat one -->
+<figure class="hp-shot" data-shot="lab06-cycle-time-pair" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Digital Command Center › Cycle Time · two teams</span></div>
+
+![Same widget, two teams. Mobile's moving average climbs from about 3 days to about 9, and its shaded spread widens. Digital Accounts holds at 4 to 5 days. (Watch the axes: they differ.)](../assets/shots/lab06-cycle-time-pair.png){ loading=lazy }
+
+<figcaption markdown>Same widget, two teams. Mobile's moving average climbs from about 3 days to about 9, and its shaded spread widens. Digital Accounts holds at 4 to 5 days. (Watch the axes: they differ.)</figcaption>
+</figure>
 
 !!! insight "Lighthouse insight: more in progress means slower, not faster"
     Little's Law, in plain words: **average time in progress ≈ work in progress ÷ finishing rate**. Mobile has about 10 stories in progress (7 Active, 3 Resolved) and finishes about 12 a sprint, so a story spends most of a sprint in flight. Digital Accounts has 3 in progress and finishes about 10, so its stories move through in days. Starting more work doesn't make a team finish more; it makes everything take longer. When a team says it's "flat out", count what it has *started*. Ethan Brooks alone has six active items.
@@ -176,11 +180,11 @@ A team can finish plenty and still fall behind if what it finishes is rework, or
     Fill rows 6 to 8 for both teams. For row 7, compute the orphan share for **Sprint 9 and Sprint 13** at least. For row 8, stay at Feature altitude: which of each team's Features moved, and which are due?
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Row 6 is a **trend chart** on a bug query. Row 7 is hiding behind the Velocity report's bars: selecting a bar opens the items behind it. Row 8 is a rollup column on a Features backlog, which you used in Lab 1.
+    Row 6 is already charted for you: you read it in Lab 4. Row 7 is hiding behind the Velocity report's bars: selecting a bar opens the items behind it. Row 8 is a rollup column on a Features backlog, which you used in Lab 1.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    - **Bugs:** reuse your Lab 4 bug trend, or create a flat query `CC - Open bugs (Digital)` (`Work Item Type` `=` `Bug`, `Area Path` `Under` `HarborPoint\Digital`, `State` `<>` `Closed`, with `Node Name` as a column). **Charts** › **New chart** › **Stacked area**, grouped by `Node Name`, over a period that reaches before Sprint 9 (about three months).
-    - **Orphans:** in Mobile's Velocity report, select the Sprint 13 **Completed** bar. Add the `Parent` and `Story Points` columns to the query that opens, and add up the points with no parent. Repeat for Sprint 9, and for Digital Accounts.
+    - **Bugs:** **Overview › Dashboards** › `HarborPoint Program Overview`, the two **Open bugs since Sprint 9** widgets at the bottom. Read the first and last bars of each, and notice where the orange **Total Scope** line pulls away.
+    - **Orphans:** in Mobile's Velocity report (set **Velocity by** back to **Sum of Story Points**), select the Sprint 13 **Completed** bar. A new browser tab opens a query of exactly those items, named *Mobile Banking Velocity - Sprint 13 - Completed*. Add the `Parent` and `Story Points` columns, and add up the points with no parent. Repeat for Sprint 9, and for Digital Accounts.
     - **Features:** **Boards › Backlogs**, team `Digital Portfolio`, **Features**, with **Target Date** and the **Progress by Story Points** rollup column.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
@@ -191,8 +195,6 @@ A team can finish plenty and still fall behind if what it finishes is rework, or
     | **Feature progress** | `Mobile Check Deposit 2.0` due **this sprint** at 61%: it will miss. `Real-Time Fraud Alerts` 4% (blocked on Security, Lab 7). `Biometric Login` 53%, due Sprint 16 | `Paperless Statements & Documents` **closed** last sprint. `Spending Insights` 88%. `Online Account Opening` 59%, due Sprint 16 |
 
     **Reading:** last sprint, more than half of Mobile's "record" velocity went to work that serves no Feature, while its most urgent Feature slipped. Its bug backlog is the debt it's taking on to look fast. Digital Accounts' smaller output lands almost entirely on its Features, and they're closing.
-
-<!-- VERIFY: selecting a Completed bar in the in-context Velocity report opens a query of those items that accepts Column options; the trend chart's rolling-period options reach back before Sprint 9. -->
 
 <figure class="hp-shot" data-shot="lab06-bug-trend" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › Burndown widget · Mobile Banking · Bugs · weekly since Sprint 9</span></div>

@@ -112,8 +112,6 @@ The most common dashboard is a wall: every widget the builder found, arranged by
 
     **Expected result:** an empty dashboard with a header that tells a stranger whose page this is, what it's for and how fresh it is.
 
-<!-- VERIFY: dashboard type labels "Team Dashboard" / "Project Dashboard" and the auto-refresh checkbox wording in the live Create a dashboard dialog; whether a plain Contributor can create a Project Dashboard (expected yes). -->
-
 <figure class="hp-shot" data-shot="lab05-create-dialog" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › + New Dashboard</span></div>
 
@@ -162,8 +160,6 @@ Look at the number before you read on. Then write one sentence in your notes: wh
 
     **`06 Orphan work`** (Work items and direct links): top level `Work Item Type` `=` `User Story`, `Area Path` `Under` `HarborPoint\Digital\Mobile Banking`, `Iteration Path` `=` `@CurrentIteration` (team `Mobile Banking`); linked work items `Work Item Type` `=` `Feature`; **Filter options** **Only return items that do not have matching links**; **Types of links** **Return selected link types** with only **Parent** ticked. **Expected:** 5 stories.
 
-<!-- VERIFY: exact wording "Only return items that do not have matching links" / "Return selected link types". -->
-
 !!! reef "Reef ahead: the right query on the wrong page"
     Your tile says **8**, in red. On a page titled *Digital Banking*, Priya reads that as "eight Digital Features are at risk". There are three. The Lab 3 query covers the **whole program**: it also catches Member Support, Branch Experience, Security and Core Platform Features. Reusing a query is smart. Reusing it without checking its **scope** against the page it lands on is how dashboards start lying. Every widget inherits the scope of its query or its team, and the dashboard title promises a scope too. They have to match.
 
@@ -192,9 +188,7 @@ Fix it without breaking Lab 3:
 
 A count says *how many*. Priya's next question is always *which ones*.
 
-6. **Add Widget** › `Query Results` › **Add**. **Configure**: **Title** `Digital Features at risk`, **Query** `CC - Digital Features at risk`, wide enough to show columns `Title`, `State`, `Target Date`, `Node Name`, `Risk`, `Tags`. Columns come from the saved query, so set them in **Column options** on the query and **Save** it if they're missing.
-
-<!-- VERIFY: whether the Query Results widget config offers its own column selection or always uses the saved query's columns. -->
+6. **Add Widget** › `Query Results` › **Add**. **Configure**: **Title** `Digital Features at risk`, **Query** `CC - Digital Features at risk`, **Width** `4`. Under **Display Columns**, move `Title`, `State`, `Target Date`, `NodeName`, `Risk` and `Tags` into **Selected columns** and drop `ID`. The widget can only offer columns the saved query already has, so add any that are missing in **Column options** on the query and **Save** it first.
 
 Read the three rows. `Spending Insights` is here because its Target Date is close, and it's 88% done. `Mobile Check Deposit 2.0` is due this sprint at 61%. `Real-Time Fraud Alerts` is 4% done. One tile, three very different conversations. That's why a risk count should always sit next to the list behind it.
 
@@ -221,9 +215,7 @@ Read the three rows. `Spending Insights` is here because its Target Date is clos
 
 8. Tile rules: for bugs, amber `>=` `1`, red `>=` `10`. For blocked, red `>=` `1` (a blocked item is a request for help, and one is enough).
 
-**You should see** at least **18** open P1/P2 bugs, and 18 of them are Mobile Banking's (4 Priority 1, 14 Priority 2). Add `Node Name` as a column to check. **Blocked** shows **1**: Mobile Banking's `Member confirms or denies a flagged transaction`, waiting on Security's API. You'll pull that thread in [Lab 7](lab-07-cross-team-bottleneck.md).
-
-<!-- VERIFY: count of Digital Accounts open bugs at Priority 1-2 in the seeded data (World Bible gives DA 4 open bugs but no priority split), and that no other open Digital item carries the blocked tag. -->
+**You should see** **18** open P1/P2 bugs, every one of them Mobile Banking's (4 Priority 1, 14 Priority 2). Digital Accounts has none. Add `Node Name` as a column to check. **Blocked** shows **1**: Mobile Banking's `Member confirms or denies a flagged transaction`, waiting on Security's API. You'll pull that thread in [Lab 7](lab-07-cross-team-bottleneck.md).
 
 ### 3d. The alignment tile
 
@@ -263,9 +255,13 @@ Read the three rows. `Spending Insights` is here because its Target Date is clos
         MODE (DoesNotContain)
         ```
 
-<!-- VERIFY: that the Query Tile widget accepts a Work items and direct links query and counts top-level rows (6). If it doesn't, use a Query Results widget for the same query and note the count in its title. -->
+<figure class="hp-shot" data-shot="lab05-query-tile-config" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Digital Command Center › Edit › Query Tile › Configuration</span></div>
 
-<!-- SHOT: lab05-query-tile-config | P## - Digital Command Center in edit mode, Configuration panel of the "Orphan stories this sprint" Query Tile showing the query path and two conditional formatting rules | crop: config panel and the tile; highlight the conditional formatting rows -->
+![Two conditional formatting rules turn a count into a signal: amber from 1, red from 5. A count of 6 matches both, and the tile shows red. List your rules from mild to severe.](../assets/shots/lab05-query-tile-config.png){ loading=lazy }
+
+<figcaption markdown>Two **conditional formatting** rules turn a count into a signal: amber from 1, red from 5. A count of 6 matches both, and the tile shows red. List your rules from mild to severe.</figcaption>
+</figure>
 
 !!! insight "Lighthouse insight: a threshold is a policy"
     The moment a tile turns red at 10 bugs, you've made a rule: *ten urgent bugs is an emergency*. Did anyone agree to that? Put thresholds in the legend, agree them with the people who'll be judged by them, and change them deliberately. Otherwise every color is your opinion wearing a uniform.
@@ -286,11 +282,9 @@ Now the pictures: two query charts for the shape of the work, and four Analytics
 | Query (flat list) | Clauses | Chart |
 |:--|:--|:--|
 | `CC - Digital Features by State` | `Work Item Type` `=` `Feature` · `Area Path` `Under` `HarborPoint\Digital` · `State` `<>` `Removed` | **Pie**, **Group by** `State`, **Count** |
-| `CC - Current sprint stories (Digital)` | `Work Item Type` `=` `User Story` · `Area Path` `Under` `HarborPoint\Digital` · `Iteration Path` `=` `@CurrentIteration` (team `Mobile Banking`) | **Stacked bar**, `Node Name` by `State`, **Count** |
+| `CC - Current sprint stories (Digital)` | `Work Item Type` `=` `User Story` · `Area Path` `Under` `HarborPoint\Digital` · `Iteration Path` `=` `@CurrentIteration` (team `Mobile Banking`) | **Stacked bar**, **Y-axis** `Node Name`, **Group by** `State`, **Count** |
 
 Add `Node Name`, `State`, `Story Points`, `Parent` and `Tags` as columns on both queries before saving. Charts can only group by fields that are in the query.
-
-<!-- VERIFY: Stacked bar axis labels in the Chart for Work Items config (e.g., "Y-axis" / "Group by" and "Stacked by"). -->
 
 **You should see:**
 
@@ -301,19 +295,23 @@ The **Chart for Work Items** widget can also **Group by** `Tags`, which the Quer
 
 ### 4b. Delivery and flow, one team at a time
 
-10. Add these four Analytics widgets. For every one, set **Team** first, then put the team's name in the **Title**.
+10. Add these four Analytics widgets. Each one arrives set to the project's default team, `HarborPoint Team`, and draws a plausible chart for it. For every one, set **Team** first, then put the team's name in the **Title**. (In the **Team** box, select the text, type `Mobile Banking` and press **Enter**.)
 
 | Widget | Title | Key settings |
 |:--|:--|:--|
 | **Velocity** | `Velocity · Mobile Banking` | **Team** `Mobile Banking` · **Work items** **Backlog** `Stories` · **Velocity** **Sum** of `Story Points` · **Number of Iterations** `6` · tick **Display planned work for iterations** |
 | **Velocity** | `Velocity · Digital Accounts` | Same, with **Team** `Digital Accounts` |
 | **Sprint Burndown** | `Sprint 14 burndown · Mobile Banking` | **Team** `Mobile Banking` · **Backlogs and work items** `Stories` · **Burndown On** **Sum** of `Story Points` · **Select Iteration** `@CurrentIteration` · tick **Show total scope** |
-| **Cumulative Flow Diagram (CFD)** | `Flow · Mobile Banking` | **Team** `Mobile Banking` · **Backlog** `Stories` · **Time period** **Rolling period** reaching back to Sprint 9 (about `90` days) |
-| **Cycle Time** | `Cycle time · Mobile Banking` | **Team** `Mobile Banking` · **Work items** **Work item type** `User Story` · **Rolling period** about `90` days |
+| **Cumulative Flow Diagram (CFD)** | `Flow · Mobile Banking` | **Team** `Mobile Banking` · **Backlog** `Stories` · **Time period** **Rolling period (days)** `80`, which reaches back to the start of Sprint 9 |
+| **Cycle Time** | `Cycle time · Mobile Banking` | **Team** `Mobile Banking` · **Work items** **Work item type** `User Story` · **Rolling period (days)** `80` |
 
-<!-- VERIFY: maximum rolling period accepted by the CFD widget and the Cycle Time widget (the in-context CFD allows 14-180 days); which team the Team selector defaults to on a project dashboard. -->
+<figure class="hp-shot" data-shot="lab05-velocity-config" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Digital Command Center › Edit › Velocity › Configuration</span></div>
 
-<!-- SHOT: lab05-velocity-config | Configuration panel of the Velocity widget on P## - Digital Command Center: Team = Mobile Banking, Backlog Stories, Sum of Story Points, 6 iterations, Display planned work ticked | crop: config panel; highlight the Team selector -->
+![Team is the field that matters most, and the widget never shows it unless you put it in the title. Set Team first, then name the widget after it.](../assets/shots/lab05-velocity-config.png){ loading=lazy }
+
+<figcaption markdown>**Team** is the field that matters most, and the widget never shows it unless you put it in the title. Set Team first, then name the widget after it.</figcaption>
+</figure>
 
 **You should see:**
 
@@ -348,7 +346,13 @@ Drag widgets into a reading order (edit mode only). People read a dashboard like
 
 Top row: *is anything on fire?* Second row: *where are the Features?* Below the fold: the diagnostics you use when the top rows say something's wrong.
 
-<!-- SHOT: lab05-command-center-full | P## - Digital Command Center, view mode, all widgets laid out as in the layout table; tiles showing 3 / 18+ / 1 / 6 | full page; highlight the top row -->
+<figure class="hp-shot" data-shot="lab05-command-center-full" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Digital Command Center</span></div>
+
+![Top row: is anything on fire? Second row: where are the Features? Below: the diagnostics. Every team-scoped widget names its team in the title, and the tiles read 3 / 18 / 1 / 6.](../assets/shots/lab05-command-center-full.png){ loading=lazy }
+
+<figcaption markdown>Top row: *is anything on fire?* Second row: *where are the Features?* Below: the diagnostics. Every team-scoped widget names its team in the title, and the tiles read **3 / 18 / 1 / 6**.</figcaption>
+</figure>
 
 ## Part 5 — Cut it down for executives
 
@@ -361,11 +365,11 @@ You now have about fourteen widgets. You need every one of them on a bad Tuesday
     Ask of each widget: *does an executive make a decision from this, or does a team?* Executives decide about **outcomes, dates, risks and trade-offs**. Teams decide about sprints, flow and estimates.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    Don't use **Copy Dashboard** for this. It duplicates every query into a new Shared Queries folder, and you'll end up maintaining two copies of everything. Instead, create an empty project dashboard, then use each kept widget's **⋯** › **Copy to Dashboard**. The copies point at the same queries, so fixing a query fixes both pages.
+    Don't use **Copy Dashboard** for this. It duplicates every query into a new Shared Queries folder, and you'll end up maintaining two copies of everything. Instead, create an empty project dashboard, then use each kept widget's **More actions** (**⋯**, top right of the widget when you hover in normal view, not edit mode) › **Copy to Dashboard**. The copies point at the same queries, so fixing a query fixes both pages.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     1. **Overview › Dashboards** › **+ New Dashboard** › **Name** `P## - Digital Banking Exec View`, **Project Dashboard**, auto-refresh on. **Create**.
-    2. Back on the Command Center, select **Edit**, then for each kept widget: **⋯** › **Copy to Dashboard** › `P## - Digital Banking Exec View`.
+    2. Back on the Command Center, **in normal view (not Edit)**, hover each kept widget and select **More actions** (**⋯**) › **Copy to Dashboard**. Type `Exec View` in the search box, pick `P## - Digital Banking Exec View` and select **OK**. A message confirms the copy. Copies land at the end of the target dashboard; arrange them there in **Edit** mode.
     3. On the Exec View, rewrite the Markdown header as a bottom line, for example: *"Digital Banking, Sprint 14. Mobile Check Deposit 2.0 will miss this sprint; Real-Time Fraud Alerts is at risk for PI 4 (Security dependency). Decision needed: see risks below. Owner P##."*
 
     **A model cut (six):**
@@ -389,9 +393,13 @@ You now have about fourteen widgets. You need every one of them on a bad Tuesday
 
     Reasonable people swap the orphan tile for a link to your status report, or the pie for a Features list sorted by Target Date. What you can't do is keep the diagnostics "just in case". Every extra widget makes the important ones harder to find.
 
-<!-- VERIFY: Copy to Dashboard keeps the widget's query binding (not a copied query) when copying between project dashboards. -->
+<figure class="hp-shot" data-shot="lab05-exec-view" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Digital Banking Exec View</span></div>
 
-<!-- SHOT: lab05-exec-view | P## - Digital Banking Exec View, view mode, six widgets: bottom-line Markdown header, Digital Features at risk list, Features by State pie, three tiles | full page -->
+![Six widgets, and the most important one is words: a bottom line and the decision needed. Everything else is evidence for that sentence.](../assets/shots/lab05-exec-view.png){ loading=lazy }
+
+<figcaption markdown>Six widgets, and the most important one is words: a **bottom line** and the **decision needed**. Everything else is evidence for that sentence.</figcaption>
+</figure>
 
 !!! insight "Lighthouse insight: managers need diagnostics; executives need decisions"
     A manager's dashboard is a cockpit: dense, diagnostic, read daily by someone who knows what every gauge means. An executive's dashboard is a windscreen: few things, big, and each one tied to a decision. The most useful widget on an exec view is often the Markdown header, because it's the only one where *you* say what the numbers mean. A chart can't tell Dana "this will miss and here's the choice". You can.
@@ -408,8 +416,6 @@ A dashboard is a promise that someone is keeping it true. Make that promise expl
 11. **Who can edit:** **Overview › Dashboards**, hover your Command Center row, **⋮** › **Security**. As creator you hold **Edit dashboard**, **Delete dashboard** and **Manage Permissions**. Everyone in the project can already *view* it. Close the dialog without changing anything, unless you want to name a co-owner.
 12. **Freshness:** confirm auto-refresh is on (**⋯** › **Dashboard settings**). Analytics widgets lag edits by up to about 30 seconds, and trend widgets use daily snapshots, so "live" means "a few minutes old", which is fine for a manager.
 13. **Ownership and cadence:** your header already names an owner and a review sprint. Add one line: `Reviewed every Monday before stand-up; thresholds agreed with Diego and Grace.` (Write what's true for you.)
-
-<!-- VERIFY: the entry point for dashboard settings (⋯ › Dashboard settings vs a gear icon) and that it shows the auto-refresh checkbox. -->
 
 !!! reef "Reef ahead: the dashboard nobody owns"
     In [Lab 11](../day-3/lab-11-dashboard-wrong.md) you'll meet Leo's Member Support dashboard. It still shows last sprint as "current", and a director believes her team has collapsed. Nobody did anything wrong on purpose. The page just drifted while everyone kept trusting it. A stale dashboard is **worse than no dashboard**, because no dashboard makes people ask, and a stale one answers them wrongly. Name an owner, put the review date on the page, and delete widgets you stop maintaining.
@@ -504,7 +510,7 @@ A sprint burndown is a team's daily steering tool. It changes every day and lead
     2. **A release burnup.** Add a **Burnup** widget for **Teams** `Mobile Banking` and `Digital Accounts`, **Work items** backlog `Stories`, **Sum** of `Story Points`, plotted by **Iteration** from Sprint 13 to Sprint 16, with **Show total scope** on. Does the scope line climb faster than the completed line? What would you say about PI 4 if it did?
     3. **Critique the program's front window.** Open `HarborPoint Program Overview` (**Overview › Dashboards**) beside your Command Center, with your Lab 1 notes if you made them. Apply today's tests to it: which question does each widget answer, does every team-scoped widget name its team, and does every widget's scope match the page title? Name one widget you'd remove and one you'd add.
 
-<!-- VERIFY: Extra knot 1 assumes Group by Tags is generally available in the Chart for Work Items widget (Learn notes a possible preview toggle); Extra knot 2 assumes the Burnup widget's Iteration plot interval accepts Sprint 13 to Sprint 16. -->
+<!-- VERIFY: Extra knot 2 assumes the Burnup widget's Iteration plot interval accepts Sprint 13 to Sprint 16. -->
 
 ## Key takeaways
 
