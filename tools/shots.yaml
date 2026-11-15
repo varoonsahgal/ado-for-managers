@@ -220,3 +220,19 @@ lab11-watchlist:
 lab11-sandbox-health:
   bar: "Overview › Dashboards › P## - Sandbox Health"
   caption: "Before and after, on one page. **Open P1 bugs** turns red at 2 because the bugs now live where the query looks. **Completed last sprint** says 4 (13 points), where Leo's report said 2. The burndown is on **Sprint 14**. **Open work** reads 36 because the tile counts your Lab 9 and Lab 10 stories too; the Lab 11 rows are the 10 in the table."
+
+lab12-pi5-candidates:
+  bar: "Boards › Queries › Shared Queries › Training › P## › PI 5 Outlook › PI 5 candidates"
+  caption: "Ten Features land in PI 5, and three carry `PI4-Committed`: promises for PI 4 that have slid into Sprint 17. The bottom row has the joint-highest Business Value and **no Effort at all**. You can't forecast what nobody has sized."
+
+lab12-crew-dashboard:
+  bar: "Overview › Dashboards › P## - PI 5 Outlook (one reference crew's answer)"
+  caption: "Eight widgets, one argument. The bottom line and the four questions come first, the Mobile Banking evidence is on the right (12 stories a sprint by count; open bugs from 9 to 42), and the decisions sit at the bottom, each with a name and a sprint. Yours can look different. It should be just as easy to read cold."
+
+lab12-pulse-survey:
+  bar: "Overview › Wiki › Research › Member Pulse Survey Q3"
+  caption: "Three findings, and they pull in different directions: **+28%** branch demand from members 55+, **71%** naming fraud their top worry in *every* segment, and digital-only onboarding at **2.9 / 5**. Hector's request sits underneath. Read all three before you pick a side."
+
+lab12-dashboard-security:
+  bar: "Overview › Dashboards › ⋮ › Security (P## - PI 5 Outlook)"
+  caption: "Search for a crewmate (or, as here, a group), select them, and set **Edit dashboard** to **Allow**. The green tick means it's saved: there's no Save button."

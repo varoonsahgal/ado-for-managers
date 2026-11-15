@@ -45,13 +45,18 @@ Executive Committee in 150 minutes. Give me a **realistic outlook for PI 5** and
 
 **Host setup (5 minutes, before the clock starts):**
 
-1. Create the project dashboard `P## - PI 5 Outlook` (**Overview › Dashboards** › **New Dashboard**, type **Project Dashboard**). Or copy your Lab 8 dashboard `P## - METP Executive Status` with **⋯** › **+ Copy Dashboard**, and point its queries at a new folder.
-2. Give your crew edit rights: in the dashboard directory, open the dashboard row's **⋮** › **Security**, search for each crewmate, and set **Edit dashboard** to **Allow**. Close and reopen the dialog to check.
-3. Create the query folder `Shared Queries/Training/P##/PI 5 Outlook`.
+1. Create the project dashboard `P## - PI 5 Outlook` (**Overview › Dashboards** › **New Dashboard**, type **Project Dashboard**). Or copy your Lab 8 dashboard `P## - METP Executive Status` with **⋮** › **Copy Dashboard**, and point its queries at a new folder.
+2. Give your crew edit rights: in the dashboard directory, open the dashboard row's **⋮** › **Security**, search for each crewmate, select them, and set **Edit dashboard** to **Allow**. It saves the moment you choose, with a green tick and no Save button. Close and reopen the dialog to check.
+3. Create the query folder `Shared Queries/Training/P##/PI 5 Outlook`. Every participant can save into it: Contribute on `Shared Queries/Training` flows down to every folder beneath.
 4. Create the wiki page `/Training/P##/PI 5 Outlook` from `/Templates/Executive Briefing (BLUF)`. Any Contributor can edit wiki pages, so the whole crew can write in it.
 
-<!-- VERIFY: crewmates can save queries into another participant's Shared Queries/Training/P## folder (Contribute is granted on Shared Queries/Training and should inherit). If not, crewmates save in their own folder and the host adds widgets from there. -->
-<!-- SHOT: lab12-dashboard-security | Dashboards directory, ⋮ › Security on P## - PI 5 Outlook, a crewmate added with Edit dashboard = Allow | crop: the permissions dialog; highlight the Edit dashboard row -->
+<figure class="hp-shot" data-shot="lab12-dashboard-security" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › ⋮ › Security (P## - PI 5 Outlook)</span></div>
+
+![Search for a crewmate (or, as here, a group), select them, and set Edit dashboard to Allow. The green tick means it's saved: there's no Save button.](../assets/shots/lab12-dashboard-security.png){ loading=lazy }
+
+<figcaption markdown>Search for a crewmate (or, as here, a group), select them, and set **Edit dashboard** to **Allow**. The green tick means it's saved: there's no Save button.</figcaption>
+</figure>
 
 **Suggested crew roles.** Combine roles in a crew of three. Everyone investigates in Phase 1.
 
@@ -128,7 +133,13 @@ Turn six concerns into six evidence-backed findings, at Feature altitude.
     - **Committed outcomes:** `/Program/PI 4 Objectives`.
     - For the risk nobody named, look at the portfolio's *shape* (rank, empty Features, data you proved wrong yesterday), not at a single team.
 
-<!-- SHOT: lab12-pulse-survey | Overview › Wiki › Research › Member Pulse Survey Q3, the headline findings table | crop: findings; highlight +28% branch-appointment demand (55+), 71% fraud worry, 2.9/5 digital-only onboarding -->
+<figure class="hp-shot" data-shot="lab12-pulse-survey" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Wiki › Research › Member Pulse Survey Q3</span></div>
+
+![Three findings, and they pull in different directions: +28% branch demand from members 55+, 71% naming fraud their top worry in every segment, and digital-only onboarding at 2.9 / 5. Hector's request sits underneath. Read all three before you pick a side.](../assets/shots/lab12-pulse-survey.png){ loading=lazy }
+
+<figcaption markdown>Three findings, and they pull in different directions: **+28%** branch demand from members 55+, **71%** naming fraud their top worry in *every* segment, and digital-only onboarding at **2.9 / 5**. Hector's request sits underneath. Read all three before you pick a side.</figcaption>
+</figure>
 
 !!! checkpoint "Minimum evidence"
     - [ ] Every concern on our board names at least one Feature or team **and** a number with its source
@@ -162,12 +173,23 @@ The evidence board says *what*. Now decide which numbers you'll build a forecast
 
     **Columns:** `Title`, `Node Name`, `State`, `Target Date`, `Business Value`, `Time Criticality`, `Effort`, `Risk`, `Tags`. Sort by `Target Date`.
 
-    Expect eight Features. If Fraud Scoring Engine v2's Iteration Path moved with its Target Date, you'll see nine. The sandbox fence keeps your crew's practice copies out.
+    Expect **ten** Features, and read them closely, because they're not all "new" work:
+
+    - **Six of the seven candidates.** Real-Time Fraud Alerts isn't there: its Iteration Path is still PI 4. Its spill is exactly the kind of work question 2 is asking about.
+    - **Two mandatory compliance Features** (`Audit Evidence Automation`, `Access Review Automation`): Security's exam work, already spoken for.
+    - **Two PI 4 commitments whose Target Date slid into Sprint 17**: `Fraud Scoring Engine v2` (7 of its points sit in Sprint 17) and `Secure Messaging & Chat`. Check their `PI4-Committed` tag: work promised for PI 4 is quietly landing in PI 5.
+
+    The sandbox fence keeps your crew's practice copies out.
 
     For throughput, open **Velocity** in each team's **Backlogs › Analytics**, and switch Mobile Banking's to **Count of Work Items**. For Member Support, use the corrected history from your Lab 11 defect log, not the chart.
 
-<!-- VERIFY: whether Fraud Scoring Engine v2's Iteration Path is PI 4 or PI 5 after Aisha's re-plan (see Lab 7 VERIFY a). The hint wording covers both. -->
-<!-- SHOT: lab12-pi5-candidates | Boards › Queries › Shared Queries/Training/P##/PI 5 Outlook/PI 5 candidates, Results tab with Business Value, Time Criticality, Effort and Tags columns | crop: results grid; highlight Member-to-Member Transfers with an empty Effort -->
+<figure class="hp-shot" data-shot="lab12-pi5-candidates" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › PI 5 Outlook › PI 5 candidates</span></div>
+
+![Ten Features land in PI 5, and three carry PI4-Committed: promises for PI 4 that have slid into Sprint 17. The bottom row has the joint-highest Business Value and no Effort at all. You can't forecast what nobody has sized.](../assets/shots/lab12-pi5-candidates.png){ loading=lazy }
+
+<figcaption markdown>Ten Features land in PI 5, and three carry `PI4-Committed`: promises for PI 4 that have slid into Sprint 17. The bottom row has the joint-highest Business Value and **no Effort at all**. You can't forecast what nobody has sized.</figcaption>
+</figure>
 
 !!! checkpoint "Minimum evidence"
     - [ ] `PI 5 candidates` is saved in our crew folder and shows Business Value, Time Criticality and Effort
@@ -203,7 +225,13 @@ Build the dashboard you'll put on the screen in the Executive Committee. It shou
 
     Team-scoped widgets need the right **Team** in their configuration. A wrong team is the most common capstone defect.
 
-<!-- SHOT: lab12-crew-dashboard | Overview › Dashboards › P## - PI 5 Outlook, a complete reference crew dashboard (BLUF Markdown, tiles, PI 5 candidates list and chart, Mobile Velocity by count, bug trend, decisions panel) | full dashboard; no highlight -->
+<figure class="hp-shot" data-shot="lab12-crew-dashboard" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - PI 5 Outlook (one reference crew&#x27;s answer)</span></div>
+
+![Eight widgets, one argument. The bottom line and the four questions come first, the Mobile Banking evidence is on the right (12 stories a sprint by count; open bugs from 9 to 42), and the decisions sit at the bottom, each with a name and a sprint. Yours can look different. It should be just as easy to read cold.](../assets/shots/lab12-crew-dashboard.png){ loading=lazy }
+
+<figcaption markdown>Eight widgets, one argument. The bottom line and the four questions come first, the Mobile Banking evidence is on the right (12 stories a sprint by count; open bugs from 9 to 42), and the decisions sit at the bottom, each with a name and a sprint. Yours can look different. It should be just as easy to read cold.</figcaption>
+</figure>
 
 !!! checkpoint "Minimum evidence"
     - [ ] `P## - PI 5 Outlook` has 8 widgets or fewer, and a Markdown widget states the four questions it answers
