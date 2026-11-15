@@ -51,7 +51,7 @@ Start wide. Before you explain one team, know what all six are doing.
     You don't need six sprint boards. There's a shared query that already lists the current sprint for every team. It just doesn't show the one column you need.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    Open **Boards › Queries** › **All** › `Shared Queries/HarborPoint Reports/Program - Current sprint (all teams)`. **Column options**: add `Parent`, `Node Name` and `Story Points`. Use the results **Filter** to show only **User Story** under **Work Item Types**. Sort by `Node Name`: you can't sort by Parent, but within each team the parent titles are easy to scan. Don't save over the shared query.
+    Open **Boards › Queries** › **All** › `Shared Queries/HarborPoint Reports/Program - Current sprint (all teams)`. **Column options**: add `Parent` and `Node Name` (`Story Points` is already there). The query returns user stories only, already sorted by **Area Path**, so each team's rows sit together and the parent titles are easy to scan. Don't **Save** over the shared query.
 
     The slower route: **Boards › Sprints**, pick each team, `Sprint 14`, **Backlog** tab, **Column Options** › add `Parent`.
 
@@ -71,7 +71,13 @@ Start wide. Before you explain one team, know what all six are doing.
     - **Real-Time Fraud Alerts appears twice**, in Mobile Banking and Core Platform, but has no Security story this sprint, though Security owns part of it.
     - **Member Support has `Service request status tracker` twice**: one Active, one New and unassigned. That's a duplicate, and it double-counts scope. (Day 3 has a whole lab on Member Support's data.)
 
-<!-- SHOT: lab02-current-sprint-by-feature | Boards › Queries › Shared Queries/HarborPoint Reports/Program - Current sprint (all teams), Results tab, columns Parent, Node Name, Story Points added, filter Work Item Types = User Story, sorted by Node Name | crop: the Mobile Banking rows; highlight the rows with an empty Parent cell -->
+<figure class="hp-shot" data-shot="lab02-current-sprint-by-feature" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › HarborPoint Reports › Program - Current sprint (all teams)</span></div>
+
+![Mobile Banking's Sprint 14, with Parent added. Five stories (12 points) have no Feature at all: two unplanned asks, two tech-debt upgrades and a polish task.](../assets/shots/lab02-current-sprint-by-feature.png){ loading=lazy }
+
+<figcaption markdown>Mobile Banking's Sprint 14, with **Parent** added. Five stories (12 points) have no Feature at all: two `unplanned` asks, two `tech-debt` upgrades and a polish task.</figcaption>
+</figure>
 
 !!! checkpoint "Checkpoint"
     - [ ] I have one line per team: its Sprint 14 Features and its unaligned work
@@ -159,7 +165,13 @@ Now the question Dana actually asked. Look at Mobile Banking through its Feature
 
     **So what?** The miss isn't news to the team, but it is news to the portfolio: the Feature is still due this sprint, still `PI4-Committed`, and the only warning is a tag. The manager's move is to re-forecast **now**, and offer Priya a choice: move the Target Date, or ship what's done and split the three Sprint 15 stories into a follow-up.
 
-<!-- SHOT: lab02-f2-children-iterations | Boards › Backlogs, team Mobile Banking, Features level, Mobile Check Deposit 2.0 expanded, columns Iteration Path, State, Assigned To, Story Points | crop: the expanded children; highlight the three Sprint 15 stories and the two unassigned or New stories in Sprint 14 -->
+<figure class="hp-shot" data-shot="lab02-f2-children-iterations" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Mobile Banking › Features › Mobile Check Deposit 2.0 expanded</span></div>
+
+![The team's own plan already says no: 14 points sit in Sprint 15, after the Feature's due date. In Sprint 14, one story has no owner, two haven't started, and the Priority 1 bug at the bottom has no one assigned.](../assets/shots/lab02-f2-children-iterations.png){ loading=lazy }
+
+<figcaption markdown>The team's own plan already says *no*: **14 points sit in Sprint 15**, after the Feature's due date. In Sprint 14, one story has no owner, two haven't started, and the Priority 1 bug at the bottom has no one assigned.</figcaption>
+</figure>
 
 **The other two in-flight Features, in one line each:**
 
@@ -275,7 +287,13 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
 
     Columns: `Severity`, `Priority`, `State`. **42** open bugs: 3 Critical, 11 High. **30** of the 42 are still New. Five sprints ago, at the start of Sprint 9, the number was 8. You'll chart that climb in [Lab 4](lab-04-sprint-delivery-report.md).
 
-<!-- SHOT: lab02-stale-query | Boards › Queries › My Queries › Scratch - stale work, Editor and Results, clauses Area Path Under HarborPoint\Digital\Mobile Banking, State = Active, Changed Date < @Today - 7 | crop: clause grid plus the two result rows; highlight Changed Date and Assigned To -->
+<figure class="hp-shot" data-shot="lab02-stale-query" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › My Queries › Scratch - stale work</span></div>
+
+![Four clauses, two answers. Both stories belong to Ethan Brooks, both serve the Feature due this sprint, and neither has been touched in over a week.](../assets/shots/lab02-stale-query.png){ loading=lazy }
+
+<figcaption markdown>Four clauses, two answers. Both stories belong to Ethan Brooks, both serve the Feature due this sprint, and neither has been touched in over a week.</figcaption>
+</figure>
 
 !!! reef "Reef ahead: “Their velocity is near its highest ever, so they're fine”"
     Did your first instinct in Part 2 say Mobile is doing well? Sprint 13 velocity was 44 points, second only to Sprint 12, and up from 33 in Sprint 9. Now set signal E beside it. Of those 44 points, **23 went to work that serves no Feature**, and only 11 moved `Mobile Check Deposit 2.0`, the Feature due this sprint. Velocity measures **estimates completed**, not value delivered, and it can't tell you *what* the points were spent on. A busy team that's behind on everything that matters looks exactly like a high-velocity team, until you ask which Features moved.
@@ -302,9 +320,7 @@ It's 9:40. Priya asked for five bullets.
     No story titles unless one is the evidence. No adjectives you can't back with a view.
 
 !!! deliverable "Deliverable"
-    A wiki page `/Training/P##/Monday Readout` with your five bullets, and under them, links to your evidence: the Velocity report, the Mobile Banking Features backlog, and your six scratch queries. Open **Overview › Wiki**, find `Training`. If there's no `P##` page under it yet, create it (the page's **⋯** menu › **Add sub-page**), then add `Monday Readout` beneath it. The `/Templates/Executive Briefing (BLUF)` page shows the shape if you want a starting point.
-
-<!-- VERIFY: label of the wiki page menu action for adding a sub-page ("Add sub-page"), and whether /Training/P## pages are pre-created by provisioning. -->
+    A wiki page `/Training/P##/Monday Readout` with your five bullets, and under them, links to your evidence: the Velocity report, the Mobile Banking Features backlog, and your six scratch queries. Open **Overview › Wiki** and find `Training`. Your `P##` page doesn't exist yet: hover over `Training`, open its **⋯** menu, choose **Add sub-page**, name it `P##` and save. Then add `Monday Readout` beneath it the same way. The `/Templates/Executive Briefing (BLUF)` page shows the shape if you want a starting point.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
     BLUF means the reader can stop after any bullet and still have the most important thing. Ask yourself what Priya will repeat to Dana in one breath. That's bullet 1.

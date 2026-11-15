@@ -140,12 +140,20 @@ Some labs ask you to add tags to items in your sandbox. The lab names the tag.
 |:--|:--|:--|
 | `Shared Queries/HarborPoint Reports/` | **Portfolio - Epics and Features** | Tree of Epics and their Features |
 | | **Portfolio - Features by target date** | Flat list of Features, sorted by Target Date |
-| | **Program - Current sprint (all teams)** | Stories and bugs in the current sprint across the program |
+| | **Portfolio - Features due in next 3 weeks** | Open Features whose Target Date falls in the next 21 days |
+| | **Program - Current sprint (all teams)** | Every team's user stories in the current sprint, grouped by area |
 | | **Program - Open bugs** | Open bugs with Area, Priority and Severity |
+| | **Program - Open P1 bugs** | The Priority 1 subset, for the "what's on fire" question |
 | `Shared Queries/PMO Reporting/` | Member Support reporting queries | Maintained by Leo Fischer. They feed the Member Support dashboard. You'll meet them on Day 3 |
 | `Shared Queries/Training/` | your `P##` folder | Where you save every shared query you build |
 
-<!-- SHOT: start-env-shared-queries | Boards › Queries › All tab, Shared Queries expanded to show HarborPoint Reports (4 queries), PMO Reporting and Training › P## | crop: folder tree; highlight Training › P## -->
+<figure class="hp-shot" data-shot="start-env-shared-queries" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › All</span></div>
+
+![Shared Queries holds three folders: HarborPoint Reports (ready-made program views), PMO Reporting (Leo's queries, which you'll audit on Day 3) and Training, where your P## folder lives.](../assets/shots/start-env-shared-queries.png){ loading=lazy }
+
+<figcaption markdown>Shared Queries holds three folders: **HarborPoint Reports** (ready-made program views), **PMO Reporting** (Leo's queries, which you'll audit on Day 3) and **Training**, where your `P##` folder lives.</figcaption>
+</figure>
 
 ### Dashboards (**Overview › Dashboards**)
 

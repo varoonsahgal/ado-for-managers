@@ -35,9 +35,7 @@ Thirty years, and every Monday somebody asks me the same five questions. What's 
 ## Before you set sail
 
 - **Access:** Basic. Contribute is already granted on `Shared Queries/Training`, so you can save shared queries there and nowhere else in **Shared Queries**.
-- **Find (or create) your folder (2 minutes):** **Boards › Queries**, **All** tab, expand `Shared Queries/Training`. Your instructor may have pre-created `P##` (it already holds a `Lab 11 - Inherited queries` sub-folder you'll use on Day 3). If it isn't there, select **New folder**, **Name** `P##`, **Folder** `Shared Queries/Training`. Every query in this lab goes there. (Your Day 2 dashboards reuse them, and the capstone on Day 3 does too.)
-
-    <!-- VERIFY: where "New folder" sits in New Boards Hub (toolbar on the All tab vs the More actions menu of the Training folder). -->
+- **Find (or create) your folder (2 minutes):** **Boards › Queries**, **All** tab, expand `Shared Queries/Training`. Your instructor may have pre-created `P##` (it already holds a `Lab 11 - Inherited queries` sub-folder you'll use on Day 3). If it isn't there, select **New folder** in the toolbar, enter the **Name** `P##`, and pick `Shared Queries/Training` as its location. Every query in this lab goes there. (Your Day 2 dashboards reuse them, and the capstone on Day 3 does too.)
 
 - **Read-only:** queries are views, so nothing you build changes anyone's work. Never bulk-edit from results in this lab.
 - **The sandbox fence:** thirty participant sandboxes under `HarborPoint\Training` hold copies of real Features. Every project-wide Feature query needs `Area Path` `Not Under` `HarborPoint\Training`, or your portfolio fills up with your classmates' homework.
@@ -60,9 +58,7 @@ You did this by eye in Lab 2. Now make it a question anyone can rerun.
     **Tree of work items**. Top level: Features. Linked items: User Stories in Mobile Banking's area, with `Iteration Path` `=` `@CurrentIteration` set to the **Mobile Banking** team. In the tree options choose **Match linked work items first**, so you start from the sprint's stories and climb to their Features, instead of listing every Feature in the project.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    1. **Boards › Queries** › **New** › **New query**. Set **Type of query** to **Tree of work items**, type of tree **Parent/Child**, and select **Match linked work items first**.
-
-        <!-- VERIFY: labels "Type of query" vs "Query type", "Type of tree", and the option text "Match linked work items first" in New Boards Hub. -->
+    1. **Boards › Queries** › **New** › **New query**. Set **Query type** to **Tree of work items**. Below the clause grids, set **Filter options** to **Match linked work items first** and leave **Type of tree** at **Parent/Child**.
 
     2. **Filters for top level work items**:
 
@@ -78,9 +74,7 @@ You did this by eye in Lab 2. Now make it a question anyone can rerun.
         | And | Area Path | Under | `HarborPoint\Digital\Mobile Banking` |
         | And | Iteration Path | = | `@CurrentIteration` · team `Mobile Banking` |
 
-        When you pick `@CurrentIteration`, the editor adds a team parameter from your current team context. Change it to **Mobile Banking**.
-
-        <!-- VERIFY: where the @CurrentIteration team parameter appears in New Boards Hub (beside or below the value) and how to change it. -->
+        When you pick `@CurrentIteration`, a second box appears directly beneath the value, holding a team such as `[HarborPoint]\Mobile Banking`. It starts with your current team context. Open it and choose **Mobile Banking**.
 
     4. **Column options**: `Title`, `State`, `Assigned To`, `Story Points`, `Tags`. **Run query**, then **Expand all**.
     5. **Save** as `01 What is my team working on (by Feature)` in `Shared Queries/Training/P##`.
@@ -101,13 +95,17 @@ You did this by eye in Lab 2. Now make it a question anyone can rerun.
         ```
         The saved form also carries the team's ID inside the `@currentIteration(...)` parameter. Tree queries ignore `ORDER BY`.
 
-<!-- SHOT: lab03-q1-tree | Boards › Queries › Shared Queries/Training/P##/01 What is my team working on (by Feature), Results tab, Expand all | crop: results grid; highlight the three Feature rows (Mobile Check Deposit 2.0, Biometric Login, Real-Time Fraud Alerts) -->
+<figure class="hp-shot" data-shot="lab03-q1-tree" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › 01 What is my team working on (by Feature)</span></div>
 
-**Now count.** Mobile Banking's Sprint 14 holds **19** stories. Your tree shows 14. Where are the other five?
+![Three Features with 14 stories nested beneath them, and then five stories hanging loose at the bottom, with no Feature above them. That's 12 points of this sprint serving no part of the portfolio.](../assets/shots/lab03-q1-tree.png){ loading=lazy }
 
-They're stories with **no parent Feature**, and a Parent/Child tree can't show a child with no parent. Twelve points of this sprint's work are invisible in the view most managers use to report progress. Keep that in mind. You'll hunt them down in Part 5.
+<figcaption markdown>Three Features with 14 stories nested beneath them, and then **five stories hanging loose at the bottom**, with no Feature above them. That's 12 points of this sprint serving no part of the portfolio.</figcaption>
+</figure>
 
-<!-- VERIFY: that with "Match linked work items first", unparented stories matching the linked filter do not appear at all (expected), rather than as loose top-level rows. -->
+**Now count.** Mobile Banking's Sprint 14 holds **19** stories. Three Features hold 14 of them. Now scroll to the bottom of the results: **five stories hang loose**, flush left, with no Feature above them. *Match linked work items first* starts from every story that matches and then climbs to its parent; these five have no parent to climb to.
+
+That's 12 points of this sprint serving no part of the portfolio. In this tree you can at least see them, dangling at the bottom where nobody looks. In a Feature rollup or a progress report they don't exist at all. Keep them in mind: you'll hunt them down properly in Part 5.
 
 !!! reef "Reef ahead: `@CurrentIteration` picks a sprint, not a team"
     HarborPoint's teams all share one set of sprints (`HarborPoint\PI 4\Sprint 14` and so on). The team parameter only tells Azure DevOps *whose calendar* to read when it works out which sprint is current. It doesn't filter to that team's work. Drop the `Area Path` clause and the same query returns all six teams' Sprint 14.
@@ -117,7 +115,7 @@ They're stories with **no parent Feature**, and a Parent/Child tree can't show a
 !!! checkpoint "Checkpoint"
     - [ ] `Shared Queries/Training/P##` exists
     - [ ] `01 What is my team working on (by Feature)` returns 3 Features and 14 stories
-    - [ ] I can explain why 5 of Mobile Banking's 19 sprint stories are missing from the tree
+    - [ ] I can explain why 5 of Mobile Banking's 19 sprint stories sit at the bottom of the tree with no Feature above them
 
 ## Part 2 — What's high priority, and what got done?
 
@@ -158,7 +156,7 @@ Add columns `Node Name`, `State`, `Target Date` and `Tags`. **Node Name** shows 
     "Last sprint" relative to now is a macro with an offset. "Both Digital teams" is one area with its children.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    `Iteration Path` `=` `@CurrentIteration - 1` with team `Mobile Banking` (the sprints are shared, so either Digital team gives the same answer), `Area Path` `Under` `HarborPoint\Digital`, `State` `=` `Closed`, `Work Item Type` `=` `User Story`. For the tree version, change **Type of query**. Those clauses move to the linked-items grid, and `Work Item Type = Feature` goes on top.
+    `Iteration Path` `=` `@CurrentIteration - 1` with team `Mobile Banking` (the sprints are shared, so either Digital team gives the same answer), `Area Path` `Under` `HarborPoint\Digital`, `State` `=` `Closed`, `Work Item Type` `=` `User Story`. For the tree version, change **Query type**. Those clauses move to the linked-items grid, and `Work Item Type = Feature` goes on top.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     **Flat version** (**Flat list of work items**):
@@ -170,15 +168,15 @@ Add columns `Node Name`, `State`, `Target Date` and `Tags`. **Node Name** shows 
     | And | State | = | `Closed` |
     | And | Iteration Path | = | `@CurrentIteration - 1` · team `Mobile Banking` |
 
+    Type the offset straight into the value box: `@CurrentIteration - 1`. The team box appears beneath it, as before.
+
     **Expected:** **22** stories. Mobile Banking closed 12 of them (44 points) and Digital Accounts closed 10 (26 points).
 
     **Tree version:** **Tree of work items**, **Match linked work items first**, top level `Work Item Type = Feature`, and the four clauses above in the linked grid. Save as `03 Completed last sprint (by Feature)`.
 
-    **Expected:** five Features with **15** stories beneath them: `Mobile Check Deposit 2.0` (3), `Biometric Login` (3), `Online Account Opening` (5), `Spending Insights` (2) and `Paperless Statements & Documents` (2). Paperless Statements is the one that **closed** in Sprint 13.
+    **Expected:** five Features with **15** stories nested beneath them, and the other **7** hanging loose at the bottom: `Mobile Check Deposit 2.0` (3), `Biometric Login` (3), `Online Account Opening` (5), `Spending Insights` (2) and `Paperless Statements & Documents` (2). Paperless Statements is the one that **closed** in Sprint 13.
 
     **The gap:** 22 − 15 = **7 orphan stories**, six of them Mobile Banking's. Those six carried 23 of Mobile's 44 points. More than half of what Mobile finished last sprint served no Feature at all.
-
-    <!-- VERIFY: how "@CurrentIteration - 1" is entered in New Boards Hub (offset typed into the value, or chosen from the macro list). -->
 
 **Judgment:** the flat list says "Digital was busy". The tree says what the work *bought*. When the flat count is much bigger than the tree count, ask what the team was doing instead.
 
@@ -240,9 +238,21 @@ This is the query leadership will actually forward, so it's the one most worth g
         ORDER BY [Microsoft.VSTS.Scheduling.TargetDate]
         ```
 
-<!-- SHOT: lab03-q4-editor | Query editor for Shared Queries/Training/P##/04 Features at risk, showing the grouped Or clauses (Target Date, Risk, Tags) with the group bracket | crop: clause grid; highlight the group bracket and the And on its first clause -->
+<figure class="hp-shot" data-shot="lab03-q4-editor" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › 04 Features at risk › Editor</span></div>
 
-<!-- SHOT: lab03-q4-results | Results of 04 Features at risk, sorted by Target Date, columns Title, State, Node Name, Target Date, Risk, Tags | crop: grid with all 8 rows; highlight Agent Knowledge Base (Active, past target) and Real-Time Fraud Alerts (Risk 1 - High, no at-risk tag) -->
+![The bracket beside Target Date marks a group: three Or alternatives joined to the rest by one And. Without it, the Or clauses leak and closed Features flood the list.](../assets/shots/lab03-q4-editor.png){ loading=lazy }
+
+<figcaption markdown>The bracket beside **Target Date** marks a group: three **Or** alternatives joined to the rest by one **And**. Without it, the Or clauses leak and closed Features flood the list.</figcaption>
+</figure>
+
+<figure class="hp-shot" data-shot="lab03-q4-results" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › 04 Features at risk › Results</span></div>
+
+![Eight Features, sorted by Target Date. Agent Knowledge Base is still Active a month past its date. Real-Time Fraud Alerts, the portfolio's top priority, is here only because someone set Risk: it has no at-risk tag.](../assets/shots/lab03-q4-results.png){ loading=lazy }
+
+<figcaption markdown>Eight Features, sorted by Target Date. `Agent Knowledge Base` is still Active a month past its date. `Real-Time Fraud Alerts`, the portfolio's top priority, is here only because someone set **Risk**: it has no `at-risk` tag.</figcaption>
+</figure>
 
 **Why +21 and not +30?** `@Today` moves every day, so a date window is a moving target. From where we are, in week 2 of Sprint 14, 21 days reaches into Sprint 16 but stops short of its last day, when five Features are due. A 30-day window crosses that line partway through this course, and the list jumps from 8 to 12 without a single Feature changing. When you pick a window, pick it on purpose, and put it in the query's name or description so readers know what "soon" means.
 
@@ -286,9 +296,7 @@ Columns: `Work Item Type`, `Title`, `State`, `Node Name`, `Iteration Path`. Sort
 
 **Read the Features first.** Three were planned for PI 3: `Mobile App Redesign` and `Online Appointment Scheduling`, both Closed, and `Agent Knowledge Base`, still **Active**. Did PI 3 deliver two Features or three? Functionally three; the record says two. Someone has to decide which number goes in the PI report, and fix the record.
 
-**Then the stories.** Nearly all are Closed. The exceptions are all Member Support's: stories still **Active** in Sprint 12, which ended weeks ago, and stories left in **Resolved**. Open work in a closed PI is either forgotten or finished and never closed. Neither is a delivery problem, but both make reports lie.
-
-<!-- VERIFY: the exact non-Closed story rows under PI 3 (expected: Member Support's 3 Active Sprint 12 zombies and 2 Resolved Sprint 12 stories; check whether any Removed stories also sit under PI 3). -->
+**Then the stories.** Nearly all are Closed. The five exceptions are all Member Support's, all in Sprint 12, which ended weeks ago: three still **Active** (`Escalation rules for priority members`, `Agent presence indicator`, `Request attachment virus scanning`) and two left in **Resolved** (`Request status change audit log`, `Request priority levels`). Open work in a closed PI is either forgotten or finished and never closed. Neither is a delivery problem, but both make reports lie.
 
 !!! reef "Reef ahead: “open” means more than `<> Closed`"
     The quick way to write "still open" is `State <> Closed`. It also counts **Removed** items, which were descoped and will never be done, and **Resolved** ones, which may be finished and waiting for someone to close them. Use `State Not In Closed,Removed` for "not finished", and look at Resolved separately. One of Leo's dashboard queries makes this exact mistake. You'll audit it in Lab 11.
@@ -311,7 +319,7 @@ Every query so far looked at work that's linked to the portfolio. These three lo
     **Work items and direct links**. Top level: Mobile Banking's current-sprint stories. Linked items: `Work Item Type = Feature`. Link type: **Parent** only. Then pick the option that returns top-level items that **don't** have matching links.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    **Type of query**: **Work items and direct links**.
+    **Query type**: **Work items and direct links**.
 
     **Filters for top level work items**:
 
@@ -323,9 +331,7 @@ Every query so far looked at work that's linked to the portfolio. These three lo
 
     **Filters for linked work items**: `Work Item Type` `=` `Feature`.
 
-    **Filter options**: **Only return items that do not have matching links**. **Types of links**: **Return selected link types**, ticking only **Parent**.
-
-    <!-- VERIFY: exact wording "Only return items that do not have matching links" (Learn: "don't have") and "Return selected link types" in New Boards Hub. -->
+    **Filter options** (below the clause grids): **Only return items that do not have matching links**. **Types of links**: **Return selected link types**, then tick only **Parent** in the row of link-type checkboxes.
 
     Columns: `Title`, `State`, `Assigned To`, `Story Points`, `Tags`. Save as `06 Orphan work`.
 
@@ -333,7 +339,13 @@ Every query so far looked at work that's linked to the portfolio. These three lo
 
     Widen it to `Area Path` `Under` `HarborPoint\Digital` and you'll find **6**. Digital Accounts has exactly one.
 
-<!-- SHOT: lab03-q6-orphans | Results of Shared Queries/Training/P##/06 Orphan work (Work items and direct links, Mobile Banking current sprint, no Parent link) | crop: 5 rows with Title, Story Points, Tags; highlight the unplanned and tech-debt tags -->
+<figure class="hp-shot" data-shot="lab03-q6-orphans" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › 06 Orphan work (Work items and direct links)</span></div>
+
+![The one query type that can ask what's missing: Only return items that do not have matching links, with only Parent ticked. Five stories, 12 points: two unplanned asks and two tech-debt upgrades.](../assets/shots/lab03-q6-orphans.png){ loading=lazy }
+
+<figcaption markdown>The one query type that can ask *what's missing*: **Only return items that do not have matching links**, with only **Parent** ticked. Five stories, 12 points: two `unplanned` asks and two `tech-debt` upgrades.</figcaption>
+</figure>
 
 **Judgment:** not all orphan work is bad. SDK upgrades are real hygiene. The problem is that it's **invisible**: it moves no Feature's progress, so it reads as "the team is slow" when the team is busy with work nobody prioritized. The fix isn't a ban, it's a home: give tech debt its own Feature, and make mid-sprint requests an explicit trade-off.
 
@@ -382,7 +394,13 @@ Every query so far looked at work that's linked to the portfolio. These three lo
 
 A toolkit nobody opens is a hobby. Make it reachable.
 
-<!-- SHOT: lab03-toolkit-folder | Boards › Queries › All › Shared Queries › Training › P## expanded, showing queries 01 to 08 in order | crop: folder tree and query list -->
+<figure class="hp-shot" data-shot="lab03-toolkit-folder" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › All › Shared Queries › Training › P##</span></div>
+
+![The finished toolkit: eight questions, numbered in reading order, in a shared folder where dashboards can use them. The icons tell you the query type at a glance: flat, tree or direct links.](../assets/shots/lab03-toolkit-folder.png){ loading=lazy }
+
+<figcaption markdown>The finished toolkit: eight questions, numbered in reading order, in a shared folder where dashboards can use them. The icons tell you the query type at a glance: flat, tree or direct links.</figcaption>
+</figure>
 
 - **Favorite the ones you'll use:** the star next to `01`, `04` and `06` on the **All** tab puts them on your **Favorites** tab.
 - **Send the link, not a screenshot:** **More actions** (…) › **Copy query URL** gives anyone in the project the live result. Links to **My Queries** only work for you.

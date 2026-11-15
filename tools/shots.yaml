@@ -48,3 +48,39 @@ lab01-mobile-stories-resolved:
 lab01-f9-children-by-area:
   bar: "Boards › Backlogs › HarborPoint Team › Features › Real-Time Fraud Alerts expanded"
   caption: "One Feature, three builders. **Node Name** shows seven stories in Mobile Banking (30 points), two in Security (13) and two in Core Platform (8). Mobile's bugs ride along in the same tree."
+
+lab02-current-sprint-by-feature:
+  bar: "Boards › Queries › Shared Queries › HarborPoint Reports › Program - Current sprint (all teams)"
+  caption: "Mobile Banking's Sprint 14, with **Parent** added. Five stories (12 points) have no Feature at all: two `unplanned` asks, two `tech-debt` upgrades and a polish task."
+
+lab02-f2-children-iterations:
+  bar: "Boards › Backlogs › Mobile Banking › Features › Mobile Check Deposit 2.0 expanded"
+  caption: "The team's own plan already says *no*: **14 points sit in Sprint 15**, after the Feature's due date. In Sprint 14, one story has no owner, two haven't started, and the Priority 1 bug at the bottom has no one assigned."
+
+lab02-stale-query:
+  bar: "Boards › Queries › My Queries › Scratch - stale work"
+  caption: "Four clauses, two answers. Both stories belong to Ethan Brooks, both serve the Feature due this sprint, and neither has been touched in over a week."
+
+lab03-q1-tree:
+  bar: "Boards › Queries › Shared Queries › Training › P## › 01 What is my team working on (by Feature)"
+  caption: "Three Features with 14 stories nested beneath them, and then **five stories hanging loose at the bottom**, with no Feature above them. That's 12 points of this sprint serving no part of the portfolio."
+
+lab03-q6-orphans:
+  bar: "Boards › Queries › Shared Queries › Training › P## › 06 Orphan work (Work items and direct links)"
+  caption: "The one query type that can ask *what's missing*: **Only return items that do not have matching links**, with only **Parent** ticked. Five stories, 12 points: two `unplanned` asks and two `tech-debt` upgrades."
+
+lab03-q4-editor:
+  bar: "Boards › Queries › Shared Queries › Training › P## › 04 Features at risk › Editor"
+  caption: "The bracket beside **Target Date** marks a group: three **Or** alternatives joined to the rest by one **And**. Without it, the Or clauses leak and closed Features flood the list."
+
+lab03-q4-results:
+  bar: "Boards › Queries › Shared Queries › Training › P## › 04 Features at risk › Results"
+  caption: "Eight Features, sorted by Target Date. `Agent Knowledge Base` is still Active a month past its date. `Real-Time Fraud Alerts`, the portfolio's top priority, is here only because someone set **Risk**: it has no `at-risk` tag."
+
+lab03-toolkit-folder:
+  bar: "Boards › Queries › All › Shared Queries › Training › P##"
+  caption: "The finished toolkit: eight questions, numbered in reading order, in a shared folder where dashboards can use them. The icons tell you the query type at a glance: flat, tree or direct links."
+
+start-env-shared-queries:
+  bar: "Boards › Queries › All"
+  caption: "Shared Queries holds three folders: **HarborPoint Reports** (ready-made program views), **PMO Reporting** (Leo's queries, which you'll audit on Day 3) and **Training**, where your `P##` folder lives."
