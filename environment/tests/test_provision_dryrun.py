@@ -404,10 +404,13 @@ class TestFullRunAgainstSimulator(unittest.TestCase):
         proj_dash = sim.dashboards[(pid, None)][0]
         self.assertEqual(len(proj_dash["widgets"]), 2)
         ms_dash = sim.dashboards[(pid, teams["Member Support"])][0]
-        self.assertEqual([w["name"] for w in ms_dash["widgets"]], ["Header", "Waiting for sign-off", "Velocity"])
+        self.assertEqual([w["name"] for w in ms_dash["widgets"]],
+                         ["Header", "Waiting for sign-off", "Velocity", "Sprint burndown (current sprint)"])
+        burndown = json.loads(ms_dash["widgets"][-1]["settings"])
+        self.assertEqual(burndown["iterationPath"], "HarborPoint\\PI 4\\Sprint 13")   # planted: pinned to an old sprint
+        self.assertEqual(burndown["timePeriodConfiguration"]["startDate"][:4], "2026")
         manual = h.state.data["manual"]
-        self.assertTrue(any("Sprint burndown" in k for k in manual))   # uncertain widget -> manual steps
-        self.assertIn("Iteration: 'Sprint 13'", "\n".join(manual.values()))
+        self.assertFalse(any("Sprint burndown" in k for k in manual))  # captured from the live UI: now automated
         plan = sim.plans[pid][0]
         self.assertEqual(plan["properties"]["markers"][0]["label"], "PI 4 System Demo")
         self.assertEqual(plan["properties"]["markers"][0]["date"], self.ds["calendar"]["iterations"][3]["finish"]
@@ -541,7 +544,7 @@ class TestCli(unittest.TestCase):
         text = out.getvalue()
         self.assertEqual(code, 0, text)
         for needle in ("PLAN", "workitems.create x4", "workitems.update x5", "estimated runtime",
-                       "bypassRules=true&suppressNotifications=true", "MANUAL FOLLOW-UPS", "Sprint burndown"):
+                       "bypassRules=true&suppressNotifications=true", "MANUAL FOLLOW-UPS"):
             self.assertIn(needle, text)
         self.assertFalse((tmp / "out").exists())
 

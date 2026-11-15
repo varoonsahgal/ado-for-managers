@@ -69,7 +69,7 @@ Dana asked for two, not ten. Choosing is the hardest part of the job, so do it b
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     **Risk 1: Real-Time Fraud Alerts will miss PI 4.** It serves priority number one, *Protect every member*. It's 4% done (2 of 51 points) and due at the end of Sprint 16. Security moved the risk-score API to Sprint 16 to protect mandatory exam work, and Mobile's confirm/deny story is already `blocked` waiting for it. Fraud Scoring Engine v2's slip belongs here, as the cause. The decision is Simone's (Lab 7).
 
-    **Risk 2: Mobile Banking's delivery health.** It threatens priority number two, *Digital that feels human*, and Fraud Alerts too, because Mobile owns it. Check Deposit is due this sprint at 61%, with 36 points left, 14 of them already planned for Sprint 15. Mobile delivered 44 of 62 planned points in Sprint 13 (71%, down from 87% five sprints ago). Open bugs rose from 8 to 42, 3 of them Critical. Three stories sit in **Resolved** waiting for the team's only tester. Check Deposit and the bug count are symptoms. The team's health is the risk.
+    **Risk 2: Mobile Banking's delivery health.** It threatens priority number two, *Digital that feels human*, and Fraud Alerts too, because Mobile owns it. Check Deposit is due this sprint at 61%, with 36 points left, 14 of them already planned for Sprint 15. Mobile delivered 44 of 62 planned points in Sprint 13 (71%, down from 87% five sprints ago). Open bugs rose from 9 to 42, 3 of them Critical. Three stories sit in **Resolved** waiting for the team's only tester. Check Deposit and the bug count are symptoms. The team's health is the risk.
 
     **Why not the others?**
 
@@ -177,7 +177,7 @@ Lay it out so the eye reads it in order: the BLUF panel across the top, the thre
 
     **Expected result:** the tiles read **8**, **4** and **0**. The stacked bar shows **13** committed Features across six teams: Mobile Banking 3, and Digital Accounts, Security, Core Platform, Branch Experience and Member Support 2 each. All are **Active** except one **New** Feature in Member Support. The bug trend climbs from single digits in Sprint 9 to **42**.
 
-    <!-- VERIFY: the query trend chart reflects the back-dated seed history (open Mobile bugs rising from 8 to 42 across Sprints 9 to 14). If it shows a flat line from the seeding date, fall back to the Velocity widget for Mobile Banking with "Display planned work for iterations" on. -->
+    <!-- VERIFY: the query trend chart reflects the back-dated seed history (open Mobile bugs rising from 9 to 42 across Sprints 9 to 14). If it shows a flat line from the seeding date, fall back to the Velocity widget for Mobile Banking with "Display planned work for iterations" on. -->
 
 <!-- SHOT: lab08-tile-rules | Query Tile Configuration panel for Exec - Mobile open P1 bugs: Default background color red, one Conditional formatting rule "If number of work items <= 0" green | crop: configuration panel; highlight the rule row -->
 
@@ -249,7 +249,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
     >
     > **Risk 1: Real-Time Fraud Alerts will miss PI 4.** It's 4% done and due at the PI 4 System Demo (end of Sprint 16). Security moved the risk-score API to Sprint 16 to protect mandatory exam work, and Mobile's confirm/deny screen is built but `blocked` until it arrives. Security spends 58% of this sprint on exam work, and the Compliance Epic is still ranked last of six. *Member impact:* every sprint without it, members learn about fraud from their statement, not their phone.
     >
-    > **Risk 2: Mobile Banking's delivery health.** Mobile Check Deposit 2.0 misses its Sprint 14 date at 61%, with 14 of its remaining 36 points already planned for Sprint 15. Mobile delivered 44 of 62 planned points last sprint (71%, down from 87%), and open bugs rose from 8 to 42, including 3 Critical and an unowned P1. Three finished stories wait for the team's only tester. *Member impact:* defects reach members, and every Mobile date, including Fraud Alerts' integration, is about 30% optimistic.
+    > **Risk 2: Mobile Banking's delivery health.** Mobile Check Deposit 2.0 misses its Sprint 14 date at 61%, with 14 of its remaining 36 points already planned for Sprint 15. Mobile delivered 44 of 62 planned points last sprint (71%, down from 87%), and open bugs rose from 9 to 42, including 3 Critical and an unowned P1. Three finished stories wait for the team's only tester. *Member impact:* defects reach members, and every Mobile date, including Fraud Alerts' integration, is about 30% optimistic.
     >
     > **Options.** For Fraud Alerts: pull the API into Sprint 15 by deferring 8 to 10 points of Adaptive MFA work, ship a smaller MVP (alerts plus confirm/deny) in PI 4, borrow Core Platform capacity, or move the date to Sprint 17. Detail: *Fraud Alerts Options*. For Mobile: stop mid-sprint intake, reserve capacity for bugs, add or borrow test capacity, and re-plan Check Deposit honestly. Detail: *Mobile Banking Help Plan*.
     >
@@ -335,7 +335,7 @@ A briefing is a snapshot. Dana's next question will be "and next week?" Ruth's P
     |---|---|---|
     | **Purpose** | Unblock and re-plan inside the PI | Decide trade-offs between priorities |
     | **Who** | You, Ruth, the six Product Owners or leads; Aisha and Hannah for cross-team items | Dana, Simone, Priya, Carmen, Hector, Marcus, Nadia, Ruth |
-    | **Looks at** | `P## - Digital Banking Command Center`, `04 Features at risk`, `Fraud Alerts dependencies`, open P1 bugs, your Delivery Plan | `P## - METP Executive Status`, the PI Objectives page, the Epic backlog order |
+    | **Looks at** | `P## - Digital Command Center`, `04 Features at risk`, `Fraud Alerts dependencies`, open P1 bugs, your Delivery Plan | `P## - METP Executive Status`, the PI Objectives page, the Epic backlog order |
     | **Agenda** | 5 min: what changed since last week (dates, tags, scope). 15 min: red items and blocked dependencies, each leaving with an owner. 10 min: escalations to monthly | 5 min: BLUF. 15 min: the two or three decisions, with options. 10 min: priorities, rank and capacity across Epics |
     | **Output** | Updated dates and tags in Azure DevOps, a refreshed BLUF panel, an escalation list | Recorded decisions, an updated Epic rank, changes to PI objectives |
     | **Rule** | If a date moved in Azure DevOps, the dependent dates move in the same meeting | No decision without options and a named owner |

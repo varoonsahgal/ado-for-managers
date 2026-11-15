@@ -49,7 +49,7 @@ Dana wants a Digital Banking update for her staff meeting: what we delivered las
     A flat query, saved to your shared folder first. The chart lives on the query's **Charts** tab.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    `Work Item Type` `=` `Feature` and `Area Path` `Under` `HarborPoint\Digital`. Save it, then **Charts** › **New chart** › **Pie**, **Group by** `State`, aggregation **Count of work items**.
+    `Work Item Type` `=` `Feature` and `Area Path` `Under` `HarborPoint\Digital`. Save it, then **Charts** › **New chart** › **Pie**, **Group by** `State`, **Aggregation** **Count** of work items.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     1. **Boards › Queries** › **New** › **New query**, **Flat list of work items**:
@@ -60,13 +60,17 @@ Dana wants a Digital Banking update for her staff meeting: what we delivered las
         | And | Area Path | Under | `HarborPoint\Digital` |
 
     2. **Column options**: `Title`, `State`, `Node Name`, `Target Date`, `Tags`. **Save** as `10 Digital Features (chart)` in `Shared Queries/Training/P##`.
-    3. **Charts** › **New chart**. Chart type **Pie**, **Group by** `State`, aggregation **Count of work items**. Title it `Digital Features by State`. Select **OK**.
-
-        <!-- VERIFY: chart dialog labels (Chart type, Group by, Aggregation, "Count of work items") and the save button (OK vs Save). -->
+    3. **Charts** › **New chart** (if it's greyed out, open **Results** once so the query runs, then come back). In **Configure chart**, pick **Pie** under **Chart type**, **Name** it `Digital Features by State`, set **Group by** to `State` and leave **Aggregation** at **Count** of work items. Select **Save chart**.
 
     **Expected:** **9** Features. **Active 5** (`Mobile Check Deposit 2.0`, `Biometric Login`, `Online Account Opening`, `Spending Insights`, `Real-Time Fraud Alerts`), **Closed 2** (`Mobile App Redesign`, `Paperless Statements & Documents`) and **New 2** (`Member-to-Member Transfers`, `Instant Card Controls`).
 
-<!-- SHOT: lab04-features-pie | Boards › Queries › Shared Queries/Training/P##/10 Digital Features (chart), Charts tab, pie "Digital Features by State" | crop: chart with legend showing Active 5, Closed 2, New 2 -->
+<figure class="hp-shot" data-shot="lab04-features-pie" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › 10 Digital Features (chart) › Charts</span></div>
+
+![Nine Features by Area Path: five Active, two Closed, two New. Lab 1 counted eight under the Epic. The ninth is Real-Time Fraud Alerts, built by a Digital team but serving another Epic.](../assets/shots/lab04-features-pie.png){ loading=lazy }
+
+<figcaption markdown>Nine Features by Area Path: five Active, two Closed, two New. Lab 1 counted *eight* under the Epic. The ninth is `Real-Time Fraud Alerts`, built by a Digital team but serving another Epic.</figcaption>
+</figure>
 
 **Wait: nine?** In Lab 1 you counted **8** Features under *Digital Banking Modernization*. The ninth is `Real-Time Fraud Alerts`. Mobile Banking builds it, so it sits in a Digital area, but it serves the number one Epic, *Fraud Detection & Security*.
 
@@ -93,8 +97,6 @@ The first question in any status meeting: did the teams deliver what they said t
 ### Read the Velocity reports
 
 For each Digital team: **Boards › Backlogs**, pick the team, **Stories** level, the **Analytics** tab, then **View full report** on the **Velocity** card. The report opens on **Count of Work Items**, so set **Velocity by** to **Sum of Story Points**. Hover over a sprint's bars to read **Planned**, **Completed** and **Incomplete**.
-
-<!-- VERIFY: "Analytics" tab placement on the backlog in New Boards Hub and the Velocity card label ("Velocity" / "Average Velocity"). -->
 
 Fill in Sprint 13 before you look at the hint:
 
@@ -123,7 +125,7 @@ Now a quick gut check. **Which team delivered more last sprint?** Commit to an a
 
     Switch **Velocity by** to **Count of Work Items**. Mobile's bars flatten to roughly a dozen stories a sprint, while its points climbed from 33 to 45. You'll take that apart properly in [Lab 6](../day-2/lab-06-which-team-needs-help.md).
 
-    <!-- VERIFY: whether Count of Work Items includes closed bugs (bugs are managed with requirements), which would add 2-3 per sprint to Mobile's count. -->
+    Why doesn't the count include the bugs Mobile closes? Velocity counts what was **planned into a sprint**. Mobile's bugs sit on the backlog with no sprint, so they never appear here, however many get fixed. That's one more way a velocity chart can understate real work.
 
 !!! reef "Reef ahead: “Mobile delivered 44, Digital Accounts only 26”"
     If you answered "Mobile Banking", you compared two teams' Story Points as if they were the same currency. They aren't. Each team sizes its own work, so 44 Mobile points and 26 Digital Accounts points aren't comparable, just as 44 euros and 26 dollars aren't. The only fair comparison is each team **against its own plan**. On that measure, Digital Accounts did everything it promised and Mobile Banking missed by almost a third.
@@ -142,10 +144,8 @@ Now a quick gut check. **Which team delivered more last sprint?** Commit to an a
 
     Columns: `Title`, `State`, `Node Name`, `Story Points`, `Parent`. Save it.
 
-2. **New chart** › **Stacked bar**, `Node Name` by `State`, **Count of work items**. Title: `This sprint: stories by team and state`.
-3. **New chart** › **Pivot table**, **Rows** `Node Name`, **Columns** `State`, aggregation **Sum** of `Story Points`. Title: `This sprint: points by team and state`.
-
-    <!-- VERIFY: stacked bar axis labels and the pivot table's Rows/Columns labels in the chart dialog. -->
+2. **New chart** › **Stacked bar**: **Y-axis** `Node Name`, **Group by** `State`, **Count** of work items. **Name**: `This sprint: stories by team and state`.
+3. **New chart** › **Pivot table**: **Rows** `Node Name`, **Columns** `State`, **Aggregation** **Sum** of `Story Points`. **Name**: `This sprint: points by team and state`.
 
 **You should see:**
 
@@ -154,7 +154,13 @@ Now a quick gut check. **Which team delivered more last sprint?** Commit to an a
 | Mobile Banking | 4 stories · 12 pts | 3 · 11 pts | 7 · 29 pts | 5 · 13 pts | **19 · 65 pts** |
 | Digital Accounts | 4 · 10 pts | – | 3 · 10 pts | 2 · 6 pts | **9 · 26 pts** |
 
-<!-- SHOT: lab04-sprint-pivot | Shared Queries/Training/P##/11 Digital stories this sprint (chart), Charts tab, pivot table Node Name by State with Sum of Story Points | crop: pivot grid; highlight Mobile Banking's Closed 12 and Resolved 11 cells -->
+<figure class="hp-shot" data-shot="lab04-sprint-pivot" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › 11 Digital stories this sprint (chart) › Charts</span></div>
+
+![Two charts on one query. Mobile Banking has Closed 12 of its 65 points with 11 more sitting in Resolved; Digital Accounts has closed 10 of 26 with nothing queued for test.](../assets/shots/lab04-sprint-pivot.png){ loading=lazy }
+
+<figcaption markdown>Two charts on one query. Mobile Banking has **Closed 12** of its 65 points with **11 more sitting in Resolved**; Digital Accounts has closed 10 of 26 with nothing queued for test.</figcaption>
+</figure>
 
 **So what?** We're six or seven days into a ten-day sprint. Digital Accounts has closed 38% of its points with a normal amount of work in flight. Mobile Banking has closed **18%**. Even if all three Resolved stories pass QA today, it reaches 35%, with 29 points still Active and 13 not started. This sprint is going the way the last one went.
 
@@ -164,14 +170,12 @@ Now a quick gut check. **Which team delivered more last sprint?** Commit to an a
     | You want to… | Reality |
     |---|---|
     | Chart a tree or direct-links query | Not possible. **Flat** queries only |
-    | Group by **Parent**, **Tags**, **Title** or a date | Not offered in query charts. (The **Chart for Work Items** dashboard widget can group by Tags, Lab 5) |
+    | Group by **Parent**, **Tags** or **Title** | Not offered on the Queries page, even when they're columns. (Dates are offered. The **Chart for Work Items** dashboard widget can group by Tags, Lab 5) |
     | Group by team | Use **Node Name**. Area Path and Iteration Path show only the last segment, so same-named nodes merge |
     | Show more than 8 categories | The rest roll up into *(other)* |
     | Trend a big query | Keep trend queries to 1,000 items or fewer |
     | Show progress % per Feature | Not a chart. Use the backlog's rollup columns |
     | Share a chart from **My Queries** | Only you can see it. Save to a shared folder |
-
-    <!-- VERIFY: whether Parent appears in the chart Group by list in New Boards Hub (research: uncertain). -->
 
 !!! checkpoint "Checkpoint"
     - [ ] I recorded Sprint 13 Planned vs Completed for both teams (62/44 and 26/26)
@@ -192,20 +196,31 @@ Unfinished stories are only half of what's outstanding. The other half is the bu
 
     Columns: `Title`, `State`, `Priority`, `Severity`, `Node Name`, `Assigned To`. (Bugs have no Removed state, so `<> Closed` is safe here.) Save it.
 
-2. **New chart** › **Stacked area** (a trend chart), **Group by** `Node Name`. Set the rolling period to the **longest** option available. Title: `Open Digital bugs, by team`.
+2. **New chart** › **Stacked bar**: **Y-axis** `Node Name`, **Group by** `Priority`, **Count** of work items. **Name** it `Open Digital bugs by priority` and select **Save chart**.
 
-    <!-- VERIFY: trend chart type names and the rolling-period dropdown values; confirm the longest option covers Sprint 9 onward (about 12 weeks), and that backdated seed revisions render in the trend. -->
+**You should see 46 open bugs today:** **42** in Mobile Banking and **4** in Digital Accounts. Mobile's 42 break down as Priority 1: **4**, Priority 2: **14**, Priority 3: **18**, Priority 4: **6**. Three are Severity **1 - Critical**.
 
-3. **New chart** › **Stacked bar**, `Node Name` by `Priority`, **Count of work items**. Title: `Open Digital bugs by priority`.
+That's a snapshot. The question a manager actually needs answered is *which way is it heading?*
 
-**You should see 46 open bugs today:** **42** in Mobile Banking and **4** in Digital Accounts. Over the trend window, Mobile's band climbs steadily from **8** open bugs at the start of Sprint 9, while Digital Accounts' thin band slips from 7 to 4. Mobile's 42 break down as Priority 1: **4**, Priority 2: **14**, Priority 3: **18**, Priority 4: **6**. Three are Severity **1 - Critical**.
+3. Open **Overview › Dashboards** › `HarborPoint Program Overview` and scroll to the bottom. The program office has pinned two **Burndown** widgets there, one per Digital team, counting **open bugs week by week since the start of Sprint 9**. The blue bars are bugs still open at the end of each week. The orange **Total Scope** line is every bug ever filed in that window.
 
-<!-- SHOT: lab04-bug-trend | Shared Queries/Training/P##/12 Open Digital bugs (chart), Charts tab, stacked area trend grouped by Node Name over the longest rolling period | crop: chart; highlight Mobile Banking's band rising from 8 to 42 -->
+<figure class="hp-shot" data-shot="lab04-bug-trend" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › Burndown widget · Mobile Banking · Bugs · weekly since Sprint 9</span></div>
+
+![Open Mobile Banking bugs, week by week: 9 at the start of Sprint 9, 42 today. The orange Total Scope line keeps pulling away from the bars, so bugs are being filed faster than they're fixed.](../assets/shots/lab04-bug-trend.png){ loading=lazy }
+
+<figcaption markdown>Open Mobile Banking bugs, week by week: **9 at the start of Sprint 9, 42 today.** The orange Total Scope line keeps pulling away from the bars, so bugs are being filed faster than they're fixed.</figcaption>
+</figure>
+
+**You should see** Mobile Banking's bars climb from **9** open bugs at the start of Sprint 9 to **42** today, steepening in Sprint 13. The orange line pulls away from the bars all the way: bugs are being filed faster than they're fixed. Digital Accounts' widget stays low and flat, ending at **4**.
+
+!!! info "Why not a trend chart on your query?"
+    The **Charts** tab offers trend types too (**Stacked area**, **Area**, **Line**, with a **Rolling period** of up to a year). They replay the work-tracking store's own change log, which is fine in a project that grew naturally. HarborPoint's five sprints of history were loaded in one go, so a query trend chart here starts on the day the environment was built. **Burndown**, **Burnup**, **Velocity**, **CFD** and the cycle-time widgets read **Analytics** instead, which uses each change's business date. That's also why they're the better choice for trends in your own projects: they can span many sprints, filter by team, and show total scope alongside the open count.
 
 **So what?** A team that opens 13 bugs and closes 2 in a sprint, as Mobile did in Sprint 13, isn't finishing work. It's moving it from the sprint backlog to the bug backlog. A fivefold rise in open bugs over five sprints is what "velocity going up" looked like from the other side.
 
 !!! checkpoint "Checkpoint"
-    - [ ] My trend chart shows Mobile Banking's open bugs climbing from 8 to 42, and Digital Accounts' falling to 4
+    - [ ] I read the bug trend on the Program Overview: Mobile Banking climbing from 9 to 42, Digital Accounts flat at about 4
     - [ ] I know how many of Mobile's open bugs are Priority 1 (4) and Critical (3)
 
 ## Part 4 — Make the chart lie
@@ -226,14 +241,14 @@ You'll learn to spot a misleading chart faster by building one.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     1. **Save as** `10` with the area narrowed to Mobile Banking, and look at the pie.
-    2. Shorten your bug trend's rolling period to the shortest option.
+    2. On the Program Overview's Mobile bug widget, cover everything except the last two bars.
     3. Open both teams' Velocity reports next to each other and read only the Sprint 13 Completed bars.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | Headline | The lie | Why it misleads | Show this instead |
     |---|---|---|---|
     | "Mobile is on track" | Pie of Mobile's 5 Features by State: 1 Closed, 3 Active, 1 New. "Four out of five done or under way" | **Counting** treats every Feature as equal. It hides that `Mobile Check Deposit 2.0` is due *this sprint* with 36 points left, and that `Real-Time Fraud Alerts` is at 4% | A Feature table with progress by points, remaining points and Target Date |
-    | "Bugs are under control" | Bug trend over the shortest window: a handful of new bugs, a gentle slope | The **window** hides the scale. Over five sprints it's 8 → 42 | The longest window, plus opened versus closed per sprint (Sprint 13: 13 opened, 2 closed) |
+    | "Bugs are under control" | The last week of the bug trend: 42, then 42. "Bugs have stabilized" | The **window** hides the scale. Over five sprints it's 9 → 42 | The full window since Sprint 9, plus opened versus closed per sprint (Sprint 13: 13 opened, 2 closed) |
     | "Mobile delivers 70% more" | Sprint 13 Completed: 44 vs 26 | Points are **team-specific**. Mobile's stories also grew larger while its count stayed flat | Each team against its own plan: 71% vs 100%, with the five-sprint trend |
 
     The tell is the same every time. The chart answers a narrower question than its headline claims.
@@ -264,11 +279,19 @@ Now turn the evidence into something Dana can read in two minutes.
     A wiki page `/Training/P##/Sprint Delivery Report`.
 
     1. **Overview › Wiki** › open `/Templates/Status Report`, select **Edit**, copy its Markdown, then close without saving.
-    2. Go to your `/Training/P##` page (you created it in Lab 2) and add a sub-page named `Sprint Delivery Report`. Paste the template and fill it in.
-    3. **Live data:** the wiki can embed a query's results as a table with `:::query-table <query-ID>:::`. Copy the ID from the query's URL (**More actions** › **Copy query URL**). Try it with `04 Features at risk`.
+    2. Go to your `/Training/P##` page (you created it in Lab 2), open its **⋯** menu › **Add sub-page**, and name it `Sprint Delivery Report`. Paste the template and fill it in. Its eight headings map onto the five parts above: **Summary** (1), **Delivered this period** and **Delivery health** (2), **Feature status** (3), **Risks and issues** and **Dependencies** (4), **Asks** (5). Keep **Sources**: it's where "how do you know?" gets answered.
+    3. **Live data:** the wiki can embed a query's results as a live table. Copy the query's ID from its URL (the long code after `/query/`), then type these two lines into the page:
+
+        ```text
+        :::query-table 851900e9-bdd6-4099-8b23-3e0ff3827cd8
+        :::
+        ```
+
+        Swap in your own ID. Try it with `04 Features at risk`: the page shows *Showing 8 results* and the rows, and it updates every time someone opens the page.
     4. **Charts:** the wiki can't embed a live query chart. Paste a screenshot, and label it with the as-of sprint, because it won't update.
 
-    <!-- VERIFY: the query-table embed syntax and that it renders in the project wiki; the label of the wiki's "add sub-page" action; that /Templates/Status Report's sections match the five listed in the challenge. -->
+    !!! tip "Wiki tip: `#` plus a number is a link"
+        In the wiki (and in work item Discussion), `#1365` turns into a live link to work item 1365, with its title and state. That's a gift for evidence: link the Feature, don't just name it. It's also a trap. Write "priority #1" and the page links to whatever work item happens to be number 1. Write "priority one" instead.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
     Start with the bottom line, then the evidence. For progress, open the **Digital Portfolio** Features backlog with a **Progress by Story Points** rollup column (from Lab 1). Your Lab 3 queries already hold the risks.
@@ -279,7 +302,7 @@ Now turn the evidence into something Dana can read in two minutes.
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     A model one-pager. Yours can differ on judgment calls, but not on facts.
 
-    **Overall: Amber, trending Red.** Digital Accounts is delivering exactly to plan. Mobile Banking will miss a committed Feature this sprint, and the priority #1 Feature it owns is blocked by another team.
+    **Overall: Amber, trending Red.** Digital Accounts is delivering exactly to plan. Mobile Banking will miss a committed Feature this sprint, and the priority-one Feature it owns is blocked by another team.
 
     **Delivered in Sprint 13:** `Paperless Statements & Documents` closed. Digital Accounts completed 26 of 26 planned points, advancing Online Account Opening and Spending Insights. Mobile Banking completed 44 of 62 (71%), advancing Mobile Check Deposit 2.0 and Biometric Login, but 23 of those 44 points were work with no parent Feature.
 
@@ -298,8 +321,8 @@ Now turn the evidence into something Dana can read in two minutes.
     **Top risks**
 
     1. **Check Deposit misses Sprint 14.** 36 points remain. One story has carried over twice, and a Priority 1 bug on the Feature has no owner.
-    2. **Fraud Alerts (priority #1) will slip.** Its dependency on `Fraud Scoring Engine v2` is red on the Delivery Plan, and Mobile's confirm/deny story is already blocked waiting for Security.
-    3. **Mobile Banking's quality debt.** 42 open bugs, up from 8 five sprints ago, 3 of them Critical. 11 points are waiting on a single tester, and plan completion has fallen to 71%.
+    2. **Fraud Alerts (priority one) will slip.** Its dependency on `Fraud Scoring Engine v2` is red on the Delivery Plan, and Mobile's confirm/deny story is already blocked waiting for Security.
+    3. **Mobile Banking's quality debt.** 42 open bugs, up from 9 five sprints ago, 3 of them Critical. 11 points are waiting on a single tester, and plan completion has fallen to 71%.
 
     **Asks**
 
@@ -309,7 +332,13 @@ Now turn the evidence into something Dana can read in two minutes.
 
     *Evidence: `Shared Queries/Training/P##` queries 03, 04, 06, 10 to 12, and the Mobile Banking and Digital Accounts Velocity reports.*
 
-<!-- SHOT: lab04-status-report | Overview › Wiki › Training › P## › Sprint Delivery Report, rendered (not edit mode), showing the overall status line, the Feature table and an embedded query-table | crop: top half of the page -->
+<figure class="hp-shot" data-shot="lab04-status-report" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Wiki › Training › P## › Sprint Delivery Report</span></div>
+
+![A model one-pager: a colour with a sentence, scope and as-of stated up front, a Feature table, three evidenced risks and a live query table. Typing #1365 turned into a live link to the Feature.](../assets/shots/lab04-status-report.png){ loading=lazy }
+
+<figcaption markdown>A model one-pager: a colour **with a sentence**, scope and as-of stated up front, a Feature table, three evidenced risks and a live query table. Typing `#1365` turned into a live link to the Feature.</figcaption>
+</figure>
 
 !!! reef "Reef ahead: the watermelon"
     The easiest status to write is **Green**: most Features are Active, one closed last sprint, and one team is flawless. It's green on the outside and red on the inside. The second easiest is **Amber with no explanation**, which averages a red team and a green team into a colour that describes neither. A RAG rating is only as good as the sentence next to it. If you can't name the evidence for your colour, you've chosen a mood.
@@ -356,7 +385,7 @@ A percentage without a deadline hides the question leadership cares about: will 
 
 <div class="quiz" markdown>
 
-**Your bug trend chart over the last week shows Mobile Banking's open bugs rising by a few. Over five sprints, they've gone from 8 to 42. Which view belongs in the status report?**
+**Over the last week, Mobile Banking's open bugs held flat at 42. Over five sprints, they've gone from 9 to 42. Which view belongs in the status report?**
 
 - [ ] The one-week view, because it's the most current
 - [ ] Neither. Bug counts are a team-level concern, not a leadership one
@@ -381,7 +410,7 @@ The time window is a choice, and it decides the story. A fivefold rise in open b
 !!! bonus "Extra knots"
     1. **The PI view.** **Save as** `11` as `11b Digital stories in PI 4 (chart)` and change the iteration clause to `Iteration Path` `Under` `HarborPoint\PI 4`. Build a **Stacked bar** of `Node Name` by `State`. Which team is the only one with a Resolved segment, and what does that tell you about where its work is waiting?
 
-    <!-- VERIFY: only Mobile Banking shows a Resolved segment for PI 4 stories (expected: its 3 Sprint 14 stories awaiting QA). -->
+
 
     2. **Who's carrying the load?** Build a flat query of Mobile Banking's **Active** user stories and bugs, then a **Bar** chart by `Assigned To`. How many active items does Ethan Brooks hold, and what does that suggest about context switching on Check Deposit?
     3. **Preview Lab 5.** On any of today's charts, open its menu and select **Add to dashboard**. It's only offered because the query is shared. Which of today's five charts would earn a place on an executive dashboard, and which wouldn't?

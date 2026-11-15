@@ -285,7 +285,7 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
     | And | Work Item Type | = | `Bug` |
     | And | State | <> | `Closed` |
 
-    Columns: `Severity`, `Priority`, `State`. **42** open bugs: 3 Critical, 11 High. **30** of the 42 are still New. Five sprints ago, at the start of Sprint 9, the number was 8. You'll chart that climb in [Lab 4](lab-04-sprint-delivery-report.md).
+    Columns: `Severity`, `Priority`, `State`. **42** open bugs: 3 Critical, 11 High. **30** of the 42 are still New. Five sprints ago, at the start of Sprint 9, the number was 9. You'll chart that climb in [Lab 4](lab-04-sprint-delivery-report.md).
 
 <figure class="hp-shot" data-shot="lab02-stale-query" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › My Queries › Scratch - stale work</span></div>
@@ -334,7 +334,7 @@ It's 9:40. Priya asked for five bullets.
     > 1. **Bottom line:** Mobile Banking isn't short of effort, it's short of *focus*. `Mobile Check Deposit 2.0` will miss its end-of-Sprint-14 date (61% done, 36 points left, 14 of them already scheduled for Sprint 15), and we should re-forecast it today rather than at sprint review.
     > 2. **Shipped:** Sprint 13 delivered `Paperless Statements & Documents` (Digital Accounts, 26 of 26 points). Mobile completed 44 of 62 planned points (71%) and carried six stories; **52% of its completed points served no Feature**.
     > 3. **Unfinished:** `Biometric Login` is roughly on track for Sprint 16 if testing keeps pace. `Real-Time Fraud Alerts`, priority number one, is 4% done and blocked on a Security API that now lands after its Sprint 16 date. That needs a cross-team decision, not more effort from Mobile.
-    > 4. **Needs us:** a Priority 1 escaped defect on Check Deposit with **no owner**; Ethan Brooks holding **6** active items, two of them stale for over a week; **11 points** of finished work waiting on our one tester; **5 points** of unplanned work added mid-sprint; **42** open bugs, up from 8 five sprints ago.
+    > 4. **Needs us:** a Priority 1 escaped defect on Check Deposit with **no owner**; Ethan Brooks holding **6** active items, two of them stale for over a week; **11 points** of finished work waiting on our one tester; **5 points** of unplanned work added mid-sprint; **42** open bugs, up from 9 five sprints ago.
     > 5. **Asks:** (a) Diego and Hannah assign the P1 today, freeze mid-sprint intake, and swarm on testing; (b) your agreement to move Check Deposit's date or split it, before Dana hears it from someone else; (c) 30 minutes with Aisha Karimi this week on the Fraud Alerts dependency.
 
 !!! checkpoint "Checkpoint"

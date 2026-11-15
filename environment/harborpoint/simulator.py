@@ -252,7 +252,8 @@ class AdoSimulator:
                      "columnType": t} for c, t in (("New", "incoming"), ("Active", "inProgress"),
                                                     ("Resolved", "inProgress"), ("Closed", "outgoing"))]
             if len(rest) == 2 and method == "GET":
-                return 200, {"count": 3, "value": [{"name": n} for n in ("Stories", "Features", "Epics")]}, None
+                return 200, {"count": 3, "value": [{"name": n, "id": str(uuid.uuid5(uuid.NAMESPACE_URL, f"{team}/{n}"))}
+                                                   for n in ("Stories", "Features", "Epics")]}, None
             if len(rest) == 4 and rest[3] == "columns" and method == "GET":
                 return 200, {"count": len(cols), "value": cols}, None
             if len(rest) == 4 and rest[3] == "columns" and method == "PUT":

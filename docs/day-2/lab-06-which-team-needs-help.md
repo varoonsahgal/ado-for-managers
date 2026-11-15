@@ -159,7 +159,7 @@ Output tells you *what* came out. Flow tells you *where it gets stuck on the way
 <figcaption markdown>Each band is a board column. The mid-blue **Resolved** band, finished code waiting for a tester, is a sliver in September and six items thick by November.</figcaption>
 </figure>
 
-<!-- SHOT: lab06-cycle-time-pair | P## - Digital Banking Command Center, Cycle time · Mobile Banking and Cycle time · Digital Accounts widgets side by side, User Story, about 90 days | crop: both widgets; highlight Mobile's rising moving average and wider band against Digital Accounts' flat one -->
+<!-- SHOT: lab06-cycle-time-pair | P## - Digital Command Center, Cycle time · Mobile Banking and Cycle time · Digital Accounts widgets side by side, User Story, about 90 days | crop: both widgets; highlight Mobile's rising moving average and wider band against Digital Accounts' flat one -->
 
 !!! insight "Lighthouse insight: more in progress means slower, not faster"
     Little's Law, in plain words: **average time in progress ≈ work in progress ÷ finishing rate**. Mobile has about 10 stories in progress (7 Active, 3 Resolved) and finishes about 12 a sprint, so a story spends most of a sprint in flight. Digital Accounts has 3 in progress and finishes about 10, so its stories move through in days. Starting more work doesn't make a team finish more; it makes everything take longer. When a team says it's "flat out", count what it has *started*. Ethan Brooks alone has six active items.
@@ -186,7 +186,7 @@ A team can finish plenty and still fall behind if what it finishes is rework, or
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | Signal | Mobile Banking | Digital Accounts |
     |:--|:--|:--|
-    | **Open bugs** | **8 → 42** across five sprints, more than fivefold. 3 are Severity 1-Critical, and one Priority 1 bug on Mobile Check Deposit 2.0 has no owner | **7 → 4**, falling |
+    | **Open bugs** | **9 → 42** across five sprints, more than fivefold. 3 are Severity 1-Critical, and one Priority 1 bug on Mobile Check Deposit 2.0 has no owner | **7 → 4**, falling |
     | **Orphan share of completed points** | S9 27% · S10 30% · S11 29% · S12 36% · **S13 52%** (23 of 44 points, 6 of 12 stories) | **21%** in Sprint 9, then about a tenth or less every sprint since (S13: 2 of 26 points) |
     | **Feature progress** | `Mobile Check Deposit 2.0` due **this sprint** at 61%: it will miss. `Real-Time Fraud Alerts` 4% (blocked on Security, Lab 7). `Biometric Login` 53%, due Sprint 16 | `Paperless Statements & Documents` **closed** last sprint. `Spending Insights` 88%. `Online Account Opening` 59%, due Sprint 16 |
 
@@ -194,7 +194,13 @@ A team can finish plenty and still fall behind if what it finishes is rework, or
 
 <!-- VERIFY: selecting a Completed bar in the in-context Velocity report opens a query of those items that accepts Column options; the trend chart's rolling-period options reach back before Sprint 9. -->
 
-<!-- SHOT: lab06-bug-trend | Boards › Queries › Shared Queries/Training/P##/CC - Open bugs (Digital), Charts tab, Stacked area trend grouped by Node Name over about three months | crop: chart; highlight Mobile Banking rising from 8 to 42 and Digital Accounts falling to 4 -->
+<figure class="hp-shot" data-shot="lab06-bug-trend" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › Burndown widget · Mobile Banking · Bugs · weekly since Sprint 9</span></div>
+
+![The quality signal behind the rising velocity: open bugs more than quadrupled in five sprints, and the climb steepened in Sprint 13.](../assets/shots/lab06-bug-trend.png){ loading=lazy }
+
+<figcaption markdown>The quality signal behind the rising velocity: open bugs more than quadrupled in five sprints, and the climb steepened in Sprint 13.</figcaption>
+</figure>
 
 !!! checkpoint "Checkpoint"
     - [ ] Rows 6 to 8 are filled for both teams
@@ -222,7 +228,7 @@ Look at your eight rows. Count how many families (output, flow, outcomes) point 
     Metrics to watch should come from your Command Center, so you can check them every Monday: cycle time, the Resolved band, planned vs completed, the urgent-bug tile, the orphan tile, and throughput by count. Mid-sprint intake shows up in Sprint 14's burndown as **Total Scope Increase** (5 points this sprint, all of it orphan work).
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    **Verdict.** *Mobile Banking needs help, and it's help with its system, not its effort. Its velocity is inflated (points up a third, stories flat), reliability fell from 87% to 71%, open bugs went from 8 to 42, cycle time more than doubled behind a single-tester bottleneck, and 52% of last sprint's points served no Feature.*
+    **Verdict.** *Mobile Banking needs help, and it's help with its system, not its effort. Its velocity is inflated (points up a third, stories flat), reliability fell from 87% to 71%, open bugs went from 9 to 42, cycle time more than doubled behind a single-tester bottleneck, and 52% of last sprint's points served no Feature.*
 
     | # | Action | Owner | Metric to watch |
     |:-:|:--|:--|:--|

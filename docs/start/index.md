@@ -91,7 +91,7 @@ Your instructor will give you a **participant ID** (for example `P07`). Many thi
 | You create… | Where / named | Example |
 |---|---|---|
 | Shared queries | `Shared Queries/Training/P##/` | `Shared Queries/Training/P##/04 Features at risk` |
-| Dashboards | Project dashboard named `P## - …` | `P## - Digital Banking Command Center` |
+| Dashboards | Project dashboard named `P## - …` | `P## - Digital Command Center` |
 | Delivery Plans | `P## - …` | `P## - Fraud Alerts Plan` |
 | Wiki pages | `/Training/P##/…` | `/Training/P##/Sprint Delivery Report` |
 | Work items | Only in your sandbox area `HarborPoint\Training\P##` | `P## - Member Onboarding Redesign` |

@@ -12,11 +12,11 @@ summary: "Build a Digital Banking dashboard that answers five management questio
 !!! briefing "Mission briefing"
     Yesterday you answered Priya's questions one query at a time. That worked once. It won't work every Monday, and it doesn't work at all when Priya asks at 7:40 and you're still on the train.
 
-    Today you build the **Digital Banking Command Center**: one project dashboard that answers the questions a delivery manager gets asked about the Digital Banking initiative, from current work and delivered Features to outstanding bugs, delivery progress and risks. You build it from the query toolkit you made in [Lab 3](../day-1/lab-03-query-toolkit.md), plus a handful of Analytics widgets that no query can give you.
+    Today you build the **Digital Command Center**: one project dashboard that answers the questions a delivery manager gets asked about the Digital Banking initiative, from current work and delivered Features to outstanding bugs, delivery progress and risks. You build it from the query toolkit you made in [Lab 3](../day-1/lab-03-query-toolkit.md), plus a handful of Analytics widgets that no query can give you.
 
     Then you do the harder part: you cut it down. Dana Whitfield doesn't want twelve widgets. She wants to know whether Digital is on course and what you need from her.
 
-    **Done looks like:** `P## - Digital Banking Command Center` with every widget tied to a question, a six-widget `P## - Digital Banking Exec View`, and a partner who can answer your five questions from your dashboard in thirty seconds.
+    **Done looks like:** `P## - Digital Command Center` with every widget tied to a question, a six-widget `P## - Digital Banking Exec View`, and a partner who can answer your five questions from your dashboard in thirty seconds.
 
 <div class="msg" data-initials="PR" data-tone="teal" markdown>
 <p class="msg-head"><strong>Priya Raman</strong><span>Director, Digital Banking · 8:05 AM</span></p>
@@ -81,7 +81,7 @@ The most common dashboard is a wall: every widget the builder found, arranged by
 ## Part 2 — Create the dashboard and its header
 
 !!! speedrun "Speed run · 6 minutes"
-    Create a **project** dashboard named `P## - Digital Banking Command Center` that refreshes itself, and add a **Markdown** widget across the top with: who owns the page, what it's for, when it was last reviewed, a color legend, and links to the Program Charter wiki page, the **HarborPoint Program Plan** and your query folder.
+    Create a **project** dashboard named `P## - Digital Command Center` that refreshes itself, and add a **Markdown** widget across the top with: who owns the page, what it's for, when it was last reviewed, a color legend, and links to the Program Charter wiki page, the **HarborPoint Program Plan** and your query folder.
 
 <div class="timer" data-minutes="6" data-label="Speed run"></div>
 
@@ -93,7 +93,7 @@ The most common dashboard is a wall: every widget the builder found, arranged by
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     1. **Overview › Dashboards** › **+ New Dashboard**.
-    2. **Name** `P## - Digital Banking Command Center`. **Description** `Digital Banking delivery: current work, delivery, bugs, Feature progress and risk. Mobile Banking + Digital Accounts.`
+    2. **Name** `P## - Digital Command Center`. **Description** `Digital Banking delivery: current work, delivery, bugs, Feature progress and risk. Mobile Banking + Digital Accounts.`
     3. Tick **Automatically refresh the dashboard every 5 minutes**.
     4. **Dashboard Type**: **Project Dashboard**. Select **Create**.
     5. Select **Edit**. In **Add Widget**, search `Markdown`, select it, then **Add**.
@@ -101,7 +101,7 @@ The most common dashboard is a wall: every widget the builder found, arranged by
     7. **Save**, then **Done Editing**.
 
     ```markdown
-    ## Digital Banking Command Center
+    ## Digital Command Center
     **Owner:** P## (Delivery Manager, Digital Banking) · **Reviewed:** Sprint 14 · **Teams:** Mobile Banking, Digital Accounts
 
     Answers five questions: current work · delivery · urgent bugs · Feature progress · risk and alignment.
@@ -114,12 +114,18 @@ The most common dashboard is a wall: every widget the builder found, arranged by
 
 <!-- VERIFY: dashboard type labels "Team Dashboard" / "Project Dashboard" and the auto-refresh checkbox wording in the live Create a dashboard dialog; whether a plain Contributor can create a Project Dashboard (expected yes). -->
 
-<!-- SHOT: lab05-create-dialog | Overview › Dashboards › + New Dashboard, Create a dashboard dialog filled in: name P## - Digital Banking Command Center, auto-refresh ticked, Project Dashboard selected | crop: dialog only; highlight the auto-refresh checkbox and Project Dashboard radio -->
+<figure class="hp-shot" data-shot="lab05-create-dialog" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › + New Dashboard</span></div>
+
+![A project dashboard belongs to you, not to a team's admins. Tick auto-refresh so the page is never stale, and keep the name under 32 characters or the dialog won't let you create it.](../assets/shots/lab05-create-dialog.png){ loading=lazy }
+
+<figcaption markdown>A **project** dashboard belongs to you, not to a team's admins. Tick auto-refresh so the page is never stale, and keep the name **under 32 characters** or the dialog won't let you create it.</figcaption>
+</figure>
 
 Two details in that header do more work than they look. **Reviewed: Sprint 14** tells the reader how much to trust the page. The **legend** turns tile colors from your private code into a shared rule, which matters the first time someone asks why a tile is red.
 
 !!! checkpoint "Checkpoint"
-    - [ ] `P## - Digital Banking Command Center` exists as a project dashboard with auto-refresh on
+    - [ ] `P## - Digital Command Center` exists as a project dashboard with auto-refresh on
     - [ ] Its Markdown header names the owner, the review sprint, the legend and three working links
 
 ## Part 3 — Wire up the queries
@@ -259,7 +265,7 @@ Read the three rows. `Spending Insights` is here because its Target Date is clos
 
 <!-- VERIFY: that the Query Tile widget accepts a Work items and direct links query and counts top-level rows (6). If it doesn't, use a Query Results widget for the same query and note the count in its title. -->
 
-<!-- SHOT: lab05-query-tile-config | P## - Digital Banking Command Center in edit mode, Configuration panel of the "Orphan stories this sprint" Query Tile showing the query path and two conditional formatting rules | crop: config panel and the tile; highlight the conditional formatting rows -->
+<!-- SHOT: lab05-query-tile-config | P## - Digital Command Center in edit mode, Configuration panel of the "Orphan stories this sprint" Query Tile showing the query path and two conditional formatting rules | crop: config panel and the tile; highlight the conditional formatting rows -->
 
 !!! insight "Lighthouse insight: a threshold is a policy"
     The moment a tile turns red at 10 bugs, you've made a rule: *ten urgent bugs is an emergency*. Did anyone agree to that? Put thresholds in the legend, agree them with the people who'll be judged by them, and change them deliberately. Otherwise every color is your opinion wearing a uniform.
@@ -307,7 +313,7 @@ The **Chart for Work Items** widget can also **Group by** `Tags`, which the Quer
 
 <!-- VERIFY: maximum rolling period accepted by the CFD widget and the Cycle Time widget (the in-context CFD allows 14-180 days); which team the Team selector defaults to on a project dashboard. -->
 
-<!-- SHOT: lab05-velocity-config | Configuration panel of the Velocity widget on P## - Digital Banking Command Center: Team = Mobile Banking, Backlog Stories, Sum of Story Points, 6 iterations, Display planned work ticked | crop: config panel; highlight the Team selector -->
+<!-- SHOT: lab05-velocity-config | Configuration panel of the Velocity widget on P## - Digital Command Center: Team = Mobile Banking, Backlog Stories, Sum of Story Points, 6 iterations, Display planned work ticked | crop: config panel; highlight the Team selector -->
 
 **You should see:**
 
@@ -342,7 +348,7 @@ Drag widgets into a reading order (edit mode only). People read a dashboard like
 
 Top row: *is anything on fire?* Second row: *where are the Features?* Below the fold: the diagnostics you use when the top rows say something's wrong.
 
-<!-- SHOT: lab05-command-center-full | P## - Digital Banking Command Center, view mode, all widgets laid out as in the layout table; tiles showing 3 / 18+ / 1 / 6 | full page; highlight the top row -->
+<!-- SHOT: lab05-command-center-full | P## - Digital Command Center, view mode, all widgets laid out as in the layout table; tiles showing 3 / 18+ / 1 / 6 | full page; highlight the top row -->
 
 ## Part 5 — Cut it down for executives
 

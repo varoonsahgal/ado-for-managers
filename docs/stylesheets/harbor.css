@@ -847,7 +847,8 @@
 
 /* ---------- Live screenshots (tools/embed_shots.py) ---------- */
 .md-typeset figure.hp-shot {
-  margin: 1.8em 0 2em;
+  margin: 1.8em auto 2em;
+  width: fit-content;
   max-width: 100%;
   border: 1px solid var(--hp-border-strong);
   border-radius: 14px;
@@ -859,7 +860,8 @@
 .md-typeset figure.hp-shot > p { margin: 0; }
 .md-typeset figure.hp-shot img {
   display: block;
-  width: 100%;
+  width: auto;
+  max-width: 100%;
   height: auto;
   border: 0;
   border-radius: 0;
@@ -914,3 +916,6 @@
 }
 [data-md-color-scheme="slate"] .md-typeset figure.hp-shot img { filter: brightness(.94); }
 .md-typeset figure.hp-shot figcaption p { display: inline; margin: 0; }
+
+.md-typeset figure.hp-shot figcaption { max-width: 100%; }
+@media (min-width: 76.25em) { .md-typeset figure.hp-shot img { max-height: 46rem; } }

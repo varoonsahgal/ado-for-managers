@@ -84,3 +84,27 @@ lab03-toolkit-folder:
 start-env-shared-queries:
   bar: "Boards › Queries › All"
   caption: "Shared Queries holds three folders: **HarborPoint Reports** (ready-made program views), **PMO Reporting** (Leo's queries, which you'll audit on Day 3) and **Training**, where your `P##` folder lives."
+
+lab04-features-pie:
+  bar: "Boards › Queries › Shared Queries › Training › P## › 10 Digital Features (chart) › Charts"
+  caption: "Nine Features by Area Path: five Active, two Closed, two New. Lab 1 counted *eight* under the Epic. The ninth is `Real-Time Fraud Alerts`, built by a Digital team but serving another Epic."
+
+lab04-sprint-pivot:
+  bar: "Boards › Queries › Shared Queries › Training › P## › 11 Digital stories this sprint (chart) › Charts"
+  caption: "Two charts on one query. Mobile Banking has **Closed 12** of its 65 points with **11 more sitting in Resolved**; Digital Accounts has closed 10 of 26 with nothing queued for test."
+
+lab05-create-dialog:
+  bar: "Overview › Dashboards › + New Dashboard"
+  caption: "A **project** dashboard belongs to you, not to a team's admins. Tick auto-refresh so the page is never stale, and keep the name **under 32 characters** or the dialog won't let you create it."
+
+lab04-bug-trend:
+  bar: "Overview › Dashboards › Burndown widget · Mobile Banking · Bugs · weekly since Sprint 9"
+  caption: "Open Mobile Banking bugs, week by week: **9 at the start of Sprint 9, 42 today.** The orange Total Scope line keeps pulling away from the bars, so bugs are being filed faster than they're fixed."
+
+lab06-bug-trend:
+  bar: "Overview › Dashboards › Burndown widget · Mobile Banking · Bugs · weekly since Sprint 9"
+  caption: "The quality signal behind the rising velocity: open bugs more than quadrupled in five sprints, and the climb steepened in Sprint 13."
+
+lab04-status-report:
+  bar: "Overview › Wiki › Training › P## › Sprint Delivery Report"
+  caption: "A model one-pager: a colour **with a sentence**, scope and as-of stated up front, a Feature table, three evidenced risks and a live query table. Typing `#1365` turned into a live link to the Feature."

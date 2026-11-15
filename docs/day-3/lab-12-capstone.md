@@ -70,7 +70,7 @@ Executive Committee in 150 minutes. Give me a **realistic outlook for PI 5** and
 | You built | In |
 |---|---|
 | Query toolkit (`04 Features at risk`, `06 Orphan work`, …) | [Lab 3](../day-1/lab-03-query-toolkit.md) |
-| `P## - Digital Banking Command Center` | [Lab 5](../day-2/lab-05-command-center.md) |
+| `P## - Digital Command Center` | [Lab 5](../day-2/lab-05-command-center.md) |
 | Mobile Banking case file and help plan | [Lab 6](../day-2/lab-06-which-team-needs-help.md) |
 | `P## - Fraud Alerts Plan`, `Fraud Alerts dependencies`, options matrix | [Lab 7](../day-2/lab-07-cross-team-bottleneck.md) |
 | `P## - METP Executive Status` and executive briefing | [Lab 8](../day-2/lab-08-executive-status-review.md) |
@@ -324,7 +324,7 @@ The worksheet says what *could* fit. Now decide what *should*. This is where Hec
 
     | Candidate | BV + TC | Effort | Score | Notes |
     |---|:-:|:-:|:-:|---|
-    | Real-Time Fraud Alerts | 40 | 51 | **0.78** | Priority #1 Epic |
+    | Real-Time Fraud Alerts | 40 | 51 | **0.78** | Priority-one Epic |
     | In-Branch Digital Onboarding | 21 | 33 | **0.64** | |
     | Account Takeover Protection | 18 | 34 | **0.53** | |
     | Callback Scheduling | 10 | 21 | **0.48** | |
@@ -332,7 +332,7 @@ The worksheet says what *could* fit. Now decide what *should*. This is where Hec
     | Teller Workstation Refresh | 7 | 21 | **0.33** | First to give way |
     | Member-to-Member Transfers | 28 | — | **n/a** | Can't score what isn't sized |
 
-    **Survey and persona adjustments:** fraud is the #1 worry in every segment (71%), so Fraud Alerts, Account Takeover Protection and the card lock stay on top. Dee (fraud-wary, branch-first) and the +28% branch demand back In-Branch Digital Onboarding and its large-text mode. Jordan is the member for Card Controls and transfers. Digital-only onboarding at 2.9/5 is a reason to *protect* Digital Accounts, not to take an engineer from it.
+    **Survey and persona adjustments:** fraud is the top worry in every segment (71%), so Fraud Alerts, Account Takeover Protection and the card lock stay on top. Dee (fraud-wary, branch-first) and the +28% branch demand back In-Branch Digital Onboarding and its large-text mode. Jordan is the member for Card Controls and transfers. Digital-only onboarding at 2.9/5 is a reason to *protect* Digital Accounts, not to take an engineer from it.
 
     **Hector's request:** "Yes, but". Branch Experience has the capacity. What it needs is Digital Accounts' *knowledge* for `Pre-fill member data from online application`. Offer time-boxed pairing instead of a transfer that costs Card Controls a fifth of its capacity.
 

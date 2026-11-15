@@ -330,6 +330,26 @@ dashboards:
         row_span: 4
         column_span: 10
         query: "Shared Queries/HarborPoint Reports/Portfolio - Features by target date"
+      - type: burndown
+        title: "Open bugs since Sprint 9 · Mobile Banking"
+        row: 7
+        column: 1
+        row_span: 3
+        column_span: 4
+        team: "Mobile Banking"
+        work_item_type: "Bug"
+        start: "{sprint9_start}"
+        end: "{sprint14_end}"
+      - type: burndown
+        title: "Open bugs since Sprint 9 · Digital Accounts"
+        row: 7
+        column: 5
+        row_span: 3
+        column_span: 4
+        team: "Digital Accounts"
+        work_item_type: "Bug"
+        start: "{sprint9_start}"
+        end: "{sprint14_end}"
 
   - name: "Member Support - Delivery Health"
     description: "Member Support delivery metrics for the PMO weekly pack. Maintained by Leo Fischer, PMO."

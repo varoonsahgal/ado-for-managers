@@ -33,8 +33,8 @@ DATE_FIELDS = {"Microsoft.VSTS.Common.ActivatedDate", "Microsoft.VSTS.Common.Res
                "Microsoft.VSTS.Common.ClosedDate", "Microsoft.VSTS.Common.StateChangeDate",
                "Microsoft.VSTS.Scheduling.StartDate", "Microsoft.VSTS.Scheduling.TargetDate"}
 WIDGET_TYPES = {"markdown", "query_tile", "query_results", "chart", "velocity", "sprint_burndown", "cfd",
-                "cycle_time", "lead_time"}
-TEAM_WIDGETS = {"velocity", "sprint_burndown", "cfd", "cycle_time", "lead_time"}
+                "cycle_time", "lead_time", "burndown"}
+TEAM_WIDGETS = {"velocity", "sprint_burndown", "cfd", "cycle_time", "lead_time", "burndown"}
 QUERY_WIDGETS = {"query_tile", "query_results", "chart"}
 BACKLOG_CATEGORIES = {"Microsoft.EpicCategory", "Microsoft.FeatureCategory", "Microsoft.RequirementCategory"}
 WIQL_TOKENS = {"project", "participant", "sandbox_area"}
@@ -358,6 +358,8 @@ def validate_artifacts(a: dict, r: Report, *, project: str, teams: set[str], it_
             if t in TEAM_WIDGETS:
                 if (w.get("team") or d.get("team")) not in teams:
                     r.err(f"dashboard {d['name']!r} widget {title!r}: team {w.get('team')!r} does not exist")
+            if t == "burndown" and not (w.get("start") and w.get("end")):
+                r.err(f"dashboard {d['name']!r} widget {title!r}: burndown needs start and end dates")
             if t == "sprint_burndown" and w.get("iteration") not in it_paths:
                 r.err(f"dashboard {d['name']!r} widget {title!r}: iteration {w.get('iteration')!r} does not exist")
             row, col = int(w.get("row", 0)), int(w.get("column", 0))

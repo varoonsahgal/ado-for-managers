@@ -1093,7 +1093,8 @@ PLACEHOLDER_ARTIFACTS = {"query_folders": [], "queries": [], "wiki_pages": [], "
 
 
 def load_artifacts(path: Path | None, sprint14_start: dt.date) -> dict:
-    """Load content/artifacts.yaml (optional) and substitute {sprint14_start} and {project}."""
+    """Load content/artifacts.yaml (optional) and substitute {sprint14_start}, {sprint9_start},
+    {sprint14_end} and {project}."""
     if path is None or not path.exists():
         return json.loads(json.dumps(PLACEHOLDER_ARTIFACTS))
     import yaml  # PyYAML, installed in the project venv
@@ -1101,9 +1102,14 @@ def load_artifacts(path: Path | None, sprint14_start: dt.date) -> dict:
     with open(path, encoding="utf-8") as fh:
         data = yaml.safe_load(fh) or {}
 
+    sprint9_start = sprint14_start - dt.timedelta(days=70)
+    sprint14_end = sprint14_start + dt.timedelta(days=11)
+
     def sub(v):
         if isinstance(v, str):
-            return v.replace("{sprint14_start}", sprint14_start.isoformat()).replace("{project}", P)
+            return (v.replace("{sprint14_start}", sprint14_start.isoformat())
+                    .replace("{sprint9_start}", sprint9_start.isoformat())
+                    .replace("{sprint14_end}", sprint14_end.isoformat()).replace("{project}", P))
         if isinstance(v, list):
             return [sub(x) for x in v]
         if isinstance(v, dict):

@@ -189,7 +189,7 @@ A whole room of managers shares one project, so everything you create carries yo
 | You create… | Where, and how it's named | Example |
 |:--|:--|:--|
 | Shared queries | `Shared Queries/Training/P##/` (scratch work can go in **My Queries**) | `Shared Queries/Training/P##/04 Features at risk` |
-| Dashboards | Project dashboard named `P## - <name>` | `P## - Digital Banking Command Center` |
+| Dashboards | Project dashboard named `P## - <name>` | `P## - Digital Command Center` |
 | Delivery Plans | `P## - <name>` | `P## - Fraud Alerts Plan` |
 | Wiki pages | `/Training/P##/<page>` | `/Training/P##/Sprint Delivery Report` |
 | Work items | Only in your sandbox area `HarborPoint\Training\P##`; titles start with `P## - ` | `P## - Member Onboarding Redesign` |

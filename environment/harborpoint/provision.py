@@ -877,7 +877,17 @@ class Provisioner:
                 raise StepError(f"Iteration {w['iteration']!r} not found")
             iteration = {"id": node["identifier"], "path": f"{self.project}\\{w['iteration']}",
                          "start": cal["start"] + "T00:00:00Z", "finish": cal["finish"] + "T00:00:00Z"}
-        return W.widget_body(w, project_id=self.project_id, team_id=team_id, query=query, iteration=iteration)
+        board = None
+        if w["type"] == "cfd" and team_id:
+            # The CFD stores the board's GUID and the column GUIDs to plot (all but the incoming column).
+            b = next((x for x in self.send(self.api.list_boards(self.project_id, team_id)).data.get("value", [])
+                      if x["name"] == "Stories"), None)
+            if not b:
+                raise StepError(f"No Stories board for team {team_name!r}")
+            cols = self.send(self.api.get_board_columns(self.project_id, team_id, b["name"])).data.get("value", [])
+            board = {"id": b["id"], "column_ids": [c["id"] for c in cols if c.get("columnType") != "incoming"]}
+        return W.widget_body(w, project_id=self.project_id, team_id=team_id, query=query, iteration=iteration,
+                             board=board)
 
     # ------------------------------------------------------------------ plans
     def step_plans(self) -> None:

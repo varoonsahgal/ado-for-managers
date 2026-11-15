@@ -1,12 +1,13 @@
 """Dashboard widget and Delivery Plan payload builders.
 
-Widget ``settings`` are JSON *strings* (Markdown widget: raw Markdown). Shapes follow the
-research notes (Microsoft Demo Generator templates); widgets are split into:
+Widget ``settings`` are JSON *strings* (Markdown widget: raw Markdown). Shapes were captured from
+widgets configured in the UI of a live organization (November 2026), so they round-trip through the
+configuration panels:
 
-* ``SAFE`` types created by default: markdown, query_tile, query_results, chart, velocity;
-* ``UNCERTAIN`` types (sprint_burndown, cfd, cycle_time, lead_time) whose settings JSON is not
-  documented. They are only attempted with ``--experimental-widgets``; otherwise (or when the
-  attempt fails) the provisioner prints exact manual UI steps.
+* ``SAFE`` types created by default: markdown, query_tile, query_results, chart, velocity,
+  sprint_burndown, burndown, cfd, cycle_time;
+* ``UNCERTAIN`` types (lead_time) are only attempted with ``--experimental-widgets``; otherwise
+  the provisioner prints exact manual UI steps.
 """
 from __future__ import annotations
 
@@ -25,14 +26,17 @@ CONTRIBUTION = {
     "cfd": P + "CumulativeFlowDiagramWidget",
     "cycle_time": P + "CycleTimeWidget",
     "lead_time": P + "LeadTimeWidget",
+    "burndown": P + "BurndownWidget",
 }
-SETTINGS_VERSION = {"chart": (3, 0, 0)}
-SAFE = {"markdown", "query_tile", "query_results", "chart", "velocity"}
-UNCERTAIN = {"sprint_burndown", "cfd", "cycle_time", "lead_time"}
+SETTINGS_VERSION = {"chart": (3, 0, 0), "cycle_time": (2, 0, 0), "lead_time": (2, 0, 0)}
+SAFE = {"markdown", "query_tile", "query_results", "chart", "velocity", "sprint_burndown", "burndown", "cfd",
+        "cycle_time"}
+UNCERTAIN = {"lead_time"}
 UI_NAME = {"markdown": "Markdown", "query_tile": "Query Tile", "query_results": "Query Results",
            "chart": "Chart for Work Items", "velocity": "Velocity", "sprint_burndown": "Sprint Burndown",
-           "cfd": "Cumulative Flow Diagram", "cycle_time": "Cycle Time", "lead_time": "Lead Time"}
-CHART_TYPES = {"pie": "PieChart", "bar": "BarChart", "column": "ColumnChart", "stackedBar": "StackedBarChart",
+           "cfd": "Cumulative Flow Diagram", "cycle_time": "Cycle Time", "lead_time": "Lead Time",
+           "burndown": "Burndown"}
+CHART_TYPES = {"pie": "PieChart", "bar": "BarChart", "column": "ColumnChart", "stackedBar": "stackBarChart",
                "stackedColumn": "StackedColumnChart", "pivot": "PivotTable", "table": "PivotTable",
                "line": "LineChart", "area": "AreaChart"}
 COLUMN_LABELS = {
@@ -55,10 +59,11 @@ def wiql_columns(wiql: str) -> list[str]:
 
 
 def widget_body(w: dict, *, project_id: str, team_id: str | None, query: dict | None,
-                iteration: dict | None = None) -> dict:
+                iteration: dict | None = None, board: dict | None = None) -> dict:
     """Build the REST body for one widget spec (artifacts.yaml schema).
 
-    ``query`` = {"id", "name", "wiql"}; ``iteration`` = {"id" (GUID), "path", "start", "finish"}.
+    ``query`` = {"id", "name", "wiql"}; ``iteration`` = {"id" (GUID), "path", "start", "finish"};
+    ``board`` = {"id", "column_ids"} for the team's Stories board (CFD only).
     """
     t = w["type"]
     title = w.get("title") or UI_NAME[t]
@@ -84,6 +89,9 @@ def widget_body(w: dict, *, project_id: str, team_id: str | None, query: dict | 
                                          "measure": {"aggregation": "count", "propertyName": ""},
                                          "historyRange": None},
                     "userColors": [], "lastArtifactName": query["name"]}
+        if chart.get("series"):  # stacked charts: series = the Y-axis field, groupBy = the stack
+            settings["transformOptions"]["series"] = chart["series"]
+            settings["transformOptions"]["groupByTags"] = False
     elif t == "velocity":
         settings = {"projectId": project_id, "teamId": team_id,
                     "workItemTypeFilter": {"identifier": "BacklogCategory",
@@ -92,25 +100,43 @@ def widget_body(w: dict, *, project_id: str, team_id: str | None, query: dict | 
                     "numberOfIterations": int(w.get("iterations", 6)), "plannedWorkDelay": 0, "lateWorkDelay": 0,
                     "lastArtifactName": None, "showResolvedItemsAsCompleted": False}
     elif t == "sprint_burndown":
-        settings = {"team": {"projectId": project_id, "teamId": team_id},
-                    "iterationId": iteration["id"] if iteration else None,
-                    "iterationPath": iteration["path"] if iteration else None,
+        settings = {"totalScopeTrendlineEnabled": bool(w.get("show_total_scope", True)), "completedWorkEnabled": False,
                     "aggregation": {"identifier": 1, "settings": "Microsoft.VSTS.Scheduling.StoryPoints"},
                     "workItemTypeFilter": {"identifier": "BacklogCategory",
                                            "settings": "Microsoft.RequirementCategory"},
-                    "timePeriodConfiguration": {"startDate": iteration["start"] if iteration else None,
-                                                "endDate": iteration["finish"] if iteration else None},
-                    "lastArtifactName": None}
+                    "timePeriodConfiguration": {"startDate": iteration["start"][:10] if iteration else None,
+                                                "endDate": iteration["finish"][:10] if iteration else None},
+                    "team": {"teamId": team_id, "projectId": project_id},
+                    "iterationId": iteration["id"] if iteration else None,
+                    "iterationPath": iteration["path"] if iteration else None,
+                    "isMinimalChart": False, "isLightboxChart": False, "isLegacy": False, "isCustomized": True}
+    elif t == "burndown":
+        # Analytics Burndown over a date range (e.g. open bugs since Sprint 9). Reads business dates, so
+        # it shows backdated history; query trend charts replay the store's own write times instead.
+        settings = {"teams": [{"projectId": project_id, "teamId": team_id}],
+                    "aggregation": {"identifier": 0, "settings": ""}, "completedWorkEnabled": False,
+                    "fieldFilters": [], "stackByWorkItemTypeEnabled": False, "burndownTrendlineEnabled": True,
+                    "workItemTypeFilter": {"identifier": "WorkItemType", "settings": w.get("work_item_type", "Bug")},
+                    "includeBugsForRequirementCategory": False,
+                    "timePeriodConfiguration": {"startDate": w["start"], "samplingConfiguration": {
+                        "identifier": 0, "settings": {"endDate": w["end"], "lastDayOfWeek": 5,
+                                                      "sampleInterval": int(w.get("interval_weeks", 1))}}},
+                    "totalScopeTrendlineEnabled": True, "showResolvedItemsAsCompletedEnabled": False}
     elif t == "cfd":
-        settings = {"chartDataSettings": {"project": project_id, "team": team_id, "board": "Stories",
-                                          "boardLane": None, "timePeriod": {"identifier": 0, "settings": 30},
-                                          "desiredBoardColumnIds": []}, "themeName": "", "lastArtifactName": None}
+        if not board:
+            raise ValueError("cfd widgets need the team's Stories board id and column ids")
+        settings = {"chartDataSettings": {"project": project_id, "team": team_id, "board": board["id"],
+                                          "boardLane": None,
+                                          "timePeriod": {"identifier": "RollingPeriod", "settings": int(w.get("days", 80))},
+                                          "desiredBoardColumnIds": board["column_ids"]},
+                    "themeName": "Blue", "lastArtifactName": title}
     elif t in ("cycle_time", "lead_time"):
         settings = {"dataSettings": {"project": project_id, "teamIds": [team_id],
-                                     "witSelector": {"identifier": "BacklogCategory",
-                                                     "settings": "Microsoft.RequirementCategory"},
+                                     "witSelector": {"identifier": "WorkItemType",
+                                                     "settings": w.get("work_item_type", "User Story")},
                                      "swimLane": None, "fieldFilters": [],
-                                     "timePeriod": {"identifier": 0, "settings": 30}}, "lastArtifactName": None}
+                                     "timePeriod": {"identifier": "RollingPeriod", "settings": int(w.get("days", 80))}},
+                    "lastArtifactName": title}
     else:  # pragma: no cover - validated earlier
         raise ValueError(f"unknown widget type {t}")
     major, minor, patch = SETTINGS_VERSION.get(t, (1, 0, 0))
