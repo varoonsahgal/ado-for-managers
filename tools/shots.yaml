@@ -236,3 +236,27 @@ lab12-pulse-survey:
 lab12-dashboard-security:
   bar: "Overview › Dashboards › ⋮ › Security (P## - PI 5 Outlook)"
   caption: "Search for a crewmate (or, as here, a group), select them, and set **Edit dashboard** to **Allow**. The green tick means it's saved: there's no Save button."
+
+res-cookbook-dependencies:
+  bar: "Boards › Queries › Editor (recipe D3, Work items and direct links)"
+  caption: "Two filter grids: the top one picks *your* items, the bottom one the items they link to. Underneath, **Only return items that have matching links** and **Return selected link types** with just **Predecessor** and **Successor** ticked."
+
+res-cookbook-editor:
+  bar: "Boards › Queries › Editor (recipe A2)"
+  caption: "Every recipe starts with the **Query type**: a flat list (charts, tiles, counts), work items and direct links (dependencies, orphans), or a tree (hierarchies). Below it are the clauses, one row each, read top to bottom."
+
+start-env-area-tree:
+  bar: "Project settings › Boards › Project configuration › Areas"
+  caption: "Six delivery teams, each with its own area (Mobile Banking and Digital Accounts sit under **Digital**), and **Training** with one sandbox area per participant. The Teams column shows who claims each area: that's what decides which backlog an item appears on."
+
+start-env-digital-features:
+  bar: "Boards › Backlogs › Digital Portfolio › Features (Parents on)"
+  caption: "Two selectors decide everything you see: the **team** (top left) and the **backlog level** (top right). With **Parents** on, each Feature sits under its Epic. Real-Time Fraud Alerts belongs to a different Epic, Fraud Detection & Security. Its ⓘ says *\"This item cannot be reordered because it is owned by another team\"*."
+
+start-env-team-selector:
+  bar: "Boards › Backlogs › team selector"
+  caption: "Select the team name to switch lenses. **My team backlogs** lists the teams you belong to, and **All team backlogs** lists the rest; type in the search box to find yours (`P## Sandbox`). The backlog **level** (here **Features**) is a separate choice, at the top right."
+
+res-metrics-cycle-time:
+  bar: "Overview › Dashboards › Cycle Time widget (Core Platform, User Story, last 60 days)"
+  caption: "Each dot is a completed story (bigger dots are several on one day); the line is the moving average and the shaded band is the spread. Core Platform's reads **4 days on average across 30 stories**, in a steady band. Healthy usually looks boring."

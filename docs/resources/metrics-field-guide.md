@@ -24,8 +24,6 @@ Every state belongs to a **state category**. Charts, rollups and forecasts work 
 | Closed | Completed | **Completed** (or **Completed Late**) | **Done** | Burned down | Last column | Clocks stop |
 | Removed | Removed | Excluded | Excluded | Excluded | Hidden | n/a |
 
-<!-- VERIFY: category of the Resolved state on Agile User Story and Feature (expected In Progress) under Organization settings › Boards › Process › Agile. -->
-
 !!! reef "Reef ahead: \"finished\" vs Closed"
     If a team's definition of done stops at **Resolved**, every chart under-reports them: velocity sags, rollups stall, and lead times stretch. Before you read any team's metrics, find out where their work actually stops.
 
@@ -115,7 +113,13 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **Ask** | Where in the flow do items wait? Which column grows? |
 | **Don't** | Push people to "work faster". Cycle time falls when you start less and finish more |
 
-<!-- SHOT: res-metrics-cycle-time | Dashboard Cycle Time widget configured for team Core Platform, Stories backlog, rolling 60 days; dots, moving average line and standard deviation band visible | crop: widget only -->
+<figure class="hp-shot" data-shot="res-metrics-cycle-time" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › Cycle Time widget (Core Platform, User Story, last 60 days)</span></div>
+
+![Each dot is a completed story (bigger dots are several on one day); the line is the moving average and the shaded band is the spread. Core Platform's reads 4 days on average across 30 stories, in a steady band. Healthy usually looks boring.](../assets/shots/res-metrics-cycle-time.png){ loading=lazy }
+
+<figcaption markdown>Each dot is a completed story (bigger dots are several on one day); the line is the moving average and the shaded band is the spread. Core Platform's reads **4 days on average across 30 stories**, in a steady band. Healthy usually looks boring.</figcaption>
+</figure>
 
 ### Work in progress (WIP)
 

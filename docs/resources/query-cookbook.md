@@ -51,7 +51,13 @@ In the clause tables, **(blank)** means leave **Value** empty, and `@CurrentIter
 | [F6](#f6) | Work at the root area | What belongs to no team? | Flat |
 | [G1](#g1) | My radar | What should I be watching? | Flat |
 
-<!-- SHOT: res-cookbook-editor | Boards › Queries › New query, Editor tab, Flat list of work items, clauses from recipe A2 (Work Item Type = Feature, State <> Removed, Area Path Not Under HarborPoint\Training) | crop: query type dropdown and clause grid -->
+<figure class="hp-shot" data-shot="res-cookbook-editor" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Editor (recipe A2)</span></div>
+
+![Every recipe starts with the Query type: a flat list (charts, tiles, counts), work items and direct links (dependencies, orphans), or a tree (hierarchies). Below it are the clauses, one row each, read top to bottom.](../assets/shots/res-cookbook-editor.png){ loading=lazy }
+
+<figcaption markdown>Every recipe starts with the **Query type**: a flat list (charts, tiles, counts), work items and direct links (dependencies, orphans), or a tree (hierarchies). Below it are the clauses, one row each, read top to bottom.</figcaption>
+</figure>
 
 ## A · Portfolio and Features
 
@@ -189,8 +195,6 @@ Filters for linked work items:
 
 **Use it:** before PI planning. A Feature with no children can't be forecast, rolled up or tracked. It's an idea with a date on it.
 
-<!-- VERIFY: exact option wording "Only return items that do not have matching links" (Learn shows "don't") and the link-type checklist labels in New Boards Hub. -->
-
 ??? info "Under the hood: WIQL"
     ```sql
     SELECT [System.Id], [System.Title], [System.State], [System.AreaPath]
@@ -246,8 +250,6 @@ Filters for linked work items:
 
 **Columns:** **Parent**, Title, State, Assigned To, Story Points, Tags. The Parent column shows each item's Feature (blank means no Feature).
 **Use it:** a weekly readout. Chart **Pie** by State with **Sum** of Story Points. For a hierarchy, build the same filter as a **Tree of work items** with `Feature` on top and these clauses in the linked filters; it reads well in a **Query Results** widget but can't be charted.
-
-<!-- VERIFY: where the @CurrentIteration team parameter box sits in the New Boards Hub editor, and whether charts can group by Parent. -->
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -539,7 +541,13 @@ Filters for linked work items:
 **Columns:** Work Item Type, Title, State, Area Path, Iteration Path.
 **Use it:** what a Delivery Plan can't show you. A plan draws lines only between cards on the plan, in expanded rows, with dates. This query lists every link, including ones to teams or items that aren't on any plan. Check the linked item's Iteration Path: a predecessor with no sprint is a risk with no date.
 
-<!-- SHOT: res-cookbook-dependencies | Query D3 open in the Editor tab: Work items and direct links, the two filter grids, Predecessor and Successor ticked, "Only return items that have matching links" selected | crop: link options and both grids -->
+<figure class="hp-shot" data-shot="res-cookbook-dependencies" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Editor (recipe D3, Work items and direct links)</span></div>
+
+![Two filter grids: the top one picks your items, the bottom one the items they link to. Underneath, Only return items that have matching links and Return selected link types with just Predecessor and Successor ticked.](../assets/shots/res-cookbook-dependencies.png){ loading=lazy }
+
+<figcaption markdown>Two filter grids: the top one picks *your* items, the bottom one the items they link to. Underneath, **Only return items that have matching links** and **Return selected link types** with just **Predecessor** and **Successor** ticked.</figcaption>
+</figure>
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -901,8 +909,6 @@ Filters for linked work items:
     ORDER BY [System.ChangedDate] DESC
     ```
 
-<!-- VERIFY: WIQL form of the ID macros (IN (@Follows) vs IN @Follows). -->
-
 ## Macro cheat sheet
 
 | Macro | Use with | Example | Watch out |
@@ -960,7 +966,6 @@ Three habits that save time:
 | Basic access required | Stakeholders don't see the **Charts** tab | Stakeholders can still view charts on dashboards |
 | Viewers need Read on the query | Otherwise the widget shows *Widget failed to load* | Keep dashboard queries in a folder everyone can read |
 
-<!-- VERIFY: whether "Group by Tags" in the Chart for Work Items widget is generally available or still behind the preview toggle "Enable group by tags for work item chart widget on dashboard". -->
 
 !!! insight "Lighthouse insight"
     A query is a **question you can re-ask** for free. Save the questions you get asked every week, name them as questions (`Features due in 14 days`), and put them where your stakeholders can run them. The best status report is one nobody has to compile.

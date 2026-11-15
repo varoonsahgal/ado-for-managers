@@ -33,7 +33,13 @@ HarborPoint
     └── P01 … P30        (participant sandboxes, one is yours)
 ```
 
-<!-- SHOT: start-env-area-tree | Project settings › Boards › Project configuration › Areas, tree fully expanded, showing Digital (Mobile Banking, Digital Accounts), Security, Core Platform, Branch Experience, Member Support and Training › P01 to P30 | crop: tree only; highlight Training › P## -->
+<figure class="hp-shot" data-shot="start-env-area-tree" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Project settings › Boards › Project configuration › Areas</span></div>
+
+![Six delivery teams, each with its own area (Mobile Banking and Digital Accounts sit under Digital), and Training with one sandbox area per participant. The Teams column shows who claims each area: that's what decides which backlog an item appears on.](../assets/shots/start-env-area-tree.png){ loading=lazy }
+
+<figcaption markdown>Six delivery teams, each with its own area (Mobile Banking and Digital Accounts sit under **Digital**), and **Training** with one sandbox area per participant. The Teams column shows who claims each area: that's what decides which backlog an item appears on.</figcaption>
+</figure>
 
 ## Iterations: the calendar
 
@@ -62,9 +68,15 @@ Almost every view in **Boards** (backlogs, boards, sprints, Velocity, CFD, `@Cur
 | **Core Platform** | `HarborPoint\Core Platform` | Features, Stories | Sprint 9 – Sprint 20 | as above |
 | **Branch Experience** | `HarborPoint\Branch Experience` | Features, Stories | Sprint 9 – Sprint 20 | as above |
 | **Member Support** | `HarborPoint\Member Support` | Features, Stories | Sprint 9 – Sprint 20 | as above |
-| **P## Sandbox** (yours) | `HarborPoint\Training\P##` | Features, Stories | **Sprint 15 – Sprint 20 only** | Your own practice backlog. You're its team administrator |
+| **P## Sandbox** (yours) | `HarborPoint\Training\P##` | Features, Stories | **Sprint 14 – Sprint 20 only** | Your own practice backlog. You're its team administrator |
 
-<!-- SHOT: start-env-team-selector | Boards › Backlogs with the team selector open, listing HarborPoint Team, Digital Portfolio, the six delivery teams and a P## Sandbox team | crop: selector dropdown and the level selector (Epics / Features / Stories); highlight both -->
+<figure class="hp-shot" data-shot="start-env-team-selector" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › team selector</span></div>
+
+![Select the team name to switch lenses. My team backlogs lists the teams you belong to, and All team backlogs lists the rest; type in the search box to find yours (P## Sandbox). The backlog level (here Features) is a separate choice, at the top right.](../assets/shots/start-env-team-selector.png){ loading=lazy }
+
+<figcaption markdown>Select the team name to switch lenses. **My team backlogs** lists the teams you belong to, and **All team backlogs** lists the rest; type in the search box to find yours (`P## Sandbox`). The backlog **level** (here **Features**) is a separate choice, at the top right.</figcaption>
+</figure>
 
 !!! reef "Reef ahead: the wrong team"
     "My Feature is missing" is almost always a team-context problem. The **Digital Portfolio** team can't show you Security's work, and a delivery team can't show you Epics. Before you conclude that something isn't there, check the team selector and the backlog level selector.
@@ -96,8 +108,6 @@ Epics, Features and User Stories move **New → Active → Resolved → Closed**
 | Resolved | In Progress for stories and Features; Resolved for bugs | Yes | **No** |
 | Closed | Completed | No (last board column) | **Yes, the only state that does** |
 | Removed | Removed | No | No (excluded) |
-
-<!-- VERIFY: state category of Resolved on Agile User Story and Feature (expected In Progress) under Organization settings › Boards › Process › Agile › User Story › States. -->
 
 !!! insight "Lighthouse insight: Resolved is not done"
     Rollup progress bars, Velocity and burndowns credit only **Closed** items. A story sitting in **Resolved** counts as unfinished, however finished it feels to the team. When a chart and a team's story disagree, the state category is the first place to look.
@@ -235,7 +245,7 @@ If any check fails, tell your instructor before Lab 1. It's a two-minute fix now
 | See (not change) a team's areas and sprints | **Project settings › Boards › Team configuration**, team picker in the breadcrumb |
 | See the full area and iteration trees | **Project settings › Boards › Project configuration** |
 
-<!-- VERIFY: rollup quick-list label on the Features backlog ("Progress by Story Points" vs "Progress by User Story"); and that Contributors can open Project settings › Boards › Team configuration read-only. -->
+<!-- VERIFY (needs a second, Contributor-only account): that Contributors can open Project settings › Boards › Team configuration read-only. Rollup labels are confirmed: Progress by Story Points, Sum of Story Points, Progress by all Work Items. -->
 
 ## Your first five minutes
 
@@ -247,7 +257,13 @@ If any check fails, tell your instructor before Lab 1. It's a two-minute fix now
     - [ ] I opened **HarborPoint Program Plan** under **Boards › Delivery Plans** (looking, not dragging)
     - [ ] I saved my participant ID on the [Welcome page](index.md#your-participant-id)
 
-<!-- SHOT: start-env-digital-features | Boards › Backlogs, team Digital Portfolio, level Features, Parents On (Epics shown above their Features), no rollup columns | crop: backlog grid, team selector and level selector -->
+<figure class="hp-shot" data-shot="start-env-digital-features" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Digital Portfolio › Features (Parents on)</span></div>
+
+![Two selectors decide everything you see: the team (top left) and the backlog level (top right). With Parents on, each Feature sits under its Epic. Real-Time Fraud Alerts belongs to a different Epic, Fraud Detection & Security. Its ⓘ says "This item cannot be reordered because it is owned by another team".](../assets/shots/start-env-digital-features.png){ loading=lazy }
+
+<figcaption markdown>Two selectors decide everything you see: the **team** (top left) and the **backlog level** (top right). With **Parents** on, each Feature sits under its Epic. Real-Time Fraud Alerts belongs to a different Epic, Fraud Detection & Security. Its ⓘ says *"This item cannot be reordered because it is owned by another team"*.</figcaption>
+</figure>
 
 !!! tip "Next"
     Ready? Head to [Day 1](../day-1/index.md). Bookmark the [Query Cookbook](../resources/query-cookbook.md) and the [Metrics Field Guide](../resources/metrics-field-guide.md): you'll want both by Day 2.
