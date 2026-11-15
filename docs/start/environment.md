@@ -132,6 +132,9 @@ Some labs ask you to add tags to items in your sandbox. The lab names the tag.
 | **Related** | context only | Work item **Links** tab. Never drawn on a plan |
 | **Duplicate / Duplicate Of** | the same work recorded twice | Work item **Links** tab |
 
+!!! info "Why History says “Aisha Karimi (via …)”"
+    HarborPoint's five sprints of history were loaded by your instructor, on behalf of the cast. So a change shows as made by *Aisha Karimi (via your instructor's name)*, on the date it happened in the story. Link changes are the exception: they show the instructor's name and the day the environment was built. When you read a History tab, use its filter (the funnel above the list) to show only the fields you care about.
+
 ## What's already built for you
 
 ### Shared queries (**Boards › Queries › All**)

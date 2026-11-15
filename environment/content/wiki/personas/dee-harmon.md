@@ -42,7 +42,7 @@ Dee is wary of fraud. A friend from church lost money to a text message scam, an
 
 - 62% of branch-onboarded members over 60 never activate digital banking.
 - Demand for branch appointments among members 55+ is up 28%.
-- Fraud is the #1 worry in every member segment.
+- Fraud is the top worry in every member segment.
 
 ## Needs during onboarding and service
 

@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
 SHOTS = DOCS / "assets" / "shots"
 
-MARKER = re.compile(r"<!-- SHOT: (?P<id>[\w-]+) \|[^>]*-->")
+MARKER = re.compile(r"<!-- SHOT: (?P<id>[\w-]+) \|.*?-->", re.S)
 FIGURE = re.compile(r'<figure class="hp-shot" data-shot="(?P<id>[\w-]+)" markdown>.*?</figure>', re.S)
 
 

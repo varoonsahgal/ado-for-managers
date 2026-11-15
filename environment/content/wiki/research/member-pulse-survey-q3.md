@@ -16,7 +16,7 @@ These are the findings the Executive Committee has asked the program to respond 
 | Finding | Figure |
 |---|---|
 | Demand for **branch appointments** among members **55+** | **+28%** compared with the previous quarter |
-| Members naming **fraud and scams** as their top financial worry | **71%**. Fraud is the **#1 worry in every member segment** |
+| Members naming **fraud and scams** as their top financial worry | **71%**. Fraud is the **top worry in every member segment** |
 | **Digital-only** members' rating of the **onboarding** experience | **2.9 / 5** |
 
 ### Branch appointments are in demand
@@ -33,7 +33,7 @@ Digital-only members gave onboarding 2.9 out of 5. The most common complaints we
 
 ## Leadership response
 
-- **Hector Alvarez** (VP, Branch Network) has asked the program to **move one Digital Accounts engineer to F18 In-Branch Digital Onboarding**, citing the rise in branch-appointment demand among members 55+.
+- **Hector Alvarez** (VP, Branch Network) has asked the program to **move one Digital Accounts engineer to In-Branch Digital Onboarding**, citing the rise in branch-appointment demand among members 55+.
 - **Simone Laurent** has asked that fraud protection remain the program's first priority.
 - Both requests are on the agenda for PI 5 Planning.
 

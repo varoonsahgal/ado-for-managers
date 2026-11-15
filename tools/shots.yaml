@@ -128,3 +128,23 @@ lab05-exec-view:
 lab06-cycle-time-pair:
   bar: "Overview › Dashboards › P## - Digital Command Center › Cycle Time · two teams"
   caption: "Same widget, two teams. Mobile's moving average climbs from about 3 days to about 9, and its shaded spread widens. Digital Accounts holds at 4 to 5 days. (Watch the axes: they differ.)"
+
+lab07-plan-feature-red-line:
+  bar: "Boards › Delivery Plans › P## - Fraud Alerts Plan (dependencies shown)"
+  caption: "The toolbar's link button draws every dependency at once. One line is **red with a ⊗**: Fraud Alerts ends at the System Demo, and its predecessor runs a full sprint past it. The arrowhead points at the item being waited *on*. Black lines are fine."
+
+lab07-plan-story-level:
+  bar: "Boards › Delivery Plans › P## - Fraud Alerts Plan › Stories rows, filtered to Parent Work Item = Real-Time Fraud Alerts"
+  caption: "Below the waterline. Red badges: Mobile's **Member confirms** (Sprint 14) and **Show real-time alert** (Sprint 15) both wait on Security's **risk-score API** (Sprint 16). Green badge on **Auto-lock** (Sprint 16): same-sprint handoffs are never flagged, which is exactly why it's fragile."
+
+lab07-direct-links-query:
+  bar: "Boards › Queries › Shared Queries › Training › P## › Fraud Alerts dependencies (Work items and direct links)"
+  caption: "Every Fraud Alerts story with a Predecessor or Successor link, its partner indented below. One partner belongs to a **fourth team**: `Card lock and unlock service and API`, Digital Accounts, Iteration Path `HarborPoint`. No sprint at all, so it can never turn red on a plan."
+
+lab07-f10-history:
+  bar: "Work item › Fraud Scoring Engine v2 › History, filtered by Fields: Target Date"
+  caption: "Filter History to the field you care about and the noise disappears. One revision by **Aisha Karimi**, day 2 of Sprint 14: a reason in the comment, the PI moved from 4 to 5, and the Target Date pushed a month."
+
+lab07-security-sprint14:
+  bar: "Boards › Sprints › Security › Sprint 14 › Backlog (Parent, Tags, Story Points added)"
+  caption: "Where Security's sprint went: six `compliance` stories, **21 of 36 points**, all under the Compliance Epic. Four Features in flight for six people, and not one point for Fraud Alerts."

@@ -41,7 +41,7 @@ No other absences are planned for Sprints 15 to 17.
 
 - The team normally holds back about **10%** of each sprint for bugs and support requests.
 - The team estimates in Story Points and plans each sprint from its recent velocity. See **Digital Accounts > Velocity** in Azure DevOps for history.
-- Remaining work on Online Account Opening (F6) and Spending Insights (F7) is committed for PI 4 and comes before new Features.
+- Remaining work on Online Account Opening (Online Account Opening) and Spending Insights (Spending Insights) is committed for PI 4 and comes before new Features.
 
 ## Updating this page
 

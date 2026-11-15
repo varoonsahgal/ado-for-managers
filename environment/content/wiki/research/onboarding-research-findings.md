@@ -6,7 +6,7 @@
 |---|---|
 | Prepared by | Member Insights, with Digital Banking and Branch Network |
 | Sponsors | Priya Raman (Digital Banking), Hector Alvarez (Branch Network) |
-| Related Features | F6 Online Account Opening, F18 In-Branch Digital Onboarding |
+| Related Features | Online Account Opening, In-Branch Digital Onboarding |
 | Status | Final |
 
 ## Summary
