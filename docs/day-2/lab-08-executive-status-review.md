@@ -118,7 +118,7 @@ Lay it out so the eye reads it in order: the BLUF panel across the top, the thre
     - `Exec - Mobile open bugs`: the same without the Priority clause
     - `Exec - PI 4 committed Features`: Features tagged `PI4-Committed`. Tile 4 uses a copy with `State = Closed` added.
 
-    In the Query Tile configuration, set **Default background color** to your "bad" color and add a **+ Add rule** for the good case. For the trend chart, pick a trend chart type and a rolling period that reaches back to Sprint 9.
+    In the Query Tile configuration, set **Default background color** to your "bad" color and add a **+ Add rule** for the good case. For the bug trend, use a **Burndown** widget filtered to bugs, starting at the beginning of Sprint 9 (the same widget you read on the Program Overview in Lab 4).
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     **1. The dashboard.** Either open `P## - Digital Banking Exec View` › **⋯** › **+ Copy Dashboard**, or go to **Overview › Dashboards** › **+ New Dashboard**. **Name** `P## - METP Executive Status`. **Dashboard Type** **Project Dashboard**. Tick **Automatically refresh the dashboard every 5 minutes**. If you copy, set **Select folder location for queries** to `Shared Queries/Training/P##`, then delete any widget that isn't in the table.
@@ -169,17 +169,19 @@ Lay it out so the eye reads it in order: the BLUF panel across the top, the thre
     | **Query Tile** `Features at risk` (query `04 Features at risk`) | **Default background color** amber. Rule: **If number of work items** `<=` `3`, green |
     | **Query Tile** `Mobile open P1 bugs` | Default red. Rule: `<=` `0`, green |
     | **Query Tile** `PI 4 Features closed` | Default neutral grey, no rule (see the reef below) |
-    | **Chart for Work Items** | Query `Exec - PI 4 committed Features`, **Chart type** **Stacked bar**, rows by `Node Name`, stacked by `State` |
-    | **Chart for Work Items** | Query `Exec - Mobile open bugs`, **Chart type** **Stacked area** (trend), series by `State`, a rolling period of about 12 weeks |
+    | **Chart for Work Items** | Query `Exec - PI 4 committed Features`, **Chart type** **Stacked bar**, **Y-axis** `Node Name`, **Group by** `State` |
+    | **Burndown** | Title `Open bugs since Sprint 9 · Mobile Banking`. **Teams** `Mobile Banking`. **Work items**: **Work item type** `Bug`. **Burndown on** **Count** of work items. **Start date** the first day of Sprint 9 (it's on the plan's sprint cells), **Plot interval** **Weeks**. Leave **Show total scope** on |
     | **Query Results** | Query `Fraud Alerts dependencies` (Lab 7) |
 
-    <!-- VERIFY: Query Tile conditional-formatting operators beyond <= and the evaluation order when several rules match; Stacked bar field labels in the Chart for Work Items widget; the exact rolling-period options for trend charts (need one that reaches Sprint 9, about 12 weeks back); whether the dashboard settings entry point is ⋯ > Dashboard settings or a gear. -->
+    **Expected result:** the tiles read **8**, **4** and **0**. The stacked bar shows **13** committed Features across six teams: Mobile Banking 3, and Digital Accounts, Security, Core Platform, Branch Experience and Member Support 2 each. All are **Active** except one **New** Feature in Member Support (`Secure Messaging & Chat`). The bug trend climbs from **9** at the start of Sprint 9 to **42**, and its orange Total Scope line keeps pulling away. The Query Tile rules offer `<`, `>`, `<=`, `>=`, `<>` and `=`; when several rules match, the **last** one in the list wins, so list them from mild to severe.
 
-    **Expected result:** the tiles read **8**, **4** and **0**. The stacked bar shows **13** committed Features across six teams: Mobile Banking 3, and Digital Accounts, Security, Core Platform, Branch Experience and Member Support 2 each. All are **Active** except one **New** Feature in Member Support. The bug trend climbs from single digits in Sprint 9 to **42**.
+<figure class="hp-shot" data-shot="lab08-tile-rules" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - METP Executive Status › Query Tile › Configuration</span></div>
 
-    <!-- VERIFY: the query trend chart reflects the back-dated seed history (open Mobile bugs rising from 9 to 42 across Sprints 9 to 14). If it shows a flat line from the seeding date, fall back to the Velocity widget for Mobile Banking with "Display planned work for iterations" on. -->
+![Flip the usual pattern: make the default color the bad news (red) and write one rule for the good case (green at 0). The tile is red until the problem is actually gone. Operators on offer: <, >, <=, >=, <> and =.](../assets/shots/lab08-tile-rules.png){ loading=lazy }
 
-<!-- SHOT: lab08-tile-rules | Query Tile Configuration panel for Exec - Mobile open P1 bugs: Default background color red, one Conditional formatting rule "If number of work items <= 0" green | crop: configuration panel; highlight the rule row -->
+<figcaption markdown>Flip the usual pattern: make the **default** color the bad news (red) and write one rule for the good case (**green at 0**). The tile is red until the problem is actually gone. Operators on offer: `<`, `>`, `<=`, `>=`, `<>` and `=`.</figcaption>
+</figure>
 
 Look at the stacked bar before you move on. One Member Support Feature is still **New**, although its team is building it right now. That's another data problem, and another reason not to read Member Support's numbers at face value until Lab 11.
 
@@ -224,9 +226,7 @@ Before you write, translate. The Executive Committee doesn't think in Story Poin
     | 71% of plan delivered | Every Mobile date is about 30% optimistic, including Fraud Alerts' integration work | Stop mid-sprint intake, re-plan honestly |
     | Check Deposit misses the sprint | A visible miss on priority number two. On its own it's small. As a pattern it's the story of the team | Re-plan its Target Date with Hannah |
 
-Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (BLUF)` and copy its contents. Create a sub-page `Executive Briefing` under your `/Training/P##` page, paste, and fill it in. Keep it to one page.
-
-<!-- VERIFY: label of the wiki page menu action for adding a sub-page (e.g., "Add sub-page"), and the headings in /Templates/Executive Briefing (BLUF). The brief below should map onto them; if the template's order differs, follow the template. -->
+Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (BLUF)` and copy its contents. On your `/Training/P##` page, open the **⋯** menu › **Add sub-page**, name it `Executive Briefing`, paste, and fill it in. Keep it to one page. The template's headings run **Bottom line**, **Decisions needed**, **Top risks**, **Evidence**, **Options considered**, **What happens next**: put the decisions second, right under the bottom line, because that's what Dana reads for.
 
 !!! deliverable "Deliverable"
     `/Training/P##/Executive Briefing`, one page, with:
@@ -277,9 +277,21 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
     [Full briefing](<paste your Executive Briefing page URL>) · [Fraud Alerts options](<paste URL>)
     ```
 
-<!-- SHOT: lab08-exec-dashboard | Overview › Dashboards › P## - METP Executive Status with all seven widgets: BLUF Markdown panel across the top, tiles reading 8 / 4 / 0, PI 4 committed Features stacked bar, Mobile open bugs trend, Fraud Alerts dependencies Query Results | full dashboard; highlight the BLUF panel and the red P1 tile -->
+<figure class="hp-shot" data-shot="lab08-exec-dashboard" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - METP Executive Status</span></div>
 
-<!-- SHOT: lab08-bluf-page | Overview › Wiki › Training › P## › Executive Briefing, filled in, showing the Bottom line and Decisions needed sections | crop: page body top half -->
+![Seven widgets, each tied to a decision. The panel up top says the bottom line and the asks in words; the tiles carry written thresholds (amber 8, red 4, neutral 0); the bug trend and dependency list are the evidence.](../assets/shots/lab08-exec-dashboard.png){ loading=lazy }
+
+<figcaption markdown>Seven widgets, each tied to a decision. The panel up top says the bottom line and the asks in words; the tiles carry written thresholds (amber 8, red 4, neutral 0); the bug trend and dependency list are the evidence.</figcaption>
+</figure>
+
+<figure class="hp-shot" data-shot="lab08-bluf-page" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Wiki › Training › P## › Executive Briefing</span></div>
+
+![Two sentences answer are we going to make it? and what do you need? Each risk has three lines of evidence and a member impact. Every decision names one decider and can be answered yes or no.](../assets/shots/lab08-bluf-page.png){ loading=lazy }
+
+<figcaption markdown>Two sentences answer *are we going to make it?* and *what do you need?* Each risk has three lines of evidence and a member impact. Every decision names one decider and can be answered yes or no.</figcaption>
+</figure>
 
 !!! reef "Reef ahead: RAG without evidence"
     "Overall status: Amber" tells an executive nothing they can act on, and a colour picked by feel invites the watermelon: green outside, red inside. If your briefing has a RAG, attach the evidence and the rule that set it: "Red, because a committed PI 4 objective cannot land by its date without a decision." Better still, lead with the decision, because that's what Dana is reading for.

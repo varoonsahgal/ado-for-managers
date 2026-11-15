@@ -148,3 +148,15 @@ lab07-f10-history:
 lab07-security-sprint14:
   bar: "Boards › Sprints › Security › Sprint 14 › Backlog (Parent, Tags, Story Points added)"
   caption: "Where Security's sprint went: six `compliance` stories, **21 of 36 points**, all under the Compliance Epic. Four Features in flight for six people, and not one point for Fraud Alerts."
+
+lab08-exec-dashboard:
+  bar: "Overview › Dashboards › P## - METP Executive Status"
+  caption: "Seven widgets, each tied to a decision. The panel up top says the bottom line and the asks in words; the tiles carry written thresholds (amber 8, red 4, neutral 0); the bug trend and dependency list are the evidence."
+
+lab08-tile-rules:
+  bar: "Overview › Dashboards › P## - METP Executive Status › Query Tile › Configuration"
+  caption: "Flip the usual pattern: make the **default** color the bad news (red) and write one rule for the good case (**green at 0**). The tile is red until the problem is actually gone. Operators on offer: `<`, `>`, `<=`, `>=`, `<>` and `=`."
+
+lab08-bluf-page:
+  bar: "Overview › Wiki › Training › P## › Executive Briefing"
+  caption: "Two sentences answer *are we going to make it?* and *what do you need?* Each risk has three lines of evidence and a member impact. Every decision names one decider and can be answered yes or no."
