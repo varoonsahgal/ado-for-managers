@@ -1,3 +1,10 @@
+{%- set m = page.meta -%}
+{%- if m.one_thing %}
+<section class="hp-onething" aria-label="If you remember one thing">
+  <p class="hp-onething__eyebrow">If you remember one thing from Lab {{ m.lab }}</p>
+  <blockquote class="hp-onething__quote">{{ m.one_thing }}</blockquote>
+</section>
+{%- endif %}
 <section class="hp-logbook" aria-label="Lab progress">
   <div class="hp-logbook__icon">{% include ".icons/material/anchor.svg" %}</div>
   <div class="hp-logbook__body">
@@ -7,3 +14,12 @@
   </div>
   <button type="button" class="hp-btn hp-btn--brass" data-hp-complete>Mark lab complete</button>
 </section>
+
+{%- if m.next_hook %}
+<a class="hp-nextvoyage" href="{{ (m.next_url or (page.next_page.url if page.next_page else '')) | url }}">
+  <span class="hp-nextvoyage__eyebrow">{{ m.next_eyebrow or "Next voyage" }}</span>
+  <span class="hp-nextvoyage__title">{{ m.next_title or (page.next_page.title if page.next_page else '') }}</span>
+  <span class="hp-nextvoyage__hook">{{ m.next_hook }}</span>
+  <span class="hp-nextvoyage__go">{{ m.next_go or "Set sail" }} →</span>
+</a>
+{%- endif %}

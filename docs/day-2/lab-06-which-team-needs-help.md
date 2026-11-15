@@ -7,6 +7,10 @@ duration: 50
 sea_state: rough
 role: "Delivery Manager, Digital Banking"
 summary: "Two teams, two very different stories. Read velocity, throughput, cycle time and flow, then decide who actually needs help and what kind."
+one_thing: "Velocity measures estimates, not speed. Never judge a team on one chart: find three signals that agree, then change the system, not the number."
+next_title: "Lab 7 · The Cross-Team Bottleneck"
+next_url: "day-2/lab-07-cross-team-bottleneck/"
+next_hook: "Real-Time Fraud Alerts, priority number one, is 4% done, and the Chief Risk Officer has heard secondhand that it's 'a bit behind'. She wants to know who's waiting on whom, how late it really is, and what her options cost, by four."
 ---
 
 !!! briefing "Mission briefing"
@@ -128,6 +132,9 @@ Copy this table into your page. You'll fill it in over the next three challenges
 ## Part 4 — Follow the flow
 
 Output tells you *what* came out. Flow tells you *where it gets stuck on the way*. Mobile Banking moves stories New → Active → Resolved → Closed, and **Resolved** means *code complete, waiting for QA*. Hold that thought.
+
+!!! predict "Make a call"
+    Before you open a single chart, write down two guesses. In Sprint 9, a Mobile Banking story took about **3.5 days** from Active to Closed. **How long do you think it takes by Sprint 13?** And will Digital Accounts' cycle time have moved the same way? The Cycle Time widgets will tell you.
 
 !!! challenge "Challenge: Find the bottleneck"
     Fill rows 4 and 5 for both teams. Then name **where** in Mobile Banking's process work waits, **why**, and **what's waiting there right now**.
@@ -335,6 +342,13 @@ Time in progress grows with work in progress. With one tester, starting more onl
     1. **Two burndowns, one sprint.** Open Sprint 14's burndown for both teams (**Boards › Sprints**, team, `Sprint 14`, **Analytics**, **Burndown on** Story Points). Mobile shows a **Total Scope Increase** of 5 points (two `unplanned` stories added on days 3 and 4, neither on a Feature) and 12 of 65 points done. Digital Accounts: 10 of 26, no scope added. What does each picture say about the next sprint?
     2. **How old is the debt?** Add a **Lead Time** widget for `Mobile Banking` with **Work item type** `Bug`. Lead time runs from creation, so it shows how long fixed bugs waited. What would you expect it to show for the 30 bugs still in **New**, and why can't the widget show them?
     3. **Pre-empt the next bad idea.** Write the two sentences you'd say if someone proposed giving Digital Accounts' biggest upcoming Feature to Mobile Banking "because it has the highest velocity". You'll need them in [Lab 9](../day-3/lab-09-meet-the-deadline.md).
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Read one team's velocity two ways.** On a team's backlog, open **Analytics** › **Velocity** › **View full report** and toggle **Velocity by** between **Sum of Story Points** and **Count of Work Items**. If points climb while the count stays flat, ask the team what changed in its estimates. Report settings are per user, so nobody else's view changes.
+    2. **Find where work waits.** Open the same team's **Cumulative Flow Diagram** with a **Custom rolling period** that covers the last five sprints, and look for a band that thickens. Then check its cycle time, and take what you find to the team as a question, not a verdict.
+    3. **Measure the work that serves no Feature.** In the Velocity report, select last sprint's **Completed** bar, add the `Parent` and `Story Points` columns to the query that opens, and add up the points with no parent. Do the same for a sprint five back, and see which way the share is moving.
 
 ## Key takeaways
 

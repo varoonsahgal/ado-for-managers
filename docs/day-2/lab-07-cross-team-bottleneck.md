@@ -7,6 +7,10 @@ duration: 55
 sea_state: rough
 role: "Delivery Manager, Digital Banking"
 summary: "Real-Time Fraud Alerts, priority number one, is slipping. Trace its dependencies across three teams, find the one the plan can't show, and give the CRO options she can actually decide on."
+one_thing: "A plan with no red lines is not a plan with no risk. Most cross-team bottlenecks are priority decisions nobody made, so bring options and name who decides."
+next_title: "Lab 8 · The Executive Status Review"
+next_url: "day-2/lab-08-executive-status-review/"
+next_hook: "The Executive Committee has heard 'delays' from three directions, and Dana has ten minutes on Thursday. You get one page to tell her whether Lighthouse will make it, the two things that worry you most, and what you need her to decide."
 ---
 
 !!! briefing "Mission briefing"
@@ -175,6 +179,9 @@ The Feature line tells you *that* there's a problem. It can't tell you how big. 
 ## Part 4 — Find what the plan can't see
 
 Your plan draws a line only when both items are on it, both have dates, and someone created a Predecessor/Successor link between them. Everything else is invisible. Time to ask the data directly.
+
+!!! predict "Make a call"
+    Before you build the query, write down two guesses. **How many teams does Fraud Alerts really depend on, counting every team that owns a linked item?** And if there's a dependency your plan never drew, **why** would it be missing: no link, no sprint, or a team you didn't add? The query and its expected result will tell you.
 
 !!! challenge "Challenge: Ask the data directly"
     Build a query that lists every Fraud Alerts story with a **Predecessor** or **Successor** link, with the linked item indented underneath, showing which team owns each item and which sprint it's in. Save it as `Fraud Alerts dependencies` in `Shared Queries/Training/P##/`. Then find the dependency your plan never showed you.
@@ -435,7 +442,13 @@ The exam date is fixed and Security's output has been flat while its plans grew 
     2. **A program dependency register.** Build a second direct-links query with top-level clauses `Work Item Type` `In` `Feature,User Story` and `Area Path` `Not Under` `HarborPoint\Training`, link types **Predecessor** and **Successor**, and **Only return items that have matching links**. Across the whole program you should find three Feature-level links and five story-level links. Add it to your Command Center from [Lab 5](lab-05-command-center.md) as a **Query Results** widget, which renders direct-link queries.
     3. **Prove the invisible.** Add `Digital Accounts` at the `Stories` level to your plan and look for `Card lock and unlock service and API`. Why isn't it there? What would have to change for the auto-lock dependency to turn red, and would that be good news or bad?
 
-<!-- VERIFY: Extra knot 3 assumes an item in the root iteration with no Start/Target Date does not render on a plan. Extra knot 1 assumes Risk is selectable in plan styling rules. -->
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Put your cross-team initiative on one plan.** **Boards › Delivery Plans** › **+ New plan**, add each contributing team at the **Features** level, and add a marker for the date that matters. Turn on **Show Parent**, **Show Tags** and **Show child rollup data**, then use **Show and hide dependencies** to draw every line. Look, don't drag: moving a card changes the real work item for everyone.
+    2. **Save a dependency query beside it.** Build a **Work items and direct links** query with `Parent` `=` your most important Feature's ID, **Only return items that have matching links**, and only **Predecessor** and **Successor** ticked. Add `Node Name` and `Iteration Path`, then look for any linked item with no sprint or from a team that isn't on your plan.
+    3. **Ask who decided.** Pick one red line, open the predecessor's **History** and filter **Fields** to `Target Date` to see who moved it and why. Then ask whose priority gave way, and whether that person was the one who chose.
 
 ## Key takeaways
 

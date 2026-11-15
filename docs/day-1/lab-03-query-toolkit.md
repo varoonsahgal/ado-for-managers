@@ -7,6 +7,10 @@ duration: 60
 sea_state: choppy
 role: "Delivery Manager, Digital Banking"
 summary: "Five questions every manager gets asked, answered with reusable shared queries at Feature altitude, plus the queries nobody thinks to write."
+one_thing: "A saved query is a definition everyone inherits. Name it like the question it answers, and read the result before you forward it."
+next_title: "Lab 4 · The Sprint Delivery Report"
+next_url: "day-1/lab-04-sprint-delivery-report/"
+next_hook: "Dana wants a one-page Digital Banking update for her staff meeting, and Marcus will be in the room asking 'how do you know?' You turn your queries into charts, make a few of them lie on purpose, and write a status color you can defend."
 ---
 
 !!! briefing "Mission briefing"
@@ -133,6 +137,9 @@ Build a **Flat list of work items**:
 | And | State | Not In | `Closed,Removed` |
 
 Add columns `Node Name`, `State`, `Target Date` and `Tags`. **Node Name** shows the last segment of the Area Path, which here is the owning team. Save it as `02 High-priority Features still open`.
+
+!!! predict "Make a call"
+    Before you read the results, write down two guesses. **How many open Features do you think are marked Priority 1?** And if two of them competed for the same team, what would you use to decide which comes first? Keep your answers. The list and the notes under it will test both.
 
 **You should see 5 Features:** `Mobile Check Deposit 2.0`, `Instant Card Controls`, `Real-Time Fraud Alerts`, `Fraud Scoring Engine v2` and `Audit Evidence Automation`.
 
@@ -482,6 +489,13 @@ A Parent/Child tree can only show children that have a parent. The flat list cou
     1. **The silent slip.** `Fraud Scoring Engine v2` is Priority 1 and its Target Date was pushed back two sprints earlier in this sprint, yet it's not on your at-risk list. Why not? Sketch a clause that would catch it. (Hint: there isn't a clean one in the query editor. What does that tell you about where "the date moved" lives?)
     2. **Program-wide orphans.** Save a copy of `06 Orphan work` as `06b Orphan work (all teams)`. Replace the area clause with `Area Path` `Not Under` `HarborPoint\Training`, and set the team parameter on `@CurrentIteration` to `HarborPoint Team`. Which team has the most orphans this sprint, and does it matter?
     3. **Late deliveries.** Use a field-to-field comparison (`Closed Date` `>` **[Field]** `Target Date`) to find Features that closed after their target. What does an empty result mean here, and how would you test it?
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Save one question where others can find it.** Pick the question you're asked most, build it as a query, and save it in a **Shared Queries** folder where you have Contribute (ask your admin for one if you don't). Name it like the question it answers, minus the question mark. Shared queries are visible to everyone in the project, so a vague name misleads people you'll never meet.
+    2. **Find your team's orphan work.** Build a **Work items and direct links** query: one team's current-sprint user stories on top, `Work Item Type` `=` `Feature` below, **Only return items that do not have matching links**, and only **Parent** ticked. Whatever it returns is work no Feature report will ever show you.
+    3. **Define "at risk" once, on purpose.** Build one at-risk query with a grouped **Or** (a Target Date window with `@Today + n`, a Risk value, an `at-risk` tag) and put the window in its name. Then read every result before you send it to anyone.
 
 ## Key takeaways
 

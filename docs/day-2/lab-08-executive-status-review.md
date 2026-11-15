@@ -7,6 +7,10 @@ duration: 45
 sea_state: choppy
 role: "Delivery Manager, Digital Banking"
 summary: "Leadership is worried. Sharpen your dashboard to the indicators that matter, name the two biggest risks, and brief bottom line up front."
+one_thing: "Executives don't need everything you know. Give them the answer first, the two risks that matter, and a decision one named person can say yes or no to."
+next_title: "Lab 9 · Can HarborPoint Meet the Deadline?"
+next_url: "day-3/lab-09-meet-the-deadline/"
+next_hook: "As of this morning you're acting Program Manager, and Dana's first request is a big one: all of Instant Card Controls by the end of Sprint 17, before holiday travel. She'd like a yes, but she'll take a true answer."
 ---
 
 !!! briefing "Mission briefing"
@@ -101,6 +105,9 @@ Here's the target. Seven widgets, each answering one question.
 | 7 | **Query Results**: Fraud Alerts dependencies | Who is Fraud Alerts waiting on? | Simone's trade (Risk 1) |
 
 Lay it out so the eye reads it in order: the BLUF panel across the top, the three tiles beneath it, then the two charts, then Fraud Alerts.
+
+!!! predict "Make a call"
+    Before you build tile 4, write down a guess. **How many of the Features tagged `PI4-Committed` are Closed today?** And if that number is low, **should the tile turn red?** Keep both answers. The tile and the reef that follows it will test them.
 
 !!! speedrun "Speed run · 12 minutes"
     Create the project dashboard `P## - METP Executive Status` with the seven widgets above. Save every query in `Shared Queries/Training/P##/`. Give each tile **conditional formatting** that turns it red when the number is bad, and write your thresholds into the BLUF panel's legend. Leave the BLUF text as a placeholder; you'll write it in Part 3.
@@ -294,7 +301,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
 </figure>
 
 !!! reef "Reef ahead: RAG without evidence"
-    "Overall status: Amber" tells an executive nothing they can act on, and a colour picked by feel invites the watermelon: green outside, red inside. If your briefing has a RAG, attach the evidence and the rule that set it: "Red, because a committed PI 4 objective cannot land by its date without a decision." Better still, lead with the decision, because that's what Dana is reading for.
+    "Overall status: Amber" tells an executive nothing they can act on, and a color picked by feel invites the watermelon: green outside, red inside. If your briefing has a RAG, attach the evidence and the rule that set it: "Red, because a committed PI 4 objective cannot land by its date without a decision." Better still, lead with the decision, because that's what Dana is reading for.
 
 !!! checkpoint "Checkpoint"
     - [ ] My briefing's first two sentences answer "are we going to make it?" and "what do you need?"
@@ -397,7 +404,7 @@ A good ask names one decider, offers a choice they can say yes or no to, and sta
 
 **Your executive dashboard has a tile reading "PI 4 committed Features closed: 0". What should you do with it?**
 
-- [ ] Colour it red: nothing has been delivered
+- [ ] Color it red: nothing has been delivered
 - [x] Show it next to when those Features are due, and call out only the ones already past their Target Date
 - [ ] Remove it: executives don't need delivery counts
 - [ ] Replace it with velocity, which shows the work being done
@@ -421,6 +428,13 @@ Features close near their Target Dates, and most PI 4 Features aren't due yet. A
     1. **The 30-second test, executive edition.** Give your dashboard to someone who hasn't seen it. Can they tell you the bottom line and the two decisions in 30 seconds without your help? If not, what would you cut?
     2. **Trend the right thing.** Mobile's open bug count is a lagging signal. Add a Velocity widget for `Mobile Banking` with **Display planned work for iterations** on, and compare Planned with Completed across five sprints. Is the reliability trend a better early warning than the bug trend? Would you swap it in for one of your seven widgets?
     3. **Write Marcus's version.** Marcus Reed, the CIO, will ask "how do you know?" about every number. Add a short "Evidence" section to your briefing that links each claim to the query or work item behind it.
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Put the bottom line on the page.** On the dashboard your sponsor opens, add a **Markdown** widget across the top with an "Updated:" date, a two-sentence bottom line, the decisions needed (each with one named decider) and your thresholds. Everyone who can see the dashboard reads it, so refresh it every week.
+    2. **Make bad news the default color.** On a Query Tile that tracks a problem, such as open P1 bugs, set **Default background color** to red and add one **+ Add rule** that turns it green at 0. When several rules match, the last one wins, so list them from mild to severe.
+    3. **Check how your loudest chart is made.** Pick the chart that gets the most attention in leadership meetings. If it counts completed work, open one recent sprint and look for items that are finished but not **Closed**, or have no Story Points, before anyone acts on the trend.
 
 ## Key takeaways
 

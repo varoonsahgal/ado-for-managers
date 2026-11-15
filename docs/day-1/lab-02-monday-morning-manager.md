@@ -7,6 +7,10 @@ duration: 50
 sea_state: choppy
 role: "Delivery Manager, Digital Banking"
 summary: "You're back from leave and mobile banking is behind. Build a Feature-level readout of what each team is doing, what shipped, and what needs you, before 10 a.m."
+one_thing: "Velocity tells you how busy a team was, not what it delivered. For every velocity number, ask which Features the points moved."
+next_title: "Lab 3 · Build Your Manager's Query Toolkit"
+next_url: "day-1/lab-03-query-toolkit/"
+next_hook: "Ruth has been asked the same five questions every Monday for thirty years, and spent twenty of them answering by hand. You build them once, as shared queries named like the questions they answer, then write the two queries most managers never think of."
 ---
 
 !!! briefing "Mission briefing"
@@ -196,6 +200,9 @@ Now the question Dana actually asked. Look at Mobile Banking through its Feature
 ## Part 4 — What needs you
 
 A manager's Monday is about the handful of items that won't fix themselves. Six signals usually find them.
+
+!!! predict "Make a call"
+    Before you build a single query, write down one number. Mobile closed 44 points in Sprint 13, close to its best ever. **What share of those 44 points do you think moved a Feature?** Keep your guess. Signal E will check it.
 
 !!! challenge "Challenge: The signals hunt"
     For **Mobile Banking**, find the evidence for each signal below. Build each one as a quick query and save it in **My Queries** as `Scratch - <signal>`, so you can open it in front of Priya. Record the count, the item or person that matters, and the Feature it puts at risk. The stories are evidence; the Feature is the message.
@@ -403,6 +410,13 @@ Changed Date moves on **every** save, including a "still working on it" comment.
     1. **The last PI scorecard.** Open `Portfolio - Features by target date`, add `Closed Date` and `Iteration Path`, and list what PI 3 delivered. Two Features closed. A third finished all of its work in PI 3 but was never closed. Which one, and how would it distort a "PI 3 delivered" slide?
     2. **The quiet team.** Run all six signals for `Digital Accounts` in five minutes: copy each scratch query with **Save as** and change the area to `HarborPoint\Digital\Digital Accounts`, and the team on `@CurrentIteration` too. What does a healthy team's signals hunt look like? (Hint: 4 open bugs.)
     3. **Keep watch.** **Follow** `Mobile Check Deposit 2.0` and `Real-Time Fraud Alerts` from their work item forms, so changes to state, dates and discussion reach your inbox. What's the risk of following too many items?
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Run two signals on the team you worry about most.** In **My Queries**, build open Priority 1 bugs with a blank `Assigned To`, and Active items with **Changed Date** `<` `@Today - 7`. My Queries is your private folder, so nobody sees your scratch work until you choose to share it.
+    2. **Read the gap, not the green.** Open that team's **Velocity** report from the **Analytics** tab, set **Velocity by** to **Sum of Story Points**, and compare **Planned** with **Completed** for each recent sprint. Your choice is saved for you only. Compare the team with its own plan, never with another team.
+    3. **Ask which Features the points moved.** Query last sprint's Closed user stories with **Iteration Path** `=` `@CurrentIteration - 1` for that team, and add `Parent` and `Story Points` columns. Add up the points with an empty Parent, and take that number to the team lead as a question, not a verdict.
 
 ## Key takeaways
 

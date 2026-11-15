@@ -7,6 +7,10 @@ duration: 60
 sea_state: rough
 role: "Acting Program Manager, METP"
 summary: "Member Support's dashboard says the team has collapsed. It hasn't. Find every data and query defect, fix them in your sandbox, and stop it happening again."
+one_thing: "When a team's numbers fall off a cliff, suspect the record before the team. A chart can be computed perfectly from data that is wrong."
+next_title: "Lab 12 · Capstone: The HarborPoint Management Challenge"
+next_url: "day-3/lab-12-capstone/"
+next_hook: "Ruth's handover note names six things that keep her up at night, and the Executive Committee meets in 150 minutes. Nobody will tell you which tools to use, and halfway through, the facts will change."
 ---
 
 !!! briefing "Mission briefing"
@@ -69,6 +73,9 @@ Start where Dana starts: the dashboard, read cold.
 </figure>
 
 Now go behind every tile. Leo's dashboard has **twelve** planted defects. Some live in the **data** (the items), some in the **queries**, some in the **widgets**, and one in **permissions**.
+
+!!! predict "Make a call"
+    Before you go behind a single tile, write down two guesses. Of the twelve defects, **how many live in the data** rather than in Leo's queries, widgets and permissions? And how many points did Member Support **truly finish in Sprint 13**, the sprint the chart shows as 8? Your defect log and Part 2 will settle both.
 
 !!! challenge "Challenge: The defect hunt"
     Find **at least 8 of the 12** defects without changing anything that belongs to Member Support. For each one, log the evidence somewhere you can paste into a wiki page later:
@@ -449,6 +456,13 @@ Rules can make a field required on a state change, but they can't target Area Pa
     3. **Write the tag vocabulary.** Draft a short `/Training/P##/Tag Vocabulary` page with the canonical tags from today and from [Lab 10](lab-10-personas.md), who may add a new tag, and how a misspelling gets retired. Tags can't be renamed in the web UI. What does that mean for your process?
 
 <!-- Facilitator: Velocity credits work to the sprint in its Iteration Path. With "Highlight work completed late" on, items Closed after that sprint's end date are drawn as a separate "Completed Late" segment. So Sprints 12 and 13 climb back toward 18 and 19, with the late part visibly marked. That is the honest bar to show Dana. -->
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Audit one tile before your next report.** Open the dashboard your leadership reads most, pick one tile, and read its query's **Editor** tab. Look for a sprint typed in by hand instead of `@CurrentIteration`, and "open" written as `State` `<>` `Closed`. Running a query never changes data.
+    2. **Build three queries whose healthy answer is zero.** Create a `Watchlist` folder and save: Active work with `Changed Date` `<` `@Today - 14`, stories in Resolved for more than 5 days, and anything filed at the project's root area. **My Queries** are private to you, so put the folder under **Shared Queries** if it will ever feed a dashboard tile, or everyone else sees an error instead of a number.
+    3. **Look at the counts with the team, not about the team.** Spend 15 minutes with one team lead and Product Owner going through the watchlist together. Anything above zero gets fixed on the spot or gets a named owner, and the counts stay team-level, never per person.
 
 ## Key takeaways
 

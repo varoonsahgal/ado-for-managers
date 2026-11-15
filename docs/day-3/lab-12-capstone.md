@@ -7,6 +7,12 @@ duration: 150
 sea_state: storm
 role: "Acting Program Manager, METP"
 summary: "Six concerns, one executive committee, two and a half hours. Investigate, analyze, visualize, plan, prioritize and recommend a realistic outlook for PI 5."
+one_thing: "The data won't decide for you. Know who typed each number, speak in ranges, and get the right people to make the trade-offs on purpose."
+next_title: "Your Field Card"
+next_url: "resources/field-card/"
+next_eyebrow: "Take it home"
+next_go: "Open your field card"
+next_hook: "Take every lab's one thing, its key takeaways and its Monday moves home on one printable page, ready to pin beside your screen on your first day back."
 ---
 
 !!! briefing "Mission briefing"
@@ -150,6 +156,9 @@ Turn six concerns into six evidence-backed findings, at Feature altitude.
 ## Phase 2 — Analyze
 
 The evidence board says *what*. Now decide which numbers you'll build a forecast on. Some of HarborPoint's numbers are honest. Some you proved wrong in Lab 11.
+
+!!! predict "Make a call"
+    Before you build the query, write down two guesses in ten seconds. **How many open Features** will land in PI 5? And will **Real-Time Fraud Alerts** be one of them? Then build `PI 5 candidates` and check.
 
 !!! challenge "Challenge: Find the PI 5 landing zone, then pick your instruments"
     1. Save a query `PI 5 candidates` in `Shared Queries/Training/P##/PI 5 Outlook` that lists every open Feature targeted at PI 5, with the columns an executive trade-off needs.
@@ -534,6 +543,13 @@ Both "approve" and "decline" skip the real question: what does the Feature need,
     1. **Absorb a second curveball.** Take another crew's card and update your outlook in 10 minutes.
     2. **The PI 5 plan.** Build `P## - PI 5 Outlook Plan` with all six teams at the **Features** level, a **PI 5 Planning** marker (start of Sprint 17) and a styling rule for the `PI5-Candidate` tag. Which candidate has a dependency line, and which has nothing to draw?
     3. **Re-score with your own model** (WSJF, cost of delay, a weighted scorecard). If the ranking doesn't change, what does that say about models versus inputs?
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps. They give your 30-day commitments in the Captain's log something to stand on:
+
+    1. **Choose your instruments.** For each team you report on, open **Velocity** in its **Backlogs › Analytics** and compare **Sum of Story Points** with **Count of Work Items**. Write one line per team: the throughput measure you'd forecast from, and the number you refuse to. Report settings are per user, so nobody else's view changes.
+    2. **Find the Feature with nothing inside.** On your Features backlog, add **Sum of Story Points** and **Progress by Story Points** from **+ Add a rollup column**, plus **Business Value** and **Effort** with **Column Options**. Any high-value Feature with no child stories or no Effort can't be forecast yet: note who should decompose it, and by when.
+    3. **Sort next quarter into three bands.** List the Features your leadership expects next, and put each one in **Committed**, **Likely** or **Not committed**. Beside every Likely item, write the decision or condition it depends on. That list is the first draft of your next outlook.
 
 ## Key takeaways
 

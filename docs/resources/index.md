@@ -8,6 +8,14 @@ Reference material for the course and for Monday morning back at work. Everythin
 
 <div class="grid cards" markdown>
 
+-   :material-card-text-outline:{ .lg .middle } **Your Field Card**
+
+    ---
+
+    The take-home: every lab's one thing to remember, its key takeaways, and three moves to make in your own Azure DevOps. One printable page.
+
+    [:octicons-arrow-right-24: Open your field card](field-card.md)
+
 -   :material-database-search:{ .lg .middle } **Query Cookbook**
 
     ---

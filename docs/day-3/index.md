@@ -38,3 +38,6 @@ Ruth Ellison retires at the end of PI 4, and Dana asks you to act as **Program M
 - **Form your capstone crew at kickoff** (3 or 4 people) and agree whose participant ID will host the crew's dashboard and wiki page.
 - **Your sandbox matters today.** Labs 9, 10 and 11 all work in `HarborPoint\Training\P##` and the **P## Sandbox** team. The six real teams stay read-only.
 - **Keep your Day 2 pages handy.** The capstone reuses your Lab 7 options and your Lab 8 briefing.
+
+!!! harbor "At the end of the day"
+    Before you log off, open [your field card](../resources/field-card.md) and reread today's "one thing" lines. Pick **one** "Back in your own harbor" move you'll make in your own Azure DevOps this week, and put it in your calendar now.

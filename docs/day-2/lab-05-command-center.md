@@ -7,6 +7,10 @@ duration: 60
 sea_state: calm
 role: "Delivery Manager, Digital Banking"
 summary: "Build a Digital Banking dashboard that answers five management questions at a glance, then cut it down to an executive view a VP can read in thirty seconds."
+one_thing: "A dashboard is a set of answers, not a set of widgets. If you can't say which question a widget answers, or its scope doesn't match the page, take it off."
+next_title: "Lab 6 · Which Team Needs Help?"
+next_url: "day-2/lab-06-which-team-needs-help/"
+next_hook: "A steering slide put Mobile Banking's 44 points next to Digital Accounts' 26, and someone asked whether Digital Accounts needs help getting its numbers up. Priya sees Dana at two, and she wants evidence, not adjectives."
 ---
 
 !!! briefing "Mission briefing"
@@ -193,6 +197,9 @@ A count says *how many*. Priya's next question is always *which ones*.
 Read the three rows. `Spending Insights` is here because its Target Date is close, and it's 88% done. `Mobile Check Deposit 2.0` is due this sprint at 61%. `Real-Time Fraud Alerts` is 4% done. One tile, three very different conversations. That's why a risk count should always sit next to the list behind it.
 
 ### 3c. Urgent bugs and blocked work
+
+!!! predict "Make a call"
+    Before you build these two tiles, write down a guess. **How many open Priority 1 and 2 bugs do the two digital teams have between them, and how do they split?** A number and a rough split, such as half and half, is enough. You'll check it against the tile and its `Node Name` column in a few minutes.
 
 7. Create two flat queries in `Shared Queries/Training/P##/` and give each a Query Tile:
 
@@ -511,6 +518,13 @@ A sprint burndown is a team's daily steering tool. It changes every day and lead
     3. **Critique the program's front window.** Open `HarborPoint Program Overview` (**Overview › Dashboards**) beside your Command Center, with your Lab 1 notes if you made them. Apply today's tests to it: which question does each widget answer, does every team-scoped widget name its team, and does every widget's scope match the page title? Name one widget you'd remove and one you'd add.
 
 <!-- VERIFY: Extra knot 2 assumes the Burnup widget's Iteration plot interval accepts Sprint 13 to Sprint 16. -->
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Write the questions onto the page.** Create a **project dashboard** of your own (Contributors can) and put a **Markdown** widget across the top: the owner, the five questions it answers, a review date and a color legend. Anyone who can see the dashboard sees it, so write it for them.
+    2. **Check every widget's scope.** On a dashboard you rely on, open the query behind each Query Tile and the **Team** setting of each Analytics widget, and compare them with the scope the page title promises. Fix the ones you own, put the team name in every team-scoped title, and send the owner a list of the rest.
+    3. **Pair your risk count with its list.** Save a shared, flat-list query of your at-risk Features, scoped with `Area Path` `Under` your own area. Give it a **Query Tile** with written color rules and a **Query Results** widget beside it, so the count always comes with the names.
 
 ## Key takeaways
 

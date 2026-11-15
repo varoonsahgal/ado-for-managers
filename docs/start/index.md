@@ -29,10 +29,12 @@ Each lab is a **mission** with the same shape, so you always know where you are:
 
 1. **Mission briefing**: the situation, your role, and what "done" looks like.
 2. **Speed runs**: think you know this already? Prove it against the clock and skip ahead.
-3. **Guided parts and challenges**: the hands-on work, ending in a judgment call.
-4. **Harbor Pilot hints**: three tiers of help, from a nudge to the full solution.
-5. **Checkpoints**: observable outcomes you tick off. Your progress is saved.
-6. **Knowledge check and Captain's log**: test your judgment, then connect it to your own job.
+3. **Make a call**: before the biggest reveal, you write down a guess. Being wrong on paper is how the lesson sticks.
+4. **Guided parts and challenges**: the hands-on work, ending in a judgment call.
+5. **Harbor Pilot hints**: three tiers of help, from a nudge to the full solution.
+6. **Checkpoints**: observable outcomes you tick off. Your progress is saved.
+7. **Knowledge check and Captain's log**: test your judgment, then connect it to your own job.
+8. **Back in your own harbor**: three moves to make in *your* Azure DevOps when you get back, then the one thing to remember. They're all collected on [your field card](../resources/field-card.md) to take home.
 
 ### Try the components
 
@@ -57,6 +59,9 @@ These are live. Go ahead and click them.
     - **Which work serves which portfolio priority**, and which work serves *none* (orphan stories).
     - **Where the portfolio order and the team's actual effort disagree.**
 
+!!! predict "Make a call"
+    Before you open the knowledge check below: a team's velocity doubles in three sprints. Write down, in five words, what you think happened. Then check.
+
 !!! insight "Lighthouse insight"
     Most status meetings argue about **opinions** of progress. Azure DevOps already holds the **evidence**: dates, states, links, history. Your edge as a manager is knowing which evidence answers which question, and where it lies to you.
 
@@ -77,6 +82,13 @@ Velocity is a sum of **estimates**, not a measure of output. When the *count* of
 </div>
 
 </div>
+
+!!! harbor "Back in your own harbor"
+    Every lab ends with three moves like these, for your own organization:
+
+    1. **Open your own Features backlog** and note how far along your three most important Features say they are.
+    2. **Ask one team lead** what "done" means on their board.
+    3. **Compare the two.** That's the gap this course teaches you to see.
 
 !!! checkpoint "Checkpoint: try one"
     - [ ] I opened all three Harbor Pilot hints above (no shame, that's what they're for)

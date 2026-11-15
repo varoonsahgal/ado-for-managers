@@ -7,6 +7,10 @@ duration: 55
 sea_state: choppy
 role: "Acting Program Manager, METP"
 summary: "Redesign member onboarding for three very different members. Build personas, write persona-driven stories, and prioritize by member impact."
+one_thing: "The member doesn't see your org chart. A persona only changes what gets built when it reaches the acceptance criteria."
+next_title: "Lab 11 · Why Is the Dashboard Wrong?"
+next_url: "day-3/lab-11-dashboard-wrong/"
+next_hook: "Member Support's dashboard says the team has fallen off a cliff, and two people have already called Carmen about 'intervention'. Either the dashboard is wrong or she is, and you have to prove which before Dana reads it again."
 ---
 
 !!! briefing "Mission briefing"
@@ -255,6 +259,9 @@ Add the stories as children of your Feature: on the Features backlog, hover its 
 
 Hector and Priya will each read your backlog order as a verdict on their channel. So make the reasoning visible enough that they argue with your inputs, not with you.
 
+!!! predict "Make a call"
+    Before you score anything, write down two guesses. **Which persona's story will finish at the top** of your table? And will your top 3 lean **branch, digital or a mix**? Keep your guesses. You'll find out whether the arithmetic agrees with you, and then whether you agree with the arithmetic.
+
 !!! challenge "Challenge: Score it, then defend it"
     1. Create the wiki page `/Training/P##/Onboarding Priorities` with this table, one row per story:
 
@@ -380,6 +387,13 @@ A field brings consistency and can be required, but it's a governance change mad
     3. **A persona story template.** As team admin of `P## Sandbox`, open **Project settings › Boards › Team configuration**, **Templates** tab, and create a User Story template that pre-fills an Acceptance Criteria skeleton (*Given… When… Then…*) and your sandbox area. Would you trust a template to add persona tags? Check what the template editor allows.
 
 <!-- VERIFY: Extra knot 3, whether team templates can add Tags in the web template editor (docs conflict). -->
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Find a journey nobody owns.** Pick one service your customers use across two of your teams. Find the Feature each team owns for it on the Features backlog and open its **Links** tab. If there's no **Predecessor/Successor** link between them, the handoff has no owner: write down who should own it.
+    2. **Draft one persona page.** Under your own page in **Overview › Wiki**, use **Add sub-page** to start one persona with a **Quote**, **Goals**, **Frustrations**, **Needs from this service** and one journey break backed by a number you already have. Mark everything else *(assumption)*. Wiki pages are shared, so anyone on the project can read it and improve it.
+    3. **Rewrite one generic story with its Product Owner.** Find a story written for "the user" and, together, add Given/When/Then acceptance criteria for the person it would fail. Link it to your persona page from its **Links** tab (**Add link** › **Existing item** › **Wiki page**), and if you add a persona tag, agree the spelling first: tags can't be renamed or deleted in the web UI.
 
 ## Key takeaways
 

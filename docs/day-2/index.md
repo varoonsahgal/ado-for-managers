@@ -39,3 +39,6 @@ Yesterday you found answers. Today you keep them in view. You build a command ce
 - **Bring your Day 1 work.** Labs 5 and 8 reuse your `Shared Queries/Training/P##/` toolkit from [Lab 3](../day-1/lab-03-query-toolkit.md). Lab 5 has fallback queries if you skipped it.
 - **Dashboards are public in the project.** Everyone can see yours, so name it `P## - …` and keep it tidy.
 - **Delivery Plans are live.** On any plan, select cards, but never drag them.
+
+!!! harbor "At the end of the day"
+    Before you log off, open [your field card](../resources/field-card.md) and reread today's "one thing" lines. Pick **one** "Back in your own harbor" move you'll make in your own Azure DevOps this week, and put it in your calendar now.

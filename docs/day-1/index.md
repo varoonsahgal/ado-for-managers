@@ -39,3 +39,6 @@ You start today as the new **Delivery Manager for Digital Banking**, reporting t
 - **Save your participant ID** on the [Welcome page](../start/index.md) or with the **Crew** chip. Every `P##` on this site fills in with it.
 - **Check your access.** You need **Basic**: a saved query must show a **Charts** tab.
 - **Use two windows**, these labs on one side and Azure DevOps on the other. Skim the [environment map](../start/environment.md) if you haven't.
+
+!!! harbor "At the end of the day"
+    Before you log off, open [your field card](../resources/field-card.md) and reread today's "one thing" lines. Pick **one** "Back in your own harbor" move you'll make in your own Azure DevOps this week, and put it in your calendar now.

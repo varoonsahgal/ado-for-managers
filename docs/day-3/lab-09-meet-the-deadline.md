@@ -7,6 +7,10 @@ duration: 55
 sea_state: rough
 role: "Acting Program Manager, METP"
 summary: "The EVP wants all of Instant Card Controls before holiday travel. Use velocity, capacity and the forecast tool to give her an honest answer and a better option."
+one_thing: "Velocity is a rate, not a promise. Subtract who's out and what's already committed, then answer 'can we?' with a range and a better option."
+next_title: "Lab 10 · One Service, Different Customer Needs"
+next_url: "day-3/lab-10-personas/"
+next_hook: "Hector and Priya are both quoting research, and both are right about something. You inherit their branch-versus-digital argument, and your job is to turn it into a conversation about three real members."
 ---
 
 !!! briefing "Mission briefing"
@@ -100,6 +104,9 @@ A velocity of 25 describes a normal sprint with five engineers present. Sprints 
 </figure>
 
 **So what does a points-per-day rate look like?** Digital Accounts has **five delivery engineers**: Olivia Grant, Noah Kim, Fatima Hassan, Lucas Meyer and Chloe Martin. Five engineers for ten working days is **50 engineer-days**, and the team completes about **25 points** in a normal sprint. That's **0.5 points per engineer-day**. It's crude, and it's good enough.
+
+!!! predict "Make a call"
+    Before you fill in a single row, write down two guesses. **How many points will Card Controls actually get** across Sprints 15 to 17? And is Dana's request **late, tight or out of reach**? Keep your number. The worksheet will tell you how close you were.
 
 !!! challenge "Challenge: The capacity worksheet"
     Complete the worksheet, then work out how many points Card Controls can realistically get.
@@ -421,6 +428,13 @@ Each team sizes its own points, and Mobile's points have inflated while its stor
     1. **Required velocity.** In your sandbox, restore the original order and raise the velocity until every estimated story lands by Sprint 17. You need **35**, and at that velocity all four unestimated stories land too, for free. Compare 35 with Digital Accounts' best-ever sprint for *all* its work.
     2. **Size the unknowns.** Give the four unestimated stories your own placeholder estimates in the sandbox, restore the original order and forecast at velocity 25. How many sprint lines does the full scope need? That's how many sprints of Digital Accounts' *entire* capacity all of Card Controls costs. Does it change your PI 5 range?
     3. **Protect the predecessor.** In your sandbox at velocity 15, which sprint does `Card lock and unlock service and API` land in? Now check that against your capacity worksheet: how many points does Card Controls really get in Sprint 15, once the committed work comes first? Fraud Alerts' auto-lock story needs the API by Sprint 16. Draft the one-line message you'd send Hannah Cole and Ben Adeyemi so the two dates are agreed, not assumed.
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Turn a velocity into a capacity.** For one team, read the average from **Analytics** › **Velocity** on its backlog, then open **Boards › Sprints** › **Capacity** for the next sprint. Subtract team days off, known absences, committed work and about 10% for bugs and support. You're only looking, so nothing changes unless you select **Save**.
+    2. **Run the forecast at two velocities.** On that team's **Stories** backlog, clear any filter, turn on **Forecasting** in **View options**, and run it once at the team's average and once at the capacity you just worked out. The gap between the two lines is your range. View options are yours alone, so nobody else's backlog changes, as long as you don't drag anything.
+    3. **Count the blanks before you quote a date.** In the Feature you're most likely to be asked about, count the stories with no Story Points: the forecast treats each one as free. Take that count and your range to the next "can we?" conversation, and ask who will size them this week.
 
 ## Key takeaways
 

@@ -268,6 +268,18 @@
 .md-typeset .log > .admonition-title, .md-typeset .log > summary { background: color-mix(in srgb, var(--hp-drift) calc(var(--hp-tint) * 100%), transparent); font-family: var(--hp-display); font-style: italic; font-weight: 600; }
 .md-typeset .log > .admonition-title::before, .md-typeset .log > summary::before { background-color: var(--hp-drift); -webkit-mask-image: var(--md-admonition-icon--log); mask-image: var(--md-admonition-icon--log); }
 
+
+/* Make a call: commit to a prediction before the reveal */
+.md-typeset .admonition.predict, .md-typeset details.predict { border-color: var(--hp-teal); background: color-mix(in srgb, var(--hp-teal) 4%, var(--hp-surface)); }
+.md-typeset .predict > .admonition-title, .md-typeset .predict > summary { background: color-mix(in srgb, var(--hp-teal) calc(var(--hp-tint) * 130%), transparent); }
+.md-typeset .predict > .admonition-title::before, .md-typeset .predict > summary::before { background-color: var(--hp-teal); -webkit-mask-image: var(--md-admonition-icon--predict); mask-image: var(--md-admonition-icon--predict); }
+
+/* Back in your own harbor: Monday-morning moves for the learner's real organization */
+.md-typeset .admonition.harbor, .md-typeset details.harbor { border-color: var(--hp-kelp); border-width: 0 0 0 .3rem; background: color-mix(in srgb, var(--hp-kelp) 5%, var(--hp-surface)); }
+.md-typeset .harbor > .admonition-title, .md-typeset .harbor > summary { background: color-mix(in srgb, var(--hp-kelp) calc(var(--hp-tint) * 130%), transparent); font-family: var(--hp-display); font-weight: 650; }
+.md-typeset .harbor > .admonition-title::before, .md-typeset .harbor > summary::before { background-color: var(--hp-kelp); -webkit-mask-image: var(--md-admonition-icon--harbor); mask-image: var(--md-admonition-icon--harbor); }
+.md-typeset .harbor ol > li::marker { color: var(--hp-kelp); font-weight: 700; }
+
 .md-typeset .admonition.bonus, .md-typeset details.bonus { border-color: var(--hp-cyan); }
 .md-typeset .bonus > .admonition-title, .md-typeset .bonus > summary { background: color-mix(in srgb, var(--hp-cyan) calc(var(--hp-tint) * 100%), transparent); }
 .md-typeset .bonus > .admonition-title::before, .md-typeset .bonus > summary::before { background-color: var(--hp-cyan); -webkit-mask-image: var(--md-admonition-icon--bonus); mask-image: var(--md-admonition-icon--bonus); }
@@ -583,6 +595,22 @@
 .md-typeset .hp-logbook .hp-progress { background: var(--hp-surface-3); max-width: 22rem; }
 .md-typeset .hp-logbook .hp-progress__label { color: var(--hp-muted); }
 .md-typeset .hp-logbook.is-done { border-color: var(--hp-kelp); }
+/* "If you remember one thing" and "Next voyage" cards at the foot of every lab */
+.md-typeset .hp-onething { margin: 3rem 0 0; padding: 1.6rem 1.8rem 1.5rem; border-radius: 20px; position: relative; overflow: hidden;
+  background: radial-gradient(120% 160% at 100% 0%, color-mix(in srgb, var(--hp-teal) 35%, transparent), transparent 60%), linear-gradient(140deg, var(--hp-navy), #0b1d33);
+  color: #eaf3fb; box-shadow: var(--hp-shadow); }
+.md-typeset .hp-onething::after { content: "\201C"; position: absolute; right: 1.2rem; top: -1.4rem; font-family: var(--hp-display); font-size: 9rem; line-height: 1; color: color-mix(in srgb, var(--hp-brass) 45%, transparent); }
+.md-typeset .hp-onething__eyebrow { margin: 0 0 .5rem; font-size: .62rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: #f1cf86; }
+.md-typeset .hp-onething__quote { margin: 0; padding: 0 !important; border: 0 !important; border-inline-start: 0 !important; font-family: var(--hp-display); font-size: 1.25rem; line-height: 1.4; font-weight: 560; color: #fff; max-width: 40rem; position: relative; z-index: 1; }
+.md-typeset a.hp-nextvoyage { display: grid; grid-template-columns: 1fr auto; gap: .2rem 1rem; align-items: end; margin: 1.2rem 0 .5rem; padding: 1.1rem 1.3rem; border-radius: 18px; text-decoration: none;
+  background: var(--hp-surface); border: 1px solid color-mix(in srgb, var(--hp-teal) 40%, transparent); box-shadow: var(--hp-shadow); transition: transform .15s ease, border-color .15s ease; }
+.md-typeset a.hp-nextvoyage:hover { transform: translateY(-2px); border-color: var(--hp-teal); }
+.md-typeset .hp-nextvoyage__eyebrow { grid-column: 1 / -1; font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--hp-teal); }
+.md-typeset .hp-nextvoyage__title { grid-column: 1; font-family: var(--hp-display); font-weight: 650; font-size: 1.05rem; color: var(--hp-heading); }
+.md-typeset .hp-nextvoyage__hook { grid-column: 1; color: var(--hp-muted); font-size: .74rem; line-height: 1.5; }
+.md-typeset .hp-nextvoyage__go { grid-column: 2; grid-row: 2 / span 2; align-self: center; font-weight: 700; font-size: .75rem; color: #fff; background: var(--hp-teal); padding: .45rem .9rem; border-radius: 99px; white-space: nowrap; }
+@media (max-width: 40em) { .md-typeset a.hp-nextvoyage { grid-template-columns: 1fr; } .md-typeset .hp-nextvoyage__go { grid-column: 1; grid-row: auto; justify-self: start; margin-top: .4rem; } }
+
 .md-typeset .hp-logbook.is-done .hp-btn { background: var(--hp-kelp); color: #fff !important; box-shadow: none; }
 
 /* ---------- 12. Participant ID: header chip and dialog ---------- */
@@ -839,6 +867,27 @@
   .md-typeset details { display: block; }
   .md-typeset details > :not(summary) { display: block !important; }
   .md-typeset .hp-mission, .md-typeset .hp-dayhead { box-shadow: none; }
+}
+
+
+/* ---------- Field card (resources/field-card.md) ---------- */
+.md-typeset .hp-fc-lede { font-size: .9rem; color: var(--hp-muted); max-width: 44rem; }
+.md-typeset .hp-fc-day { margin-top: -.6rem; color: var(--hp-teal); font-weight: 600; font-size: .78rem; letter-spacing: .02em; }
+.md-typeset .hp-fc { position: relative; margin: 1.1rem 0 1.4rem; padding: 1.1rem 1.4rem .6rem; border-radius: 18px; background: var(--hp-surface);
+  border: 1px solid color-mix(in srgb, var(--hp-navy) 14%, transparent); box-shadow: var(--hp-shadow); break-inside: avoid; }
+.md-typeset .hp-fc h3 { margin: 0 0 .5rem; font-size: 1.05rem; }
+.md-typeset .hp-fc h3 a { color: var(--hp-heading); }
+.md-typeset .hp-fc__num { margin: 0; font-size: .6rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--hp-brass); }
+.md-typeset .hp-fc__one { margin: .4rem 0 .8rem; padding: .7rem 1rem; border-radius: 12px; font-family: var(--hp-display); font-size: .95rem; line-height: 1.45; font-weight: 560;
+  color: #fff; background: linear-gradient(140deg, var(--hp-navy), #0b1d33); }
+.md-typeset .hp-fc__label { margin: .7rem 0 .2rem; font-size: .6rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--hp-muted); }
+.md-typeset .hp-fc__label--harbor { color: var(--hp-kelp); }
+.md-typeset .hp-fc ul, .md-typeset .hp-fc ol { margin-top: .2rem; font-size: .74rem; }
+.md-typeset .hp-fc ol > li::marker { color: var(--hp-kelp); font-weight: 700; }
+@media print {
+  .md-typeset .hp-fc { box-shadow: none; border-color: #bbb; }
+  .md-typeset .hp-fc__one { color: #0b1d33; background: none; border-left: 4px solid #c8962e; border-radius: 0; }
+  .md-typeset .hp-onething, .md-typeset a.hp-nextvoyage { display: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {

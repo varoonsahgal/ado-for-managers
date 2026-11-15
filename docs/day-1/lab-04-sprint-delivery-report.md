@@ -7,6 +7,10 @@ duration: 50
 sea_state: choppy
 role: "Delivery Manager, Digital Banking"
 summary: "Turn queries into charts leadership can read, catch the ones that mislead, and write a one-page Digital Banking status report."
+one_thing: "A status color is only as good as the sentence next to it. Report what's left against the time left, and end with a decision you need."
+next_title: "Lab 5 · Build HarborPoint's Management Command Center"
+next_url: "day-2/lab-05-command-center/"
+next_hook: "Next Monday, Priya asks at 7:40 and you're still on the train. You build one dashboard that answers her questions at a glance, then cut it down to the view Dana can read in thirty seconds."
 ---
 
 !!! briefing "Mission briefing"
@@ -202,6 +206,9 @@ Unfinished stories are only half of what's outstanding. The other half is the bu
 
 That's a snapshot. The question a manager actually needs answered is *which way is it heading?*
 
+!!! predict "Make a call"
+    Before you open the dashboard, write down two guesses. Mobile Banking has 42 open bugs today. **How many do you think it had at the start of Sprint 9, five sprints ago?** And will Digital Accounts' widget tell the same story or a different one? Check both against the two widgets.
+
 3. Open **Overview › Dashboards** › `HarborPoint Program Overview` and scroll to the bottom. The program office has pinned two **Burndown** widgets there, one per Digital team, counting **open bugs week by week since the start of Sprint 9**. The blue bars are bugs still open at the end of each week. The orange **Total Scope** line is every bug ever filed in that window.
 
 <figure class="hp-shot" data-shot="lab04-bug-trend" markdown>
@@ -341,7 +348,7 @@ Now turn the evidence into something Dana can read in two minutes.
 </figure>
 
 !!! reef "Reef ahead: the watermelon"
-    The easiest status to write is **Green**: most Features are Active, one closed last sprint, and one team is flawless. It's green on the outside and red on the inside. The second easiest is **Amber with no explanation**, which averages a red team and a green team into a colour that describes neither. A RAG rating is only as good as the sentence next to it. If you can't name the evidence for your colour, you've chosen a mood.
+    The easiest status to write is **Green**: most Features are Active, one closed last sprint, and one team is flawless. It's green on the outside and red on the inside. The second easiest is **Amber with no explanation**, which averages a red team and a green team into a color that describes neither. A RAG rating is only as good as the sentence next to it. If you can't name the evidence for your color, you've chosen a mood.
 
 !!! insight "Lighthouse insight: a status report is a request for decisions"
     Dana doesn't need to know that charts exist. She needs to know what's true, what it means, and what you need from her. Every risk on the page should end in an ask, and every ask should name a person. A report that informs but asks for nothing hands all the risk back to you.
@@ -415,10 +422,17 @@ The time window is a choice, and it decides the story. A fivefold rise in open b
     2. **Who's carrying the load?** Build a flat query of Mobile Banking's **Active** user stories and bugs, then a **Bar** chart by `Assigned To`. How many active items does Ethan Brooks hold, and what does that suggest about context switching on Check Deposit?
     3. **Preview Lab 5.** On any of today's charts, open its menu and select **Add to dashboard**. It's only offered because the query is shared. Which of today's five charts would earn a place on an executive dashboard, and which wouldn't?
 
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Chart one question from a shared query.** Take a saved flat query in a shared folder, open **Charts** › **New chart**, and name the chart for the one question it answers. Charts on **My Queries** are visible only to you, so save the query to a shared folder if anyone else needs to see it.
+    2. **Put each team next to its own plan.** Open each team's **Velocity** report, set **Velocity by** to **Sum of Story Points**, and note Completed ÷ Planned for recent sprints. Report that ratio and its trend, never one team's points against another's.
+    3. **Give your last status color a sentence.** Open the last status report you sent and write one line of evidence next to its RAG color. For each Feature on it, replace the percentage with what's left against the time left: remaining points and Target Date.
+
 ## Key takeaways
 
 - Charts work only on **saved, shared, flat** queries. Plan your evidence around what Azure DevOps can draw.
 - Every chart answers one question. Decide your scope (area or Epic) and say it on the page.
 - Compare each team with **its own plan**, never with another team's points.
 - Counts, windows and percentages can all lie. Report **what's left against the time left**, over a window that fits the question.
-- A status colour is only as good as its evidence, and a status report is a request for decisions.
+- A status color is only as good as its evidence, and a status report is a request for decisions.

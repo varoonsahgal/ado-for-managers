@@ -7,6 +7,10 @@ duration: 45
 sea_state: calm
 role: "Delivery Manager, Digital Banking"
 summary: "Trace the portfolio from strategic priority to Epic to Feature, see one Feature through four lenses, and find out who really owns what."
+one_thing: "The backlog order is the decision. When it disagrees with reality, don't quietly fix the list: find out who should decide, and ask them."
+next_title: "Lab 2 · The Monday Morning Manager Challenge"
+next_url: "day-1/lab-02-monday-morning-manager/"
+next_hook: "You come back from a week's leave to 140 unread messages, and one of them matters: Dana has asked why mobile banking has fallen behind, and Priya needs a Feature-level answer by ten."
 ---
 
 !!! briefing "Mission briefing"
@@ -137,6 +141,9 @@ The dates show as calendar dates in your columns; the table translates them to s
 ## Part 3 — One Epic, eight Features
 
 Now drop one level to your own patch: Digital Banking Modernization. This is the view you'll live in for the next two days, so set it up properly.
+
+!!! predict "Make a call"
+    Before you add a single column, write down two guesses. **Which active Digital Feature is furthest along?** And will the Epic's overall percentage look **better or worse** than the Features you can see on screen? Keep your guesses. You'll check them against the table below in five minutes.
 
 1. **Boards › Backlogs**, team `Digital Portfolio`, level **Features**.
 2. **View options**: **Parents** On, **In Progress Items** On, **Completed Child Items** On.
@@ -413,6 +420,13 @@ Rollup counts only Closed work. Reporting 69% would claim untested work as done,
     1. **The program's front window.** Open **Overview › Dashboards** › `HarborPoint Program Overview`. For each widget, write down the question it answers and the lens it's built on. Which management question from Part 4 does it *not* answer? Keep your notes: in Lab 5's Extra knots, on Day 2, you'll critique this dashboard.
     2. **Who spans the most teams?** On the `HarborPoint Team` Epics backlog, expand each Epic into its Features and add **Node Name**. Which Epics are delivered by more than one owning team, and which single team appears under the most Epics?
     3. **The Feature that won't close.** On the `HarborPoint Team` Features backlog, find a Feature that shows 100% progress but is still **Active**. Check its **Target Date**. What does a Feature like that do to a portfolio report? (You'll meet it again in Lab 3 and on Day 3.)
+
+!!! harbor "Back in your own harbor"
+    Three moves for your first week back, about 30 minutes in your own Azure DevOps:
+
+    1. **Hold your ranking up to the light.** Open the Epics (or top-level) backlog your leadership treats as the portfolio, and lay it next to the last written priority list you were given. Write down every place they disagree, and who could settle it.
+    2. **Build your Feature status view once.** On your Features backlog, add **Progress by Story Points**, **Sum of Story Points** and **Progress by all Work Items**. Column settings are per user, so you change nothing for anyone else, and you'll never need a status spreadsheet for "how far along" again.
+    3. **Ask one team what "done" means.** Pick your most important Feature, find its owning team's board, and count the finished-but-not-Closed work. That's how much your progress bars are understating, or hiding.
 
 ## Key takeaways
 
