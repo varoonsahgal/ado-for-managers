@@ -60,7 +60,13 @@ Start where Dana starts: the dashboard, read cold.
 ??? pilot "Harbor Pilot · Hint 2: Bring it into port (full solution)"
     Roughly: (1) velocity has collapsed from about 18 to 8 in two sprints; (2) the team completed little in the "current" sprint, and the burndown agrees; (3) open work keeps growing; (4) quality is fine, with zero open P1 bugs; (5) omnichannel progress is modest. Hold on to that list. Most of it is false, and one claim is the dangerous kind: it's false in the *reassuring* direction.
 
-<!-- SHOT: lab11-ms-dashboard | Overview › Dashboards › Member Support - Delivery Health (team dashboard, Member Support), full view: Markdown header "Maintained by Leo Fischer, PMO", query tiles for the five MS queries, Velocity widget (18, 17, 19, 13, 8), Sprint Burndown showing Sprint 13 dates | crop: whole dashboard; highlight the Velocity widget and the Open P1 bugs tile showing 0 -->
+<figure class="hp-shot" data-shot="lab11-ms-dashboard" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › Member Support - Delivery Health (team dashboard)</span></div>
+
+![Leo's page, as Carmen sees it. Velocity collapsing to 13 and 8, a green 0 P1 bugs, and a "current sprint" burndown whose dates say 10/26 to 11/6: last sprint. Every number here is real. Most of them are wrong.](../assets/shots/lab11-ms-dashboard.png){ loading=lazy }
+
+<figcaption markdown>Leo's page, as Carmen sees it. Velocity collapsing to **13** and **8**, a green **0** P1 bugs, and a "current sprint" burndown whose dates say **10/26 to 11/6**: last sprint. Every number here is real. Most of them are wrong.</figcaption>
+</figure>
 
 Now go behind every tile. Leo's dashboard has **twelve** planted defects. Some live in the **data** (the items), some in the **queries**, some in the **widgets**, and one in **permissions**.
 
@@ -97,7 +103,7 @@ Now go behind every tile. Leo's dashboard has **twelve** planted defects. Some l
     | Done but not closed | `Work Item Type` `=` `User Story`, `State` `=` `Resolved` |
     | Missing estimates | `Work Item Type` `=` `User Story`, `Story Points` `=` *(leave Value blank)*, `State` `<>` `Removed` |
     | A departed owner | `Assigned To` `Contains` `Kyle Morgan` |
-    | Zombies | `State` `=` `Active`, `Changed Date` `<` `@Today - 14` |
+    | Zombies | `Work Item Type` `=` `User Story`, `State` `=` `Active`, `Changed Date` `<` `@Today - 14` (leave out the type and you also get the Epic and two Features, which nobody edits while their stories move) |
     | Misfiled work (**drop the area clause**) | `Area Path` `=` `HarborPoint` |
     | Tag drift | three queries: `Tags` `Contains` `omnichannel`, then `omni-channel`, then `omnichanel` |
     | Duplicates | sort by **Title**, or `Title` `Contains Words` `status tracker` |
@@ -122,9 +128,15 @@ Now go behind every tile. Leo's dashboard has **twelve** planted defects. Some l
 
     `MS - Open P1 bugs` is correct as a query. Its zero comes from data filed in the wrong place, which is why #5 is a data defect.
 
-    <!-- VERIFY: (a) whether defect #12 was provisioned (it is optional in the World Bible); if not, score out of 22; (b) the exact error text on a tile bound to another user's My Queries query ("Widget failed to load" or a permissions message); (c) that Assigned To Contains works on the seeded plain-string identity "Kyle Morgan"; (d) that Area Path = HarborPoint returns exactly the 2 root-area bugs. -->
+    <!-- VERIFY (needs a second account): the exact error a participant sees on the "Waiting for sign-off" tile, which is bound to the instructor's My Queries. It renders normally for the account that ran the provisioner. -->
 
-<!-- SHOT: lab11-leo-query-editor | Boards › Queries › Shared Queries/PMO Reporting/MS - Current sprint work, Editor tab, clauses Area Path Under HarborPoint\Member Support and Iteration Path = HarborPoint\PI 4\Sprint 13 | crop: the clause grid; highlight the hard-coded Iteration Path value -->
+<figure class="hp-shot" data-shot="lab11-leo-query-editor" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › PMO Reporting › MS - Current sprint work › Editor</span></div>
+
+![Defect one, in plain sight: the "current sprint" is typed in as Sprint 13. It was right for two weeks, and it has been quietly wrong ever since. Look at the results, too: a Closed story with no points, and two spellings of one tag.](../assets/shots/lab11-leo-query-editor.png){ loading=lazy }
+
+<figcaption markdown>Defect one, in plain sight: the "current sprint" is typed in as **Sprint 13**. It was right for two weeks, and it has been quietly wrong ever since. Look at the results, too: a Closed story with no points, and two spellings of one tag.</figcaption>
+</figure>
 
 !!! checkpoint "Checkpoint"
     - [ ] I wrote down the dashboard's five claims before I investigated
@@ -147,11 +159,15 @@ Carmen asked a yes-or-no question: is the dashboard wrong, or is she? Answer it 
     | 12 | 18 | −5 (2 Omnichannel Service Requests stories) | | **13** |
     | 13 | 19 | −8 (3 stories: 5 points of Omnichannel Service Requests, 3 of Secure Messaging & Chat) | −3 (taxonomy cleanup) | **8** |
 
-    **Planned** stayed flat at 20 and 21, so the team didn't plan less. Completion didn't fall either. The **recording** of completion fell. Run your "done but not closed" query from Part 1 and the evidence is right there: finished stories still parked in sprints that have ended.
+    **Planned** barely moved (20, then 18), so the team didn't plan much less. Completion didn't fall either. The **recording** of completion fell. The chart even shows you where the points went: the blue **Incomplete** stacks on Sprints 12 and 13 are the finished stories left in Resolved, plus the zombies nobody moved, still sitting in sprints that have ended. Run your "done but not closed" query from Part 1 and you'll find the same items by name.
 
-    <!-- VERIFY: how the Sprint 12 and 13 bars show the Resolved stories and the Active zombies (expected: as Incomplete, since Resolved for User Story is In Progress category); and, if items are closed now, whether they appear as Completed Late in Sprints 12 and 13 rather than restoring Completed to 18 and 19. -->
+<figure class="hp-shot" data-shot="lab11-velocity-ms" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Member Support › Analytics › Velocity (Sum of Story Points)</span></div>
 
-<!-- SHOT: lab11-velocity-ms | Boards › Backlogs › Member Support, Stories, Analytics › Velocity full report, Sum of Story Points, last 6 iterations: Planned vs Completed for Sprints 9 to 14 | crop: chart; annotate Sprint 12 (13) and Sprint 13 (8) against flat Planned -->
+![Read the blue. The Incomplete segments in Sprints 12 and 13 are finished stories left in Resolved and zombie stories never moved, still sitting in sprints that have ended. The green collapse to 13 and 8 is a recording problem, and the evidence is stacked right on top of it.](../assets/shots/lab11-velocity-ms.png){ loading=lazy }
+
+<figcaption markdown>Read the blue. The **Incomplete** segments in Sprints 12 and 13 are finished stories left in Resolved and zombie stories never moved, still sitting in sprints that have ended. The green collapse to 13 and 8 is a recording problem, and the evidence is stacked right on top of it.</figcaption>
+</figure>
 
 !!! insight "Lighthouse insight: the chart is right, the data is wrong"
     Nothing in this lab is a bug in Azure DevOps. The Velocity widget does exactly what it promises: it sums Story Points on Closed items. Every number on Leo's dashboard is computed correctly from records that are wrong. That's the uncomfortable truth about reporting. A dashboard is a **contract**. The team promises to keep states, estimates, owners, sprints and areas true. The report promises to read them faithfully. When either side breaks the deal, the chart stays crisp and confident, and it's wrong.
@@ -174,10 +190,9 @@ Your sandbox holds a miniature of Member Support's mess: one Feature, 13 stories
     | `Current sprint work` | **4** (the Sprint 13 stories) |
     | `Completed this sprint` | **2** (5 points, one of them unestimated) |
     | `Open P1 bugs` | **0** |
-    | `Open work` | **14** rows from the Lab 11 set, plus your Lab 9 and Lab 10 work in the same area |
+    | `Open work` | **14** rows from the Lab 11 set (the Feature, 10 stories, the 2 Removed items and the 1 correctly filed bug; `State <> Closed` lets Removed through), plus your Lab 9 and Lab 10 work in the same area |
     | `Omnichannel stories` | **3** |
 
-    <!-- VERIFY: the inherited query names and counts against the provisioned artifacts. Counts assume the sandbox bugs are not in Sprint 13 or Sprint 14; if they are, add them. "Open work" has no type filter, so it also includes the Lab 11 Feature and any Lab 9/10 sandbox items. Also verify that `Parent Not In <ids>` still returns items with no parent (the misfiled bugs, the Lab 11 Feature). -->
 
 2. **Open the full set.** Save a scratch flat query in **My Queries**: `Area Path` `Under` `HarborPoint\Training\P##` OR (`Area Path` `=` `HarborPoint\Training` AND `Title` `Contains` `P##`). Add the columns **Work Item Type**, **State**, **Assigned To**, **Iteration Path**, **Area Path**, **Story Points**, **Tags**, **Parent** and **Changed Date**. Group the second pair of clauses. Sort by **Parent** so the Lab 9 and Lab 10 rows sit together, out of your way.
 
@@ -203,9 +218,9 @@ Your sandbox holds a miniature of Member Support's mess: one Feature, 13 stories
     | 5 | `P## - Chat disconnects after 60 seconds`, `P## - Request emails sent twice` (P1 bugs in `HarborPoint\Training`) | **Area Path** `HarborPoint\Training\P##`. Only yours. |
     | 6 | `P## - Request status page` (`omni-channel`), `P## - Secure file upload` (`omnichanel`) | Remove the wrong tag with its **x** and add `omnichannel` |
     | 7 | `P## - Omnichannel Service Requests (sandbox)` (New) | **State** `Active`. It has Closed and Active children. |
-    | 8 | `P## - Routing rules engine`, twice | On the **New** one: **Links** › **Add link** › **Existing item**, **Link type** **Duplicate Of**, pointing at the Active one. Then **State** `Removed`, with a comment. |
+    | 8 | `P## - Routing rules engine`, twice | On the **New** one: **Links** › **Add link** › **Existing item**, **Link type** **Duplicate Of** (type `Dupl` to filter), pointing at the Active one. Then **State** `Removed`, with a comment. |
 
-    <!-- VERIFY: the Duplicate link-type labels in New Boards Hub ("Duplicate" / "Duplicate Of") and which one to choose on the item being removed; that State can move Active > New for User Story in the Agile process. -->
+    The link list offers both **Duplicate** and **Duplicate Of**. Read them from the item you're standing on: this item is a *Duplicate Of* the one that survives. Get it backwards and the history says the real work was the copy.
 
 !!! warning "Don't fix Member Support"
     You've now found every defect in Member Support's real data, and every one of them is a two-click fix. Leave them. Those items are Carmen's team's record, everyone in the room shares them, and a fix made by an outsider without the team is how working agreements die. Your findings go to Carmen and Leo as a recommendation in Part 6.
@@ -220,13 +235,13 @@ Your sandbox holds a miniature of Member Support's mess: one Feature, 13 stories
 Now repair the instruments. Open each inherited query, change it, and use **More actions** › **Save as** into `Shared Queries/Training/P##/` with the prefix `Fixed - `. Keep the originals so you can compare.
 
 !!! challenge "Challenge: Five queries, honestly"
-    Rewrite all five inherited queries so they would survive next sprint, next quarter and the next reorganization. Then add one new one, `Fixed - Completed last sprint`. Before you save `Fixed - Current sprint work`, run it once with the **P## Sandbox** team in the macro, and explain the result.
+    Rewrite all five inherited queries so they would survive next sprint, next quarter and the next reorganization. Then add one new one, `Fixed - Completed last sprint`. Before you save that one, switch its macro's team to **P## Sandbox**, run it, and explain what happens.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
     Two defects are about **time** (a sprint typed in by hand), one is about **meaning** (what "open" means), and one is about **vocabulary** (tags). One of the five queries was never wrong.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    Use `@CurrentIteration` and `@CurrentIteration - 1`, which carry a **team parameter**. Use `State` `Not In` `Closed,Removed`. For tags, use a grouped **Or** across the three spellings. And ask why your sandbox team's current sprint comes back empty. It selects only Sprints 15 to 20, from Lab 9.
+    Use `@CurrentIteration` and `@CurrentIteration - 1`. Pick `@CurrentIteration` from the **Value** list; for `- 1`, type `@CurrentIteration - 1` and choose **Use "@CurrentIteration - 1"**. Either way a second box appears underneath with the **team**. Use `State` `Not In` `Closed,Removed`. For tags, use a grouped **Or** across the three spellings. And when your sandbox team chokes on `- 1`, look at which sprints it selected in Lab 9.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     All are **Flat list of work items**, and all keep `Area Path` `Under` `HarborPoint\Training\P##`.
@@ -248,9 +263,8 @@ Now repair the instruments. Open each inherited query, change it, and use **More
     | │ | Or | Tags | Contains | `omni-channel` |
     | └ | Or | Tags | Contains | `omnichanel` |
 
-    **Why the sandbox team returns nothing:** `@CurrentIteration` means "the sprint of *this team* whose dates include today". Your sandbox team plans only future sprints, so it has none. The macro is only as good as the team behind it, and a query copied with **Save as** keeps its old team until you change it. In the real fix, Leo would use team `Member Support`. After your tag clean-up, the original one-tag query also returns 5. The Or-group is a bridge, and the vocabulary is the fix.
+    **Why the sandbox team fails on `- 1`:** `@CurrentIteration` means "the sprint of *this team* whose dates include today", and `- 1` means "the one before it *in this team's own sprint list*". Your sandbox team selected Sprints 14 to 20 in Lab 9. So `@CurrentIteration` works, and returns the same 4 rows as Member Support, but there's nothing before Sprint 14. Azure DevOps refuses with *VS403721: The specified team hasn't scheduled an iteration for '@CurrentIteration - 1'*. The macro is only as good as the team's sprint list behind it, and a query copied with **Save as** keeps its old team until you change it. In the real fix, Leo would use team `Member Support`. After your tag clean-up, the original one-tag query also returns 5. The Or-group is a bridge, and the vocabulary is the fix.
 
-    <!-- VERIFY: where the @CurrentIteration team parameter appears in the New Boards Hub query editor and how "- 1" is entered; whether any sandbox bugs sit in Sprint 14 (add them to the first expected count if so). -->
 
 ??? info "Under the hood: WIQL for the current-sprint fix"
     ```sql
@@ -273,11 +287,17 @@ Build a project dashboard, **Overview › Dashboards** › **+ New Dashboard**, 
 - **Query Tile** widgets for each `Fixed - ` query. Give `Fixed - Open P1 bugs` a rule that turns it red at 1 or more.
 - a **Sprint Burndown** widget: **Team** `Member Support`, **Select Iteration** `@CurrentIteration`. That's defect 11, fixed on a dashboard you own.
 
-<!-- SHOT: lab11-sandbox-health | Overview › Dashboards › P## - Sandbox Health: Markdown before/after table, Query Tiles for the Fixed queries (Open P1 bugs = 2 in red, Completed last sprint = 4), Sprint Burndown for Member Support on @CurrentIteration (Sprint 14) | crop: whole dashboard; highlight the before/after table and the red P1 tile -->
+<figure class="hp-shot" data-shot="lab11-sandbox-health" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Sandbox Health</span></div>
+
+![Before and after, on one page. Open P1 bugs turns red at 2 because the bugs now live where the query looks. Completed last sprint says 4 (13 points), where Leo's report said 2. The burndown is on Sprint 14. Open work reads 36 because the tile counts your Lab 9 and Lab 10 stories too; the Lab 11 rows are the 10 in the table.](../assets/shots/lab11-sandbox-health.png){ loading=lazy }
+
+<figcaption markdown>Before and after, on one page. **Open P1 bugs** turns red at 2 because the bugs now live where the query looks. **Completed last sprint** says 4 (13 points), where Leo's report said 2. The burndown is on **Sprint 14**. **Open work** reads 36 because the tile counts your Lab 9 and Lab 10 stories too; the Lab 11 rows are the 10 in the table.</figcaption>
+</figure>
 
 !!! checkpoint "Checkpoint"
     - [ ] Six `Fixed - ` queries are saved in `Shared Queries/Training/P##/`, and `Fixed - Completed last sprint` returns 4 stories and 13 points
-    - [ ] I can explain why `@CurrentIteration` for my sandbox team returns nothing
+    - [ ] I can explain why `@CurrentIteration - 1` fails for my sandbox team but works for Member Support
     - [ ] `P## - Sandbox Health` shows before and after, and its burndown is on Sprint 14
 
 ## Part 5 — Build a watchlist
@@ -303,7 +323,7 @@ Fixing the data once is a cleanup. Catching it every week is management. A watch
     | # | Name | Clauses | Member Support today |
     |:-:|---|---|:-:|
     | 1 | `Stale active work` | `Work Item Type` `In` `User Story,Bug`; `State` `=` `Active`; `Changed Date` `<` `@Today - 14` | **3** |
-    | 2 | `Resolved but not closed` | `Work Item Type` `=` `User Story`; `State` `=` `Resolved`; `Resolved Date` `<` `@Today - 5` | **5** (6 if `Unified request intake form` was resolved more than 5 days ago) |
+    | 2 | `Resolved but not closed` | `Work Item Type` `=` `User Story`; `State` `=` `Resolved`; `Resolved Date` `<` `@Today - 5` | **5**, rising to **6** from Sprint 14's second Wednesday, when `Unified request intake form` passes 5 days in Resolved |
     | 3 | `Unestimated stories` | `Work Item Type` `=` `User Story`; `Story Points` `=` *(blank)*; `State` `<>` `Removed` | **4** |
     | 4 | `Active in a past sprint` | `State` `=` `Active`; grouped **Or**: `Iteration Path` `=` `@CurrentIteration - 1`, `- 2`, `- 3`, each with team `Member Support` | **3** |
     | 5 | `Assigned to a leaver` | `Assigned To` `Contains` `Kyle Morgan`; `State` `Not In` `Closed,Removed` | **4** |
@@ -311,9 +331,14 @@ Fixing the data once is a cleanup. Catching it every week is management. A watch
 
     Number 5 is the weakest, because a query can't know who has left. The durable fix is an off-boarding step: *reassign open work before the last day*. Number 6 works for every team at once. Put it on the program dashboard.
 
-    <!-- VERIFY: watchlist #2 count depends on when "Unified request intake form" was seeded as Resolved; #1 assumes no other Member Support item is Active and untouched for 14+ days. -->
 
-<!-- SHOT: lab11-watchlist | Boards › Queries › Shared Queries/Training/P##/Watchlist, folder expanded showing the six queries, with "Active in a past sprint" open in Editor (grouped @CurrentIteration - 1/-2/-3 with team Member Support) and Results showing 3 rows | crop: folder tree plus clause grid -->
+<figure class="hp-shot" data-shot="lab11-watchlist" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › Watchlist › Active in a past sprint</span></div>
+
+![Three grouped Or clauses, @CurrentIteration - 1, - 2 and - 3, each pinned to team Member Support in the box underneath. The healthy answer is zero. Today it's 3: two of them still carry Kyle Morgan's name.](../assets/shots/lab11-watchlist.png){ loading=lazy }
+
+<figcaption markdown>Three grouped **Or** clauses, `@CurrentIteration - 1`, `- 2` and `- 3`, each pinned to team **Member Support** in the box underneath. The healthy answer is zero. Today it's **3**: two of them still carry Kyle Morgan's name.</figcaption>
+</figure>
 
 !!! checkpoint "Checkpoint"
     - [ ] My `Watchlist` folder holds at least three queries, each with today's Member Support count
@@ -327,13 +352,13 @@ Carmen doesn't need a better chart. She needs a team that keeps its record true,
 |---|---|---|---|
 | **Working agreement and Definition of Done** (`/Practices/Working Agreements and Definition of Done`) | #1, #2, #7: "Done means Closed. Estimate before Active. The PO closes the Feature." | The team | It already exists, and Member Support hasn't adopted it. An agreement nobody reads is decoration |
 | **Team work item templates** | #2, #6: pre-filled area, tags and criteria skeleton | Team members, for their own team | Team-scoped; other teams don't see them |
-| **Inherited process rules**, for example on User Story: `A work item state changes to` `Active` › `Make required` `Story Points` | #2 | Project Collection Administrators | Applies **immediately to every project** on that process. Rules **can't** target Area or Iteration Path, so #4 and #5 still need the watchlist |
+| **Inherited process rules**, for example on User Story: `A work item state changes to` `Active` › `Make required` `Story Points` | #2 | Project Collection Administrators | Applies **automatically to every project** on that process, so try it on a test process first. Rules **can't** target Area or Iteration Path, so #4 and #5 still need the watchlist |
 | **Notifications and Follow** | #7, #8: Follow the Features you report on, and subscribe to state changes in your area | Anyone (personal); team admins (team subscriptions) | Notification filters don't support `@CurrentIteration`. Too many emails and people stop reading |
 | **Dashboard ownership and review** | #9, #11: a named owner, a "last reviewed" line, a monthly widget check | The dashboard owner | A dashboard with no owner decays one sprint at a time |
 | **Shared queries and permissions** | #12: dashboard tiles only from shared folders the audience can read | Folder owners (**Security** on the folder) | Viewers without **Read** on a query see an error, not a number |
 | **Off-boarding checklist** | #3: reassign open work before someone's last day | The line manager | Nobody owns it until someone writes it down |
 
-<!-- VERIFY: the exact wording of the rule condition/action pickers in Organization settings › Boards › Process (User Story › Rules › New rule). -->
+<!-- VERIFY (needs an inherited process; the vsahgal org has none, and creating one is an org-wide change): the exact dropdown labels in User Story › Rules › New rule. Microsoft's rule reference confirms the actions "Make required" / "Make read-only", that Area Path can't be selected, and that customizations reflect automatically in every project on the process. -->
 
 !!! reef "Reef ahead: hygiene police"
     Once a watchlist exists, someone will want it per person, ranked, in the weekly pack: "Nora has a stale item." That's when people learn to game the record instead of keeping it true. They close early, split stories to look busy, and leave out the work that's hard to estimate. Goodhart's law works on data quality too. Keep the watchlist **team-level**, look at it **with** the team, and measure success by how fast items leave it, not by who put them there.
@@ -423,7 +448,7 @@ Rules can make a field required on a state change, but they can't target Area Pa
     2. **Program-wide hygiene.** Copy watchlist #1 and #3 with the area clause set to `Area Path` `Not Under` `HarborPoint\Training`. Which other teams appear, and does Mobile Banking's stale work show up at 14 days or only at 7?
     3. **Write the tag vocabulary.** Draft a short `/Training/P##/Tag Vocabulary` page with the canonical tags from today and from [Lab 10](lab-10-personas.md), who may add a new tag, and how a misspelling gets retired. Tags can't be renamed in the web UI. What does that mean for your process?
 
-<!-- VERIFY: Extra knot 1, whether "Highlight work completed late" shows recently closed items from ended sprints as Completed Late, and which sprint receives the credit. -->
+<!-- Facilitator: Velocity credits work to the sprint in its Iteration Path. With "Highlight work completed late" on, items Closed after that sprint's end date are drawn as a separate "Completed Late" segment. So Sprints 12 and 13 climb back toward 18 and 19, with the late part visibly marked. That is the honest bar to show Dana. -->
 
 ## Key takeaways
 

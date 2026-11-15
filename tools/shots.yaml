@@ -200,3 +200,23 @@ lab10-story-form:
 lab10-sandbox-backlog:
   bar: "Boards › Backlogs › P## Sandbox › Stories (Parents on)"
   caption: "One Feature, six stories, three personas. Every story names its member in its title and its tag, and the three ID-verification stories sit side by side: one capability, built three different ways."
+
+lab11-ms-dashboard:
+  bar: "Overview › Dashboards › Member Support - Delivery Health (team dashboard)"
+  caption: "Leo's page, as Carmen sees it. Velocity collapsing to **13** and **8**, a green **0** P1 bugs, and a \"current sprint\" burndown whose dates say **10/26 to 11/6**: last sprint. Every number here is real. Most of them are wrong."
+
+lab11-leo-query-editor:
+  bar: "Boards › Queries › Shared Queries › PMO Reporting › MS - Current sprint work › Editor"
+  caption: "Defect one, in plain sight: the \"current sprint\" is typed in as **Sprint 13**. It was right for two weeks, and it has been quietly wrong ever since. Look at the results, too: a Closed story with no points, and two spellings of one tag."
+
+lab11-velocity-ms:
+  bar: "Boards › Backlogs › Member Support › Analytics › Velocity (Sum of Story Points)"
+  caption: "Read the blue. The **Incomplete** segments in Sprints 12 and 13 are finished stories left in Resolved and zombie stories never moved, still sitting in sprints that have ended. The green collapse to 13 and 8 is a recording problem, and the evidence is stacked right on top of it."
+
+lab11-watchlist:
+  bar: "Boards › Queries › Shared Queries › Training › P## › Watchlist › Active in a past sprint"
+  caption: "Three grouped **Or** clauses, `@CurrentIteration - 1`, `- 2` and `- 3`, each pinned to team **Member Support** in the box underneath. The healthy answer is zero. Today it's **3**: two of them still carry Kyle Morgan's name."
+
+lab11-sandbox-health:
+  bar: "Overview › Dashboards › P## - Sandbox Health"
+  caption: "Before and after, on one page. **Open P1 bugs** turns red at 2 because the bugs now live where the query looks. **Completed last sprint** says 4 (13 points), where Leo's report said 2. The burndown is on **Sprint 14**. **Open work** reads 36 because the tile counts your Lab 9 and Lab 10 stories too; the Lab 11 rows are the 10 in the table."
