@@ -63,7 +63,7 @@ Personas are about members, but a manager starts by asking who already owns the 
     One Feature is about opening an account online. The other is about onboarding in a branch. The program-level team sees every team's Features in one backlog.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    **Boards › Backlogs**, team `HarborPoint Team`, **Features** level, **Parents** on, so you can see the Epics. Add **Progress by Story Points** (from **+ Add a rollup column** › **From quick list**), **Node Name** and **Target Date** with **Column Options**. Filter by keyword (`account opening`, then `onboarding`) to find them fast. Sandbox Features never show here, because `HarborPoint Team` leaves out the `Training` area. Expand each Feature to read its stories, and open its **Links** tab for dependencies.
+    **Boards › Backlogs**, team `HarborPoint Team`, **Features** level, **Parents** on, so you can see the Epics. Add **Progress by Story Points** (from **+ Add a rollup column** › **From quick list**), **Node Name** and **Target Date** with **Column Options**. Filter by keyword (`account opening`, then `onboarding`) to find them fast; while a filter is on, the backlog flattens and hides the Epics and rollups, so clear it (**×**) to read progress. Sandbox Features never show here, because `HarborPoint Team` leaves out the `Training` area. Expand each Feature to read its stories, and open its **Links** tab for dependencies.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | | Online Account Opening | In-Branch Digital Onboarding |
@@ -83,9 +83,13 @@ Personas are about members, but a manager starts by asking who already owns the 
 
     **Dependency link between the two Features: none.** Pre-fill in branch needs the data a member saved online, and nothing in Azure DevOps connects the two.
 
-    <!-- VERIFY: the HarborPoint Team backlog keyword filter shows both Features (HarborPoint Team excludes Training, so sandbox Features such as P## - Member Onboarding Redesign should not appear). -->
+<figure class="hp-shot" data-shot="lab10-onboarding-features" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › HarborPoint Team › Features (Progress by Story Points, Target Date)</span></div>
 
-<!-- SHOT: lab10-onboarding-features | Boards › Backlogs, team HarborPoint Team, Features level, Parents on, columns Node Name, Target Date, Progress by Story Points; Online Account Opening under Digital Banking Modernization and In-Branch Digital Onboarding under Branch Experience Transformation, both expanded | crop: the two Feature rows with their Epics and a few child stories; highlight the 59% and 15% progress bars -->
+![Two halves of one member journey, in two teams and two Epics: Online Account Opening at 59% under Epic #2, In-Branch Digital Onboarding at 15% under Epic #4. Same Business Value, same Time Criticality, no link between them.](../assets/shots/lab10-onboarding-features.png){ loading=lazy }
+
+<figcaption markdown>Two halves of one member journey, in two teams and two Epics: **Online Account Opening** at 59% under Epic #2, **In-Branch Digital Onboarding** at 15% under Epic #4. Same Business Value, same Time Criticality, no link between them.</figcaption>
+</figure>
 
 !!! insight "Lighthouse insight: the member doesn't see your org chart"
     Both Features have the same Business Value and Time Criticality, so the portfolio rates them equally. The Epic rank breaks the tie, which puts the online half of the journey two places ahead of the branch half. Look at what happens to a member who starts online and finishes in a branch. The fix for re-entering data sits in one team's backlog. The data it depends on sits in another's. Neither Feature is wrong. The **journey** has no owner. Personas are the cheapest way to make a journey visible as one thing, before anyone redraws a team boundary.
@@ -106,11 +110,9 @@ Three starter personas live in the wiki. They're rich, but each has sections mar
 
 1. Open **Overview › Wiki** › `Research` › `Onboarding Research Findings` and keep it in a second tab. Every claim you add today should trace back to it or to a starter persona.
 2. Open `Templates` › `Persona Canvas` and note its sections.
-3. Create your copies. Open `/Training/P##` (you created it in an earlier lab; create it now if not), add a sub-page named `Personas`, and under it add one sub-page per persona with the persona's full name.
+3. Create your copies. Open `/Training/P##` (you created it in an earlier lab; create it now if not), use its **⋯** menu › **Add sub-page** to add `Personas`, and under it add one sub-page per persona with the persona's full name.
 4. On each starter page, select **Edit**, copy the whole Markdown, and paste it into your copy. Then close the original **without saving**.
-5. Fill every **To be developed** section with the canvas headings: **goals**, **behaviors**, **channels**, **pain points**, **jobs to be done** and a **quote** in the member's own voice.
-
-<!-- VERIFY: the wiki page context-menu label for adding a sub-page ("Add sub-page"), and the exact section headings on /Templates/Persona Canvas and the "To be developed" markers on the starter personas. Adjust step 5's list if the canvas uses different headings. -->
+5. Fill every section marked **To be developed** (four or five per persona). Use the canvas as your checklist: a **Quote** in the member's own voice, **Goals**, **Frustrations**, **Behaviors**, **Channels and devices**, **Needs from this service**, **Journey**, **Acceptance criteria hooks** and **Evidence**. Every heading the starter persona already has, keep; every canvas heading it lacks, add.
 
 The research numbers you'll keep reaching for:
 
@@ -156,7 +158,13 @@ The research numbers you'll keep reaching for:
 !!! reef "Reef ahead: designing for the average member"
     Average the three personas and you get a 43-year-old with medium digital confidence who applies in the early evening and is happy in either channel. Nobody like that walks into Port Haven. Averages blend the segments until no segment's break is visible. "58% start online" also means 42% don't, and those 42% include the members Hector says hold the most products. Design for the extremes, and the middle usually comes along.
 
-<!-- SHOT: lab10-persona-wiki | Overview › Wiki, page /Training/P##/Personas/Amara Okafor in view mode, page tree expanded to show Training › P## › Personas with all three personas | crop: page tree plus the journey table; highlight the Fund and first use row (83% re-entry) -->
+<figure class="hp-shot" data-shot="lab10-persona-wiki" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Wiki › Training › P## › Personas › Amara Okafor</span></div>
+
+![Your own copies, under your own page. Amara's journey has one break that matters, Fund and first use, and it carries evidence: 83% of online-then-branch members re-enter their data. Everything unproven says (assumption).](../assets/shots/lab10-persona-wiki.png){ loading=lazy }
+
+<figcaption markdown>Your own copies, under your own page. Amara's journey has one break that matters, **Fund and first use**, and it carries evidence: 83% of online-then-branch members re-enter their data. Everything unproven says *(assumption)*.</figcaption>
+</figure>
 
 !!! checkpoint "Checkpoint"
     - [ ] My three persona pages exist under `/Training/P##/Personas/` with every **To be developed** section completed
@@ -178,16 +186,14 @@ A persona that lives only in the wiki is a poster. A persona that shows up in a 
 
 ### Write persona-driven stories
 
-Add the stories as children of your Feature: on the Features backlog, use the **+** on its row to add a **User Story**. For each story:
+Add the stories as children of your Feature: on the Features backlog, hover its row and select the **+** at the left (**Add: User Story, Bug**) › **User Story**. A story created this way already has its Parent link, and it inherits the Feature's Area and Iteration. For each story:
 
 - **Title** in the member's voice, prefixed `P## - `
 - **Tags**: exactly one of `persona-dee`, `persona-jordan` or `persona-amara`
 - **Acceptance Criteria** in Given/When/Then form, specific to that persona
 - **Story Points**: a rough estimate. Use the real stories you found in Part 1 as anchors (for example, `ID document capture with auto-crop` is a 5)
-- **Iteration Path** `HarborPoint`. New items can pick up the team's default iteration, so check it before you save.
-- **A link to the persona's wiki page**: on the story's **Links** tab (or the **Related Work** section), select **Add link** › **Existing item**, set **Link type** to **Wiki**, and pick the persona page
-
-<!-- VERIFY: (a) the row "+" on a Features backlog offers User Story directly; (b) the Wiki link-type label in the Add link dialog ("Wiki" vs "Wiki page") and how the page is chosen (picker vs pasted URL); (c) the P## Sandbox team's default iteration. -->
+- **Iteration Path** `HarborPoint`. Stories added with the row **+** inherit it from the Feature. Stories created any other way pick up your sandbox's default, the current sprint, so check it before you save.
+- **A link to the persona's wiki page**: save the story first, then open its **Links** tab (the chain icon next to **History**) › **Add link** › **Existing item**. Set **Link type** to **Wiki page**, select **Find page**, filter by the persona's name, pick *your* copy under `Training › P## › Personas`, and select **Add link**, then **Save**. The **Related Work** panel on the Details tab offers only work-item link types, so it won't show Wiki page.
 
 !!! warning "Tags are forever (almost)"
     Tags can't be renamed or deleted in the web UI, and the spelling is matched exactly. Type `persona-amara` on one story and `persona_amara` on the next, and you've built two personas. Copy the tag from the list in this lab. You'll see what three spellings of one idea do to a dashboard in [Lab 11](lab-11-dashboard-wrong.md).
@@ -229,7 +235,13 @@ Add the stories as children of your Feature: on the Features backlog, use the **
 
     **More stories that fit the journeys:** Jordan sees his application status and what's missing at any hour. Amara resumes on a different device. Dee gets digital banking set up in branch by the person who opened her account, with fraud alerts explained. Branch onboarding is shortened from 47 minutes for members who started online.
 
-<!-- SHOT: lab10-story-form | A User Story in HarborPoint\Training\P## titled "P## - ..." for Jordan: tag persona-jordan, Acceptance Criteria in Given/When/Then, Story Points set, Links tab showing the Parent link to P## - Member Onboarding Redesign and a Wiki link to /Training/P##/Personas/Jordan Reyes | crop: form header, tags and the Links tab; highlight the tag and the Wiki link -->
+<figure class="hp-shot" data-shot="lab10-story-form" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Work item › User Story › Links tab</span></div>
+
+![A persona-driven story: one persona-jordan tag, a Parent link to your Feature, and a Wiki page link to Jordan's persona. Add the wiki link from the Links tab: the Related Work panel on Details doesn't offer that link type.](../assets/shots/lab10-story-form.png){ loading=lazy }
+
+<figcaption markdown>A persona-driven story: one `persona-jordan` tag, a Parent link to your Feature, and a **Wiki page** link to Jordan's persona. Add the wiki link from the **Links** tab: the Related Work panel on Details doesn't offer that link type.</figcaption>
+</figure>
 
 !!! insight "Lighthouse insight: tags today, a field when it's settled"
     A tag costs nothing. You can add it in seconds, filter a board with it and query it. It also can't be made required, can't be renamed in the UI, and drifts the moment two people spell it differently. A custom **Persona** picklist on an inherited process is consistent, can be required, and charts cleanly. It also needs a Project Collection Administrator to add it, and it changes **every project** that uses that process, immediately. Neither is right in general. Use tags while you're still learning which personas matter. Move to a field once the list is stable and someone owns it. Whichever you pick, write the vocabulary down where people will see it.
@@ -293,7 +305,13 @@ Hector and Priya will each read your backlog order as a verdict on their channel
     - a **three-sentence recommendation** to Priya and Hector: what goes first and why, which real Feature should own each of your top 3 (Online Account Opening or In-Branch Digital Onboarding), and the one decision you need from them, such as a single owner for the onboarding journey or a link between the two Features
     - links to your three persona pages and your sandbox Feature
 
-<!-- SHOT: lab10-sandbox-backlog | Boards › Backlogs, team P## Sandbox, Stories level, Parents on, P## - Member Onboarding Redesign expanded with its persona-tagged stories in score order; Tags and Story Points columns visible; other sandbox Features collapsed | crop: the Feature and its children; highlight the tags column -->
+<figure class="hp-shot" data-shot="lab10-sandbox-backlog" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › P## Sandbox › Stories (Parents on)</span></div>
+
+![One Feature, six stories, three personas. Every story names its member in its title and its tag, and the three ID-verification stories sit side by side: one capability, built three different ways.](../assets/shots/lab10-sandbox-backlog.png){ loading=lazy }
+
+<figcaption markdown>One Feature, six stories, three personas. Every story names its member in its title and its tag, and the three ID-verification stories sit side by side: one capability, built three different ways.</figcaption>
+</figure>
 
 !!! checkpoint "Checkpoint"
     - [ ] `/Training/P##/Onboarding Priorities` has a scored row for every story, with evidence for each input

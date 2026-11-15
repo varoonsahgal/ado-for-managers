@@ -184,3 +184,19 @@ lab09-forecast-mvp-reordered:
 lab09-real-backlog-forecast:
   bar: "Boards › Backlogs › Digital Accounts › Stories · Forecasting at 25 (In Progress Items off)"
   caption: "The naive forecast never shows Sprint 14. Two stories *planned* for Sprint 14 sit in the first bucket, labelled **Sprint 15**, with the rest of the committed work. Card Controls then gets 55 points by the **Sprint 17** line, ten more than the honest 45."
+
+lab10-onboarding-features:
+  bar: "Boards › Backlogs › HarborPoint Team › Features (Progress by Story Points, Target Date)"
+  caption: "Two halves of one member journey, in two teams and two Epics: **Online Account Opening** at 59% under Epic #2, **In-Branch Digital Onboarding** at 15% under Epic #4. Same Business Value, same Time Criticality, no link between them."
+
+lab10-persona-wiki:
+  bar: "Overview › Wiki › Training › P## › Personas › Amara Okafor"
+  caption: "Your own copies, under your own page. Amara's journey has one break that matters, **Fund and first use**, and it carries evidence: 83% of online-then-branch members re-enter their data. Everything unproven says *(assumption)*."
+
+lab10-story-form:
+  bar: "Work item › User Story › Links tab"
+  caption: "A persona-driven story: one `persona-jordan` tag, a Parent link to your Feature, and a **Wiki page** link to Jordan's persona. Add the wiki link from the **Links** tab: the Related Work panel on Details doesn't offer that link type."
+
+lab10-sandbox-backlog:
+  bar: "Boards › Backlogs › P## Sandbox › Stories (Parents on)"
+  caption: "One Feature, six stories, three personas. Every story names its member in its title and its tag, and the three ID-verification stories sit side by side: one capability, built three different ways."
