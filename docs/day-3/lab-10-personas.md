@@ -384,9 +384,8 @@ A field brings consistency and can be required, but it's a governance change mad
 !!! bonus "Extra knots"
     1. **Persona coverage chart.** Save a flat query `Shared Queries/Training/P##/Onboarding by persona` (`Area Path` `Under` `HarborPoint\Training\P##`, `Work Item Type` `=` `User Story`, `Tags` `Contains` each persona tag, grouped with **Or**). Add a **Chart for Work Items** widget to a `P##` dashboard, grouped by **Tags**, with **Sum** of Story Points. Is any persona starved of effort? (Group-by-tags may need a preview feature; see the [query cookbook](../resources/query-cookbook.md).)
     2. **Feature-level WSJF-lite.** Compute (Business Value + Time Criticality) ÷ Effort for Online Account Opening (13 + 8 over 56) and In-Branch Digital Onboarding (13 + 8 over 33). Which scores higher, and what does it say that the lower-scoring one sits under the higher-ranked Epic?
-    3. **A persona story template.** As team admin of `P## Sandbox`, open **Project settings › Boards › Team configuration**, **Templates** tab, and create a User Story template that pre-fills an Acceptance Criteria skeleton (*Given… When… Then…*) and your sandbox area. Would you trust a template to add persona tags? Check what the template editor allows.
+    3. **A persona story template.** As team admin of `P## Sandbox`, open **Project settings › Boards › Team configuration**, **Templates** tab, and create a User Story template that pre-fills an Acceptance Criteria skeleton (*Given… When… Then…*) and your sandbox area. The editor's field list includes **Tags (Add)**, so a template *can* stamp a persona tag on every new story. Would you want it to, or should a person choose the persona each time?
 
-<!-- VERIFY: Extra knot 3, whether team templates can add Tags in the web template editor (docs conflict). -->
 
 !!! harbor "Back in your own harbor"
     Three moves for your first week back, about 30 minutes in your own Azure DevOps:
