@@ -33,7 +33,7 @@ Welcome to the hot seat. First question for you as program manager: members need
 ## Before you set sail
 
 - **Access:** Basic. Forecasting and the Capacity tab are not available with Stakeholder access.
-- **Your sandbox:** team `P## Sandbox`, area `HarborPoint\Training\P##`. It holds `P## - Instant Card Controls (planning copy)`: the same 20 stories as the real Feature, with the same points and order, and no sprints. **You may reorder, tag and re-estimate these freely.** Every sandbox title starts with `P## - `; this lab drops the prefix when it names a story. Your sandbox team selects Sprints 15 to 20 only, so its forecast starts at Sprint 15, because Sprint 14 is already committed. The same area also holds the Lab 11 practice set (`P## - Omnichannel Service Requests (sandbox)`): leave it alone today, and keep it below the planning copy.
+- **Your sandbox:** team `P## Sandbox`, area `HarborPoint\Training\P##`. It holds `P## - Instant Card Controls (planning copy)`: the same 20 stories as the real Feature, with the same points and order, and no sprints. **You may reorder, tag and re-estimate these freely.** Every sandbox title starts with `P## - `; this lab drops the prefix when it names a story. Your sandbox team's current sprint is Sprint 14, and the forecast tool always starts at the sprint after the current one, so your forecast starts at Sprint 15: exactly the sprints Dana is asking about. The same area also holds the Lab 11 practice set (`P## - Omnichannel Service Requests (sandbox)`): leave it alone today, and keep it below the planning copy.
 - **Read only:** `Digital Accounts` (backlog, Velocity, Capacity) and `Mobile Banking`. View options and report settings are per user, so changing those is fine. Dragging, tagging or re-estimating on a real team's backlog is not.
 - **You'll create:** the wiki page `/Training/P##/Card Controls Outlook`.
 - **Time-box:** 55 minutes. Part 1 is 6, Part 2 is 10, Part 3 is 12, Part 4 is 8, Part 5 is 7 and Part 6 is 12. Protect Part 6.
@@ -65,13 +65,17 @@ Every forecast starts from what the team has actually done. Digital Accounts is 
     | Planned | 26 | 26 | 25 | 27 | 26 |
     | Completed | **24** | **26** | **25** | **24** | **26** |
 
-    **Mean 25.0, range 24 to 26.** The plan holds: the weakest sprint was Sprint 12, with 24 of 27. Sprint 14 is still in progress, so leave it out of the mean.
+    **Mean 25.0, range 24 to 26.** The plan holds: the weakest sprint was Sprint 12, with 24 of 27. The **Average Velocity** card at the top right agrees (25): it leaves out Sprint 14, which is still in progress.
 
     Dana's request: 105 points in three sprints is **35 points per sprint**, for Card Controls alone. Digital Accounts has never completed more than 26 in a sprint, for *all* its work.
 
-    <!-- VERIFY: whether the Average Velocity card on the Analytics tab includes the in-progress Sprint 14 (10 points so far). If it does, tell participants to compute the mean from Sprints 9 to 13 themselves. -->
+<figure class="hp-shot" data-shot="lab09-da-velocity" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Digital Accounts › Analytics › Velocity (Sum of Story Points)</span></div>
 
-<!-- SHOT: lab09-da-velocity | Boards › Backlogs › Digital Accounts › Stories › Analytics › Velocity full report, Sum of Story Points, last 6 iterations, Sprints 9 to 14 | crop: chart; highlight the five completed bars 24/26/25/24/26 -->
+![Five completed sprints: 24, 26, 25, 24, 26. The Average Velocity card reads 25 and leaves the in-progress Sprint 14 out. 25 means 25: that's what makes this team forecastable.](../assets/shots/lab09-da-velocity.png){ loading=lazy }
+
+<figcaption markdown>Five completed sprints: **24, 26, 25, 24, 26**. The Average Velocity card reads **25** and leaves the in-progress Sprint 14 out. 25 means 25: that's what makes this team forecastable.</figcaption>
+</figure>
 
 !!! insight "Lighthouse insight: a stable team is a forecastable team"
     Digital Accounts' greatest asset isn't speed. It's that 25 means 25. A team whose output varies by two points a sprint can be forecast. A team whose velocity climbs while its finished-story count stays flat, as Mobile Banking's does, can't. Predictability is a feature you protect, not a weakness you push against.
@@ -85,11 +89,15 @@ Every forecast starts from what the team has actually done. Digital Accounts is 
 A velocity of 25 describes a normal sprint with five engineers present. Sprints 15 to 17 aren't normal: there's a holiday, a vacation, an absence and a new hire. Velocity tells you the rate. Capacity tells you how much of the rate you'll actually get.
 
 1. Open **Overview › Wiki** › `Teams` › `Digital Accounts Availability`. Note who is out, when, and who joins.
-2. Open **Boards › Sprints**, team `Digital Accounts`, `Sprint 16`, **Capacity** tab. Look at the **Team days off** row. You're viewing; don't **Save** anything.
+2. Open **Boards › Sprints**, team `Digital Accounts`, `Sprint 16`, **Capacity** tab. Look at the **Team days off** row (2 days) and the header (**8 work days**, not 10). There are no rows for individuals: nobody has entered personal time off, which is why the wiki page matters. You're viewing; don't **Save** anything.
 
-<!-- VERIFY: the seeded Team days off for Digital Accounts in Sprint 16 shows 2 days on the Capacity tab, and the grid has no user rows (the team members are fictional names, not real users). -->
+<figure class="hp-shot" data-shot="lab09-capacity-s16" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Sprints › Digital Accounts › Sprint 16 › Capacity</span></div>
 
-<!-- SHOT: lab09-capacity-s16 | Boards › Sprints, team Digital Accounts, Sprint 16, Capacity tab, showing the Team days off row with 2 days | crop: capacity grid; highlight Team days off -->
+![Team days off: 2 days, and the header already says 8 work days, not 10. The two-day holiday is recorded, but no one's personal time off is: that's what the wiki page is for.](../assets/shots/lab09-capacity-s16.png){ loading=lazy }
+
+<figcaption markdown>**Team days off: 2 days**, and the header already says **8 work days**, not 10. The two-day holiday is recorded, but no one's personal time off is: that's what the wiki page is for.</figcaption>
+</figure>
 
 **So what does a points-per-day rate look like?** Digital Accounts has **five delivery engineers**: Olivia Grant, Noah Kim, Fatima Hassan, Lucas Meyer and Chloe Martin. Five engineers for ten working days is **50 engineer-days**, and the team completes about **25 points** in a normal sprint. That's **0.5 points per engineer-day**. It's crude, and it's good enough.
 
@@ -153,12 +161,10 @@ Now let the tool do the arithmetic, story by story. The forecast tool walks the 
 2. **View options**: **Parents** Off, **In Progress Items** Off, **Completed Child Items** Off, **Side Pane** Off. Then turn **Forecasting** On.
 3. Clear any filter (**Clear and dismiss filtering**). A filter disables Forecasting.
 4. Add `Story Points` and `Tags` with **Column Options**, if they aren't showing.
-5. Check the top of the list. The first item should be `P## - Card lock and unlock service and API`, and the 20 planning-copy stories should follow in order. If other sandbox items (such as the Lab 11 practice stories) sit above it, select them and use **Move to bottom** from the context menu. Anything with Story Points above the planning copy would eat into your forecast.
+5. Check the top of the list. The first item should be `P## - Card lock and unlock service and API`, and the 20 planning-copy stories should follow in order. (Every sandbox title starts with your `P##`; this lab leaves it off.) If other sandbox items sit above it, right-click them › **Move to position...** and send them below the planning copy. Anything with Story Points above it would eat into your forecast.
 6. In the banner **Forecasting based on velocity of**, select the number and type `25`.
 
-<!-- VERIFY: (a) the planning-copy stories carry the same titles as the real F5 stories (with or without a P## prefix) and sit at the top of the sandbox Stories backlog, above the Lab 11 sandbox items; (b) the Forecasting toggle is greyed out while Parents is On; (c) the forecast velocity is stored per user; (d) Move to bottom is offered in the multi-select context menu. -->
-
-A **Forecast** column appears on the left, with a line under the last story that fits in each sprint. Your first line is **Sprint 15**.
+A **Forecast** column appears on the left, with a blue line under the last story that fits in each sprint, labelled with that sprint's name. Your first line is **Sprint 15**. The tool always starts at the sprint *after* the team's current sprint: your sandbox's current sprint is 14, so its forecast begins at 15.
 
 !!! challenge "Challenge: Three velocities, three answers"
     Run the forecast at **25**, **20** and **15**. For each, record the last story above the **Sprint 17** line, the points that land by Sprint 17, and whether the whole MVP lands. The eight MVP stories are #1, #2, #3, #4, #6, #7, #8 and #9 in the original order (44 points). #5 is a "should".
@@ -188,7 +194,13 @@ A **Forecast** column appears on the left, with a line under the last story that
 
     Look at the Sprint 16 line, too. The tool uses one velocity for every sprint, but Sprint 16 has only 17.5 points of real capacity. The per-sprint lines are wrong even when the Sprint 17 total is right.
 
-<!-- SHOT: lab09-forecast-15 | Boards › Backlogs, team P## Sandbox, Stories level, Forecasting on at velocity 15, Parents/In Progress/Completed Child Items off; Forecast column showing Sprint 15, 16 and 17 lines | crop: Forecast column, Title and Story Points for stories #1 to #10; highlight the Sprint 17 line under Accessibility review for card controls and Fraud team view of member-locked cards just below it -->
+<figure class="hp-shot" data-shot="lab09-forecast-15" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › P## Sandbox › Stories · Forecasting at velocity 15</span></div>
+
+![Each blue line closes a sprint, labelled at its last story. At an honest 15, the Sprint 17 line falls under Accessibility review, and MVP story Fraud team view of member-locked cards lands a sprint late.](../assets/shots/lab09-forecast-15.png){ loading=lazy }
+
+<figcaption markdown>Each blue line closes a sprint, labelled at its last story. At an honest 15, the **Sprint 17** line falls under *Accessibility review*, and MVP story *Fraud team view of member-locked cards* lands a sprint late.</figcaption>
+</figure>
 
 !!! checkpoint "Checkpoint"
     - [ ] My table shows 73, 55 and 42 points by Sprint 17 at velocities 25, 20 and 15
@@ -209,9 +221,7 @@ At an honest velocity, the MVP misses by one story. You could stop there and rep
     One story above the MVP's last item isn't MVP. For the trap, look at the story's Story Points.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    Multi-select the eight MVP stories, open the context menu › **Edit**, add the **Tags** field with `MVP`, and **Save changes**. Or tag each one on its form. Then drag #5, `Travel notice auto-expiry and reminders` (3 points), to just below #9.
-
-    <!-- VERIFY: the bulk Edit work items dialog offers Tags (Add) or Tags for appending a tag without replacing existing tags. -->
+    Multi-select the eight MVP stories (Ctrl- or Cmd-click), right-click › **Edit**, choose the field **Tags (Add)** with the value `MVP`, and select **OK**. (**Tags (Add)** appends; it never wipes existing tags.) Then drag #5, `Travel notice auto-expiry and reminders` (3 points), to just below #9.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     **The MVP fits.** With #5 below the MVP set, the first eight stories are the MVP: 8 + 5 + 8 + 5 + 5 + 5 + 3 + 5 = **44 points**, inside the 45-point budget. The Sprint 17 line now falls under `Fraud team view of member-locked cards`, and `Travel notice auto-expiry and reminders` sits just below it. A "should" story was standing in front of a "must". Ordering is a scope decision.
@@ -220,7 +230,13 @@ At an honest velocity, the MVP misses by one story. You could stop there and rep
 
     **The trap.** Move #17 to the top and the lines don't move at all. It has no Story Points, so the tool treats it as free. It's still a whole piece of work, and it's not a trivial one: if a member locks a card, what happens to their recurring bills? That may well be an MVP question. The four unestimated stories (#17 to #20) are invisible to every forecast you've run today. Drag #17 back to the bottom before you continue.
 
-<!-- SHOT: lab09-forecast-mvp-reordered | P## Sandbox Stories backlog, Forecasting at velocity 15, Tags column showing MVP on the first eight stories, Travel notice auto-expiry and reminders moved below Fraud team view of member-locked cards | crop: Forecast, Title, Story Points, Tags; highlight the Sprint 17 line under the eighth MVP story -->
+<figure class="hp-shot" data-shot="lab09-forecast-mvp-reordered" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › P## Sandbox › Stories · Forecasting at 15, MVP tagged, one story moved</span></div>
+
+![No estimate changed. Moving one should story below the MVP pulls the whole MVP above the Sprint 17 line, 44 points in a 45-point budget. Ordering is a scope decision, and a buffer of one point is no buffer at all.](../assets/shots/lab09-forecast-mvp-reordered.png){ loading=lazy }
+
+<figcaption markdown>No estimate changed. Moving one *should* story below the MVP pulls the whole MVP above the **Sprint 17** line, 44 points in a 45-point budget. Ordering is a scope decision, and a buffer of one point is no buffer at all.</figcaption>
+</figure>
 
 !!! reef "Reef ahead: zero points look free"
     The forecast tool adds up Story Points. A story with none adds nothing, so you can put four unestimated stories at the top of a backlog and the forecast stays exactly the same. "It all fits" often means "we haven't sized the hard parts yet." Before anyone quotes a forecast, ask how many items in its scope have no estimate. Here the answer is four out of twenty.
@@ -248,25 +264,30 @@ Your sandbox was set up for an honest forecast: future sprints only, Card Contro
     With **In Progress Items** Off, everything that's Active right now is hidden from the list and from the forecast. And the tool doesn't read the **Iteration Path** at all.
 
 ??? pilot "Harbor Pilot · Hint 2: Bring it into port (full solution)"
-    The first line reads **Sprint 14**. Above it sit the remaining committed Online Account Opening and Spending Insights stories, all New, **20 points**. The tool pours them into Sprint 14 as if it were empty. It isn't: Sprint 14 already holds 26 points of committed work, and the tool can't see the stories that are Active or Closed, so the sprint looks empty. Card Controls then starts in Sprint 15 with almost the whole velocity to itself, and the tool shows about the same flattering answer as your sandbox at 25: stories #1 to #12 by Sprint 17.
+    The first line reads **Sprint 15**. The forecast never shows the current sprint at all: it starts with the next one. Above that first line sit the remaining committed Online Account Opening and Spending Insights stories, all New, **20 points**, including two that are still *planned for Sprint 14*. The tool quietly assumes Sprint 14 finishes on its own and pours what's left into Sprint 15. Card Controls then gets the rest: stories #1 to #10, **55 points** by Sprint 17. That's the whole MVP plus a "should", ten points more than your honest 45.
 
     The blind spots, all from how the tool works:
 
-    - **It ignores in-progress work.** Active and Resolved items don't count, so a full sprint looks empty.
+    - **It skips the current sprint.** Forecasting starts at the next sprint, as if this one will finish whatever it holds.
+    - **It ignores in-progress work.** Active and Resolved items don't count, so they never compete for capacity.
     - **It ignores sprint assignments.** Only backlog order and Story Points matter.
     - **It uses one velocity for every sprint.** It knows nothing about the holiday, Noah's or Olivia's days out, or Wes ramping up.
     - **It counts unestimated items as zero.** Unestimated bugs and the four unsized Card Controls stories are free.
     - **It reserves nothing** for bugs and support.
 
-    <!-- VERIFY: on a team that selects Sprints 9 to 20, the first forecast line is labeled Sprint 14 (the current sprint), as the World Bible states; research marks this UNCERTAIN. If it starts elsewhere, keep the point (in-progress work is invisible, so the first bucket looks empty) and adjust the sprint name. -->
+<figure class="hp-shot" data-shot="lab09-real-backlog-forecast" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Digital Accounts › Stories · Forecasting at 25 (In Progress Items off)</span></div>
 
-<!-- SHOT: lab09-real-backlog-forecast | Boards › Backlogs, team Digital Accounts, Stories level, Forecasting on at velocity 25, In Progress Items off; the Sprint 14 line under the last remaining Spending Insights story and the first Card Controls stories below it | crop: Forecast column and titles for the first 12 rows; highlight the Sprint 14 line -->
+![The naive forecast never shows Sprint 14. Two stories planned for Sprint 14 sit in the first bucket, labelled Sprint 15, with the rest of the committed work. Card Controls then gets 55 points by the Sprint 17 line, ten more than the honest 45.](../assets/shots/lab09-real-backlog-forecast.png){ loading=lazy }
+
+<figcaption markdown>The naive forecast never shows Sprint 14. Two stories *planned* for Sprint 14 sit in the first bucket, labelled **Sprint 15**, with the rest of the committed work. Card Controls then gets 55 points by the **Sprint 17** line, ten more than the honest 45.</figcaption>
+</figure>
 
 !!! reef "Reef ahead: the forecast tool's blind spots"
     The forecast tool is a calculator, not an oracle. It does exactly one thing well: "at this velocity, in this order, which stories fit?" Everything else, from absences and committed work to in-progress items and unsized stories, is your job to feed in or subtract. That's why you set up a sandbox that starts at Sprint 15 and used a velocity you'd worked out. Run it naively and it tells an executive what she hoped to hear, with the authority of a chart.
 
 !!! checkpoint "Checkpoint"
-    - [ ] I saw the real backlog's forecast put 20 points of committed work into Sprint 14
+    - [ ] I saw the real backlog's forecast start at Sprint 15, with 20 points of committed work (some of it planned for Sprint 14) in the first bucket
     - [ ] I can list at least four reasons the naive forecast is more optimistic than my capacity math
     - [ ] I turned Forecasting off on Digital Accounts' backlog and dragged nothing
 
@@ -332,7 +353,7 @@ Now give Dana the real answer.
 !!! deliverable "Deliverable"
     A wiki page `/Training/P##/Card Controls Outlook` (a sub-page of your `P##` page under **Overview › Wiki**) with your bottom line, your forecast as a range with its conditions, your options table, the decisions you need from Dana, and your capacity worksheet as an appendix.
 
-<!-- VERIFY: label of the wiki page menu action for adding a sub-page (e.g., "Add sub-page"). -->
+
 
 !!! checkpoint "Checkpoint"
     - [ ] My reply to "give it to Mobile" is three sentences and offers a better option

@@ -70,7 +70,7 @@ Almost every view in **Boards** (backlogs, boards, sprints, Velocity, CFD, `@Cur
     "My Feature is missing" is almost always a team-context problem. The **Digital Portfolio** team can't show you Security's work, and a delivery team can't show you Epics. Before you conclude that something isn't there, check the team selector and the backlog level selector.
 
 !!! note "Your sandbox plans the future"
-    Your **P## Sandbox** team selects only Sprints 15 to 20, because you use it to plan work that hasn't started. That means it has **no current sprint**: `@CurrentIteration` with your sandbox team returns nothing. When a query needs "this sprint", use a real team (such as `Mobile Banking`) as the macro's team parameter. Reading a team's sprint in a query changes nothing for that team.
+    Your **P## Sandbox** team selects Sprints 14 to 20: the current sprint plus everything ahead, because you use it to plan work that hasn't started. Its own backlog holds only your sandbox items. When a query needs "this sprint" for a delivery team, use that team (such as `Mobile Banking`) as the `@CurrentIteration` team parameter. Reading a team's sprint in a query changes nothing for that team.
 
 ## Work item types and fields
 

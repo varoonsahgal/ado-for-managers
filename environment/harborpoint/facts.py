@@ -929,7 +929,7 @@ class Facts:
         self.check("team.real_iterations", True, all(len(t["iterations"]) == 12 and t["iterations"][0].endswith("Sprint 9")
                                                      for t in real))
         self.check("team.sandbox_iterations", True, all([i.rsplit(" ", 1)[1] for i in t["iterations"]] ==
-                                                        [str(n) for n in range(15, 21)] for t in sb))
+                                                        [str(n) for n in range(14, 21)] for t in sb))
         self.check("team.bugs_with_requirements", True, all(t["bugs_behavior"] == "asRequirements"
                                                             for t in self.data["teams"]))
         self.out["teams"] = [t["name"] for t in self.data["teams"]]

@@ -110,7 +110,7 @@ That's 12 points of this sprint serving no part of the portfolio. In this tree y
 !!! reef "Reef ahead: `@CurrentIteration` picks a sprint, not a team"
     HarborPoint's teams all share one set of sprints (`HarborPoint\PI 4\Sprint 14` and so on). The team parameter only tells Azure DevOps *whose calendar* to read when it works out which sprint is current. It doesn't filter to that team's work. Drop the `Area Path` clause and the same query returns all six teams' Sprint 14.
 
-    The opposite mistake is quieter. Save the query while your team context is **P## Sandbox**, which only selects Sprints 15 to 20, and `@CurrentIteration` finds no current sprint at all. You get **zero results**, and zero looks a lot like "nothing to worry about". Always check the team parameter, especially after **Save as**: copies keep the original team.
+    The opposite mistake is quieter. Point the team parameter at a team whose sprint calendar doesn't include today's sprint (a team set up only for future planning, say) and Azure DevOps doesn't complain. It quietly treats that team's **next** sprint as current, and your "this sprint" query returns next sprint's work, looking perfectly plausible. Always check the team parameter, especially after **Save as**: copies keep the original team.
 
 !!! checkpoint "Checkpoint"
     - [ ] `Shared Queries/Training/P##` exists
@@ -441,15 +441,15 @@ A query is a high-recall shortlist, not a verdict. Three of the eight are nearly
 
 <div class="quiz" markdown>
 
-**A colleague copies your `03 Completed last sprint (by Feature)` with Save as and gets zero results. What's the most likely cause?**
+**A colleague copies your `03 Completed last sprint (by Feature)` with Save as, points its team parameter at a planning team that selects only future sprints, and gets 8 stories instead of 22, all from Sprint 14. What happened?**
 
-- [ ] Nobody closed any stories last sprint
-- [x] The `@CurrentIteration - 1` team parameter points at a team whose selected sprints don't include the current one
-- [ ] Tree queries can't use macros
-- [ ] Shared queries can't be copied
+- [ ] Most of last sprint's stories were reopened
+- [x] The planning team's calendar doesn't include today's sprint, so its "current" sprint is the next one, and `@CurrentIteration - 1` lands on this sprint
+- [ ] Tree queries can't use macros reliably
+- [ ] Save as drops the Area Path clause
 
 <div class="quiz-why" markdown>
-`@CurrentIteration` reads a team's sprint calendar. A team that doesn't select the current sprint, like a sandbox team that plans only Sprints 15 to 20, has no "current" sprint, so the query silently returns nothing. Always check the team parameter, and treat an unexpected zero as a question.
+`@CurrentIteration` reads a team's sprint calendar. A team that doesn't select today's sprint quietly gets its *next* sprint as "current", so the query returns real-looking results from the wrong sprint. Always check the team parameter, and sanity-check the Iteration Path column of the results.
 </div>
 
 </div>

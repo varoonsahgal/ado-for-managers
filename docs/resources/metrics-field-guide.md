@@ -45,7 +45,13 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **Ask** | Does velocity by *count* move with velocity by *points*? How much of the completed work served a Feature? What was added after day 1? |
 | **Don't** | Compare velocity across teams. Set velocity targets. Reward "more points" |
 
-<!-- SHOT: res-metrics-velocity-report | Boards › Backlogs › team Digital Accounts › Analytics › Velocity full report, Velocity by Sum of Story Points, Last 6 iterations, Planned / Completed / Completed Late / Incomplete bars visible | crop: chart and the two controls -->
+<figure class="hp-shot" data-shot="res-metrics-velocity-report" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Digital Accounts › Analytics › Velocity</span></div>
+
+![The two controls that matter: Velocity by (points or count) and Number of Iterations. Planned, Completed, Completed Late and Incomplete are separate bars. The in-progress sprint shows its Incomplete work in blue.](../assets/shots/res-metrics-velocity-report.png){ loading=lazy }
+
+<figcaption markdown>The two controls that matter: **Velocity by** (points or count) and **Number of Iterations**. Planned, Completed, Completed Late and Incomplete are separate bars. The in-progress sprint shows its Incomplete work in blue.</figcaption>
+</figure>
 
 ### Planned vs completed (commitment reliability)
 

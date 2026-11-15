@@ -1076,7 +1076,7 @@ class Generator:
         for t in sc.DELIVERY_TEAMS:
             out.append(team(t, [(sc.TEAM_AREA[t], False)], (False, True, True), sc.ALL_SPRINTS))
         for p in pids:
-            out.append(team(f"{p} Sandbox", [(f"Training\\{p}", False)], (False, True, True), tuple(range(15, 21)),
+            out.append(team(f"{p} Sandbox", [(f"Training\\{p}", False)], (False, True, True), tuple(range(14, 21)),
                             participant=p))
         return out
 

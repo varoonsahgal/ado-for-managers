@@ -160,3 +160,27 @@ lab08-tile-rules:
 lab08-bluf-page:
   bar: "Overview › Wiki › Training › P## › Executive Briefing"
   caption: "Two sentences answer *are we going to make it?* and *what do you need?* Each risk has three lines of evidence and a member impact. Every decision names one decider and can be answered yes or no."
+
+lab09-da-velocity:
+  bar: "Boards › Backlogs › Digital Accounts › Analytics › Velocity (Sum of Story Points)"
+  caption: "Five completed sprints: **24, 26, 25, 24, 26**. The Average Velocity card reads **25** and leaves the in-progress Sprint 14 out. 25 means 25: that's what makes this team forecastable."
+
+res-metrics-velocity-report:
+  bar: "Boards › Backlogs › Digital Accounts › Analytics › Velocity"
+  caption: "The two controls that matter: **Velocity by** (points or count) and **Number of Iterations**. Planned, Completed, Completed Late and Incomplete are separate bars. The in-progress sprint shows its Incomplete work in blue."
+
+lab09-capacity-s16:
+  bar: "Boards › Sprints › Digital Accounts › Sprint 16 › Capacity"
+  caption: "**Team days off: 2 days**, and the header already says **8 work days**, not 10. The two-day holiday is recorded, but no one's personal time off is: that's what the wiki page is for."
+
+lab09-forecast-15:
+  bar: "Boards › Backlogs › P## Sandbox › Stories · Forecasting at velocity 15"
+  caption: "Each blue line closes a sprint, labelled at its last story. At an honest 15, the **Sprint 17** line falls under *Accessibility review*, and MVP story *Fraud team view of member-locked cards* lands a sprint late."
+
+lab09-forecast-mvp-reordered:
+  bar: "Boards › Backlogs › P## Sandbox › Stories · Forecasting at 15, MVP tagged, one story moved"
+  caption: "No estimate changed. Moving one *should* story below the MVP pulls the whole MVP above the **Sprint 17** line, 44 points in a 45-point budget. Ordering is a scope decision, and a buffer of one point is no buffer at all."
+
+lab09-real-backlog-forecast:
+  bar: "Boards › Backlogs › Digital Accounts › Stories · Forecasting at 25 (In Progress Items off)"
+  caption: "The naive forecast never shows Sprint 14. Two stories *planned* for Sprint 14 sit in the first bucket, labelled **Sprint 15**, with the rest of the committed work. Card Controls then gets 55 points by the **Sprint 17** line, ten more than the honest 45."
