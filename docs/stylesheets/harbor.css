@@ -844,3 +844,73 @@
 @media (prefers-reduced-motion: reduce) {
   .hp-beam, .hp-glow, .hp-wave, .hp-boat, .hp-star, .hp-shimmer, .md-typeset .hp-mission::after { animation: none !important; }
 }
+
+/* ---------- Live screenshots (tools/embed_shots.py) ---------- */
+.md-typeset figure.hp-shot {
+  margin: 1.8em 0 2em;
+  max-width: 100%;
+  border: 1px solid var(--hp-border-strong);
+  border-radius: 14px;
+  overflow: hidden;
+  background: var(--hp-surface, var(--md-default-bg-color));
+  box-shadow: var(--hp-shadow-lg);
+  display: block;
+}
+.md-typeset figure.hp-shot > p { margin: 0; }
+.md-typeset figure.hp-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background: #fff;
+  cursor: zoom-in;
+}
+.hp-shot__bar {
+  display: flex;
+  align-items: center;
+  gap: .4rem;
+  padding: .5rem .8rem;
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .01em;
+  color: var(--hp-muted);
+  background: linear-gradient(180deg, color-mix(in srgb, var(--hp-navy, #12355b) 7%, transparent), transparent);
+  border-bottom: 1px solid var(--hp-border);
+}
+.hp-shot__bar i {
+  width: .55rem; height: .55rem; border-radius: 50%;
+  background: color-mix(in srgb, var(--hp-muted) 35%, transparent);
+  flex: none;
+}
+.hp-shot__bar i:first-child { background: #e07a3f; }
+.hp-shot__bar i:nth-child(2) { background: #c8962e; }
+.hp-shot__bar i:nth-child(3) { background: #2e8b57; }
+.hp-shot__bar span { margin-left: .4rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.md-typeset figure.hp-shot figcaption {
+  max-width: none;
+  margin: 0;
+  padding: .7rem 1rem .8rem;
+  font-size: .7rem;
+  line-height: 1.55;
+  color: var(--md-default-fg-color--light);
+  border-top: 1px solid var(--hp-border);
+  background: color-mix(in srgb, var(--hp-brass, #c8962e) 6%, transparent);
+  text-align: left;
+}
+.md-typeset figure.hp-shot figcaption::before {
+  content: "LIVE";
+  display: inline-block;
+  margin-right: .55rem;
+  padding: .05rem .4rem;
+  border-radius: 4px;
+  font-size: .55rem;
+  font-weight: 700;
+  letter-spacing: .08em;
+  color: #fff;
+  background: var(--hp-teal, #0f8b8d);
+  vertical-align: .08em;
+}
+[data-md-color-scheme="slate"] .md-typeset figure.hp-shot img { filter: brightness(.94); }
+.md-typeset figure.hp-shot figcaption p { display: inline; margin: 0; }

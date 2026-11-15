@@ -234,13 +234,16 @@ SEVERITY_LABEL = {1: "1 - Critical", 2: "2 - High", 3: "3 - Medium", 4: "4 - Low
 
 # Tags that are added by a later revision rather than at creation: (tag, sprint, day).
 TAG_EVENTS = {"PI4-Committed": (12, 9), "PI5-Candidate": (13, 8), "at-risk": (13, 6)}
-AT_RISK_COMMENT = "Flagging F2 at risk: carry-over keeps growing and stories are queuing for QA."
+AT_RISK_COMMENT = "Flagging this Feature at risk: carry-over keeps growing and stories are queuing for QA."
 PI4_COMMENT = "Committed in PI 4 planning."
 PI5_COMMENT = "Proposed as a PI 5 candidate."
 
 F10_CHANGE = dict(sprint=14, day=2, old_target=15, new_target=17, by="Aisha Karimi",
-                  comment=("Re-planned: exam-readiness work (F21/F22) takes priority until exam fieldwork in Sprint 18. "
-                           "The risk-score API for Fraud Alerts moves to Sprint 16. — AK"))
+                  comment=("Re-planned: exam-readiness work (Audit Evidence Automation and Access Review Automation) "
+                           "takes priority until exam fieldwork in Sprint 18. "
+                           "The risk-score API for Fraud Alerts moves to Sprint 16."))
+PROGRAM_MANAGER = "Ruth Ellison"   # creates and maintains Epics
+SANDBOX_AUTHOR = "Ruth Ellison"    # prepared the participant sandbox copies
 
 # ----------------------------------------------------------------------------- section 6: sprint history
 # Each team: "table" (Planned/Done/n/Carry per sprint, Bible's own columns), "mix" (closed-story mix by

@@ -380,6 +380,11 @@ class Api:
             body["attributes"] = {"startDate": iso_midnight(start), "finishDate": iso_midnight(finish)}
         return Req("POST", url, {"api-version": API}, body, label=f"classification.create{group[:-1]}")
 
+    def delete_node(self, project: str, group: str, rel_path: str, reclassify_id: int) -> Req:
+        url = f"{self.org}/{seg(project)}/_apis/wit/classificationnodes/{group}/{seg_path(rel_path)}"
+        return Req("DELETE", url, {"$reclassifyId": str(int(reclassify_id)), "api-version": API},
+                   label=f"classification.delete{group[:-1]}")
+
     def update_iteration_dates(self, project: str, rel_path: str, start: str, finish: str) -> Req:
         url = f"{self.org}/{seg(project)}/_apis/wit/classificationnodes/Iterations/{seg_path(rel_path)}"
         body = {"attributes": {"startDate": iso_midnight(start), "finishDate": iso_midnight(finish)}}
@@ -418,6 +423,18 @@ class Api:
 
     def update_team_settings(self, project: str, team: str, body: dict) -> Req:
         return Req("PATCH", self._team_base(project, team), {"api-version": API}, body, label="teams.settings")
+
+    def list_boards(self, project: str, team: str) -> Req:
+        return Req("GET", f"{self.org}/{seg(project)}/{seg(team)}/_apis/work/boards", {"api-version": API},
+                   label="boards.list")
+
+    def get_board_columns(self, project: str, team: str, board: str) -> Req:
+        return Req("GET", f"{self.org}/{seg(project)}/{seg(team)}/_apis/work/boards/{seg(board)}/columns",
+                   {"api-version": API}, label="boards.getColumns")
+
+    def update_board_columns(self, project: str, team: str, board: str, columns: list[dict]) -> Req:
+        return Req("PUT", f"{self.org}/{seg(project)}/{seg(team)}/_apis/work/boards/{seg(board)}/columns",
+                   {"api-version": API}, columns, label="boards.updateColumns")
 
     def set_team_days_off(self, project: str, team: str, iteration_guid: str,
                           ranges: list[tuple[str, str]]) -> Req:
@@ -599,6 +616,14 @@ class Api:
     def create_plan(self, project: str, body: dict) -> Req:
         return Req("POST", f"{self.org}/{seg(project)}/_apis/work/plans", {"api-version": API}, body,
                    label="plans.create")
+
+    def get_plan(self, project: str, plan_id: str) -> Req:
+        return Req("GET", f"{self.org}/{seg(project)}/_apis/work/plans/{seg(plan_id)}", {"api-version": API},
+                   label="plans.get")
+
+    def update_plan(self, project: str, plan_id: str, body: dict) -> Req:
+        return Req("PUT", f"{self.org}/{seg(project)}/_apis/work/plans/{seg(plan_id)}", {"api-version": API}, body,
+                   label="plans.update")
 
     # ---- analytics (pilot checks only; printed, not called)
     def odata_revisions_url(self, project: str, wi_id: int) -> str:

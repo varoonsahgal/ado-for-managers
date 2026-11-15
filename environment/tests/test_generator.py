@@ -92,7 +92,10 @@ class GeneratorStructureTests(unittest.TestCase):
         self.assertEqual(it["PI 5"]["finish"], it["PI 5\\Sprint 20"]["finish"])
 
     def test_default_sprint14_start_is_monday_of_previous_week(self):
-        for day in range(7, 14):
+        for day in range(7, 12):  # week 2, Monday to Friday
+            now = dt.datetime.combine(S14 + dt.timedelta(days=day), dt.time(12), UTC)
+            self.assertEqual(generate.default_sprint14_start(now), S14)
+        for day in (5, 6):  # the weekend before week 2 anchors to this week, so Monday is week 2
             now = dt.datetime.combine(S14 + dt.timedelta(days=day), dt.time(12), UTC)
             self.assertEqual(generate.default_sprint14_start(now), S14)
 

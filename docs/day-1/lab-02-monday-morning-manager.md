@@ -86,10 +86,16 @@ Start wide. Before you explain one team, know what all six are doing.
 **Planned against completed.** Now compare each team with its own plan.
 
 1. **Boards › Backlogs**, team `Mobile Banking`, level **Stories**, then the **Analytics** tab.
-2. On the **Velocity** card, select **View full report**. Set **Velocity by** to Story Points if it isn't already, and keep **Last 6 iterations**.
+2. On the **Velocity** card, select **View full report**. The report opens on **Count of Work Items**: set **Velocity by** to **Sum of Story Points** and keep **Last 6 iterations**. Your choice is saved for you only.
 3. Hover over the Sprint 13 bars. Then switch the team selector to `Digital Accounts` and do the same.
 
-<!-- SHOT: lab02-mobile-velocity | Boards › Backlogs › Analytics › Velocity full report, team Mobile Banking, Stories level, Velocity by Sum of Story Points, Last 6 iterations | crop: chart and legend; highlight Sprint 13 Planned 62 vs Completed 44 -->
+<figure class="hp-shot" data-shot="lab02-mobile-velocity" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Mobile Banking › Analytics › Velocity</span></div>
+
+![Mobile Banking, Sum of Story Points. Sprint 13 was planned at 62 and completed 44. Sprint 14 is still in flight, so most of its bar is Incomplete.](../assets/shots/lab02-mobile-velocity.png){ loading=lazy }
+
+<figcaption markdown>Mobile Banking, Sum of Story Points. Sprint 13 was planned at **62** and completed **44**. Sprint 14 is still in flight, so most of its bar is Incomplete.</figcaption>
+</figure>
 
 **You should see:**
 
@@ -98,9 +104,7 @@ Start wide. Before you explain one team, know what all six are doing.
 | Mobile Banking | 62 | 44 | **71%** |
 | Digital Accounts | 26 | 26 | 100% |
 
-Mobile's gap of 18 points is six stories that weren't finished and moved into Sprint 14 on its first day. Velocity shows the gap between **Planned** and **Completed**. To see one carried story's journey, open `Auto-capture check edges with on-device ML` and select **History**: its **Iteration Path** moved from Sprint 12 to Sprint 13, then from Sprint 13 to Sprint 14. It has been "nearly done" for three sprints.
-
-<!-- VERIFY: whether Mobile's Sprint 13 bar shows the carried items as "Incomplete" (the docs say Incomplete counts items still in the sprint; these were moved to Sprint 14) or only as the Planned − Completed gap. Text above works either way. -->
+Mobile's gap of 18 points is six stories that weren't finished and moved into Sprint 14 on its first day. Notice what the chart does with them: Sprint 13 has no **Incomplete** segment at all, because those stories no longer *belong* to Sprint 13. Carry-over shows up only as the gap between the light **Planned** bar and the green **Completed** bar, so read the gap, not just the green. To see one carried story's journey, open `Auto-capture check edges with on-device ML` and select **History**: its **Iteration Path** moved from Sprint 12 to Sprint 13, then from Sprint 13 to Sprint 14. It has been "nearly done" for three sprints.
 
 !!! note "Why not just query for carry-over?"
     The query editor's **Was Ever** operator doesn't support **Iteration Path**, so "stories that were ever in Sprint 12" isn't a query you can build there. Use the **Velocity** report for the size of the gap and each item's **History** for the evidence.
@@ -162,7 +166,13 @@ Now the question Dana actually asked. Look at Mobile Banking through its Feature
 - **`Biometric Login`** is roughly on track. 24 points are left with two and a half sprints to go, but 8 of them are finished and waiting in **Resolved** for testing. One story belongs to Security, in Sprint 15. The risk here is the test queue, not the build.
 - **`Real-Time Fraud Alerts`** is the one that should worry you most, because it serves priority number one. Open **Boards › Delivery Plans** › `HarborPoint Program Plan` and find its card in the Mobile Banking row. The chain-link badge on the card is **red**. Select it: its predecessor, `Fraud Scoring Engine v2` (Security), now ends in Sprint 17, a sprint after Fraud Alerts is due. In Mobile's sprint, `Member confirms or denies a flagged transaction` is tagged `blocked`, and its Discussion says *"UI done; can't integrate until Security's risk-score API exists."* Note it and move on. You'll take this apart on Day 2 in [Lab 7](../day-2/lab-07-cross-team-bottleneck.md).
 
-<!-- SHOT: lab02-program-plan-f9-badge | Boards › Delivery Plans › HarborPoint Program Plan, Mobile Banking and Security rows at Features level, Dependencies dialog open from the red badge on Real-Time Fraud Alerts | crop: the card with its red badge plus the dialog; highlight Fraud Scoring Engine v2 ending in Sprint 17 -->
+<figure class="hp-shot" data-shot="lab02-program-plan-f9-badge" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Delivery Plans › HarborPoint Program Plan › Dependencies (red badge on Real-Time Fraud Alerts)</span></div>
+
+![The predecessor, Fraud Scoring Engine v2, now targets 1/1/2027, the end of Sprint 17. That's two weeks after Fraud Alerts is due, so the row is flagged red.](../assets/shots/lab02-program-plan-f9-badge.png){ loading=lazy }
+
+<figcaption markdown>The predecessor, `Fraud Scoring Engine v2`, now targets **1/1/2027**, the end of Sprint 17. That's two weeks after Fraud Alerts is due, so the row is flagged red.</figcaption>
+</figure>
 
 **One level down: where the work is waiting.** **Boards › Boards**, team `Mobile Banking`, level **Stories**. The **Resolved** column holds three stories (11 points) alongside some Resolved bugs, all waiting for Ava Patel, the team's only QA engineer: `Deposit limit messaging by member tier` (6 days), `Face ID and fingerprint enrollment` (5 days) and `Biometric step-up for high-risk actions` (2 days). Finished code that nobody can test is inventory, not progress.
 
@@ -193,7 +203,7 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - **A:** Bug, Priority 1, not Closed; add the `Assigned To` column and look for blanks.
     - **B:** State Active; **Column options** › **Sorting** by `Assigned To`.
-    - **C:** State Active and **Changed Date** `<` `@Today - 7`.
+    - **C:** State Active and **Changed Date** `<` `@Today - 7`. Run it once as is, then add **Work Item Type** **In** `User Story,Bug`, and compare.
     - **D:** **Iteration Path** `=` `@CurrentIteration` with team `Mobile Banking`, and **Tags** **Contains** `unplanned`.
     - **E:** User Story, State Closed, **Iteration Path** `=` `@CurrentIteration - 1` with team `Mobile Banking`; add `Parent` and `Story Points` columns.
     - **F:** Bug, not Closed; add `Severity` and `State` columns.
@@ -217,17 +227,13 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
 
     Columns: `Assigned To`, `Parent`, `Severity`, `Tags`. **4** open P1 bugs. One has no owner: `Check deposit fails for images larger than 5 MB`, parent `Mobile Check Deposit 2.0`, tagged `escaped-defect`, filed on day 2 of this sprint.
 
-    <!-- VERIFY: the generated Mobile P1 bugs are all assigned, so "Check deposit fails for images larger than 5 MB" is the only unassigned row. -->
-
     **B · One person holding too much**
 
     | And/Or | Field | Operator | Value |
     |:--|:--|:--|:--|
     | And | State | = | `Active` |
 
-    **Column options** › **Sorting**: `Assigned To`. **Ethan Brooks** has **6** Active items: four stories (`Auto-capture check edges with on-device ML`, `Retry flow for failed check uploads`, `Endorsement detection on check back`, `Holiday promo banner (marketing request)`) and two bugs (`App crashes when switching accounts during deposit`, `Deposit confirmation email shows wrong amount`). They split between `Mobile Check Deposit 2.0` and work with no Feature at all.
-
-    <!-- VERIFY: no other Mobile Banking person has as many Active items once generated bugs are assigned. -->
+    **Column options** › **Sorting**: `Assigned To`. **Ethan Brooks** has **6** Active items, against 4 for the next busiest people: four stories (`Auto-capture check edges with on-device ML`, `Retry flow for failed check uploads`, `Endorsement detection on check back`, `Holiday promo banner (marketing request)`) and two bugs (`App crashes when switching accounts during deposit`, `Deposit confirmation email shows wrong amount`). They split between `Mobile Check Deposit 2.0` and work with no Feature at all.
 
     **C · Work nobody has touched**
 
@@ -235,8 +241,11 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
     |:--|:--|:--|:--|
     | And | State | = | `Active` |
     | And | Changed Date | < | `@Today - 7` |
+    | And | Work Item Type | In | `User Story,Bug` |
 
     **2** stories, both on `Mobile Check Deposit 2.0`, both Ethan's: `Auto-capture check edges with on-device ML` (last changed 9 days ago) and `Retry flow for failed check uploads` (10 days).
+
+    Without the last clause you also get **two Features**, `Mobile Check Deposit 2.0` and `Biometric Login`, untouched for one and three weeks. That's not neglect: nobody edits a Feature while its stories move. It does mean a Feature's **Changed Date** and **State** say nothing about activity. Feature health lives in its children and its rollup, never in the Feature's own fields.
 
     **D · Work that arrived after planning**
 

@@ -340,6 +340,15 @@ class Provisioner:
                     self.log(f"  WARNING: changing dates of {rel} after work items exist corrupts history charts.")
                 self.send(self.api.update_iteration_dates(self.project_id, rel, start, finish))
                 self.log(f"  Updated dates of {rel} -> {start}..{finish}")
+        # New projects come with 'Iteration 1..3'. They would clutter every sprint picker in the labs.
+        wanted = {it["path"] for it in self.ds["calendar"]["iterations"]}
+        root_id = self.iter_nodes[""].get("id")
+        for rel, node in list(self.iter_nodes.items()):
+            if rel and "\\" not in rel and rel not in wanted and re.fullmatch(r"Iteration \d+", rel) \
+                    and not node.get("children") and root_id is not None:
+                self.send(self.api.delete_node(self.project_id, "Iterations", rel, root_id))
+                del self.iter_nodes[rel]
+                self.log(f"  Deleted default iteration '{rel}'")
         self.log(f"  {created} nodes created; {len(self.ds['areas'])} areas and "
                  f"{len(self.ds['calendar']['iterations'])} iterations present.")
 
@@ -376,6 +385,9 @@ class Provisioner:
         pid = self.project_id
         default_area, values = team_area_values(t, self.project)
         self.send(self.api.set_team_field_values(pid, tid, default_area, values))
+        # A new team has no backlog iteration (all-zero id) and refuses sprints until it has one (TF400497).
+        self.send(self.api.update_team_settings(pid, tid, {
+            "backlogIteration": self.iteration_guid(t.get("backlog_iteration", ""))}))
         existing = {i["id"] for i in self.send(self.api.list_team_iterations(pid, tid)).data.get("value", [])}
         for rel in t.get("iterations", []):
             guid = self.iteration_guid(rel)
@@ -390,6 +402,14 @@ class Provisioner:
                                         "Microsoft.RequirementCategory": bool(levels.get("stories", True))},
                 "workingDays": t.get("working_days", ["monday", "tuesday", "wednesday", "thursday", "friday"])}
         self.send(self.api.update_team_settings(pid, tid, body))
+        # Initialize every board now. Azure DevOps creates a team's board (and its Kanban column field)
+        # lazily, on the first visit. Revisions written before that carry no board column, and the
+        # Cumulative Flow Diagram then shows nothing. Re-saving the default columns creates the board,
+        # and every backdated revision written afterwards gets its column from its state.
+        for b in self.send(self.api.list_boards(pid, tid)).data.get("value", []):
+            cols = self.send(self.api.get_board_columns(pid, tid, b["name"])).data.get("value", [])
+            if cols:
+                self.send(self.api.update_board_columns(pid, tid, b["name"], cols))
         by_iter: dict[str, list[tuple[str, str]]] = OrderedDict()
         for d in t.get("team_days_off", []) or []:
             by_iter.setdefault(d["iteration"], []).append((d["start"], d["end"]))
@@ -412,10 +432,13 @@ class Provisioner:
         if n == 0:
             ops.append({"op": "add", "path": "/fields/System.CreatedDate", "value": at})
         ops.append({"op": "add", "path": "/fields/System.ChangedDate", "value": at})
-        if self.opts.changed_by:
+        # Author each revision as the fictional cast member who made it (History, Discussion and
+        # "Updated by" then show HarborPoint people). --changed-by forces one name for every revision.
+        by = self.opts.changed_by or rev.get("by")
+        if by:
             if n == 0:
-                ops.append({"op": "add", "path": "/fields/System.CreatedBy", "value": self.opts.changed_by})
-            ops.append({"op": "add", "path": "/fields/System.ChangedBy", "value": self.opts.changed_by})
+                ops.append({"op": "add", "path": "/fields/System.CreatedBy", "value": by})
+            ops.append({"op": "add", "path": "/fields/System.ChangedBy", "value": by})
         for ref, val in (rev.get("fields") or {}).items():
             if ref in ("System.CreatedDate", "System.ChangedDate", "System.CreatedBy", "System.ChangedBy"):
                 continue
@@ -572,6 +595,11 @@ class Provisioner:
                 seen.add(canon)
                 todo.append((src, LINK_REL[typ], tgt, link.get("comment")))
         added = 0
+        # Backdate each link to one minute after the source's last revision and credit that revision's
+        # author, so the link doesn't stamp "today, by the PAT owner" on the item's History and Changed
+        # Date. (Only the source gets a revision; the target is untouched.)
+        by_key = {wi["key"]: wi for wi in self.ds["work_items"]}
+        bump: dict[str, int] = {}
         for src, rel, tgt, comment in todo:
             lk = f"{src}|{rel}|{tgt}"
             if done.get(lk):
@@ -581,11 +609,18 @@ class Provisioner:
             value: dict[str, Any] = {"rel": rel, "url": self.api.work_item_url(st[tgt]["id"])}
             if comment:
                 value["attributes"] = {"comment": comment}
+            ops: list[dict] = [{"op": "add", "path": "/relations/-", "value": value}]
+            last = by_key[src]["revisions"][-1]
+            bump[src] = bump.get(src, 0) + 1
+            at = parse_ts(last["at"]) + timedelta(minutes=bump[src])
+            if at < datetime.now(timezone.utc):
+                ops.append({"op": "add", "path": "/fields/System.ChangedDate", "value": ado_ts(at.isoformat())})
+                who = self.opts.changed_by or last.get("by")
+                if who:
+                    ops.append({"op": "add", "path": "/fields/System.ChangedBy", "value": who})
             for attempt in range(3):
                 try:
-                    self.send(self.api.update_work_item(self.project_id, st[src]["id"],
-                                                        [{"op": "add", "path": "/relations/-", "value": value}],
-                                                        label="links.add"))
+                    self.send(self.api.update_work_item(self.project_id, st[src]["id"], ops, label="links.add"))
                     break
                 except AdoError as exc:
                     if "already exists" in exc.message.lower() or exc.code == "TF201035":
@@ -865,11 +900,16 @@ class Provisioner:
             st[plan["name"]] = data["id"]
             self.state.save()
             self.log(f"  Created plan {plan['name']!r}.")
-            if plan.get("markers"):
-                self.manual(f"verify-plan:{plan['name']}",
-                            f"Open Boards > Delivery Plans > {plan['name']} and confirm the markers "
-                            + ", ".join(f"'{m['label']}' ({m['at']} of {m['sprint']})" for m in plan["markers"])
-                            + " are visible (marker property names are UNCERTAIN). If not: Settings > Markers > Add.")
+            markers = (body.get("properties") or {}).get("markers") or []
+            if markers:
+                # Create ignores markers; an update (PUT with the current revision) keeps them.
+                cur = self.send(self.api.get_plan(self.project_id, data["id"])).data
+                props = dict(cur.get("properties") or {})
+                props["markers"] = markers
+                upd = {"name": cur.get("name", plan["name"]), "description": cur.get("description"),
+                       "revision": cur.get("revision", 1), "properties": props}
+                self.send(self.api.update_plan(self.project_id, data["id"], upd))
+                self.log(f"  Added {len(markers)} markers to {plan['name']!r}.")
 
     def _plan_manual(self, plan: dict, exc: Exception) -> str:
         teams = ", ".join(f"{t['team']} ({t['backlog'].replace('Microsoft.', '').replace('Category', 's')})"

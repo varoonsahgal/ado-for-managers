@@ -109,7 +109,13 @@ Copy this table into your page. You'll fill it in over the next three challenges
 
 <!-- VERIFY: whether Count of Work Items in the in-context Velocity report includes closed bugs for these teams (bugs managed with requirements), and the Count values shown; the story-only counts above come from the seeded data. -->
 
-<!-- SHOT: lab06-velocity-points-vs-count | Boards › Backlogs, team Mobile Banking, Stories, Analytics › Velocity full report, shown twice side by side: Velocity by Sum of Story Points (33, 37, 41, 45, 44 rising) and by Count of Work Items (flat) | crop: both charts; highlight the rising points bars against the flat count bars -->
+<figure class="hp-shot" data-shot="lab06-velocity-points-vs-count" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Mobile Banking › Analytics › Velocity (points, then count)</span></div>
+
+![The same five sprints, measured two ways. By Sum of Story Points (left), completed climbs 33 → 45. By Count of Work Items (right), it stays at 12 or 13 stories a sprint. The team isn't faster; the yardstick grew.](../assets/shots/lab06-velocity-points-vs-count.png){ loading=lazy }
+
+<figcaption markdown>The same five sprints, measured two ways. By **Sum of Story Points** (left), completed climbs 33 → 45. By **Count of Work Items** (right), it stays at **12 or 13 stories** a sprint. The team isn't faster; the yardstick grew.</figcaption>
+</figure>
 
 !!! reef "Reef ahead: “Digital Accounts has the lowest throughput, so it needs help”"
     If your gut call was Digital Accounts, you're in good company. Half of most rooms say the same, and the steering group said it this morning. It's also wrong. Digital Accounts does finish fewer stories (9 or 10 against Mobile's 12) and fewer points. But look at what came with that number: it finishes **what it plans**, every sprint, at 89 to 100%. Lower throughput is a **capacity fact**. It tells you how much to plan with this team, not that something's broken. "Help" aimed at a healthy, predictable team usually means pressure, and pressure on a predictable team buys you inflated estimates and a less predictable team. And Digital Accounts' 26 and Mobile's 44 aren't even on the same scale: each team's Story Points are its own currency.
@@ -132,12 +138,12 @@ Output tells you *what* came out. Flow tells you *where it gets stuck on the way
     In a cumulative flow diagram, each band is a board column. A band that gets **thicker** over time is a queue forming in front of the next step. The Cycle Time widget shows whether that queue costs time.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    **CFD:** **Boards › Backlogs**, team `Mobile Banking`, **Stories**, **Analytics** › **Cumulative Flow Diagram** › **View full report**. Set **Rolling period** to cover back to Sprint 9 (about 90 days). Repeat for `Digital Accounts`. **Cycle time:** use `Cycle time · Mobile Banking` on your Command Center, then add a second **Cycle Time** widget for **Team** `Digital Accounts`, same settings (**Work item type** `User Story`, about 90 days). **Right now:** **Boards › Sprints**, team `Mobile Banking`, `Sprint 14`, and look at what's in **Resolved** and who it's assigned to.
+    **CFD:** **Boards › Backlogs**, team `Mobile Banking`, **Stories**, **Analytics** › **Cumulative Flow Diagram** › **View full report**. Set **Rolling period** to **Custom rolling period** and **Custom days** to `80`, which reaches back to the start of Sprint 9. (The presets are 14, 30, 60 and 180 days.) Repeat for `Digital Accounts`. **Cycle time:** use `Cycle time · Mobile Banking` on your Command Center, then add a second **Cycle Time** widget for **Team** `Digital Accounts`, same settings (**Work item type** `User Story`, about 90 days). **Right now:** **Boards › Sprints**, team `Mobile Banking`, `Sprint 14`, and look at what's in **Resolved** and who it's assigned to.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | Signal | Mobile Banking | Digital Accounts |
     |:--|:--|:--|
-    | **CFD** | The **Resolved** band widens sprint after sprint. Stories pile up between "code complete" and "tested" | Thin, parallel bands. Work arrives and leaves at about the same rate |
+    | **CFD** | The mid-blue **Resolved** band thickens: one or two items in early September, three to five through October, six now. Stories pile up between "code complete" and "tested" | Thin, parallel bands. Work arrives and leaves at about the same rate |
     | **Cycle time** | Average rises from about **3.5 days** (Sprint 9) to about **9 days** (Sprint 13), and the shaded spread widens | Steady at **4 to 5 days**, narrow spread |
     | **Right now** | 3 stories, 11 points, sit in Resolved waiting for **Ava Patel, the team's only tester**: 6 days, 5 days and 2 days | Nothing queued |
 
@@ -145,9 +151,13 @@ Output tells you *what* came out. Flow tells you *where it gets stuck on the way
 
     And Resolved isn't done: velocity and rollups credit only Closed work, so 11 points of finished code show as *not delivered* while they wait.
 
-<!-- VERIFY: Mobile Banking's board columns are New / Active / Resolved / Closed (the CFD bands follow board columns, not states); maximum rolling period accepted by the CFD and Cycle Time widgets. -->
+<figure class="hp-shot" data-shot="lab06-cfd-mobile" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Mobile Banking › Analytics › Cumulative Flow Diagram (80 days)</span></div>
 
-<!-- SHOT: lab06-cfd-mobile | Boards › Backlogs, team Mobile Banking, Stories, Analytics › Cumulative Flow Diagram full report, rolling period about 90 days | crop: chart; highlight the Resolved band widening from Sprint 9 to Sprint 14 -->
+![Each band is a board column. The mid-blue Resolved band, finished code waiting for a tester, is a sliver in September and six items thick by November.](../assets/shots/lab06-cfd-mobile.png){ loading=lazy }
+
+<figcaption markdown>Each band is a board column. The mid-blue **Resolved** band, finished code waiting for a tester, is a sliver in September and six items thick by November.</figcaption>
+</figure>
 
 <!-- SHOT: lab06-cycle-time-pair | P## - Digital Banking Command Center, Cycle time · Mobile Banking and Cycle time · Digital Accounts widgets side by side, User Story, about 90 days | crop: both widgets; highlight Mobile's rising moving average and wider band against Digital Accounts' flat one -->
 

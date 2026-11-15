@@ -245,10 +245,37 @@ class AdoSimulator:
             if not team:
                 raise SimError(404, "team settings need a team")
             return self._teamsettings(method, p, team, rest[2:], q, body)
+        if rest[:2] == ["work", "boards"]:
+            if not team:
+                raise SimError(404, "boards need a team")
+            cols = [{"id": str(uuid.uuid5(uuid.NAMESPACE_URL, f"{team}/{c}")), "name": c,
+                     "columnType": t} for c, t in (("New", "incoming"), ("Active", "inProgress"),
+                                                    ("Resolved", "inProgress"), ("Closed", "outgoing"))]
+            if len(rest) == 2 and method == "GET":
+                return 200, {"count": 3, "value": [{"name": n} for n in ("Stories", "Features", "Epics")]}, None
+            if len(rest) == 4 and rest[3] == "columns" and method == "GET":
+                return 200, {"count": len(cols), "value": cols}, None
+            if len(rest) == 4 and rest[3] == "columns" and method == "PUT":
+                if not isinstance(body, list) or not body:
+                    raise SimError(400, "columns body must be a non-empty list")
+                return 200, {"count": len(body), "value": body}, None
+            raise SimError(404, "sim: unknown boards route")
         if rest[:2] == ["wiki", "wikis"]:
             return self._wiki(method, p, rest[2:], q, headers, body)
         if rest[:2] == ["dashboard", "dashboards"]:
             return self._dashboards(method, p, team, rest[2:], q, body)
+        if rest[:2] == ["work", "plans"] and len(rest) == 3:
+            plan = next((x for x in self.plans[pid] if x["id"] == rest[2]), None)
+            if plan is None:
+                raise SimError(404, "plan not found")
+            if method == "GET":
+                return 200, plan, None
+            if method == "PUT":
+                if body.get("revision") != plan["revision"]:
+                    raise SimError(409, "plan revision mismatch")
+                plan.update(name=body["name"], properties=body["properties"], revision=plan["revision"] + 1)
+                return 200, plan, None
+            raise SimError(405, "method")
         if rest[:2] == ["work", "plans"]:
             if method == "GET":
                 return 200, {"count": len(self.plans[pid]), "value": self.plans[pid]}, None
@@ -294,6 +321,13 @@ class AdoSimulator:
                 raise SimError(404, "node not found")
             node["attributes"] = self._dates(body["attributes"])
             return 200, node, None
+        if method == "DELETE":
+            parent = self._node_at(root, rel[:-1])
+            node = self._node_at(root, rel)
+            if node is None or parent is None or "$reclassifyId" not in q:
+                raise SimError(404 if node is None else 400, "node not found or no $reclassifyId")
+            parent["children"] = [c for c in parent.get("children", []) if c is not node]
+            return 204, None, None
         raise SimError(405, "method")
 
     @staticmethod

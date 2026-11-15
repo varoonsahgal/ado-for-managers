@@ -1,0 +1,50 @@
+# Screenshot captions. `bar` = where in Azure DevOps (shown in the frame's title bar).
+# `caption` = what to notice (Markdown allowed). Keep captions to one or two sentences.
+
+lab01-epics-backlog:
+  bar: "Boards › Backlogs › HarborPoint Team › Epics"
+  caption: "Six Epics in portfolio order. Row 6 carries **Priority 1** and the `mandatory` tag, and it's ranked last."
+
+lab02-mobile-velocity:
+  bar: "Boards › Backlogs › Mobile Banking › Analytics › Velocity"
+  caption: "Mobile Banking, Sum of Story Points. Sprint 13 was planned at **62** and completed **44**. Sprint 14 is still in flight, so most of its bar is Incomplete."
+
+lab04-velocity-mobile:
+  bar: "Boards › Backlogs › Mobile Banking › Analytics › Velocity"
+  caption: "Completed points climb from 33 to 45, then dip to **44** against **62** planned in Sprint 13. Planned grows faster than Completed every sprint."
+
+lab06-velocity-points-vs-count:
+  bar: "Boards › Backlogs › Mobile Banking › Analytics › Velocity (points, then count)"
+  caption: "The same five sprints, measured two ways. By **Sum of Story Points** (left), completed climbs 33 → 45. By **Count of Work Items** (right), it stays at **12 or 13 stories** a sprint. The team isn't faster; the yardstick grew."
+
+lab06-cfd-mobile:
+  bar: "Boards › Backlogs › Mobile Banking › Analytics › Cumulative Flow Diagram (80 days)"
+  caption: "Each band is a board column. The mid-blue **Resolved** band, finished code waiting for a tester, is a sliver in September and six items thick by November."
+
+lab01-digital-features-rollup:
+  bar: "Boards › Backlogs › Digital Portfolio › Features (Parents on, three rollup columns)"
+  caption: "The Epic reads **58% of 455 points**, but its six visible Features add up to 348. The other 107 points are two Closed Features the backlog hides. Note `Spending Insights` at **88%** and `Real-Time Fraud Alerts` at **4%**."
+
+lab01-f2-work-item-form:
+  bar: "Work item form › Feature › Mobile Check Deposit 2.0"
+  caption: "Lens 2, the form: **Risk 1 - High**, the `at-risk` tag, and a **Target Date** at the end of *this* sprint. The Discussion shows who raised the flag, and when."
+
+lab01-program-plan-f2:
+  bar: "Boards › Delivery Plans › HarborPoint Program Plan"
+  caption: "Lens 4, the calendar: `Mobile Check Deposit 2.0` ends a few days after **today**. The three markers (System Demo, PI 5 Planning, exam fieldwork) put every card in context, and `Real-Time Fraud Alerts` carries a **red** dependency badge."
+
+lab02-program-plan-f9-badge:
+  bar: "Boards › Delivery Plans › HarborPoint Program Plan › Dependencies (red badge on Real-Time Fraud Alerts)"
+  caption: "The predecessor, `Fraud Scoring Engine v2`, now targets **1/1/2027**, the end of Sprint 17. That's two weeks after Fraud Alerts is due, so the row is flagged red."
+
+lab07-dependencies-dialog:
+  bar: "Boards › Delivery Plans › Dependencies for Real-Time Fraud Alerts"
+  caption: "One red Feature-level conflict, and beneath it the **story-level** truth: two Mobile stories planned in Sprints 14 and 15 depend on an API that lands in **Sprint 16**. The green row (Unified Notification Service) is fine."
+
+lab01-mobile-stories-resolved:
+  bar: "Boards › Boards › Mobile Banking › Stories"
+  caption: "Three stories, **11 points** of finished code, sit in Resolved waiting for the team's only tester, with Resolved bugs queuing behind them. Notice the column headers too: **16/5** and **6/5** in red mean both columns are far over their work-in-progress limit."
+
+lab01-f9-children-by-area:
+  bar: "Boards › Backlogs › HarborPoint Team › Features › Real-Time Fraud Alerts expanded"
+  caption: "One Feature, three builders. **Node Name** shows seven stories in Mobile Banking (30 points), two in Security (13) and two in Core Platform (8). Mobile's bugs ride along in the same tree."

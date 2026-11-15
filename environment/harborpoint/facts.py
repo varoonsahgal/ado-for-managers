@@ -161,8 +161,9 @@ EXPECTED = {
                      ("SEC-2", "MB-5"): "same sprint", ("CP-1", "MB-4"): "ok",
                      ("F5-01", "MB-5"): "hidden risk (predecessor unscheduled)"},
     "f10_change": dict(sprint=14, day=2, old_target=15, new_target=17,
-                       comment=("Re-planned: exam-readiness work (F21/F22) takes priority until exam fieldwork in "
-                                "Sprint 18. The risk-score API for Fraud Alerts moves to Sprint 16. — AK")),
+                       comment=("Re-planned: exam-readiness work (Audit Evidence Automation and Access Review Automation) "
+                                "takes priority until exam fieldwork in Sprint 18. "
+                                "The risk-score API for Fraud Alerts moves to Sprint 16.")),
     "f2_at_risk_sprint": 13,
     # staleness: (min, max) calendar days between the last change and "now"
     "stale": {"Auto-capture check edges with on-device ML": (9, 11), "Retry flow for failed check uploads": (10, 12)},

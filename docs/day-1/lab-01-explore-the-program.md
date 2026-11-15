@@ -60,7 +60,7 @@ You've used Azure DevOps for years. Show it.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - **Boards › Backlogs**, team `HarborPoint Team`, level **Epics**: row order is the portfolio rank.
-    - Team `Digital Portfolio`, level **Features**, **Parents** and **Completed Child Items** on, plus a **Progress by Story Points** rollup column.
+    - Team `Digital Portfolio`, level **Features**, **Parents** on, plus a **Progress by Story Points** rollup column. Closed Features never appear on a backlog: look for them in the **Closed** column of the Features *board*.
     - `Shared Queries/HarborPoint Reports/Portfolio - Epics and Features` lists every Epic's Features, closed ones included.
     - For "three teams", expand a `cross-team` Feature into its stories and add **Node Name**.
     - **Boards › Sprints**: the sprint selector marks the **Current** sprint.
@@ -68,7 +68,7 @@ You've used Azure DevOps for years. Show it.
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | # | Answer | Where it's fastest |
     |:-:|:--|:--|
-    | 1 | **8 Features** (two Closed, four Active, two New) | `Portfolio - Epics and Features` query, or the `Digital Portfolio` Features backlog with **Completed Child Items** on |
+    | 1 | **8 Features** (two Closed, four Active, two New) | `Portfolio - Epics and Features` query, or the `Digital Portfolio` Features **board**. The backlog shows only six: a backlog hides closed items at its own level |
     | 2 | **Mobile Banking** | **Area Path** (or **Node Name**) column on any Features backlog |
     | 3 | **Fraud Detection & Security** | `HarborPoint Team` Epics backlog, first row |
     | 4 | **Spending Insights, 88%** | **Progress by Story Points** rollup on the `Digital Portfolio` Features backlog |
@@ -89,7 +89,13 @@ A portfolio isn't a pile of Epics. It's an **ordered** list, and the order is a 
 2. **Column Options** › **+ Add a column**: `Priority`, `Start Date`, `Target Date`, `Tags` and `Area Path`. Select **OK**.
 3. In a second browser tab, open **Overview › Wiki** › `Program` › `Program Charter` and find the FY2027 priorities.
 
-<!-- SHOT: lab01-epics-backlog | Boards › Backlogs, team HarborPoint Team, Epics level, columns Priority, Start Date, Target Date, Tags, Area Path added | crop: the six Epic rows; highlight row 6 Compliance: Examination Readiness with Priority 1 and the mandatory tag -->
+<figure class="hp-shot" data-shot="lab01-epics-backlog" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › HarborPoint Team › Epics</span></div>
+
+![Six Epics in portfolio order. Row 6 carries Priority 1 and the mandatory tag, and it's ranked last.](../assets/shots/lab01-epics-backlog.png){ loading=lazy }
+
+<figcaption markdown>Six Epics in portfolio order. Row 6 carries **Priority 1** and the `mandatory` tag, and it's ranked last.</figcaption>
+</figure>
 
 **You should see** six Epics in this order:
 
@@ -137,33 +143,36 @@ Now drop one level to your own patch: Digital Banking Modernization. This is the
 3. **Column Options** › **+ Add a column**: `Area Path`, `Iteration Path`, `Target Date`, `Business Value` and `Tags`.
 4. **+ Add a rollup column** › **From quick list**: **Progress by Story Points**, **Sum of Story Points** and **Progress by all Work Items**. Select **OK**.
 
-<!-- VERIFY: exact quick-list rollup labels on a Features backlog (research shows Stories-level labels; Features level may read "Progress by User Story" / "Count of User Story"). Steps work with whichever "by Story Points" and "all Work Items" labels appear. -->
+Rollup is calculated by Analytics, so a cell may show a grey placeholder bar for a few seconds. If it stays grey, refresh the page.
 
-<!-- VERIFY: whether Completed Child Items On makes the two Closed Features (Mobile App Redesign, Paperless Statements & Documents) appear under their Epic on the Features backlog. If not, point participants to the Portfolio - Epics and Features query for the closed two. -->
+<figure class="hp-shot" data-shot="lab01-digital-features-rollup" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Digital Portfolio › Features (Parents on, three rollup columns)</span></div>
 
-Rollup is calculated by Analytics, so a cell may be blank for a moment. Hover over the column header to see when the data was last refreshed.
+![The Epic reads 58% of 455 points, but its six visible Features add up to 348. The other 107 points are two Closed Features the backlog hides. Note Spending Insights at 88% and Real-Time Fraud Alerts at 4%.](../assets/shots/lab01-digital-features-rollup.png){ loading=lazy }
 
-<!-- SHOT: lab01-digital-features-rollup | Boards › Backlogs, team Digital Portfolio, Features level, Parents on, columns Area Path, Iteration Path, Target Date, Business Value, Tags plus rollup Progress by Story Points and Sum of Story Points | crop: the Digital Banking Modernization group and the Fraud Detection & Security parent row with Real-Time Fraud Alerts under it; highlight the progress bars -->
+<figcaption markdown>The Epic reads **58% of 455 points**, but its six visible Features add up to 348. The other 107 points are two Closed Features the backlog hides. Note `Spending Insights` at **88%** and `Real-Time Fraud Alerts` at **4%**.</figcaption>
+</figure>
 
-**You should see** Digital Banking Modernization with its eight Features, plus one more Feature under a different Epic:
+**You should see** Digital Banking Modernization with six open Features, plus one more Feature under a different Epic:
 
-| Feature | Owning team | State | Target | Business Value | Progress (points) | Story Points |
-|:--|:--|:--|:--|:-:|:-:|:-:|
-| `Mobile App Redesign` | Mobile Banking | Closed | Sprint 11 | 13 | 100% | 55 |
-| `Mobile Check Deposit 2.0` | Mobile Banking | Active | **Sprint 14** | 13 | 61% | 93 |
-| `Biometric Login` | Mobile Banking | Active | Sprint 16 | 8 | 53% | 51 |
-| `Member-to-Member Transfers` | Mobile Banking | New | Sprint 20 | 20 | *(empty)* | *(empty)* |
-| `Instant Card Controls` | Digital Accounts | New | Sprint 17 | 20 | 0% | 105 |
-| `Online Account Opening` | Digital Accounts | Active | Sprint 16 | 13 | 59% | 56 |
-| `Spending Insights` | Digital Accounts | Active | Sprint 15 | 5 | **88%** | 43 |
-| `Paperless Statements & Documents` | Digital Accounts | Closed | Sprint 13 | 5 | 100% | 52 |
-| `Real-Time Fraud Alerts` *(under Fraud Detection & Security)* | Mobile Banking | Active | Sprint 16 | 20 | **4%** | 51 |
+| Feature | Owning team | State | Target | Business Value | Progress (points) | Story Points | Progress (all items) |
+|:--|:--|:--|:--|:-:|:-:|:-:|:-:|
+| `Mobile Check Deposit 2.0` | Mobile Banking | Active | **Sprint 14** | 13 | 61% | 93 | 50% |
+| `Biometric Login` | Mobile Banking | Active | Sprint 16 | 8 | 53% | 51 | 44% |
+| `Member-to-Member Transfers` | Mobile Banking | New | Sprint 20 | 20 | *(empty)* | 0 | *(empty)* |
+| `Instant Card Controls` | Digital Accounts | New | Sprint 17 | 20 | 0% | 105 | 0% |
+| `Online Account Opening` | Digital Accounts | Active | Sprint 16 | 13 | 59% | 56 | 65% |
+| `Spending Insights` | Digital Accounts | Active | Sprint 15 | 5 | **88%** | 43 | 89% |
+| `Real-Time Fraud Alerts` *(under Fraud Detection & Security)* | Mobile Banking | Active | Sprint 16 | 20 | **4%** | 51 | 7% |
 
-Your backlog's row order may differ from this table. Read it for five things:
+The Epic row itself reads **58%** of **455** points. Add up the six Features and you get 348. The missing 107 points are two **Closed** Features, `Mobile App Redesign` (55) and `Paperless Statements & Documents` (52). A backlog never shows closed items at its own level, but the Epic's rollup still counts them. To see them, open the Features **board** and look in its **Closed** column.
 
-- **States.** Two delivered, four in flight, two not started. That's the Epic's whole life story in one column.
+Your backlog's row order may differ from this table. Read it for six things:
+
+- **States.** Two delivered (the hidden pair), four in flight, two not started. That's the Epic's whole life story.
+- **The invisible 107 points.** The Epic's 58% includes two finished Features you can't see on this screen. A parent's percentage can look healthier than every child you're looking at.
 - **The empty row.** `Member-to-Member Transfers` has a Business Value of 20, the joint highest, and no children at all. It's planned for PI 5 and nobody has broken it down yet. That's fine in Sprint 14, and it won't be fine in Sprint 16.
-- **Two bars, two stories.** **Progress by all Work Items** counts every child, bugs included, while the points bar weighs each story by its estimate. When the two disagree sharply, ask which kind of work is piling up.
+- **Two bars, two stories.** **Progress by all Work Items** counts every child, bugs included, while the points bar weighs each story by its estimate. `Mobile Check Deposit 2.0` reads 61% by points but 50% by items: nine open bugs are pulling the count down. When the two bars disagree, ask which kind of work is piling up.
 - **The number that hides something.** `Instant Card Controls` reads 105 points, but four of its twenty stories have no estimate. **Sum of Story Points** can't count what nobody estimated.
 - **The Feature that isn't in the Epic.** `Real-Time Fraud Alerts` lives in Mobile Banking's area, so the `Digital Portfolio` team sees it, but its parent is *Fraud Detection & Security*. Its progress never shows up in Digital Banking Modernization's rollup. You'll come back to it in Part 5.
 
@@ -199,18 +208,28 @@ Azure DevOps shows the same Feature in at least four places, each best at a diff
 - **Related Work** lists the parent Epic and the child stories and bugs. Count them roughly; don't open them.
 - **History** shows every change with who made it and when. Find the revision where the Feature went **Active**.
 
-<!-- SHOT: lab01-f2-work-item-form | Work item form for Mobile Check Deposit 2.0 (Feature), Details tab | crop: header, Status/Planning fields, Tags and Related Work; highlight Target Date, Risk 1 - High and the at-risk tag -->
+<figure class="hp-shot" data-shot="lab01-f2-work-item-form" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Work item form › Feature › Mobile Check Deposit 2.0</span></div>
 
-**Lens 3: the Feature board.** **Boards › Boards**, team `Mobile Banking`, level **Features**. Mobile Banking's Features sit in **New**, **Active** and **Closed** columns. Find the card. Its child annotation shows completed and total children as a fraction. Expand it to see the checklist.
+![Lens 2, the form: Risk 1 - High, the at-risk tag, and a Target Date at the end of this sprint. The Discussion shows who raised the flag, and when.](../assets/shots/lab01-f2-work-item-form.png){ loading=lazy }
 
-<!-- VERIFY: the Feature card's child annotation shows stories as 17/26 for Mobile Check Deposit 2.0 (bugs may show as a separate annotation or not at all). -->
+<figcaption markdown>Lens 2, the form: **Risk 1 - High**, the `at-risk` tag, and a **Target Date** at the end of *this* sprint. The Discussion shows who raised the flag, and when.</figcaption>
+</figure>
+
+**Lens 3: the Feature board.** **Boards › Boards**, team `Mobile Banking`, level **Features**. Mobile Banking's Features sit in **New**, **Active**, **Resolved** and **Closed** columns, and this time the closed ones are there too. Find the card. It carries two child annotations: a story icon reading **17/26** (stories closed out of total) and a bug icon reading **1/10**. Select either one to expand the checklist.
 
 **Lens 4: the Delivery Plan.** **Boards › Delivery Plans** › `HarborPoint Program Plan`. Find the Mobile Banking row and the `Mobile Check Deposit 2.0` card. Notice the markers on the calendar bar: **PI 4 System Demo**, **PI 5 Planning** and **Regulatory exam fieldwork**, and the **today** marker. The card ends a few days to the right of today.
 
 !!! warning "Look, but don't drag"
     On a Delivery Plan, dragging a card moves the real work item to another sprint, and dragging a card's edge rewrites its dates for everyone. This plan belongs to the program office. Select titles and badges. Never drag.
 
-<!-- SHOT: lab01-program-plan-f2 | Boards › Delivery Plans › HarborPoint Program Plan, Features level, Mobile Banking row expanded, zoomed to Sprint 12 to Sprint 18 | crop: Mobile Banking row plus calendar bar; highlight the Mobile Check Deposit 2.0 card ending just after the today marker, and the three plan markers -->
+<figure class="hp-shot" data-shot="lab01-program-plan-f2" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Delivery Plans › HarborPoint Program Plan</span></div>
+
+![Lens 4, the calendar: Mobile Check Deposit 2.0 ends a few days after today. The three markers (System Demo, PI 5 Planning, exam fieldwork) put every card in context, and Real-Time Fraud Alerts carries a red dependency badge.](../assets/shots/lab01-program-plan-f2.png){ loading=lazy }
+
+<figcaption markdown>Lens 4, the calendar: `Mobile Check Deposit 2.0` ends a few days after **today**. The three markers (System Demo, PI 5 Planning, exam fieldwork) put every card in context, and `Real-Time Fraud Alerts` carries a **red** dependency badge.</figcaption>
+</figure>
 
 !!! challenge "Challenge: Match the lens to the question"
     Fill in the fastest lens for each question, and one thing that lens *can't* tell you.
@@ -240,7 +259,15 @@ Azure DevOps shows the same Feature in at least four places, each best at a diff
 
     Rollup progress counts only **Closed** children, so Resolved work shows as *not done*. If those three stories closed today, `Biometric Login` would read about 69% and `Mobile Check Deposit 2.0` about 65%. A progress bar measures **workflow discipline** as much as progress: a team that's slow to close looks slower than it is, and a team that closes early looks faster. Before you quote a percentage, find out what "done" means on that team's board.
 
-<!-- SHOT: lab01-mobile-stories-resolved | Boards › Boards, team Mobile Banking, Stories level | crop: the Resolved column; highlight the three story cards (Deposit limit messaging by member tier, Face ID and fingerprint enrollment, Biometric step-up for high-risk actions) among the Resolved bugs -->
+    While you're on that board, read the column headers. **Active 16/5** and **Resolved 6/5**, in red: the board's work-in-progress limit is five per column, and Mobile Banking is more than three times over it in Active. Nobody enforces the number, but the board is quietly telling you the team has started far more than it can finish.
+
+<figure class="hp-shot" data-shot="lab01-mobile-stories-resolved" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Boards › Mobile Banking › Stories</span></div>
+
+![Three stories, 11 points of finished code, sit in Resolved waiting for the team's only tester, with Resolved bugs queuing behind them. Notice the column headers too: 16/5 and 6/5 in red mean both columns are far over their work-in-progress limit.](../assets/shots/lab01-mobile-stories-resolved.png){ loading=lazy }
+
+<figcaption markdown>Three stories, **11 points** of finished code, sit in Resolved waiting for the team's only tester, with Resolved bugs queuing behind them. Notice the column headers too: **16/5** and **6/5** in red mean both columns are far over their work-in-progress limit.</figcaption>
+</figure>
 
 !!! checkpoint "Checkpoint"
     - [ ] I looked at `Mobile Check Deposit 2.0` on the backlog, the form, the Feature board and the Program Plan
@@ -296,9 +323,13 @@ A delivery team sees only its own area. `Digital Portfolio` and `HarborPoint Tea
 
     It counts toward Simone Laurent's Epic, *Fraud Detection & Security*, and is missing from Priya's, *Digital Banking Modernization*, even though a Digital team owns it and does most of the building. Report Digital's progress Epic by Epic and the Digital Feature most likely to hurt the program is invisible. Put it on your list for Priya by name.
 
-<!-- VERIFY: on the HarborPoint Team Features backlog, expanding Real-Time Fraud Alerts shows its child stories from all three areas (with Completed Child Items on, the closed Fraud alert UX design spike appears). Fallback: switch the level to Stories with Parents on and find the Feature in the tree. -->
+<figure class="hp-shot" data-shot="lab01-f9-children-by-area" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › HarborPoint Team › Features › Real-Time Fraud Alerts expanded</span></div>
 
-<!-- SHOT: lab01-f9-children-by-area | Boards › Backlogs, team HarborPoint Team, Features level, Parents on, Completed Child Items on, Real-Time Fraud Alerts expanded, Node Name and Story Points columns | crop: the Fraud Detection & Security group with Real-Time Fraud Alerts and its 11 child stories; highlight the Node Name column showing Mobile Banking, Security and Core Platform -->
+![One Feature, three builders. Node Name shows seven stories in Mobile Banking (30 points), two in Security (13) and two in Core Platform (8). Mobile's bugs ride along in the same tree.](../assets/shots/lab01-f9-children-by-area.png){ loading=lazy }
+
+<figcaption markdown>One Feature, three builders. **Node Name** shows seven stories in Mobile Banking (30 points), two in Security (13) and two in Core Platform (8). Mobile's bugs ride along in the same tree.</figcaption>
+</figure>
 
 ```mermaid
 flowchart LR

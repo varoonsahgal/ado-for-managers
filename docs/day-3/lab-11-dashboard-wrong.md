@@ -136,7 +136,7 @@ Now go behind every tile. Leo's dashboard has **twelve** planted defects. Some l
 Carmen asked a yes-or-no question: is the dashboard wrong, or is she? Answer it with arithmetic.
 
 !!! challenge "Challenge: Reconcile 13 and 8"
-    Open **Boards › Backlogs**, team `Member Support`, **Stories** level, **Analytics** › **Velocity** › **View full report**. Explain, point by point, how a team that truly finished **18** points in Sprint 12 and **19** in Sprint 13 shows **13** and **8**. Then say what happened to **Planned** over the same sprints.
+    Open **Boards › Backlogs**, team `Member Support`, **Stories** level, **Analytics** › **Velocity** › **View full report**, with **Velocity by** set to **Sum of Story Points**. Explain, point by point, how a team that truly finished **18** points in Sprint 12 and **19** in Sprint 13 shows **13** and **8**. Then say what happened to **Planned** over the same sprints.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
     Velocity credits one thing: points on stories that reached **Closed** within the sprint. List every way a finished story can fail that test.

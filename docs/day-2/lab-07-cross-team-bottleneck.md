@@ -87,7 +87,13 @@ The plan stays quiet until you ask it a question. Ask it about Fraud Alerts.
 
 <!-- VERIFY: whether the toolbar link-icon button ("Show and hide dependencies between work items") draws all lines at once; if so, offer it as a shortcut in step 3. Also check whether Fraud Scoring Engine v2 (the predecessor) shows a red badge too. -->
 
-<!-- SHOT: lab07-dependencies-dialog | Dependencies dialog opened from the red badge on Real-Time Fraud Alerts in P## - Fraud Alerts Plan, listing Fraud Scoring Engine v2 (red !, end date in Sprint 17) and Unified Notification Service (no conflict) | crop: dialog only; highlight the red end date -->
+<figure class="hp-shot" data-shot="lab07-dependencies-dialog" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Delivery Plans › Dependencies for Real-Time Fraud Alerts</span></div>
+
+![One red Feature-level conflict, and beneath it the story-level truth: two Mobile stories planned in Sprints 14 and 15 depend on an API that lands in Sprint 16. The green row (Unified Notification Service) is fine.](../assets/shots/lab07-dependencies-dialog.png){ loading=lazy }
+
+<figcaption markdown>One red Feature-level conflict, and beneath it the **story-level** truth: two Mobile stories planned in Sprints 14 and 15 depend on an API that lands in **Sprint 16**. The green row (Unified Notification Service) is fine.</figcaption>
+</figure>
 
 **You should see** two predecessors:
 
@@ -246,7 +252,7 @@ A slipped date is a symptom. Simone will ask *why*, and "Security is busy" is no
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | # | Evidence |
     |:-:|:--|
-    | 1 | **Aisha Karimi** moved **Target Date** from the end of Sprint 15 to the end of Sprint 17 on day 2 of this sprint, with the comment *"Re-planned: exam-readiness work (F21/F22) takes priority until exam fieldwork in Sprint 18. The risk-score API for Fraud Alerts moves to Sprint 16. — AK"* (F21 and F22 are the two Compliance Features.) |
+    | 1 | **Aisha Karimi** moved **Target Date** from the end of Sprint 15 to the end of Sprint 17 on day 2 of this sprint, with the comment *"Re-planned: exam-readiness work (Audit Evidence Automation and Access Review Automation) takes priority until exam fieldwork in Sprint 18. The risk-score API for Fraud Alerts moves to Sprint 16."* Those are the two Compliance Features. |
     | 2 | **No dates moved downstream.** Fraud Alerts still targets Sprint 16, still carries `PI4-Committed`, and has no `at-risk` tag. Its confirm/deny and in-app alert stories are still planned for Sprints 14 and 15. The re-plan lives in one work item and nowhere else. |
     | 3 | Security's Sprint 14 holds 10 stories and 36 points. Six are tagged `compliance`: **21 points, 58%**, all under the Compliance Epic. Four Features are in flight for six people, and **zero** points go to Fraud Alerts. |
     | 4 | **Planned** climbed 24, 25, 26, 30, 32, then 36 in Sprint 14, while **Completed** stayed between 20 and 22. Sprint 15 already holds 23 points. Sprint 16 holds 28, *including the API*, and loses two days to the company holiday. |

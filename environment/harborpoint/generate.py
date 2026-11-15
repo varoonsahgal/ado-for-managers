@@ -5,7 +5,8 @@ Usage (from the environment/ directory):
                                    [--out out/dataset.json] [--artifacts content/artifacts.yaml]
 
 Defaults: now = current UTC minus 5 minutes; sprint14_start = the Monday of the week BEFORE now's week,
-so "now" falls in Sprint 14 week 2. Sprint n starts sprint14_start + 14*(n-14) days.
+so "now" falls in Sprint 14 week 2 (on a weekend, the Monday of now's own week, so the coming
+working week is Sprint 14 week 2 in Azure DevOps). Sprint n starts sprint14_start + 14*(n-14) days.
 
 The output is fully deterministic for the same (now, sprint14_start, participants, artifacts) inputs:
 every random choice uses a purpose-specific random.Random seeded from scenario.SEED.
@@ -148,7 +149,10 @@ def parse_now(s: str) -> dt.datetime:
 
 def default_sprint14_start(now: dt.datetime) -> dt.date:
     d = now.date()
-    return d - dt.timedelta(days=d.weekday()) - dt.timedelta(days=7)
+    monday = d - dt.timedelta(days=d.weekday())
+    # On a weekend, the live sprint in Azure DevOps (by calendar date) is the one starting next
+    # Monday, so anchor Sprint 14 to this week: the coming working week is then Sprint 14 week 2.
+    return monday if d.weekday() >= 5 else monday - dt.timedelta(days=7)
 
 
 def date_field(d: dt.date) -> str:
@@ -270,7 +274,7 @@ class Generator:
         self.participants = participants
         self.artifacts = artifacts
         off = (now.date() - sprint14_start).days
-        if not 7 <= off <= 13:
+        if not 5 <= off <= 13:  # 5-6 = the weekend just before week 2
             raise ValueError(f"now ({iso(now)}) must fall in Sprint 14 week 2 "
                              f"({self.cal.day(14, 6)} .. {sprint14_start + dt.timedelta(days=13)})")
         if not 0 <= participants <= sc.MAX_PARTICIPANTS:
@@ -882,7 +886,7 @@ class Generator:
                 elif kind == "f10":
                     ch = sc.F10_CHANGE
                     it.ev(d, {F_TARGET: date_field(cal.finish(ch["new_target"])),
-                              F_ITER: full_pi(sc.pi_of(ch["new_target"]))}, comment=ch["comment"])
+                              F_ITER: full_pi(sc.pi_of(ch["new_target"]))}, comment=ch["comment"])["by"] = ch["by"]
                 elif kind == "close":
                     it.transition(d, "Closed", comment="All child stories closed.")
             assert it.state == f["state"], (f["key"], it.state, f["state"])
@@ -960,6 +964,47 @@ class Generator:
         ranks = self.stack_ranks()
         return self.emit(ranks)
 
+    def authors(self, it: Item) -> list[str]:
+        """Who made each revision, so History and Discussion show the cast rather than the PAT owner.
+
+        Product owners create and plan work, the assignee starts and resolves it, the team's tester
+        closes it (the product owner where a team has no tester), and explicit events keep their author.
+        """
+        area_team = {v: t for t, v in sc.TEAM_AREA.items()}
+        out, area, assignee = [], "", None
+        for i, e in enumerate(it.events):
+            f = e["fields"]
+            area = f.get(F_AREA, area)
+            if F_ASSIGNED in f:
+                assignee = f[F_ASSIGNED] or None
+            rel = area.split("\\", 1)[1] if "\\" in area else ""
+            team = next((t for a, t in area_team.items() if rel == a or rel.startswith(a + "\\")), None)
+            po = sc.PRODUCT_OWNER.get(team) if team else None
+            qa = sc.QA_ENGINEER.get(team) if team else None
+            state = f.get(F_STATE)
+            if e.get("by"):
+                who = e["by"]
+            elif rel.startswith("Training"):
+                who = sc.SANDBOX_AUTHOR
+            elif it.type == "Epic":
+                who = sc.PROGRAM_MANAGER
+            elif it.type == "Feature":
+                who = po or sc.PROGRAM_MANAGER
+            elif i == 0:
+                who = (qa or assignee or po) if it.type == "Bug" else po
+            elif state in ("Active", "Resolved"):
+                who = assignee or po
+            elif state == "Closed":
+                who = qa or assignee or po
+            elif state in ("New", "Removed") or (F_ITER in f and not state):
+                who = po  # backlog moves and sprint planning belong to the product owner
+            elif e["comment"] and assignee:
+                who = assignee
+            else:
+                who = po
+            out.append(who or sc.PROGRAM_MANAGER)
+        return out
+
     def emit(self, ranks: dict[str, float]) -> dict:
         cal = self.cal
         work_items, seen = [], set()
@@ -968,12 +1013,13 @@ class Generator:
             if it.parent:
                 assert it.parent in seen, f"{k}: parent {it.parent} not emitted first"
             revs = []
+            authors = self.authors(it)
             for i, e in enumerate(it.events):
                 stamp = iso(e["at"])
                 fields = {f: (stamp if v == AT else v) for f, v in e["fields"].items()}
                 if i == 0:
                     fields[F_STACKRANK] = ranks[k]
-                rev = {"at": stamp, "fields": fields}
+                rev = {"at": stamp, "by": authors[i], "fields": fields}
                 if e["comment"]:
                     rev["comment"] = e["comment"]
                 revs.append(rev)

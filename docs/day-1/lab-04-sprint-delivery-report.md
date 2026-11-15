@@ -92,7 +92,7 @@ The first question in any status meeting: did the teams deliver what they said t
 
 ### Read the Velocity reports
 
-For each Digital team: **Boards › Backlogs**, pick the team, **Stories** level, the **Analytics** tab, then **View full report** on the **Velocity** card. Hover over a sprint's bars to read **Planned**, **Completed** and **Incomplete**.
+For each Digital team: **Boards › Backlogs**, pick the team, **Stories** level, the **Analytics** tab, then **View full report** on the **Velocity** card. The report opens on **Count of Work Items**, so set **Velocity by** to **Sum of Story Points**. Hover over a sprint's bars to read **Planned**, **Completed** and **Incomplete**.
 
 <!-- VERIFY: "Analytics" tab placement on the backlog in New Boards Hub and the Velocity card label ("Velocity" / "Average Velocity"). -->
 
@@ -103,7 +103,13 @@ Fill in Sprint 13 before you look at the hint:
 | Mobile Banking | | | |
 | Digital Accounts | | | |
 
-<!-- SHOT: lab04-velocity-mobile | Boards › Backlogs, team Mobile Banking, Stories level, Analytics › Velocity full report, Sum of Story Points, Sprint 9 to Sprint 14 | crop: chart; highlight Sprint 13 Planned 62 vs Completed 44 -->
+<figure class="hp-shot" data-shot="lab04-velocity-mobile" markdown>
+<div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Mobile Banking › Analytics › Velocity</span></div>
+
+![Completed points climb from 33 to 45, then dip to 44 against 62 planned in Sprint 13. Planned grows faster than Completed every sprint.](../assets/shots/lab04-velocity-mobile.png){ loading=lazy }
+
+<figcaption markdown>Completed points climb from 33 to 45, then dip to **44** against **62** planned in Sprint 13. Planned grows faster than Completed every sprint.</figcaption>
+</figure>
 
 Now a quick gut check. **Which team delivered more last sprint?** Commit to an answer before you open the hint.
 
