@@ -10,15 +10,21 @@ summary: "Turn queries into charts leadership can read, catch the ones that misl
 one_thing: "A status color is only as good as the sentence next to it. Report what's left against the time left, and end with a decision you need."
 next_title: "Lab 5 · Build HarborPoint's Management Command Center"
 next_url: "day-2/lab-05-command-center/"
-next_hook: "Next Monday, Priya asks at 7:40 and you're still on the train. You build one dashboard that answers her questions at a glance, then cut it down to the view Dana can read in thirty seconds."
+next_hook: "Day 2 opens with Priya tired of asking for reports. You turn today's queries and charts into one dashboard that answers her questions at a glance, then cut it down to the view Dana can read in thirty seconds."
 ---
 
 !!! briefing "Mission briefing"
-    Leadership wants an update on Digital Banking: what was delivered, what's still outstanding, and what's at risk. You have the evidence already, scattered across a toolkit of queries, two teams' velocity reports and a portfolio backlog. Now it has to become something a busy executive can read in two minutes and trust.
+    Leadership wants a Digital Banking update: what was delivered, what's outstanding, and what's at risk. The evidence is already scattered across your query toolkit, two teams' Velocity reports and a portfolio backlog. Now it has to become something a busy executive can read in two minutes and trust.
 
-    Charts are the obvious tool, and also the most dangerous one. A chart persuades before anyone checks it. The same data can say "on track" or "in trouble" depending on the slice, the measure and the time window you pick. In this lab you'll build the charts, deliberately make a few of them lie, and then write a one-page status report that would survive the CIO asking "how do you know?"
+    Charts are the obvious tool, and the most dangerous one. A chart persuades before anyone checks it. The same data can say "on track" or "in trouble" depending on what you count, the window you pick and what you compare. So you'll build the charts, deliberately make some of them lie, and then write a report that survives the CIO asking "how do you know?"
 
-    **Done looks like:** five saved charts on three queries in your shared folder, a planned-versus-completed comparison for both Digital teams, and the wiki page `/Training/P##/Sprint Delivery Report` with an evidence-backed RAG status, a Feature table, risks and asks.
+    **Done looks like**, one line per Part:
+
+    1. The Digital portfolio charted, and your report's scope decided
+    2. Each Digital team read against its own plan, and this sprint charted by team and state
+    3. The bug trend read over five sprints, not one week
+    4. Two charts that lie with real data, each paired with the honest view
+    5. The wiki page `/Training/P##/Sprint Delivery Report`: a RAG status you can defend, a Feature table, risks and asks
 
 <div class="msg" data-initials="PR" data-tone="teal" markdown>
 <p class="msg-head"><strong>Priya Raman</strong><span>Director, Digital Banking · 1:10 PM</span></p>
@@ -28,11 +34,11 @@ Dana wants a Digital Banking update for her staff meeting: what we delivered las
 
 ## What you'll walk away with
 
-- Charts built from saved queries that answer one management question each, by state, team, priority and trend
-- A planned-versus-completed reading for each team, without the cross-team comparison trap
-- A working knowledge of what query charts can't do, so you don't promise a view Azure DevOps won't draw
-- A sharp eye for misleading metrics: counts versus points, cherry-picked time windows, percentages without a deadline
-- A one-page status report with a RAG rating you can defend
+- Decide a report's scope out loud, and name each chart for the one question it answers
+- Read each team against its own plan, within the limits of what query charts can draw
+- Treat the bug backlog as unfinished work, and read its trend
+- Spot how true data tells a false story: counts versus size, cherry-picked windows, mismatched scales, percentages without a deadline
+- Write a one-page status report with a RAG rating you can defend and asks that name a person
 
 ## Before you set sail
 
@@ -43,6 +49,8 @@ Dana wants a Digital Banking update for her staff meeting: what we delivered las
 - **Time-box:** 50 minutes. Save 15 for the report in Part 5. That's the deliverable, and the charts exist to serve it.
 
 ## Part 1 — What does Digital Banking's portfolio look like?
+
+Before you report on "Digital Banking", decide what it includes. Your first chart forces the choice.
 
 !!! speedrun "Speed run · 8 minutes"
     Build `10 Digital Features (chart)`: every **Feature** owned by a team under `HarborPoint\Digital`, with a **pie chart by State**. Then answer: how many Features, and how many in each state?
@@ -68,6 +76,8 @@ Dana wants a Digital Banking update for her staff meeting: what we delivered las
 
     **Expected:** **9** Features. **Active 5** (`Mobile Check Deposit 2.0`, `Biometric Login`, `Online Account Opening`, `Spending Insights`, `Real-Time Fraud Alerts`), **Closed 2** (`Mobile App Redesign`, `Paperless Statements & Documents`) and **New 2** (`Member-to-Member Transfers`, `Instant Card Controls`).
 
+    **So what?** Lab 1 counted eight. Find out why before either number goes in your report.
+
 <figure class="hp-shot" data-shot="lab04-features-pie" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › 10 Digital Features (chart) › Charts</span></div>
 
@@ -76,7 +86,7 @@ Dana wants a Digital Banking update for her staff meeting: what we delivered las
 <figcaption markdown>Nine Features by Area Path: five Active, two Closed, two New. Lab 1 counted *eight* under the Epic. The ninth is `Real-Time Fraud Alerts`, built by a Digital team but serving another Epic.</figcaption>
 </figure>
 
-**Wait: nine?** In Lab 1 you counted **8** Features under *Digital Banking Modernization*. The ninth is `Real-Time Fraud Alerts`. Mobile Banking builds it, so it sits in a Digital area, but it serves the number one Epic, *Fraud Detection & Security*.
+**Wait: nine?** Lab 1 counted **8** Features under *Digital Banking Modernization*. The ninth, `Real-Time Fraud Alerts`, sits in a Digital area because Mobile Banking builds it. But it serves the number one Epic, *Fraud Detection & Security*.
 
 Neither number is wrong. They answer different questions:
 
@@ -85,24 +95,27 @@ Neither number is wrong. They answer different questions:
 | **By Area Path** (who builds it) | "What are my teams delivering?" | 9 |
 | **By Epic** (what it serves) | "How is the Digital Banking initiative doing?" | 8 |
 
-Leadership asked about the *initiative*, so your report is about the 8. But the ninth is Mobile Banking's, it's priority #1, and it's in trouble. A report scoped strictly to the Epic would leave out the most important thing your teams are working on. **Decide your scope out loud**, and put it on the page.
+Leadership asked about the *initiative*, so your report covers the 8. But the ninth belongs to Mobile Banking, it's priority #1, and it's in trouble. A report scoped strictly to the Epic would leave out the most important thing your teams are building. **Decide your scope out loud**, and put it on the page.
 
 !!! insight "Lighthouse insight: every chart answers exactly one question"
-    Before you build a chart, write the question it answers in its title. "Digital Features by State" is a title. "Is the Digital Banking initiative on track?" is a question, and a pie by state can't answer it, because it counts a finished 55-point Feature and an empty one as equal slices. If the chart can't answer the question in its title, you need a different chart.
+    Before you build a chart, write the question it answers in its title. "Digital Features by State" is a title. "Is the Digital Banking initiative on track?" is a question, and a pie by state can't answer it: it shows how many Features sit in each state, not how much work is left or when it's due. If the chart can't answer the question in its title, you need a different chart.
 
 !!! checkpoint "Checkpoint"
     - [ ] `10 Digital Features (chart)` has a pie showing 9 Features: Active 5, Closed 2, New 2
     - [ ] I can explain the difference between the 9 (area) and the 8 (Epic), and I've decided which one my report uses
 
+!!! takeaway "Takeaway"
+    "Who builds it" and "what it serves" give different counts, and both are right, so choose your scope before you chart and say it on the page.
+
 ## Part 2 — What got done, against what was planned?
 
-The first question in any status meeting: did the teams deliver what they said they would?
+The first question in any status meeting: did each team deliver what it said it would, and is this sprint going the same way?
 
 ### Read the Velocity reports
 
 For each Digital team: **Boards › Backlogs**, pick the team, **Stories** level, the **Analytics** tab, then **View full report** on the **Velocity** card. The report opens on **Count of Work Items**, so set **Velocity by** to **Sum of Story Points**. Hover over a sprint's bars to read **Planned**, **Completed** and **Incomplete**.
 
-Fill in Sprint 13 before you look at the hint:
+Fill in Sprint 13:
 
 | Team | Planned (pts) | Completed (pts) | Completed ÷ Planned |
 |---|---|---|---|
@@ -117,7 +130,8 @@ Fill in Sprint 13 before you look at the hint:
 <figcaption markdown>Completed points climb from 33 to 45, then dip to **44** against **62** planned in Sprint 13. Planned grows faster than Completed every sprint.</figcaption>
 </figure>
 
-Now a quick gut check. **Which team delivered more last sprint?** Commit to an answer before you open the hint.
+!!! predict "Make a call"
+    **Which team delivered more last sprint?** Commit to an answer before you open the hint.
 
 ??? pilot "Harbor Pilot · Hint: the numbers"
     | Team | Planned | Completed | Completed ÷ Planned |
@@ -125,16 +139,18 @@ Now a quick gut check. **Which team delivered more last sprint?** Commit to an a
     | Mobile Banking | 62 | 44 | **71%** |
     | Digital Accounts | 26 | 26 | **100%** |
 
-    The trend matters as much as the sprint. Mobile's completion rate has fallen every sprint: 87%, 84%, 82%, 80%, then 71%. Digital Accounts has completed at least 89% of its plan in every one of the last five sprints, and all of it in three.
+    **So what?** The trend matters as much as the sprint. Mobile's completion rate has fallen every sprint: 87%, 84%, 82%, 80%, then 71%. Digital Accounts has completed at least 89% of its plan in each of the last five sprints, and all of it in three.
 
-    Switch **Velocity by** to **Count of Work Items**. Mobile's bars flatten to roughly a dozen stories a sprint, while its points climbed from 33 to 45. You'll take that apart properly in [Lab 6](../day-2/lab-06-which-team-needs-help.md).
-
-    Why doesn't the count include the bugs Mobile closes? Velocity counts what was **planned into a sprint**. Mobile's bugs sit on the backlog with no sprint, so they never appear here, however many get fixed. That's one more way a velocity chart can understate real work.
+    **Rising points, flat count.** Switch **Velocity by** to **Count of Work Items**. Mobile's bars flatten to roughly a dozen stories a sprint, while its points climbed from 33 to 45. You'll take that apart in [Lab 6](../day-2/lab-06-which-team-needs-help.md).
 
 !!! reef "Reef ahead: “Mobile delivered 44, Digital Accounts only 26”"
-    If you answered "Mobile Banking", you compared two teams' Story Points as if they were the same currency. They aren't. Each team sizes its own work, so 44 Mobile points and 26 Digital Accounts points aren't comparable, just as 44 euros and 26 dollars aren't. The only fair comparison is each team **against its own plan**. On that measure, Digital Accounts did everything it promised and Mobile Banking missed by almost a third.
+    If you answered "Mobile Banking", you compared two teams' Story Points as if they were the same currency. They aren't. Each team sizes its own work, so 44 Mobile points and 26 Digital Accounts points compare no better than 44 euros and 26 dollars. The only fair comparison is each team **against its own plan**. On that measure, Digital Accounts did everything it promised and Mobile Banking missed by almost a third.
 
-    Two more things the Velocity chart won't say out loud. **Planned** is a snapshot from the sprint's first day, so the 5 points Mobile added mid-sprint in Sprint 14 never appear as planned work. And **Resolved stories don't count as Completed.** Mobile has 11 points sitting in Resolved right now, waiting for its one tester.
+    Three more things the Velocity chart won't say out loud:
+
+    - **Planned is a day-one snapshot.** The 5 points Mobile added mid-sprint in Sprint 14 never appear as planned work.
+    - **Resolved isn't Completed.** Mobile has 11 points in Resolved right now, waiting for its one tester.
+    - **Bugs with no sprint are invisible.** Velocity counts only what was planned into a sprint. Mobile's bugs sit on the backlog with no sprint, so however many get fixed, they never show up here.
 
 ### Chart this sprint, by team and state
 
@@ -166,7 +182,7 @@ Now a quick gut check. **Which team delivered more last sprint?** Commit to an a
 <figcaption markdown>Two charts on one query. Mobile Banking has **Closed 12** of its 65 points with **11 more sitting in Resolved**; Digital Accounts has closed 10 of 26 with nothing queued for test.</figcaption>
 </figure>
 
-**So what?** We're six or seven days into a ten-day sprint. Digital Accounts has closed 38% of its points with a normal amount of work in flight. Mobile Banking has closed **18%**. Even if all three Resolved stories pass QA today, it reaches 35%, with 29 points still Active and 13 not started. This sprint is going the way the last one went.
+**So what?** We're six or seven days into a ten-day sprint. Digital Accounts has closed 38% of its points, with a normal amount of work in flight. Mobile Banking has closed **18%**. Even if all three Resolved stories pass QA today, it reaches 35%, with 29 points still Active and 13 not started. This sprint is going the way the last one went.
 
 !!! info "What query charts can't do"
     Plan your report around these limits, not into them:
@@ -179,16 +195,18 @@ Now a quick gut check. **Which team delivered more last sprint?** Commit to an a
     | Show more than 8 categories | The rest roll up into *(other)* |
     | Trend a big query | Keep trend queries to 1,000 items or fewer |
     | Show progress % per Feature | Not a chart. Use the backlog's rollup columns |
-    | Share a chart from **My Queries** | Only you can see it. Save to a shared folder |
 
 !!! checkpoint "Checkpoint"
     - [ ] I recorded Sprint 13 Planned vs Completed for both teams (62/44 and 26/26)
     - [ ] My pivot shows Mobile Banking at 12 of 65 points Closed and 11 in Resolved
     - [ ] I can say why comparing the two teams' velocity is meaningless
 
+!!! takeaway "Takeaway"
+    Story Points are each team's private currency, so judge a team by Completed ÷ Planned and its trend, never by its points against another team's.
+
 ## Part 3 — What's outstanding: the quality trend
 
-Unfinished stories are only half of what's outstanding. The other half is the bug backlog, and it's the half that quietly eats next sprint's capacity.
+Unfinished stories are only half of what's outstanding. The other half is the bug backlog, and it quietly eats next sprint's capacity.
 
 1. Build `12 Open Digital bugs (chart)`:
 
@@ -204,12 +222,12 @@ Unfinished stories are only half of what's outstanding. The other half is the bu
 
 **You should see 46 open bugs today:** **42** in Mobile Banking and **4** in Digital Accounts. Mobile's 42 break down as Priority 1: **4**, Priority 2: **14**, Priority 3: **18**, Priority 4: **6**. Three are Severity **1 - Critical**.
 
-That's a snapshot. The question a manager actually needs answered is *which way is it heading?*
+That's a snapshot. The question a manager needs answered is *which way is it heading?*
 
 !!! predict "Make a call"
-    Before you open the dashboard, write down two guesses. Mobile Banking has 42 open bugs today. **How many do you think it had at the start of Sprint 9, five sprints ago?** And will Digital Accounts' widget tell the same story or a different one? Check both against the two widgets.
+    Mobile Banking has 42 open bugs today. **How many do you think it had at the start of Sprint 9, five sprints ago?** And will Digital Accounts' trend tell the same story or a different one? Write down both guesses, then check them on the dashboard.
 
-3. Open **Overview › Dashboards** › `HarborPoint Program Overview` and scroll to the bottom. The program office has pinned two **Burndown** widgets there, one per Digital team, counting **open bugs week by week since the start of Sprint 9**. The blue bars are bugs still open at the end of each week. The orange **Total Scope** line is every bug ever filed in that window.
+Now open **Overview › Dashboards** › `HarborPoint Program Overview` and scroll to the bottom. The program office has pinned two **Burndown** widgets there, one per Digital team, counting **open bugs week by week since the start of Sprint 9**. The blue bars are bugs still open at the end of each week. The orange **Total Scope** line is every bug filed in that window.
 
 <figure class="hp-shot" data-shot="lab04-bug-trend" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › Burndown widget · Mobile Banking · Bugs · weekly since Sprint 9</span></div>
@@ -219,20 +237,25 @@ That's a snapshot. The question a manager actually needs answered is *which way 
 <figcaption markdown>Open Mobile Banking bugs, week by week: **9 at the start of Sprint 9, 42 today.** The orange Total Scope line keeps pulling away from the bars, so bugs are being filed faster than they're fixed.</figcaption>
 </figure>
 
-**You should see** Mobile Banking's bars climb from **9** open bugs at the start of Sprint 9 to **42** today, steepening in Sprint 13. The orange line pulls away from the bars all the way: bugs are being filed faster than they're fixed. Digital Accounts' widget stays low and flat, ending at **4**.
+**You should see** Mobile Banking's bars climb from **9** to **42**, steepening in Sprint 13. Digital Accounts' widget stays low and flat, ending at **4**.
 
 !!! info "Why not a trend chart on your query?"
-    The **Charts** tab offers trend types too (**Stacked area**, **Area**, **Line**, with a **Rolling period** of up to a year). They replay the work-tracking store's own change log, which is fine in a project that grew naturally. HarborPoint's five sprints of history were loaded in one go, so a query trend chart here starts on the day the environment was built. **Burndown**, **Burnup**, **Velocity**, **CFD** and the cycle-time widgets read **Analytics** instead, which uses each change's business date. That's also why they're the better choice for trends in your own projects: they can span many sprints, filter by team, and show total scope alongside the open count.
+    The **Charts** tab offers trend types too (**Stacked area**, **Area**, **Line**, with a **Rolling period** of up to a year). They replay the work-tracking store's change log, and HarborPoint's history was loaded in one go, so here they start on the day the environment was built.
 
-**So what?** A team that opens 13 bugs and closes 2 in a sprint, as Mobile did in Sprint 13, isn't finishing work. It's moving it from the sprint backlog to the bug backlog. A fivefold rise in open bugs over five sprints is what "velocity going up" looked like from the other side.
+    **Burndown**, **Burnup**, **Velocity**, **CFD** and the cycle-time widgets read **Analytics**, which uses each change's business date. Prefer them for trends in your own projects too: they span many sprints, filter by team, and show total scope alongside the open count.
+
+**So what?** In Sprint 13, Mobile opened 13 bugs and closed 2. A team doing that isn't finishing work. It's moving it from the sprint backlog to the bug backlog. A nearly fivefold rise in open bugs over five sprints is what "velocity going up" looks like from the other side.
 
 !!! checkpoint "Checkpoint"
     - [ ] I read the bug trend on the Program Overview: Mobile Banking climbing from 9 to 42, Digital Accounts flat at about 4
     - [ ] I know how many of Mobile's open bugs are Priority 1 (4) and Critical (3)
 
+!!! takeaway "Takeaway"
+    Open bugs are unfinished work: a team that files them faster than it fixes them is moving work off the sprint, not finishing it.
+
 ## Part 4 — Make the chart lie
 
-You'll learn to spot a misleading chart faster by building one.
+Before you write up the evidence, see how easily true data tells a false story. You'll spot a misleading chart faster once you've built one.
 
 !!! challenge "Challenge: Make the chart lie, then make it honest"
     Pick **two** of these headlines and build a chart (or set up a report view) that genuinely seems to support each one, using only real HarborPoint data:
@@ -247,29 +270,32 @@ You'll learn to spot a misleading chart faster by building one.
     Lies in charts come from three places: **what you count** (items or size), **when you look** (the time window), and **what you compare** (things on different scales).
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    1. **Save as** `10` with the area narrowed to Mobile Banking, and look at the pie.
+    1. Open `10 Digital Features (chart)`, **Save as** a copy with the area narrowed to Mobile Banking, and look at its pie.
     2. On the Program Overview's Mobile bug widget, cover everything except the last two bars.
-    3. Open both teams' Velocity reports next to each other and read only the Sprint 13 Completed bars.
+    3. Open both teams' Velocity reports side by side and read only the Sprint 13 Completed bars.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    | Headline | The lie | Why it misleads | Show this instead |
+    | Headline | The lie | The trap | Show this instead |
     |---|---|---|---|
-    | "Mobile is on track" | Pie of Mobile's 5 Features by State: 1 Closed, 3 Active, 1 New. "Four out of five done or under way" | **Counting** treats every Feature as equal. It hides that `Mobile Check Deposit 2.0` is due *this sprint* with 36 points left, and that `Real-Time Fraud Alerts` is at 4% | A Feature table with progress by points, remaining points and Target Date |
-    | "Bugs are under control" | The last week of the bug trend: 42, then 42. "Bugs have stabilized" | The **window** hides the scale. Over five sprints it's 9 → 42 | The full window since Sprint 9, plus opened versus closed per sprint (Sprint 13: 13 opened, 2 closed) |
-    | "Mobile delivers 70% more" | Sprint 13 Completed: 44 vs 26 | Points are **team-specific**. Mobile's stories also grew larger while its count stayed flat | Each team against its own plan: 71% vs 100%, with the five-sprint trend |
+    | "Mobile is on track" | Pie of Mobile's 5 Features by State: 1 Closed, 3 Active, 1 New. "Four out of five done or under way" | **Counting items, not size.** Every Feature gets an equal slice. That hides that `Mobile Check Deposit 2.0` is due *this sprint* with 36 points left, and that `Real-Time Fraud Alerts` is at 4% | A Feature table with progress by points, remaining points and Target Date |
+    | "Bugs are under control" | The last week of the bug trend: 42, then 42. "Bugs have stabilized" | **A cherry-picked window.** Over five sprints it's 9 → 42 | The full window since Sprint 9, plus opened versus closed per sprint (Sprint 13: 13 opened, 2 closed) |
+    | "Mobile delivers 70% more" | Sprint 13 Completed: 44 vs 26 | **Mismatched scales.** Points are team-specific (the Part 2 reef), and Mobile's own points are inflating while its story count stays flat | Each team against its own plan: 71% vs 100%, with the five-sprint trend |
 
-    The tell is the same every time. The chart answers a narrower question than its headline claims.
+    **So what?** The tell is the same every time: the chart answers a narrower question than its headline claims. Before you forward any chart, including your own, ask what its headline would need to be true.
 
 !!! reef "Reef ahead: “61% done”"
-    `Mobile Check Deposit 2.0` is 61% complete by Story Points. That sounds like solid progress. But it's due at the **end of this sprint**, and 61% of 93 points leaves **36 points** with a few working days to go, more than a full sprint of Mobile's work on that Feature. A percentage without a deadline is a mood, not a status. Always report **what's left against the time left**.
+    The fourth trap hides in Feature tables: **a percentage without a deadline.** `Mobile Check Deposit 2.0` is 61% complete by Story Points. That sounds like solid progress. But it's due at the **end of this sprint**, and 61% of 93 points leaves **36 points** with a few working days to go. That's more than a full sprint of Mobile's work on this Feature. A percentage without a deadline is a mood, not a status. Always report **what's left against the time left**.
 
 !!! checkpoint "Checkpoint"
     - [ ] I built at least two misleading views from real data
     - [ ] For each one, I wrote what makes it misleading and what I'd show instead
 
+!!! takeaway "Takeaway"
+    A true chart lies through what it counts, when it looks and what it compares, so check all three before you trust one, and report what's left against the time left.
+
 ## Part 5 — Write the one-page report
 
-Now turn the evidence into something Dana can read in two minutes.
+Now answer what Dana actually asked: what's true, what it means, and what you need from her. She has two minutes.
 
 !!! challenge "Challenge: Digital Banking Status, Sprint 13 and Sprint 14 to date"
     Write one page with:
@@ -304,7 +330,7 @@ Now turn the evidence into something Dana can read in two minutes.
     Start with the bottom line, then the evidence. For progress, open the **Digital Portfolio** Features backlog with a **Progress by Story Points** rollup column (from Lab 1). Your Lab 3 queries already hold the risks.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    Rate each **team and Feature** separately before you rate the whole. Digital Accounts is green on every measure you looked at. Mobile Banking is not. An honest overall rating can't average those away. Your strongest risks are the ones with two independent pieces of evidence each.
+    Rate each **team and Feature** separately before you rate the whole. Digital Accounts is green on every measure you looked at. Mobile Banking is not. An honest overall rating can't average those away. Your strongest risks each have two independent pieces of evidence.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     A model one-pager. Yours can differ on judgment calls, but not on facts.
@@ -339,6 +365,8 @@ Now turn the evidence into something Dana can read in two minutes.
 
     *Evidence: `Shared Queries/Training/P##` queries 03, 04, 06, 10 to 12, and the Mobile Banking and Digital Accounts Velocity reports.*
 
+    **So what?** If Dana reads only the first line and the asks, she should know what's wrong and what she has to decide.
+
 <figure class="hp-shot" data-shot="lab04-status-report" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Wiki › Training › P## › Sprint Delivery Report</span></div>
 
@@ -348,7 +376,7 @@ Now turn the evidence into something Dana can read in two minutes.
 </figure>
 
 !!! reef "Reef ahead: the watermelon"
-    The easiest status to write is **Green**: most Features are Active, one closed last sprint, and one team is flawless. It's green on the outside and red on the inside. The second easiest is **Amber with no explanation**, which averages a red team and a green team into a color that describes neither. A RAG rating is only as good as the sentence next to it. If you can't name the evidence for your color, you've chosen a mood.
+    The easiest status to write is **Green**: most Features are Active, one closed last sprint, and one team is flawless. That's a watermelon: green on the outside, red on the inside. The second easiest is **Amber with no explanation**, which averages a red team and a green team into a color that describes neither. If you can't name the evidence for your color, you've chosen a mood.
 
 !!! insight "Lighthouse insight: a status report is a request for decisions"
     Dana doesn't need to know that charts exist. She needs to know what's true, what it means, and what you need from her. Every risk on the page should end in an ask, and every ask should name a person. A report that informs but asks for nothing hands all the risk back to you.
@@ -357,6 +385,9 @@ Now turn the evidence into something Dana can read in two minutes.
     - [ ] `/Training/P##/Sprint Delivery Report` exists, with an overall RAG and a one-sentence justification
     - [ ] My Feature table includes remaining work and Target sprint, not only a percentage
     - [ ] Each of my risks has evidence, and each ask names a person
+
+!!! takeaway "Takeaway"
+    A status color is only as good as the sentence next to it, and every risk on the page should end in an ask with a name on it.
 
 ## Knowledge check
 
@@ -400,7 +431,7 @@ A percentage without a deadline hides the question leadership cares about: will 
 - [ ] Whichever one Mobile Banking prefers
 
 <div class="quiz-why" markdown>
-The time window is a choice, and it decides the story. A fivefold rise in open bugs, with 3 Critical, is a delivery risk to everything Mobile touches. The window should match the question: "is quality getting worse?" needs the long view.
+The time window is a choice, and it decides the story. The window should match the question: "is quality getting worse?" needs the long view. A nearly fivefold rise in open bugs, with 3 Critical, is a delivery risk to everything Mobile touches, so it belongs in front of leadership.
 </div>
 
 </div>
@@ -412,27 +443,23 @@ The time window is a choice, and it decides the story. A fivefold rise in open b
     2. Which chart in your organization's regular reporting compares things that aren't on the same scale?
     3. What would happen if you reported Amber, with a clear sentence, when your organization expects Green?
     4. Who chooses the time windows on your team's charts? Was it a decision or a default?
-    5. Which of today's charts would you actually put in front of your own leadership, and which would you leave out?
 
 !!! bonus "Extra knots"
     1. **The PI view.** **Save as** `11` as `11b Digital stories in PI 4 (chart)` and change the iteration clause to `Iteration Path` `Under` `HarborPoint\PI 4`. Build a **Stacked bar** of `Node Name` by `State`. Which team is the only one with a Resolved segment, and what does that tell you about where its work is waiting?
-
-
-
     2. **Who's carrying the load?** Build a flat query of Mobile Banking's **Active** user stories and bugs, then a **Bar** chart by `Assigned To`. How many active items does Ethan Brooks hold, and what does that suggest about context switching on Check Deposit?
-    3. **Preview Lab 5.** On any of today's charts, open its menu and select **Add to dashboard**. It's only offered because the query is shared. Which of today's five charts would earn a place on an executive dashboard, and which wouldn't?
+    3. **Preview Lab 5.** On any of today's charts, open its menu and select **Add to dashboard**. It's only offered because the query is shared. Which of today's charts would earn a place on an executive dashboard, and which wouldn't?
 
 !!! harbor "Back in your own harbor"
     Three moves for your first week back, about 30 minutes in your own Azure DevOps:
 
-    1. **Chart one question from a shared query.** Take a saved flat query in a shared folder, open **Charts** › **New chart**, and name the chart for the one question it answers. Charts on **My Queries** are visible only to you, so save the query to a shared folder if anyone else needs to see it.
+    1. **Chart one question from a shared query.** Take a saved flat query in a shared folder (charts on **My Queries** are visible only to you), open **Charts** › **New chart**, and name the chart for the one question it answers.
     2. **Put each team next to its own plan.** Open each team's **Velocity** report, set **Velocity by** to **Sum of Story Points**, and note Completed ÷ Planned for recent sprints. Report that ratio and its trend, never one team's points against another's.
     3. **Give your last status color a sentence.** Open the last status report you sent and write one line of evidence next to its RAG color. For each Feature on it, replace the percentage with what's left against the time left: remaining points and Target Date.
 
 ## Key takeaways
 
-- Charts work only on **saved, shared, flat** queries. Plan your evidence around what Azure DevOps can draw.
-- Every chart answers one question. Decide your scope (area or Epic) and say it on the page.
-- Compare each team with **its own plan**, never with another team's points.
-- Counts, windows and percentages can all lie. Report **what's left against the time left**, over a window that fits the question.
-- A status color is only as good as its evidence, and a status report is a request for decisions.
+- **Scope before charts.** "Who builds it" (area) and "what it serves" (Epic) give different counts, and both are right. Pick one, say it on the page, and name each chart for the one question it answers.
+- **Each team against its own plan.** Story Points are a team's private currency. Report Completed ÷ Planned and its trend, never one team's points against another's.
+- **Bugs are unfinished work.** A team that files bugs faster than it fixes them is moving work off the sprint, not finishing it.
+- **True data, false story.** Charts lie through what they count, when they look and what they compare. Report what's left against the time left, over a window that fits the question.
+- **A color needs a sentence.** A RAG status is only as good as its evidence, and a status report is a request for decisions, each with a person's name on it.

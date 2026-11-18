@@ -16,9 +16,9 @@ next_hook: "Ruth has been asked the same five questions every Monday for thirty 
 !!! briefing "Mission briefing"
     You took a week of leave you'd booked before you accepted the job. You're back, it's Sprint 14, week 2, and your inbox has 140 unread messages. One of them matters.
 
-    Dana, the EVP, asked Priya why mobile banking has fallen behind, and Priya needs an answer by ten. Not a story-by-story tour, and not an opinion: a Feature-level picture she can repeat to Dana. Every claim needs evidence you can show when Marcus asks "how do you know?"
+    Dana, the EVP, asked Priya why mobile banking has fallen behind. Priya needs an answer by ten: a Feature-level picture she can repeat to Dana, not a story-by-story tour. Every claim needs evidence you can open when Marcus asks "how do you know?"
 
-    **Done looks like:** five bottom-line-up-front bullets on a wiki page, each backed by a view or a query you can open in ten seconds.
+    **Done looks like:** five bottom-line-up-front (BLUF) bullets on a wiki page, each backed by a view or query you can open in ten seconds. Parts 1–4 answer Priya's four questions in order: what each team is on, what shipped, what's unfinished, what needs us. Part 5 turns the answers into the bullets.
 
 <div class="msg" data-initials="PR" data-tone="teal" markdown>
 <p class="msg-head"><strong>Priya Raman</strong><span>Director, Digital Banking · 7:41 AM</span></p>
@@ -28,23 +28,23 @@ Welcome back. Bad timing, sorry. Dana stopped me last night: "Why has mobile ban
 
 ## What you'll walk away with
 
-- Read any team's current workload at **Feature** level in minutes, across six teams
-- Separate what a team *completed* from what it *planned*, and know where carry-over hides
-- Judge whether a Feature will make its date from the evidence, not from its progress bar
-- Run a fast **signals hunt** for the things that need a manager: unowned urgency, overload, stale work, scope creep, unaligned effort and quality debt
-- Write a status readout that leads with the bottom line and asks for something specific
+- See every team's current work at **Feature** level in minutes, including the work that serves no Feature
+- Judge a sprint against the team's own plan, and find the carry-over the chart doesn't label
+- Decide whether a Feature will make its date from where its remaining work sits, not from its progress bar
+- Run a six-signal hunt for what needs a manager, and test every velocity number against Feature progress
+- Turn that evidence into a five-bullet readout that leads with the bottom line and ends with a named ask
 
 ## Before you set sail
 
 - **You'll read:** `Mobile Banking` and `Digital Accounts` closely, and the other four teams briefly. All read-only.
 - **You'll create:** scratch queries in **My Queries** (your private folder; the shared `P##` folder comes in Lab 3), and one wiki page, `/Training/P##/Monday Readout`.
-- **Shared queries are shared.** You'll add columns to a query in `Shared Queries/HarborPoint Reports`. Don't **Save** it; use **Save as** into **My Queries** if you want to keep your version.
-- **Team context matters today.** Every sprint view, Velocity report and `@CurrentIteration` clause belongs to one team. When a step names a team, check the team selector before you read a number.
-- **Time-box:** 50 minutes. Protect the last 10 for the readout. Five honest bullets beat twelve thorough ones delivered at 10:20.
+- **Shared queries are shared.** You'll add columns to queries in `Shared Queries/HarborPoint Reports`. Don't **Save** them. Use **Save as** into **My Queries** if you want to keep your version.
+- **Team context matters today.** Sprint views, Velocity and `@CurrentIteration` belong to one team. When a step names a team, check the team selector before you read a number.
+- **Time-box:** 50 minutes. Protect the last 10 for the readout. Five honest bullets at 10:00 beat twelve thorough ones at 10:20.
 
 ## Part 1 — Who's on what, right now
 
-Start wide. Before you explain one team, know what all six are doing.
+**The question:** what is each team working on, at Feature level? Answer it for all six before you explain one, so you know whether Mobile's problem is Mobile's alone.
 
 !!! speedrun "Speed run · 8 minutes"
     For each of the six delivery teams, list the **Features** its Sprint 14 stories serve, and how much of the sprint serves **no Feature at all**. Ignore bugs for now. One line per team.
@@ -52,10 +52,10 @@ Start wide. Before you explain one team, know what all six are doing.
 <div class="timer" data-minutes="8" data-label="Speed run"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    You don't need six sprint boards. There's a shared query that already lists the current sprint for every team. It just doesn't show the one column you need.
+    You don't need six sprint boards. A shared query already lists the current sprint for every team. It just doesn't show the one column you need.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    Open **Boards › Queries** › **All** › `Shared Queries/HarborPoint Reports/Program - Current sprint (all teams)`. **Column options**: add `Parent` and `Node Name` (`Story Points` is already there). The query returns user stories only, already sorted by **Area Path**, so each team's rows sit together and the parent titles are easy to scan. Don't **Save** over the shared query.
+    Open **Boards › Queries** › **All** › `Shared Queries/HarborPoint Reports/Program - Current sprint (all teams)`. **Column options**: add `Parent` and `Node Name` (`Story Points` is already there). The query returns user stories only, sorted by **Area Path**, so each team's rows sit together and the parent titles are easy to scan. Don't **Save** over the shared query.
 
     The slower route: **Boards › Sprints**, pick each team, `Sprint 14`, **Backlog** tab, **Column Options** › add `Parent`.
 
@@ -69,11 +69,13 @@ Start wide. Before you explain one team, know what all six are doing.
     | Branch Experience | In-Branch Digital Onboarding (3, 10) · Lobby Check-In & Queue Management (3, 7) | 1 story, 2 points |
     | Member Support | Omnichannel Service Requests (5, 13) · Secure Messaging & Chat (3, 10) | none |
 
-    Three things a manager should notice in that table, even before looking at Mobile:
+    Outside Mobile, three things deserve a question:
 
     - **Security has four Features in flight** with six people, and 21 of its 36 points go to the two Compliance Features.
     - **Real-Time Fraud Alerts appears twice**, in Mobile Banking and Core Platform, but has no Security story this sprint, though Security owns part of it.
     - **Member Support has `Service request status tracker` twice**: one Active, one New and unassigned. That's a duplicate, and it double-counts scope. (Day 3 has a whole lab on Member Support's data.)
+
+    **So what?** Mobile's 12 unaligned points, the most of any team, are your first clue to Dana's question. Keep Fraud Alerts in mind for Part 3. The other two can wait until after 10:00.
 
 <figure class="hp-shot" data-shot="lab02-current-sprint-by-feature" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › HarborPoint Reports › Program - Current sprint (all teams)</span></div>
@@ -87,11 +89,14 @@ Start wide. Before you explain one team, know what all six are doing.
     - [ ] I have one line per team: its Sprint 14 Features and its unaligned work
     - [ ] I noted at least one thing outside Mobile Banking worth a question
 
+!!! takeaway "Takeaway"
+    Start wide: see every team's work by Feature, including the work that serves no Feature, before you explain any one team.
+
 ## Part 2 — What shipped in Sprint 13
 
-"Fallen behind" is a claim about the past. Check the last sprint first.
+**The question:** what did each team deliver last sprint, against what it planned? "Fallen behind" is a claim about the past, so check Sprint 13 before you look at Sprint 14.
 
-**What was delivered at Feature level.** Open `Shared Queries/HarborPoint Reports/Portfolio - Features by target date`. Add `Closed Date` and `Node Name` as columns (don't save). One Feature closed in Sprint 13: **`Paperless Statements & Documents`**, Digital Accounts. Mobile Banking closed no Features last sprint. Its last delivery was `Mobile App Redesign`, at the end of Sprint 11.
+**Features delivered.** Open `Shared Queries/HarborPoint Reports/Portfolio - Features by target date` and add `Closed Date` and `Node Name` columns (don't save). One Feature closed in Sprint 13: **`Paperless Statements & Documents`**, Digital Accounts. Mobile Banking closed none. Its last delivered Feature was `Mobile App Redesign`, at the end of Sprint 11.
 
 **Planned against completed.** Now compare each team with its own plan.
 
@@ -114,10 +119,12 @@ Start wide. Before you explain one team, know what all six are doing.
 | Mobile Banking | 62 | 44 | **71%** |
 | Digital Accounts | 26 | 26 | 100% |
 
-Mobile's gap of 18 points is six stories that weren't finished and moved into Sprint 14 on its first day. Notice what the chart does with them: Sprint 13 has no **Incomplete** segment at all, because those stories no longer *belong* to Sprint 13. Carry-over shows up only as the gap between the light **Planned** bar and the green **Completed** bar, so read the gap, not just the green. To see one carried story's journey, open `Auto-capture check edges with on-device ML` and select **History**: its **Iteration Path** moved from Sprint 12 to Sprint 13, then from Sprint 13 to Sprint 14. It has been "nearly done" for three sprints.
+Mobile's 18-point gap is six stories that didn't finish and moved into Sprint 14 on its first day. The chart doesn't show them as **Incomplete** in Sprint 13, because they no longer belong to Sprint 13. Carry-over appears only as the gap between the light **Planned** bar and the green **Completed** bar. Read the gap, not the green.
+
+To see one carried story's journey, open `Auto-capture check edges with on-device ML` and select **History**. Its **Iteration Path** moved from Sprint 12 to Sprint 13, then from Sprint 13 to Sprint 14. It has been "nearly done" for three sprints.
 
 !!! note "Why not just query for carry-over?"
-    The query editor's **Was Ever** operator doesn't support **Iteration Path**, so "stories that were ever in Sprint 12" isn't a query you can build there. Use the **Velocity** report for the size of the gap and each item's **History** for the evidence.
+    The query editor's **Was Ever** operator doesn't support **Iteration Path**. Use the **Velocity** report for the size of the gap and each item's **History** for the evidence.
 
 !!! challenge "Challenge: Two teams, one verdict"
     Mobile Banking completed 44 points last sprint. Digital Accounts completed 26. A colleague says, "So Mobile delivered 70% more than Digital Accounts." Write a one-line reply, and say which team had the better sprint.
@@ -126,16 +133,23 @@ Mobile's gap of 18 points is six stories that weren't finished and moved into Sp
     What is a Story Point a unit *of*? Is a Mobile point the same size as a Digital Accounts point?
 
 ??? pilot "Harbor Pilot · Hint 2: Bring it into port (full solution)"
-    *"Points are each team's own yardstick, so you can't add or compare them across teams. Compare each team with its own plan: Digital Accounts delivered 100% of what it committed and closed a Feature, Mobile delivered 71% and carried six stories."* Digital Accounts had the better sprint. Each team's velocity is useful for forecasting **that team's** work and nothing else. Day 2 has a full lab on why the "faster" team here is the one that needs help.
+    *"Points are each team's own yardstick, so you can't compare them across teams. Against its own plan, Digital Accounts delivered 100% and closed a Feature; Mobile delivered 71% and carried six stories."* Digital Accounts had the better sprint.
+
+    **So what?** A team's velocity is for forecasting that team's work, and nothing else. Never rank teams by points. Day 2 has a full lab, [Lab 6](../day-2/lab-06-which-team-needs-help.md), on why the "faster" team here is the one that needs help.
 
 !!! checkpoint "Checkpoint"
     - [ ] I can name the Feature that closed in Sprint 13, and Mobile's last delivered Feature
     - [ ] I have Mobile's and Digital Accounts' Sprint 13 planned and completed points
     - [ ] I found the story that has carried over twice, and the History that proves it
 
+!!! takeaway "Takeaway"
+    Judge a sprint against the team's own plan, and read the gap between Planned and Completed: that's where carry-over hides.
+
+Mobile was busy last sprint: 44 points. Part 3 asks what that busyness bought.
+
 ## Part 3 — What's unfinished, Feature by Feature
 
-Now the question Dana actually asked. Look at Mobile Banking through its Features first.
+**The question:** which Features are unfinished, and will they make their dates? This is the question Dana actually asked. Look at Mobile Banking through its Features first, and drop to stories only for evidence.
 
 1. **Boards › Backlogs**, team `Mobile Banking`, level **Features**. **View options**: **In Progress Items** On, **Completed Child Items** On.
 2. **Column Options**: make sure you have `Target Date`, `Tags`, **Progress by Story Points** and **Sum of Story Points**. Column choices are per backlog, so the ones you set on `Digital Portfolio` in Lab 1 may not be here.
@@ -149,7 +163,7 @@ Now the question Dana actually asked. Look at Mobile Banking through its Feature
 | `Real-Time Fraud Alerts` | end of Sprint 16 | **4%** | 49 points | `PI4-Committed` `cross-team` |
 | `Member-to-Member Transfers` | end of Sprint 20 | *(no children)* | | `PI5-Candidate` |
 
-`Mobile Check Deposit 2.0` is due in a few working days. Your first job is to decide whether it will make it.
+`Mobile Check Deposit 2.0` is due in a few working days, so start there.
 
 !!! challenge "Challenge: Will Mobile Check Deposit 2.0 make it?"
     Give a yes or no, and three pieces of evidence that would convince Marcus. Stay at Feature level, and drop to stories only for the evidence.
@@ -164,10 +178,10 @@ Now the question Dana actually asked. Look at Mobile Banking through its Feature
     **No.** The evidence:
 
     1. **The team's own plan already says no.** Of the 36 points left, **14 are scheduled for Sprint 15**, after the Feature's Target Date: `Endorsement guidance animation`, `Deposit hold explanations` and `Multiple checks in one deposit session`. Nobody moved the date.
-    2. **What's left in Sprint 14 isn't moving.** The other 22 points sit in six stories: two Active but untouched for over a week (both with Ethan Brooks), one Active, one Resolved and waiting for the only tester, and two not started, one of them unassigned. Mobile has closed 12 points across *all* its work so far this sprint.
+    2. **What's left in Sprint 14 isn't moving.** The other 22 points sit in six stories: two Active but untouched for over a week (both Ethan Brooks's), one Active, one Resolved and waiting for the only tester, and two not started, one unassigned. Mobile has closed 12 points across *all* its work this sprint.
     3. **There's a Priority 1 bug on it that nobody owns.** `Check deposit fails for images larger than 5 MB`, filed this sprint, is a child of this Feature. A Feature with an open P1 escaped defect isn't done, whatever the bar says.
 
-    **So what?** The miss isn't news to the team, but it is news to the portfolio: the Feature is still due this sprint, still `PI4-Committed`, and the only warning is a tag. The manager's move is to re-forecast **now**, and offer Priya a choice: move the Target Date, or ship what's done and split the three Sprint 15 stories into a follow-up.
+    **So what?** The miss isn't news to the team, but it is news to the portfolio: the Feature is still due this sprint, still `PI4-Committed`, and the only warning is a tag. Re-forecast **now**, and offer Priya a choice: move the Target Date, or ship what's done and split the Sprint 15 stories into a follow-up.
 
 <figure class="hp-shot" data-shot="lab02-f2-children-iterations" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Mobile Banking › Features › Mobile Check Deposit 2.0 expanded</span></div>
@@ -177,10 +191,15 @@ Now the question Dana actually asked. Look at Mobile Banking through its Feature
 <figcaption markdown>The team's own plan already says *no*: **14 points sit in Sprint 15**, after the Feature's due date. In Sprint 14, one story has no owner, two haven't started, and the Priority 1 bug at the bottom has no one assigned.</figcaption>
 </figure>
 
-**The other two in-flight Features, in one line each:**
+**`Biometric Login` is roughly on track.** 24 points are left with two and a half sprints to go, and 8 of them are already built, waiting in **Resolved** for testing. One story belongs to Security, in Sprint 15. The risk is the test queue, not the build.
 
-- **`Biometric Login`** is roughly on track. 24 points are left with two and a half sprints to go, but 8 of them are finished and waiting in **Resolved** for testing. One story belongs to Security, in Sprint 15. The risk here is the test queue, not the build.
-- **`Real-Time Fraud Alerts`** is the one that should worry you most, because it serves priority number one. Open **Boards › Delivery Plans** › `HarborPoint Program Plan` and find its card in the Mobile Banking row. The chain-link badge on the card is **red**. Select it: its predecessor, `Fraud Scoring Engine v2` (Security), now ends in Sprint 17, a sprint after Fraud Alerts is due. In Mobile's sprint, `Member confirms or denies a flagged transaction` is tagged `blocked`, and its Discussion says *"UI done; can't integrate until Security's risk-score API exists."* Note it and move on. You'll take this apart on Day 2 in [Lab 7](../day-2/lab-07-cross-team-bottleneck.md).
+**`Real-Time Fraud Alerts` should worry you most.** It serves priority number one, and it's 4% done. To see why:
+
+1. Open **Boards › Delivery Plans** › `HarborPoint Program Plan` and find its card in the Mobile Banking row. The chain-link badge on the card is **red**.
+2. Select the badge. Its predecessor, `Fraud Scoring Engine v2` (Security), now ends in Sprint 17, a sprint after Fraud Alerts is due.
+3. In Mobile's sprint, `Member confirms or denies a flagged transaction` is tagged `blocked`. Its Discussion says *"UI done; can't integrate until Security's risk-score API exists."*
+
+Note it and move on. You'll take this apart on Day 2 in [Lab 7](../day-2/lab-07-cross-team-bottleneck.md).
 
 <figure class="hp-shot" data-shot="lab02-program-plan-f9-badge" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Delivery Plans › HarborPoint Program Plan › Dependencies (red badge on Real-Time Fraud Alerts)</span></div>
@@ -197,15 +216,20 @@ Now the question Dana actually asked. Look at Mobile Banking through its Feature
     - [ ] I saw the red dependency badge on `Real-Time Fraud Alerts` and know which Feature it waits on
     - [ ] I know how many finished stories are waiting for testing, and who they're waiting for
 
+!!! takeaway "Takeaway"
+    A progress bar is not a forecast. Whether a Feature makes its date depends on where its remaining work is scheduled, what state it's in and who has it.
+
+You've already tripped over an unowned P1, stale stories and a test queue. Part 4 hunts for that kind of thing on purpose.
+
 ## Part 4 — What needs you
 
-A manager's Monday is about the handful of items that won't fix themselves. Six signals usually find them.
+**The question:** what won't fix itself unless a manager steps in? A Monday is about that handful of items, and six signals usually find them.
 
 !!! predict "Make a call"
-    Before you build a single query, write down one number. Mobile closed 44 points in Sprint 13, close to its best ever. **What share of those 44 points do you think moved a Feature?** Keep your guess. Signal E will check it.
+    Before you build a single query, write down one number. Mobile closed 44 points in Sprint 13, close to its best ever. **What share of those 44 points do you think moved a Feature?** Keep your guess. Signal E checks it.
 
 !!! challenge "Challenge: The signals hunt"
-    For **Mobile Banking**, find the evidence for each signal below. Build each one as a quick query and save it in **My Queries** as `Scratch - <signal>`, so you can open it in front of Priya. Record the count, the item or person that matters, and the Feature it puts at risk. The stories are evidence; the Feature is the message.
+    For **Mobile Banking**, find the evidence for each signal below. Build each one as a quick query and save it in **My Queries** as `Scratch - <signal>`, so you can open it in front of Priya. For each signal, write one line: the count, the item or person that matters, and the Feature it puts at risk. Most of those lines go straight into your readout.
 
     | # | Signal | What you're looking for |
     |:-:|:--|:--|
@@ -216,10 +240,9 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
     | E | Effort that serves no Feature | Last sprint's completed stories with no parent |
     | F | Quality debt | Open bugs in total, and how bad |
 
-??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Every query starts with the same clause: **Area Path** **Under** `HarborPoint\Digital\Mobile Banking`. After that, each signal is one or two more clauses on **Priority**, **Assigned To**, **State**, **Changed Date**, **Iteration Path**, **Tags** or **Parent**.
+??? pilot "Harbor Pilot · Hint 1: Set the heading"
+    Every query starts with **Area Path** **Under** `HarborPoint\Digital\Mobile Banking`. Then each signal needs one or two more clauses:
 
-??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - **A:** Bug, Priority 1, not Closed; add the `Assigned To` column and look for blanks.
     - **B:** State Active; **Column options** › **Sorting** by `Assigned To`.
     - **C:** State Active and **Changed Date** `<` `@Today - 7`. Run it once as is, then add **Work Item Type** **In** `User Story,Bug`, and compare.
@@ -227,7 +250,7 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
     - **E:** User Story, State Closed, **Iteration Path** `=` `@CurrentIteration - 1` with team `Mobile Banking`; add `Parent` and `Story Points` columns.
     - **F:** Bug, not Closed; add `Severity` and `State` columns.
 
-??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
+??? pilot "Harbor Pilot · Hint 2: Bring it into port (full solution)"
     **Boards › Queries** › **New** › **New query**. **Query type**: **Flat list of work items** for all six. Each starts with:
 
     | And/Or | Field | Operator | Value |
@@ -252,7 +275,7 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
     |:--|:--|:--|:--|
     | And | State | = | `Active` |
 
-    **Column options** › **Sorting**: `Assigned To`. **Ethan Brooks** has **6** Active items, against 4 for the next busiest people: four stories (`Auto-capture check edges with on-device ML`, `Retry flow for failed check uploads`, `Endorsement detection on check back`, `Holiday promo banner (marketing request)`) and two bugs (`App crashes when switching accounts during deposit`, `Deposit confirmation email shows wrong amount`). They split between `Mobile Check Deposit 2.0` and work with no Feature at all.
+    **Column options** › **Sorting**: `Assigned To`. **Ethan Brooks** has **6** Active items, against 4 for the next busiest people: four stories, including both stale ones and the `unplanned` promo banner, and two bugs, including the Critical deposit crash. They split between `Mobile Check Deposit 2.0` and work with no Feature at all.
 
     **C · Work nobody has touched**
 
@@ -264,7 +287,7 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
 
     **2** stories, both on `Mobile Check Deposit 2.0`, both Ethan's: `Auto-capture check edges with on-device ML` (last changed 9 days ago) and `Retry flow for failed check uploads` (10 days).
 
-    Without the last clause you also get **two Features**, `Mobile Check Deposit 2.0` and `Biometric Login`, untouched for one and three weeks. That's not neglect: nobody edits a Feature while its stories move. It does mean a Feature's **Changed Date** and **State** say nothing about activity. Feature health lives in its children and its rollup, never in the Feature's own fields.
+    Without the last clause you also get **two Features**, `Mobile Check Deposit 2.0` and `Biometric Login`, untouched for one and three weeks. That's not neglect: nobody edits a Feature while its stories move. A Feature's own **Changed Date** says nothing about activity; its health lives in its children and its rollup.
 
     **D · Work that arrived after planning**
 
@@ -292,7 +315,9 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
     | And | Work Item Type | = | `Bug` |
     | And | State | <> | `Closed` |
 
-    Columns: `Severity`, `Priority`, `State`. **42** open bugs: 3 Critical, 11 High. **30** of the 42 are still New. Five sprints ago, at the start of Sprint 9, the number was 9. You'll chart that climb in [Lab 4](lab-04-sprint-delivery-report.md).
+    Columns: `Severity`, `Priority`, `State`. **42** open bugs: 3 Critical, 11 High. **30** of the 42 are still New. Five sprints ago, at the end of Sprint 9, the number was 9. You'll chart that climb in [Lab 4](lab-04-sprint-delivery-report.md).
+
+    **So what?** Five of the six signals land on `Mobile Check Deposit 2.0` or on work that serves no Feature. That isn't six problems. It's one, and it's your bottom line: Mobile's effort is leaking away from the Feature due this week.
 
 <figure class="hp-shot" data-shot="lab02-stale-query" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › My Queries › Scratch - stale work</span></div>
@@ -303,31 +328,46 @@ A manager's Monday is about the handful of items that won't fix themselves. Six 
 </figure>
 
 !!! reef "Reef ahead: “Their velocity is near its highest ever, so they're fine”"
-    Did your first instinct in Part 2 say Mobile is doing well? Sprint 13 velocity was 44 points, second only to Sprint 12, and up from 33 in Sprint 9. Now set signal E beside it. Of those 44 points, **23 went to work that serves no Feature**, and only 11 moved `Mobile Check Deposit 2.0`, the Feature due this sprint. Velocity measures **estimates completed**, not value delivered, and it can't tell you *what* the points were spent on. A busy team that's behind on everything that matters looks exactly like a high-velocity team, until you ask which Features moved.
+    Sprint 13 velocity was 44 points, second only to Sprint 12 and up from 33 in Sprint 9. Now set signal E beside it: **23 of those 44 points served no Feature**, and only 11 moved `Mobile Check Deposit 2.0`, the Feature due this sprint. Check your call: 21 of 44 points, under half, moved any Feature at all.
 
 !!! insight "Lighthouse insight: Feature progress is the truth serum for velocity"
-    When a team reports high velocity and its Features aren't moving, believe the Features. Feature progress only rises when work someone *decided* was valuable gets finished. For every velocity number you're shown, ask "and which Features did those points move?"
+    Velocity measures **estimates completed**, not value delivered. It can't tell you what the points were spent on. Feature progress rises only when work someone *decided* was valuable gets finished. A busy team that's behind on everything that matters looks exactly like a high-velocity team, until you ask which Features moved.
 
 !!! checkpoint "Checkpoint"
     - [ ] I have six scratch queries in **My Queries**, one per signal, each with a count
-    - [ ] For each signal I can name the item or person that matters most
+    - [ ] For each signal I can name the item or person that matters most, and the Feature at risk
     - [ ] I can explain why high velocity and a Feature that's behind aren't a contradiction
+
+!!! takeaway "Takeaway"
+    Six quick signals find what won't fix itself, and each should end at a Feature. When velocity looks fine and the Features aren't moving, believe the Features.
+
+Your six lines already tell one story. Part 5 writes it down.
 
 ## Part 5 — The 10:00 readout
 
-It's 9:40. Priya asked for five bullets.
+**The question:** what do you tell Priya? It's 9:40, and you already have every number you need. The readout isn't new work. It's Parts 1–4, cut to five bullets.
 
 !!! challenge "Challenge: The 10:00 readout"
-    Write **exactly five** bullets for Priya, bottom line first.
+    Write **exactly five** bullets for Priya, bottom line first. Each one draws on work you've already done:
 
-    - **Bullet 1** is the answer to Dana's question in one sentence.
-    - **Bullets 2–4** cover what shipped, what's unfinished and what needs attention, at Feature level, each with one number.
-    - **Bullet 5** is what you need: a specific ask, with a named person.
+    | Bullet | What it says | Your evidence |
+    |:--|:--|:--|
+    | 1 · Bottom line | Dana's answer, in one sentence | The pattern across Parts 1–4 |
+    | 2 · Shipped | Sprint 13, against plan | Part 2: Velocity report, `Portfolio - Features by target date` |
+    | 3 · Unfinished | Which Features will miss, and why | Part 3: Mobile Banking Features backlog, `HarborPoint Program Plan` |
+    | 4 · Needs us | What won't fix itself | Part 4: your six scratch queries |
+    | 5 · Asks | Something specific, from a named person | Whoever can fix bullets 3 and 4 |
 
-    No story titles unless one is the evidence. No adjectives you can't back with a view.
+    Every claim in bullets 2–4 carries a number. No story titles unless one is the evidence. No adjectives you can't back with a view.
 
 !!! deliverable "Deliverable"
-    A wiki page `/Training/P##/Monday Readout` with your five bullets, and under them, links to your evidence: the Velocity report, the Mobile Banking Features backlog, and your six scratch queries. Open **Overview › Wiki** and find `Training`. Your `P##` page doesn't exist yet: hover over `Training`, open its **⋯** menu, choose **Add sub-page**, name it `P##` and save. Then add `Monday Readout` beneath it the same way. The `/Templates/Executive Briefing (BLUF)` page shows the shape if you want a starting point.
+    A wiki page `/Training/P##/Monday Readout` with your five bullets and, under them, links to the evidence in the table's last column.
+
+    1. Open **Overview › Wiki** and find `Training`.
+    2. Your `P##` page doesn't exist yet. Hover over `Training`, open its **⋯** menu, choose **Add sub-page**, name it `P##` and save.
+    3. Add `Monday Readout` beneath `P##` the same way.
+
+    For a starting shape, see `/Templates/Executive Briefing (BLUF)`.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
     BLUF means the reader can stop after any bullet and still have the most important thing. Ask yourself what Priya will repeat to Dana in one breath. That's bullet 1.
@@ -344,11 +384,16 @@ It's 9:40. Priya asked for five bullets.
     > 4. **Needs us:** a Priority 1 escaped defect on Check Deposit with **no owner**; Ethan Brooks holding **6** active items, two of them stale for over a week; **11 points** of finished work waiting on our one tester; **5 points** of unplanned work added mid-sprint; **42** open bugs, up from 9 five sprints ago.
     > 5. **Asks:** (a) Diego and Hannah assign the P1 today, freeze mid-sprint intake, and swarm on testing; (b) your agreement to move Check Deposit's date or split it, before Dana hears it from someone else; (c) 30 minutes with Aisha Karimi this week on the Fraud Alerts dependency.
 
+    **So what?** Notice what the model never says: "the team needs to work harder." Every ask changes the system (focus, intake, testing, a dependency), not the effort, because the evidence says effort isn't the problem.
+
 !!! checkpoint "Checkpoint"
     - [ ] `/Training/P##/Monday Readout` exists with exactly five bullets
     - [ ] Bullet 1 answers Dana's question in one sentence
     - [ ] Every number on the page links to, or names, the view or query it came from
     - [ ] Bullet 5 asks a named person for something specific
+
+!!! takeaway "Takeaway"
+    A readout is a request for decisions: lead with the bottom line, keep every number a click from its evidence, and end with a named ask.
 
 ## Knowledge check
 
@@ -400,7 +445,7 @@ Changed Date moves on **every** save, including a "still working on it" comment.
 ## Captain's log
 
 !!! log "Captain's log"
-    1. When you come back from a week away, how long does it take you to know what your teams are working on at Feature level? What would get that under 15 minutes?
+    1. Back from a week away, how long does it take you to know what your teams are working on at Feature level? What would get that under 15 minutes?
     2. Which of the six signals would light up first in your own teams right now? Which one would you not have thought to look for?
     3. What share of your teams' effort last sprint served no Feature or Epic? How would you find out?
     4. When a Feature is going to miss, who usually knows first, and how long until the portfolio knows?
@@ -408,8 +453,8 @@ Changed Date moves on **every** save, including a "still working on it" comment.
 
 !!! bonus "Extra knots"
     1. **The last PI scorecard.** Open `Portfolio - Features by target date`, add `Closed Date` and `Iteration Path`, and list what PI 3 delivered. Two Features closed. A third finished all of its work in PI 3 but was never closed. Which one, and how would it distort a "PI 3 delivered" slide?
-    2. **The quiet team.** Run all six signals for `Digital Accounts` in five minutes: copy each scratch query with **Save as** and change the area to `HarborPoint\Digital\Digital Accounts`, and the team on `@CurrentIteration` too. What does a healthy team's signals hunt look like? (Hint: 4 open bugs.)
-    3. **Keep watch.** **Follow** `Mobile Check Deposit 2.0` and `Real-Time Fraud Alerts` from their work item forms, so changes to state, dates and discussion reach your inbox. What's the risk of following too many items?
+    2. **The quiet team.** Run all six signals for `Digital Accounts` in five minutes: **Save as** each scratch query, then change the area to `HarborPoint\Digital\Digital Accounts` and the team on `@CurrentIteration`. What does a healthy team's hunt look like? (Hint: 4 open bugs.)
+    3. **Keep watch.** **Follow** `Mobile Check Deposit 2.0` and `Real-Time Fraud Alerts` from their work item forms, so changes reach your inbox. What's the risk of following too many items?
 
 !!! harbor "Back in your own harbor"
     Three moves for your first week back, about 30 minutes in your own Azure DevOps:
@@ -420,8 +465,8 @@ Changed Date moves on **every** save, including a "still working on it" comment.
 
 ## Key takeaways
 
-- Start wide: six teams' work at Feature level in one query, then zoom in on the team in question.
-- Compare each team with **its own plan**. Velocity never compares across teams, and the gap between Planned and Completed is where carry-over hides.
-- A Feature's progress bar doesn't tell you whether it will make its date. Where the remaining work is planned, what state it's in and who owns it does.
-- Six signals find most of what needs a manager: unowned urgency, overload, stale work, mid-sprint scope, unaligned effort and quality debt. Each one is a two-clause query.
-- **Feature progress is the truth serum for velocity.** Report what moved the portfolio, lead with the bottom line, and end with a specific ask.
+- **Start wide, at Feature level.** See every team's work by Feature, including the work that serves no Feature, before you explain any one team.
+- **Compare a team with its own plan.** Velocity never compares across teams, and the gap between Planned and Completed is where carry-over hides.
+- **A progress bar is not a forecast.** Whether a Feature makes its date depends on where its remaining work is scheduled, what state it's in and who has it.
+- **Feature progress is the truth serum for velocity.** Six quick signals find what won't fix itself; when velocity looks fine and the Features aren't moving, believe the Features.
+- **Lead with the bottom line, end with an ask.** Five bullets, every number a click from its evidence, and a named person asked for something specific.

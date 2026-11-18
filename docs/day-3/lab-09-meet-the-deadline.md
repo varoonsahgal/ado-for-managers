@@ -16,9 +16,16 @@ next_hook: "Hector and Priya are both quoting research, and both are right about
 !!! briefing "Mission briefing"
     Ruth Ellison retires at the end of PI 4, and as of this morning you're acting Program Manager for Project Lighthouse. Your first request from Dana Whitfield is a big one.
 
-    **Instant Card Controls** lets members lock and unlock a card, set travel notices and control how a card can be used, from the app or online banking. It's Digital Accounts' Feature, it carries the `leadership-ask` tag because Dana asked for it directly, and it hasn't started: 20 stories, 105 estimated points, four stories with no estimate at all. It's planned for Sprints 15 to 17. Dana wants all of it by the end of Sprint 17, before holiday travel.
+    **Instant Card Controls** lets members lock and unlock a card, set travel notices and control how a card can be used, from the app or online banking. It's Digital Accounts' Feature, tagged `leadership-ask` because Dana asked for it directly. It hasn't started: 20 stories, 105 estimated points, and four stories with no estimate at all. It's planned for Sprints 15 to 17. Dana wants all of it by the end of Sprint 17, before holiday travel.
 
-    You won't answer with a gut feeling or a single date. You'll read the team's history, work out its real capacity, run the forecast tool honestly in your sandbox, find out where the tool flatters you, and give Dana a range and a better option. **Done looks like:** a capacity worksheet, three forecast runs, a reshaped MVP that fits, and a bottom-line-up-front note to Dana that she can act on.
+    You won't answer with a gut feeling or a single date. You'll build one calculation, a line per Part. **Done looks like:**
+
+    1. **History:** the team's real rate per sprint (Part 1)
+    2. **Capacity:** how much of that rate Card Controls actually gets, in a worksheet (Part 2)
+    3. **Forecast:** which stories that buys by Sprint 17, in three forecast runs (Part 3)
+    4. **Reshape:** an order that makes the MVP fit (Part 4)
+    5. **Check:** where the tool would have flattered you (Part 5)
+    6. **Answer:** a bottom-line-up-front note to Dana, with a range and options (Part 6)
 
 <div class="msg" data-initials="DW" data-tone="navy" markdown>
 <p class="msg-head"><strong>Dana Whitfield</strong><span>EVP, Member Experience · 8:06 AM</span></p>
@@ -28,17 +35,21 @@ Welcome to the hot seat. First question for you as program manager: members need
 
 ## What you'll walk away with
 
-- Turn velocity history and team availability into a capacity number you can defend, line by line
-- Run the backlog forecast tool and know exactly what it assumes, what it ignores and where it flatters you
-- Reshape scope so a deadline becomes achievable, and prove it with the same tool
-- Answer "can we?" with a range, its conditions and the options, not a promise
-- Resist the most common resourcing fix and explain why it fails
+- Read a team's velocity history and judge whether it's steady enough to forecast from
+- Turn velocity and team availability into a capacity number you can defend, line by line
+- Run the backlog forecast tool with an honest velocity, and read what its lines mean
+- Reshape scope by changing the order, and spot the unestimated work hiding inside "it fits"
+- Name the forecast tool's blind spots before they mislead an executive
+- Answer "can we?" with a range, its conditions and options, and turn down the "fastest team" fix with evidence
 
 ## Before you set sail
 
-- **Access:** Basic. Forecasting and the Capacity tab are not available with Stakeholder access.
-- **Your sandbox:** team `P## Sandbox`, area `HarborPoint\Training\P##`. It holds `P## - Instant Card Controls (planning copy)`: the same 20 stories as the real Feature, with the same points and order, and no sprints. **You may reorder, tag and re-estimate these freely.** Every sandbox title starts with `P## - `; this lab drops the prefix when it names a story. Your sandbox team's current sprint is Sprint 14, and the forecast tool always starts at the sprint after the current one, so your forecast starts at Sprint 15: exactly the sprints Dana is asking about. The same area also holds the Lab 11 practice set (`P## - Omnichannel Service Requests (sandbox)`): leave it alone today, and keep it below the planning copy.
-- **Read only:** `Digital Accounts` (backlog, Velocity, Capacity) and `Mobile Banking`. View options and report settings are per user, so changing those is fine. Dragging, tagging or re-estimating on a real team's backlog is not.
+- **Access:** Basic. Forecasting and the Capacity tab aren't available with Stakeholder access.
+- **Your sandbox:** team `P## Sandbox`, area `HarborPoint\Training\P##`. It holds `P## - Instant Card Controls (planning copy)`: the same 20 stories as the real Feature, with the same points and order, and no sprints. **You may reorder, tag and re-estimate these freely.**
+    - Every sandbox title starts with `P## - `. This lab drops the prefix when it names a story.
+    - The sandbox team's current sprint is Sprint 14, so its forecasts start at Sprint 15: exactly the sprints Dana is asking about.
+    - The same area also holds the Lab 11 practice set, `P## - Omnichannel Service Requests (sandbox)`. Leave it alone today, and keep it below the planning copy.
+- **Read only:** `Digital Accounts` (backlog, Velocity, Capacity) and `Mobile Banking`. View options and report settings are per user, so changing those is fine.
 - **You'll create:** the wiki page `/Training/P##/Card Controls Outlook`.
 - **Time-box:** 55 minutes. Part 1 is 6, Part 2 is 10, Part 3 is 12, Part 4 is 8, Part 5 is 7 and Part 6 is 12. Protect Part 6.
 
@@ -47,7 +58,7 @@ Welcome to the hot seat. First question for you as program manager: members need
 
 ## Part 1 — Read the history
 
-Every forecast starts from what the team has actually done. Digital Accounts is the steadiest team in the program. Find out how steady.
+**How much does Digital Accounts really finish in a sprint, and how steady is it?** Every forecast starts from what the team has actually done, not what it plans.
 
 !!! speedrun "Speed run · 6 minutes"
     For team `Digital Accounts`, find:
@@ -69,28 +80,34 @@ Every forecast starts from what the team has actually done. Digital Accounts is 
     | Planned | 26 | 26 | 25 | 27 | 26 |
     | Completed | **24** | **26** | **25** | **24** | **26** |
 
-    **Mean 25.0, range 24 to 26.** The plan holds: the weakest sprint was Sprint 12, with 24 of 27. The **Average Velocity** card at the top right agrees (25): it leaves out Sprint 14, which is still in progress.
+    **Mean 25.0, range 24 to 26.** The plan holds: the weakest sprint was Sprint 12, with 24 of 27. The **Average Velocity** card at the top right agrees (25); it leaves out Sprint 14, which is still in progress. Dana's request is 105 points in three sprints: **35 points per sprint**, for Card Controls alone.
 
-    Dana's request: 105 points in three sprints is **35 points per sprint**, for Card Controls alone. Digital Accounts has never completed more than 26 in a sprint, for *all* its work.
+    **So what?** Digital Accounts has never completed more than 26 in a sprint, for *all* its work. The rate is trustworthy, and it's nowhere near 35.
 
 <figure class="hp-shot" data-shot="lab09-da-velocity" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Digital Accounts › Analytics › Velocity (Sum of Story Points)</span></div>
 
-![Five completed sprints: 24, 26, 25, 24, 26. The Average Velocity card reads 25 and leaves the in-progress Sprint 14 out. 25 means 25: that's what makes this team forecastable.](../assets/shots/lab09-da-velocity.png){ loading=lazy }
+![Five completed sprints: 24, 26, 25, 24, 26. The Average Velocity card reads 25 and leaves the in-progress Sprint 14 out.](../assets/shots/lab09-da-velocity.png){ loading=lazy }
 
-<figcaption markdown>Five completed sprints: **24, 26, 25, 24, 26**. The Average Velocity card reads **25** and leaves the in-progress Sprint 14 out. 25 means 25: that's what makes this team forecastable.</figcaption>
+<figcaption markdown>Five completed sprints: **24, 26, 25, 24, 26**. The Average Velocity card reads **25** and leaves the in-progress Sprint 14 out.</figcaption>
 </figure>
 
 !!! insight "Lighthouse insight: a stable team is a forecastable team"
-    Digital Accounts' greatest asset isn't speed. It's that 25 means 25. A team whose output varies by two points a sprint can be forecast. A team whose velocity climbs while its finished-story count stays flat, as Mobile Banking's does, can't. Predictability is a feature you protect, not a weakness you push against.
+    Digital Accounts' greatest asset isn't speed. It's that 25 means 25: output that varies by two points a sprint can be forecast. A team whose velocity climbs while its finished-story count stays flat, as Mobile Banking's does, can't. Predictability is a feature you protect, not a weakness you push against.
 
 !!! checkpoint "Checkpoint"
     - [ ] I have Digital Accounts' completed points for Sprints 9 to 13 and their mean, 25
     - [ ] I know Dana's request needs 35 points per sprint for Card Controls alone
 
+!!! takeaway "Takeaway"
+    Start every forecast from what the team has actually finished: a steady 25 is worth more than a hopeful 35.
+
 ## Part 2 — Work out the real capacity
 
-A velocity of 25 describes a normal sprint with five engineers present. Sprints 15 to 17 aren't normal: there's a holiday, a vacation, an absence and a new hire. Velocity tells you the rate. Capacity tells you how much of the rate you'll actually get.
+**How much of that 25 will Card Controls actually get in Sprints 15 to 17?** A velocity of 25 describes a normal sprint with all five engineers present. These sprints have a holiday, a vacation, an absence and a new hire. Velocity is the rate. **Capacity** is what you'll actually get, once you subtract who's out and what else is promised.
+
+!!! predict "Make a call"
+    Before you open anything, write down two guesses. **How many points will Card Controls actually get** across Sprints 15 to 17? And is Dana's request **late, tight or out of reach**? Keep your number. The worksheet will tell you how close you were.
 
 1. Open **Overview › Wiki** › `Teams` › `Digital Accounts Availability`. Note who is out, when, and who joins.
 2. Open **Boards › Sprints**, team `Digital Accounts`, `Sprint 16`, **Capacity** tab. Look at the **Team days off** row (2 days) and the header (**8 work days**, not 10). There are no rows for individuals: nobody has entered personal time off, which is why the wiki page matters. You're viewing; don't **Save** anything.
@@ -100,16 +117,13 @@ A velocity of 25 describes a normal sprint with five engineers present. Sprints 
 
 ![Team days off: 2 days, and the header already says 8 work days, not 10. The two-day holiday is recorded, but no one's personal time off is: that's what the wiki page is for.](../assets/shots/lab09-capacity-s16.png){ loading=lazy }
 
-<figcaption markdown>**Team days off: 2 days**, and the header already says **8 work days**, not 10. The two-day holiday is recorded, but no one's personal time off is: that's what the wiki page is for.</figcaption>
+<figcaption markdown>**Team days off: 2 days**, and the header already says **8 work days**, not 10. The holiday is recorded, but no one's personal time off is: that's what the wiki page is for.</figcaption>
 </figure>
 
-**So what does a points-per-day rate look like?** Digital Accounts has **five delivery engineers**: Olivia Grant, Noah Kim, Fatima Hassan, Lucas Meyer and Chloe Martin. Five engineers for ten working days is **50 engineer-days**, and the team completes about **25 points** in a normal sprint. That's **0.5 points per engineer-day**. It's crude, and it's good enough.
-
-!!! predict "Make a call"
-    Before you fill in a single row, write down two guesses. **How many points will Card Controls actually get** across Sprints 15 to 17? And is Dana's request **late, tight or out of reach**? Keep your number. The worksheet will tell you how close you were.
+**The conversion rate.** Digital Accounts has **five delivery engineers**: Olivia Grant, Noah Kim, Fatima Hassan, Lucas Meyer and Chloe Martin. An **engineer-day** is one engineer working one day. Five engineers for ten working days is **50 engineer-days**, and a normal sprint completes about **25 points**. So each engineer-day is worth about **0.5 points**. It's crude, and it's good enough.
 
 !!! challenge "Challenge: The capacity worksheet"
-    Complete the worksheet, then work out how many points Card Controls can realistically get.
+    **Step 1. Gross capacity.** Complete the worksheet: subtract each sprint's lost days, then multiply by 0.5.
 
     | Sprint | Normal engineer-days | Days lost (who, why) | Available engineer-days | Points at 0.5 per day |
     |---|:-:|---|:-:|:-:|
@@ -118,14 +132,16 @@ A velocity of 25 describes a normal sprint with five engineers present. Sprints 
     | Sprint 17 | 50 | | | |
     | **Total** | | | | |
 
-    Then subtract what Digital Accounts must deliver before Card Controls gets a point:
+    **Step 2. Card Controls' share.** Subtract what Digital Accounts must deliver before Card Controls gets a point:
 
     - **Online Account Opening** is a committed PI 4 Feature, due at the end of Sprint 16
     - **Spending Insights** is committed too, due at the end of Sprint 15
     - Bugs and support work don't stop because a Feature is important
 
+    **Step 3. The judgment.** Compare what's left with Dana's 105 points. Is her request late, tight or out of reach?
+
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    The holiday is a team day off, so it costs every engineer a day. A vacation costs one person. A new hire adds capacity, but not at full speed. For the committed Features, open each one from the **Features** backlog and look at its remaining children after Sprint 14.
+    A holiday is a team day off, so it costs every engineer a day. A vacation costs one person. A new hire adds capacity, but not at full speed. For the committed Features, open each one from the **Features** backlog and look at its remaining children after Sprint 14.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - Sprint 15: Noah Kim is out 3 days.
@@ -134,33 +150,41 @@ A velocity of 25 describes a normal sprint with five engineers present. Sprints 
     - After Sprint 14, Online Account Opening has **9 points** left and Spending Insights has **5**. Reserve about **10%** of capacity for bugs and support.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
+    **Step 1. Gross capacity: about 65 points.**
+
     | Sprint | Normal | Days lost | Available | Points |
     |---|:-:|---|:-:|:-:|
     | Sprint 15 | 50 | Noah Kim, 3 days | 47 | **23.5** |
-    | Sprint 16 | 50 | Holiday, 2 days × 5 people = 10; Olivia Grant, 5 days | 35 | **17.5** |
+    | Sprint 16 | 50 | Holiday, 2 days × 5 people = 10; Olivia Grant, 5 days. Wes Turner adds about 0 | 35 | **17.5** |
     | Sprint 17 | 50 | Holiday, 1 day × 5 people = 5 | 45 | 22.5, plus Wes Turner about 2 = **24.5** |
-    | **Total** | | | | **≈ 65** |
+    | **Total** | | | | **65.5, call it 65** |
+
+    **Step 2. Card Controls' share: about 45 points, or 15 a sprint.**
 
     | Capacity | Points |
     |---|:-:|
-    | Sprints 15 to 17, if 100% went to Card Controls | ≈ 65 |
-    | minus Online Account Opening (remaining after Sprint 14) | − 9 |
-    | minus Spending Insights (remaining after Sprint 14) | − 5 |
-    | minus about 10% for bugs and support | ≈ − 6.5 |
+    | Sprints 15 to 17, all of Digital Accounts' work | 65.5 |
+    | minus Online Account Opening (left after Sprint 14) | − 9 |
+    | minus Spending Insights (left after Sprint 14) | − 5 |
+    | minus about 10% of 65 for bugs and support | − 6.5 |
     | **Left for Instant Card Controls** | **≈ 45** |
+    | **Per sprint, over three sprints** | **≈ 15** |
 
-    **Full scope is 105 estimated points plus four unestimated stories. That isn't late. It's impossible.** Even if Digital Accounts dropped everything else, 65 is not 105. The question is no longer "can we?" It's "what can members have by Sprint 17?"
+    **Step 3. So what? Full scope isn't late. It's impossible.** It's 105 estimated points plus four unestimated stories. Even if Digital Accounts dropped everything else, 65 is not 105. The question is no longer "can we?" It's "what can members have by Sprint 17?"
 
 !!! reef "Reef ahead: \"just use the average\""
-    "The team does 25 a sprint, so three sprints is 75" is the most common forecast in any organization, and here it's wrong by 30 points. It assumes everyone is present, all the capacity goes to one Feature, and nothing else is committed. Velocity is a rate for a normal sprint. Before you multiply it, ask who is out, what else is promised and what always turns up unplanned.
+    "The team does 25 a sprint, so three sprints is 75" is the most common forecast in any organization, and here it's wrong by 30 points. It assumes everyone is present, all the capacity goes to one Feature, and nothing else is committed.
 
 !!! checkpoint "Checkpoint"
-    - [ ] My worksheet gives about 23.5, 17.5 and 24.5 points for Sprints 15, 16 and 17, about 65 in total
-    - [ ] After the committed work and a bug allowance, about 45 points are left for Card Controls
+    - [ ] My worksheet gives 23.5, 17.5 and 24.5 points for Sprints 15, 16 and 17, about 65 in total
+    - [ ] After the committed work and a bug allowance, about 45 points are left for Card Controls: 15 a sprint
+
+!!! takeaway "Takeaway"
+    Velocity is the rate for a normal sprint; capacity is what's left after absences, committed work and support, and it's the only number worth forecasting with.
 
 ## Part 3 — Forecast in the sandbox
 
-Now let the tool do the arithmetic, story by story. The forecast tool walks the backlog in order, adds up Story Points, and draws a line at each sprint where the velocity you entered runs out. It's quick, visual and very literal.
+**At an honest velocity, which Card Controls stories land by Sprint 17?** Part 2 gave you a budget in points; the forecast tool turns it into stories. It walks the backlog in order, adds up Story Points, and draws a line wherever the velocity you entered runs out for a sprint. It's quick, visual and very literal.
 
 **Set it up** in your sandbox:
 
@@ -168,10 +192,10 @@ Now let the tool do the arithmetic, story by story. The forecast tool walks the 
 2. **View options**: **Parents** Off, **In Progress Items** Off, **Completed Child Items** Off, **Side Pane** Off. Then turn **Forecasting** On.
 3. Clear any filter (**Clear and dismiss filtering**). A filter disables Forecasting.
 4. Add `Story Points` and `Tags` with **Column Options**, if they aren't showing.
-5. Check the top of the list. The first item should be `P## - Card lock and unlock service and API`, and the 20 planning-copy stories should follow in order. (Every sandbox title starts with your `P##`; this lab leaves it off.) If other sandbox items sit above it, right-click them › **Move to position...** and send them below the planning copy. Anything with Story Points above it would eat into your forecast.
+5. Check the top of the list. The first item should be `P## - Card lock and unlock service and API`, with the 20 planning-copy stories following in order. If other sandbox items sit above it, right-click them › **Move to position...** and send them below the planning copy. Anything with Story Points above it would eat into your forecast.
 6. In the banner **Forecasting based on velocity of**, select the number and type `25`.
 
-A **Forecast** column appears on the left, with a blue line under the last story that fits in each sprint, labelled with that sprint's name. Your first line is **Sprint 15**. The tool always starts at the sprint *after* the team's current sprint: your sandbox's current sprint is 14, so its forecast begins at 15.
+A **Forecast** column appears on the left, with a blue line, labelled with the sprint's name, under the last story that fits in each sprint. The first line is **Sprint 15**: the tool always starts at the sprint *after* the team's current one.
 
 !!! challenge "Challenge: Three velocities, three answers"
     Run the forecast at **25**, **20** and **15**. For each, record the last story above the **Sprint 17** line, the points that land by Sprint 17, and whether the whole MVP lands. The eight MVP stories are #1, #2, #3, #4, #6, #7, #8 and #9 in the original order (44 points). #5 is a "should".
@@ -185,21 +209,34 @@ A **Forecast** column appears on the left, with a blue line under the last story
     Then decide: which of the three would you show Dana, and why?
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Three sprints at a given velocity is a cumulative budget: unused velocity carries into the next sprint. So the Sprint 17 line falls under the last story whose running total fits within three times the velocity.
+    Three sprints at a given velocity is one cumulative budget: unused velocity carries into the next sprint. So the Sprint 17 line falls under the last story whose running total fits within three times the velocity.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    The budgets are 75, 60 and 45 points. Keep a running total down the Story Points column, and compare each with Part 2: which of the three velocities matches the points Card Controls will actually get?
+    The budgets are 75, 60 and 45 points. Keep a running total down the Story Points column. Then compare each velocity with Part 2: which one matches the points Card Controls will actually get?
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    | Velocity | Last story above the Sprint 17 line | Points by Sprint 17 | Whole MVP lands? |
-    |:-:|---|:-:|:-:|
-    | 25 | #12 `International transaction toggle` | **73** (#1 to #12) | Yes, plus three more |
-    | 20 | #10 `Spending limits by category` | **55** (#1 to #10) | Yes |
-    | 15 | #8 `Accessibility review for card controls` | **42** (#1 to #8) | **No.** MVP story #9, `Fraud team view of member-locked cards`, misses |
+    The running total, in the original order:
 
-    **Show Dana 15.** It's the only one that matches Part 2: about 45 points over three sprints is an average of 15 a sprint for Card Controls. Twenty-five is the team's *whole* velocity, as if Online Account Opening, Spending Insights, bugs, the holiday and two absences didn't exist. Twenty is a hopeful middle with no evidence behind it.
+    | # | Story | Points | Running total | Sprint 17 line here at velocity… |
+    |:-:|---|:-:|:-:|---|
+    | 1 | Card lock and unlock service and API | 8 | 8 | |
+    | 2 | Lock and unlock a card in online banking and the app | 5 | 13 | |
+    | 3 | Real-time card status sync with card processor | 8 | 21 | |
+    | 4 | Travel notice self-service | 5 | 26 | |
+    | 5 | Travel notice auto-expiry and reminders *(should)* | 3 | 29 | |
+    | 6 | Card control change notifications | 5 | 34 | |
+    | 7 | Card controls audit trail | 5 | 39 | |
+    | 8 | Accessibility review for card controls | 3 | **42** | **15** (budget 45) |
+    | 9 | Fraud team view of member-locked cards | 5 | 47 | |
+    | 10 | Spending limits by category | 8 | **55** | **20** (budget 60) |
+    | 11 | Merchant category blocking | 13 | 68 | |
+    | 12 | International transaction toggle | 5 | **73** | **25** (budget 75) |
 
-    Look at the Sprint 16 line, too. The tool uses one velocity for every sprint, but Sprint 16 has only 17.5 points of real capacity. The per-sprint lines are wrong even when the Sprint 17 total is right.
+    At **25** (73 points) and **20** (55 points), the whole MVP lands. At **15** (42 points) it doesn't: MVP story #9, `Fraud team view of member-locked cards`, misses.
+
+    **So what? Show Dana 15.** It's the only velocity that matches Part 2: about 45 points over three sprints. Twenty-five is the team's *whole* velocity, as if Online Account Opening, Spending Insights, bugs, the holiday and two absences didn't exist. Twenty is a hopeful middle with no evidence behind it.
+
+    Look at the Sprint 16 line, too. The tool uses one velocity for every sprint, but Sprint 16 has only 17.5 points for *all* of Digital Accounts' work, and Online Account Opening is due that sprint. The per-sprint lines are wrong even when the Sprint 17 total is right.
 
 <figure class="hp-shot" data-shot="lab09-forecast-15" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › P## Sandbox › Stories · Forecasting at velocity 15</span></div>
@@ -213,9 +250,12 @@ A **Forecast** column appears on the left, with a blue line under the last story
     - [ ] My table shows 73, 55 and 42 points by Sprint 17 at velocities 25, 20 and 15
     - [ ] I can say why 15 is the honest velocity for Card Controls, and why the Sprint 16 line is still optimistic
 
+!!! takeaway "Takeaway"
+    The forecast tool is only as honest as the velocity you type in, so type in the capacity you worked out, not the team's average.
+
 ## Part 4 — Reshape the scope
 
-At an honest velocity, the MVP misses by one story. You could stop there and report a miss. A program manager first asks: is the order right?
+**Can the MVP fit without anyone working harder?** At an honest velocity, the MVP misses by one story. You could stop there and report a miss. A program manager first asks: is the order right?
 
 !!! challenge "Challenge: Make the MVP fit"
     In your sandbox, with Forecasting on at **15**:
@@ -231,38 +271,41 @@ At an honest velocity, the MVP misses by one story. You could stop there and rep
     Multi-select the eight MVP stories (Ctrl- or Cmd-click), right-click › **Edit**, choose the field **Tags (Add)** with the value `MVP`, and select **OK**. (**Tags (Add)** appends; it never wipes existing tags.) Then drag #5, `Travel notice auto-expiry and reminders` (3 points), to just below #9.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    **The MVP fits.** With #5 below the MVP set, the first eight stories are the MVP: 8 + 5 + 8 + 5 + 5 + 5 + 3 + 5 = **44 points**, inside the 45-point budget. The Sprint 17 line now falls under `Fraud team view of member-locked cards`, and `Travel notice auto-expiry and reminders` sits just below it. A "should" story was standing in front of a "must". Ordering is a scope decision.
+    **The MVP fits.** With #5 below the MVP set, the first eight stories are the MVP: 8 + 5 + 8 + 5 + 5 + 5 + 3 + 5 = **44 points**, inside the 45-point budget. The Sprint 17 line now falls under `Fraud team view of member-locked cards`, with `Travel notice auto-expiry and reminders` just below it.
 
-    **The buffer is about one point.** That's effectively none. One sick week, one urgent bug, or one story that turns out bigger than its estimate, and the MVP misses.
+    **The buffer is about one point** (45 − 44). That's effectively none. One sick week, one urgent bug, or one story that turns out bigger than its estimate, and the MVP misses.
 
-    **The trap.** Move #17 to the top and the lines don't move at all. It has no Story Points, so the tool treats it as free. It's still a whole piece of work, and it's not a trivial one: if a member locks a card, what happens to their recurring bills? That may well be an MVP question. The four unestimated stories (#17 to #20) are invisible to every forecast you've run today. Drag #17 back to the bottom before you continue.
+    **The trap.** Move #17 to the top and the lines don't move at all: it has no Story Points, so the tool treats it as free. Drag #17 back to the bottom before you continue.
+
+    **So what?** A "should" was standing in front of a "must", so ordering is a scope decision. And a fit with no buffer and four unsized stories is a fit with conditions.
 
 <figure class="hp-shot" data-shot="lab09-forecast-mvp-reordered" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › P## Sandbox › Stories · Forecasting at 15, MVP tagged, one story moved</span></div>
 
-![No estimate changed. Moving one should story below the MVP pulls the whole MVP above the Sprint 17 line, 44 points in a 45-point budget. Ordering is a scope decision, and a buffer of one point is no buffer at all.](../assets/shots/lab09-forecast-mvp-reordered.png){ loading=lazy }
+![No estimate changed. Moving one should story below the MVP pulls the whole MVP above the Sprint 17 line, 44 points in a 45-point budget.](../assets/shots/lab09-forecast-mvp-reordered.png){ loading=lazy }
 
-<figcaption markdown>No estimate changed. Moving one *should* story below the MVP pulls the whole MVP above the **Sprint 17** line, 44 points in a 45-point budget. Ordering is a scope decision, and a buffer of one point is no buffer at all.</figcaption>
+<figcaption markdown>No estimate changed. Moving one *should* story below the MVP pulls the whole MVP above the **Sprint 17** line: 44 points in a 45-point budget.</figcaption>
 </figure>
 
 !!! reef "Reef ahead: zero points look free"
-    The forecast tool adds up Story Points. A story with none adds nothing, so you can put four unestimated stories at the top of a backlog and the forecast stays exactly the same. "It all fits" often means "we haven't sized the hard parts yet." Before anyone quotes a forecast, ask how many items in its scope have no estimate. Here the answer is four out of twenty.
-
-!!! insight "Lighthouse insight: forecast in ranges"
-    A single date is a promise. A range is information. "Sprint 17" invites Dana to stop thinking. "The MVP by Sprint 17 if three things hold, the rest in PI 5" tells her what you know, what you don't, and what she can influence. The forecast tool gives you one line per velocity. Run it at a pessimistic and a realistic velocity, and the gap between the lines *is* your range.
+    The forecast tool adds up Story Points. A story with none adds nothing, so four unestimated stories can sit at the top of a backlog and the forecast stays exactly the same. "It all fits" often means "we haven't sized the hard parts yet." Here four of twenty stories are unsized, and #17 isn't trivial: if a member locks a card, what happens to their recurring bills? That may well be an MVP question. Before anyone quotes a forecast, ask how many items in its scope have no estimate.
 
 !!! checkpoint "Checkpoint"
     - [ ] Eight stories in my sandbox carry the `MVP` tag
     - [ ] At velocity 15, all eight land above the Sprint 17 line after I moved `Travel notice auto-expiry and reminders` below them
     - [ ] I saw that moving an unestimated story to the top didn't move the lines, and I moved it back
 
+!!! takeaway "Takeaway"
+    Backlog order is a scope decision, and an unestimated story is never as free as the forecast makes it look.
+
 ## Part 5 — Run the naive forecast on the real backlog
 
-Your sandbox was set up for an honest forecast: future sprints only, Card Controls only. Most people run the tool on the real backlog. See what it would have told you.
+**What would the tool have told you if you'd skipped Parts 2 to 4?** Your sandbox forecast was honest: future sprints only, Card Controls only, a worked-out velocity. Most people run the tool on the real backlog at the team's average. See what that gives you.
 
 1. **Boards › Backlogs**, team `Digital Accounts`, **Stories** level.
 2. **View options**: **Parents** Off, **In Progress Items** Off, **Completed Child Items** Off, **Side Pane** Off, **Forecasting** On. These settings are yours alone.
 3. Set the velocity to `25`, the team's average. **Don't drag anything.**
+4. When you've finished the challenge, turn **Forecasting** Off again.
 
 !!! challenge "Challenge: Spot the blind spots"
     Look at the first forecast line and the stories above it. Which sprint does the tool think they land in? What's already in that sprint? Then find where Card Controls starts and how far it gets by Sprint 17. List every reason this forecast is more optimistic than Part 2.
@@ -271,7 +314,7 @@ Your sandbox was set up for an honest forecast: future sprints only, Card Contro
     With **In Progress Items** Off, everything that's Active right now is hidden from the list and from the forecast. And the tool doesn't read the **Iteration Path** at all.
 
 ??? pilot "Harbor Pilot · Hint 2: Bring it into port (full solution)"
-    The first line reads **Sprint 15**. The forecast never shows the current sprint at all: it starts with the next one. Above that first line sit the remaining committed Online Account Opening and Spending Insights stories, all New, **20 points**, including two that are still *planned for Sprint 14*. The tool quietly assumes Sprint 14 finishes on its own and pours what's left into Sprint 15. Card Controls then gets the rest: stories #1 to #10, **55 points** by Sprint 17. That's the whole MVP plus a "should", ten points more than your honest 45.
+    The first line reads **Sprint 15**. Above it sit the remaining committed Online Account Opening and Spending Insights stories, all New, **20 points**, including two still *planned for Sprint 14*. The tool quietly assumes Sprint 14 finishes on its own and pours what's left into Sprint 15. Card Controls gets the rest of the three-sprint budget: 75 − 20 = 55, which is stories #1 to #10, **55 points** by Sprint 17. That's the whole MVP plus a "should".
 
     The blind spots, all from how the tool works:
 
@@ -282,6 +325,8 @@ Your sandbox was set up for an honest forecast: future sprints only, Card Contro
     - **It counts unestimated items as zero.** Unestimated bugs and the four unsized Card Controls stories are free.
     - **It reserves nothing** for bugs and support.
 
+    **So what?** The tool is a calculator, not an oracle. Run naively, it promises Card Controls 55 points, ten more than the honest 45, with the authority of a chart. Absences, committed work, in-progress items and unsized stories are yours to subtract first.
+
 <figure class="hp-shot" data-shot="lab09-real-backlog-forecast" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Digital Accounts › Stories · Forecasting at 25 (In Progress Items off)</span></div>
 
@@ -290,15 +335,25 @@ Your sandbox was set up for an honest forecast: future sprints only, Card Contro
 <figcaption markdown>The naive forecast never shows Sprint 14. Two stories *planned* for Sprint 14 sit in the first bucket, labelled **Sprint 15**, with the rest of the committed work. Card Controls then gets 55 points by the **Sprint 17** line, ten more than the honest 45.</figcaption>
 </figure>
 
-!!! reef "Reef ahead: the forecast tool's blind spots"
-    The forecast tool is a calculator, not an oracle. It does exactly one thing well: "at this velocity, in this order, which stories fit?" Everything else, from absences and committed work to in-progress items and unsized stories, is your job to feed in or subtract. That's why you set up a sandbox that starts at Sprint 15 and used a velocity you'd worked out. Run it naively and it tells an executive what she hoped to hear, with the authority of a chart.
-
 !!! checkpoint "Checkpoint"
     - [ ] I saw the real backlog's forecast start at Sprint 15, with 20 points of committed work (some of it planned for Sprint 14) in the first bucket
     - [ ] I can list at least four reasons the naive forecast is more optimistic than my capacity math
     - [ ] I turned Forecasting off on Digital Accounts' backlog and dragged nothing
 
+!!! takeaway "Takeaway"
+    Know what the forecast tool ignores before you quote it, because a naive run shows a sponsor the answer she hoped for.
+
 ## Part 6 — Answer Dana
+
+**What do you tell Dana?** You now have the whole calculation:
+
+| Part | What you found |
+|---|---|
+| 1. History | Digital Accounts completes a steady **25** points a sprint. Dana's ask needs **35** a sprint for Card Controls alone |
+| 2. Capacity | About **65** points in Sprints 15 to 17 for all work, and about **45** (15 a sprint) left for Card Controls |
+| 3. Forecast | At 15, **42** points land by Sprint 17, and MVP story #9 misses |
+| 4. Reshape | Reordered, the **44**-point MVP fits, with about **1** point of buffer. **Four** stories are unsized |
+| 5. Check | The naive forecast promises **55**, ten too many |
 
 Before you could send anything, a second message arrived.
 
@@ -317,8 +372,10 @@ Thinking about this over lunch. If Digital Accounts can't do all of it, **give i
 ??? pilot "Harbor Pilot · Hint 2: Bring it into port (a model reply)"
     > Mobile's velocity looks highest, but points aren't comparable across teams, and Mobile's climb from 33 points to the mid-40s came with a flat 12 or so stories a sprint. They delivered 71% of their plan last sprint, carry 42 open bugs and already own two of our most at-risk Features, Check Deposit and Fraud Alerts, so moving Card Controls would put three priorities at risk instead of one. I'd rather give members the part of Card Controls they need for holiday travel by Sprint 17 with the team that knows it, and I'll send you that plan this afternoon.
 
+    **So what?** Answer a resourcing idea with evidence and a better option, not just a no.
+
 !!! reef "Reef ahead: \"give it to the team with the highest velocity\""
-    It sounds like a resourcing decision. It's a measurement error. Each team calibrates its own points, so 44 points in Mobile Banking and 26 in Digital Accounts aren't the same amount of work, and Mobile's points have been inflating while its story count stays flat. Worse, the "fast" team is the overloaded one: falling reliability, a growing bug count, one tester. And there's a cost even good teams pay: a team new to a codebase starts slowly and slows the original team while it learns. Adding people to late work tends to make it later. That's Brooks's law, and it applies to borrowed teams as much as to new hires, which is why Wes Turner counts for about 2 points in his second sprint, not the 4.5 a settled engineer would add.
+    It sounds like a resourcing decision. It's a measurement error. Each team calibrates its own points, so 44 in Mobile Banking and 26 in Digital Accounts aren't the same amount of work, and Mobile's points are inflating while its story count stays flat. Worse, the "fast" team is the overloaded one: falling reliability, a growing bug count, one tester. And even a healthy team new to a codebase starts slowly and slows the original team while it learns. Adding people to late work tends to make it later (Brooks's law). That's why Wes Turner counts for about 2 points in Sprint 17, not the 4.5 a settled engineer would add (9 days at 0.5).
 
 Now give Dana the real answer.
 
@@ -326,12 +383,12 @@ Now give Dana the real answer.
     Build a short options table: at least one option each for **scope**, **resources** and **timeline**, plus "say yes and hope" as a baseline. For each: what members get by Sprint 17, the risk, and who decides. Then write your BLUF note.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    You have three dials: what you deliver (scope), who delivers it (resources) and when (timeline). Everything you found today constrains them: about 45 points, a 44-point MVP, a one-point buffer, four unknowns, and two committed Features Digital Accounts can't drop.
+    You have three dials: what you deliver (scope), who delivers it (resources) and when (timeline). The table at the top of this Part constrains all three, and so do the two committed Features Digital Accounts can't drop.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - The MVP covers what members need for travel: locking and unlocking, real-time status, travel notices, notifications, the audit trail, accessibility and the fraud team's view.
     - "MVP minus one" gives you a real buffer: which MVP story could follow a sprint later with the least harm to members?
-    - Online Account Opening is a committed PI 4 objective due in Sprint 16. Taking capacity from it moves a problem, it doesn't solve one.
+    - Online Account Opening is a committed PI 4 objective due in Sprint 16. Taking capacity from it moves a problem; it doesn't solve one.
     - Someone needs to size the four unestimated stories this week. Who owns that?
     - `Card lock and unlock service and API` is also the predecessor that Fraud Alerts' auto-lock story waits on (Lab 7). Putting it first helps two Features.
 
@@ -345,28 +402,34 @@ Now give Dana the real answer.
     | **4. Timeline: all of it, later** | Nothing by Sprint 17 that isn't in the MVP anyway | The remaining 61 points, plus four unsized stories, land in Sprint 20 at the earliest, even if Card Controls gets almost all of Digital Accounts' PI 5 capacity | Dana |
     | **5. Take capacity from Online Account Opening** | A few more Card Controls points | Breaks a committed PI 4 objective due in Sprint 16 | Dana and Priya; recommend against |
 
+    **So what?** Recommend option 1, with option 2 ready the moment the buffer goes.
+
     **A model BLUF note** (`/Training/P##/Card Controls Outlook`):
 
     > **Bottom line.** We can't deliver all of Instant Card Controls by Sprint 17: it's 105 points plus four unsized stories, and Digital Accounts has about 45 points for it in Sprints 15 to 17. We *can* deliver the member-facing MVP, including card lock and unlock and travel notices, by Sprint 17, and I recommend we commit to that.
     >
-    > **Forecast, as a range.** MVP (44 points) by end of Sprint 17: likely, about four chances in five, if Online Account Opening and Spending Insights finish as planned, no new work is added mid-sprint, and the four unsized stories stay out of the MVP. MVP minus the fraud team view: very likely. Full scope: late PI 5, Sprint 20 at the earliest, and that's before the four unsized stories are estimated.
+    > **Forecast, as a range.** MVP (44 points) by end of Sprint 17: achievable but tight, with about one point of buffer, if Online Account Opening and Spending Insights finish as planned, no new work is added mid-sprint, and the four unsized stories stay out of the MVP. MVP minus the fraud team view: very likely. Full scope: late PI 5, Sprint 20 at the earliest, and that's before the four unsized stories are estimated.
     >
-    > **Why not Mobile Banking.** Points aren't comparable across teams, and Mobile is already the most stretched team in the program: 71% of plan delivered, 42 open bugs, and it owns Check Deposit and Fraud Alerts.
+    > **Why not Mobile Banking.** Points aren't comparable across teams, and Mobile is already the program's most stretched team: 71% of plan, 42 open bugs, and Check Deposit and Fraud Alerts.
     >
     > **Decisions needed from you.** (1) Approve the MVP as the Sprint 17 commitment, with the rest in PI 5. (2) Keep Online Account Opening's Sprint 16 date protected. (3) Ask Ben Adeyemi to size the four unestimated stories this week, starting with recurring payments on a locked card, which may belong in the MVP.
     >
     > **What I'm doing next.** Card lock and unlock goes first, because Fraud Alerts' auto-lock story also depends on it. I'll re-run this forecast at the start of each sprint and tell you the moment the buffer is gone.
 
+!!! insight "Lighthouse insight: forecast in ranges"
+    A single date is a promise. A range is information. "Sprint 17" invites Dana to stop thinking. "The MVP by Sprint 17 if three things hold, the rest in PI 5" tells her what you know, what you don't, and what she can influence. The forecast tool gives you one line per velocity. Run it at a pessimistic and a realistic velocity, and the gap between the lines *is* your range.
+
 !!! deliverable "Deliverable"
     A wiki page `/Training/P##/Card Controls Outlook` (a sub-page of your `P##` page under **Overview › Wiki**) with your bottom line, your forecast as a range with its conditions, your options table, the decisions you need from Dana, and your capacity worksheet as an appendix.
-
-
 
 !!! checkpoint "Checkpoint"
     - [ ] My reply to "give it to Mobile" is three sentences and offers a better option
     - [ ] My options table has at least one scope, one resource and one timeline option, plus a baseline
     - [ ] My note opens with the bottom line, gives a range with conditions, and asks Dana for specific decisions
     - [ ] It's saved at `/Training/P##/Card Controls Outlook`
+
+!!! takeaway "Takeaway"
+    Answer "can we?" with a range, its conditions and a better option, and never fix a deadline by handing work to the team that only looks fastest.
 
 ## Knowledge check
 
@@ -410,7 +473,7 @@ The tool sums Story Points, and a blank adds nothing. Four of Card Controls' twe
 - [ ] It would need a new Delivery Plan
 
 <div class="quiz-why" markdown>
-Each team sizes its own points, and Mobile's points have inflated while its story count stayed flat. Its plan reliability is 71%, its bug count has grown fivefold, and it owns two at-risk Features already. Moving work to the busiest team makes the whole program later.
+Each team sizes its own points, and Mobile's points have inflated while its story count stayed flat. Its plan reliability is 71%, its bug count has grown nearly fivefold, and it already owns two at-risk Features. Moving work to the busiest team makes the whole program later.
 </div>
 
 </div>
@@ -427,7 +490,7 @@ Each team sizes its own points, and Mobile's points have inflated while its stor
 !!! bonus "Extra knots"
     1. **Required velocity.** In your sandbox, restore the original order and raise the velocity until every estimated story lands by Sprint 17. You need **35**, and at that velocity all four unestimated stories land too, for free. Compare 35 with Digital Accounts' best-ever sprint for *all* its work.
     2. **Size the unknowns.** Give the four unestimated stories your own placeholder estimates in the sandbox, restore the original order and forecast at velocity 25. How many sprint lines does the full scope need? That's how many sprints of Digital Accounts' *entire* capacity all of Card Controls costs. Does it change your PI 5 range?
-    3. **Protect the predecessor.** In your sandbox at velocity 15, which sprint does `Card lock and unlock service and API` land in? Now check that against your capacity worksheet: how many points does Card Controls really get in Sprint 15, once the committed work comes first? Fraud Alerts' auto-lock story needs the API by Sprint 16. Draft the one-line message you'd send Hannah Cole and Ben Adeyemi so the two dates are agreed, not assumed.
+    3. **Protect the predecessor.** In your sandbox at velocity 15, which sprint does `Card lock and unlock service and API` land in? Check that against your worksheet: how many points does Card Controls really get in Sprint 15, once the committed work comes first? Fraud Alerts' auto-lock story needs the API by Sprint 16. Draft the one-line message to Hannah Cole and Ben Adeyemi that turns the two dates from assumed into agreed.
 
 !!! harbor "Back in your own harbor"
     Three moves for your first week back, about 30 minutes in your own Azure DevOps:
@@ -438,8 +501,9 @@ Each team sizes its own points, and Mobile's points have inflated while its stor
 
 ## Key takeaways
 
-- Velocity is a rate for a normal sprint. Capacity is how much of it you'll actually get. Subtract absences, committed work and support load before you forecast.
-- The forecast tool is a calculator: one velocity, backlog order and Story Points. It ignores in-progress work, sprint assignments and unestimated items, so feed it honest inputs.
-- Order is scope. Moving one "should" below the MVP turned a miss into a fit without changing a single estimate.
-- Forecast in ranges with conditions. A single date is a promise; a range is information a sponsor can act on.
-- Never compare velocity across teams, and be wary of moving work to the "fastest" team. It's usually the busiest one.
+- **Start from steady history.** A team's finished work is your rate. A steady 25 is worth more than a hopeful 35.
+- **Capacity, not velocity.** Subtract absences, committed work and support load from the normal-sprint rate. What's left is the only number worth forecasting with.
+- **Feed the calculator honestly.** The forecast tool knows one velocity, backlog order and Story Points. Type in the capacity you worked out, not the team's average.
+- **Order is scope.** Moving one "should" below the MVP turned a miss into a fit without changing an estimate. An unestimated story is never as free as it looks.
+- **Know the blind spots.** The tool skips the current sprint and ignores in-progress work, sprint assignments, absences and unsized items. Run naively, it shows a sponsor what she hoped for.
+- **Answer with a range and an option.** A range with conditions is information a sponsor can act on. Don't move work to the "fastest" team: velocity isn't comparable, and it's usually the busiest one.

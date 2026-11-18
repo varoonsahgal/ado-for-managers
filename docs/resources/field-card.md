@@ -23,11 +23,12 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- The portfolio is a **ranked list**. When the rank and reality disagree, a decision is missing, so find out who should make it.
-- Set up a Features backlog with **rollup columns** and you have Feature status for a whole Epic on one screen, with no work items opened.
-- Use the right lens: the **backlog** for how far, the **form** for why, the **board** for where it's stuck, the **plan** for when.
-- **Owns**, **serves** and **builds** are three different questions: Area Path, Parent link, and the children's areas. Cross-team Features hide in the gaps between them.
-- Progress bars count only **Closed** work. Before you quote one, know what "done" means on that team's board.
+- **Know where the answer lives.** Every number comes from a view and a team context, and both decide what you see: the backlog shows six Digital Features, the Epic has eight.
+- **The order is the decision.** Priority fields are opinions; backlog order is the real ranking. When rank and reality disagree, a decision is missing, so find out who should make it.
+- **Rollup is your status report.** Rollup columns put a whole Epic's Feature status on one screen. They show how far along the work is, not whether it's the right work.
+- **Match the lens to the question.** The **backlog** for how far, the **form** for why, the **board** for where it's stuck, the **plan** for when. A status claim that holds up uses at least two.
+- **Progress bars count only Closed.** Resolved work shows as not done. Before you quote a percentage, know what "done" means on that team's board.
+- **Owns, serves, builds.** Area Path, Parent link and the children's areas answer three different questions. Cross-team Features hide in the gaps between them.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
@@ -47,11 +48,11 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- Start wide: six teams' work at Feature level in one query, then zoom in on the team in question.
-- Compare each team with **its own plan**. Velocity never compares across teams, and the gap between Planned and Completed is where carry-over hides.
-- A Feature's progress bar doesn't tell you whether it will make its date. Where the remaining work is planned, what state it's in and who owns it does.
-- Six signals find most of what needs a manager: unowned urgency, overload, stale work, mid-sprint scope, unaligned effort and quality debt. Each one is a two-clause query.
-- **Feature progress is the truth serum for velocity.** Report what moved the portfolio, lead with the bottom line, and end with a specific ask.
+- **Start wide, at Feature level.** See every team's work by Feature, including the work that serves no Feature, before you explain any one team.
+- **Compare a team with its own plan.** Velocity never compares across teams, and the gap between Planned and Completed is where carry-over hides.
+- **A progress bar is not a forecast.** Whether a Feature makes its date depends on where its remaining work is scheduled, what state it's in and who has it.
+- **Feature progress is the truth serum for velocity.** Six quick signals find what won't fix itself; when velocity looks fine and the Features aren't moving, believe the Features.
+- **Lead with the bottom line, end with an ask.** Five bullets, every number a click from its evidence, and a named person asked for something specific.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
@@ -71,11 +72,12 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- A saved query is a **definition** everyone inherits. Name it like the question it answers and put the window in the name.
-- Pick the query type for the question: **flat** for lists and charts, **tree** for "what does this work serve?", **direct links** for "what's missing or blocked?".
-- `@CurrentIteration` picks a sprint, not a team. Pair it with an area clause, and check the team parameter.
-- Trees hide orphans, and progress reports hide them too. Measure the gap between "work done" and "work that moved a Feature".
-- Every result is a shortlist to read, not a verdict to forward. Test your zeros, distrust your tags, and triage before you escalate.
+- **A macro picks a sprint, not a team.** `@CurrentIteration` keeps a query true next sprint. Pair it with an area clause, and check whose calendar the team parameter reads.
+- **Busy is not bought.** A flat count shows activity; a tree by Feature shows what the work bought. Pick the query type for the question: **flat** for lists and charts, **tree** for "what does this work serve?", **direct links** for "what's missing?".
+- **A result is a shortlist, not a verdict.** Triage every at-risk result before you forward it. A filter only finds what people remembered to record, so distrust your tags.
+- **Fix the record before the report.** Open work in a closed PI is usually forgotten or finished-but-never-closed. Decide which number is true, then fix the state.
+- **Query for what's missing.** Orphan work and empty Features are the blind spots of every progress report. Test every zero by flipping its operator.
+- **Name it like the question.** A saved query is a definition everyone inherits. Save it shared, make its window explicit, and send the link, not a screenshot.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
@@ -95,15 +97,15 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- Charts work only on **saved, shared, flat** queries. Plan your evidence around what Azure DevOps can draw.
-- Every chart answers one question. Decide your scope (area or Epic) and say it on the page.
-- Compare each team with **its own plan**, never with another team's points.
-- Counts, windows and percentages can all lie. Report **what's left against the time left**, over a window that fits the question.
-- A status color is only as good as its evidence, and a status report is a request for decisions.
+- **Scope before charts.** "Who builds it" (area) and "what it serves" (Epic) give different counts, and both are right. Pick one, say it on the page, and name each chart for the one question it answers.
+- **Each team against its own plan.** Story Points are a team's private currency. Report Completed ÷ Planned and its trend, never one team's points against another's.
+- **Bugs are unfinished work.** A team that files bugs faster than it fixes them is moving work off the sprint, not finishing it.
+- **True data, false story.** Charts lie through what they count, when they look and what they compare. Report what's left against the time left, over a window that fits the question.
+- **A color needs a sentence.** A RAG status is only as good as its evidence, and a status report is a request for decisions, each with a person's name on it.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
-1. **Chart one question from a shared query.** Take a saved flat query in a shared folder, open **Charts** › **New chart**, and name the chart for the one question it answers. Charts on **My Queries** are visible only to you, so save the query to a shared folder if anyone else needs to see it.
+1. **Chart one question from a shared query.** Take a saved flat query in a shared folder (charts on **My Queries** are visible only to you), open **Charts** › **New chart**, and name the chart for the one question it answers.
 2. **Put each team next to its own plan.** Open each team's **Velocity** report, set **Velocity by** to **Sum of Story Points**, and note Completed ÷ Planned for recent sprints. Report that ratio and its trend, never one team's points against another's.
 3. **Give your last status color a sentence.** Open the last status report you sent and write one line of evidence next to its RAG color. For each Feature on it, replace the percentage with what's left against the time left: remaining points and Target Date.
 
@@ -119,15 +121,16 @@ field_card: true
 
 ### [Build HarborPoint's Management Command Center](../day-2/lab-05-command-center.md)
 
-<p class="hp-fc__one">A dashboard is a set of answers, not a set of widgets. If you can't say which question a widget answers, or its scope doesn't match the page, take it off.</p>
+<p class="hp-fc__one">A dashboard is a set of answers, not widgets. If you can't say which question a widget answers, or its scope doesn't match the page, take it off.</p>
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- Design from questions. Five questions, each with someone who acts on the answer, decide which widgets earn a place.
-- Every widget inherits a scope from its query or its team. Check it against the scope your dashboard's title promises, and put team names in titles.
-- Pair a count with the list behind it. A risk tile starts a conversation; the list tells you which conversation.
-- Managers need diagnostics; executives need decisions. Cut the exec view to a handful of widgets and say in words what the numbers mean.
-- A dashboard is only as good as its upkeep: a named owner, a review date on the page, and the discipline to delete what you no longer maintain.
+- **Design from questions.** Write the questions before you open the widget catalog. A widget that answers none of them comes off.
+- **Say whose page it is.** Put the owner, the last review and the meaning of each color on the page, or readers will guess.
+- **Check the scope, show the list.** A reused query brings its own scope: check it against the page title, and put the list beside every count.
+- **Name the team in the title.** An Analytics widget reads one team and looks plausible whichever team it is. Set Team first and name it in the title.
+- **Executives need decisions.** Keep only what leads to an executive decision, and say in words what the numbers mean.
+- **Upkeep is part of the build.** A stale dashboard is worse than none. Name an owner, show the last review on the page, and delete what you stop maintaining.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
@@ -143,15 +146,16 @@ field_card: true
 
 ### [Which Team Needs Help?](../day-2/lab-06-which-team-needs-help.md)
 
-<p class="hp-fc__one">Velocity measures estimates, not speed. Never judge a team on one chart: find three signals that agree, then change the system, not the number.</p>
+<p class="hp-fc__one">Never judge a team on one chart. Find three signals that agree across output, flow and outcomes, then change the system, not the number.</p>
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- Velocity is a team's sum of its own estimates. Pair it with throughput: rising points over flat counts is point inflation, not speed.
-- Never reach a verdict on one chart. Look for three independent signals across output, flow and outcomes.
-- Lower throughput with steady, reliable delivery is a capacity fact to plan around, not a problem to fix.
-- The CFD shows where work waits, cycle time shows what the wait costs, and too much work in progress makes everything slower.
-- Help means changing the system (WIP, intake, testing, quality bar), with an owner and a metric for each change. It never means a velocity target.
+- **Commit before you look.** A gut call written down first shows you which number fooled you, and that's the number to distrust next time.
+- **Three families, one verdict.** Never judge a team on one chart. Act when output, flow and outcomes agree; when they disagree, ask the team.
+- **Velocity measures estimates.** Rising points over a flat story count is inflation, not speed. A team that finishes less but delivers what it plans has a capacity fact to plan around, not a problem to fix.
+- **Find where work waits.** The CFD shows where the queue forms, cycle time shows what it costs, and more work in progress makes everything slower.
+- **Output is worth what it serves.** Points that leave bugs behind or serve no Feature don't move the portfolio, however good the velocity looks.
+- **Change the system, not the number.** Help means owned actions on causes (testing, WIP, intake, quality), each with a metric to watch. It never means a velocity target.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
@@ -171,15 +175,16 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- A red line tells you two end dates disagree. It doesn't tell you why, how much, or what to do. That part is your job.
-- Read dependencies at two altitudes. The Feature line shows the portfolio problem; the story links show the real handoff, which is often narrower, and narrower means more options.
-- No line is not no risk. Plans draw only Predecessor/Successor links between dated items on the plan, so pair every plan with a direct-links query.
-- Cross-team bottlenecks are usually portfolio conflicts in disguise. When mandatory work isn't ranked, the busiest team ranks it for you, and priority number one pays.
-- Bring options, not alarms: each with its effect on the date, its risk, who pays and who decides.
+- **One calendar first.** Put every contributing team on one plan, with the dates that matter marked, before anyone argues about who is late.
+- **A red line is a question.** It tells you two end dates disagree. It doesn't tell you why, by how much, or what to do. That part is your job.
+- **Read at two altitudes.** The Feature line finds the problem; the story links size it. The real handoff is often narrower, and narrower means more options.
+- **No line is not no risk.** Plans draw only Predecessor/Successor links between dated items on the plan, so pair every plan with a direct-links query.
+- **Bottlenecks are unmade decisions.** When the portfolio doesn't rank mandatory work, the busiest team ranks it for you, and priority number one pays.
+- **Bring options, not alarms.** Give each one its effect on the date, its risk, who pays and a named decider.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
-1. **Put your cross-team initiative on one plan.** **Boards › Delivery Plans** › **+ New plan**, add each contributing team at the **Features** level, and add a marker for the date that matters. Turn on **Show Parent**, **Show Tags** and **Show child rollup data**, then use **Show and hide dependencies** to draw every line. Look, don't drag: moving a card changes the real work item for everyone.
+1. **Put your cross-team initiative on one plan.** **Boards › Delivery Plans** › **+ New plan**, add each contributing team at the **Features** level, and add a marker for the date that matters, then use **Show and hide dependencies** to draw every line. Look, don't drag: moving a card changes the real work item for everyone.
 2. **Save a dependency query beside it.** Build a **Work items and direct links** query with `Parent` `=` your most important Feature's ID, **Only return items that have matching links**, and only **Predecessor** and **Successor** ticked. Add `Node Name` and `Iteration Path`, then look for any linked item with no sprint or from a team that isn't on your plan.
 3. **Ask who decided.** Pick one red line, open the predecessor's **History** and filter **Fields** to `Target Date` to see who moved it and why. Then ask whose priority gave way, and whether that person was the one who chose.
 
@@ -195,11 +200,11 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- Choose the argument before you build the dashboard. A good risk has a priority at stake, evidence, and a decision someone senior can make.
-- An executive dashboard is an argument for a decision: few widgets, each tied to a question, each number with a threshold or a baseline.
-- Translate metrics into member impact. "42 open bugs" means little to an Executive Committee. "Members are finding defects in production" means a great deal.
-- Bottom line up front: the answer and the ask first, evidence second, every decision owned by one named person.
-- Check how a number is made before you escalate it. The loudest chart in the room is often a data problem.
+- **Choose the argument first.** A risk earns executive time only with a priority at stake, evidence that holds up and a decision someone senior can make. Check how the loudest chart is made before you escalate it.
+- **Every widget points at a decision.** Keep the executive view small, tie each widget to a question, and give every number a threshold or a baseline.
+- **Answer first, in members' words.** Lead with the bottom line and the ask. "42 open bugs" means little to an Executive Committee; "members are finding defects in production" means a great deal. Every decision gets one named person.
+- **Answer questions the same way.** Under pressure, give the answer first, then the evidence one click away, then the decision.
+- **Someone owns the picture.** A dashboard decays unless an owner refreshes it in a recurring review that moves dependent dates when one date moves.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
@@ -223,11 +228,12 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- Velocity is a rate for a normal sprint. Capacity is how much of it you'll actually get. Subtract absences, committed work and support load before you forecast.
-- The forecast tool is a calculator: one velocity, backlog order and Story Points. It ignores in-progress work, sprint assignments and unestimated items, so feed it honest inputs.
-- Order is scope. Moving one "should" below the MVP turned a miss into a fit without changing a single estimate.
-- Forecast in ranges with conditions. A single date is a promise; a range is information a sponsor can act on.
-- Never compare velocity across teams, and be wary of moving work to the "fastest" team. It's usually the busiest one.
+- **Start from steady history.** A team's finished work is your rate. A steady 25 is worth more than a hopeful 35.
+- **Capacity, not velocity.** Subtract absences, committed work and support load from the normal-sprint rate. What's left is the only number worth forecasting with.
+- **Feed the calculator honestly.** The forecast tool knows one velocity, backlog order and Story Points. Type in the capacity you worked out, not the team's average.
+- **Order is scope.** Moving one "should" below the MVP turned a miss into a fit without changing an estimate. An unestimated story is never as free as it looks.
+- **Know the blind spots.** The tool skips the current sprint and ignores in-progress work, sprint assignments, absences and unsized items. Run naively, it shows a sponsor what she hoped for.
+- **Answer with a range and an option.** A range with conditions is information a sponsor can act on. Don't move work to the "fastest" team: velocity isn't comparable, and it's usually the busiest one.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
@@ -247,11 +253,11 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- A persona is a set of behaviors, goals and breaks backed by evidence. Mark everything else as an assumption.
-- One service, many journeys. The breaks hide at the handoffs between channels, and those handoffs often fall between two teams' Features.
-- Personas change what gets built only when they reach the acceptance criteria. One generic story usually serves one persona and fails the rest.
-- Make prioritization arguable. A visible model turns "branch vs digital" into "which input is wrong?"
-- Check the objective as well as the arithmetic. Counting heads through the door and counting relationship value give different orders, and choosing between them is a leadership decision.
+- **The journey has no owner.** The breaks hide at the handoffs between channels, and those handoffs often fall between two teams' Features.
+- **Personas run on evidence.** A persona is a set of behaviors, goals and breaks backed by evidence. Mark everything else as an assumption.
+- **Acceptance criteria are where personas bite.** A persona changes what gets built only when it reaches the acceptance criteria. One generic story usually serves one persona and fails the rest.
+- **Make priority arguable.** A visible scoring model turns "branch vs digital" into "which input is wrong?"
+- **Check the objective, not just the arithmetic.** Counting heads through the door and counting relationship value give different orders, and choosing between them is a leadership decision.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
@@ -271,16 +277,17 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- When a team's numbers fall off a cliff, suspect the record before the team. Delivery rarely collapses in one sprint. Hygiene often does.
-- Fix data at the source. A query that compensates for bad data gets wrong in a new way each time the data changes.
-- Typed-in sprints, "not Closed" for open, and single-spelling tags are the three most common query defects. Macros, explicit state lists and a written vocabulary prevent them.
-- Every dashboard is a data-quality contract: an owner, defined terms, shared queries, and a weekly look at a watchlist whose healthy answer is zero.
-- Governance has a cost and a reach. Team agreements are cheap and local. Process rules land on every project at once. Per-person hygiene scores get gamed.
+- **Open what's behind the tile.** A dashboard can break in its data, its queries, its widgets or its permissions. The chart itself is usually the one part that's right.
+- **Suspect the record before the team.** Delivery rarely collapses in one sprint; hygiene often does. Falling velocity with flat Planned is the tell.
+- **Fix data at the source.** Change the item, say why in its Discussion, and leave another team's record for that team to fix.
+- **Make queries honest, not clever.** Macros for time, explicit state lists for "open", one tag vocabulary, and no compensating for bad data.
+- **Watch for zero.** A few team-level queries whose healthy answer is zero, reviewed weekly, catch bad data before it reaches an executive.
+- **Governance has a cost and a reach.** Team agreements are cheap and local. Process rules land on every project at once. Per-person hygiene scores get gamed.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
 1. **Audit one tile before your next report.** Open the dashboard your leadership reads most, pick one tile, and read its query's **Editor** tab. Look for a sprint typed in by hand instead of `@CurrentIteration`, and "open" written as `State` `<>` `Closed`. Running a query never changes data.
-2. **Build three queries whose healthy answer is zero.** Create a `Watchlist` folder and save: Active work with `Changed Date` `<` `@Today - 14`, stories in Resolved for more than 5 days, and anything filed at the project's root area. **My Queries** are private to you, so put the folder under **Shared Queries** if it will ever feed a dashboard tile, or everyone else sees an error instead of a number.
+2. **Build three queries whose healthy answer is zero.** Create a `Watchlist` folder under **Shared Queries** (not **My Queries**, which are private, so their tiles show everyone else an error) and save: Active work with `Changed Date` `<` `@Today - 14`, stories in Resolved for more than 5 days, and anything filed at the project's root area.
 3. **Look at the counts with the team, not about the team.** Spend 15 minutes with one team lead and Product Owner going through the watchlist together. Anything above zero gets fixed on the spot or gets a named owner, and the counts stay team-level, never per person.
 
 </div>
@@ -295,11 +302,12 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- A PI outlook is a set of bets with odds. Commit what's sized and staffed, make what depends on a decision conditional, and say plainly what can't be committed yet.
-- Choose your instruments before you forecast. Inflated points, data defects and unsized Features flow straight into executive commitments.
-- Capacity is gross throughput minus what's already spoken for: holidays, mandatory work, bugs and spill. Unreserved, it gets spent anyway.
-- Value, member research and personas make trade-offs arguable. The deliverable is a decision with a cost and an owner, not a ranking.
-- When the facts change mid-plan, update the plan. An outlook that can absorb a curveball is worth more than one that was right yesterday.
+- **Evidence before opinion.** A concern becomes a finding only when it names a Feature, a number and that number's source. The risk that hurts most is often the one nobody named.
+- **Choose your instruments first.** Inflated points, data defects and unsized Features flow straight into executive commitments, so decide which numbers you trust before you forecast.
+- **One dashboard, one argument.** Write the executive's questions at the top, and take off any widget that doesn't answer one of them.
+- **Capacity is what's left.** Gross throughput minus holidays, mandatory work, bugs and spill, stated as a range. A plan built that way absorbs a curveball without starting over.
+- **Decisions, not rankings.** Value, member research and personas make a trade-off arguable. The deliverable is a decision with a cost and a named owner.
+- **An outlook is bets with odds.** Commit what's sized and staffed, tie the rest to named decisions, and say plainly what can't be committed yet.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 

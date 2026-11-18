@@ -16,11 +16,11 @@ next_hook: "Take every lab's one thing, its key takeaways and its Monday moves h
 ---
 
 !!! briefing "Mission briefing"
-    Ruth Ellison retires at the end of PI 4. You've been acting in her role since this morning, and this afternoon the whole program lands on your desk. You and your crew are acting **Program Managers for the Member Experience Transformation Program**. The Executive Committee meets in 150 minutes. They've named six concerns and they want one thing: **a realistic outlook for PI 5 (Sprints 17 to 20), and the decisions they need to make to get it.**
+    Ruth Ellison retires at the end of PI 4. You've been acting in her role since this morning, and this afternoon the whole program lands on your desk. You and your crew are acting **Program Managers for the Member Experience Transformation Program** (METP). The Executive Committee meets in 150 minutes. They've named six concerns, and they want one thing: **a realistic outlook for PI 5 (Sprints 17 to 20), and the decisions they must make to get it.**
 
-    Every view, query and metric you need, you used in Labs 1 to 11. What's new is that nobody tells you which ones, the concerns tangle into each other, and halfway through the instructor will change the facts on you. Welcome to PI planning week.
+    Every view, query and metric you need is one you used in Labs 1 to 11. What's new: nobody tells you which ones, the concerns tangle into each other, and halfway through, the instructor changes the facts. Welcome to PI planning week.
 
-    **Done looks like:** a crew dashboard `P## - PI 5 Outlook`, a one-page BLUF briefing at `/Training/P##/PI 5 Outlook` with a decision table, and a five-minute presentation that survives three minutes of executive questions.
+    **Done looks like:** six phases, each with one product. An **evidence board** (Phase 1), a saved `PI 5 candidates` query (Phase 2), the crew dashboard `P## - PI 5 Outlook` (Phase 3), a **PI 5 worksheet** of capacity versus demand (Phase 4), a **decision table** (Phase 5) and a one-page BLUF briefing at `/Training/P##/PI 5 Outlook` (Phase 6). Then a five-minute presentation that survives three minutes of executive questions.
 
 <div class="msg" data-initials="RE" data-tone="teal" markdown>
 <p class="msg-head"><strong>Ruth Ellison</strong><span>Program Manager, METP · 12:58 PM</span></p>
@@ -36,18 +36,19 @@ Executive Committee in 150 minutes. Give me a **realistic outlook for PI 5** and
 
 ## What you'll walk away with
 
-- Take a messy, multi-team program and turn six vague concerns into evidence in under half an hour
-- Build a capacity-versus-demand outlook for a whole PI, expressed as ranges and confidence, not promises
-- Make a portfolio trade-off using business value, member research and personas, and defend it out loud
-- Absorb a change in the facts mid-plan without starting over
-- Brief executives with a decision table: what you need, from whom, and by when
+- Turn six vague concerns about a multi-team program into evidence (a Feature, a number, a source) in under half an hour
+- Choose which numbers you'll forecast from, and name the one you refuse to use
+- Put a whole program's argument on one dashboard of eight widgets or fewer
+- Build a capacity-versus-demand outlook for a whole PI as ranges, and absorb a change in the facts without starting over
+- Turn business value, member research and personas into trade-off decisions, each with a cost and an owner
+- Brief executives in confidence bands, with a decision table: what you need, from whom, and by when
 
 ## Before you set sail
 
 **Form a crew of 3 or 4.** Pick one person as **host**. The crew's dashboard, wiki page and queries live under the host's participant ID.
 
 !!! warning "`P##` shows *your* ID, not your host's"
-    This site fills in `P##` with whoever is reading. On a crewmate's screen, `P##` shows *their* ID. Write your host's ID here so everyone on the crew uses the same names: **Host ID: ______**. Everywhere this page says `P##`, crewmates use the host's ID.
+    This site fills in `P##` with the reader's own ID, so on a crewmate's screen it shows *theirs*. Write your host's ID here: **Host ID: ______**. Wherever this page says `P##`, crewmates use the host's ID.
 
 **Host setup (5 minutes, before the clock starts):**
 
@@ -76,7 +77,7 @@ Executive Committee in 150 minutes. Give me a **realistic outlook for PI 5** and
 
 **The rules haven't changed.** The six real teams' data, ordering, estimates and settings are read-only. For any what-if (re-ordering, re-estimating, forecasting), use your sandbox. Your `P## - Instant Card Controls (planning copy)` from Lab 9 is still there.
 
-**Reuse everything.** You're not starting from zero:
+**Reuse everything.** Each phase below also names the earlier lab whose lesson it puts to work.
 
 | You built | In |
 |---|---|
@@ -93,12 +94,12 @@ Widgets copy between dashboards: hover a widget, select **⋯** › **Copy to Da
 
 ## The voyage plan
 
-Six phases, each with a timer. The minute marks count from the start of Phase 1. Your instructor may stretch or squeeze them. Presentations follow in the Executive Committee block.
+Six phases, each with a timer. Minute marks count from the start of Phase 1, and your instructor may stretch or squeeze them.
 
 | Phase | Minutes | Clock | You produce |
 |---|:-:|:-:|---|
 | 1 · Investigate | 25 | 0–25 | Evidence board: the six concerns, each tied to Features, teams and numbers |
-| 2 · Analyze | 20 | 25–45 | Saved queries and three metrics you'd stake the forecast on (and the one you won't) |
+| 2 · Analyze | 20 | 25–45 | The `PI 5 candidates` query, a throughput figure you trust for each team, and the one number you won't forecast from |
 | 3 · Visualize | 25 | 45–70 | `P## - PI 5 Outlook` dashboard, 8 widgets or fewer |
 | 4 · Plan | 25 | 70–95 | PI 5 worksheet: capacity versus demand, as ranges. **The curveball lands here.** |
 | 5 · Prioritize | 20 | 95–115 | Ranked PI 5 candidates and a decision table |
@@ -110,10 +111,12 @@ Six phases, each with a timer. The minute marks count from the start of Phase 1.
 
 ## Phase 1 — Investigate
 
-Turn six concerns into six evidence-backed findings, at Feature altitude.
+**What does the data say about each of the six concerns?** Answer that before anyone forecasts, because every later phase builds on these findings.
+
+**You learned this in [Lab 1](../day-1/lab-01-explore-the-program.md) and [Lab 6](../day-2/lab-06-which-team-needs-help.md):** the backlog order is a decision, and no single chart is a finding.
 
 !!! challenge "Challenge: The evidence board"
-    In your wiki page, build an **evidence board** with one row per concern:
+    In your wiki page, build an **evidence board** with one row per concern, at Feature altitude:
 
     | Leadership concern | Which Features and teams | Evidence (a number, and where you found it) | How much do you trust it? |
     |---|---|---|---|
@@ -124,12 +127,12 @@ Turn six concerns into six evidence-backed findings, at Feature altitude.
     | Member priorities are shifting between branch and digital | | | |
     | Executives need a realistic outlook for the next PI | | | |
 
-    Add two short lists underneath: **what HarborPoint delivered recently** (last sprint and last PI), and **one risk leadership didn't name**. There's more than one.
+    Add two short lists underneath: **what HarborPoint delivered recently** (last sprint and last PI), and **one risk leadership didn't name** (there's more than one). Then decide: **which finding would you put in front of Dana first?**
 
 <div class="timer" data-minutes="25" data-label="Investigate"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    You already have answers for four of the six concerns, in your Lab 2 readout, Lab 6 case file and Lab 7 options page. Start there and check that nothing has changed. For "shifting priorities", the wiki has something you haven't read yet, under **Research**. For "recently delivered", think about which Features closed in Sprint 13 and in PI 3, and which one *should* have.
+    You already have answers for four of the six concerns: your Lab 2 readout, Lab 6 case file and Lab 7 options page. Start there and check that nothing has changed. For "shifting priorities", the wiki holds something you haven't read yet, under **Research**. For "recently delivered", ask which Features closed in Sprint 13 and in PI 3, and which one *should* have.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - **Portfolio:** **Boards › Backlogs**, team `HarborPoint Team`, **Epics** level, then **Features** with rollup columns. Compare the order of Epics with `/Program/Program Charter`.
@@ -153,9 +156,14 @@ Turn six concerns into six evidence-backed findings, at Feature altitude.
     - [ ] We wrote down the three Member Pulse Survey findings and Hector's request
     - [ ] We found at least one risk that isn't on leadership's list
 
+!!! takeaway "Takeaway"
+    A concern becomes a finding only when it names a Feature, a number and where that number came from, and the risk that hurts most is often the one nobody named.
+
 ## Phase 2 — Analyze
 
-The evidence board says *what*. Now decide which numbers you'll build a forecast on. Some of HarborPoint's numbers are honest. Some you proved wrong in Lab 11.
+**Which numbers will you stake the forecast on?** The evidence board says *what*. Some of HarborPoint's numbers are honest, and some you proved wrong yesterday.
+
+**You learned this in [Lab 6](../day-2/lab-06-which-team-needs-help.md) and [Lab 11](lab-11-dashboard-wrong.md):** velocity measures estimates, not speed, and when a team's numbers fall off a cliff, suspect the record before the team.
 
 !!! predict "Make a call"
     Before you build the query, write down two guesses in ten seconds. **How many open Features** will land in PI 5? And will **Real-Time Fraud Alerts** be one of them? Then build `PI 5 candidates` and check.
@@ -168,7 +176,7 @@ The evidence board says *what*. Now decide which numbers you'll build a forecast
 <div class="timer" data-minutes="20" data-label="Analyze"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    A Feature's **Iteration Path** is the PI that contains its target sprint, so the landing zone is a query on Iteration Path. For "what will land anyway", compare Target Dates with what you know about progress and dependencies. For throughput, revisit what Lab 6 taught you about Mobile Banking's points and what Lab 11 taught you about Member Support's velocity chart.
+    A Feature's **Iteration Path** is the PI that contains its target sprint, so the landing zone is a query on Iteration Path. For "what will land anyway", compare Target Dates with what you know about progress and dependencies. For throughput, think of Mobile Banking's points (Lab 6) and Member Support's velocity chart (Lab 11).
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     **Query type:** Flat list of work items (so it can feed charts and tiles).
@@ -182,23 +190,26 @@ The evidence board says *what*. Now decide which numbers you'll build a forecast
 
     **Columns:** `Title`, `Node Name`, `State`, `Target Date`, `Business Value`, `Time Criticality`, `Effort`, `Risk`, `Tags`. Sort by `Target Date`.
 
-    Expect **ten** Features, and read them closely, because they're not all "new" work:
+    The `Not Under HarborPoint\Training` clause keeps your crew's sandbox copies out. Expect **ten** Features, and read them closely, because they're not all new work:
 
-    - **Six of the seven candidates.** Real-Time Fraud Alerts isn't there: its Iteration Path is still PI 4. Its spill is exactly the kind of work question 2 is asking about.
+    - **Six of the seven candidates.** Real-Time Fraud Alerts isn't there: its Iteration Path is still PI 4. Its spill is exactly what question 2 asks about.
     - **Two mandatory compliance Features** (`Audit Evidence Automation`, `Access Review Automation`): Security's exam work, already spoken for.
-    - **Two PI 4 commitments whose Target Date slid into Sprint 17**: `Fraud Scoring Engine v2` (7 of its points sit in Sprint 17) and `Secure Messaging & Chat`. Check their `PI4-Committed` tag: work promised for PI 4 is quietly landing in PI 5.
+    - **Two PI 4 commitments whose Target Date slid into Sprint 17**: `Fraud Scoring Engine v2` (7 of its points sit in Sprint 17) and `Secure Messaging & Chat`. Their `PI4-Committed` tag says it: work promised for PI 4 is quietly landing in PI 5.
 
-    The sandbox fence keeps your crew's practice copies out.
+    **Throughput:** open **Velocity** in each team's **Backlogs › Analytics**, and switch Mobile Banking's to **Count of Work Items**. For Member Support, use the corrected history from your Lab 11 defect log, not the chart.
 
-    For throughput, open **Velocity** in each team's **Backlogs › Analytics**, and switch Mobile Banking's to **Count of Work Items**. For Member Support, use the corrected history from your Lab 11 defect log, not the chart.
+    **So what? Four of the ten are already spoken for, and the work that will hurt most (the Fraud Alerts spill) isn't on the list at all.** A landing-zone query shows what's targeted, not what's coming.
 
 <figure class="hp-shot" data-shot="lab12-pi5-candidates" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › PI 5 Outlook › PI 5 candidates</span></div>
 
-![Ten Features land in PI 5, and three carry PI4-Committed: promises for PI 4 that have slid into Sprint 17. The bottom row has the joint-highest Business Value and no Effort at all. You can't forecast what nobody has sized.](../assets/shots/lab12-pi5-candidates.png){ loading=lazy }
+![Ten Features land in PI 5, and three carry PI4-Committed: work promised for PI 4 that now finishes in Sprint 17. The bottom row has the joint-highest Business Value and no Effort at all. You can't forecast what nobody has sized.](../assets/shots/lab12-pi5-candidates.png){ loading=lazy }
 
-<figcaption markdown>Ten Features land in PI 5, and three carry `PI4-Committed`: promises for PI 4 that have slid into Sprint 17. The bottom row has the joint-highest Business Value and **no Effort at all**. You can't forecast what nobody has sized.</figcaption>
+<figcaption markdown>Ten Features land in PI 5, and three carry `PI4-Committed`: work promised for PI 4 that now finishes in Sprint 17. The bottom row has the joint-highest Business Value and **no Effort at all**. You can't forecast what nobody has sized.</figcaption>
 </figure>
+
+!!! insight "Lighthouse insight: the forecast is only as good as its worst input"
+    A PI outlook multiplies throughput by sprints and compares the result with estimates. Each of those three inputs has a HarborPoint trap: Mobile Banking's points are inflated, Member Support's velocity is a data defect, and one PI 5 Feature has no estimate at all. Choosing your instruments isn't housekeeping before the analysis. It *is* the analysis.
 
 !!! checkpoint "Minimum evidence"
     - [ ] `PI 5 candidates` is saved in our crew folder and shows Business Value, Time Criticality and Effort
@@ -206,12 +217,14 @@ The evidence board says *what*. Now decide which numbers you'll build a forecast
     - [ ] We have a throughput figure for each of the six teams, and we can say why we trust it
     - [ ] We named one number we refuse to forecast from
 
-!!! insight "Lighthouse insight: the forecast is only as good as its worst input"
-    A PI outlook multiplies throughput by sprints and compares the result with estimates. Each of those three inputs has a HarborPoint trap. Mobile Banking's points are inflated, Member Support's velocity is a data defect, and one PI 5 Feature has no estimate at all. Choosing your instruments is not housekeeping before the analysis. It *is* the analysis.
+!!! takeaway "Takeaway"
+    Decide which numbers you trust before you forecast, because an inflated, defective or missing input flows straight into an executive commitment.
 
 ## Phase 3 — Visualize
 
-Build the dashboard you'll put on the screen in the Executive Committee. It should answer Dana's questions faster than you can say them.
+**Can Dana see your argument before you say it?** You know which numbers you trust. Now put them on the screen you'll present from in the Executive Committee.
+
+**You learned this in [Lab 5](../day-2/lab-05-command-center.md) and [Lab 8](../day-2/lab-08-executive-status-review.md):** a dashboard is a set of answers, not a set of widgets, and executives want the answer first.
 
 !!! challenge "Challenge: Eight widgets, one argument"
     Build `P## - PI 5 Outlook` with **8 widgets or fewer**. Before adding any widget, write in a **Markdown** widget the **four questions** this dashboard answers for Dana. Every other widget must answer one of them. At least one widget must show a **trend**, and at least one must show **PI 5 demand by team**.
@@ -247,9 +260,14 @@ Build the dashboard you'll put on the screen in the Executive Committee. It shou
     - [ ] Every team-scoped widget names its team, and we checked each one
     - [ ] Someone outside our crew passed the 30-second test
 
+!!! takeaway "Takeaway"
+    An executive dashboard makes one argument: if a widget doesn't answer one of the questions written at the top, take it off.
+
 ## Phase 4 — Plan
 
-This is where the outlook gets built. Capacity on one side, demand on the other, dependencies across the middle, and ranges, not dates.
+**What can PI 5 actually hold?** This is where the outlook gets built: capacity on one side, demand on the other, dependencies across the middle, and ranges, not dates.
+
+**You learned this in [Lab 9](lab-09-meet-the-deadline.md):** velocity is a rate, not a promise. Subtract what's already spoken for, and answer with a range.
 
 !!! warning "Curveball incoming"
     At about minute 70, your instructor hands each crew **one curveball** (see [Curveballs](#curveballs) below). Don't open the cards until you're told. When yours arrives, add a row to your worksheet called **"After the curveball"** and show what changes. Don't start over.
@@ -285,7 +303,7 @@ This is where the outlook gets built. Capacity on one side, demand on the other,
 <div class="timer" data-minutes="25" data-label="Plan"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Start from roughly **4 × recent throughput** for each team, then subtract what's already spoken for. Three adjustments matter more than the rest. Security carries mandatory exam work until fieldwork in Sprint 18. Mobile Banking's points don't mean what they used to. Member Support's real throughput isn't what its chart says. Don't forget the company holiday in Sprint 17, the Sprint 17 that Digital Accounts already spends on the Card Controls MVP (Lab 9), and anything from PI 4 that won't finish on time.
+    Start from roughly **4 × recent throughput** for each team, then subtract what's already spoken for. Three adjustments matter most: Security carries mandatory exam work until fieldwork in Sprint 18, Mobile Banking's points don't mean what they used to, and Member Support's real throughput isn't what its chart says. Also subtract the company holiday in Sprint 17, the Sprint 17 that Digital Accounts already spends on the Card Controls MVP (Lab 9), and anything from PI 4 that won't finish on time.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - **Capacity inputs:** each team's **Velocity** report, your Lab 9 capacity math and `/Teams/Digital Accounts Availability`. In the **P## Sandbox** team, `P## - Instant Card Controls (planning copy)` and **Forecasting** let you test the Card Controls remainder at different velocities.
@@ -319,13 +337,13 @@ This is where the outlook gets built. Capacity on one side, demand on the other,
     | Teller Workstation Refresh (Branch Experience) | 5 / 2 | 21 pts, 5 stories | **Fits** |
     | In-Branch Digital Onboarding remainder (Branch Experience) | 13 / 8 | 28 of 33 pts left today (15% done); targets Sprint 17 | **Fits** in Branch Experience's own capacity. It's back-loaded, not under-staffed |
 
-    **The shape of the answer:** Branch Experience, Core Platform and Member Support have room. Digital Accounts and Security are tight. Mobile Banking can't take on new Feature work until it stabilizes, and the most valuable new Feature, Member-to-Member Transfers, can't be forecast at all.
+    **So what? Branch Experience, Core Platform and Member Support have room. Digital Accounts and Security are tight. Mobile Banking can't take on new Feature work until it stabilizes, and the most valuable new Feature, Member-to-Member Transfers, can't be forecast at all.**
 
 !!! reef "Reef ahead: forecasting from the chart you proved wrong"
-    Did your worksheet give Member Support around 10 to 13 points a sprint because that's what its velocity chart shows lately? You fell into the reef you charted yesterday. The 13 and the 8 are stories left in **Resolved** and a missing estimate, not a team in collapse. The same trap catches crews who give Mobile Banking ~45 points a sprint "because that's its velocity". One team's chart understates its delivery, the other's overstates it, and both errors flow straight into an executive commitment unless you correct them.
+    Did your worksheet give Member Support around 10 to 13 points a sprint, because that's what its velocity chart shows lately? Then you hit the reef you charted yesterday: the 13 and the 8 are stories left in **Resolved** and a missing estimate, not a team in collapse. Giving Mobile Banking ~45 points a sprint "because that's its velocity" is the same trap in reverse. One chart understates delivery and the other overstates it.
 
 !!! reef "Reef ahead: the Feature with nothing inside"
-    Member-to-Member Transfers has the joint-highest Business Value on the PI 5 list and **no child stories**. A capacity worksheet that shows it as "fits" is guessing, and a worksheet that leaves it out has dropped the Feature leadership will ask about first. The honest entry is "can't forecast yet", together with a decision: who decomposes it, with Core Platform, before PI 5 Planning.
+    Member-to-Member Transfers has the joint-highest Business Value on the PI 5 list and **no child stories**. Marking it "fits" is guessing. Leaving it out drops the Feature leadership will ask about first. The honest entry is "can't forecast yet", plus a decision: who decomposes it, with Core Platform, before PI 5 Planning.
 
 !!! checkpoint "Minimum evidence"
     - [ ] Every team in table A has a range (low and high) with its adjustments written down
@@ -333,9 +351,14 @@ This is where the outlook gets built. Capacity on one side, demand on the other,
     - [ ] We can name the PI 5 candidate that can't be forecast, and say why
     - [ ] We added an "After the curveball" row and said what changed
 
+!!! takeaway "Takeaway"
+    Usable capacity is gross throughput minus what's already spoken for, always as a range, and a plan built that way absorbs a curveball instead of starting over.
+
 ## Phase 5 — Prioritize
 
-The worksheet says what *could* fit. Now decide what *should*. This is where Hector, Priya, the survey and your personas meet.
+**What *should* PI 5 hold, and who has to agree?** The worksheet says what *could* fit. This is where Hector, Priya, the survey and your personas meet.
+
+**You learned this in [Lab 10](lab-10-personas.md) and [Lab 7](../day-2/lab-07-cross-team-bottleneck.md):** personas and a value score make a trade-off arguable, and most bottlenecks are priority decisions nobody made.
 
 !!! challenge "Challenge: Rank the candidates and build the decision table"
     1. **Rank the seven PI 5 candidates.** Use a transparent value model: Business Value plus Time Criticality divided by Effort (the Feature-level score from Lab 10's Extra knots), or your own model, as long as you can show the arithmetic. Then adjust the ranking, in writing, for the **Member Pulse Survey Q3** and for **at least two of your Lab 10 personas**.
@@ -373,10 +396,18 @@ The worksheet says what *could* fit. Now decide what *should*. This is where Hec
 
     **Hector's request:** "Yes, but". Branch Experience has the capacity. What it needs is Digital Accounts' *knowledge* for `Pre-fill member data from online application`. Offer time-boxed pairing instead of a transfer that costs Card Controls a fifth of its capacity.
 
-    **Typical decision table rows:** (1) rank the Compliance Epic where reality puts it, or reserve Security capacity explicitly through exam fieldwork (Simone and the Executive Committee); (2) Fraud Alerts' PI 4 MVP and date, from Lab 7 (Simone and Dana); (3) Hector's request (Priya and Hector, with Dana as tiebreaker); (4) no new Feature work for Mobile Banking until its quality bar and WIP limits hold, and Member-to-Member Transfers decomposed with Core Platform in Sprint 16 (Priya, with Diego and Nadia); (5) what PI 5 *won't* do, e.g. Teller Workstation Refresh moves out if anything slips (Hector).
+    **Typical decision table rows:**
+
+    1. Rank the Compliance Epic where reality puts it, or reserve Security capacity explicitly through exam fieldwork (Simone and the Executive Committee).
+    2. Fraud Alerts' PI 4 MVP and date, from Lab 7 (Simone and Dana).
+    3. Hector's request (Priya and Hector, with Dana as tiebreaker).
+    4. No new Feature work for Mobile Banking until its quality bar and WIP limits hold, and Member-to-Member Transfers decomposed with Core Platform in Sprint 16 (Priya, with Diego and Nadia).
+    5. What PI 5 *won't* do, e.g. Teller Workstation Refresh moves out if anything slips (Hector).
+
+    **So what? Every row gives something up: Security's exam reserve, a fifth of Card Controls' capacity, Mobile Banking's new work. A value score can't make those calls. Only the named decider can, so the table, not the ranking, is what you take into the room.**
 
 !!! reef "Reef ahead: the loudest request wins"
-    Hector made the most specific request in the room, with a survey number behind it. That's what makes it dangerous. "+28% branch demand" is a reason to care about branch members, not evidence that Branch Experience lacks engineers, and the transfer quietly cuts the leadership-ask Feature that guards against the survey's #1 worry. If your table approved it without a cost, add the cost.
+    Hector made the most specific request in the room, with a survey number behind it. That's what makes it dangerous. "+28% branch demand" is a reason to care about branch members, not evidence that Branch Experience lacks engineers. And the transfer quietly cuts the leadership-ask Feature that guards against the survey's #1 worry. If your table approved it without a cost, add the cost.
 
 !!! insight "Lighthouse insight: priorities you don't rank get ranked for you"
     You've now seen it three times: Security ranked its own work for the exam, Mobile Banking's intake decided what its sprints held, and Hector's request would quietly re-rank Digital Accounts. In each case the trade-off was real, and nobody with the authority made it. The point of a PI outlook isn't the forecast. It's getting the right people to make the trade-offs on purpose, with the cost in front of them.
@@ -386,9 +417,14 @@ The worksheet says what *could* fit. Now decide what *should*. This is where Hec
     - [ ] Our answer to Hector shows what it costs Digital Accounts
     - [ ] Our decision table has 3 to 5 rows, each with a named decider and a "needed by" sprint
 
+!!! takeaway "Takeaway"
+    A ranking is only an input; the deliverable is each trade-off as a decision, with its cost and a named owner.
+
 ## Phase 6 — Recommend
 
-One page. Bad news first. Ranges, not dates. Decisions, not updates.
+**Could Dana act on your page in five minutes?** Everything you've built comes down to one page. Bad news first. Ranges, not dates. Decisions, not updates.
+
+**You learned this in [Lab 8](../day-2/lab-08-executive-status-review.md):** the answer first, then the risks that matter, then a decision one named person can say yes or no to.
 
 !!! challenge "Challenge: The PI 5 outlook briefing"
     Finish `/Training/P##/PI 5 Outlook` from the BLUF template. It must fit on one screen without scrolling, or close to it:
@@ -422,9 +458,12 @@ One page. Bad news first. Ranges, not dates. Decisions, not updates.
     - [ ] Every decision has a named decider, and our "will not do" list has at least one item
     - [ ] The briefing links the dashboard and the query, and a crewmate who didn't write it can present it
 
+!!! takeaway "Takeaway"
+    An outlook is a set of bets with odds: commit what's sized and staffed, tie the rest to named decisions, and say plainly what can't be committed yet.
+
 ## The Executive Committee
 
-Each crew gets **five minutes** to brief and **three minutes** of questions. The instructor and other crews play the Executive Committee, and draw from the question cards below. Present from your dashboard and briefing page, not from slides.
+Now find out whether the outlook holds up under questions. Each crew gets **five minutes** to brief and **three minutes** of questions. The instructor and other crews play the Executive Committee and draw from the question cards below. Present from your dashboard and briefing page, not from slides.
 
 <div class="timer" data-minutes="5" data-label="Briefing"></div>
 
@@ -432,7 +471,7 @@ Each crew gets **five minutes** to brief and **three minutes** of questions. The
 
 ### Exec question cards
 
-The committee draws two or three per crew. Prepare for all of them. You won't know which ones are coming.
+The committee draws two or three per crew, and you won't know which. Prepare for all of them.
 
 | # | Asked by | The question |
 |:-:|---|---|
@@ -468,7 +507,7 @@ Score each criterion from 1 to 4 (maximum 20). Crews score themselves first, the
 ## Curveballs
 
 !!! warning "Instructor cards"
-    Your instructor injects **one curveball per crew** at about minute 70, at the start of Phase 4. Different crews can get different cards, which makes the presentations more interesting. Open yours only when it's called.
+    **One curveball per crew**, injected at about minute 70, the start of Phase 4. Different crews can get different cards, which makes the presentations more interesting. Open yours only when it's called.
 
 ??? note "Curveball A: The examiners move up the date"
     **Simone Laurent, 2:41 PM:** "The regulator has moved exam fieldwork to start in **Sprint 17**, not Sprint 18. Non-negotiable. I need to know today what that does to the program."
@@ -497,7 +536,7 @@ Score each criterion from 1 to 4 (maximum 20). Crews score themselves first, the
 - [ ] "Velocity charts are always wrong, so we didn't use them."
 
 <div class="quiz-why" markdown>
-"Being safe" with bad data isn't conservative. It's wrong in a different direction, and it would starve a healthy team of work. The strong answer names the defect, gives the corrected figure and its source, and turns the problem into an action. That's the Lab 11 lesson applied under executive pressure.
+"Being safe" with bad data isn't conservative. It's wrong in a different direction, and it starves a healthy team of work. The strong answer names the defect, gives the corrected figure and its source, and turns the problem into an action: the Lab 11 lesson under executive pressure.
 </div>
 
 </div>
@@ -512,7 +551,7 @@ Score each criterion from 1 to 4 (maximum 20). Crews score themselves first, the
 - [ ] Ask Digital Accounts to absorb the request by working harder
 
 <div class="quiz-why" markdown>
-Both "approve" and "decline" skip the real question: what does the Feature need, and what does each answer cost? The need here is knowledge of Digital Accounts' online application, not headcount. A targeted, time-boxed arrangement serves the branch members without cutting a fifth of the capacity that Card Controls depends on.
+"Approve" and "decline" both skip the real question: what does the Feature need, and what does each answer cost? The need is knowledge of Digital Accounts' online application, not headcount. Time-boxed pairing serves branch members without cutting a fifth of the capacity Card Controls depends on.
 </div>
 
 </div>
@@ -553,8 +592,9 @@ Both "approve" and "decline" skip the real question: what does the Feature need,
 
 ## Key takeaways
 
-- A PI outlook is a set of bets with odds. Commit what's sized and staffed, make what depends on a decision conditional, and say plainly what can't be committed yet.
-- Choose your instruments before you forecast. Inflated points, data defects and unsized Features flow straight into executive commitments.
-- Capacity is gross throughput minus what's already spoken for: holidays, mandatory work, bugs and spill. Unreserved, it gets spent anyway.
-- Value, member research and personas make trade-offs arguable. The deliverable is a decision with a cost and an owner, not a ranking.
-- When the facts change mid-plan, update the plan. An outlook that can absorb a curveball is worth more than one that was right yesterday.
+- **Evidence before opinion.** A concern becomes a finding only when it names a Feature, a number and that number's source. The risk that hurts most is often the one nobody named.
+- **Choose your instruments first.** Inflated points, data defects and unsized Features flow straight into executive commitments, so decide which numbers you trust before you forecast.
+- **One dashboard, one argument.** Write the executive's questions at the top, and take off any widget that doesn't answer one of them.
+- **Capacity is what's left.** Gross throughput minus holidays, mandatory work, bugs and spill, stated as a range. A plan built that way absorbs a curveball without starting over.
+- **Decisions, not rankings.** Value, member research and personas make a trade-off arguable. The deliverable is a decision with a cost and a named owner.
+- **An outlook is bets with odds.** Commit what's sized and staffed, tie the rest to named decisions, and say plainly what can't be committed yet.

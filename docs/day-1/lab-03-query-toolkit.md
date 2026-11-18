@@ -16,11 +16,15 @@ next_hook: "Dana wants a one-page Digital Banking update for her staff meeting, 
 !!! briefing "Mission briefing"
     In Lab 2 you answered Priya's questions by hand, with scratch queries in **My Queries**. That works once. By the third Monday you'll have stopped doing it.
 
-    Today you build the **toolkit**: shared, well-named queries that answer the five questions every manager gets asked, at Feature altitude, for anyone who opens them. Then you write the queries most managers never think of: work serving *no* priority, and Features with *no* work.
+    Today you build the **toolkit**: shared, well-named queries that answer the five questions every manager gets asked, at Feature altitude, for anyone who opens them. Then you add the queries most managers never think of: work serving *no* priority, and Features with *no* work.
 
     The clicking is easy. The definitions are the real work. What does "at risk" mean? Who is "my team"? Everyone who reuses a saved query inherits its definition, so it has to be right.
 
-    **Done looks like:** eight queries in `Shared Queries/Training/P##`, named so a VP could pick the right one without asking you, and a one-line judgment for every result.
+    **Done looks like:** eight queries in `Shared Queries/Training/P##`, each with a one-line judgment of its result:
+
+    - **01–05**, the five questions: my team now (Part 1), high priority and done last sprint (Part 2), at risk (Part 3), last PI (Part 4)
+    - **06–08**, the gaps: orphan work, empty Features, missing dates (Part 5)
+    - all in one folder, each query named so a VP could pick the right one without asking you, and shared where people will find it (Part 6)
 
 <div class="msg" data-initials="RE" data-tone="teal" markdown>
 <p class="msg-head"><strong>Ruth Ellison</strong><span>Program Manager, METP · 8:15 AM</span></p>
@@ -30,25 +34,33 @@ Thirty years, and every Monday somebody asks me the same five questions. What's 
 
 ## What you'll walk away with
 
-- A reusable, shared query toolkit that answers the five standard management questions at Feature level
-- Fluency with the three query types, and a feel for which question each one is built for
-- The macros and operators that make a query keep working next sprint (`@CurrentIteration`, `@Today + n`, `Under`, `In`), and the traps hidden in each
+- Queries that stay correct next sprint, using `@CurrentIteration`, `@Today + n` and `Under`, without falling into the team-parameter trap
+- A clear rule for choosing among the three query types, and the habit of checking a flat count against a tree by Feature
+- An at-risk definition you can defend, and the discipline to triage its result before you forward it
+- A PI scorecard that separates delivery problems from record problems
 - Queries that find **orphan work** and **empty Features**, the two blind spots of every progress report
-- The habit of interrogating a result before you act on it
+- A shared, well-named toolkit that your dashboards, your colleagues and the rest of this course can reuse
 
 ## Before you set sail
 
 - **Access:** Basic. Contribute is already granted on `Shared Queries/Training`, so you can save shared queries there and nowhere else in **Shared Queries**.
-- **Find (or create) your folder (2 minutes):** **Boards › Queries**, **All** tab, expand `Shared Queries/Training`. Your instructor may have pre-created `P##` (it already holds a `Lab 11 - Inherited queries` sub-folder you'll use on Day 3). If it isn't there, select **New folder** in the toolbar, enter the **Name** `P##`, and pick `Shared Queries/Training` as its location. Every query in this lab goes there. (Your Day 2 dashboards reuse them, and the capstone on Day 3 does too.)
-
+- **Find (or create) your folder (2 minutes):** **Boards › Queries**, **All** tab, expand `Shared Queries/Training`. Your instructor may have pre-created `P##` (it already holds a `Lab 11 - Inherited queries` sub-folder for Day 3). If it isn't there, select **New folder** in the toolbar, enter the **Name** `P##`, and pick `Shared Queries/Training` as its location. Every query in this lab goes there, because your Day 2 dashboards and the Day 3 capstone reuse them.
 - **Read-only:** queries are views, so nothing you build changes anyone's work. Never bulk-edit from results in this lab.
 - **The sandbox fence:** thirty participant sandboxes under `HarborPoint\Training` hold copies of real Features. Every project-wide Feature query needs `Area Path` `Not Under` `HarborPoint\Training`, or your portfolio fills up with your classmates' homework.
 - **Names are questions, minus the question mark.** Query names can't contain `?`, `/`, `\`, `:` or `*`. The number prefix keeps the folder in reading order.
 - **Time-box:** 60 minutes. Protect Part 3, which is where the judgment lives.
 
+**Pick the query type by the shape of the question.** Every query in the toolkit uses one of three types, set in the query editor's **Query type** box:
+
+| Query type | The question it answers | Your queries |
+|---|---|---|
+| **Flat list of work items** | "Which items match?" Lists, counts and sorting. The only type you can chart | 02, 04, 05, 08 |
+| **Tree of work items** | "What does this work serve?" Features with their stories nested underneath | 01, 03 |
+| **Work items and direct links** | "What is linked to what, or *missing* a link?" | 06, 07 |
+
 ## Part 1 — What is my team working on, by Feature?
 
-You did this by eye in Lab 2. Now make it a question anyone can rerun.
+**The question:** which Features is my team's sprint actually serving? You answered it by eye in Lab 2. Now make it a query anyone can rerun next sprint without editing it.
 
 !!! speedrun "Speed run · 6 minutes"
     Build and save `01 What is my team working on (by Feature)`: the **Features** that `Mobile Banking`'s **current sprint** stories serve, with those stories indented underneath. It must still be correct next sprint without anyone editing it.
@@ -83,7 +95,9 @@ You did this by eye in Lab 2. Now make it a question anyone can rerun.
     4. **Column options**: `Title`, `State`, `Assigned To`, `Story Points`, `Tags`. **Run query**, then **Expand all**.
     5. **Save** as `01 What is my team working on (by Feature)` in `Shared Queries/Training/P##`.
 
-    **Expected result:** three Features with **14** stories beneath them: `Mobile Check Deposit 2.0` (8 stories), `Biometric Login` (3) and `Real-Time Fraud Alerts` (3). Note that the third one doesn't even belong to Digital Banking's Epic. It serves priority #1.
+    **Expected result:** three Features with **14** stories beneath them: `Mobile Check Deposit 2.0` (8 stories), `Biometric Login` (3) and `Real-Time Fraud Alerts` (3). The third doesn't even belong to Digital Banking's Epic. It serves priority #1.
+
+    **So what?** The sprint serves three Features, and **some of it serves none**. Count that part next.
 
     ??? info "Under the hood: WIQL"
         ```sql
@@ -107,27 +121,33 @@ You did this by eye in Lab 2. Now make it a question anyone can rerun.
 <figcaption markdown>Three Features with 14 stories nested beneath them, and then **five stories hanging loose at the bottom**, with no Feature above them. That's 12 points of this sprint serving no part of the portfolio.</figcaption>
 </figure>
 
-**Now count.** Mobile Banking's Sprint 14 holds **19** stories. Three Features hold 14 of them. Now scroll to the bottom of the results: **five stories hang loose**, flush left, with no Feature above them. *Match linked work items first* starts from every story that matches and then climbs to its parent; these five have no parent to climb to.
+**Now count.** Mobile Banking's Sprint 14 holds **19** stories, and three Features hold 14 of them. The other **five hang loose** at the bottom of the results, flush left: *Match linked work items first* starts from every matching story and climbs to its parent, and these five have none.
 
-That's 12 points of this sprint serving no part of the portfolio. In this tree you can at least see them, dangling at the bottom where nobody looks. In a Feature rollup or a progress report they don't exist at all. Keep them in mind: you'll hunt them down properly in Part 5.
+That's **12 points** of this sprint serving no part of the portfolio. Here you can at least see them, at the bottom where nobody looks. In a Feature rollup or a progress report they don't exist at all. You'll hunt them down in Part 5.
 
 !!! reef "Reef ahead: `@CurrentIteration` picks a sprint, not a team"
     HarborPoint's teams all share one set of sprints (`HarborPoint\PI 4\Sprint 14` and so on). The team parameter only tells Azure DevOps *whose calendar* to read when it works out which sprint is current. It doesn't filter to that team's work. Drop the `Area Path` clause and the same query returns all six teams' Sprint 14.
 
-    The opposite mistake is quieter. Point the team parameter at a team whose sprint calendar doesn't include today's sprint (a team set up only for future planning, say) and Azure DevOps doesn't complain. It quietly treats that team's **next** sprint as current, and your "this sprint" query returns next sprint's work, looking perfectly plausible. Always check the team parameter, especially after **Save as**: copies keep the original team.
+    The opposite mistake is quieter. Point the team parameter at a team whose calendar doesn't include today's sprint (a team set up only for future planning, say), and Azure DevOps treats that team's **next** sprint as current. Your "this sprint" query returns next sprint's work, looking perfectly plausible. Always check the team parameter, especially after **Save as**: copies keep the original team.
 
 !!! checkpoint "Checkpoint"
     - [ ] `Shared Queries/Training/P##` exists
     - [ ] `01 What is my team working on (by Feature)` returns 3 Features and 14 stories
     - [ ] I can explain why 5 of Mobile Banking's 19 sprint stories sit at the bottom of the tree with no Feature above them
 
+!!! takeaway "Takeaway"
+    `@CurrentIteration` keeps a query true next sprint, but it picks a sprint, not a team: pair it with an area clause and check whose calendar it reads.
+
 ## Part 2 — What's high priority, and what got done?
 
-Two questions you'll be asked weekly. One is about intent, the other about evidence.
+**The questions:** what have we said matters most, and what did last sprint actually deliver? One is about intent, the other about evidence, and you'll be asked both every week.
 
 ### 02 High-priority Features still open
 
-Build a **Flat list of work items**:
+!!! predict "Make a call"
+    Before you build it, write down two guesses. **How many open Features do you think are marked Priority 1?** And if two of them competed for the same team, what would you use to decide which comes first? Keep your answers. The list and the notes under it will test both.
+
+Build a **Flat list of work items**, because this is a plain "which items match?" question:
 
 | And/Or | Field | Operator | Value |
 |:--|:--|:--|:--|
@@ -138,16 +158,13 @@ Build a **Flat list of work items**:
 
 Add columns `Node Name`, `State`, `Target Date` and `Tags`. **Node Name** shows the last segment of the Area Path, which here is the owning team. Save it as `02 High-priority Features still open`.
 
-!!! predict "Make a call"
-    Before you read the results, write down two guesses. **How many open Features do you think are marked Priority 1?** And if two of them competed for the same team, what would you use to decide which comes first? Keep your answers. The list and the notes under it will test both.
-
 **You should see 5 Features:** `Mobile Check Deposit 2.0`, `Instant Card Controls`, `Real-Time Fraud Alerts`, `Fraud Scoring Engine v2` and `Audit Evidence Automation`.
 
 **So what?** Read the list as a manager, not as a query-writer:
 
 - **Two of the five belong to Security**, the team you'll find on Day 2 spending most of its sprint on mandatory exam work.
 - **One hasn't started.** `Instant Card Controls` is New, tagged `leadership-ask`, and due by the end of Sprint 17.
-- **All five say Priority 1, so the field doesn't rank anything.** The real order is the backlog order. In Lab 1 you saw a Priority 1 Epic sitting dead last in it.
+- **All five say Priority 1, so the field ranks nothing.** In Lab 1 you saw a Priority 1 Epic sitting dead last in the backlog.
 
 !!! insight "Lighthouse insight: a field is a label, the backlog is a decision"
     Anyone can set Priority to 1, and over time everyone does. When five things are "priority one", the field has stopped carrying information. The backlog order is a forced ranking, because two items can't share a position. Use Priority to *find* candidates, and use backlog rank to decide between them.
@@ -155,7 +172,7 @@ Add columns `Node Name`, `State`, `Target Date` and `Tags`. **Node Name** shows 
 ### 03 Completed last sprint (by Feature)
 
 !!! challenge "Challenge: What did Digital Banking finish last sprint?"
-    Build a query that lists the stories **Closed** in **last sprint** by **both** Digital teams, and that rolls forward by itself when Sprint 15 starts. Run it as a flat list first and note the count. Then switch it to a tree grouped by Feature and save that version as `03 Completed last sprint (by Feature)`.
+    Build a query that lists the stories **Closed** in **last sprint** by **both** Digital teams, and that rolls forward by itself when Sprint 15 starts. Run it as a flat list first and note the count. Then switch it to a tree grouped by Feature, and save that version as `03 Completed last sprint (by Feature)`.
 
     Which Features advanced? Which one finished? And what does the difference between the two counts tell you?
 
@@ -183,9 +200,7 @@ Add columns `Node Name`, `State`, `Target Date` and `Tags`. **Node Name** shows 
 
     **Expected:** five Features with **15** stories nested beneath them, and the other **7** hanging loose at the bottom: `Mobile Check Deposit 2.0` (3), `Biometric Login` (3), `Online Account Opening` (5), `Spending Insights` (2) and `Paperless Statements & Documents` (2). Paperless Statements is the one that **closed** in Sprint 13.
 
-    **The gap:** 22 − 15 = **7 orphan stories**, six of them Mobile Banking's. Those six carried 23 of Mobile's 44 points. More than half of what Mobile finished last sprint served no Feature at all.
-
-**Judgment:** the flat list says "Digital was busy". The tree says what the work *bought*. When the flat count is much bigger than the tree count, ask what the team was doing instead.
+    **So what?** 22 − 15 = **7 orphan stories**, six of them Mobile Banking's. Those six carried 23 of Mobile's 44 points. **More than half of what Mobile finished last sprint served no Feature at all.**
 
 !!! note "What the query editor can't tell you: carry-over"
     "Which stories were planned for Sprint 13 and didn't finish?" isn't a query you can build here. **Was Ever** doesn't support **Iteration Path** or **Area Path** in the query editor, and a carried story's Iteration Path now says Sprint 14. Use the team's **Velocity** report for Planned versus Completed (Lab 4), and an item's **History** tab for the sprints it passed through (Lab 2).
@@ -195,9 +210,12 @@ Add columns `Node Name`, `State`, `Target Date` and `Tags`. **Node Name** shows 
     - [ ] `03 Completed last sprint (by Feature)` shows 5 Features and 15 stories, and I know the flat list holds 22
     - [ ] I can say, in one sentence, what the 7-story gap means
 
+!!! takeaway "Takeaway"
+    A flat count shows how busy a team was; a tree by Feature shows what the work bought. When the first is much bigger, ask what the team was doing instead.
+
 ## Part 3 — Which Features are at risk?
 
-This is the query leadership will actually forward, so it's the one most worth getting right. "At risk" isn't a field in Azure DevOps. It's a definition you write, and everyone who uses the query inherits it.
+**The question:** which Features should leadership worry about? This is the query people will actually forward, so it's the one most worth getting right. "At risk" isn't a field in Azure DevOps. It's a definition you write, and everyone who uses the query inherits it.
 
 !!! challenge "Challenge: Define “at risk” in one query"
     Build `04 Features at risk`. A Feature counts as at risk if it is **not finished** and **any** of these is true:
@@ -230,6 +248,8 @@ This is the query leadership will actually forward, so it's the one most worth g
 
     **Expected result: 8 Features.** `Agent Knowledge Base`, `Mobile Check Deposit 2.0`, then `Spending Insights`, `Omnichannel Service Requests`, `Lobby Check-In & Queue Management` and `Unified Notification Service` (all due at the end of Sprint 15), then `Real-Time Fraud Alerts` and `Audit Evidence Automation`, which are there because of their Risk.
 
+    **So what?** Eight matches is not eight risks. **Don't send this list until you've sorted it**: the reef below shows how.
+
     ??? info "Under the hood: WIQL"
         ```sql
         SELECT [System.Id], [System.Title], [System.State], [System.AreaPath],
@@ -261,9 +281,9 @@ This is the query leadership will actually forward, so it's the one most worth g
 <figcaption markdown>Eight Features, sorted by Target Date. `Agent Knowledge Base` is still Active a month past its date. `Real-Time Fraud Alerts`, the portfolio's top priority, is here only because someone set **Risk**: it has no `at-risk` tag.</figcaption>
 </figure>
 
-**Why +21 and not +30?** `@Today` moves every day, so a date window is a moving target. From where we are, in week 2 of Sprint 14, 21 days reaches into Sprint 16 but stops short of its last day, when five Features are due. A 30-day window crosses that line partway through this course, and the list jumps from 8 to 12 without a single Feature changing. When you pick a window, pick it on purpose, and put it in the query's name or description so readers know what "soon" means.
+**Why +21 and not +30?** `@Today` moves every day, so a date window is a moving target. In week 2 of Sprint 14, 21 days reaches into Sprint 16 but stops short of its last day, when five Features are due. A 30-day window crosses that line partway through this course, and the list jumps from 8 to 12 without a single Feature changing. Pick the window on purpose.
 
-Now open the **HarborPoint Team** Features backlog (**Boards › Backlogs**, team `HarborPoint Team`, **Features** level) with a **Progress by Story Points** rollup column (per user, so it's safe). Check your one-sentence summary against it.
+Now check your one-sentence summary against the evidence. Open **Boards › Backlogs**, team `HarborPoint Team`, **Features** level, and add a **Progress by Story Points** rollup column (it's a per-user setting, so it's safe).
 
 !!! reef "Reef ahead: “Eight Features at risk, escalate them all”"
     If your sentence to Priya was "we have eight Features at risk", you just forwarded a query. Look at what the eight actually are:
@@ -278,16 +298,19 @@ Now open the **HarborPoint Team** Features backlog (**Boards › Backlogs**, tea
     And look at who carries the `at-risk` tag: only `Mobile Check Deposit 2.0`. `Real-Time Fraud Alerts`, at 4% done and the portfolio's top priority, made the list only because someone set its Risk field. **Tags depend on humans.** A query is a filter on what people remembered to record. It isn't a sensor.
 
 !!! insight "Lighthouse insight: a query is a reusable question, so name it like one"
-    `04 Features at risk` will outlive this sprint and probably your role. Whoever opens it next inherits your definition of risk without seeing it. Name it for the question, say what the window is, and treat the result as a list of things to **read**. A good at-risk query has a high-recall shortlist and a human who triages it.
+    `04 Features at risk` will outlive this sprint and probably your role. Whoever opens it next inherits your definition of risk without seeing it. So the name has to carry the question, and the window has to be visible in its name or description, so readers know what "soon" means.
 
 !!! checkpoint "Checkpoint"
     - [ ] `04 Features at risk` returns 8 Features, sorted by Target Date
     - [ ] I sorted the 8 into: nearly done, data problem, untrustworthy, and real risk (3)
     - [ ] I can explain why `Real-Time Fraud Alerts` belongs on the list even though nobody tagged it
 
+!!! takeaway "Takeaway"
+    A query result is a shortlist, not a verdict: triage it before you forward it, because a filter only finds what people remembered to record.
+
 ## Part 4 — How did the last PI land?
 
-PI 3 (Sprints 9 to 12) is over. Leadership wants a scorecard: what was completed, and what's still open.
+**The question:** what did PI 3 (Sprints 9 to 12) complete, and what's still open? Leadership wants a scorecard, and whatever number goes in it is the one people will quote.
 
 Build `05 Last PI scorecard` as a **Flat list of work items**:
 
@@ -299,7 +322,7 @@ Build `05 Last PI scorecard` as a **Flat list of work items**:
 
 Columns: `Work Item Type`, `Title`, `State`, `Node Name`, `Iteration Path`. Sort by `Work Item Type`, then `State`.
 
-`Under` makes this work. Features are planned against the PI node (`HarborPoint\PI 3`) and stories against its sprints, and `Under` catches the node and everything below it. With `=` you'd get only the Features.
+`Under` makes this work. Features are planned against the PI node (`HarborPoint\PI 3`) and stories against its sprints, and `Under` catches the node and everything below it. With `=` you'd get only the Features. A flat list is the right type here: you want every match, sortable and chartable.
 
 **Read the Features first.** Three were planned for PI 3: `Mobile App Redesign` and `Online Appointment Scheduling`, both Closed, and `Agent Knowledge Base`, still **Active**. Did PI 3 deliver two Features or three? Functionally three; the record says two. Someone has to decide which number goes in the PI report, and fix the record.
 
@@ -312,9 +335,12 @@ Columns: `Work Item Type`, `Title`, `State`, `Node Name`, `Iteration Path`. Sort
     - [ ] `05 Last PI scorecard` shows 3 PI 3 Features: 2 Closed and 1 still Active
     - [ ] I can name the team whose PI 3 stories aren't Closed, and say why that's a data problem, not a delivery one
 
+!!! takeaway "Takeaway"
+    Open work in a closed PI is usually a record problem, not a delivery one, so decide which number is true and fix the record before it goes in a report.
+
 ## Part 5 — The queries nobody thinks to write
 
-Every query so far looked at work that's linked to the portfolio. These three look for the gaps: work with no Feature, Features with no work, and Features with no date.
+**The question:** what is missing from the picture? Every query so far looked at work that's in the portfolio. These three look for the gaps: work with no Feature, Features with no work, and Features with no date.
 
 !!! challenge "Challenge: Find the orphans"
     Save `06 Orphan work`: every **User Story** in **Mobile Banking**'s **current sprint** that has **no parent Feature**. You'll need the one query type you haven't used yet. How many stories, and how many points?
@@ -346,6 +372,8 @@ Every query so far looked at work that's linked to the portfolio. These three lo
 
     Widen it to `Area Path` `Under` `HarborPoint\Digital` and you'll find **6**. Digital Accounts has exactly one.
 
+    **So what?** These are the five loose stories from your Part 1 tree, now a list of their own that Lab 5 turns into a dashboard tile. **Once it's counted, someone has to answer for it.**
+
 <figure class="hp-shot" data-shot="lab03-q6-orphans" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › 06 Orphan work (Work items and direct links)</span></div>
 
@@ -366,18 +394,24 @@ Every query so far looked at work that's linked to the portfolio. These three lo
     Top level: `Work Item Type = Feature`, the sandbox fence, `State <> Removed`. Linked: `Work Item Type In User Story,Bug`. Link type **Child** only, with **Only return items that do not have matching links**.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
+    **Query type**: **Work items and direct links**. **Filters for top level work items**:
+
     | And/Or | Field | Operator | Value |
     |:--|:--|:--|:--|
     | | Work Item Type | = | `Feature` |
     | And | Area Path | Not Under | `HarborPoint\Training` |
     | And | State | <> | `Removed` |
 
-    Linked filter `Work Item Type` `In` `User Story,Bug`. Link type **Child**. **Only return items that do not have matching links**.
+    **Filters for linked work items**: `Work Item Type` `In` `User Story,Bug`. **Filter options**: **Only return items that do not have matching links**. **Types of links**: **Return selected link types**, with only **Child** ticked.
 
-    **Expected: 1 Feature.** `Member-to-Member Transfers`: Mobile Banking, Sprints 17 to 20, Business Value 20, zero stories. It isn't late, because it hasn't started. But PI 5 planning begins in Sprint 17, and a Feature with no stories can't be sized or forecast. It's a planning risk, and it's yours to raise with Hannah Cole now.
+    **Expected: 1 Feature.** `Member-to-Member Transfers`: Mobile Banking, Sprints 17 to 20, Business Value 20, zero stories.
+
+    **So what?** It isn't late, because it hasn't started. But PI 5 planning begins in Sprint 17, and **a Feature with no stories can't be sized or forecast**. It's a planning risk, and it's yours to raise with Hannah Cole now.
 
 !!! speedrun "Speed run · 3 minutes: the trick question"
     Which Features have **no Target Date**? Build it, run it, and decide whether to save it.
+
+<div class="timer" data-minutes="3" data-label="Speed run"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
     `Is Empty` works only on text and HTML fields. For a date, there's another way to say "blank".
@@ -386,20 +420,23 @@ Every query so far looked at work that's linked to the portfolio. These three lo
     `Target Date` `=` with the **Value** left empty means "has no value". Add the Feature type and the sandbox fence.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    `Work Item Type = Feature` · `Area Path Not Under HarborPoint\Training` · `Target Date =` *(blank)*.
+    **Flat list of work items**: `Work Item Type = Feature` · `Area Path Not Under HarborPoint\Training` · `Target Date =` *(blank)*.
 
-    **Expected: zero.** Every one of HarborPoint's 24 Features has a Start and a Target Date, which is why Delivery Plans and your at-risk query work at all. That's good news, **if the query is right.** Prove it: change the operator to `<>` (blank value means "has a value") and you should get all **24**. A zero you haven't tested is just a hope.
+    **Expected: zero.** Every one of HarborPoint's 24 Features has a Start and a Target Date, which is why Delivery Plans and your at-risk query work at all. That's good news, **if the query is right.** Prove it: change the operator to `<>` (blank value means "has a value") and you should get all **24**.
 
-    Save it as `08 Features with no Target Date` anyway. A query that returns nothing today is a smoke alarm for the day someone adds an undated Feature.
+    **So what?** **A zero you haven't tested is just a hope.** Save it as `08 Features with no Target Date` anyway: a query that returns nothing today is a smoke alarm for the day someone adds an undated Feature.
 
 !!! checkpoint "Checkpoint"
     - [ ] `06 Orphan work` returns 5 stories (12 points) for Mobile Banking's current sprint
     - [ ] `07 Empty Features` returns `Member-to-Member Transfers`
     - [ ] I proved my zero-result query by flipping its operator and getting 24
 
+!!! takeaway "Takeaway"
+    Progress reports only show work that's linked to a Feature, so query for what's missing, and test every zero before you trust it.
+
 ## Part 6 — Make the toolkit travel
 
-A toolkit nobody opens is a hobby. Make it reachable.
+**The question:** how will anyone else find and use what you built? A toolkit nobody opens is a hobby.
 
 <figure class="hp-shot" data-shot="lab03-toolkit-folder" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › All › Shared Queries › Training › P##</span></div>
@@ -413,13 +450,13 @@ A toolkit nobody opens is a hobby. Make it reachable.
 - **Send the link, not a screenshot:** **More actions** (…) › **Copy query URL** gives anyone in the project the live result. Links to **My Queries** only work for you.
 - **Email a snapshot:** **More actions** › **Email query**. Recipients must be individual project members, and emails to yourself aren't delivered.
 - **Follow what matters:** select **Follow** on `Real-Time Fraud Alerts` to be notified when it changes. A query with `ID In @Follows` becomes your watchlist.
-- **Coming up:** in Lab 5 these become dashboard tiles, which accept only **shared** queries. That's why they live here.
+- **Coming up:** in Lab 5 these become dashboard tiles, which accept only **shared** queries.
 
 ### Your macro and operator cheat sheet
 
 | Use | When | Watch out |
 |---|---|---|
-| `@CurrentIteration` / `@CurrentIteration - 1` | Iteration Path, `=` | Takes a team parameter. That picks the calendar, not the work: add an area clause. A team with no current sprint returns nothing |
+| `@CurrentIteration` / `@CurrentIteration - 1` | Iteration Path, `=` | Takes a team parameter. That picks the calendar, not the work: add an area clause. A team without today's sprint silently uses its next one |
 | `@Today + n` / `@Today - n` | Any date field | Moves daily. Choose the window deliberately and name it |
 | `@TeamAreas` | Area Path, `=` only | Web portal only. Doesn't work in Excel, the REST API, or notification filters |
 | `Under` / `Not Under` | Area and Iteration Path | Includes the node and everything below it. Your best friend for PIs and team trees |
@@ -428,6 +465,9 @@ A toolkit nobody opens is a hobby. Make it reachable.
 | `Contains Words` | Title, Description, other long text | Faster full-text search. Use it for text, not for tags |
 | `=` *(blank)* / `<>` *(blank)* | Non-text fields | "Has no value" / "has a value". `Is Empty` works only on text fields |
 | `Was Ever` | State, Assigned To | **Not** Iteration Path or Area Path. Carry-over lives in Velocity and History |
+
+!!! takeaway "Takeaway"
+    A query helps only when others can find it and trust it: save it shared, name it like the question it answers, and send the live link, not a screenshot.
 
 ## Knowledge check
 
@@ -486,7 +526,7 @@ A Parent/Child tree can only show children that have a parent. The flat list cou
     5. Who else would benefit from your toolkit, and where would they look for it?
 
 !!! bonus "Extra knots"
-    1. **The silent slip.** `Fraud Scoring Engine v2` is Priority 1 and its Target Date was pushed back two sprints earlier in this sprint, yet it's not on your at-risk list. Why not? Sketch a clause that would catch it. (Hint: there isn't a clean one in the query editor. What does that tell you about where "the date moved" lives?)
+    1. **The silent slip.** `Fraud Scoring Engine v2` is Priority 1, and earlier this sprint its Target Date was pushed back two sprints, yet it's not on your at-risk list. Why not? Sketch a clause that would catch it. (Hint: there isn't a clean one in the query editor. What does that tell you about where "the date moved" lives?)
     2. **Program-wide orphans.** Save a copy of `06 Orphan work` as `06b Orphan work (all teams)`. Replace the area clause with `Area Path` `Not Under` `HarborPoint\Training`, and set the team parameter on `@CurrentIteration` to `HarborPoint Team`. Which team has the most orphans this sprint, and does it matter?
     3. **Late deliveries.** Use a field-to-field comparison (`Closed Date` `>` **[Field]** `Target Date`) to find Features that closed after their target. What does an empty result mean here, and how would you test it?
 
@@ -499,8 +539,9 @@ A Parent/Child tree can only show children that have a parent. The flat list cou
 
 ## Key takeaways
 
-- A saved query is a **definition** everyone inherits. Name it like the question it answers and put the window in the name.
-- Pick the query type for the question: **flat** for lists and charts, **tree** for "what does this work serve?", **direct links** for "what's missing or blocked?".
-- `@CurrentIteration` picks a sprint, not a team. Pair it with an area clause, and check the team parameter.
-- Trees hide orphans, and progress reports hide them too. Measure the gap between "work done" and "work that moved a Feature".
-- Every result is a shortlist to read, not a verdict to forward. Test your zeros, distrust your tags, and triage before you escalate.
+- **A macro picks a sprint, not a team.** `@CurrentIteration` keeps a query true next sprint. Pair it with an area clause, and check whose calendar the team parameter reads.
+- **Busy is not bought.** A flat count shows activity; a tree by Feature shows what the work bought. Pick the query type for the question: **flat** for lists and charts, **tree** for "what does this work serve?", **direct links** for "what's missing?".
+- **A result is a shortlist, not a verdict.** Triage every at-risk result before you forward it. A filter only finds what people remembered to record, so distrust your tags.
+- **Fix the record before the report.** Open work in a closed PI is usually forgotten or finished-but-never-closed. Decide which number is true, then fix the state.
+- **Query for what's missing.** Orphan work and empty Features are the blind spots of every progress report. Test every zero by flipping its operator.
+- **Name it like the question.** A saved query is a definition everyone inherits. Save it shared, make its window explicit, and send the link, not a screenshot.

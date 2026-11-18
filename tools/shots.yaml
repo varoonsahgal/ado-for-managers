@@ -23,7 +23,7 @@ lab06-cfd-mobile:
 
 lab01-digital-features-rollup:
   bar: "Boards › Backlogs › Digital Portfolio › Features (Parents on, three rollup columns)"
-  caption: "The Epic reads **58% of 455 points**, but its six visible Features add up to 348. The other 107 points are two Closed Features the backlog hides. Note `Spending Insights` at **88%** and `Real-Time Fraud Alerts` at **4%**."
+  caption: "The Epic reads **58% of 455 points**, but its six visible Features add up to only 348. Note `Spending Insights` at **88%** and `Real-Time Fraud Alerts` at **4%**."
 
 lab01-f2-work-item-form:
   bar: "Work item form › Feature › Mobile Check Deposit 2.0"
@@ -43,7 +43,7 @@ lab07-dependencies-dialog:
 
 lab01-mobile-stories-resolved:
   bar: "Boards › Boards › Mobile Banking › Stories"
-  caption: "Three stories, **11 points** of finished code, sit in Resolved waiting for the team's only tester, with Resolved bugs queuing behind them. Notice the column headers too: **16/5** and **6/5** in red mean both columns are far over their work-in-progress limit."
+  caption: "Three stories, **11 points** of finished code, wait in Resolved for the team's only tester, with Resolved bugs queuing behind them. The red **16/5** and **6/5** headers mean both columns are far over their work-in-progress limit."
 
 lab01-f9-children-by-area:
   bar: "Boards › Backlogs › HarborPoint Team › Features › Real-Time Fraud Alerts expanded"
@@ -119,7 +119,8 @@ lab05-velocity-config:
 
 lab05-command-center-full:
   bar: "Overview › Dashboards › P## - Digital Command Center"
-  caption: "Top row: *is anything on fire?* Second row: *where are the Features?* Below: the diagnostics. Every team-scoped widget names its team in the title, and the tiles read **3 / 18 / 1 / 6**."
+  caption: "Every team-scoped widget names its team in the title, and the tiles read **3 / 18 / 1 / 6**."
+  alt: "Top row: is anything on fire? Second row: where are the Features? Below: the diagnostics. Every team-scoped widget names its team in the title, and the tiles read 3 / 18 / 1 / 6."
 
 lab05-exec-view:
   bar: "Overview › Dashboards › P## - Digital Banking Exec View"
@@ -159,11 +160,11 @@ lab08-tile-rules:
 
 lab08-bluf-page:
   bar: "Overview › Wiki › Training › P## › Executive Briefing"
-  caption: "Two sentences answer *are we going to make it?* and *what do you need?* Each risk has three lines of evidence and a member impact. Every decision names one decider and can be answered yes or no."
+  caption: "The highlighted blocks are what Dana reads for: two sentences that answer *are we going to make it?* and *what do you need?*, and decisions that each name one decider and can be answered yes or no. Each risk carries three lines of evidence and a member impact."
 
 lab09-da-velocity:
   bar: "Boards › Backlogs › Digital Accounts › Analytics › Velocity (Sum of Story Points)"
-  caption: "Five completed sprints: **24, 26, 25, 24, 26**. The Average Velocity card reads **25** and leaves the in-progress Sprint 14 out. 25 means 25: that's what makes this team forecastable."
+  caption: "Five completed sprints: **24, 26, 25, 24, 26**. The Average Velocity card reads **25** and leaves the in-progress Sprint 14 out."
 
 res-metrics-velocity-report:
   bar: "Boards › Backlogs › Digital Accounts › Analytics › Velocity"
@@ -171,7 +172,8 @@ res-metrics-velocity-report:
 
 lab09-capacity-s16:
   bar: "Boards › Sprints › Digital Accounts › Sprint 16 › Capacity"
-  caption: "**Team days off: 2 days**, and the header already says **8 work days**, not 10. The two-day holiday is recorded, but no one's personal time off is: that's what the wiki page is for."
+  caption: "**Team days off: 2 days**, and the header already says **8 work days**, not 10. The holiday is recorded, but no one's personal time off is: that's what the wiki page is for."
+  alt: "Team days off: 2 days, and the header already says 8 work days, not 10. The two-day holiday is recorded, but no one's personal time off is: that's what the wiki page is for."
 
 lab09-forecast-15:
   bar: "Boards › Backlogs › P## Sandbox › Stories · Forecasting at velocity 15"
@@ -179,7 +181,8 @@ lab09-forecast-15:
 
 lab09-forecast-mvp-reordered:
   bar: "Boards › Backlogs › P## Sandbox › Stories · Forecasting at 15, MVP tagged, one story moved"
-  caption: "No estimate changed. Moving one *should* story below the MVP pulls the whole MVP above the **Sprint 17** line, 44 points in a 45-point budget. Ordering is a scope decision, and a buffer of one point is no buffer at all."
+  caption: "No estimate changed. Moving one *should* story below the MVP pulls the whole MVP above the **Sprint 17** line: 44 points in a 45-point budget."
+  alt: "No estimate changed. Moving one should story below the MVP pulls the whole MVP above the Sprint 17 line, 44 points in a 45-point budget."
 
 lab09-real-backlog-forecast:
   bar: "Boards › Backlogs › Digital Accounts › Stories · Forecasting at 25 (In Progress Items off)"
@@ -195,11 +198,12 @@ lab10-persona-wiki:
 
 lab10-story-form:
   bar: "Work item › User Story › Links tab"
-  caption: "A persona-driven story: one `persona-jordan` tag, a Parent link to your Feature, and a **Wiki page** link to Jordan's persona. Add the wiki link from the **Links** tab: the Related Work panel on Details doesn't offer that link type."
+  caption: "A persona-driven story: one `persona-jordan` tag, a Parent link to your Feature, and a **Wiki page** link to Jordan's persona, added from the **Links** tab."
 
 lab10-sandbox-backlog:
   bar: "Boards › Backlogs › P## Sandbox › Stories (Parents on)"
-  caption: "One Feature, six stories, three personas. Every story names its member in its title and its tag, and the three ID-verification stories sit side by side: one capability, built three different ways."
+  caption: "Your starting point: one Feature, six stories, three personas, in the order you wrote them. The three ID-verification stories sit side by side: one capability, built three different ways. Scoring will pull them apart."
+  alt: "Your starting point: one Feature, six stories, three personas, in the order you wrote them. The three ID-verification stories sit side by side: one capability, built three different ways."
 
 lab11-ms-dashboard:
   bar: "Overview › Dashboards › Member Support - Delivery Health (team dashboard)"
@@ -207,11 +211,11 @@ lab11-ms-dashboard:
 
 lab11-leo-query-editor:
   bar: "Boards › Queries › Shared Queries › PMO Reporting › MS - Current sprint work › Editor"
-  caption: "Defect one, in plain sight: the \"current sprint\" is typed in as **Sprint 13**. It was right for two weeks, and it has been quietly wrong ever since. Look at the results, too: a Closed story with no points, and two spellings of one tag."
+  caption: "Hard-coded, in plain sight: the \"current sprint\" is typed in as **Sprint 13**. It was right for two weeks and has been quietly wrong ever since. The results hold two more defects: a Closed story with no points, and two spellings of one tag."
 
 lab11-velocity-ms:
   bar: "Boards › Backlogs › Member Support › Analytics › Velocity (Sum of Story Points)"
-  caption: "Read the blue. The **Incomplete** segments in Sprints 12 and 13 are finished stories left in Resolved and zombie stories never moved, still sitting in sprints that have ended. The green collapse to 13 and 8 is a recording problem, and the evidence is stacked right on top of it."
+  caption: "Read the blue. The **Incomplete** segments in Sprints 12 and 13 are finished stories left in Resolved, plus zombie stories never moved out of sprints that have ended. The green collapse to 13 and 8 is a recording problem, with the evidence stacked right on top of it."
 
 lab11-watchlist:
   bar: "Boards › Queries › Shared Queries › Training › P## › Watchlist › Active in a past sprint"
@@ -223,7 +227,7 @@ lab11-sandbox-health:
 
 lab12-pi5-candidates:
   bar: "Boards › Queries › Shared Queries › Training › P## › PI 5 Outlook › PI 5 candidates"
-  caption: "Ten Features land in PI 5, and three carry `PI4-Committed`: promises for PI 4 that have slid into Sprint 17. The bottom row has the joint-highest Business Value and **no Effort at all**. You can't forecast what nobody has sized."
+  caption: "Ten Features land in PI 5, and three carry `PI4-Committed`: work promised for PI 4 that now finishes in Sprint 17. The bottom row has the joint-highest Business Value and **no Effort at all**. You can't forecast what nobody has sized."
 
 lab12-crew-dashboard:
   bar: "Overview › Dashboards › P## - PI 5 Outlook (one reference crew's answer)"
