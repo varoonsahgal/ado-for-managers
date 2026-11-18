@@ -1,0 +1,330 @@
+
+<!-- =============================== DAY 2 =============================== -->
+
+<section class="slide night divider d2" data-title="Day 2 · The Lighthouse" data-part="Day 2 · The Lighthouse" data-nofoot>
+  <div class="art" style="right:-60px; bottom:0; width:800px; height:900px"><svg><use href="#scene-lighthouse"/></svg></div>
+  <div class="content" style="max-width:860px; padding-bottom:120px">
+    <div class="divider-day">Day two · Lighthouse Keeper</div>
+    <h1>The<br>Lighthouse</h1>
+    <p class="lede">Turning information into management decisions. Dashboards that answer questions, metrics read without being fooled, and visibility across teams.</p>
+    <div class="lablist" style="grid-template-columns:repeat(2,1fr)">
+      <div><b>Lab 5</b>Command Center</div><div><b>Lab 6</b>Which Team Needs Help?</div>
+      <div><b>Lab 7</b>Cross-Team Bottleneck</div><div><b>Lab 8</b>Executive Status Review</div>
+    </div>
+  </div>
+  <aside class="notes"><p>Yesterday you found answers. Today you put them where people will see them, and learn which numbers deserve to be believed.</p></aside>
+</section>
+
+<!-- ---------- Lab 5 ---------- -->
+<section class="slide night d2" data-title="Lab 5 · The Command Center" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 5 · Command Center">
+  <div class="lab-open content">
+    <div>
+      <div class="eyebrow">Lab 5 · Module 5 · Management dashboards</div>
+      <h2>Build HarborPoint's Management Command Center</h2>
+      <p class="lede">A Digital Banking dashboard that answers five questions at a glance, then cut down to an executive view a VP can read in thirty seconds.</p>
+      <div class="lab-meta"><span class="chip">60 min</span><span class="chip"><span class="sea" data-s="1"><i></i><i></i><i></i><i></i></span>Calm</span><span class="chip">P## - Digital Command Center</span></div>
+    </div>
+    <div class="lab-art"><figure class="win"><div class="bar"><i></i><i></i><i></i><span>P## - Digital Command Center</span></div><img src="../assets/shots/lab05-command-center-full.png" alt=""></figure><div class="lab-num">05</div></div>
+  </div>
+  <aside class="notes"><p>The most common dashboard is a wall: every widget the builder found, arranged by when they found it. Nobody can read a wall.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="Start with questions, not widgets" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 5 · Command Center">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>The blueprint</div>
+    <h2>Five questions earn five places.</h2>
+    <table class="t tight mt">
+      <tr><th>#</th><th>Priya's question</th><th>Who acts</th><th>Widget that answers it</th></tr>
+      <tr><td><b>Q1</b></td><td>What are both teams working on, and is the sprint on track?</td><td>You, with the EMs · daily</td><td>Chart by Feature and State · Burndown</td></tr>
+      <tr><td><b>Q2</b></td><td>What have we delivered, and is delivery steady?</td><td>You and Priya · each sprint</td><td>Velocity, one per team</td></tr>
+      <tr><td><b>Q3</b></td><td>Are there urgent bugs, and are they growing?</td><td>Engineering managers · daily</td><td>Query tile + trend</td></tr>
+      <tr><td><b>Q4</b></td><td>How are Features progressing toward their dates?</td><td>Priya, POs · weekly</td><td>Features by State · at-risk list</td></tr>
+      <tr><td><b>Q5</b></td><td>What's at risk or blocked, and is effort going where it should?</td><td>You → Priya · twice a week</td><td>Risk, blocked and orphan tiles</td></tr>
+    </table>
+    <div class="callout insight mt-s"><b class="t">The removal test</b>If you can't say which question a widget answers, it's decoration. When the dashboard grows, anything that serves none of the five comes off.</div>
+  </div>
+  <aside class="notes"><p>Constraint for participants: at least one question about Features, and at least one that looks forward to next sprint. CFD and Cycle Time are diagnostics that support Q1 and Q2.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="The Command Center" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 5 · Command Center">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Thirteen widgets, one page</div>
+    <h2>A cockpit for the people who run delivery</h2>
+    <div class="split wide-r mt" style="align-items:start">
+      <div>
+        <ul class="legend-list" style="padding:0; margin:0">
+          <li>A <b>Markdown header</b>: owner, last review, what each color means.</li>
+          <li><b>Count + list</b> side by side: the tile starts a conversation, the list says which one.</li>
+          <li>Analytics widgets read <b>exactly one team</b>. Set Team first; put its name in the title.</li>
+          <li>A <b>threshold is a policy</b>: decide what turns a tile red, and write it down.</li>
+        </ul>
+      </div>
+      <figure class="win tilt" style="max-height:640px"><div class="bar"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Digital Command Center</span></div><img src="../assets/shots/lab05-command-center-full.png" alt="The finished Digital Command Center dashboard." style="height:550px; object-fit:cover; object-position:top"></figure>
+    </div>
+  </div>
+  <aside class="notes"><p>Reef: the right query on the wrong page. A reused query brings its own scope; check it against the page title.</p></aside>
+</section>
+
+<section class="slide night d2" data-title="Diagnostics vs decisions" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 5 · Command Center">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Cut it down for executives</div>
+    <h2>Managers need a cockpit. Executives need a windscreen.</h2>
+    <div class="split wide-l mt">
+      <figure class="win"><div class="bar"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Digital Banking Exec View</span></div><img src="../assets/shots/lab05-exec-view.png" alt="A six-widget executive view with a bottom-line Markdown header." style="max-height:470px; object-fit:cover; object-position:top"></figure>
+      <div>
+        <div class="stat sm"><b style="--c:#e6b450">13 → 6</b><span>widgets. Velocity, burndown, CFD and cycle time stay on the manager's page.</span></div>
+        <div class="callout mt" style="--c:#e6b450; background:rgba(255,255,255,.08); color:#fff"><b class="t">The most important widget</b>is words: a bottom line and the decision needed. It's the only place <b>you</b> say what the numbers mean.</div>
+        <p class="small mt">Use <b>Copy to Dashboard</b>, not Copy Dashboard, so both pages share the same queries.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p>Velocity side by side on an exec page invites the cross-team comparison you warned against yesterday.</p></aside>
+</section>
+
+<!--TK:5-->
+
+<!-- ---------- Lab 6 ---------- -->
+<section class="slide night d2" data-title="Lab 6 · Which Team Needs Help?" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 6 · Which Team Needs Help?">
+  <div class="content">
+    <div class="eyebrow">Lab 6 · Module 6 · Delivery metrics · <span class="sea" data-s="3" style="color:#e6b450"><i></i><i></i><i></i><i></i></span> Rough · 50 min</div>
+    <h2 style="font-size:72px">Which team needs help?</h2>
+    <p class="lede">Make the gut call before you see the evidence. Write it down.</p>
+    <div class="grid2 mt-l" style="gap:40px">
+      <div class="card" style="border-top:6px solid #e2725b"><span class="tag" style="color:#ff9c86">Team A · Mobile Banking</span><div class="stat"><b>44</b><span>points last sprint. Velocity near its all-time high.</span></div></div>
+      <div class="card" style="border-top:6px solid #8fd6cf"><span class="tag">Team B · Digital Accounts</span><div class="stat"><b>26</b><span>points last sprint. Has never broken 26.</span></div></div>
+    </div>
+    <p class="small mt"><b style="color:#fff">Priya, 9:12 AM:</b> "Someone saw 44 against 26 and asked if Grace's team needs support. Diego tells me Mobile is drowning. I'd rather not guess." · Hands up: A or B?</p>
+  </div>
+  <aside class="notes"><p>Writing the judgment down first is the only honest way to learn which numbers fool you. Most rooms split; some pick B because of "lower throughput".</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="The three-signals rule" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 6 · Which Team Needs Help?">
+  <div class="content">
+    <div class="eyebrow"><span class="kicker" style="font-size:24px; text-transform:none; letter-spacing:0">Lighthouse insight</span></div>
+    <h2>One chart is an anecdote. Three families make a case.</h2>
+    <div class="grid3 mt-l">
+      <div class="card accent" style="--c:var(--navy)"><span class="tag" style="color:var(--navy)">Exhibit A</span><h3>Output</h3><p>Velocity, throughput (count), commitment reliability.</p></div>
+      <div class="card accent" style="--c:var(--teal)"><span class="tag">Exhibit B</span><h3>Flow</h3><p>Cumulative flow, cycle time, work in progress.</p></div>
+      <div class="card accent" style="--c:var(--coral)"><span class="tag" style="color:var(--coral)">Exhibit C</span><h3>Outcomes</h3><p>Bugs left behind, work that reached a Feature.</p></div>
+    </div>
+    <div class="callout key mt-l"><b class="t">The rule</b>Act when output, flow and outcomes <b>agree</b>. When they disagree, take the question to the team.</div>
+  </div>
+  <aside class="notes"><p>Never reach a verdict on one chart.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="Exhibit A: point inflation" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 6 · Which Team Needs Help?">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Exhibit A · Output</div>
+    <h2>Points up a third. Stories finished: flat.</h2>
+    <div class="grid2 mt fill" style="align-items:stretch; gap:40px">
+      <div style="display:flex; flex-direction:column"><h3 style="font-size:26px">Mobile velocity (points)</h3><div class="chart fill" data-chart='{"type":"bar","labels":["S9","S10","S11","S12","S13"],"ymax":50,"ticks":[0,25,50],"series":[{"color":"#d9604a","values":[33,37,41,45,44]}]}'></div></div>
+      <div style="display:flex; flex-direction:column"><h3 style="font-size:26px">Mobile stories completed (count)</h3><div class="chart fill" data-chart='{"type":"bar","labels":["S9","S10","S11","S12","S13"],"ymax":50,"ticks":[0,25,50],"series":[{"color":"#12355b","values":[12,12,13,12,12]}]}'></div></div>
+    </div>
+    <div class="callout reef mt-s"><b class="t">Velocity measures estimates, not speed</b>Average points per story went 2.75 → 3.67. Same work, bigger numbers. Throughput (count) measures finishing.</div>
+  </div>
+  <aside class="notes"><p>Velocity is a team's sum of its own estimates. Rising points over a flat count is inflation. Screenshot available: lab06-velocity-points-vs-count.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="Exhibit B: where work waits" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 6 · Which Team Needs Help?">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Exhibit B · Flow</div>
+    <h2>The Resolved band is widening.</h2>
+    <div class="split mt fill" style="align-items:stretch">
+      <figure class="win"><div class="bar"><i></i><i></i><i></i><span>Cumulative Flow · Mobile Banking · Stories</span></div><img src="../assets/shots/lab06-cfd-mobile.png" alt="Mobile Banking's cumulative flow diagram with a widening Resolved band."></figure>
+      <div style="display:flex; flex-direction:column">
+        <h3 style="font-size:26px">Mobile cycle time, Activated → Closed (days)</h3>
+        <div class="chart fill" data-chart='{"type":"line","labels":["S9","S10","S11","S12","S13"],"ymax":10,"ticks":[0,5,10],"series":[{"name":"","color":"#d9604a","values":[3.5,4.5,6,7.5,9],"tag":false}]}'></div>
+        <p class="small">Digital Accounts holds steady at 4–5 days.</p>
+      </div>
+    </div>
+    <div class="callout insight mt-s"><b class="t">Little's Law, in manager words</b>More work in progress means slower, not faster. The queue forms in front of one tester.</div>
+  </div>
+  <aside class="notes"><p>The CFD shows where work waits; cycle time shows what the wait costs.</p></aside>
+</section>
+
+<section class="slide night d2" data-title="Verdict: change the system, not the number" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 6 · Which Team Needs Help?">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Exhibit C, then the verdict</div>
+    <h2>Mobile Banking needs help. Not a target.</h2>
+    <div class="split mt" style="align-items:start">
+      <div>
+        <div class="grid2">
+          <div class="stat"><b style="--c:#ff9c86">9 → 42</b><span>open bugs in five sprints</span></div>
+          <div class="stat"><b style="--c:#e6b450">52%</b><span>of Sprint 13 points served no Feature</span></div>
+        </div>
+        <p class="big mt" style="color:#dbe8f3">Digital Accounts' lower throughput is a <b>capacity fact to plan around</b>, not a problem to fix.</p>
+      </div>
+      <div class="card">
+        <h3>The help plan</h3>
+        <ul class="ticks" style="margin-top:8px">
+          <li style="font-size:23px">Limit WIP; stop mid-sprint intake</li>
+          <li style="font-size:23px">Add or swarm on test capacity</li>
+          <li style="font-size:23px">Reserve capacity for bugs; agree a quality bar</li>
+          <li style="font-size:23px">Each action: an owner and a metric</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout mt" style="--c:#e6b450; background:rgba(255,255,255,.08); color:#fff"><b class="t">Goodhart's law</b>When a measure becomes a target, it stops being a good measure. Never set a goal a team can hit by changing what it types.</div>
+  </div>
+  <aside class="notes"><p>Metrics are conversation starters. "Help" never means a velocity target.</p></aside>
+</section>
+
+<!--TK:6-->
+
+<!-- ---------- Lab 7 ---------- -->
+<section class="slide night d2" data-title="Lab 7 · The Cross-Team Bottleneck" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 7 · Cross-Team Bottleneck">
+  <div class="lab-open content">
+    <div>
+      <div class="eyebrow">Lab 7 · Module 7 · Teams, backlogs and delivery plans</div>
+      <h2>The Cross-Team Bottleneck</h2>
+      <div class="msg tone-coral"><div class="av">SL</div><div><div class="who"><b>Simone Laurent</b>Chief Risk Officer · 7:48 AM</div><p class="say">I don't do secondhand. Tell me who's waiting on whom, how late it really is, and what my options are, with what each one costs.</p></div></div>
+      <div class="lab-meta"><span class="chip">55 min</span><span class="chip"><span class="sea" data-s="3"><i></i><i></i><i></i><i></i></span>Rough</span><span class="chip">3 teams · 1 Feature</span></div>
+    </div>
+    <div class="lab-art"><figure class="win"><div class="bar"><i></i><i></i><i></i><span>P## - Fraud Alerts Plan · story level</span></div><img src="../assets/shots/lab07-plan-story-level.png" alt=""></figure><div class="lab-num">07</div></div>
+  </div>
+  <aside class="notes"><p>Real-Time Fraud Alerts: Mobile Banking depends on Security's risk-score API, and on Core Platform's push channel.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="Read the red line" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 7 · Cross-Team Bottleneck">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>One calendar first</div>
+    <h2>A red line is a question, not an answer.</h2>
+    <div class="split wide-l mt" style="align-items:start">
+      <figure class="win" style="max-height:600px"><div class="bar"><i></i><i></i><i></i><span>Boards › Delivery Plans › P## - Fraud Alerts Plan</span></div><img src="../assets/shots/lab07-plan-feature-red-line.png" alt="Delivery plan with a red dependency line from Fraud Scoring Engine v2 to Real-Time Fraud Alerts." style="height:560px; object-fit:cover; object-position:top"></figure>
+      <div>
+        <div class="card left" style="--c:var(--red)"><h3>Fraud Scoring Engine v2</h3><p>Security · ends <b>Sprint 17</b></p></div>
+        <div style="text-align:center; font-size:32px; color:var(--red); margin:8px 0">↓ must finish before</div>
+        <div class="card left" style="--c:var(--red)"><h3>Real-Time Fraud Alerts</h3><p>Mobile Banking · due <b>Sprint 16</b></p></div>
+        <p class="small mt">The line tells you two end dates disagree. Not why, not by how much, not what to do. <b>That part is your job.</b></p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p>Build your own plan with Mobile Banking, Security and Core Platform rows, with System Demo and exam fieldwork markers.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="Drop below the waterline" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 7 · Cross-Team Bottleneck">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Two altitudes · the story links size the problem</div>
+    <h2>The real handoff is narrower. Narrower means options.</h2>
+    <table class="t mt" style="font-size:21px">
+      <tr><th>Predecessor</th><th>→ Successor</th><th>Status</th></tr>
+      <tr class="hot"><td>Risk score API · <b>Security</b> · Sprint 16</td><td>Confirm or deny a flagged transaction · Mobile · <b>Sprint 14</b>, blocked</td><td><span class="pillr red">2 sprints early</span></td></tr>
+      <tr class="hot"><td>Risk score API · Security · Sprint 16</td><td>Show real-time alert in app · Mobile · Sprint 15</td><td><span class="pillr red">conflict</span></td></tr>
+      <tr><td>Decision feedback · Security · Sprint 16</td><td>Auto-lock card · Mobile · Sprint 16</td><td><span class="pillr amber">same sprint</span></td></tr>
+      <tr class="ok"><td>Push channel · <b>Core Platform</b> · Sprint 14</td><td>Push notification · Mobile · Sprint 15</td><td><span class="pillr green">ok</span></td></tr>
+      <tr><td>Card lock API · <b>Digital Accounts</b> · <i>no sprint</i></td><td>Auto-lock card · Mobile · Sprint 16</td><td><span class="pillr grey">invisible</span></td></tr>
+    </table>
+    <div class="callout reef mt"><b class="t">No line is not no risk</b>Plans draw only Predecessor/Successor links between <b>dated items on the plan</b>. The fourth team never appears. Pair every plan with a direct-links query.</div>
+  </div>
+  <aside class="notes"><p>The confirm/deny UI is already built; it lacks only the API. That's why contract-first is a real option.</p></aside>
+</section>
+
+<section class="slide reefy d2" data-title="Bottlenecks are unmade decisions" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 7 · Cross-Team Bottleneck">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Follow the evidence to the root cause</div>
+    <h2>Security isn't slow. Security is ranking the portfolio for you.</h2>
+    <div class="grid3 mt-l">
+      <div class="stat"><b style="--c:#ff9c86">58%</b><span>of Security's work is mandatory exam work</span></div>
+      <div class="stat"><b style="--c:#e6b450">~21</b><span>points a sprint, steady for five sprints, while plans grew by half</span></div>
+      <div class="stat"><b>Last</b><span>where the mandatory Compliance Epic sits on the backlog (Lab 1)</span></div>
+    </div>
+    <div class="callout mt-l" style="--c:#ff9c86; background:rgba(255,255,255,.08); color:#f6e6e1; font-size:28px"><b class="t">The pattern</b>When the portfolio doesn't rank mandatory work, the busiest team ranks it, and priority number one pays.</div>
+  </div>
+  <aside class="notes"><p>Evidence: Fraud Scoring Engine v2's Target Date moved on Sprint 14 day 2, with Aisha's comment in History. "Just ask Security to work harder" is the one option the evidence rules out.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="Give Simone real options" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 7 · Cross-Team Bottleneck">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>The options matrix</div>
+    <h2>Bring options, not alarms.</h2>
+    <table class="t mt" style="font-size:19px">
+      <tr><th>Option</th><th>Effect on the date</th><th>Who pays</th><th>Who decides</th></tr>
+      <tr class="hot"><td><b>0 · Do nothing</b></td><td>Misses PI 4, found at System Demo</td><td>Members, trust in commitments</td><td>Nobody. That's the problem.</td></tr>
+      <tr><td><b>1 · Re-sequence Security</b></td><td>Sprint 16 possible, not certain</td><td>Adaptive MFA slips</td><td>Simone, with Aisha</td></tr>
+      <tr><td><b>2 · Contract-first</b></td><td>Shortens everything after the API</td><td>Some rework in Mobile</td><td>Hannah and Aisha</td></tr>
+      <tr><td><b>3 · Descope the MVP</b></td><td>Sprint 16 realistic for alerts + confirm/deny</td><td>Auto-lock waits a PI</td><td>Simone, Hannah, Priya</td></tr>
+      <tr><td><b>4 · Borrow Core Platform</b></td><td>Could pull the API forward</td><td>Core Platform's spare capacity</td><td>Nadia and Aisha</td></tr>
+      <tr><td><b>5 · Move the date</b></td><td>Sprint 17, honestly</td><td>PI 4 credibility</td><td>Dana and Simone</td></tr>
+      <tr><td><b>6 · Fix the ranking</b></td><td>None this PI; prevents the next</td><td>An uncomfortable meeting</td><td>Simone and the ExCo</td></tr>
+    </table>
+    <p class="small mt-s">Every row has a cost and a named decider. Then write the recommendation in five sentences, bottom line first.</p>
+  </div>
+  <aside class="notes"><p>Simone is the decider on most options, because the trade is inside her own Epic. Option 7, question the link, is in the lab's model answer too.</p></aside>
+</section>
+
+<!--TK:7-->
+
+<!-- ---------- Lab 8 ---------- -->
+<section class="slide night d2" data-title="Lab 8 · The Executive Status Review" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
+  <div class="lab-open content">
+    <div>
+      <div class="eyebrow">Lab 8 · Module 8 · Dashboards that drive decisions</div>
+      <h2>The Executive Status Review</h2>
+      <div class="msg tone-navy"><div class="av">DW</div><div><div class="who"><b>Dana Whitfield</b>EVP, Member Experience · 7:41 AM</div><p class="say">Send me one page: are we going to make it, what are the two things that worry you most, and <b>what do you need me to decide?</b></p></div></div>
+      <div class="lab-meta"><span class="chip">45 min</span><span class="chip"><span class="sea" data-s="2"><i></i><i></i><i></i><i></i></span>Choppy</span><span class="chip">Deliverable: one-page BLUF</span></div>
+    </div>
+    <div class="lab-art"><figure class="win"><div class="bar"><i></i><i></i><i></i><span>P## - METP Executive Status</span></div><img src="../assets/shots/lab08-exec-dashboard.png" alt=""></figure><div class="lab-num">08</div></div>
+  </div>
+  <aside class="notes"><p>Risks, executive view, BLUF, Dana's questions, review rhythm: one briefing being built.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="Choose the two risks" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Choose the argument first</div>
+    <h2>Two risks earn Dana's ten minutes.</h2>
+    <div class="grid2 mt-l">
+      <div class="card accent" style="--c:var(--red)"><span class="tag" style="color:var(--red)">Risk 1 · Priority #1</span><h3>Fraud Alerts will miss PI 4</h3><p>4% done. The API it needs lands in Sprint 16, squeezed by mandatory exam work.</p></div>
+      <div class="card accent" style="--c:var(--coral)"><span class="tag" style="color:var(--coral)">Risk 2 · Delivery health</span><h3>Mobile Banking is overloaded</h3><p>71% of plan, 42 open bugs with 3 Critical, Check Deposit misses this sprint.</p></div>
+    </div>
+    <div class="callout reef mt-l"><b class="t">Reef: the loudest chart in the room</b>Member Support's velocity "collapse" looks scarier than either. Check how a number is made before you escalate it (Lab 11 shows why).</div>
+  </div>
+  <aside class="notes"><p>A good risk has a priority at stake, evidence that holds up, and a decision someone senior can make.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="From metric to member" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Translate before you write</div>
+    <h2>The Executive Committee doesn't think in Story Points.</h2>
+    <div class="mt" style="display:grid; gap:18px">
+      <div class="row" style="align-items:center; gap:24px"><div class="card grow" style="padding:20px 26px"><p style="font-size:24px"><b style="color:var(--ink)">42 open bugs, 3 Critical, 4 at P1</b></p></div><svg style="width:60px;height:36px;color:var(--brass)"><use href="#i-arrow"/></svg><div class="card grow" style="padding:20px 26px; background:#fdf6e6"><p style="font-size:24px; color:var(--ink)">Members are finding defects in production, including a deposit failure nobody owns yet.</p></div></div>
+      <div class="row" style="align-items:center; gap:24px"><div class="card grow" style="padding:20px 26px"><p style="font-size:24px"><b style="color:var(--ink)">Fraud Alerts 4% done</b></p></div><svg style="width:60px;height:36px;color:var(--brass)"><use href="#i-arrow"/></svg><div class="card grow" style="padding:20px 26px; background:#fdf6e6"><p style="font-size:24px; color:var(--ink)">Every sprint without it, members learn about fraud from their statement, not their phone.</p></div></div>
+      <div class="row" style="align-items:center; gap:24px"><div class="card grow" style="padding:20px 26px"><p style="font-size:24px"><b style="color:var(--ink)">71% of plan delivered</b></p></div><svg style="width:60px;height:36px;color:var(--brass)"><use href="#i-arrow"/></svg><div class="card grow" style="padding:20px 26px; background:#fdf6e6"><p style="font-size:24px; color:var(--ink)">Every Mobile date is about 30% optimistic.</p></div></div>
+    </div>
+  </div>
+  <aside class="notes"><p>About 45% of Mobile bugs since Sprint 11 are tagged escaped-defect.</p></aside>
+</section>
+
+<section class="slide chart-paper d2" data-title="Bottom line up front" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>BLUF</div>
+    <h2>Answer first. Ask second. Evidence after.</h2>
+    <div class="split wide-r mt" style="align-items:start">
+      <ol class="legend-list" style="padding:0; margin:0">
+        <li><b>Bottom line</b>: will we make it?</li>
+        <li><b>Decisions needed</b>: each with one named person</li>
+        <li><b>Top risks</b>: the two, in members' words</li>
+        <li><b>Evidence</b>: every number one click away</li>
+        <li><b>Options considered</b></li>
+        <li><b>What happens next</b></li>
+      </ol>
+      <figure class="win"><div class="bar"><i></i><i></i><i></i><span>P## - METP Executive Status</span></div><img src="../assets/shots/lab08-exec-dashboard.png" alt="The executive status dashboard with a BLUF panel and threshold-colored tiles." style="max-height:470px; object-fit:cover; object-position:top"></figure>
+    </div>
+    <p class="small mt-s">An executive should be able to stop after two sentences and still know what to do. Every number on the dashboard sits next to a threshold or a baseline.</p>
+  </div>
+  <aside class="notes"><p>Under pressure from Dana's question cards, answer the same way: answer, evidence, decision.</p></aside>
+</section>
+
+<section class="slide night d2" data-title="Set the review rhythm" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>A briefing is a snapshot. A review keeps it true.</div>
+    <h2>Two reviews, thirty minutes each</h2>
+    <div class="grid2 mt">
+      <div class="card"><svg class="icon"><use href="#i-calendar"/></svg><span class="tag">Weekly delivery review</span><h3>"What changed, what's stuck?"</h3><p>You, Ruth, the Product Owners. Unblock and re-plan inside the PI. Every red item leaves with an owner.</p></div>
+      <div class="card"><svg class="icon" style="--c:#e6b450"><use href="#i-scale"/></svg><span class="tag" style="color:#e6b450">Monthly steering review</span><h3>"Still the right things?"</h3><p>Dana and the executives. Decide trade-offs between priorities, update the Epic rank, record decisions.</p></div>
+    </div>
+    <div class="callout mt" style="--c:#e6b450; background:rgba(255,255,255,.08); color:#fff"><b class="t">The rule that would have saved Lab 7</b>If a date moved in Azure DevOps, the dependent dates move in the same meeting.</div>
+  </div>
+  <aside class="notes"><p>A stale dashboard is worse than none, because people trust it. If the BLUF panel still says Sprint 14 in Sprint 16, it's telling the committee something false in your name.</p></aside>
+</section>
+
+<!--TK:8-->

@@ -1,0 +1,346 @@
+
+<!-- =============================== DAY 3 =============================== -->
+
+<section class="slide night divider d3" data-title="Day 3 · Setting the Course" data-part="Day 3 · Setting the Course" data-nofoot style="background:linear-gradient(180deg,#0b1d33 0%,#2a2f5a 55%,#6b3a44 100%)">
+  <div class="art" style="right:-20px; bottom:-150px; width:800px; height:900px"><svg><use href="#scene-dawn"/></svg></div>
+  <div class="content" style="max-width:860px; padding-bottom:70px">
+    <div class="divider-day">Day three · Harbor Master</div>
+    <h1>Setting<br>the Course</h1>
+    <p class="lede">Planning ahead and connecting delivery to business value. Ruth is retiring, and Dana has asked you to take the helm as Acting Program Manager.</p>
+    <div class="lablist" style="grid-template-columns:repeat(2,1fr)">
+      <div><b>Lab 9</b>Meet the Deadline?</div><div><b>Lab 10</b>Personas</div>
+      <div><b>Lab 11</b>Why Is the Dashboard Wrong?</div><div><b>Lab 12</b>Capstone</div>
+    </div>
+  </div>
+  <aside class="notes"><p>The role change matters: today you own the whole program, not just Digital Banking.</p></aside>
+</section>
+
+<!-- ---------- Lab 9 ---------- -->
+<section class="slide night d3" data-title="Lab 9 · Can HarborPoint Meet the Deadline?" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 9 · Meet the Deadline?">
+  <div class="lab-open content">
+    <div>
+      <div class="eyebrow">Lab 9 · Module 9 · Forecasting and capacity</div>
+      <h2>Can HarborPoint Meet the Deadline?</h2>
+      <div class="msg tone-navy"><div class="av">DW</div><div><div class="who"><b>Dana Whitfield</b>EVP, Member Experience · 8:06 AM</div><p class="say">Members need Instant Card Controls before holiday travel. <b>All of it, by the end of Sprint 17.</b> Can we do it? I'd like a yes, but I'll take a true answer.</p></div></div>
+      <div class="lab-meta"><span class="chip">55 min</span><span class="chip"><span class="sea" data-s="3"><i></i><i></i><i></i><i></i></span>Rough</span><span class="chip">You: Acting Program Manager</span></div>
+    </div>
+    <div class="lab-art"><figure class="win"><div class="bar"><i></i><i></i><i></i><span>Forecasting · velocity 15</span></div><img src="../assets/shots/lab09-forecast-15.png" alt=""></figure><div class="lab-num">09</div></div>
+  </div>
+  <aside class="notes"><p>One calculation, six steps: history, capacity, forecast, reshape, check the blind spots, answer Dana.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="A stable team is a forecastable team" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 9 · Meet the Deadline?">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Step 1 · Read the history</div>
+    <h2>A steady 25 beats a hopeful 35.</h2>
+    <div class="split wide-l mt fill" style="align-items:stretch">
+      <div style="display:flex; flex-direction:column">
+        <div class="chart fill" data-chart='{"type":"bar","labels":["S9","S10","S11","S12","S13"],"ymax":30,"ticks":[0,10,20,30],"series":[{"name":"Planned","color":"#c7d3de","values":[26,26,25,27,26]},{"name":"Done","color":"#0f8b8d","values":[24,26,25,24,26]}]}'></div>
+        <div class="lg"><span style="--c:#c7d3de">Planned</span><span style="--c:#0f8b8d">Completed · Digital Accounts velocity</span></div>
+      </div>
+      <div>
+        <div class="stat sm"><b style="--c:var(--teal)">25.0</b><span>mean velocity, range 24–26</span></div>
+        <div class="stat sm mt"><b style="--c:var(--ink)">105</b><span>points in Instant Card Controls, plus <b>4 unestimated</b> stories</span></div>
+        <div class="callout key mt"><b class="t">Rate, not promise</b>Velocity is the rate for a normal sprint. The next three sprints aren't normal.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p>Five delivery engineers, steady cycle time, reliability 89–100%. This team is forecastable. Instant Card Controls is tagged leadership-ask.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="Capacity, not velocity" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 9 · Meet the Deadline?">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Step 2 · Work out the real capacity · Sprints 15–17</div>
+    <h2>75 on paper. About 45 in reality.</h2>
+    <div class="chart fill mt" data-chart='{"type":"waterfall","ymax":75,"ticks":[0,25,50,75],"margin":{"b":70},"line":{"value":44,"color":"#c8962e","label":"MVP = 44 pts"},"steps":[{"label":"Sprint 15\nNoah out 3d","value":23.5,"kind":"add"},{"label":"Sprint 16\nholiday + Olivia out","value":17.5,"kind":"add"},{"label":"Sprint 17\nholiday, + Wes","value":24.5,"kind":"add"},{"label":"Gross\ncapacity","value":65.5,"kind":"total","color":"#12355b"},{"label":"Finish Online\nAccount Opening","value":9,"kind":"sub"},{"label":"Finish Spending\nInsights","value":5,"kind":"sub"},{"label":"Bugs + support\n~10%","value":6.5,"kind":"sub"},{"label":"For Card\nControls","value":45,"kind":"total","color":"#0f8b8d"}]}'></div>
+    <p class="small">Paper: 3 sprints × 25 = 75. Reality: 0.5 points per engineer-day, minus who's out and what's committed. Full Card Controls (105 + 4 unknowns) is impossible. The MVP fits with about one point of buffer, which is no buffer.</p>
+  </div>
+  <aside class="notes"><p>S15: 47 engineer-days ≈ 23.5. S16: 2 holiday days for all + Olivia out 5 → 35 days ≈ 17.5. S17: 1 holiday → 22.5, plus new hire Wes ≈ 2 → 24.5. Gross ≈ 65. Then subtract committed work and a bug reserve: ≈ 45, about 15 a sprint.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="Three velocities, three answers" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 9 · Meet the Deadline?">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Steps 3–4 · Forecast in the sandbox, then reshape the scope</div>
+    <h2>The forecast is only as honest as the velocity you type.</h2>
+    <div class="split mt" style="align-items:start">
+      <table class="t">
+        <tr><th>Velocity typed in</th><th>Lands by Sprint 17</th><th>MVP?</th></tr>
+        <tr><td><b>25</b> · the average</td><td>#1–#12 · 73 pts</td><td><span class="pillr green">yes</span></td></tr>
+        <tr><td><b>20</b></td><td>#1–#10 · 55 pts</td><td><span class="pillr green">yes</span></td></tr>
+        <tr class="hot"><td><b>15</b> · the real capacity</td><td>#1–#8 · 42 pts</td><td><span class="pillr red">misses</span></td></tr>
+        <tr class="ok frag"><td><b>15</b>, with "should" #5 moved below the MVP</td><td>The whole MVP · 44 pts</td><td><span class="pillr green">fits</span></td></tr>
+      </table>
+      <div>
+        <figure class="win"><div class="bar"><i></i><i></i><i></i><span>P## Sandbox · Backlog · Forecasting at 15, MVP reordered</span></div><img src="../assets/shots/lab09-forecast-mvp-reordered.png" alt="The forecast lines at velocity 15 with the MVP reordered so it lands by Sprint 17."></figure>
+        <div class="callout insight mt"><b class="t">Order is scope</b>One reorder turned a miss into a fit without changing a single estimate.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p>Trap: the four unestimated stories show 0 points. Move them up and the tool treats them as free.</p></aside>
+</section>
+
+<section class="slide reefy d3" data-title="Reef: give it to the fastest team" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 9 · Meet the Deadline?">
+  <div class="content" style="justify-content:center">
+    <div class="eyebrow"><svg class="icon sm" style="--c:#ff9c86"><use href="#i-reef"/></svg>Reef ahead</div>
+    <div class="msg tone-navy" style="max-width:1100px"><div class="av">DW</div><div><div class="who"><b>Dana Whitfield</b>11:52 AM</div><p class="say">If Digital Accounts can't do all of it, <b>give it to Mobile Banking</b>. They have the highest velocity in the program. Problem solved?</p></div></div>
+    <div class="grid3 mt-l">
+      <div class="card"><h3>Not comparable</h3><p>Velocity is each team's private currency, and Mobile's is inflated.</p></div>
+      <div class="card"><h3>Not available</h3><p>Mobile is the busiest team: 71% of plan, 42 open bugs, one tester.</p></div>
+      <div class="card"><h3>A better answer</h3><p>Commit the MVP by Sprint 17 with its risk stated. The rest in PI 5. Estimate the four unknowns now.</p></div>
+    </div>
+  </div>
+  <aside class="notes"><p>Answer Dana in three sentences: a range with conditions, and a better option. A single date is a promise; a range is information.</p></aside>
+</section>
+
+<!--TK:9-->
+
+<!-- ---------- Lab 10 ---------- -->
+<section class="slide night d3" data-title="Lab 10 · One Service, Different Needs" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 10 · Personas">
+  <div class="content">
+    <div class="eyebrow">Lab 10 · Module 10 · Personas and prioritization · <span class="sea" data-s="2" style="color:#e6b450"><i></i><i></i><i></i><i></i></span> Choppy · 55 min</div>
+    <h2 style="font-size:66px">One Service, Different Customer Needs</h2>
+    <p class="lede">HarborPoint is redesigning member onboarding. Two executives, two numbers, one backlog.</p>
+    <div class="grid2 mt">
+      <div class="msg tone-gold" style="max-width:none"><div class="av">HA</div><div><div class="who"><b>Hector Alvarez</b>VP, Branch Network</div><p class="say" style="font-size:23px">Members onboarded in a branch hold <b>2.1 products</b> after a year. Digital-only: <b>1.4</b>. I'm asking you not to design Dee out of her own credit union.</p></div></div>
+      <div class="msg tone-teal" style="max-width:none"><div class="av">PR</div><div><div class="who"><b>Priya Raman</b>Director, Digital Banking</div><p class="say" style="font-size:23px"><b>58%</b> of new members start online, and <b>41%</b> of those applications die at ID verification. That's the leak.</p></div></div>
+    </div>
+    <figure class="win mt" style="max-height:300px"><div class="bar"><i></i><i></i><i></i><span>HarborPoint Team › Features · the onboarding journey is split across two teams</span></div><img src="../assets/shots/lab10-onboarding-features.png" alt="Onboarding-related Features owned by Digital Accounts and Branch Experience." style="height:260px; object-fit:cover; object-position:top"></figure>
+  </div>
+  <aside class="notes"><p>Both are right, and both are quoting real research. Your job is to make the trade-off arguable.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="Meet the members" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 10 · Personas">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Personas: behaviors, goals and breaks, backed by evidence</div>
+    <h2>Three members. One onboarding.</h2>
+    <div class="grid3 mt">
+      <div class="card" style="text-align:center"><svg style="width:170px;height:170px"><use href="#p-dee"/></svg><h3 class="mt-s">Dee Harmon, 68</h3><span class="tag">Branch-first</span><p>Retired shipyard bookkeeper. 41-year member. Low digital confidence, fraud-wary. Values a named person.</p></div>
+      <div class="card" style="text-align:center"><svg style="width:170px;height:170px"><use href="#p-jordan"/></svg><h3 class="mt-s">Jordan Reyes, 24</h3><span class="tag">Mobile-only</span><p>Apprentice marine electrician. Applies at 11 pm, expects instant approval, abandons at friction.</p></div>
+      <div class="card" style="text-align:center"><svg style="width:170px;height:170px"><use href="#p-amara"/></svg><h3 class="mt-s">Amara Okafor, 37</h3><span class="tag">Starts online, finishes in branch</span><p>Military spouse who relocates often and runs a small online business. Needs save-and-resume.</p></div>
+    </div>
+  </div>
+  <aside class="notes"><p>Personas live on the project wiki under Personas. Mark anything not backed by research as an assumption.</p></aside>
+</section>
+
+<section class="slide night d3" data-title="The onboarding research" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 10 · Personas">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Onboarding research findings</div>
+    <h2>Where members fall through</h2>
+    <div class="grid3 mt-l" style="row-gap:44px">
+      <div class="stat"><b style="--c:#8fd6cf">58%</b><span>of new members start online</span></div>
+      <div class="stat"><b style="--c:#ff9c86">41%</b><span>of online applications abandoned at <b>ID verification</b></span></div>
+      <div class="stat"><b style="--c:#e6b450">47 min</b><span>average branch onboarding</span></div>
+      <div class="stat"><b>2.1 vs 1.4</b><span>products after a year: branch vs digital-only</span></div>
+      <div class="stat"><b style="--c:#e6b450">62%</b><span>of branch-onboarded over-60s never activate digital</span></div>
+      <div class="stat"><b style="--c:#ff9c86">83%</b><span>of online starters who visit a branch <b>re-enter their data</b></span></div>
+    </div>
+    <div class="callout mt" style="--c:#8fd6cf; background:rgba(255,255,255,.08); color:#eaf6f4"><b class="t">The member doesn't see your org chart</b>The breaks hide at the handoffs between channels, and those handoffs often fall between two teams' Features.</div>
+  </div>
+  <aside class="notes"><p>The 83% re-entry break sits exactly between Digital Accounts' Online Account Opening and Branch Experience's In-Branch Digital Onboarding. Nobody owns the handoff.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="Acceptance criteria are where personas bite" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 10 · Personas">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>One capability, three personas: verify identity</div>
+    <h2>Title labels it. Tag counts it. <span class="hl">Criteria build it.</span></h2>
+    <div class="grid3 mt">
+      <div class="card accent" style="--c:var(--brass)"><div class="row" style="gap:14px; align-items:center"><svg style="width:64px;height:64px;flex:none"><use href="#p-dee"/></svg><div><span class="tag" style="color:var(--brass); margin:0">persona-dee</span><h3 style="margin:0">Staff-assisted ID check</h3></div></div><p class="mt-s" style="font-size:20px"><b>Given</b> Dee is with a staff member, <b>when</b> her ID is scanned, <b>then</b> she sees the staff member's name on the confirmation and gets a receipt.</p></div>
+      <div class="card accent" style="--c:var(--teal)"><div class="row" style="gap:14px; align-items:center"><svg style="width:64px;height:64px;flex:none"><use href="#p-jordan"/></svg><div><span class="tag" style="margin:0">persona-jordan</span><h3 style="margin:0">Camera ID at 11 pm</h3></div></div><p class="mt-s" style="font-size:20px"><b>Given</b> it's 11 pm, <b>when</b> Jordan captures his ID, <b>then</b> he sees an accept-or-retry result within minutes, with no call-back.</p></div>
+      <div class="card accent" style="--c:var(--plum)"><div class="row" style="gap:14px; align-items:center"><svg style="width:64px;height:64px;flex:none"><use href="#p-amara"/></svg><div><span class="tag" style="color:var(--plum); margin:0">persona-amara</span><h3 style="margin:0">Zero re-entry in branch</h3></div></div><p class="mt-s" style="font-size:20px"><b>Given</b> Amara saved her application online, <b>when</b> she arrives at any branch, <b>then</b> staff open it with zero fields re-entered.</p></div>
+    </div>
+    <div class="callout reef mt"><b class="t">Reef: designing for the average member</b>"As a member, I want to verify my identity" passes testing and fails members. Its natural build is Jordan's camera flow. Dee loses her named person; Amara gets verified twice.</div>
+  </div>
+  <aside class="notes"><p>Same capability, three stories. Only the acceptance criteria differ, and that difference is what gets built. Screenshot of a persona story form: lab10-story-form.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="Make priority arguable" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 10 · Personas">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Prioritize by member impact</div>
+    <h2>Argue with the inputs, not with each other.</h2>
+    <div class="card mt-s" style="text-align:center; padding:16px"><p style="font-family:var(--display); font-size:38px; color:var(--ink)">Score = <span style="color:var(--teal)">Reach</span> × <span style="color:var(--coral)">Impact</span> × <span style="color:var(--plum)">Confidence</span> ÷ <span style="color:var(--brass)">Effort</span></p></div>
+    <table class="t tight mt" style="font-size:19px">
+      <tr><th>Story (model answer)</th><th>Persona</th><th>Reach</th><th>Impact</th><th>Conf.</th><th>Effort</th><th>Score</th></tr>
+      <tr><td>Camera ID capture, decision in minutes</td><td>Jordan</td><td class="n">3</td><td class="n">3</td><td class="n">1.0</td><td class="n">5</td><td class="n">1.80</td></tr>
+      <tr><td>Branch opens the online application, zero re-entry</td><td>Amara</td><td class="n">2</td><td class="n">3</td><td class="n">0.8</td><td class="n">3</td><td class="n">1.60</td></tr>
+      <tr><td>Application status, any hour</td><td>Jordan</td><td class="n">3</td><td class="n">2</td><td class="n">0.8</td><td class="n">3</td><td class="n">1.60</td></tr>
+      <tr><td>Digital set up in branch by a named person</td><td>Dee</td><td class="n">2</td><td class="n">2</td><td class="n">1.0</td><td class="n">3</td><td class="n">1.33</td></tr>
+    </table>
+    <div class="grid2 mt-s">
+      <div class="callout key"><b class="t">What it does</b>Turns "branch vs digital" into "which input is wrong?" A ten-minute conversation instead of a PI-long one.</div>
+      <div class="callout reef"><b class="t">Check the objective</b>Reach × funnel impact counts heads through the door. Relationship value (2.1 vs 1.4 products) gives a different order. Choosing between them is a <b>leadership decision</b>.</div>
+    </div>
+  </div>
+  <aside class="notes"><p>The model top 3 is all digital-first. Then read the reef before sending it. That's the lesson: check the objective as well as the arithmetic.</p></aside>
+</section>
+
+<!--TK:10-->
+
+<!-- ---------- Lab 11 ---------- -->
+<section class="slide night d3" data-title="Lab 11 · Why Is the Dashboard Wrong?" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 11 · Why Is the Dashboard Wrong?">
+  <div class="lab-open content">
+    <div>
+      <div class="eyebrow">Lab 11 · Module 11 · Reporting governance</div>
+      <h2>Why Is the Dashboard Wrong?</h2>
+      <div class="msg tone-coral"><div class="av">CD</div><div><div class="who"><b>Carmen Diaz</b>Director, Member Support · 7:36 AM</div><p class="say">Your dashboard says we've collapsed. My team has never worked harder. Either the dashboard is wrong or I am, and I'd like to know which before Dana reads it again.</p></div></div>
+      <div class="lab-meta"><span class="chip">60 min</span><span class="chip"><span class="sea" data-s="3"><i></i><i></i><i></i><i></i></span>Rough</span><span class="chip">Fixes only in your sandbox</span></div>
+    </div>
+    <div class="lab-art"><figure class="win"><div class="bar"><i></i><i></i><i></i><span>Member Support dashboard</span></div><img src="../assets/shots/lab11-ms-dashboard.png" alt=""></figure><div class="lab-num">11</div></div>
+  </div>
+  <aside class="notes"><p>Leo built the dashboard for the Sprint 13 review and has been on four other reports since. Be gentle with Leo.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="The chart is right. The data is wrong." data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 11 · Why Is the Dashboard Wrong?">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Rebuild the true numbers</div>
+    <h2>A collapse, or a record that stopped being kept?</h2>
+    <div class="split mt fill" style="align-items:stretch">
+      <div style="display:flex; flex-direction:column">
+        <div class="chart fill" data-chart='{"type":"line","labels":["S9","S10","S11","S12","S13"],"ymin":0,"ymax":24,"ticks":[0,8,16,24],"margin":{"r":190},"series":[{"name":"True","color":"#0f8b8d","values":[18,17,19,18,19]},{"name":"Recorded","color":"#d9604a","values":[18,17,19,13,8],"below":true,"skip":[0,1,2]}]}'></div>
+        <p class="small">Member Support velocity, story points. Planned held roughly steady the whole time.</p>
+      </div>
+      <figure class="win"><div class="bar"><i></i><i></i><i></i><span>Velocity · Member Support</span></div><img src="../assets/shots/lab11-velocity-ms.png" alt="Member Support's velocity report: Sprint 12 and 13 show large Incomplete bars."></figure>
+    </div>
+    <div class="callout insight mt-s"><b class="t">The tell</b>Velocity falls off a cliff while Planned holds steady. Suspect the record of "done" before you suspect the team.</div>
+  </div>
+  <aside class="notes"><p>Done-but-left-in-Resolved explains most of it: 5 points in S12, 8 in S13. Plus a Closed story with no Story Points (should be 3). 13 + 5 = 18; 8 + 8 + 3 = 19.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="The defect ledger" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 11 · Why Is the Dashboard Wrong?">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Read the dashboard like a detective</div>
+    <h2>Twelve defects. Four places a dashboard breaks.</h2>
+    <div class="grid4 mt">
+      <div class="card accent" style="--c:var(--coral)"><span class="tag" style="color:var(--coral)">Data</span><h3>8 defects</h3><p>Done but left Resolved · missing points · a leaver's work · zombies in Sprint 12 · P1 bugs at the root area · tag drift · stale Feature states · a duplicate</p></div>
+      <div class="card accent" style="--c:var(--plum)"><span class="tag" style="color:var(--plum)">Queries</span><h3>2 defects</h3><p>A sprint typed in by hand · "open" means <code>&lt;&gt; Closed</code></p></div>
+      <div class="card accent" style="--c:var(--teal)"><span class="tag">Widgets</span><h3>1 defect</h3><p>Burndown pinned to last sprint</p></div>
+      <div class="card accent" style="--c:var(--brass)"><span class="tag" style="color:var(--brass)">Permissions</span><h3>1 defect</h3><p>A tile on someone's private query</p></div>
+    </div>
+    <div class="split mt" style="grid-template-columns:1fr 1fr; gap:30px">
+      <div class="callout key"><b class="t">Fix data at the source</b>Change the item, say why in its Discussion. A query that compensates for bad data gets wrong in a new way every time the data changes.</div>
+      <div class="callout reef"><b class="t">Reef: blaming the team</b>Two calls this week asked if Member Support needs "intervention". For a reporting defect.</div>
+    </div>
+  </div>
+  <aside class="notes"><p>Participants fill a 12-row ledger in Part 1 and tick rows off as they repair the sandbox (1–8), fix queries (9–11) and prevent (12).</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="Watch for zero" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 11 · Why Is the Dashboard Wrong?">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Build a watchlist</div>
+    <h2>Six queries whose healthy answer is zero.</h2>
+    <figure class="win mt"><div class="bar"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Sandbox Health</span></div><img src="../assets/shots/lab11-sandbox-health.png" alt="The Sandbox Health dashboard: watchlist tiles whose healthy answer is zero."></figure>
+    <div class="grid3 mt">
+      <div class="callout key"><b class="t">Team-level</b>Looked at with the team, weekly. Fifteen minutes.</div>
+      <div class="callout insight"><b class="t">Cheapest lever first</b>Team agreements before process rules, which land on every project at once.</div>
+      <div class="callout reef"><b class="t">Reef: hygiene police</b>Per-person scores get gamed. Goodhart works on data quality too.</div>
+    </div>
+  </div>
+  <aside class="notes"><p>Every dashboard is a data-quality contract: an owner, defined terms, shared queries and a weekly look at the watchlist.</p></aside>
+</section>
+
+<!--TK:11-->
+
+<!-- ---------- Lab 12 ---------- -->
+<section class="slide night d3" data-title="Lab 12 · The Capstone" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 12 · Capstone">
+  <div class="art" style="right:-60px; bottom:-40px; width:620px; height:700px; opacity:.85; overflow:hidden"><svg viewBox="0 0 800 900"><use href="#scene-dawn"/></svg></div>
+  <div class="content" style="max-width:1000px">
+    <div class="eyebrow">Lab 12 · Capstone · <span class="sea" data-s="4" style="color:#e6b450"><i></i><i></i><i></i><i></i></span> Storm · 150 min · in crews</div>
+    <h2 style="font-size:76px">The HarborPoint Management Challenge</h2>
+    <div class="msg tone-navy mt"><div class="av">DW</div><div><div class="who"><b>Dana Whitfield</b>1:04 PM</div><p class="say">Executive Committee in 150 minutes. Give me a <b>realistic outlook for PI 5</b> and the <b>decisions you need from us</b>. If there's bad news, I want it first.</p></div></div>
+    <div class="msg tone-teal mt-s"><div class="av">RE</div><div><div class="who"><b>Ruth Ellison</b>12:58 PM · handover</div><p class="say">Don't trust a number until you know who typed it.</p></div></div>
+  </div>
+  <aside class="notes"><p>Everything from the three days, at once, against the clock.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="Six concerns, one evidence board" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 12 · Capstone">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Ruth's six worries · and where you've already seen the evidence</div>
+    <h2>You've met every one of these.</h2>
+    <div class="grid3 mt">
+      <div class="card left" style="--c:var(--red)"><h3>A major Feature may miss</h3><p>Real-Time Fraud Alerts, and Check Deposit · <b>Labs 2, 7</b></p></div>
+      <div class="card left" style="--c:var(--coral)"><h3>Growing unfinished work</h3><p>Mobile carry-over and 42 bugs · <b>Labs 2, 6</b></p></div>
+      <div class="card left" style="--c:var(--brass)"><h3>Commitments not met</h3><p>Mobile at 71% of plan · <b>Labs 4, 6</b></p></div>
+      <div class="card left" style="--c:var(--plum)"><h3>Dependencies delay work</h3><p>Security ↔ Mobile ↔ Core Platform, plus the unscheduled card-lock API · <b>Lab 7</b></p></div>
+      <div class="card left" style="--c:var(--teal)"><h3>Branch vs digital</h3><p>Personas, research and a new pulse survey · <b>Lab 10</b></p></div>
+      <div class="card left" style="--c:var(--navy)"><h3>A realistic PI 5 outlook</h3><p>Capacity, ranges and trusted numbers · <b>Labs 9, 11</b></p></div>
+    </div>
+    <div class="callout key mt"><b class="t">A concern becomes a finding</b>only when it names a Feature, a number and that number's source.</div>
+  </div>
+  <aside class="notes"><p>Crews that lose the capstone lose it in Phase 1 by investigating everything. Find the evidence for each concern, write it down, move on.</p></aside>
+</section>
+
+<section class="slide night d3" data-title="The voyage plan" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 12 · Capstone">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Six phases, each with a timer</div>
+    <h2>The voyage plan</h2>
+    <div class="flow mt-l" style="gap:10px">
+      <div class="node" style="--c:#12355b"><b>1 · 25 min</b>Investigate</div>
+      <div class="node" style="--c:#1e5a7a"><b>2 · 20 min</b>Analyze</div>
+      <div class="node" style="--c:#0f8b8d"><b>3 · 25 min</b>Visualize</div>
+      <div class="node" style="--c:#7a4e9e; box-shadow:0 0 0 5px rgba(230,180,80,.6)"><b>4 · 25 min ⚡</b>Plan</div>
+      <div class="node" style="--c:#c8962e"><b>5 · 20 min</b>Prioritize</div>
+      <div class="node" style="--c:#d9604a"><b>6 · 20 min</b>Recommend</div>
+    </div>
+    <div class="grid3 mt-l">
+      <div class="card"><h3>You produce</h3><p>An evidence board, trusted metrics, a <code>P## - PI 5 Outlook</code> dashboard (8 widgets or fewer), a capacity worksheet, a decision table and a BLUF.</p></div>
+      <div class="card"><h3>⚡ The curveball</h3><p>Lands at minute 70: the exam date moves up, the branch gets reinforcements, or a Sev 1 hits mobile deposit.</p></div>
+      <div class="card"><h3>Then the committee</h3><p>Five minutes to brief, three minutes of executive question cards. Present from your dashboard, not slides.</p></div>
+    </div>
+  </div>
+  <aside class="notes"><p>Score with the rubric: evidence, insight, realism of forecast, prioritization by value and personas, communication. Crews score themselves first; the gap is part of the debrief.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="Capacity is what's left" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 12 · Capstone">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Plan · PI 5 capacity by team (Sprints 17–20)</div>
+    <h2>Gross throughput minus what's already spoken for.</h2>
+    <div class="split wide-r mt" style="align-items:start">
+      <table class="t tight" style="font-size:19px">
+        <tr><th>Team</th><th>Per sprint</th><th>Caveat</th></tr>
+        <tr><td>Digital Accounts</td><td class="n">≈ 25 pts</td><td>Steady</td></tr>
+        <tr><td>Security</td><td class="n">≈ 21 pts</td><td>~half mandatory until S18</td></tr>
+        <tr><td>Core Platform</td><td class="n">≈ 20 pts</td><td>Enablers</td></tr>
+        <tr><td>Member Support</td><td class="n">≈ 18 pts</td><td><b>True</b>, not the dashboard</td></tr>
+        <tr><td>Branch Experience</td><td class="n">≈ 17 pts</td><td>Small, steady</td></tr>
+        <tr class="hot"><td>Mobile Banking</td><td class="n">≈ 12 stories</td><td>Count, not inflated points</td></tr>
+      </table>
+      <div>
+        <figure class="win"><div class="bar"><i></i><i></i><i></i><span>Queries › PI 5 candidates</span></div><img src="../assets/shots/lab12-pi5-candidates.png" alt="The PI 5 candidate Features, including work promised for PI 4 that now finishes in Sprint 17."></figure>
+        <div class="callout reef mt"><b class="t">Reef: the Feature with nothing inside</b>Member-to-Member Transfers has the joint-highest value and zero stories. It can't be committed yet.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p>Subtract holidays (one day in S17), mandatory work, a bug reserve and PI 4 spill. Unreserved capacity gets spent anyway. Forecast from the chart you proved right in Lab 11, not the one you proved wrong.</p></aside>
+</section>
+
+<section class="slide night d3" data-title="The pulse survey" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 12 · Capstone">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Prioritize · Member Pulse Survey Q3</div>
+    <h2>Priorities shift. The survey says how.</h2>
+    <div class="split wide-l mt">
+      <figure class="win"><div class="bar"><i></i><i></i><i></i><span>Wiki › Research › Member Pulse Survey Q3</span></div><img src="../assets/shots/lab12-pulse-survey.png" alt="The Member Pulse Survey Q3 wiki page." style="max-height:370px; object-fit:cover; object-position:top"></figure>
+      <div style="display:grid; gap:18px">
+        <div class="stat sm"><b style="--c:#ff9c86">71%</b><span>name fraud as their #1 worry, in every segment</span></div>
+        <div class="stat sm"><b style="--c:#e6b450">+28%</b><span>branch-appointment demand among members 55+</span></div>
+        <div class="stat sm"><b style="--c:#8fd6cf">2.9 / 5</b><span>digital-only members' onboarding rating</span></div>
+      </div>
+    </div>
+    <div class="callout mt-s" style="--c:#e6b450; background:rgba(255,255,255,.08); color:#fff"><b class="t">Hector's request</b>Move one Digital Accounts engineer to In-Branch Digital Onboarding. What does it cost, which members does it serve, and who decides?</div>
+  </div>
+  <aside class="notes"><p>Priorities you don't rank get ranked for you. The deliverable is a decision with a cost and an owner, not a ranking.</p></aside>
+</section>
+
+<section class="slide chart-paper d3" data-title="An outlook is bets with odds" data-part="Day 3 · Setting the Course" data-section="Day 3 · Lab 12 · Capstone">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Recommend</div>
+    <h2>A PI 5 outlook is a set of bets with odds.</h2>
+    <div class="grid3 mt-l">
+      <div class="card accent" style="--c:var(--kelp)"><svg class="icon" style="--c:var(--kelp)"><use href="#i-check"/></svg><h3>Commit</h3><p>What's sized and staffed, from capacity you trust, stated as a range.</p></div>
+      <div class="card accent" style="--c:var(--brass)"><svg class="icon" style="--c:var(--brass)"><use href="#i-scale"/></svg><h3>Conditional</h3><p>What depends on a decision. Name the decision, its cost and its owner.</p></div>
+      <div class="card accent" style="--c:var(--red)"><svg class="icon" style="--c:var(--red)"><use href="#i-x"/></svg><h3>Can't commit yet</h3><p>Unsized, untrusted or undecided. Say so plainly, with what it would take.</p></div>
+    </div>
+    <div class="callout insight mt-l" style="font-size:28px"><b class="t">Marcus will ask</b>"Which number would you bet your job on, and which one wouldn't you?" Have both answers ready.</div>
+  </div>
+  <aside class="notes"><p>Strong answers start with the answer, name the source, put uncertainty in numbers, and turn a challenge into a decision. On "give Mobile more, they have the highest velocity": never compare velocity across teams.</p></aside>
+</section>
+
+<!--TK:12-->

@@ -25,6 +25,7 @@ jobs:
           cache: pip
       - run: pip install -r requirements.txt
       - run: python tools/build_field_card.py --check
+      - run: python tools/build_slides.py --check
       - run: mkdocs build --strict
         env:
           NO_MKDOCS_2_WARNING: "1"

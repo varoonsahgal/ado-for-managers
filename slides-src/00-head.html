@@ -1,0 +1,234 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Azure DevOps for Managers · Slides</title>
+<meta name="description" content="Slides for the three-day Azure DevOps for Managers course, set in HarborPoint Financial.">
+<meta name="theme-color" content="#0b1d33">
+<link rel="icon" href="../assets/brand/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400..800;1,9..144,400..700&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body>
+
+<!-- ======================= Sprite: icons and illustrated scenes ======================= -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+<defs>
+  <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1d33" stop-opacity="0"/><stop offset="1" stop-color="#12355b" stop-opacity=".6"/></linearGradient>
+  <linearGradient id="g-sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1e5a7a"/><stop offset="1" stop-color="#061322"/></linearGradient>
+  <linearGradient id="g-sea2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0f8b8d"/><stop offset="1" stop-color="#0b1d33"/></linearGradient>
+  <linearGradient id="g-beam" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffe7a8" stop-opacity=".85"/><stop offset="1" stop-color="#ffe7a8" stop-opacity="0"/></linearGradient>
+  <radialGradient id="g-glow"><stop offset="0" stop-color="#ffe7a8" stop-opacity=".95"/><stop offset=".4" stop-color="#e6b450" stop-opacity=".4"/><stop offset="1" stop-color="#e6b450" stop-opacity="0"/></radialGradient>
+  <radialGradient id="g-sun"><stop offset="0" stop-color="#fff1c9"/><stop offset=".45" stop-color="#f5b75a"/><stop offset="1" stop-color="#e2725b" stop-opacity="0"/></radialGradient>
+  <linearGradient id="g-dawn" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#12355b"/><stop offset=".55" stop-color="#7a4e9e"/><stop offset=".85" stop-color="#e2725b"/><stop offset="1" stop-color="#f5b75a"/></linearGradient>
+  <linearGradient id="g-parch" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fbf3df"/><stop offset="1" stop-color="#efdfbd"/></linearGradient>
+
+  <!-- Brand mark -->
+  <symbol id="i-mark" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21.5" fill="none" stroke="#8fd6cf" stroke-width="2.2"/><path d="M29 15.2 43 11.5v8.6z" fill="#e6b450" opacity=".75"/><path d="M19.5 37h9l-1.6-19.5h-5.8z" fill="#0f8b8d"/><path d="M21.6 24.2h4.8l.25 3h-5.3zM21.05 30.6h5.9l.25 3h-6.4z" fill="#e2725b"/><rect x="20.6" y="13" width="6.8" height="4.6" rx="1" fill="#e6b450"/><path d="M19.6 13.2h8.8L24 8.6z" fill="#0f8b8d"/><path d="M8 38.5c2.7-1.6 5.3-1.6 8 0s5.3 1.6 8 0 5.3-1.6 8 0 5.3 1.6 8 0" fill="none" stroke="#8fd6cf" stroke-width="2.2" stroke-linecap="round"/></symbol>
+
+  <!-- Line icons (24 grid, currentColor) -->
+  <symbol id="i-anchor" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="5" r="2.5"/><path d="M12 7.5V21M7 11h10M4 14c0 4 4 7 8 7s8-3 8-7"/><path d="M4 14l-1.5 2M20 14l1.5 2"/></symbol>
+  <symbol id="i-lighthouse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21l1.2-11h3.6L15 21M8 21h8M10 6h4v4h-4zM9.5 6 12 3.5 14.5 6M14 8l6-2.5M14 8l6 2.5"/></symbol>
+  <symbol id="i-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m15.5 8.5-2 5-5 2 2-5z"/></symbol>
+  <symbol id="i-key" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="7.5" cy="12" r="4"/><path d="M11.5 12H21M18 12v3M15 12v2"/></symbol>
+  <symbol id="i-reef" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 2.5 20h19z"/><path d="M12 10v4.5M12 17.5v.01"/></symbol>
+  <symbol id="i-wheel" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="6.5"/><circle cx="12" cy="12" r="1.8"/><path d="M12 2v3.5M12 18.5V22M2 12h3.5M18.5 12H22M4.9 4.9l2.5 2.5M16.6 16.6l2.5 2.5M4.9 19.1l2.5-2.5M16.6 7.4l2.5-2.5"/></symbol>
+  <symbol id="i-flag" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 21V4M5 4h11l-2 4 2 4H5"/></symbol>
+  <symbol id="i-bino" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="6.5" cy="15.5" r="3.5"/><circle cx="17.5" cy="15.5" r="3.5"/><path d="M10 15h4M4 13l2-8h3l1 8M20 13l-2-8h-3l-1 8"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-2 6 2 6-2v14l-6 2-6-2-6 2zM9 4v14M15 6v14"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></symbol>
+  <symbol id="i-bars" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M4 20V11M10 20V5M16 20v-7M22 20H2"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.4 3.4-5.5 6.5-5.5s5.7 2.1 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M17 14c2.3 0 4 1.6 4.6 4.2"/></symbol>
+  <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4.2-6.5 8-6.5s7 2.5 8 6.5"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/><path d="m8.5 12 2.5 2.5 4.5-5" stroke-linecap="round"/></symbol>
+  <symbol id="i-bug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="7" y="7" width="10" height="13" rx="5"/><path d="M9 7.5 7.5 4.5M15 7.5l1.5-3M7 12H3M21 12h-4M7 17l-3 2M17 17l3 2M12 10v9"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5z"/><path d="m3 13 9 5 9-5" stroke-linecap="round"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-filter" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M3 4h18l-7 8.5V19l-4 2v-8.5z"/></symbol>
+  <symbol id="i-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 4h6a3 3 0 0 1 3 3v13a2.5 2.5 0 0 0-2.5-2.5H4zM20 4h-4a3 3 0 0 0-3 3"/><path d="M20 4v13.5h-5" stroke-linecap="round"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m4 12.5 5 5L20 6.5"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6 6 18"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 40 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h34M28 4l8 8-8 8"/></symbol>
+  <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="m20 20-4.8-4.8"/></symbol>
+  <symbol id="i-dash" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><rect x="3" y="3" width="8" height="10" rx="1.5"/><rect x="13" y="3" width="8" height="6" rx="1.5"/><rect x="13" y="11" width="8" height="10" rx="1.5"/><rect x="3" y="15" width="8" height="6" rx="1.5"/></symbol>
+  <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+  <symbol id="i-msg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 5h16v11H9l-5 4z"/></symbol>
+  <symbol id="i-scale" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v18M7 21h10M5 7h14M5 7l-3 7a3 3 0 0 0 6 0zM19 7l-3 7a3 3 0 0 0 6 0z"/></symbol>
+  <symbol id="i-wrench" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.5 6.5a4 4 0 0 0 5 5L21 13l-8 8-3-3 8-8-1.5-1.5a4 4 0 0 0-5-5l2.5 2.5-2 2z" transform="scale(-1 1) translate(-24 0)"/></symbol>
+  <symbol id="i-timer" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="13.5" r="7.5"/><path d="M12 9.5v4l2.5 2M9.5 2.5h5M19 6l1.5-1.5"/></symbol>
+  <symbol id="i-life" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"/></symbol>
+
+  <!-- ===== Scene: lighthouse at night (viewBox 0 0 800 900) ===== -->
+  <symbol id="scene-lighthouse" viewBox="0 0 800 900" style="overflow:visible">
+    <g fill="#fff">
+      <circle cx="90" cy="120" r="2.2"><animate attributeName="opacity" values="1;.2;1" dur="3s" repeatCount="indefinite"/></circle>
+      <circle cx="210" cy="60" r="1.6"/><circle cx="330" cy="150" r="2"><animate attributeName="opacity" values=".3;1;.3" dur="4s" repeatCount="indefinite"/></circle>
+      <circle cx="160" cy="250" r="1.4"/><circle cx="60" cy="330" r="1.8"/><circle cx="420" cy="80" r="1.3"/>
+      <circle cx="270" cy="300" r="1.6"><animate attributeName="opacity" values="1;.25;1" dur="5s" repeatCount="indefinite"/></circle>
+      <circle cx="740" cy="90" r="1.8"/><circle cx="640" cy="40" r="1.4"/><circle cx="120" cy="420" r="1.2"/>
+    </g>
+    <circle cx="660" cy="150" r="46" fill="#f4ecd6" opacity=".92"/><circle cx="642" cy="140" r="46" fill="#0d2440" opacity=".55"/>
+    <!-- beam -->
+    <g transform="translate(560 318)">
+      <g><animateTransform attributeName="transform" type="rotate" values="190;160;190" dur="9s" repeatCount="indefinite"/>
+        <path d="M0 -8 L620 -120 L620 120 L0 8 Z" fill="url(#g-beam)" opacity=".75"/></g>
+    </g>
+    <circle cx="560" cy="318" r="90" fill="url(#g-glow)"/>
+    <!-- rocks -->
+    <path d="M380 760 C420 700 470 690 520 700 C560 660 640 650 690 690 C740 700 780 720 800 760 L800 900 L380 900Z" fill="#0a1a2c"/>
+    <!-- tower -->
+    <path d="M516 700 L536 360 L584 360 L604 700 Z" fill="#eef4f8"/>
+    <path d="M524 590 L596 590 L600 640 L520 640 Z M531 470 L589 470 L592 520 L528 520 Z" fill="#e2725b"/>
+    <path d="M560 360 L584 360 L604 700 L560 700 Z" fill="#0b1d33" opacity=".18"/>
+    <rect x="526" y="348" width="68" height="14" rx="3" fill="#12355b"/>
+    <rect x="536" y="300" width="48" height="48" rx="4" fill="#ffe7a8"/>
+    <path d="M536 300 h48 M560 300 v48" stroke="#12355b" stroke-width="3"/>
+    <path d="M526 300 L560 266 L594 300 Z" fill="#12355b"/>
+    <rect x="557" y="252" width="6" height="16" fill="#12355b"/>
+    <rect x="548" y="640" width="24" height="40" rx="10" fill="#12355b"/>
+    <!-- sea -->
+    <rect x="-1600" y="780" width="2600" height="200" fill="url(#g-sea)"/>
+    <g><animateTransform attributeName="transform" type="translate" values="0 0;-200 0" dur="10s" repeatCount="indefinite"/>
+      <path d="M-1600 790 q50 -22 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V980 H-1600Z" fill="#1e5a7a" opacity=".85"/></g>
+    <g><animateTransform attributeName="transform" type="translate" values="-200 0;0 0" dur="14s" repeatCount="indefinite"/>
+      <path d="M-1600 830 q50 -18 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V980 H-1600Z" fill="#12355b"/></g>
+    <g><animateTransform attributeName="transform" type="translate" values="0 0;-200 0" dur="7s" repeatCount="indefinite"/>
+      <path d="M-1600 862 q50 -14 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V980 H-1600Z" fill="#0b1d33"/></g>
+    <!-- small boat -->
+    <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -6;0 0" dur="4s" repeatCount="indefinite"/>
+      <path d="M150 800 h90 l-14 18 h-62 z" fill="#e6b450"/><path d="M194 800 V742 l30 52 z" fill="#f4ecd6"/><path d="M190 800 V752 l-26 44 z" fill="#8fd6cf"/></g>
+  </symbol>
+
+  <!-- ===== Scene: nautical chart with compass rose (viewBox 0 0 800 800) ===== -->
+  <symbol id="scene-chart" viewBox="0 0 800 800">
+    <circle cx="400" cy="400" r="380" fill="url(#g-parch)"/>
+    <circle cx="400" cy="400" r="380" fill="none" stroke="#c8962e" stroke-width="6"/>
+    <circle cx="400" cy="400" r="356" fill="none" stroke="#c8962e" stroke-width="1.5" stroke-dasharray="4 8"/>
+    <g fill="none" stroke="#1e5a7a" stroke-opacity=".22" stroke-width="2">
+      <path d="M90 300 C200 260 260 330 380 300 S600 240 720 290"/><path d="M80 360 C200 320 270 390 390 360 S610 300 730 350"/>
+      <path d="M90 480 C210 450 280 520 400 490 S620 430 720 470"/><path d="M110 560 C230 530 300 600 420 570 S620 520 700 550"/>
+    </g>
+    <!-- islands -->
+    <path d="M150 230 c30 -40 90 -30 110 0 c20 30 -10 60 -50 60 c-40 0 -80 -20 -60 -60z" fill="#8fd6cf" stroke="#0f766e" stroke-width="3"/>
+    <path d="M520 170 c40 -30 110 -10 120 30 c8 40 -40 60 -80 50 c-40 -10 -70 -50 -40 -80z" fill="#8fd6cf" stroke="#0f766e" stroke-width="3"/>
+    <path d="M560 560 c40 -30 120 -10 120 40 c0 40 -60 60 -100 40 c-30 -15 -50 -60 -20 -80z" fill="#8fd6cf" stroke="#0f766e" stroke-width="3"/>
+    <path d="M150 560 c30 -30 90 -20 100 20 c10 40 -40 60 -70 50 c-30 -10 -50 -50 -30 -70z" fill="#8fd6cf" stroke="#0f766e" stroke-width="3"/>
+    <!-- route -->
+    <path d="M205 260 C320 330 420 160 575 205 C700 250 560 420 615 590 C560 680 330 640 200 600" fill="none" stroke="#e2725b" stroke-width="5" stroke-dasharray="14 12" stroke-linecap="round">
+      <animate attributeName="stroke-dashoffset" values="0;-52" dur="1.6s" repeatCount="indefinite"/></path>
+    <g font-family="Fraunces, Georgia, serif" font-weight="700" font-size="34" text-anchor="middle" fill="#fff">
+      <circle cx="205" cy="260" r="26" fill="#12355b"/><text x="205" y="272">1</text>
+      <circle cx="575" cy="205" r="26" fill="#12355b"/><text x="575" y="217">2</text>
+      <circle cx="615" cy="590" r="26" fill="#12355b"/><text x="615" y="602">3</text>
+      <circle cx="200" cy="600" r="26" fill="#12355b"/><text x="200" y="612">4</text>
+    </g>
+    <!-- rose -->
+    <g transform="translate(400 410)">
+      <g><animateTransform attributeName="transform" type="rotate" values="0;360" dur="120s" repeatCount="indefinite"/>
+        <circle r="96" fill="none" stroke="#12355b" stroke-opacity=".35" stroke-width="2"/>
+        <path d="M0 -120 L16 -16 L0 0 Z" fill="#12355b"/><path d="M0 -120 L-16 -16 L0 0 Z" fill="#1e5a7a"/>
+        <path d="M0 120 L16 16 L0 0 Z" fill="#1e5a7a"/><path d="M0 120 L-16 16 L0 0 Z" fill="#12355b"/>
+        <path d="M120 0 L16 16 L0 0 Z" fill="#12355b"/><path d="M120 0 L16 -16 L0 0 Z" fill="#1e5a7a"/>
+        <path d="M-120 0 L-16 16 L0 0 Z" fill="#1e5a7a"/><path d="M-120 0 L-16 -16 L0 0 Z" fill="#12355b"/>
+        <path d="M60 -60 L10 -4 L0 0Z M-60 60 L-10 4 L0 0Z M60 60 L4 10 L0 0Z M-60 -60 L-4 -10 L0 0Z" fill="#c8962e"/>
+        <circle r="10" fill="#e6b450"/>
+        <text y="-132" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="30" fill="#12355b">N</text>
+      </g>
+    </g>
+  </symbol>
+
+  <!-- ===== Scene: ship at dawn (viewBox 0 0 800 900) ===== -->
+  <symbol id="scene-dawn" viewBox="0 0 800 900" style="overflow:visible">
+    <circle cx="420" cy="640" r="300" fill="url(#g-sun)"/>
+    <g fill="none" stroke="#f5d9a6" stroke-opacity=".35" stroke-width="3" stroke-linecap="round">
+      <path d="M60 230 q40 -14 80 0"/><path d="M640 170 q30 -10 60 0"/><path d="M560 260 q30 -10 60 0"/>
+    </g>
+    <path d="M100 160 q16 -10 32 0 q16 -10 32 0" fill="none" stroke="#0b1d33" stroke-width="4" stroke-linecap="round"/>
+    <path d="M600 110 q12 -8 24 0 q12 -8 24 0" fill="none" stroke="#0b1d33" stroke-width="4" stroke-linecap="round"/>
+    <rect x="-1600" y="660" width="2600" height="320" fill="url(#g-sea2)"/>
+    <g opacity=".5" stroke="#ffe0a6" stroke-width="4" stroke-linecap="round"><path d="M340 690 h160M370 712 h100M390 734 h60"/></g>
+    <!-- ship -->
+    <g><animateTransform attributeName="transform" type="rotate" values="-2 430 640;2 430 640;-2 430 640" dur="6s" repeatCount="indefinite"/>
+      <path d="M300 640 h270 l-40 50 h-196 z" fill="#0b1d33"/>
+      <rect x="430" y="330" width="7" height="312" fill="#0b1d33"/>
+      <path d="M437 350 C520 420 540 520 520 610 L437 610 Z" fill="#fbf3df"/>
+      <path d="M430 380 C370 440 350 530 360 610 L430 610 Z" fill="#f2e3c2"/>
+      <path d="M437 330 l40 12 l-40 12 z" fill="#e2725b"/>
+      <path d="M318 652 h236" stroke="#c8962e" stroke-width="4"/>
+    </g>
+    <g><animateTransform attributeName="transform" type="translate" values="0 0;-200 0" dur="9s" repeatCount="indefinite"/>
+      <path d="M-1600 690 q50 -16 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V980 H-1600Z" fill="#0f766e" opacity=".75"/></g>
+    <g><animateTransform attributeName="transform" type="translate" values="-200 0;0 0" dur="13s" repeatCount="indefinite"/>
+      <path d="M-1600 760 q50 -18 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V980 H-1600Z" fill="#12355b"/></g>
+    <g><animateTransform attributeName="transform" type="translate" values="0 0;-200 0" dur="6s" repeatCount="indefinite"/>
+      <path d="M-1600 830 q50 -14 100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 t100 0 V980 H-1600Z" fill="#0b1d33"/></g>
+  </symbol>
+
+  <!-- ===== Scene: Port Haven skyline (viewBox 0 0 1600 360) ===== -->
+  <symbol id="scene-harbor" viewBox="0 0 1600 360">
+    <g fill="#12355b" opacity=".9">
+      <rect x="40" y="170" width="90" height="140"/><rect x="140" y="120" width="70" height="190"/><rect x="220" y="190" width="110" height="120"/>
+      <path d="M340 310 V150 l55 -40 l55 40 V310z"/><rect x="470" y="90" width="80" height="220"/><rect x="560" y="160" width="120" height="150"/>
+      <rect x="1080" y="140" width="80" height="170"/><rect x="1170" y="180" width="130" height="130"/><rect x="1310" y="110" width="70" height="200"/><rect x="1390" y="170" width="100" height="140"/>
+    </g>
+    <g fill="#e6b450" opacity=".85">
+      <rect x="160" y="140" width="10" height="12"/><rect x="180" y="170" width="10" height="12"/><rect x="490" y="110" width="10" height="12"/><rect x="520" y="150" width="10" height="12"/><rect x="490" y="200" width="10" height="12"/>
+      <rect x="590" y="190" width="10" height="12"/><rect x="1100" y="170" width="10" height="12"/><rect x="1330" y="140" width="10" height="12"/><rect x="1350" y="200" width="10" height="12"/><rect x="1200" y="210" width="10" height="12"/>
+    </g>
+    <!-- cranes -->
+    <g stroke="#1e5a7a" stroke-width="8" fill="none" stroke-linecap="round"><path d="M760 310 V80 M760 90 H930 M760 90 L700 130 M900 90 V170"/><path d="M960 310 V110 M960 120 H1060 M960 120 L920 150"/></g>
+    <rect x="880" y="170" width="40" height="30" fill="#e2725b"/>
+    <!-- ship at quay -->
+    <path d="M640 300 h360 l-30 40 h-310z" fill="#0b1d33"/><rect x="700" y="262" width="60" height="38" fill="#0f8b8d"/><rect x="770" y="262" width="60" height="38" fill="#e2725b"/><rect x="840" y="262" width="60" height="38" fill="#e6b450"/><rect x="910" y="270" width="50" height="30" fill="#8fd6cf"/>
+    <rect x="0" y="310" width="1600" height="50" fill="#0b1d33"/>
+    <path d="M0 330 q40 -10 80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 t80 0 V360 H0z" fill="#1e5a7a" opacity=".7"/>
+  </symbol>
+
+  <!-- ===== Persona portraits (viewBox 0 0 200 200) ===== -->
+  <symbol id="p-dee" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="100" fill="#f3e7d3"/>
+    <path d="M30 200 c6 -46 36 -66 70 -66 s64 20 70 66z" fill="#12355b"/>
+    <path d="M86 130 h28 v18 l-14 10 l-14 -10z" fill="#e9c4a4"/>
+    <ellipse cx="100" cy="92" rx="38" ry="44" fill="#f0cfb2"/>
+    <path d="M58 92 c-6 -44 24 -62 46 -60 c30 2 48 22 42 62 c-6 -22 -18 -34 -44 -34 c-24 0 -38 12 -44 32z" fill="#d9dde3"/>
+    <path d="M58 92 c-4 16 0 34 6 40 c-6 -22 -2 -32 -6 -40z M146 94 c2 16 -2 32 -8 38 c4 -20 2 -30 8 -38z" fill="#d9dde3"/>
+    <g fill="none" stroke="#5a4636" stroke-width="3"><circle cx="85" cy="96" r="11"/><circle cx="115" cy="96" r="11"/><path d="M96 96 h8"/></g>
+    <circle cx="85" cy="96" r="2.6" fill="#2b2420"/><circle cx="115" cy="96" r="2.6" fill="#2b2420"/>
+    <path d="M90 116 q10 7 20 0" fill="none" stroke="#a5634d" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="100" cy="166" r="6" fill="#e6b450"/>
+  </symbol>
+  <symbol id="p-jordan" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="100" fill="#d5efec"/>
+    <path d="M26 200 c6 -50 38 -70 74 -70 s68 20 74 70z" fill="#0f8b8d"/>
+    <path d="M70 140 c10 14 50 14 60 0" fill="none" stroke="#0b5f60" stroke-width="5"/>
+    <path d="M88 126 h24 v18 h-24z" fill="#a46b47"/>
+    <ellipse cx="100" cy="92" rx="36" ry="42" fill="#b97a52"/>
+    <path d="M62 84 c-2 -36 22 -52 42 -50 c26 2 40 18 36 48 c-10 -14 -20 -20 -40 -20 c-16 0 -30 8 -38 22z" fill="#2b1d16"/>
+    <circle cx="86" cy="96" r="3" fill="#2b1d16"/><circle cx="114" cy="96" r="3" fill="#2b1d16"/>
+    <path d="M90 114 q10 8 20 0" fill="none" stroke="#6b3a24" stroke-width="3" stroke-linecap="round"/>
+    <rect x="128" y="146" width="26" height="44" rx="5" fill="#0b1d33"/><rect x="132" y="152" width="18" height="30" rx="2" fill="#8fd6cf"/>
+  </symbol>
+  <symbol id="p-amara" viewBox="0 0 200 200">
+    <circle cx="100" cy="100" r="100" fill="#f7dcd4"/>
+    <path d="M28 200 c6 -48 38 -68 72 -68 s66 20 72 68z" fill="#7a4e9e"/>
+    <path d="M86 128 h28 v18 l-14 8 l-14 -8z" fill="#6e4430"/>
+    <ellipse cx="100" cy="94" rx="35" ry="41" fill="#7d4e36"/>
+    <path d="M60 86 c-8 -44 26 -64 52 -58 c30 6 40 30 32 58 c-6 -16 -22 -26 -42 -26 c-20 0 -36 10 -42 26z" fill="#e2725b"/>
+    <path d="M62 60 c10 -26 70 -34 82 4 c-20 -12 -60 -14 -82 -4z" fill="#c8962e"/>
+    <circle cx="87" cy="98" r="3" fill="#1e120c"/><circle cx="113" cy="98" r="3" fill="#1e120c"/>
+    <path d="M90 116 q10 8 20 0" fill="none" stroke="#3f2015" stroke-width="3" stroke-linecap="round"/>
+    <circle cx="66" cy="104" r="5" fill="#e6b450"/><circle cx="134" cy="104" r="5" fill="#e6b450"/>
+    <rect x="40" y="160" width="56" height="34" rx="4" fill="#0b1d33"/><rect x="44" y="164" width="48" height="24" rx="2" fill="#f3e7d3"/>
+  </symbol>
+</defs>
+</svg>
+
+<div class="viewport">
+<main class="deck" aria-live="polite">
