@@ -97,8 +97,9 @@
         else if (s.kind === "add") { bot = run; top = run + s.value; run = top; col = s.color || "#0f8b8d"; }
         else { top = run; bot = run - s.value; run = bot; col = s.color || "#e2725b"; }
         const r = el("rect", { class: "bar", x: gx - bw / 2, y: y(top), width: bw, height: Math.max(2, y(bot) - y(top)), rx: 8, fill: col }, svg);
-        r.style.animationDelay = (0.2 + i * 0.18) + "s";
-        el("text", { class: "v", x: gx, y: y(top) - 12, "text-anchor": "middle" }, svg, (s.kind === "sub" ? "−" : s.kind === "add" ? "+" : "") + s.value);
+        r.style.animationDelay = (0.15 + i * 0.08) + "s";
+        const inside = s.kind !== "total" && y(bot) - y(top) > 34;  // label inside tall step bars, above the rest
+        el("text", { class: "v", x: gx, y: inside ? (y(top) + y(bot)) / 2 + 7 : y(top) - 12, "text-anchor": "middle", style: inside ? "fill:#fff" : "" }, svg, (s.kind === "sub" ? "−" : s.kind === "add" ? "+" : "") + s.value);
         s.label.split("\n").forEach((L, li) => el("text", { x: gx, y: m.t + ih + 30 + li * 22, "text-anchor": "middle" }, svg, L));
         if (i < n - 1 && s.kind !== "total" || (s.kind === "total" && i < n - 1)) {
           el("line", { x1: gx + bw / 2, x2: gx + gw - bw / 2, y1: y(run), y2: y(run), stroke: "rgba(18,53,91,.35)", "stroke-dasharray": "5 5", "stroke-width": 2 }, svg);

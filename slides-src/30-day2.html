@@ -21,7 +21,7 @@
     <div>
       <div class="eyebrow">Lab 5 · Module 5 · Management dashboards</div>
       <h2>Build HarborPoint's Management Command Center</h2>
-      <p class="lede">A Digital Banking dashboard that answers five questions at a glance, then cut down to an executive view a VP can read in thirty seconds.</p>
+      <div class="msg tone-teal"><div class="av">PR</div><div><div class="who"><b>Priya Raman</b>Director, Digital Banking · 8:05 AM</div><p class="say">Your queries yesterday were exactly right. Now I'd like to stop asking for them. One page I can open before any meeting. If Dana could read a version of it without a translator, even better.</p></div></div>
       <div class="lab-meta"><span class="chip">60 min</span><span class="chip"><span class="sea" data-s="1"><i></i><i></i><i></i><i></i></span>Calm</span><span class="chip">P## - Digital Command Center</span></div>
     </div>
     <div class="lab-art"><figure class="win"><div class="bar"><i></i><i></i><i></i><span>P## - Digital Command Center</span></div><img src="../assets/shots/lab05-command-center-full.png" alt=""></figure><div class="lab-num">05</div></div>
@@ -33,13 +33,13 @@
   <div class="content">
     <div class="eyebrow"><span class="pip"></span>The blueprint</div>
     <h2>Five questions earn five places.</h2>
-    <table class="t tight mt">
-      <tr><th>#</th><th>Priya's question</th><th>Who acts</th><th>Widget that answers it</th></tr>
-      <tr><td><b>Q1</b></td><td>What are both teams working on, and is the sprint on track?</td><td>You, with the EMs · daily</td><td>Chart by Feature and State · Burndown</td></tr>
-      <tr><td><b>Q2</b></td><td>What have we delivered, and is delivery steady?</td><td>You and Priya · each sprint</td><td>Velocity, one per team</td></tr>
-      <tr><td><b>Q3</b></td><td>Are there urgent bugs, and are they growing?</td><td>Engineering managers · daily</td><td>Query tile + trend</td></tr>
-      <tr><td><b>Q4</b></td><td>How are Features progressing toward their dates?</td><td>Priya, POs · weekly</td><td>Features by State · at-risk list</td></tr>
-      <tr><td><b>Q5</b></td><td>What's at risk or blocked, and is effort going where it should?</td><td>You → Priya · twice a week</td><td>Risk, blocked and orphan tiles</td></tr>
+    <table class="t mt" style="font-size:24px">
+      <tr><th>#</th><th>Priya's question</th><th>Widget that answers it</th></tr>
+      <tr><td><b>Q1</b></td><td>What are both teams working on, and is the sprint on track?</td><td>Chart by Feature and State · Burndown</td></tr>
+      <tr><td><b>Q2</b></td><td>What have we delivered, and is delivery steady?</td><td>Velocity, one per team</td></tr>
+      <tr><td><b>Q3</b></td><td>Are there urgent bugs, and are they growing?</td><td>Query tile + trend</td></tr>
+      <tr><td><b>Q4</b></td><td>How are Features progressing toward their dates?</td><td>Features by State · at-risk list</td></tr>
+      <tr><td><b>Q5</b></td><td>What's at risk or blocked, and is effort going where it should?</td><td>Risk, blocked and orphan tiles</td></tr>
     </table>
     <div class="callout insight mt-s"><b class="t">The removal test</b>If you can't say which question a widget answers, it's decoration. When the dashboard grows, anything that serves none of the five comes off.</div>
   </div>
@@ -68,13 +68,13 @@
 <section class="slide night d2" data-title="Diagnostics vs decisions" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 5 · Command Center">
   <div class="content">
     <div class="eyebrow"><span class="pip"></span>Cut it down for executives</div>
-    <h2>Managers need a cockpit. Executives need a windscreen.</h2>
+    <h2>Cockpit for managers. Windscreen for execs.</h2>
     <div class="split wide-l mt">
-      <figure class="win"><div class="bar"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Digital Banking Exec View</span></div><img src="../assets/shots/lab05-exec-view.png" alt="A six-widget executive view with a bottom-line Markdown header." style="max-height:470px; object-fit:cover; object-position:top"></figure>
+      <figure class="win"><div class="bar"><i></i><i></i><i></i><span>Overview › Dashboards › P## - Digital Banking Exec View</span></div><img src="../assets/shots/lab05-exec-view.png" alt="A six-widget executive view with a bottom-line Markdown header." style="max-height:400px; object-fit:cover; object-position:top"></figure>
       <div>
         <div class="stat sm"><b style="--c:#e6b450">13 → 6</b><span>widgets. Velocity, burndown, CFD and cycle time stay on the manager's page.</span></div>
         <div class="callout mt" style="--c:#e6b450; background:rgba(255,255,255,.08); color:#fff"><b class="t">The most important widget</b>is words: a bottom line and the decision needed. It's the only place <b>you</b> say what the numbers mean.</div>
-        <p class="small mt">Use <b>Copy to Dashboard</b>, not Copy Dashboard, so both pages share the same queries.</p>
+        <div class="callout key mt frag" style="--c:var(--glass); background:rgba(255,255,255,.08); color:#fff"><b class="t">The 30-second test</b>Show the room the exec view for 30 seconds, then hide it. Can they say the bottom line and the decision being asked?</div>
       </div>
     </div>
   </div>
@@ -89,11 +89,12 @@
     <div class="eyebrow">Lab 6 · Module 6 · Delivery metrics · <span class="sea" data-s="3" style="color:#e6b450"><i></i><i></i><i></i><i></i></span> Rough · 50 min</div>
     <h2 style="font-size:72px">Which team needs help?</h2>
     <p class="lede">Make the gut call before you see the evidence. Write it down.</p>
-    <div class="grid2 mt-l" style="gap:40px">
+    <div class="grid2 mt" style="gap:40px">
       <div class="card" style="border-top:6px solid #e2725b"><span class="tag" style="color:#ff9c86">Team A · Mobile Banking</span><div class="stat"><b>44</b><span>points last sprint. Velocity near its all-time high.</span></div></div>
       <div class="card" style="border-top:6px solid #8fd6cf"><span class="tag">Team B · Digital Accounts</span><div class="stat"><b>26</b><span>points last sprint. Has never broken 26.</span></div></div>
     </div>
-    <p class="small mt"><b style="color:#fff">Priya, 9:12 AM:</b> "Someone saw 44 against 26 and asked if Grace's team needs support. Diego tells me Mobile is drowning. I'd rather not guess." · Hands up: A or B?</p>
+    <div class="poll mt" style="grid-template-columns:1fr 1fr; display:grid; gap:20px"><div class="opt"><span class="l">A</span>Mobile Banking needs help</div><div class="opt"><span class="l">B</span>Digital Accounts needs help</div></div>
+    <p class="small mt"><b style="color:#fff">Priya, 9:12 AM:</b> "Someone saw 44 against 26 and asked if Grace's team needs support. Diego tells me Mobile is drowning. I'd rather not guess."</p>
   </div>
   <aside class="notes"><p>Writing the judgment down first is the only honest way to learn which numbers fool you. Most rooms split; some pick B because of "lower throughput".</p></aside>
 </section>
@@ -101,7 +102,7 @@
 <section class="slide chart-paper d2" data-title="The three-signals rule" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 6 · Which Team Needs Help?">
   <div class="content">
     <div class="eyebrow"><span class="kicker" style="font-size:24px; text-transform:none; letter-spacing:0">Lighthouse insight</span></div>
-    <h2>One chart is an anecdote. Three families make a case.</h2>
+    <h2>One chart is an anecdote. Three make a case.</h2>
     <div class="grid3 mt-l">
       <div class="card accent" style="--c:var(--navy)"><span class="tag" style="color:var(--navy)">Exhibit A</span><h3>Output</h3><p>Velocity, throughput (count), commitment reliability.</p></div>
       <div class="card accent" style="--c:var(--teal)"><span class="tag">Exhibit B</span><h3>Flow</h3><p>Cumulative flow, cycle time, work in progress.</p></div>
@@ -202,10 +203,30 @@
   <aside class="notes"><p>Build your own plan with Mobile Banking, Security and Core Platform rows, with System Demo and exam fieldwork markers.</p></aside>
 </section>
 
+<section class="slide night d2" data-title="Make a call: how many teams?" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 7 · Cross-Team Bottleneck">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Make a call</div>
+    <h2>How many teams does Real-Time Fraud Alerts really involve?</h2>
+    <div class="split mt-l" style="align-items:start">
+      <div class="poll" data-reveal=".ans">
+        <div class="opt"><span class="l">A</span>One: Mobile Banking builds it</div>
+        <div class="opt"><span class="l">B</span>Two: Mobile, waiting on Security</div>
+        <div class="opt"><span class="l">C</span>Three: the teams on the plan</div>
+        <div class="opt right"><span class="l">D</span>Four</div>
+      </div>
+      <div class="frag ans">
+        <div class="stat"><b style="--c:#e6b450">Four</b><span>Mobile Banking, Security and Core Platform are on the plan. Digital Accounts' card-lock API is on <b>no plan at all</b>: it has no sprint.</span></div>
+        <p class="big mt" style="color:#dbe8f3; font-size:26px">The plan shows three. The story links show four. That gap is the lesson of this lab.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p>Most rooms answer B or C. The fourth team only appears when you query the story-level links directly.</p></aside>
+</section>
+
 <section class="slide chart-paper d2" data-title="Drop below the waterline" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 7 · Cross-Team Bottleneck">
   <div class="content">
     <div class="eyebrow"><span class="pip"></span>Two altitudes · the story links size the problem</div>
-    <h2>The real handoff is narrower. Narrower means options.</h2>
+    <h2>The real handoff is narrower. That means options.</h2>
     <table class="t mt" style="font-size:21px">
       <tr><th>Predecessor</th><th>→ Successor</th><th>Status</th></tr>
       <tr class="hot"><td>Risk score API · <b>Security</b> · Sprint 16</td><td>Confirm or deny a flagged transaction · Mobile · <b>Sprint 14</b>, blocked</td><td><span class="pillr red">2 sprints early</span></td></tr>
@@ -224,7 +245,7 @@
     <div class="eyebrow"><span class="pip"></span>Follow the evidence to the root cause</div>
     <h2>Security isn't slow. Security is ranking the portfolio for you.</h2>
     <div class="grid3 mt-l">
-      <div class="stat"><b style="--c:#ff9c86">58%</b><span>of Security's work is mandatory exam work</span></div>
+      <div class="stat"><b style="--c:#ff9c86">58%</b><span>of Security's Sprint 14 points are mandatory exam work</span></div>
       <div class="stat"><b style="--c:#e6b450">~21</b><span>points a sprint, steady for five sprints, while plans grew by half</span></div>
       <div class="stat"><b>Last</b><span>where the mandatory Compliance Epic sits on the backlog (Lab 1)</span></div>
     </div>
@@ -237,19 +258,20 @@
   <div class="content">
     <div class="eyebrow"><span class="pip"></span>The options matrix</div>
     <h2>Bring options, not alarms.</h2>
-    <table class="t mt" style="font-size:19px">
-      <tr><th>Option</th><th>Effect on the date</th><th>Who pays</th><th>Who decides</th></tr>
-      <tr class="hot"><td><b>0 · Do nothing</b></td><td>Misses PI 4, found at System Demo</td><td>Members, trust in commitments</td><td>Nobody. That's the problem.</td></tr>
-      <tr><td><b>1 · Re-sequence Security</b></td><td>Sprint 16 possible, not certain</td><td>Adaptive MFA slips</td><td>Simone, with Aisha</td></tr>
-      <tr><td><b>2 · Contract-first</b></td><td>Shortens everything after the API</td><td>Some rework in Mobile</td><td>Hannah and Aisha</td></tr>
-      <tr><td><b>3 · Descope the MVP</b></td><td>Sprint 16 realistic for alerts + confirm/deny</td><td>Auto-lock waits a PI</td><td>Simone, Hannah, Priya</td></tr>
-      <tr><td><b>4 · Borrow Core Platform</b></td><td>Could pull the API forward</td><td>Core Platform's spare capacity</td><td>Nadia and Aisha</td></tr>
-      <tr><td><b>5 · Move the date</b></td><td>Sprint 17, honestly</td><td>PI 4 credibility</td><td>Dana and Simone</td></tr>
-      <tr><td><b>6 · Fix the ranking</b></td><td>None this PI; prevents the next</td><td>An uncomfortable meeting</td><td>Simone and the ExCo</td></tr>
+    <table class="t tight mt-s" style="font-size:16.5px">
+      <tr><th>Option</th><th>Effect on the date</th><th>Risk</th><th>Who pays</th><th>Who decides</th></tr>
+      <tr class="hot"><td><b>0 · Do nothing</b></td><td>Misses PI 4, found at the System Demo</td><td>Maximum surprise</td><td>Members, trust in PI commitments</td><td>Nobody. That's the problem.</td></tr>
+      <tr><td><b>1 · Re-sequence Security</b></td><td>Sprint 16 possible, not certain</td><td>Sprint 15 already over capacity</td><td>Adaptive MFA slips</td><td>Simone, with Aisha</td></tr>
+      <tr><td><b>2 · Contract-first</b></td><td>Shortens everything after the API</td><td>Contract changes cause rework</td><td>A little rework in Mobile</td><td>Hannah and Aisha</td></tr>
+      <tr><td><b>3 · Descope the MVP</b></td><td>Sprint 16 realistic for alerts + confirm/deny</td><td>Members lock cards another way for a PI</td><td>Auto-lock waits a PI</td><td>Simone, Hannah, Priya</td></tr>
+      <tr><td><b>4 · Borrow Core Platform</b></td><td>Could pull the API forward</td><td>Ramp-up and fraud-system access</td><td>Core Platform's spare capacity</td><td>Nadia and Aisha, via Ruth</td></tr>
+      <tr><td><b>5 · Move the date</b></td><td>Sprint 17, honestly</td><td>Fraud exposure lasts a sprint</td><td>PI 4 credibility</td><td>Dana and Simone</td></tr>
+      <tr><td><b>6 · Fix the ranking</b></td><td>None this PI; prevents the next</td><td>An uncomfortable conversation</td><td>Nothing new: the cost becomes visible</td><td>Simone and the ExCo, with Ruth</td></tr>
+      <tr><td><b>7 · Question the link</b></td><td>Could decouple from the engine's Sprint 17</td><td>Rework when v2 lands</td><td>Security</td><td>Aisha and Hannah</td></tr>
     </table>
-    <p class="small mt-s">Every row has a cost and a named decider. Then write the recommendation in five sentences, bottom line first.</p>
+    
   </div>
-  <aside class="notes"><p>Simone is the decider on most options, because the trade is inside her own Epic. Option 7, question the link, is in the lab's model answer too.</p></aside>
+  <aside class="notes"><p>Simone is the decider on most options, because the trade is inside her own Epic. Every option has a cost and a named decider, including doing nothing.</p></aside>
 </section>
 
 <!--TK:7-->
@@ -261,7 +283,7 @@
       <div class="eyebrow">Lab 8 · Module 8 · Dashboards that drive decisions</div>
       <h2>The Executive Status Review</h2>
       <div class="msg tone-navy"><div class="av">DW</div><div><div class="who"><b>Dana Whitfield</b>EVP, Member Experience · 7:41 AM</div><p class="say">Send me one page: are we going to make it, what are the two things that worry you most, and <b>what do you need me to decide?</b></p></div></div>
-      <div class="lab-meta"><span class="chip">45 min</span><span class="chip"><span class="sea" data-s="2"><i></i><i></i><i></i><i></i></span>Choppy</span><span class="chip">Deliverable: one-page BLUF</span></div>
+      <div class="lab-meta"><span class="chip">45 min</span><span class="chip"><span class="sea" data-s="2"><i></i><i></i><i></i><i></i></span>Choppy</span><span class="chip">Deliverable: a one-page BLUF (Bottom Line Up Front)</span></div>
     </div>
     <div class="lab-art"><figure class="win"><div class="bar"><i></i><i></i><i></i><span>P## - METP Executive Status</span></div><img src="../assets/shots/lab08-exec-dashboard.png" alt=""></figure><div class="lab-num">08</div></div>
   </div>
@@ -276,7 +298,7 @@
       <div class="card accent" style="--c:var(--red)"><span class="tag" style="color:var(--red)">Risk 1 · Priority #1</span><h3>Fraud Alerts will miss PI 4</h3><p>4% done. The API it needs lands in Sprint 16, squeezed by mandatory exam work.</p></div>
       <div class="card accent" style="--c:var(--coral)"><span class="tag" style="color:var(--coral)">Risk 2 · Delivery health</span><h3>Mobile Banking is overloaded</h3><p>71% of plan, 42 open bugs with 3 Critical, Check Deposit misses this sprint.</p></div>
     </div>
-    <div class="callout reef mt-l"><b class="t">Reef: the loudest chart in the room</b>Member Support's velocity "collapse" looks scarier than either. Check how a number is made before you escalate it (Lab 11 shows why).</div>
+    <div class="callout reef mt-l"><b class="t">Reef: the loudest chart in the room</b>Member Support's velocity "collapse" looks scarier than either. Check how a number is made before you escalate it (Day 3 shows why).</div>
   </div>
   <aside class="notes"><p>A good risk has a priority at stake, evidence that holds up, and a decision someone senior can make.</p></aside>
 </section>
@@ -284,7 +306,7 @@
 <section class="slide chart-paper d2" data-title="From metric to member" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
   <div class="content">
     <div class="eyebrow"><span class="pip"></span>Translate before you write</div>
-    <h2>The Executive Committee doesn't think in Story Points.</h2>
+    <h2>Executives don't think in Story Points.</h2>
     <div class="mt" style="display:grid; gap:18px">
       <div class="row" style="align-items:center; gap:24px"><div class="card grow" style="padding:20px 26px"><p style="font-size:24px"><b style="color:var(--ink)">42 open bugs, 3 Critical, 4 at P1</b></p></div><svg style="width:60px;height:36px;color:var(--brass)"><use href="#i-arrow"/></svg><div class="card grow" style="padding:20px 26px; background:#fdf6e6"><p style="font-size:24px; color:var(--ink)">Members are finding defects in production, including a deposit failure nobody owns yet.</p></div></div>
       <div class="row" style="align-items:center; gap:24px"><div class="card grow" style="padding:20px 26px"><p style="font-size:24px"><b style="color:var(--ink)">Fraud Alerts 4% done</b></p></div><svg style="width:60px;height:36px;color:var(--brass)"><use href="#i-arrow"/></svg><div class="card grow" style="padding:20px 26px; background:#fdf6e6"><p style="font-size:24px; color:var(--ink)">Every sprint without it, members learn about fraud from their statement, not their phone.</p></div></div>
@@ -292,6 +314,25 @@
     </div>
   </div>
   <aside class="notes"><p>About 45% of Mobile bugs since Sprint 11 are tagged escaped-defect.</p></aside>
+</section>
+
+<section class="slide night d2" data-title="Make a call: is zero red?" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>Make a call</div>
+    <h2>"Zero of 13 committed Features closed." Red?</h2>
+    <div class="split mt-l" style="align-items:start">
+      <div class="poll" data-reveal=".ans">
+        <div class="opt"><span class="l">A</span>Red: nothing has shipped</div>
+        <div class="opt"><span class="l">B</span>Amber: worth watching</div>
+        <div class="opt right"><span class="l">C</span>Neither, on its own. It needs a baseline.</div>
+      </div>
+      <div class="frag ans">
+        <p class="big" style="color:#dbe8f3">It's week 2 of PI 4's second sprint, and Features close near their Target Dates. Only <b>Check Deposit</b> is due now, and it won't close. <b>That's</b> the red.</p>
+        <div class="callout mt" style="--c:#e6b450; background:rgba(255,255,255,.08); color:#fff"><b class="t">Reef: a number with no baseline</b>Give every executive number a comparison: against plan, against last month, or against a threshold.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes"><p>Ask the room to vote before revealing. A tile like this with a red rule would cause a false alarm every PI.</p></aside>
 </section>
 
 <section class="slide chart-paper d2" data-title="Bottom line up front" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
@@ -314,10 +355,24 @@
   <aside class="notes"><p>Under pressure from Dana's question cards, answer the same way: answer, evidence, decision.</p></aside>
 </section>
 
+<section class="slide chart-paper d2" data-title="A model bottom line" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
+  <div class="content">
+    <div class="eyebrow"><span class="pip"></span>A model answer · the BLUF panel at the top of the exec dashboard</div>
+    <h2>Two sentences. Two decisions. Two names.</h2>
+    <div class="card mt-l" style="padding:40px 46px; border-left:8px solid var(--brass)">
+      <p style="font-size:20px; color:var(--muted); letter-spacing:.1em; text-transform:uppercase; font-weight:800">METP Executive Status · Updated: Sprint 14, week 2</p>
+      <p class="mt" style="color:var(--ink); font-size:32px; line-height:1.45"><b>Bottom line:</b> Fraud Alerts (priority 1) misses PI 4 unless Simone makes one trade this week. Mobile Banking needs two sprints of stabilization.</p>
+      <p class="mt" style="color:var(--ink); font-size:32px; line-height:1.45"><b>Decisions needed:</b> (1) <b>Simone</b>: API into Sprint 15, or Fraud Alerts to Sprint 17. (2) <b>Dana</b>: no mid-sprint intake for Mobile, plus temporary test capacity.</p>
+    </div>
+    <p class="small mt">Thresholds sit underneath: at-risk Features green at 3 or fewer · Mobile P1 bugs green at 0 · PI 4 closed read against Target Dates.</p>
+  </div>
+  <aside class="notes"><p>Dana can stop reading after the first sentence and still know what to do. Everything else on the dashboard is evidence for these lines.</p></aside>
+</section>
+
 <section class="slide night d2" data-title="Set the review rhythm" data-part="Day 2 · The Lighthouse" data-section="Day 2 · Lab 8 · Executive Status Review">
   <div class="content">
-    <div class="eyebrow"><span class="pip"></span>A briefing is a snapshot. A review keeps it true.</div>
-    <h2>Two reviews, thirty minutes each</h2>
+    <div class="eyebrow"><span class="pip"></span>Two reviews, thirty minutes each</div>
+    <h2>A briefing is a snapshot. A review keeps it true.</h2>
     <div class="grid2 mt">
       <div class="card"><svg class="icon"><use href="#i-calendar"/></svg><span class="tag">Weekly delivery review</span><h3>"What changed, what's stuck?"</h3><p>You, Ruth, the Product Owners. Unblock and re-plan inside the PI. Every red item leaves with an owner.</p></div>
       <div class="card"><svg class="icon" style="--c:#e6b450"><use href="#i-scale"/></svg><span class="tag" style="color:#e6b450">Monthly steering review</span><h3>"Still the right things?"</h3><p>Dana and the executives. Decide trade-offs between priorities, update the Epic rank, record decisions.</p></div>

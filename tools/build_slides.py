@@ -52,13 +52,17 @@ def labs() -> dict[int, dict]:
     return out
 
 
+def split_lead(bullet: str) -> tuple[str, str]:
+    """'**The order is the decision.** When rank...' -> ('The order is the decision.', 'When rank...')."""
+    m = re.match(r"\*\*(.+?)\*\*\s*(.*)", bullet)
+    return (m.group(1), m.group(2)) if m else (bullet, "")
+
+
 def takeaway_slide(n: int, lab: dict) -> str:
     m = lab["meta"]
-    keys = lab["keys"]
-    size = 24 if len(keys) <= 5 else 22
-    items = "\n".join(
-        f'        <li style="font-size:{size}px"><svg><use href="#i-key"/></svg><span>{inline(k)}</span></li>' for k in keys
-    )
+    parts = [split_lead(k) for k in lab["keys"]]
+    items = "\n".join(f"        <li><b>{inline(lead)}</b></li>" for lead, _ in parts)
+    notes = "".join(f"<p><b>{inline(lead)}</b> {inline(rest)}</p>" for lead, rest in parts)
     return f"""<section class="slide sandy d{m['day']}" data-title="Lab {n} · Key takeaways" data-part="{DAY_PART[m['day']]}" data-section="Day {m['day']} · Lab {n} · {SHORT[n]}">
   <div class="tk content">
     <div class="onething rise">
@@ -67,12 +71,12 @@ def takeaway_slide(n: int, lab: dict) -> str:
     </div>
     <div>
       <div class="eyebrow"><svg class="icon sm" style="--c:var(--brass)"><use href="#i-key"/></svg>Lab {n} · Key takeaways</div>
-      <ul class="keys">
+      <ol class="keys">
 {items}
-      </ul>
+      </ol>
     </div>
   </div>
-  <aside class="notes"><p>Generated from Lab {n}'s one thing and Key takeaways (tools/build_slides.py). Ask: which of these would have changed a decision you made last month?</p></aside>
+  <aside class="notes">{notes}<p>Generated from Lab {n}'s one thing and Key takeaways. Ask: which of these would have changed a decision you made last month?</p></aside>
 </section>"""
 
 
