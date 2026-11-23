@@ -6,7 +6,7 @@ title: "Meet HarborPoint"
 
 **HarborPoint Financial** is a member-owned financial cooperative, founded in 1952 by dockworkers and harbor pilots in the port city of **Port Haven**. It still runs on the promise in its tagline: *"Steady hands. Safe harbor."*
 
-For three days, its transformation program is your program. Everything on this page also lives in the Azure DevOps project, so treat this as your briefing pack, not as the answer key. Many labs ask you to find these facts in Azure DevOps yourself, because that's the skill.
+For three days, its transformation program is yours. Treat this page as your briefing pack, not the answer key: the labs ask you to find these facts in Azure DevOps yourself, because that's the skill.
 
 <div class="hp-features">
   <div class="hp-feature"><h3>1.9 million members</h3><p>Members, not customers. HarborPoint people say "members" and so do the labs.</p></div>
@@ -16,7 +16,7 @@ For three days, its transformation program is your program. Everything on this p
 
 ## Project Lighthouse
 
-The **Member Experience Transformation Program (METP)**, nicknamed **Project Lighthouse**, is a multi-year program to modernize how members bank, get help and stay safe. It's the work you'll manage, observe and report on all week.
+The **Member Experience Transformation Program (METP)**, nicknamed **Project Lighthouse**, is a multi-year program to modernize how members bank, get help and stay safe. It's the work you manage and report on all week.
 
 <div class="msg" data-initials="PR" data-tone="teal" markdown>
 <p class="msg-head"><strong>Priya Raman</strong><span>Director, Digital Banking · 8:10 AM</span></p>
@@ -130,11 +130,11 @@ Six Epics, twenty-four Features. Each Feature has one **owning team** (its Area 
     | Access Review Automation | Security | Sprint 18 |
 
 !!! insight "Lighthouse insight"
-    A target sprint is a promise, not a status. This table tells you **when** each Feature is due. Only Azure DevOps can tell you **how much is left**, and only if you read it carefully. Hold the two side by side and most status questions answer themselves.
+    A target sprint is a promise, not a status. This table tells you **when** each Feature is due; only Azure DevOps can tell you **how much is left**. Hold the two side by side and most status questions answer themselves.
 
 ## The cast
 
-These are the people who will message you, ask you hard questions, and occasionally disagree with each other. Learn their voices: a good briefing is written for its reader.
+These people will message you, ask hard questions, and sometimes disagree with each other. Learn their voices: a good briefing is written for its reader.
 
 <div class="hp-features">
   <div class="hp-feature"><h3>Dana Whitfield</h3><p><strong>EVP, Member Experience · METP sponsor.</strong> Bottom line first. "Are we going to make it? What do you need from me?"</p></div>
@@ -149,7 +149,7 @@ These are the people who will message you, ask you hard questions, and occasiona
 
 ### The delivery teams
 
-Six delivery teams build Project Lighthouse. You'll see these names in **Assigned To**. You are not a member of any of these teams: you observe their work read-only and do your hands-on work in your own sandbox.
+Six delivery teams build Project Lighthouse, and you'll see these names in **Assigned To**. You're not a member of any of them: you read their work and do yours in your sandbox.
 
 | Team | Leads | Engineers and QA |
 |:--|:--|:--|
@@ -160,7 +160,7 @@ Six delivery teams build Project Lighthouse. You'll see these names in **Assigne
 | **Branch Experience** | Maya Johnson (Product Owner) · Daniel Park (Engineering Manager) | Zoe Clarke, Ravi Shankar, Tomas Herrera |
 | **Member Support** | Isaac Thompson (Product Owner) | Leila Ahmadi, Marco Bianchi, Nora Fitzgerald |
 
-A Feature's **Assigned To** is its owning team's Product Owner. When you need to know who owns a Feature, that's where to look.
+A Feature's **Assigned To** is its owning team's Product Owner: that's where to look for who owns it.
 
 ## The program calendar
 
@@ -200,13 +200,13 @@ flowchart LR
 
 ## Your role
 
-You are never one of the six delivery teams. You're the manager who has to make sense of their work and turn it into decisions.
+You're the manager who makes sense of the teams' work and turns it into decisions.
 
-| Day | Your role | Who you answer to | What you're trying to do |
-|:--|:--|:--|:--|
-| **1 · Charting the Waters** | Newly appointed **Delivery Manager, Digital Banking** | Priya Raman | Learn the portfolio, read Digital Banking's real position at Feature level, build your query toolkit |
-| **2 · The Lighthouse** | Delivery Manager, Digital Banking | Priya, then Dana and Simone | Build dashboards that answer real questions, read metrics without being fooled, untangle cross-team dependencies, brief executives |
-| **3 · Setting the Course** | Acting **Program Manager, METP**, while Ruth hands over | Dana Whitfield | Forecast honestly, prioritize by member impact, fix the data behind the reports, and present a realistic outlook for PI 5 |
+| Day | Your role | Who you answer to |
+|:--|:--|:--|
+| **1 · Charting the Waters** | Newly appointed **Delivery Manager, Digital Banking** | Priya Raman |
+| **2 · The Lighthouse** | Delivery Manager, Digital Banking | Priya, then Dana and Simone |
+| **3 · Setting the Course** | Acting **Program Manager, METP**, while Ruth hands over | Dana Whitfield |
 
 !!! tip "Where next"
-    Read the [environment map](environment.md) to learn where everything lives in Azure DevOps, then head to [Day 1](../day-1/index.md). Keep the [Glossary](../resources/glossary.md) handy if a term is new.
+    Read the [environment map](environment.md) to learn where everything lives in Azure DevOps, then head to [Day 1](../day-1/index.md). Keep the [Glossary](../resources/glossary.md) handy for new terms.

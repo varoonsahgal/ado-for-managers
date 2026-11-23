@@ -4,29 +4,29 @@ title: "Templates"
 
 # Templates
 
-Copy-ready Markdown for the write-ups managers produce every week. Each one pastes straight into an Azure DevOps wiki page. Use the copy button at the top right of each block.
+Copy-ready Markdown for the write-ups managers produce every week. Each pastes straight into an Azure DevOps wiki page: use the copy button at the top right of each block.
 
 !!! tip "How to use these templates"
     - Create your page under **Overview › Wiki** at `/Training/P##/<page name>`, paste the template, then replace every `[bracketed]` prompt.
-    - The project wiki also holds `/Templates/Status Report`, `/Templates/Executive Briefing (BLUF)` and `/Templates/Persona Canvas`. They follow the same shape as the versions here. If a lab points you at the wiki copy, use that one.
-    - Link evidence instead of pasting screenshots: a link to a shared query or dashboard stays current, a screenshot goes stale by Friday.
+    - The project wiki also holds `/Templates/Status Report`, `/Templates/Executive Briefing (BLUF)` and `/Templates/Persona Canvas`, in the same shape. If a lab points you at the wiki copy, use that one.
+    - Link evidence instead of pasting screenshots: a link stays current, a screenshot goes stale by Friday.
     - Delete any section you don't need. A short page that gets read beats a complete one that doesn't.
 
-| Template | Use it when | Length |
-|:--|:--|:--|
-| [Status Report](#status-report) | Regular delivery status for a sponsor or steering group | 1 page |
-| [Executive Briefing (BLUF)](#executive-briefing-bluf) | An executive needs a decision or a straight answer | ½ to 1 page |
-| [Options Matrix](#options-matrix) | Several ways forward, and someone has to choose | 1 table + 5 sentences |
-| [Dependency Escalation](#dependency-escalation) | Another team's work is putting your Feature at risk | ½ page |
-| [PI Outlook](#pi-outlook) | Planning what the next PI can realistically hold | 1 to 2 pages |
-| [Persona Canvas](#persona-canvas) | Designing or prioritizing for real members | 1 page per persona |
-| [Monday Readout](#monday-readout) | Your weekly five-minute read of a team or portfolio | 5 bullets |
-| [Data Hygiene Routine](#data-hygiene-routine) | Keeping the data behind your reports honest | 15 minutes a week |
-| [Dashboard Design Canvas](#dashboard-design-canvas) | Before you add a single widget | 1 page |
+| Template | Use it when | Length | Practiced in |
+|:--|:--|:--|:--|
+| [Status Report](#status-report) | Regular delivery status for a sponsor or steering group | 1 page | [Lab 4](../day-1/lab-04-sprint-delivery-report.md) |
+| [Executive Briefing (BLUF)](#executive-briefing-bluf) | An executive needs a decision or a straight answer | ½ to 1 page | [Lab 8](../day-2/lab-08-executive-status-review.md), [Lab 12](../day-3/lab-12-capstone.md) |
+| [Options Matrix](#options-matrix) | Several ways forward, and someone has to choose | 1 table + 5 sentences | [Lab 7](../day-2/lab-07-cross-team-bottleneck.md) |
+| [Dependency Escalation](#dependency-escalation) | Another team's work is putting your Feature at risk | ½ page | [Lab 7](../day-2/lab-07-cross-team-bottleneck.md) |
+| [PI Outlook](#pi-outlook) | Planning what the next PI can realistically hold | 1 to 2 pages | [Lab 9](../day-3/lab-09-meet-the-deadline.md), [Lab 12](../day-3/lab-12-capstone.md) |
+| [Persona Canvas](#persona-canvas) | Designing or prioritizing for real members | 1 page per persona | [Lab 10](../day-3/lab-10-personas.md) |
+| [Monday Readout](#monday-readout) | Your weekly five-minute read of a team or portfolio | 5 bullets | [Lab 2](../day-1/lab-02-monday-morning-manager.md) |
+| [Data Hygiene Routine](#data-hygiene-routine) | Keeping the data behind your reports honest | 15 minutes a week | [Lab 11](../day-3/lab-11-dashboard-wrong.md) |
+| [Dashboard Design Canvas](#dashboard-design-canvas) | Before you add a single widget | 1 page | [Lab 5](../day-2/lab-05-command-center.md) |
 
 ## Status Report
 
-**How to use it:** one page, Feature level, honest colors. Fill the RAG definitions in once and keep them identical every week, or the colors mean nothing. Every RAG call needs a one-line reason and a link to the evidence.
+**How to use it:** one page, Feature level, honest colors. Write the RAG definitions once and keep them identical every week, or the colors mean nothing. Every color needs a one-line reason and a link to the evidence.
 
 ```markdown
 # Status Report: [Initiative or team] · [Sprint NN], [PI N]
@@ -65,11 +65,11 @@ Copy-ready Markdown for the write-ups managers produce every week. Each one past
 ```
 
 !!! reef "Reef ahead: the watermelon"
-    Green outside, red inside. If every Feature is green but the remaining points exceed what the team can finish before the Target Date, the report is wrong, not the data. Check progress against time before you pick a color.
+    Green outside, red inside. If every Feature is green but the remaining points exceed what the team can finish before the Target Date, the report is wrong, not the data. Check what's left against the time left before you pick a color.
 
 ## Executive Briefing (BLUF)
 
-**How to use it:** **B**ottom **L**ine **U**p **F**ront. The first three lines must stand alone: if the reader stops there, they still know the answer and what you need from them. Ask for decisions by name.
+**How to use it:** **B**ottom **L**ine **U**p **F**ront. The first three lines must stand alone: a reader who stops there still knows the answer and what you need. Ask each decision of one named person.
 
 ```markdown
 # [Topic]: Executive Briefing · [Sprint NN]
@@ -105,7 +105,7 @@ Copy-ready Markdown for the write-ups managers produce every week. Each one past
 
 ## Options Matrix
 
-**How to use it:** list at least four real options plus a **do-nothing baseline**, so the decider can see the cost of not deciding. Every option needs a named decider: whoever's priority gives way. Close with a recommendation in exactly five sentences.
+**How to use it:** list at least five real options plus a **do-nothing baseline**, so the decider sees the cost of not deciding. Every option needs a named decider: whoever's priority gives way. Close with a recommendation in exactly five sentences.
 
 ```markdown
 # Options: [The problem in one line]
@@ -131,7 +131,7 @@ Copy-ready Markdown for the write-ups managers produce every week. Each one past
 
 ## Dependency Escalation
 
-**How to use it:** for when your Feature waits on another team's work and talking it through hasn't fixed it. Stay factual and blame-free; the other team is usually doing exactly what its priorities told it to. Send it to both team leads and the person who owns the competing priorities.
+**How to use it:** when your Feature waits on another team's work and talking hasn't fixed it. Stay factual and blame-free: the other team is usually doing exactly what its priorities told it to. Send it to both team leads and the person who owns the competing priorities.
 
 ```markdown
 # Dependency escalation: [Successor Feature] waits on [Predecessor item]
@@ -164,7 +164,7 @@ Copy-ready Markdown for the write-ups managers produce every week. Each one past
 
 ## PI Outlook
 
-**How to use it:** forecast in **ranges**, from each team's own recent velocity, after adjusting for known capacity changes. State assumptions explicitly. A range with named assumptions survives an executive's questions; a single number doesn't.
+**How to use it:** forecast in **ranges** from each team's own recent rate (throughput, or velocity where its points are trustworthy), minus what's already spoken for. A range with named assumptions survives an executive's questions; a single number doesn't.
 
 ```markdown
 # PI [N] Outlook · prepared in [Sprint NN]
@@ -175,7 +175,7 @@ Copy-ready Markdown for the write-ups managers produce every week. Each one past
 [One sentence: what PI N can realistically deliver, and the one decision that changes it most.]
 
 ## Capacity by team (ranges)
-| Team | Recent velocity (low–high) | Sprints | Adjustments (days off, people out, mandatory work) | PI capacity range |
+| Team | Recent rate (low–high) | Sprints | Adjustments (days off, people out, mandatory work, bugs, spill) | PI capacity range |
 |---|---|---|---|---|
 | [Team] | [nn–nn] | 4 | [e.g. 2 holiday days, 1 person out 5 days] | [nn–nn] |
 
@@ -185,7 +185,7 @@ Copy-ready Markdown for the write-ups managers produce every week. Each one past
 | [Feature] | [rank, BV] | [team] | [nn pts / unestimated] | [likely] |
 
 ## Assumptions
-- [Velocity based on Sprints NN–NN]
+- [Rate based on Sprints NN–NN, in stories or points]
 - [Mandatory work reserved: nn% of team X until Sprint NN]
 - [Unestimated items: nn stories, sized at roughly nn as a placeholder]
 
@@ -199,7 +199,7 @@ Copy-ready Markdown for the write-ups managers produce every week. Each one past
 
 ## Persona Canvas
 
-**How to use it:** one canvas per persona. Ground every line in research, not opinion, and cite it. Then turn the needs into persona-tagged stories with acceptance criteria.
+**How to use it:** one canvas per persona. Ground every line in research and cite it; mark anything else as an assumption. Then turn the needs into persona-tagged stories whose acceptance criteria change what gets built.
 
 ```markdown
 # Persona: [Name], [age]
@@ -220,7 +220,7 @@ Copy-ready Markdown for the write-ups managers produce every week. Each one past
 ## Needs → stories
 | Need | Story ("As [persona], I want…, so that…") | Tag | Acceptance criteria (headline) |
 |---|---|---|---|
-| [need] | [story] | `persona-[name]` | [criteria] |
+| [need] | [story] | `persona-[first name]` | [criteria] |
 
 ## Design guardrails
 - Do: [what must be true for this persona]
@@ -229,7 +229,7 @@ Copy-ready Markdown for the write-ups managers produce every week. Each one past
 
 ## Monday Readout
 
-**How to use it:** five bullets, five minutes, Feature level, every Monday. Write it from the data (rollups, the sliding sprint window, the risk queries), then read it to your manager before they ask. The [Query Cookbook](query-cookbook.md) has the queries.
+**How to use it:** five bullets, five minutes, Feature level, every Monday. Write it from the data (rollups, the [sliding sprint window](query-cookbook.md#b2), the risk queries) and send it before your manager asks.
 
 ```markdown
 # Monday Readout: [Team or portfolio] · [Sprint NN], week [1/2]
@@ -245,7 +245,7 @@ Evidence: [dashboard link] · [query links]
 
 ## Data Hygiene Routine
 
-**How to use it:** a 15-minute weekly routine for each team or portfolio you report on. Run the queries, fix what you own, and *ask* the owning team about the rest. Never fix another team's data for them; that hides the habit that caused it.
+**How to use it:** 15 minutes a week for each team or portfolio you report on. Run the [hygiene queries](query-cookbook.md#f-data-hygiene), fix what you own, and *ask* the owning team about the rest. Never fix another team's data for them: that hides the habit that caused it.
 
 ```markdown
 # Weekly data hygiene · [Team / scope] · [Sprint NN], week [1/2]
@@ -279,7 +279,7 @@ Evidence: [dashboard link] · [query links]
 
 ## Dashboard Design Canvas
 
-**How to use it:** design questions first, widgets last. Every widget must answer one question for one audience. If you can't name the decision a widget informs, leave it off.
+**How to use it:** questions first, widgets last. Every widget answers one question for one audience; if you can't name the decision it informs, leave it off.
 
 ```markdown
 # Dashboard design: [P## - Dashboard name]
@@ -306,4 +306,4 @@ Evidence: [dashboard link] · [query links]
 ```
 
 !!! insight "Lighthouse insight"
-    A template is a thinking tool, not a form. The value is in the prompts it forces you to answer: *what's the bottom line, who decides, what does it cost, how do we know?* Skip a prompt only when you're sure the reader won't ask it.
+    A template is a thinking tool, not a form. Its value is the prompts it forces you to answer: *what's the bottom line, who decides, what does it cost, how do we know?* Skip a prompt only when you're sure the reader won't ask it.

@@ -25,7 +25,19 @@ day_overview: 2
 
 ## How today's labs connect
 
-Yesterday you found answers. Today you keep them in view. You build a command center for Digital Banking, then use its metrics to settle an argument: which of your two teams really needs help? After lunch, Real-Time Fraud Alerts, priority number one, turns out to be waiting on another team, and Simone Laurent wants options. You end the day in front of Dana with a dashboard that argues for a decision, and a one-page briefing naming the two risks that matter most.
+Yesterday you found answers one query at a time. Today you keep them in view, then act on them.
+
+1. **Lab 5** turns your Day 1 queries into a Digital Command Center and an executive cut of it. Its blocked tile and velocity widgets set up the rest of the day.
+2. **Lab 6** reads that dashboard's flow and output widgets to settle a steering-room argument: Mobile Banking, not Digital Accounts, needs help, and the help is a system fix.
+3. **Lab 7** pulls the thread behind the one blocked story: Real-Time Fraud Alerts, priority number one, waits on Security, and the real cause is a ranking nobody set. Simone Laurent gets options.
+4. **Lab 8** brings Lab 6's verdict and Lab 7's options to Dana as two risks, on a dashboard that argues for her decisions.
+
+## Today's takeaways
+
+- [Lab 5](lab-05-command-center.md): a dashboard is a set of answers. Remove any widget that answers no question, or whose scope doesn't match the page.
+- [Lab 6](lab-06-which-team-needs-help.md): never judge a team on one chart. Act when output, flow and outcomes agree, and change the system, not the number.
+- [Lab 7](lab-07-cross-team-bottleneck.md): no red line is not no risk. Most bottlenecks are unmade priority decisions, so bring options and name who decides.
+- [Lab 8](lab-08-executive-status-review.md): give executives the answer first, the two risks that matter, and a decision one named person can make.
 
 ## You'll leave able to
 

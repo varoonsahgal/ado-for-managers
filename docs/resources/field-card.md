@@ -23,18 +23,18 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- **Know where the answer lives.** Every number comes from a view and a team context, and both decide what you see: the backlog shows six Digital Features, the Epic has eight.
-- **The order is the decision.** Priority fields are opinions; backlog order is the real ranking. When rank and reality disagree, a decision is missing, so find out who should make it.
-- **Rollup is your status report.** Rollup columns put a whole Epic's Feature status on one screen. They show how far along the work is, not whether it's the right work.
-- **Match the lens to the question.** The **backlog** for how far, the **form** for why, the **board** for where it's stuck, the **plan** for when. A status claim that holds up uses at least two.
-- **Progress bars count only Closed.** Resolved work shows as not done. Before you quote a percentage, know what "done" means on that team's board.
-- **Owns, serves, builds.** Area Path, Parent link and the children's areas answer three different questions. Cross-team Features hide in the gaps between them.
+- **Know where the answer lives.** View and team context decide what you see: the backlog shows six Digital Features, the Epic has eight.
+- **The order is the decision.** Priority fields are opinions; backlog order is the real ranking. When rank and reality disagree, find out who should decide.
+- **Rollup is your status report.** Rollup columns put an Epic's Feature status on one screen. They show how far along the work is, not whether it's the right work.
+- **Match the lens to the question.** The **backlog** for how far, the **form** for why, the **board** for where it's stuck, the **plan** for when. A claim that holds up uses at least two.
+- **Progress bars count only Closed.** Resolved work shows as not done, so know what "done" means on a team's board before you quote its percentage.
+- **Owns, serves, builds.** Area Path, Parent link and the children's areas answer three different questions. Cross-team Features hide in the gaps.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
-1. **Hold your ranking up to the light.** Open the Epics (or top-level) backlog your leadership treats as the portfolio, and lay it next to the last written priority list you were given. Write down every place they disagree, and who could settle it.
-2. **Build your Feature status view once.** On your Features backlog, add **Progress by Story Points**, **Sum of Story Points** and **Progress by all Work Items**. Column settings are per user, so you change nothing for anyone else, and you'll never need a status spreadsheet for "how far along" again.
-3. **Ask one team what "done" means.** Pick your most important Feature, find its owning team's board, and count the finished-but-not-Closed work. That's how much your progress bars are understating, or hiding.
+1. **Hold your ranking up to the light.** Lay the Epics (or top-level) backlog your leadership treats as the portfolio beside your last written priority list. Note every disagreement, and who could settle it.
+2. **Build your Feature status view once.** On your Features backlog, add **Progress by Story Points**, **Sum of Story Points** and **Progress by all Work Items**. Column settings are per user, so nobody else is affected, and you can retire the "how far along" spreadsheet.
+3. **Ask one team what "done" means.** Find your most important Feature's owning team board and count the finished-but-not-Closed work. That's how much your progress bars understate.
 
 </div>
 
@@ -48,17 +48,17 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- **Start wide, at Feature level.** See every team's work by Feature, including the work that serves no Feature, before you explain any one team.
-- **Compare a team with its own plan.** Velocity never compares across teams, and the gap between Planned and Completed is where carry-over hides.
+- **Start wide, at Feature level.** See every team's work by Feature, orphans included, before you explain any one team.
+- **Compare a team with its own plan.** Never compare velocity across teams; the gap between Planned and Completed is where carry-over hides.
 - **A progress bar is not a forecast.** Whether a Feature makes its date depends on where its remaining work is scheduled, what state it's in and who has it.
 - **Feature progress is the truth serum for velocity.** Six quick signals find what won't fix itself; when velocity looks fine and the Features aren't moving, believe the Features.
 - **Lead with the bottom line, end with an ask.** Five bullets, every number a click from its evidence, and a named person asked for something specific.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
-1. **Run two signals on the team you worry about most.** In **My Queries**, build open Priority 1 bugs with a blank `Assigned To`, and Active items with **Changed Date** `<` `@Today - 7`. My Queries is your private folder, so nobody sees your scratch work until you choose to share it.
-2. **Read the gap, not the green.** Open that team's **Velocity** report from the **Analytics** tab, set **Velocity by** to **Sum of Story Points**, and compare **Planned** with **Completed** for each recent sprint. Your choice is saved for you only. Compare the team with its own plan, never with another team.
-3. **Ask which Features the points moved.** Query last sprint's Closed user stories with **Iteration Path** `=` `@CurrentIteration - 1` for that team, and add `Parent` and `Story Points` columns. Add up the points with an empty Parent, and take that number to the team lead as a question, not a verdict.
+1. **Run two signals on the team you worry about most.** In **My Queries**, build open Priority 1 bugs with a blank `Assigned To`, and Active items with **Changed Date** `<` `@Today - 7`. My Queries is private, so nobody sees your scratch work until you share it.
+2. **Read the gap, not the green.** Open that team's **Velocity** report from the **Analytics** tab, set **Velocity by** to **Sum of Story Points** (saved for you only), and compare **Planned** with **Completed** for recent sprints. Compare the team with its own plan, never with another team.
+3. **Ask which Features the points moved.** Query last sprint's Closed user stories with **Iteration Path** `=` `@CurrentIteration - 1` for that team, and add `Parent` and `Story Points` columns. Total the orphan points and take that number to the team lead as a question, not a verdict.
 
 </div>
 
@@ -72,18 +72,18 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- **A macro picks a sprint, not a team.** `@CurrentIteration` keeps a query true next sprint. Pair it with an area clause, and check whose calendar the team parameter reads.
-- **Busy is not bought.** A flat count shows activity; a tree by Feature shows what the work bought. Pick the query type for the question: **flat** for lists and charts, **tree** for "what does this work serve?", **direct links** for "what's missing?".
-- **A result is a shortlist, not a verdict.** Triage every at-risk result before you forward it. A filter only finds what people remembered to record, so distrust your tags.
+- **A macro picks a sprint, not a team.** `@CurrentIteration` keeps a query true next sprint. Pair it with an area clause, and check whose calendar it reads.
+- **Busy is not bought.** A flat count shows activity; a tree by Feature shows what the work bought. **Flat** for lists and charts, **tree** for "what does this serve?", **direct links** for "what's missing?".
+- **A result is a shortlist, not a verdict.** Triage every at-risk result before you forward it. A filter finds only what people remembered to record, so distrust your tags.
 - **Fix the record before the report.** Open work in a closed PI is usually forgotten or finished-but-never-closed. Decide which number is true, then fix the state.
-- **Query for what's missing.** Orphan work and empty Features are the blind spots of every progress report. Test every zero by flipping its operator.
+- **Query for what's missing.** Orphan work and empty Features are every progress report's blind spots. Test every zero by flipping its operator.
 - **Name it like the question.** A saved query is a definition everyone inherits. Save it shared, make its window explicit, and send the link, not a screenshot.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
-1. **Save one question where others can find it.** Pick the question you're asked most, build it as a query, and save it in a **Shared Queries** folder where you have Contribute (ask your admin for one if you don't). Name it like the question it answers, minus the question mark. Shared queries are visible to everyone in the project, so a vague name misleads people you'll never meet.
-2. **Find your team's orphan work.** Build a **Work items and direct links** query: one team's current-sprint user stories on top, `Work Item Type` `=` `Feature` below, **Only return items that do not have matching links**, and only **Parent** ticked. Whatever it returns is work no Feature report will ever show you.
-3. **Define "at risk" once, on purpose.** Build one at-risk query with a grouped **Or** (a Target Date window with `@Today + n`, a Risk value, an `at-risk` tag) and put the window in its name. Then read every result before you send it to anyone.
+1. **Save one question where others can find it.** Build the question you're asked most as a query, and save it in a **Shared Queries** folder where you have Contribute (ask your admin for one if you don't). Name it like the question, minus the question mark: shared queries are visible project-wide, so a vague name misleads people you'll never meet.
+2. **Find your team's orphan work.** Build a **Work items and direct links** query: one team's current-sprint user stories on top, `Work Item Type` `=` `Feature` below, **Only return items that do not have matching links**, and only **Parent** ticked. It returns the work no Feature report will ever show you.
+3. **Define "at risk" once, on purpose.** Build one at-risk query with a grouped **Or** (a Target Date window with `@Today + n`, a Risk value, an `at-risk` tag) and put the window in its name. Then read every result before you send it.
 
 </div>
 
@@ -97,17 +97,17 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- **Scope before charts.** "Who builds it" (area) and "what it serves" (Epic) give different counts, and both are right. Pick one, say it on the page, and name each chart for the one question it answers.
+- **Scope before charts.** "Who builds it" (area) and "what it serves" (Epic) give different counts, both right. Pick one, say it on the page, and name each chart for its one question.
 - **Each team against its own plan.** Story Points are a team's private currency. Report Completed ÷ Planned and its trend, never one team's points against another's.
 - **Bugs are unfinished work.** A team that files bugs faster than it fixes them is moving work off the sprint, not finishing it.
 - **True data, false story.** Charts lie through what they count, when they look and what they compare. Report what's left against the time left, over a window that fits the question.
-- **A color needs a sentence.** A RAG status is only as good as its evidence, and a status report is a request for decisions, each with a person's name on it.
+- **A color needs a sentence.** A RAG status is only as good as its evidence, and a status report is a request for decisions, each with a name on it.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
 1. **Chart one question from a shared query.** Take a saved flat query in a shared folder (charts on **My Queries** are visible only to you), open **Charts** › **New chart**, and name the chart for the one question it answers.
 2. **Put each team next to its own plan.** Open each team's **Velocity** report, set **Velocity by** to **Sum of Story Points**, and note Completed ÷ Planned for recent sprints. Report that ratio and its trend, never one team's points against another's.
-3. **Give your last status color a sentence.** Open the last status report you sent and write one line of evidence next to its RAG color. For each Feature on it, replace the percentage with what's left against the time left: remaining points and Target Date.
+3. **Give your last status color a sentence.** Write one line of evidence next to the RAG color on your last status report. For each Feature on it, replace the percentage with what's left against the time left: remaining points and Target Date.
 
 </div>
 
@@ -125,12 +125,12 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- **Design from questions.** Write the questions before you open the widget catalog. A widget that answers none of them comes off.
-- **Say whose page it is.** Put the owner, the last review and the meaning of each color on the page, or readers will guess.
+- **Design from questions.** Write the questions before you open the widget catalog. A widget that answers none comes off.
+- **Say whose page it is.** Put the owner, the last review and the color meanings on the page, or readers will guess.
 - **Check the scope, show the list.** A reused query brings its own scope: check it against the page title, and put the list beside every count.
-- **Name the team in the title.** An Analytics widget reads one team and looks plausible whichever team it is. Set Team first and name it in the title.
+- **Name the team in the title.** An Analytics widget reads one team and looks plausible whichever it is, so set Team first.
 - **Executives need decisions.** Keep only what leads to an executive decision, and say in words what the numbers mean.
-- **Upkeep is part of the build.** A stale dashboard is worse than none. Name an owner, show the last review on the page, and delete what you stop maintaining.
+- **Upkeep is part of the build.** A stale dashboard is worse than none. Name an owner, show the last review, and delete what you stop maintaining.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
@@ -150,9 +150,9 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- **Commit before you look.** A gut call written down first shows you which number fooled you, and that's the number to distrust next time.
+- **Commit before you look.** A gut call written down first shows which number fooled you: distrust it next time.
 - **Three families, one verdict.** Never judge a team on one chart. Act when output, flow and outcomes agree; when they disagree, ask the team.
-- **Velocity measures estimates.** Rising points over a flat story count is inflation, not speed. A team that finishes less but delivers what it plans has a capacity fact to plan around, not a problem to fix.
+- **Velocity measures estimates.** Rising points over a flat story count is inflation, not speed. A team that finishes less but delivers what it plans has a capacity fact, not a problem.
 - **Find where work waits.** The CFD shows where the queue forms, cycle time shows what it costs, and more work in progress makes everything slower.
 - **Output is worth what it serves.** Points that leave bugs behind or serve no Feature don't move the portfolio, however good the velocity looks.
 - **Change the system, not the number.** Help means owned actions on causes (testing, WIP, intake, quality), each with a metric to watch. It never means a velocity target.
@@ -176,7 +176,7 @@ field_card: true
 <p class="hp-fc__label">Key takeaways</p>
 
 - **One calendar first.** Put every contributing team on one plan, with the dates that matter marked, before anyone argues about who is late.
-- **A red line is a question.** It tells you two end dates disagree. It doesn't tell you why, by how much, or what to do. That part is your job.
+- **A red line is a question.** It says two end dates disagree, not why, by how much, or what to do. That part is your job.
 - **Read at two altitudes.** The Feature line finds the problem; the story links size it. The real handoff is often narrower, and narrower means more options.
 - **No line is not no risk.** Plans draw only Predecessor/Successor links between dated items on the plan, so pair every plan with a direct-links query.
 - **Bottlenecks are unmade decisions.** When the portfolio doesn't rank mandatory work, the busiest team ranks it for you, and priority number one pays.
@@ -202,7 +202,7 @@ field_card: true
 
 - **Choose the argument first.** A risk earns executive time only with a priority at stake, evidence that holds up and a decision someone senior can make. Check how the loudest chart is made before you escalate it.
 - **Every widget points at a decision.** Keep the executive view small, tie each widget to a question, and give every number a threshold or a baseline.
-- **Answer first, in members' words.** Lead with the bottom line and the ask. "42 open bugs" means little to an Executive Committee; "members are finding defects in production" means a great deal. Every decision gets one named person.
+- **Answer first, in members' words.** Lead with the bottom line and the ask. "Members are finding defects in production" moves an Executive Committee; "42 open bugs" doesn't. Every decision gets one named person.
 - **Answer questions the same way.** Under pressure, give the answer first, then the evidence one click away, then the decision.
 - **Someone owns the picture.** A dashboard decays unless an owner refreshes it in a recurring review that moves dependent dates when one date moves.
 
@@ -228,18 +228,18 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- **Start from steady history.** A team's finished work is your rate. A steady 25 is worth more than a hopeful 35.
-- **Capacity, not velocity.** Subtract absences, committed work and support load from the normal-sprint rate. What's left is the only number worth forecasting with.
-- **Feed the calculator honestly.** The forecast tool knows one velocity, backlog order and Story Points. Type in the capacity you worked out, not the team's average.
+- **Start from steady history.** A team's finished work is your rate. A steady 25 beats a hopeful 35.
+- **Capacity, not velocity.** Subtract absences, committed work and support load from the normal-sprint rate, and forecast with what's left.
+- **Feed the calculator honestly.** The forecast tool knows one velocity, backlog order and Story Points. Type in your worked-out capacity, not the team's average.
 - **Order is scope.** Moving one "should" below the MVP turned a miss into a fit without changing an estimate. An unestimated story is never as free as it looks.
 - **Know the blind spots.** The tool skips the current sprint and ignores in-progress work, sprint assignments, absences and unsized items. Run naively, it shows a sponsor what she hoped for.
-- **Answer with a range and an option.** A range with conditions is information a sponsor can act on. Don't move work to the "fastest" team: velocity isn't comparable, and it's usually the busiest one.
+- **Answer with a range and an option.** A range with conditions is information a sponsor can act on. Don't move work to the "fastest" team: velocity isn't comparable, and that team is usually the busiest.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
-1. **Turn a velocity into a capacity.** For one team, read the average from **Analytics** › **Velocity** on its backlog, then open **Boards › Sprints** › **Capacity** for the next sprint. Subtract team days off, known absences, committed work and about 10% for bugs and support. You're only looking, so nothing changes unless you select **Save**.
-2. **Run the forecast at two velocities.** On that team's **Stories** backlog, clear any filter, turn on **Forecasting** in **View options**, and run it once at the team's average and once at the capacity you just worked out. The gap between the two lines is your range. View options are yours alone, so nobody else's backlog changes, as long as you don't drag anything.
-3. **Count the blanks before you quote a date.** In the Feature you're most likely to be asked about, count the stories with no Story Points: the forecast treats each one as free. Take that count and your range to the next "can we?" conversation, and ask who will size them this week.
+1. **Turn a velocity into a capacity.** For one team, read the average from **Analytics** › **Velocity** on its backlog, then open **Boards › Sprints** › **Capacity** for the next sprint. Subtract team days off, known absences, committed work and about 10% for bugs and support. Nothing changes unless you select **Save**.
+2. **Run the forecast at two velocities.** On that team's **Stories** backlog, clear any filter, turn on **Forecasting** in **View options**, and run it once at the team's average and once at the capacity you just worked out. The gap between the two lines is your range. View options are yours alone; just don't drag anything.
+3. **Count the blanks before you quote a date.** In the Feature you're most likely to be asked about, count the stories with no Story Points: the forecast treats each as free. Take that count and your range to the next "can we?" conversation, and ask who will size them this week.
 
 </div>
 
@@ -254,15 +254,15 @@ field_card: true
 <p class="hp-fc__label">Key takeaways</p>
 
 - **The journey has no owner.** The breaks hide at the handoffs between channels, and those handoffs often fall between two teams' Features.
-- **Personas run on evidence.** A persona is a set of behaviors, goals and breaks backed by evidence. Mark everything else as an assumption.
+- **Personas run on evidence.** A persona is behaviors, goals and breaks backed by evidence. Mark everything else as an assumption.
 - **Acceptance criteria are where personas bite.** A persona changes what gets built only when it reaches the acceptance criteria. One generic story usually serves one persona and fails the rest.
 - **Make priority arguable.** A visible scoring model turns "branch vs digital" into "which input is wrong?"
 - **Check the objective, not just the arithmetic.** Counting heads through the door and counting relationship value give different orders, and choosing between them is a leadership decision.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
-1. **Find a journey nobody owns.** Pick one service your customers use across two of your teams. Find the Feature each team owns for it on the Features backlog and open its **Links** tab. If there's no **Predecessor/Successor** link between them, the handoff has no owner: write down who should own it.
-2. **Draft one persona page.** Under your own page in **Overview › Wiki**, use **Add sub-page** to start one persona with a **Quote**, **Goals**, **Frustrations**, **Needs from this service** and one journey break backed by a number you already have. Mark everything else *(assumption)*. Wiki pages are shared, so anyone on the project can read it and improve it.
+1. **Find a journey nobody owns.** Pick one service your customers use across two of your teams. On the Features backlog, open the **Links** tab of each team's Feature for it. If there's no **Predecessor/Successor** link between them, the handoff has no owner: write down who should own it.
+2. **Draft one persona page.** Under your own page in **Overview › Wiki**, use **Add sub-page** to start one persona with a **Quote**, **Goals**, **Frustrations**, **Needs from this service** and one journey break backed by a number you already have. Mark everything else *(assumption)*. Anyone on the project can read and improve it.
 3. **Rewrite one generic story with its Product Owner.** Find a story written for "the user" and, together, add Given/When/Then acceptance criteria for the person it would fail. Link it to your persona page from its **Links** tab (**Add link** › **Existing item** › **Wiki page**), and if you add a persona tag, agree the spelling first: tags can't be renamed or deleted in the web UI.
 
 </div>
@@ -277,7 +277,7 @@ field_card: true
 
 <p class="hp-fc__label">Key takeaways</p>
 
-- **Open what's behind the tile.** A dashboard can break in its data, its queries, its widgets or its permissions. The chart itself is usually the one part that's right.
+- **Open what's behind the tile.** A dashboard breaks in its data, queries, widgets or permissions. The chart itself is usually the one part that's right.
 - **Suspect the record before the team.** Delivery rarely collapses in one sprint; hygiene often does. Falling velocity with flat Planned is the tell.
 - **Fix data at the source.** Change the item, say why in its Discussion, and leave another team's record for that team to fix.
 - **Make queries honest, not clever.** Macros for time, explicit state lists for "open", one tag vocabulary, and no compensating for bad data.
@@ -286,9 +286,9 @@ field_card: true
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
-1. **Audit one tile before your next report.** Open the dashboard your leadership reads most, pick one tile, and read its query's **Editor** tab. Look for a sprint typed in by hand instead of `@CurrentIteration`, and "open" written as `State` `<>` `Closed`. Running a query never changes data.
-2. **Build three queries whose healthy answer is zero.** Create a `Watchlist` folder under **Shared Queries** (not **My Queries**, which are private, so their tiles show everyone else an error) and save: Active work with `Changed Date` `<` `@Today - 14`, stories in Resolved for more than 5 days, and anything filed at the project's root area.
-3. **Look at the counts with the team, not about the team.** Spend 15 minutes with one team lead and Product Owner going through the watchlist together. Anything above zero gets fixed on the spot or gets a named owner, and the counts stay team-level, never per person.
+1. **Audit one tile before your next report.** Open the dashboard your leadership reads most, pick one tile, and read its query's **Editor** tab. Look for a sprint typed in by hand instead of `@CurrentIteration`, and "open" written as `State` `<>` `Closed`.
+2. **Build three queries whose healthy answer is zero.** Create a `Watchlist` folder under **Shared Queries** (not **My Queries**, whose tiles show everyone else an error) and save: Active work with `Changed Date` `<` `@Today - 14`, stories in Resolved for more than 5 days, and anything filed at the project's root area.
+3. **Look at the counts with the team, not about the team.** Spend 15 minutes with one team lead and Product Owner going through the watchlist. Anything above zero gets fixed on the spot or gets a named owner, and the counts stay team-level, never per person.
 
 </div>
 
@@ -303,16 +303,16 @@ field_card: true
 <p class="hp-fc__label">Key takeaways</p>
 
 - **Evidence before opinion.** A concern becomes a finding only when it names a Feature, a number and that number's source. The risk that hurts most is often the one nobody named.
-- **Choose your instruments first.** Inflated points, data defects and unsized Features flow straight into executive commitments, so decide which numbers you trust before you forecast.
+- **Choose your instruments first.** Inflated points, data defects and unsized Features flow straight into executive commitments.
 - **One dashboard, one argument.** Write the executive's questions at the top, and take off any widget that doesn't answer one of them.
-- **Capacity is what's left.** Gross throughput minus holidays, mandatory work, bugs and spill, stated as a range. A plan built that way absorbs a curveball without starting over.
+- **Capacity is what's left.** Gross throughput minus holidays, mandatory work, bugs and spill, as a range. A plan built that way absorbs a curveball.
 - **Decisions, not rankings.** Value, member research and personas make a trade-off arguable. The deliverable is a decision with a cost and a named owner.
 - **An outlook is bets with odds.** Commit what's sized and staffed, tie the rest to named decisions, and say plainly what can't be committed yet.
 
 <p class="hp-fc__label hp-fc__label--harbor">Back in your own harbor</p>
 
-1. **Choose your instruments.** For each team you report on, open **Velocity** in its **Backlogs › Analytics** and compare **Sum of Story Points** with **Count of Work Items**. Write one line per team: the throughput measure you'd forecast from, and the number you refuse to. Report settings are per user, so nobody else's view changes.
+1. **Choose your instruments.** For each team you report on, open **Velocity** in its **Backlogs › Analytics** and compare **Sum of Story Points** with **Count of Work Items**. Write one line per team: the throughput measure you'd forecast from, and the number you refuse to. Report settings are per user.
 2. **Find the Feature with nothing inside.** On your Features backlog, add **Sum of Story Points** and **Progress by Story Points** from **+ Add a rollup column**, plus **Business Value** and **Effort** with **Column Options**. Any high-value Feature with no child stories or no Effort can't be forecast yet: note who should decompose it, and by when.
-3. **Sort next quarter into three bands.** List the Features your leadership expects next, and put each one in **Committed**, **Likely** or **Not committed**. Beside every Likely item, write the decision or condition it depends on. That list is the first draft of your next outlook.
+3. **Sort next quarter into three bands.** Put each Feature your leadership expects next in **Committed**, **Likely** or **Not committed**, and beside every Likely item write the decision or condition it depends on. That list is the first draft of your next outlook.
 
 </div>

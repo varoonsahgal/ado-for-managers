@@ -14,9 +14,9 @@ next_hook: "The Executive Committee has heard 'delays' from three directions, an
 ---
 
 !!! briefing "Mission briefing"
-    **Real-Time Fraud Alerts** is how HarborPoint will warn members within seconds that a transaction looks wrong, and let them confirm or deny it from the app. It sits under the portfolio's number one Epic, *Fraud Detection & Security*. Mobile Banking owns it, Security and Core Platform build parts of it, and it's due at the end of Sprint 16, the PI 4 System Demo. It is 4% done by Story Points.
+    **Real-Time Fraud Alerts** will warn members within seconds that a transaction looks wrong, and let them confirm or deny it from the app. It sits under the number one Epic, *Fraud Detection & Security*. Mobile Banking owns it, Security and Core Platform build parts of it, and it's due at the end of Sprint 16, the PI 4 System Demo. It is 4% done by Story Points.
 
-    In Lab 2 you spotted a red dependency line on this Feature and moved on. Today you pull that thread. The Feature is yours to deliver, but the work it waits on sits in a team you don't manage. You can't fix that alone, and you're not meant to. Your job is to make the problem visible, find its real cause, and put decision-ready options in front of the person who owns the priority.
+    You've seen it twice: a red dependency line in Lab 2, and the one **Blocked** story on your Command Center. Today you pull that thread. The work it waits on sits in a team you don't manage, so your job is to make the problem visible, find its cause, and put decision-ready options in front of the person who owns the priority.
 
     **Done looks like:**
 
@@ -42,14 +42,14 @@ Fraud Alerts is the Executive Committee's number one priority and a committed PI
 
 ## Before you set sail
 
-- **Access:** Basic, as a Contributor. You can create Delivery Plans but edit only the ones you create, which is why you build your own instead of touching the official **HarborPoint Program Plan**.
-- **Your ID** is set (the **Crew** chip), and `Shared Queries/Training/P##/` exists. You made it in [Lab 3](../day-1/lab-03-query-toolkit.md); if not, create it now.
-- **Team views you'll read but never change:** `Mobile Banking`, `Security` and `Core Platform` (plan rows and sprint data) and `HarborPoint Team` (the Epics backlog). Column options, view options and report settings are per user, so adjust those freely. The [environment map](../start/environment.md) has the team list.
+- **Access:** Basic, as a Contributor. You can create Delivery Plans but edit only your own, so you build one instead of touching the official **HarborPoint Program Plan**.
+- **Your ID** is set (the **Crew** chip), and `Shared Queries/Training/P##/` exists from [Lab 3](../day-1/lab-03-query-toolkit.md); if not, create it now.
+- **Read, never change:** `Mobile Banking`, `Security` and `Core Platform` (plan rows and sprint data) and `HarborPoint Team` (the Epics backlog). Column options, view options and report settings are per user, so adjust them freely. The [environment map](../start/environment.md) lists the teams.
 - **You'll create:** the plan `P## - Fraud Alerts Plan`, the query `Fraud Alerts dependencies` and the wiki page `/Training/P##/Fraud Alerts Options`.
-- **Time-box:** 55 minutes. If you fall behind, move faster through Parts 1 to 4 and protect 15 minutes for Part 6. The options are the point.
+- **Time-box:** 55 minutes. If you fall behind, speed through Parts 1 to 4 and protect 15 minutes for Part 6: the options are the point.
 
 !!! warning "Look, but don't drag"
-    A Delivery Plan is a live editing surface. Dragging a card moves the real work item to another sprint. Dragging a card's edge rewrites its Start or Target Date, for every team and every dashboard. The **+** in a sprint cell creates real work items. On this plan you **select** (badges, card edges, titles). You never **drag**.
+    A Delivery Plan is a live editing surface. Dragging a card moves the real work item to another sprint; dragging its edge rewrites its Start or Target Date for every team and dashboard. The **+** in a sprint cell creates real work items. On this plan you **select** (badges, card edges, titles). You never **drag**.
 
 ## Part 1 — Put three teams on one calendar
 
@@ -65,10 +65,10 @@ Three teams, one Feature, one deadline. Get them onto one calendar before anyone
 <div class="timer" data-minutes="8" data-label="Speed run"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Plans live under **Boards**. Each row of a plan is one team at one backlog level. Markers and card fields live in the plan's **Settings**.
+    Plans live under **Boards**. Each row is one team at one backlog level. Markers and card fields live in the plan's **Settings**.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    Create the plan first: its sprint cells show each sprint's dates, so you can read Sprint 16's last day and Sprint 18's first day before adding markers. In **Settings**, use **Markers** › **+ Add marker** (**Date**, **Label**, **Color**), then **Fields** for **Show Parent**, **Show Tags** and **Show child rollup data**.
+    Create the plan first: its sprint cells show the dates you need for the markers. In **Settings**, use **Markers** › **+ Add marker** (**Date**, **Label**, **Color**), then **Fields** for **Show Parent**, **Show Tags** and **Show child rollup data**.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     1. **Boards › Delivery Plans** › **+ New plan**.
@@ -80,7 +80,7 @@ Three teams, one Feature, one deadline. Get them onto one calendar before anyone
     6. **Fields**: turn on **Show Parent**, **Show Tags** and **Show child rollup data**. Select **Save**.
     7. Expand every row with the arrow next to **Teams**, then **Zoom in** or **Zoom out** until Sprint 13 to Sprint 18 fill the screen.
 
-    **Expected result:** `Real-Time Fraud Alerts` sits in the Mobile Banking row and ends right at your PI 4 System Demo marker. In the Security row, `Fraud Scoring Engine v2` runs a full sprint past it.
+    **Expected result:** `Real-Time Fraud Alerts`, in the Mobile Banking row, ends right at your PI 4 System Demo marker. In the Security row, `Fraud Scoring Engine v2` runs a full sprint past it.
 
 !!! checkpoint "Checkpoint"
     - [ ] `P## - Fraud Alerts Plan` shows three team rows at the Features level
@@ -91,10 +91,10 @@ Three teams, one Feature, one deadline. Get them onto one calendar before anyone
 
 ## Part 2 — Read the red line
 
-Your plan already shows a Security Feature running past the System Demo. Does that matter to Fraud Alerts? The plan stays quiet until you ask it.
+A Security Feature runs past the System Demo. Does that matter to Fraud Alerts? The plan stays quiet until you ask.
 
-1. Find `Real-Time Fraud Alerts` in the Mobile Banking row and look at the chain-link badge at the card's upper right. Green means "No dependency scheduling issues". Red means "Dependency scheduling conflicts detected".
-2. Select the badge. The **Dependencies** dialog lists each predecessor and successor with its **Iteration Name**, **Iteration End Date** and **Project Name**, and the parent Feature and Epic underneath.
+1. Find `Real-Time Fraud Alerts` in the Mobile Banking row and look at the chain-link badge at the card's upper right. Green means "No dependency scheduling issues"; red means "Dependency scheduling conflicts detected".
+2. Select the badge. The **Dependencies** dialog lists each predecessor and successor with its **Iteration Name**, **Iteration End Date** and **Project Name**, with the parent Feature and Epic underneath.
 
 <figure class="hp-shot" data-shot="lab07-dependencies-dialog" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Delivery Plans › Dependencies for Real-Time Fraud Alerts</span></div>
@@ -111,9 +111,9 @@ Your plan already shows a Security Feature running past the System Demo. Does th
 | `Fraud Scoring Engine v2` | Security | Sprint 17 | **Red.** Ends a sprint *after* Fraud Alerts is due |
 | `Unified Notification Service` | Core Platform | Sprint 15 | Fine |
 
-The conflict rule compares **Target Dates**. The dialog's **Iteration End Date** is something else: the end of the PI the Feature is planned against (PI 4 or PI 5), not its target.
+The conflict rule compares **Target Dates**. The dialog's **Iteration End Date** is the end of the PI the Feature is planned against (PI 4 or PI 5), not its target.
 
-**Now draw the lines.** **Close** the dialog. Select the card's top or bottom edge, or use the link button at the top of the plan (**Show and hide dependencies**), which draws every line at once and fades the cards with no links. Black lines are fine. A red line with a ⊗ marks a conflict. `Fraud Scoring Engine v2` wears a red badge too, because a conflict belongs to both ends.
+**Now draw the lines.** **Close** the dialog. Select the card's top or bottom edge, or the plan's link button (**Show and hide dependencies**) to draw every line at once. Black lines are fine; a red line with a ⊗ is a conflict, and both ends wear a red badge.
 
 <figure class="hp-shot" data-shot="lab07-plan-feature-red-line" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Delivery Plans › P## - Fraud Alerts Plan (dependencies shown)</span></div>
@@ -123,12 +123,12 @@ The conflict rule compares **Target Dates**. The dialog's **Iteration End Date**
 <figcaption markdown>The toolbar's link button draws every dependency at once. One line is **red with a ⊗**: Fraud Alerts ends at the System Demo, and its predecessor runs a full sprint past it. The arrowhead points at the item being waited *on*. Black lines are fine.</figcaption>
 </figure>
 
-The arrowhead points at the **predecessor**, the opposite of how most people draw "A feeds B". If in doubt, open the dialog: it names each side.
+The arrowhead points at the **predecessor**, the opposite of how most people draw "A feeds B". If in doubt, the dialog names each side.
 
-Two more readings before you move on:
+Two more readings:
 
-- **Look at your exam marker.** Which Security Features end *after* fieldwork begins? Both Compliance Features, `Audit Evidence Automation` and `Access Review Automation`, target the end of Sprint 18. The mandatory work isn't padded; it runs straight into the exam. Remember that when someone suggests Security "just pauses compliance for a sprint".
-- **Make a prediction.** Based only on this line, how late is Fraud Alerts? Write down a one-line answer. You'll check it against the evidence in Part 5.
+- **Look at your exam marker.** Which Security Features end *after* fieldwork begins? Both Compliance Features, `Audit Evidence Automation` and `Access Review Automation`, target the end of Sprint 18: the mandatory work runs straight into the exam, unpadded. Remember that when someone says Security could "just pause compliance for a sprint".
+- **Make a prediction.** Based only on this line, how late is Fraud Alerts? Write one line; Part 5 checks it.
 
 !!! checkpoint "Checkpoint"
     - [ ] My plan shows a red line between `Fraud Scoring Engine v2` and `Real-Time Fraud Alerts`, and I opened the **Dependencies** dialog
@@ -140,27 +140,27 @@ Two more readings before you move on:
 
 ## Part 3 — Drop below the waterline
 
-The Feature line tells you *that* there's a problem. How big is it, really? The line can't say. Drop one level down to see why.
+The Feature line says *that* there's a problem. How big is it? Drop one level down.
 
 1. **Settings** › **Teams** › **+ Add team**, three times: `Mobile Banking`, `Security` and `Core Platform`, each with **Backlog** `Stories`. In that list, drag each Stories row under its team's Features row (this reorders plan rows only, not work).
 2. **Field criteria** › **+ Add criteria**: `Work Item Type` `<>` `Bug`. Mobile Banking manages its 42 open bugs on the Stories backlog, and you don't need them here.
 3. **Save**, expand all rows and zoom in on Sprints 14 to 16. Story cards now show their parent Feature.
-4. **Declutter, or you won't see a thing.** Mobile's Stories row holds every story it has ever done. Open the plan's **Filter** (the funnel next to the star) and set **Parent Work Item** to `Real-Time Fraud Alerts`. Then select the link button to draw the lines. Filters are per user; clear them when you're done.
+4. **Declutter.** Mobile's Stories row holds every story it has ever done. Open the plan's **Filter** (the funnel next to the star), set **Parent Work Item** to `Real-Time Fraud Alerts`, then select the link button. Filters are per user; clear them when you're done.
 
 !!! challenge "Challenge: Map the chain"
-    Fraud Alerts has eleven stories spread across three teams. Find every one that carries a dependency badge, and complete this map:
+    Fraud Alerts has eleven stories across three teams. Find every one with a dependency badge, and complete this map:
 
     | Predecessor (team, sprint) | Successor (team, sprint) | Red, fine or fragile? |
     |---|---|---|
     | | | |
 
-    There are **four** links on your plan. Two are red. One isn't red but should still worry you. When you've mapped them, open the story that's already in progress and read its **Discussion**.
+    There are **four** links on your plan. Two are red; one isn't red but should still worry you. Then open the story that's already in progress and read its **Discussion**.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Look for cards whose parent reads `Real-Time Fraud Alerts`, and start with Security's Stories row in Sprint 16. Expand both team rows, or the lines between them can't be drawn.
+    Start with Security's Stories row in Sprint 16. Expand both team rows, or the lines between them can't be drawn.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    Open the **Dependencies** dialog on `Real-time fraud risk score API` (Security) and on `Auto-lock card after a member denies a transaction` (Mobile Banking). Compare end sprints. Equal end dates never count as a conflict, so ask yourself whether "not red" means "safe".
+    Open the **Dependencies** dialog on `Real-time fraud risk score API` (Security) and on `Auto-lock card after a member denies a transaction` (Mobile Banking), and compare end sprints. Equal end dates never count as a conflict. Does "not red" mean "safe"?
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | Predecessor | Successor | Verdict |
@@ -172,7 +172,7 @@ The Feature line tells you *that* there's a problem. How big is it, really? The 
 
     The confirm/deny story's Discussion says it plainly: *"UI done; can't integrate until Security's risk-score API exists."*
 
-    **So what? Mobile isn't slow on this Feature. It's parked.** That 4% measures a waiting room, not a work rate, and one Security story is holding the door shut.
+    **So what? Mobile isn't slow on this Feature. It's parked.** That 4% measures a waiting room, not a work rate, and one Security story holds the door shut.
 
 <figure class="hp-shot" data-shot="lab07-plan-story-level" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Delivery Plans › P## - Fraud Alerts Plan › Stories rows, filtered to Parent Work Item = Real-Time Fraud Alerts</span></div>
@@ -183,10 +183,10 @@ The Feature line tells you *that* there's a problem. How big is it, really? The 
 </figure>
 
 !!! insight "Lighthouse insight: ask what you actually depend on"
-    The Feature line says Fraud Alerts waits for *all* of Fraud Scoring Engine v2, a 65-point Feature ending in Sprint 17. The story links say it waits for *one* 8-point story, the risk-score API, planned for Sprint 16. Those are very different negotiations. Feature-level links are good at spotting a problem and poor at sizing it, so drop one level before you escalate.
+    The Feature line says Fraud Alerts waits for *all* of Fraud Scoring Engine v2, a 65-point Feature ending in Sprint 17. The story links say it waits for *one* 8-point story, the risk-score API, planned for Sprint 16. Those are very different negotiations, so drop one level before you escalate.
 
 !!! reef "Reef ahead: green at the top, red underneath"
-    A badge compares two end dates on two cards. It knows nothing about the order of the work inside them, and equal end dates never count as a conflict. So a same-sprint handoff like decision feedback → auto-lock is never flagged, and a Feature line can turn black while every story-level red line beneath it stays red. A green Feature is a hypothesis. The stories are the evidence.
+    A badge compares two cards' end dates and knows nothing about the order of work inside them. So a same-sprint handoff like decision feedback → auto-lock is never flagged, and a Feature line can turn black while every story-level red line beneath it stays red. A green Feature is a hypothesis; the stories are the evidence.
 
 !!! checkpoint "Checkpoint"
     - [ ] My plan has six rows (three teams at Features and Stories level), with bugs filtered out
@@ -198,19 +198,19 @@ The Feature line tells you *that* there's a problem. How big is it, really? The 
 
 ## Part 4 — Find what the plan can't see
 
-So far you've read what the plan draws. What doesn't it draw? A line appears only when both items are on the plan, both have dates, and someone created a Predecessor/Successor link between them. Everything else is invisible, so ask the data directly.
+What doesn't the plan draw? A line appears only when both items are on the plan, both have dates, and someone created a Predecessor/Successor link between them. Everything else is invisible, so ask the data directly.
 
 !!! predict "Make a call"
-    Before you build the query, write down two guesses. **How many teams does Fraud Alerts really depend on, counting every team that owns a linked item?** And if there's a dependency your plan never drew, **why** would it be missing: no link, no sprint, or a team you didn't add?
+    Before you build the query, guess: **how many teams does Fraud Alerts really depend on, counting every team that owns a linked item?** And if your plan missed a dependency, **why**: no link, no sprint, or a team you didn't add?
 
 !!! challenge "Challenge: Ask the data directly"
-    Build a query that lists every Fraud Alerts story with a **Predecessor** or **Successor** link, with the linked item indented underneath, showing which team owns each item and which sprint it's in. Save it as `Fraud Alerts dependencies` in `Shared Queries/Training/P##/`. Then find the dependency your plan never showed you.
+    Build a query that lists every Fraud Alerts story with a **Predecessor** or **Successor** link, the linked item indented underneath, showing each item's team and sprint. Save it as `Fraud Alerts dependencies` in `Shared Queries/Training/P##/`. Then find the dependency your plan never showed you.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    This is a question about *links*, so use the query type built for links. The top level is Fraud Alerts' children, and the **Parent** field accepts a work item ID.
+    It's a question about *links*, so use the query type built for links. The top level is Fraud Alerts' children; the **Parent** field accepts a work item ID.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    **Query type**: **Work items and direct links**. Top level: `Parent` `=` the ID of `Real-Time Fraud Alerts`. **Filter options**: **Only return items that have matching links**. **Types of links**: **Return selected link types**, with **Predecessor** and **Successor**. Add `Node Name` and `Iteration Path` as columns, because ownership and timing are the whole point.
+    **Work items and direct links**, top level `Parent` `=` Fraud Alerts' ID, **Only return items that have matching links**, link types **Predecessor** and **Successor**. Add `Node Name` and `Iteration Path` as columns: ownership and timing are the point.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     1. Open `Real-Time Fraud Alerts` (select its title on the plan) and note its **ID**.
@@ -230,9 +230,9 @@ So far you've read what the plan draws. What doesn't it draw? A line appears onl
     6. **Column options**: `Work Item Type`, `Title`, `State`, `Node Name`, `Iteration Path`, `Assigned To`, `Tags`.
     7. **Run query**, then **Expand all**. **Save** it as `Fraud Alerts dependencies` in `Shared Queries/Training/P##`.
 
-    **Expected result:** **7** of Fraud Alerts' 11 stories at the top level, with **9** linked rows beneath them. Every linked item is another Fraud Alerts story except one: `Card lock and unlock service and API`, Node Name `Digital Accounts`, State `New`, Iteration Path `HarborPoint`. That's the backlog root, which means **no sprint at all**. It is a predecessor of `Auto-lock card after a member denies a transaction` (Sprint 16).
+    **Expected result:** **7** of Fraud Alerts' 11 stories at the top level, with **9** linked rows beneath them. Every linked item is another Fraud Alerts story except one: `Card lock and unlock service and API`, Node Name `Digital Accounts`, State `New`, Iteration Path `HarborPoint`, the backlog root: **no sprint at all**. It is a predecessor of `Auto-lock card after a member denies a transaction` (Sprint 16).
 
-    Want direction without guesswork? Run it again with only **Predecessor** ticked. You get just the four stories that wait on someone, and their five predecessors.
+    For direction without guesswork, run it again with only **Predecessor** ticked: just the four stories that wait on someone, and their five predecessors.
 
 <figure class="hp-shot" data-shot="lab07-direct-links-query" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › Fraud Alerts dependencies (Work items and direct links)</span></div>
@@ -242,10 +242,10 @@ So far you've read what the plan draws. What doesn't it draw? A line appears onl
 <figcaption markdown>Every Fraud Alerts story with a Predecessor or Successor link, its partner indented below. One partner belongs to a **fourth team**: `Card lock and unlock service and API`, Digital Accounts, Iteration Path `HarborPoint`. No sprint at all, so it can never turn red on a plan.</figcaption>
 </figure>
 
-**So what? Fraud Alerts depends on four teams, not three, and nobody mentioned the fourth.** The missing link fails two of the plan's tests at once: no sprint, and a team not on the plan. The auto-lock story waits on the first story of **Instant Card Controls**, Digital Accounts' Feature tagged `leadership-ask`, which sits unscheduled behind their committed PI 4 work. It can never turn red, because it can never be late. It simply isn't planned. (You'll meet it again in [Lab 9](../day-3/lab-09-meet-the-deadline.md).)
+**So what? Fraud Alerts depends on four teams, not three, and nobody mentioned the fourth.** The missing link fails two of the plan's tests: no sprint, and a team not on the plan. Auto-lock waits on the first story of **Instant Card Controls**, Digital Accounts' `leadership-ask` Feature, unscheduled behind their committed PI 4 work. It can never turn red, because it can never be late: it isn't planned at all. (You'll meet it again in [Lab 9](../day-3/lab-09-meet-the-deadline.md).)
 
 !!! reef "Reef ahead: the plan only knows what people told it"
-    **Related** links, unscheduled items and teams you didn't add never appear on a plan. Look at `Biometric Login` on your plan: it's tagged `cross-team`, and Security has a story under it in Sprint 15 (`Device binding risk signal`), yet there's no line anywhere. Maybe there's no dependency. Maybe nobody linked it. The plan can't tell the difference, and neither can you without asking Hannah and Aisha.
+    **Related** links, unscheduled items and teams you didn't add never appear on a plan. `Biometric Login` is tagged `cross-team`, and Security has a story under it in Sprint 15 (`Device binding risk signal`), yet there's no line anywhere. No dependency, or nobody linked it? The plan can't tell, and neither can you without asking Hannah and Aisha.
 
 !!! checkpoint "Checkpoint"
     - [ ] `Shared Queries/Training/P##/Fraud Alerts dependencies` is saved and returns 7 top-level stories
@@ -256,10 +256,10 @@ So far you've read what the plan draws. What doesn't it draw? A line appears onl
 
 ## Part 5 — Follow the evidence to the root cause
 
-You now know who waits on whom. Why did the date slip? A slipped date is a symptom, Simone will ask for the cause, and "Security is busy" is not an answer. Bring evidence.
+You know who waits on whom. Why did the date slip? Simone will ask for the cause, and "Security is busy" is not an answer.
 
 !!! speedrun "Speed run · 10 minutes"
-    Five questions. Write one line of evidence for each, and note where you found it.
+    Five questions. Write one line of evidence for each, and where you found it.
 
     1. **Who moved the API, when, and what reason did they record?**
     2. **When it moved, what else moved?**
@@ -270,10 +270,10 @@ You now know who waits on whom. Why did the date slip? A slipped date is a sympt
 <div class="timer" data-minutes="10" data-label="Speed run"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Every answer sits in a view you already know: a work item's **History**, a team's sprint backlog, a team's **Velocity** report, a portfolio backlog and the wiki.
+    Every answer sits in a view you know: a work item's **History**, a sprint backlog, a **Velocity** report, a portfolio backlog and the wiki.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    1. `Fraud Scoring Engine v2` › **History** tab. It's noisy, so select the funnel above the list and set **Fields** to `Target Date`: only the revisions that touched that field remain.
+    1. `Fraud Scoring Engine v2` › **History** tab. Select the funnel above the list and set **Fields** to `Target Date` to keep only the revisions that touched it.
     2. The `Real-Time Fraud Alerts` form (Target Date, Tags) and the Mobile stories on your plan.
     3. **Boards › Sprints**, team `Security`, `Sprint 14`, **Backlog** tab. Use **Column Options** to add `Parent` and `Tags`.
     4. **Boards › Backlogs**, team `Security`, **Stories** level, **Analytics** › **Velocity** › **View full report**. Then **View options** › **Side Pane** › **Planning** to read **Planned Effort** for Sprints 15 and 16. Look, don't drag.
@@ -290,7 +290,7 @@ You now know who waits on whom. Why did the date slip? A slipped date is a sympt
 
     **So what? The root cause in one line:** Security quietly re-ranked its own work to protect a mandatory deadline the portfolio never ranked, and the cost landed on priority number one without anyone deciding it should.
 
-    **And your Part 2 gut answer?** "One sprint late" is the best case. The API lands in Sprint 16 at the earliest, in Security's most overloaded sprint, and only then can Mobile integrate and test it, with one tester.
+    **And your Part 2 gut answer?** "One sprint late" is the best case. The API lands in Sprint 16 at the earliest, Security's most overloaded sprint, and only then can Mobile integrate and test it, with the one tester you met in [Lab 6](lab-06-which-team-needs-help.md).
 
 <figure class="hp-shot" data-shot="lab07-f10-history" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Work item › Fraud Scoring Engine v2 › History, filtered by Fields: Target Date</span></div>
@@ -309,7 +309,7 @@ You now know who waits on whom. Why did the date slip? A slipped date is a sympt
 </figure>
 
 !!! insight "Lighthouse insight: dependency management is portfolio management"
-    The red line runs between two teams, but the conflict is between two Epics: Fraud Detection & Security (ranked first) and Compliance (ranked last, but mandatory). Aisha made a reasonable call, and she made it alone, because the portfolio gave her no answer. Every cross-team dependency is a question about priority. If leaders don't answer it explicitly, the busiest team answers it for them, one sprint at a time, and everyone else finds out at the System Demo.
+    The red line runs between two teams, but the conflict is between two Epics: Fraud Detection & Security (ranked first) and Compliance (ranked last, but mandatory). Aisha made a reasonable call, alone, because the portfolio gave her no answer. Every cross-team dependency is a priority question. If leaders don't answer it, the busiest team does, and everyone else finds out at the System Demo.
 
 !!! checkpoint "Checkpoint"
     - [ ] I have one line of evidence for each of the five questions, with where I found it
@@ -320,9 +320,9 @@ You now know who waits on whom. Why did the date slip? A slipped date is a sympt
 
 ## Part 6 — Give Simone real options
 
-You have the chain and the cause. What can Simone actually decide? Start from everything you traced, in one picture that no single Azure DevOps view can show: the plan can't see the fourth team, and the query can't see the calendar.
+You have the chain and the cause. What can Simone actually decide? Start from everything you traced, in one picture no single Azure DevOps view shows: the plan can't see the fourth team, and the query can't see the calendar.
 
-Read it left to right, from the item waited on to the item waiting (the plan's arrowheads point the other way). Red is a conflict, amber is fragile, green is fine, and the dashed box is the dependency no plan will ever draw.
+Read it left to right, from the item waited on to the item waiting (opposite to the plan's arrowheads). Red is a conflict, amber fragile, green fine; the dashed box is the dependency no plan will draw.
 
 ```mermaid
 flowchart LR
@@ -361,7 +361,7 @@ flowchart LR
 ```
 
 !!! challenge "Challenge: The options matrix"
-    Build a matrix with **at least five options** for getting Fraud Alerts back on course, plus a **do-nothing baseline** so Simone can see the cost of not deciding. For each option, fill in:
+    Build a matrix with **at least five options** for getting Fraud Alerts back on course, plus a **do-nothing baseline** that shows the cost of not deciding. For each option:
 
     | Option | What changes (which items, which teams) | Effect on Fraud Alerts' date | Risk | Who pays (which priority gives way) | Who decides |
     |---|---|---|---|---|---|
@@ -369,19 +369,19 @@ flowchart LR
     Then write your **recommendation in exactly five sentences**: the bottom line, what you recommend, what it costs, the specific decision you need from Simone (and anyone else), and how you'll stop this happening again.
 
 !!! deliverable "Deliverable"
-    A wiki page `/Training/P##/Fraud Alerts Options` (a sub-page of your `P##` page under **Overview › Wiki**) with your matrix, your five sentences, and links to `P## - Fraud Alerts Plan` and your `Fraud Alerts dependencies` query. You'll build on it in [Lab 8](lab-08-executive-status-review.md).
+    A wiki page `/Training/P##/Fraud Alerts Options` (a sub-page of your `P##` page under **Overview › Wiki**) with your matrix, your five sentences, and links to `P## - Fraud Alerts Plan` and your `Fraud Alerts dependencies` query. [Lab 8](lab-08-executive-status-review.md) turns it into risk 1 of your executive briefing.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Options come in families. You can change the **sequence**, the **scope**, the **capacity**, the **date**, or the **dependency** itself, and you can fix the **system** that caused it. For "who decides", ask whose priority gives way. That person decides.
+    Options come in families: change the **sequence**, the **scope**, the **capacity**, the **date** or the **dependency** itself, or fix the **system** that caused it. Whoever's priority gives way decides.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     Real levers, with numbers:
 
-    - **Non-mandatory Security work** in Sprints 14 and 15: `Risk-based MFA policy engine` (5 points, unassigned, not started), `Passkey enrollment` (5) and `Merchant risk signals in scoring` (5). Adaptive MFA and Fraud Scoring Engine v2 sit in the same Epic as Fraud Alerts, so trading between them is Simone's call.
-    - **Core Platform has room:** 12 points planned in Sprint 15 and 5 in Sprint 16, against a steady velocity of about 20. Check its **Planning** pane.
-    - **The confirm/deny UI is already built.** It lacks only the API, so an agreed API contract lets Mobile keep moving.
+    - **Non-mandatory Security work** in Sprints 14 and 15: `Risk-based MFA policy engine` (5 points, unassigned, not started), `Passkey enrollment` (5) and `Merchant risk signals in scoring` (5). Adaptive MFA and Fraud Scoring Engine v2 share Fraud Alerts' Epic, so trading between them is Simone's call.
+    - **Core Platform has room:** 12 points planned in Sprint 15 and 5 in Sprint 16, against a steady velocity of about 20 (check its **Planning** pane).
+    - **The confirm/deny UI is already built** and lacks only the API, so an agreed API contract lets Mobile keep moving.
     - **Auto-lock carries both fragile links**: the same-sprint feedback and the unscheduled card-lock API.
-    - **Dates and ranks are fields.** Changing them is easy. Getting the right person to agree is the work.
+    - **Dates and ranks are fields.** Changing them is easy; getting the right person to agree is the work.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     A model matrix. Yours can differ, as long as every row has a named decider and an honest cost.
@@ -397,14 +397,14 @@ flowchart LR
     | **6. Fix the ranking** | Rank the Compliance Epic where reality has it, or reserve Security capacity for it explicitly through Sprint 18 | None this PI; prevents the next one | An uncomfortable conversation | Nothing new: it makes the existing cost visible | Simone and the Executive Committee, with Ruth |
     | **7. Question the link** | Ask whether the API needs Fraud Scoring Engine v2, or can serve today's scores first | Could decouple Fraud Alerts from the engine's Sprint 17 date | Rework when v2 lands | Security | Aisha and Hannah |
 
-    **So what? Read down the last column.** Simone is named on four of the seven options, because she owns both priorities in conflict. This isn't a Security problem to escalate. It's her decision to make, and your job is to make it easy.
+    **So what? Read down the last column.** Simone is named on four of the seven options, because she owns both priorities in conflict. This isn't a Security problem to escalate; it's her decision, and your job is to make it easy.
 
     **A model recommendation, in five sentences:**
 
-    > As planned, Real-Time Fraud Alerts misses PI 4: Security moved the risk-score API to Sprint 16 to protect mandatory exam work, and Mobile's confirm/deny story is already blocked waiting for it. I recommend we hold the Sprint 16 date for a smaller MVP (alerts plus confirm/deny), move auto-lock to PI 5, and have Mobile build against an agreed API contract starting this week. That works only if the API lands in Sprint 15, which means deferring 8 to 10 points of Adaptive MFA work or borrowing Core Platform engineers, who have room in Sprints 15 and 16; exam work stays fully protected either way. Simone, both sides of that trade are your priorities, so the call is yours, and if you'd rather keep Adaptive MFA whole, we should formally move Fraud Alerts to Sprint 17 with Dana now instead of discovering it at the System Demo. Either way, let's rank the Compliance Epic where it really sits, or reserve Security capacity for it through Sprint 18, so leaders make this trade instead of one team absorbing it.
+    > As planned, Real-Time Fraud Alerts misses PI 4: Security moved the risk-score API to Sprint 16 to protect mandatory exam work, and Mobile's confirm/deny story is already blocked waiting for it. I recommend we hold Sprint 16 for a smaller MVP (alerts plus confirm/deny), move auto-lock to PI 5, and have Mobile build against an agreed API contract starting this week. That works only if the API lands in Sprint 15, by deferring 8 to 10 points of Adaptive MFA work or borrowing Core Platform engineers, who have room in Sprints 15 and 16; exam work stays fully protected either way. Simone, both sides of that trade are your priorities, so the call is yours; if you'd rather keep Adaptive MFA whole, we should formally move Fraud Alerts to Sprint 17 with Dana now, not discover it at the System Demo. Either way, let's rank the Compliance Epic where it really sits, or reserve Security capacity for it through Sprint 18, so leaders make this trade instead of one team absorbing it.
 
 !!! reef "Reef ahead: “Just ask Security to work harder”"
-    It's the most common option in real escalations, and the only one the evidence rules out. Security has completed about 21 points a sprint for five sprints while its plans grew by half, and its carry-over grew from 2 points to 12. Pressure doesn't create capacity. It creates carry-over, and the exam date doesn't move. If "Security stretches" made it into your matrix, replace it with a trade: name what Security stops doing, and who agreed.
+    The most common option in real escalations is the one the evidence rules out. Security has completed about 21 points a sprint for five sprints while its plans grew by half and its carry-over grew from 2 points to 12. Pressure creates carry-over, not capacity, and the exam date doesn't move. If "Security stretches" is in your matrix, replace it with a trade: what Security stops doing, and who agreed.
 
 !!! checkpoint "Checkpoint"
     - [ ] My matrix has at least five options plus a do-nothing baseline, each with a date effect, a risk, who pays and a named decider
@@ -426,7 +426,7 @@ flowchart LR
 - [ ] The dependency link is removed, because the dates now match
 
 <div class="quiz-why" markdown>
-Conflicts compare end dates only, and equal end dates are not a conflict. The risk-score API would still sit in Sprint 16, two sprints after the confirm/deny story that needs it. Fixing the line is not fixing the problem.
+Conflicts compare end dates only, and equal end dates don't conflict. The risk-score API would still sit in Sprint 16, two sprints after the confirm/deny story that needs it. Fixing the line isn't fixing the problem.
 </div>
 
 </div>
@@ -456,7 +456,7 @@ A plan draws only the Predecessor/Successor links people created, between items 
 - [ ] Move Real-Time Fraud Alerts to the Security team
 
 <div class="quiz-why" markdown>
-The exam date is fixed and Security's output has been flat while its plans grew by half, so pausing compliance and pushing harder are both off the table. This isn't a scheduling dispute between two teams. It's an unmade decision between two priorities with the same owner.
+The exam date is fixed and Security's output has been flat while its plans grew by half, so pausing compliance and pushing harder are both off the table. This isn't a scheduling dispute between two teams; it's an unmade decision between two priorities with the same owner.
 </div>
 
 </div>
@@ -464,16 +464,16 @@ The exam date is fixed and Security's output has been flat while its plans grew 
 ## Captain's log
 
 !!! log "Captain's log"
-    1. Think of your most important cross-team initiative. Could you produce today's dependency map for it in 15 minutes? If not, what's missing: the links, the dates, or the teams on one plan?
+    1. Could you produce today's dependency map for your most important cross-team initiative in 15 minutes? If not, what's missing: the links, the dates, or the teams on one plan?
     2. The last time a date moved in another team's tracker, how did your team find out, and how long did it take?
     3. Which mandatory or "keep the lights on" work in your portfolio isn't ranked anywhere, but quietly eats capacity?
     4. Who owns both sides of your hardest cross-team conflict? Have they been asked to choose?
-    5. Which of today's options would your organization pick by default? Is it the one it should pick?
+    5. Which of today's options would your organization pick by default? Should it?
 
 !!! bonus "Extra knots"
-    1. **Watermelon check.** On your plan, add a styling rule (**Settings** › **Styles** › **+ Add styling rule**) with two criteria: `Work Item Type` `=` `Feature` and `Risk` `=` `1 - High`. Three cards light up. How many of them carry the `at-risk` tag, and what does that tell you about any dashboard tile that counts the tag?
-    2. **A program dependency register.** Build a second direct-links query with top-level clauses `Work Item Type` `In` `Feature,User Story` and `Area Path` `Not Under` `HarborPoint\Training`, link types **Predecessor** and **Successor**, and **Only return items that have matching links**. Across the whole program you should find three Feature-level links and five story-level links. Add it to your Command Center from [Lab 5](lab-05-command-center.md) as a **Query Results** widget, which renders direct-link queries.
-    3. **Prove the invisible.** Add `Digital Accounts` at the `Stories` level to your plan and look for `Card lock and unlock service and API`. Why isn't it there? What would have to change for the auto-lock dependency to turn red, and would that be good news or bad?
+    1. **Watermelon check.** On your plan, add a styling rule (**Settings** › **Styles** › **+ Add styling rule**) with two criteria: `Work Item Type` `=` `Feature` and `Risk` `=` `1 - High`. Three cards light up. How many carry the `at-risk` tag, and what does that tell you about a dashboard tile that counts the tag?
+    2. **A program dependency register.** Build a second direct-links query with top-level clauses `Work Item Type` `In` `Feature,User Story` and `Area Path` `Not Under` `HarborPoint\Training`, link types **Predecessor** and **Successor**, and **Only return items that have matching links**. Expect three Feature-level links and five story-level links. Add it to your [Lab 5](lab-05-command-center.md) Command Center as a **Query Results** widget, which renders direct-link queries.
+    3. **Prove the invisible.** Add `Digital Accounts` at the `Stories` level to your plan and look for `Card lock and unlock service and API`. Why isn't it there? What would make the auto-lock dependency turn red, and would that be good news or bad?
 
 !!! harbor "Back in your own harbor"
     Three moves for your first week back, about 30 minutes in your own Azure DevOps:
@@ -485,7 +485,7 @@ The exam date is fixed and Security's output has been flat while its plans grew 
 ## Key takeaways
 
 - **One calendar first.** Put every contributing team on one plan, with the dates that matter marked, before anyone argues about who is late.
-- **A red line is a question.** It tells you two end dates disagree. It doesn't tell you why, by how much, or what to do. That part is your job.
+- **A red line is a question.** It says two end dates disagree, not why, by how much, or what to do. That part is your job.
 - **Read at two altitudes.** The Feature line finds the problem; the story links size it. The real handoff is often narrower, and narrower means more options.
 - **No line is not no risk.** Plans draw only Predecessor/Successor links between dated items on the plan, so pair every plan with a direct-links query.
 - **Bottlenecks are unmade decisions.** When the portfolio doesn't rank mandatory work, the busiest team ranks it for you, and priority number one pays.

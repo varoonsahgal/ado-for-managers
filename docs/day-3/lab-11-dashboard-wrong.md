@@ -14,9 +14,9 @@ next_hook: "Ruth's handover note names six things that keep her up at night, and
 ---
 
 !!! briefing "Mission briefing"
-    The **Member Support - Delivery Health** dashboard has been circulating with the program pack. Its velocity chart reads 18, 17, 19, then 13, then 8. Its open-work tile keeps climbing, and it shows zero open P1 bugs. It says Member Support has fallen off a cliff in two sprints. Some people already believe it.
+    The **Member Support - Delivery Health** dashboard has been circulating with the program pack. Its velocity chart reads 18, 17, 19, then 13, then 8; its open-work tile keeps climbing; it shows zero open P1 bugs. It says Member Support has fallen off a cliff in two sprints, and some people already believe it.
 
-    You saw a hint of this in Lab 3, when a Member Support Feature turned up in your at-risk query although its work finished a PI ago. Somewhere between what the team did and what the dashboard shows, the record broke. Find where, prove it, repair a copy in your sandbox, and stop it happening again, all without touching Member Support's real items.
+    You saw a hint of this in [Lab 3](../day-1/lab-03-query-toolkit.md), when a Member Support Feature turned up in your at-risk query although its work finished a PI ago. Somewhere between what the team did and what the dashboard shows, the record broke. Find where, prove it, repair a copy in your sandbox, and stop it happening again, without touching Member Support's real items.
 
     **Done looks like:**
 
@@ -41,25 +41,25 @@ That's my dashboard, sorry. I set it up for the Sprint 13 review and I've been o
 
 ## What you'll walk away with
 
-- Trace every dashboard tile to the data, query, widget or permission behind it, and spot the dozen ways each one lies
+- Trace every dashboard tile to the data, query, widget or permission behind it
 - Tell a **delivery** problem from a **data** problem in minutes, with arithmetic Azure DevOps already holds
 - Fix the record at its source, with a reason on every change
-- Rewrite queries so they survive next sprint, and prove the fix with before-and-after numbers
+- Rewrite queries so they survive next sprint, and prove it with before-and-after numbers
 - Build a small watchlist that catches bad data before it reaches an executive
 - Choose governance levers by cost and reach, without turning hygiene into surveillance
 
 ## Before you set sail
 
-- **Read-only today:** everything that belongs to Member Support: the **Member Support - Delivery Health** dashboard (you can view it, not edit it), Leo's queries in `Shared Queries/PMO Reporting/`, and Member Support's backlog, board, items and **Velocity** report.
+- **Read-only today:** everything that belongs to Member Support: the **Member Support - Delivery Health** dashboard, Leo's queries in `Shared Queries/PMO Reporting/`, and Member Support's backlog, board, items and **Velocity** report.
 - **Yours to fix:** the miniature copy in your sandbox. Its Feature is `P## - Omnichannel Service Requests (sandbox)` in `HarborPoint\Training\P##`, and every item title starts `P## - `. Your copies of Leo's queries are in `Shared Queries/Training/P##/Lab 11 - Inherited queries/`.
 - **One shared corner:** two of your sandbox bugs were deliberately filed in the parent area `HarborPoint\Training`, alongside everyone else's. Touch only the ones with **your** prefix.
-- **Your sandbox isn't only Lab 11.** Any query scoped to `HarborPoint\Training\P##` also picks up Lab 9's `P## - Instant Card Controls (planning copy)` (20 stories, four unestimated) and Lab 10's `P## - Member Onboarding Redesign` stories. This lab's expected counts are for the **Lab 11 set only**: add the **Parent** column and ignore rows under those two Features, or add `Parent` `Not In` *their two IDs*. Leave Lab 9's unestimated stories alone.
+- **Your sandbox isn't only Lab 11.** Queries on `HarborPoint\Training\P##` also pick up Lab 9's `P## - Instant Card Controls (planning copy)` (20 stories, four unestimated) and Lab 10's `P## - Member Onboarding Redesign` stories. Expected counts here are for the **Lab 11 set only**: add the **Parent** column and ignore rows under those two Features, or add `Parent` `Not In` *their two IDs*. Leave Lab 9's unestimated stories alone.
 - **You'll create:** fixed queries prefixed `Fixed - ` in `Shared Queries/Training/P##/`, a `Watchlist` sub-folder, the project dashboard `P## - Sandbox Health`, and the wiki page `/Training/P##/Dashboard Remediation`.
 - **Time-box:** 60 minutes. Part 1: 18. Part 2: 5. Part 3: 12. Part 4: 10. Part 5: 7. Part 6: 8. If you fall behind, build three watchlist queries instead of six. Protect Part 6.
 
 ## Part 1 — Read the dashboard like a detective
 
-What is this dashboard claiming, and where does each claim break? Start where Dana starts: read it cold, then go behind every tile.
+**What is this dashboard claiming, and where does each claim break?** Read it cold, as Dana would, then go behind every tile.
 
 !!! speedrun "Speed run · 4 minutes"
     Open **Overview › Dashboards** and find **Member Support - Delivery Health**. Don't open anything behind it yet. Write down, in plain words, the **five claims** the dashboard makes about Member Support, the way an executive skimming it would read them.
@@ -67,7 +67,7 @@ What is this dashboard claiming, and where does each claim break? Start where Da
 <div class="timer" data-minutes="4" data-label="Speed run"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    One claim per tile: velocity trend, current sprint, completed work, open work, open P1 bugs, omnichannel progress, burndown. Read the titles as the dashboard's author meant them.
+    One claim per tile: velocity trend, current sprint, completed work, open work, open P1 bugs, omnichannel progress, burndown. Read each title as its author meant it.
 
 ??? pilot "Harbor Pilot · Hint 2: Bring it into port (full solution)"
     Roughly: (1) velocity has collapsed from about 18 to 8 in two sprints; (2) the team completed little in the "current" sprint, and the burndown agrees; (3) open work keeps growing; (4) quality is fine, with zero open P1 bugs; (5) omnichannel progress is modest.
@@ -82,50 +82,27 @@ What is this dashboard claiming, and where does each claim break? Start where Da
 <figcaption markdown>Leo's page, as Carmen sees it. Velocity collapsing to **13** and **8**, a green **0** P1 bugs, and a "current sprint" burndown whose dates say **10/26 to 11/6**: last sprint. Every number here is real. Most of them are wrong.</figcaption>
 </figure>
 
-Now go behind every tile. Leo's dashboard has **twelve** planted defects, spread across the **data** (the items), the **queries**, the **widgets** and **permissions**.
+Leo's dashboard has **twelve** planted defects, spread across the **data** (the items), the **queries**, the **widgets** and **permissions**.
 
 !!! predict "Make a call"
-    Write down two guesses. Of the twelve defects, **how many live in the data** rather than in Leo's queries, widgets and permissions? And how many points did Member Support **truly finish in Sprint 13**, which the chart shows as 8? Hint 3 below settles the first; Part 2 settles the second.
+    Write down two guesses: **how many of the twelve live in the data** rather than in Leo's queries, widgets and permissions, and how many points Member Support **truly finished in Sprint 13**, which the chart shows as 8. Hint 3 settles the first; Part 2 the second.
 
 !!! challenge "Challenge: The defect hunt"
     Find **at least 8 of the 12** defects without changing anything that belongs to Member Support. Running a query never changes data, so build any read-only queries you like in **My Queries** or your `P##` folder.
 
-    Copy this **defect ledger** into a notes file and fill it as you go. You'll tick the last column in Parts 3 and 4, and paste it into your wiki page in Part 6.
+    Copy this **defect ledger** into a notes file, with rows numbered 1 to 12, and fill it as you go. You'll tick the last column in Parts 3 and 4, and paste it into your wiki page in Part 6.
 
     | # | Defect | Type (data / query / widget / permission) | Evidence (item, query clause or widget setting) | Effect on the dashboard | Fixed in sandbox |
     |:-:|---|---|---|---|:-:|
     | 1 | | | | | |
-    | 2 | | | | | |
-    | 3 | | | | | |
-    | 4 | | | | | |
-    | 5 | | | | | |
-    | 6 | | | | | |
-    | 7 | | | | | |
-    | 8 | | | | | |
-    | 9 | | | | | |
-    | 10 | | | | | |
-    | 11 | | | | | |
-    | 12 | | | | | |
 
     **Scoring:** 1 point for each defect with evidence, plus 1 for the right type: 24 points available. 20 or more is harbor-master work. Under 12, open Hint 1.
 
 ??? pilot "Harbor Pilot · Hint 1: Eleven places a defect can hide"
-    Check each of these for Member Support (`Area Path` `Under` `HarborPoint\Member Support`):
-
-    1. **States.** Is "done" work really Closed?
-    2. **Estimates.** Do finished and upcoming stories have Story Points?
-    3. **People.** Is everyone in **Assigned To** still here? (Check `/Program/Team Directory` and Carmen's message.)
-    4. **Iterations.** Is active work sitting in a sprint that has ended?
-    5. **Areas.** Is Member Support work filed outside its area?
-    6. **Tags.** Is one idea spelled more than one way?
-    7. **Feature states.** Do the Features' states match their children?
-    8. **Duplicates.** Is any story on the backlog twice?
-    9. **Query logic.** In each PMO query's **Editor** tab, what does each clause really ask?
-    10. **Widget settings.** Which sprint is each sprint-based widget showing?
-    11. **Permissions.** Does every tile load for you?
+    For Member Support (`Area Path` `Under` `HarborPoint\Member Support`), ask: is "done" work really Closed? Do stories have Story Points? Is everyone in **Assigned To** still here (`/Program/Team Directory`, Carmen's message)? Is active work in a sprint that has ended, or filed outside the area? Is one tag spelled two ways? Do Feature states match their children? Is any story there twice? Then check what each PMO query's **Editor** clauses really ask, which sprint each widget shows, and whether every tile loads for you.
 
 ??? pilot "Harbor Pilot · Hint 2: The detective's kit"
-    Flat queries in **Boards › Queries**, all with `Area Path` `Under` `HarborPoint\Member Support` unless noted. Add **Iteration Path**, **Story Points**, **Tags**, **Assigned To** and **Changed Date** as columns.
+    Flat queries, all with `Area Path` `Under` `HarborPoint\Member Support` unless noted. Add **Iteration Path**, **Story Points**, **Tags**, **Assigned To** and **Changed Date** as columns.
 
     | Looking for | Clauses to add |
     |---|---|
@@ -157,7 +134,7 @@ Now go behind every tile. Leo's dashboard has **twelve** planted defects, spread
 
     `MS - Open P1 bugs` is correct as a query. Its zero comes from data filed in the wrong place, which is why #5 is a data defect.
 
-    **So what?** Eight of the twelve live in the data, not in Leo's work, so fixing his queries alone would leave the dashboard wrong. Renumber your ledger to match this table; the rest of the lab uses these numbers.
+    **So what?** Eight of the twelve live in the data, so fixing Leo's queries alone would leave the dashboard wrong. Renumber your ledger to match this table; the rest of the lab uses these numbers.
 
     <!-- VERIFY (needs a second account): the exact error a participant sees on the "Waiting for sign-off" tile, which is bound to the instructor's My Queries. It renders normally for the account that ran the provisioner. -->
 
@@ -176,11 +153,11 @@ Now go behind every tile. Leo's dashboard has **twelve** planted defects, spread
     - [ ] I changed nothing that belongs to Member Support
 
 !!! takeaway "Takeaway"
-    Before you believe a tile, open what's behind it. Dashboards break in their data, queries, widgets and permissions; the chart is usually the one part that's right.
+    Before you believe a tile, open what's behind it: the data, query, widget and permissions break far more often than the chart.
 
 ## Part 2 — Rebuild the true numbers
 
-Did Member Support's delivery collapse, or did its record? Carmen asked a yes-or-no question. Answer it with arithmetic.
+**Did Member Support's delivery collapse, or did its record?** Carmen asked a yes-or-no question. Answer it with arithmetic.
 
 !!! challenge "Challenge: Reconcile 13 and 8"
     Open **Boards › Backlogs**, team `Member Support`, **Stories** level, **Analytics** › **Velocity** › **View full report**, with **Velocity by** set to **Sum of Story Points**. Explain, point by point, how a team that truly finished **18** points in Sprint 12 and **19** in Sprint 13 shows **13** and **8**. Then say what happened to **Planned** over the same sprints.
@@ -194,9 +171,9 @@ Did Member Support's delivery collapse, or did its record? Carmen asked a yes-or
     | 12 | 18 | −5 (2 Omnichannel Service Requests stories) | | **13** |
     | 13 | 19 | −8 (3 stories: 5 points of Omnichannel Service Requests, 3 of Secure Messaging & Chat) | −3 (taxonomy cleanup) | **8** |
 
-    **Planned** barely moved (20, then 18). The blue **Incomplete** stacks on Sprints 12 and 13 show where the points went; your "done but not closed" query from Part 1 names the same items.
+    **Planned** barely moved (20, then 18). The blue **Incomplete** stacks on Sprints 12 and 13 show where the points went, and your "done but not closed" query from Part 1 names the same items.
 
-    **So what?** The team didn't plan less and didn't finish less. The **recording** of completion fell.
+    **So what?** The team didn't plan less or finish less. The **recording** of completion fell.
 
 <figure class="hp-shot" data-shot="lab11-velocity-ms" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › Member Support › Analytics › Velocity (Sum of Story Points)</span></div>
@@ -207,10 +184,10 @@ Did Member Support's delivery collapse, or did its record? Carmen asked a yes-or
 </figure>
 
 !!! insight "Lighthouse insight: the chart is right, the data is wrong"
-    Nothing here is a bug in Azure DevOps. Velocity does exactly what it promises: it sums Story Points on Closed items. Every number on Leo's dashboard is computed correctly from records that are wrong. A dashboard is a **contract**. The team promises to keep states, estimates, owners, sprints and areas true. The report promises to read them faithfully. When either side breaks the deal, the chart stays crisp and confident, and it's wrong.
+    Velocity does exactly what it promises: it sums Story Points on Closed items. Leo's numbers are computed correctly from records that are wrong. A dashboard is a **contract**: the team keeps states, estimates, owners, sprints and areas true, and the report reads them faithfully. When either side breaks the deal, the chart stays crisp, confident and wrong.
 
 !!! reef "Reef ahead: blaming the team for a reporting defect"
-    Did your speed-run list say "Member Support is in trouble"? That's the trap, and two people fell into it this week by calling Carmen about "intervention". The team kept finishing 18 to 19 points a sprint, one engineer down. What fell apart was **closing** work and **keeping records**, and Leo's queries amplified it. There is a real conversation to have about hygiene. "Your delivery collapsed" isn't it: open with that and you lose Carmen's trust and learn nothing about the cause.
+    Did your speed-run list say "Member Support is in trouble"? Two people fell into that trap this week by calling Carmen about "intervention". The team kept finishing 18 to 19 points a sprint, one engineer down; what fell apart was **closing** work and **keeping records**. Hygiene is a real conversation, but open with "your delivery collapsed" and you lose Carmen's trust and learn nothing about the cause.
 
 !!! checkpoint "Checkpoint"
     - [ ] I can show, point by point, how 18 became 13 and 19 became 8
@@ -221,7 +198,7 @@ Did Member Support's delivery collapse, or did its record? Carmen asked a yes-or
 
 ## Part 3 — Repair the record in your sandbox
 
-You've proven the record is wrong. Can you make it true? Your sandbox holds a miniature of Member Support's mess: one Feature, 13 stories, 3 bugs and 2 Removed items, with defects 1 to 8 planted in it. Fix the data first; the queries come in Part 4.
+**You've proven the record is wrong. Can you make it true?** Your sandbox holds a miniature of Member Support's mess: one Feature, 13 stories, 3 bugs and 2 Removed items, with defects 1 to 8 planted in it. Fix the data first; the queries come in Part 4.
 
 1. **Record your "before" numbers.** In **Boards › Queries**, run each query in `Shared Queries/Training/P##/Lab 11 - Inherited queries/` and write down its count:
 
@@ -244,10 +221,10 @@ You've proven the record is wrong. Can you make it true? Your sandbox holds a mi
     Add the columns **Work Item Type**, **State**, **Assigned To**, **Iteration Path**, **Area Path**, **Story Points**, **Tags**, **Parent** and **Changed Date**. Sort by **Parent** so the Lab 9 and Lab 10 rows sit together, out of your way.
 
 !!! challenge "Challenge: Repair the record"
-    Fix all eight data defects in your sandbox, and tick ledger rows 1 to 8 as you go. Each fix that changes an owner, a sprint or a state gets a one-line **Discussion** comment saying why. In real life, that comment is what stops someone undoing your fix next week.
+    Fix all eight data defects in your sandbox, and tick ledger rows 1 to 8 as you go. Each fix that changes an owner, a sprint or a state gets a one-line **Discussion** comment saying why: that comment is what stops someone undoing your fix next week.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Work through your ledger, rows 1 to 8, and find each defect's twin in the sandbox. For each one, decide the **true** state of the world before you click: is it done, who owns it, when will it happen, where does it belong?
+    Find each ledger row's twin in the sandbox. Before you click, decide the **true** state of the world: is it done, who owns it, when will it happen, where does it belong?
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - Multi-select rows in query results and use **Edit** to change State or Iteration Path on several at once. Rows stay **bold** until you select **Save items**.
@@ -272,7 +249,7 @@ You've proven the record is wrong. Can you make it true? Your sandbox holds a mi
     **So what?** Each fix restores the truth, not a better-looking number. Unassigning Kyle's work makes the team look *less* staffed, which is the point: now someone must decide who owns it.
 
 !!! warning "Don't fix Member Support"
-    Every defect in Member Support's real data is a two-click fix. Leave them. Those items are Carmen's team's record, everyone in the room shares them, and an outsider fixing them without the team is how working agreements die. Your findings go to Carmen and Leo in Part 6.
+    Every defect in Member Support's real data is a two-click fix. Leave them: they're Carmen's team's record, everyone in the room shares them, and an outsider fixing them without the team is how working agreements die. Your findings go to Carmen and Leo in Part 6.
 
 !!! checkpoint "Checkpoint"
     - [ ] I recorded the five "before" counts before I changed anything
@@ -284,18 +261,18 @@ You've proven the record is wrong. Can you make it true? Your sandbox holds a mi
 
 ## Part 4 — Fix the queries and prove it
 
-The data is true now. Would Leo's queries still tell the truth next sprint? This Part fixes ledger rows 9 to 11; row 12 you'll prevent in Part 6.
+**The data is true now. Would Leo's queries still tell the truth next sprint?** This Part fixes ledger rows 9 to 11; you'll prevent row 12 in Part 6.
 
 In **Boards › Queries**, open each inherited query, change it, and use **More actions** › **Save as** into `Shared Queries/Training/P##/` with the prefix `Fixed - `. Keep the originals so you can compare.
 
 !!! challenge "Challenge: Five queries, honestly"
-    Rewrite all five inherited queries so they would survive next sprint, next quarter and the next reorganization. Then add one new one, `Fixed - Completed last sprint`. Before you save that one, switch its macro's team to **P## Sandbox**, run it, and explain what happens.
+    Rewrite all five inherited queries so they would survive next sprint, next quarter and the next reorganization. Then add `Fixed - Completed last sprint`. Before you save it, switch its macro's team to **P## Sandbox**, run it, and explain what happens.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Two defects are about **time** (a sprint typed in by hand), one is about **meaning** (what "open" means), and one is about **vocabulary** (tags). One of the five queries was never wrong.
+    Two defects are about **time** (a sprint typed in by hand), one about **meaning** (what "open" means), and one about **vocabulary** (tags). One of the five queries was never wrong.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    Use `@CurrentIteration` and `@CurrentIteration - 1`. Pick `@CurrentIteration` from the **Value** list; for `- 1`, type `@CurrentIteration - 1` and choose **Use "@CurrentIteration - 1"**. Either way a second box appears underneath with the **team**. Use `State` `Not In` `Closed,Removed`. For tags, use a grouped **Or** across the three spellings. And when your sandbox team chokes on `- 1`, look at which sprints it selected in Lab 9.
+    Use `@CurrentIteration` and `@CurrentIteration - 1`, as in [Lab 3](../day-1/lab-03-query-toolkit.md): pick `@CurrentIteration` from the **Value** list; for `- 1`, type `@CurrentIteration - 1` and choose **Use "@CurrentIteration - 1"**. Either way a second box appears underneath with the **team**. Use `State` `Not In` `Closed,Removed`, and a grouped **Or** across the three tag spellings. When your sandbox team chokes on `- 1`, look at which sprints it has selected.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     All are **Flat list of work items**, and all keep `Area Path` `Under` `HarborPoint\Training\P##`.
@@ -317,7 +294,7 @@ In **Boards › Queries**, open each inherited query, change it, and use **More 
     | │ | Or | Tags | Contains | `omni-channel` |
     | └ | Or | Tags | Contains | `omnichanel` |
 
-    **Why the sandbox team fails on `- 1`:** `@CurrentIteration` means "*this team's* sprint whose dates include today", and `- 1` means "the one before it *in this team's own sprint list*". Your sandbox team selected Sprints 14 to 20 in Lab 9, so `@CurrentIteration` works (the same 4 rows as Member Support), but there's nothing before Sprint 14. Azure DevOps refuses with *VS403721: The specified team hasn't scheduled an iteration for '@CurrentIteration - 1'*. In the real fix, Leo would use team `Member Support`.
+    **Why the sandbox team fails on `- 1`:** `- 1` means "the sprint before the current one *in this team's own sprint list*". Your sandbox team's list is Sprints 14 to 20, so `@CurrentIteration` works (the same 4 rows as Member Support), but there's nothing before Sprint 14. Azure DevOps refuses with *VS403721: The specified team hasn't scheduled an iteration for '@CurrentIteration - 1'*. In the real fix, Leo would use team `Member Support`.
 
     After your tag clean-up, the original one-tag query also returns 5. The Or-group is a bridge; the vocabulary is the fix.
 
@@ -334,7 +311,7 @@ In **Boards › Queries**, open each inherited query, change it, and use **More 
     ```
 
 !!! reef "Reef ahead: fixing the chart instead of the data"
-    The fastest way to make **Open P1 bugs** show 2 is to widen it to `Area Path` `Under` `HarborPoint\Training`. Try it: you get every participant's misfiled bugs, up to **60** across 30 sandboxes. On the real dashboard, `Under HarborPoint` pulls in every team's P1 bugs. A query that compensates for bad data gets wrong in a new way each time the data changes. Fix the data, keep the query honest, and catch misfiled work with a watchlist (Part 5).
+    The fastest way to make **Open P1 bugs** show 2 is to widen it to `Area Path` `Under` `HarborPoint\Training`. Try it: you get every participant's misfiled bugs, up to **60** across 30 sandboxes; on the real dashboard, `Under HarborPoint` pulls in every team's P1 bugs. A query that compensates for bad data goes wrong in a new way each time the data changes. Fix the data, and catch misfiling with a watchlist (Part 5).
 
 ### Validate on a dashboard
 
@@ -364,10 +341,10 @@ Tick ledger rows 9 to 11.
 
 ## Part 5 — Build a watchlist
 
-How will you know next month that the record has drifted again? Fixing the data once is a cleanup. Catching it every week is management. A watchlist is a handful of queries whose healthy answer is **zero**.
+**How will you know next month that the record has drifted again?** Fixing the data once is a cleanup; catching drift every week is management. A watchlist is a handful of queries whose healthy answer is **zero**.
 
 !!! challenge "Challenge: Six queries that should say zero"
-    In **Boards › Queries**, create the folder `Shared Queries/Training/P##/Watchlist` and build **at least three** of these against **Member Support's real area**. Running queries is read-only. Record each count:
+    In **Boards › Queries**, create the folder `Shared Queries/Training/P##/Watchlist` and build **at least three** of these against **Member Support's real area** (queries are read-only). Record each count:
 
     1. Active work nobody has touched in 14 days
     2. Stories that have sat in Resolved for more than 5 days
@@ -377,7 +354,7 @@ How will you know next month that the record has drifted again? Fixing the data 
     6. Anything filed at the project's root area
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Each is a date clause, a blank-value clause or an iteration macro, and you built most of them in the Part 1 detective's kit. Name them so a team lead understands each in two seconds.
+    Each is a date clause, a blank-value clause or an iteration macro, and most are already in the Part 1 detective's kit. Name each so a team lead understands it in two seconds.
 
 ??? pilot "Harbor Pilot · Hint 2: Bring it into port (full solution)"
     All flat, with `Area Path` `Under` `HarborPoint\Member Support` except #6.
@@ -391,7 +368,9 @@ How will you know next month that the record has drifted again? Fixing the data 
     | 5 | `Assigned to a leaver` | `Assigned To` `Contains` `Kyle Morgan`; `State` `Not In` `Closed,Removed` | **4** |
     | 6 | `Root-area work` | `Area Path` `=` `HarborPoint` (no Under) | **2** |
 
-    **So what?** Number 5 is the weakest, because a query can't know who has left. The durable fix is an off-boarding step: *reassign open work before the last day*. Number 6 works for every team at once, so put it on the program dashboard.
+    Why 14 days, when Lab 2's stale-work query used 7? Lab 2 caught a week's drift inside one sprint; a watchlist hunts zombies untouched for a whole sprint or more, so a longer window keeps it quiet until something is truly abandoned.
+
+    **So what?** Number 5 is the weakest, because a query can't know who has left; the durable fix is an off-boarding step: *reassign open work before the last day*. Number 6 works for every team at once, so put it on the program dashboard.
 
 <figure class="hp-shot" data-shot="lab11-watchlist" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Shared Queries › Training › P## › Watchlist › Active in a past sprint</span></div>
@@ -410,9 +389,9 @@ How will you know next month that the record has drifted again? Fixing the data 
 
 ## Part 6 — Make it stop happening
 
-Which practices would have stopped all twelve defects, and which are worth what they cost? Carmen doesn't need a better chart. She needs a team that keeps its record true and a PMO that reads it carefully.
+**Which practices would have stopped all twelve defects, and which are worth what they cost?** Carmen doesn't need a better chart. She needs a team that keeps its record true and a PMO that reads it carefully.
 
-The levers below differ in **reach**. Each row touches more people, and is harder to undo, than the ones above it; the last changes every project at once. Start as high in the table as works.
+Each lever below reaches more people, and is harder to undo, than the one above it; the last changes every project at once. Start as high in the table as works.
 
 | Lever | What it prevents here | Who can set it up | Watch out for |
 |---|---|---|---|
@@ -427,7 +406,7 @@ The levers below differ in **reach**. Each row touches more people, and is harde
 <!-- VERIFY (needs an inherited process; the vsahgal org has none, and creating one is an org-wide change): the exact dropdown labels in User Story › Rules › New rule. Microsoft's rule reference confirms the actions "Make required" / "Make read-only", that Area Path can't be selected, and that customizations reflect automatically in every project on the process. -->
 
 !!! reef "Reef ahead: hygiene police"
-    Once a watchlist exists, someone will want it per person, ranked, in the weekly pack: "Nora has a stale item." Then people game the record instead of keeping it true: they close early, split stories to look busy, and leave out work that's hard to estimate. Goodhart's law works on data quality too. Keep the watchlist **team-level**, look at it **with** the team, and measure success by how fast items leave it, not by who put them there.
+    Once a watchlist exists, someone will want it per person, ranked, in the weekly pack: "Nora has a stale item." Then people game the record: they close early, split stories to look busy, and leave out work that's hard to estimate. You met Goodhart's law in [Lab 6](../day-2/lab-06-which-team-needs-help.md); it works on data quality too. Keep the watchlist **team-level**, look at it **with** the team, and measure how fast items leave it, not who put them there.
 
 !!! deliverable "Deliverable"
     The wiki page `/Training/P##/Dashboard Remediation` with:
@@ -440,7 +419,7 @@ The levers below differ in **reach**. Each row touches more people, and is harde
     6. **A five-sentence note to Carmen and Leo**: the bottom line first, what broke, what you recommend, what you need from each of them, and what you'll check next week
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Group the twelve defects by **who could have stopped them**: the team (states, estimates, duplicates), a manager (leavers, zombies), the dashboard owner (queries, widgets, permissions) and the platform (rules, templates). One practice per group is a good start.
+    Group the twelve defects by **who could have stopped them**: the team, a manager, the dashboard owner or the platform. One practice per group is a good start.
 
 ??? pilot "Harbor Pilot · Hint 2: Bring it into port (full solution)"
     **Five practices (model):**
@@ -453,7 +432,7 @@ The levers below differ in **reach**. Each row touches more people, and is harde
 
     **The 15-minute Monday routine (model):** the team lead and PO open `P## - Sandbox Health` (or its real equivalent). Minutes 0 to 5: the six watchlist tiles; anything above zero gets fixed on the spot or gets a named owner. Minutes 5 to 10: Feature states against their rollup; close or activate as needed. Minutes 10 to 15: one dashboard check, rotating weekly between queries, widgets and permissions. Findings go into the team's own backlog, not a status report.
 
-    **So what?** Four of the five are habits a team or dashboard owner can start on Monday. Only the optional rule in practice 2 needs an administrator, and it lands on every project at once, which is why it comes last.
+    **So what?** Four of the five are habits a team or dashboard owner can start on Monday. Only the optional rule in practice 2 needs an administrator, and it lands on every project at once.
 
 !!! checkpoint "Checkpoint"
     - [ ] `/Training/P##/Dashboard Remediation` has all six sections
@@ -474,7 +453,7 @@ The levers below differ in **reach**. Each row touches more people, and is harde
 - [ ] Whether the team has been inflating its estimates
 
 <div class="quiz-why" markdown>
-Velocity sums points on Closed items only. A sudden drop with flat planning is usually a recording problem: work left in Resolved, points left blank, items parked in old sprints. Check the data before you diagnose the team.
+Velocity sums points on Closed items only. A sudden drop with flat planning is usually a recording problem: work left in Resolved, points left blank, items parked in old sprints.
 </div>
 
 </div>
@@ -504,7 +483,7 @@ Widening the query pulls in every team's P1 bugs, and a note goes stale the day 
 - [ ] Three spellings of the same tag
 
 <div class="quiz-why" markdown>
-Rules can make a field required on a state change, but they can't target Area Path or Iteration Path, and they don't govern tag vocabulary. The others need agreements and a watchlist. Even the rule that works applies to every project on the process, so it's a governance decision, not a quick fix.
+Rules can make a field required on a state change, but they can't target Area Path or Iteration Path, and they don't govern tag vocabulary. Even the rule that works applies to every project on the process, so it's a governance decision, not a quick fix.
 </div>
 
 </div>
@@ -512,28 +491,28 @@ Rules can make a field required on a state change, but they can't target Area Pa
 ## Captain's log
 
 !!! log "Captain's log"
-    1. Which dashboard in your organization would you least like to audit the way you audited Leo's today? What's the first query you'd run?
-    2. When a team's numbers look bad in your status pack, what happens next: a conversation with the team, or a conversation about the team?
+    1. Which dashboard in your organization would you least like to audit the way you audited Leo's? What's the first query you'd run?
+    2. When a team's numbers look bad in your status pack, what happens next: a conversation with the team, or about the team?
     3. What does "done" mean in your tools today, and does every team mean the same thing?
-    4. Which governance change would you make centrally, and which would you leave to teams? Where's the line between hygiene and micromanagement for you?
+    4. Which governance change would you make centrally, and which would you leave to teams? Where's your line between hygiene and micromanagement?
 
 !!! bonus "Extra knots"
     1. **The honest late bar.** Add a **Velocity** widget for team `Member Support` to `P## - Sandbox Health` with **Highlight work completed late** on. If Carmen's team closed its old Resolved stories today, would Sprints 12 and 13 jump back to 18 and 19, or show the work as late? Which would you rather show Dana?
     2. **Program-wide hygiene.** Copy watchlist #1 and #3 with the area clause set to `Area Path` `Not Under` `HarborPoint\Training`. Which other teams appear, and does Mobile Banking's stale work show up at 14 days or only at 7?
-    3. **Write the tag vocabulary.** Draft a short `/Training/P##/Tag Vocabulary` page with the canonical tags from today and from [Lab 10](lab-10-personas.md), who may add a new tag, and how a misspelling gets retired. Tags can't be renamed in the web UI. What does that mean for your process?
+    3. **Write the tag vocabulary.** Draft a short `/Training/P##/Tag Vocabulary` page with the canonical tags from today and from [Lab 10](lab-10-personas.md), who may add a tag, and how a misspelling gets retired, given that tags can't be renamed in the web UI.
 
 <!-- Facilitator: Velocity credits work to the sprint in its Iteration Path. With "Highlight work completed late" on, items Closed after that sprint's end date are drawn as a separate "Completed Late" segment. So Sprints 12 and 13 climb back toward 18 and 19, with the late part visibly marked. That is the honest bar to show Dana. -->
 
 !!! harbor "Back in your own harbor"
     Three moves for your first week back, about 30 minutes in your own Azure DevOps:
 
-    1. **Audit one tile before your next report.** Open the dashboard your leadership reads most, pick one tile, and read its query's **Editor** tab. Look for a sprint typed in by hand instead of `@CurrentIteration`, and "open" written as `State` `<>` `Closed`. Running a query never changes data.
-    2. **Build three queries whose healthy answer is zero.** Create a `Watchlist` folder under **Shared Queries** (not **My Queries**, which are private, so their tiles show everyone else an error) and save: Active work with `Changed Date` `<` `@Today - 14`, stories in Resolved for more than 5 days, and anything filed at the project's root area.
-    3. **Look at the counts with the team, not about the team.** Spend 15 minutes with one team lead and Product Owner going through the watchlist together. Anything above zero gets fixed on the spot or gets a named owner, and the counts stay team-level, never per person.
+    1. **Audit one tile before your next report.** Open the dashboard your leadership reads most, pick one tile, and read its query's **Editor** tab. Look for a sprint typed in by hand instead of `@CurrentIteration`, and "open" written as `State` `<>` `Closed`.
+    2. **Build three queries whose healthy answer is zero.** Create a `Watchlist` folder under **Shared Queries** (not **My Queries**, whose tiles show everyone else an error) and save: Active work with `Changed Date` `<` `@Today - 14`, stories in Resolved for more than 5 days, and anything filed at the project's root area.
+    3. **Look at the counts with the team, not about the team.** Spend 15 minutes with one team lead and Product Owner going through the watchlist. Anything above zero gets fixed on the spot or gets a named owner, and the counts stay team-level, never per person.
 
 ## Key takeaways
 
-- **Open what's behind the tile.** A dashboard can break in its data, its queries, its widgets or its permissions. The chart itself is usually the one part that's right.
+- **Open what's behind the tile.** A dashboard breaks in its data, queries, widgets or permissions. The chart itself is usually the one part that's right.
 - **Suspect the record before the team.** Delivery rarely collapses in one sprint; hygiene often does. Falling velocity with flat Planned is the tell.
 - **Fix data at the source.** Change the item, say why in its Discussion, and leave another team's record for that team to fix.
 - **Make queries honest, not clever.** Macros for time, explicit state lists for "open", one tag vocabulary, and no compensating for bad data.

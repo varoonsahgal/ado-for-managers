@@ -4,7 +4,7 @@ title: "Resources"
 
 # Resources
 
-Reference material for the course and for Monday morning back at work. Everything here is written at Feature and portfolio altitude.
+Reference for the course and for Monday morning back at work, at Feature and portfolio altitude.
 
 <div class="grid cards" markdown>
 
@@ -16,11 +16,19 @@ Reference material for the course and for Monday morning back at work. Everythin
 
     [:octicons-arrow-right-24: Open your field card](field-card.md)
 
+-   :material-presentation:{ .lg .middle } **Course Slides**
+
+    ---
+
+    The deck the instructor teaches from, with each lab's takeaways. Arrow keys to move, **G** for the slide index.
+
+    [:octicons-arrow-right-24: Open the slides](../slides/)
+
 -   :material-database-search:{ .lg .middle } **Query Cookbook**
 
     ---
 
-    Thirty ready-to-use manager queries, with clause tables, WIQL, the macro cheat sheet and chart limits.
+    Thirty-one ready-to-use manager queries, with clause tables, WIQL, the macro cheat sheet and chart limits.
 
     [:octicons-arrow-right-24: Open the cookbook](query-cookbook.md)
 
@@ -28,7 +36,7 @@ Reference material for the course and for Monday morning back at work. Everythin
 
     ---
 
-    Velocity, throughput, lead and cycle time, CFD, rollups and forecasts: how each is computed, how to read it, and how it lies.
+    Velocity, throughput, lead and cycle time, CFD, rollups and forecasts, read in three families: how each is computed, how to read it, and how it lies.
 
     [:octicons-arrow-right-24: Open the guide](metrics-field-guide.md)
 
@@ -44,7 +52,7 @@ Reference material for the course and for Monday morning back at work. Everythin
 
     ---
 
-    Azure DevOps and management terms in plain language, with HarborPoint examples.
+    Azure DevOps, management and course terms in plain language, each linked to the lab that teaches it.
 
     [:octicons-arrow-right-24: Open the glossary](glossary.md)
 
@@ -68,7 +76,7 @@ Reference material for the course and for Monday morning back at work. Everythin
 
 ## Printable cheat sheet
 
-The twelve paths and macros you'll use most. Print this page (the hints and code blocks expand in print).
+The twelve paths and macros you'll use most. Print this page.
 
 | # | What | Where or how |
 |:-:|:--|:--|

@@ -14,9 +14,9 @@ next_hook: "Member Support's dashboard says the team has fallen off a cliff, and
 ---
 
 !!! briefing "Mission briefing"
-    HarborPoint is redesigning how members join and take on new products. Today that experience is split in two. **Online Account Opening** belongs to Digital Accounts, under the Digital Banking Epic. **In-Branch Digital Onboarding** belongs to Branch Experience, under the Branch Epic. Two teams, two Product Owners, two backlogs, and one member who often crosses from one to the other halfway through.
+    Card Controls was a question of *how much*. Your next one is *for whom*. HarborPoint is redesigning how members join and take on new products, and today that experience is split in two: **Online Account Opening** belongs to Digital Accounts, under the Digital Banking Epic; **In-Branch Digital Onboarding** belongs to Branch Experience, under the Branch Epic. Two teams, two Product Owners, two backlogs, and one member who often crosses from one to the other halfway through.
 
-    Ruth has handed you the program, and with it an argument between the branch champion and the digital director. Both have research numbers, and both are right about something. Your job is to make the argument about members instead of channels. You'll work along one chain, and each link feeds the next: **journey → personas → persona stories → scored priority.**
+    With the program, Ruth handed you an argument between the branch champion and the digital director. Both have research numbers, and both are right about something. Make the argument about members instead of channels, along one chain where each link feeds the next: **journey → personas → persona stories → scored priority.**
 
     **Done looks like:**
 
@@ -40,9 +40,9 @@ Saw Hector's note. **58%** of new members start online, and **41%** of those app
 ## What you'll walk away with
 
 - See one service as one journey across channels and teams, and find the handoffs nobody owns
-- Build personas from behavior and evidence, not demographics, and tell a finding from an assumption
-- Write persona stories whose acceptance criteria change what gets built, and know when a persona tag should become a field
-- Prioritize with a transparent model that people argue with, instead of the loudest voice in the room
+- Build personas from behavior and evidence, and tell a finding from an assumption
+- Write persona stories whose acceptance criteria change what gets built, and know when a tag should become a field
+- Prioritize with a transparent model people argue with, instead of the loudest voice in the room
 - Check what your model counts as value before you defend its answer
 
 ## Before you set sail
@@ -57,7 +57,7 @@ Saw Hector's note. **58%** of new members start online, and **41%** of those app
 
 ## Part 1 — See the journey the portfolio splits
 
-**Who already owns this journey, and where do the owners meet?** Personas are about members, but a manager starts with the portfolio. Find out who holds the problem today before you design anything.
+**Who already owns this journey, and where do the owners meet?** Before you design for members, find out who holds the problem today.
 
 !!! speedrun "Speed run · 6 minutes"
     Read-only. Answer three questions:
@@ -69,10 +69,10 @@ Saw Hector's note. **58%** of new members start online, and **41%** of those app
 <div class="timer" data-minutes="6" data-label="Speed run"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    One Feature is about opening an account online. The other is about onboarding in a branch. The program-level team sees every team's Features in one backlog.
+    One Feature opens an account online; the other onboards in a branch. The program-level team sees every team's Features in one backlog.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    **Boards › Backlogs**, team `HarborPoint Team`, **Features** level, **Parents** on, so you can see the Epics. Add **Progress by Story Points** (from **+ Add a rollup column** › **From quick list**), **Node Name** and **Target Date** with **Column Options**. Filter by keyword (`account opening`, then `onboarding`) to find them fast; while a filter is on, the backlog flattens and hides the Epics and rollups, so clear it (**×**) to read progress. Sandbox Features never show here, because `HarborPoint Team` leaves out the `Training` area. Expand each Feature to read its stories, and open its **Links** tab for dependencies.
+    **Boards › Backlogs**, team `HarborPoint Team`, **Features** level, **Parents** on, so you can see the Epics. Add **Progress by Story Points** (from **+ Add a rollup column** › **From quick list**), **Node Name** and **Target Date** with **Column Options**. Filter by keyword (`account opening`, then `onboarding`) to find them fast, then clear the filter (**×**) to read progress: a filtered backlog hides the Epics and rollups. Sandbox Features never show here, because `HarborPoint Team` leaves out the `Training` area. Expand each Feature to read its stories, and open its **Links** tab for dependencies.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     | | Online Account Opening | In-Branch Digital Onboarding |
@@ -103,7 +103,7 @@ Saw Hector's note. **58%** of new members start online, and **41%** of those app
 </figure>
 
 !!! insight "Lighthouse insight: the member doesn't see your org chart"
-    The portfolio rates the two Features equally, and only the Epic rank puts the online half of the journey two places ahead of the branch half. Now follow a member who starts online and finishes in a branch. The fix for re-entering data sits in one team's backlog. The data it depends on sits in another's. Neither Feature is wrong. The **journey** has no owner. Personas are the cheapest way to make a journey visible as one thing, before anyone redraws a team boundary.
+    The portfolio rates the two Features equally; only the Epic rank puts the online half two places ahead. Follow a member who starts online and finishes in a branch: the fix for re-entering data sits in one team's backlog, and the data it depends on sits in another's. Neither Feature is wrong. The **journey** has no owner. Personas are the cheapest way to make it visible as one thing, before anyone redraws a team boundary.
 
 !!! checkpoint "Checkpoint"
     - [ ] I can name both onboarding Features, their teams, their Epics and their progress
@@ -114,7 +114,7 @@ Saw Hector's note. **58%** of new members start online, and **41%** of those app
 
 ## Part 2 — Develop the personas
 
-**Who are the members, and where exactly does the journey break for each?** Three starter personas live in the wiki, each with sections marked **To be developed**. You'll finish them in your own space, so a room full of managers doesn't overwrite one another.
+**Who are the members, and where exactly does the journey break for each?** Three starter personas live in the wiki, with sections marked **To be developed**. You'll finish them in your own space, so nobody overwrites anyone else.
 
 | Persona | Who they are | What the starter page already says |
 |---|---|---|
@@ -122,13 +122,13 @@ Saw Hector's note. **58%** of new members start online, and **41%** of those app
 | **Jordan Reyes** | 24, first job as an apprentice marine electrician | Mobile-only, applies at **11 pm**, expects instant approval, **abandons at friction** |
 | **Amara Okafor** | 37, military spouse who relocates every 2 to 3 years, runs a small online business | Starts online and **finishes in branch**. Needs **save-and-resume** and **remote document upload** |
 
-1. Open **Overview › Wiki** › `Research` › `Onboarding Research Findings` and keep it in a second tab. Every claim you add today should trace back to it or to a starter persona.
+1. Open **Overview › Wiki** › `Research` › `Onboarding Research Findings` in a second tab. Every claim you add today should trace back to it or to a starter persona.
 2. Open `Templates` › `Persona Canvas` and note its sections.
-3. Create your copies. Open `/Training/P##` (you created it in an earlier lab; create it now if not), use its **⋯** menu › **Add sub-page** to add `Personas`, and under it add one sub-page per persona with the persona's full name.
+3. Create your copies. Open `/Training/P##` (create it now if an earlier lab didn't), use its **⋯** menu › **Add sub-page** to add `Personas`, and under it add one sub-page per persona with the persona's full name.
 4. On each starter page, select **Edit**, copy the whole Markdown, and paste it into your copy. Then close the original **without saving**.
-5. Fill every section marked **To be developed** (four or five per persona). Use the canvas as your checklist: a **Quote** in the member's own voice, **Goals**, **Frustrations**, **Behaviors**, **Channels and devices**, **Needs from this service**, **Journey**, **Acceptance criteria hooks** and **Evidence**. Keep every heading the starter page has, and add any canvas heading it lacks.
+5. Fill every section marked **To be developed** (four or five per persona). Use the canvas as your checklist: a **Quote** in the member's own voice, **Goals**, **Frustrations**, **Behaviors**, **Channels and devices**, **Needs from this service**, **Journey**, **Acceptance criteria hooks** and **Evidence**. Keep every starter heading, and add any canvas heading it lacks.
 
-The research numbers you'll keep reaching for, all from `/Research/Onboarding Research Findings`:
+The research numbers you'll keep reaching for, from `/Research/Onboarding Research Findings`:
 
 | Finding | Number |
 |---|---|
@@ -145,7 +145,7 @@ The research numbers you'll keep reaching for, all from `/Research/Onboarding Re
     | Stage | Channel | What they do | Where it breaks for them | Evidence |
     |---|---|---|---|---|
 
-    Every persona must have at least one **break**: a moment where HarborPoint loses them, slows them down or makes them repeat themselves. Each break needs a piece of evidence (a research number or a line from the starter persona). Anything without evidence goes in the table marked *(assumption)*.
+    Every persona needs at least one **break**: a moment where HarborPoint loses them, slows them down or makes them repeat themselves. Each break needs evidence (a research number or a line from the starter persona). Mark anything without evidence *(assumption)*.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
     The research hands you one break per persona. Find the number that describes each persona's worst moment: at the camera, in the branch chair, or halfway between.
@@ -153,7 +153,7 @@ The research numbers you'll keep reaching for, all from `/Research/Onboarding Re
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     - **Jordan** breaks at **Verify identity**: online, late at night, with no one to ask. That's the 41%.
     - **Amara** breaks at the **handoff** between Apply (online) and Verify identity or Fund (branch). That's the 83% re-entry.
-    - **Dee** breaks at **Go digital**. That's the 62%. Before you call it a break, though, check what she's *trying* to do. She may not want an app at all. She may want her fraud alerts to come from someone she trusts.
+    - **Dee** breaks at **Go digital**: the 62%. But check what she's *trying* to do. She may not want an app at all, only fraud alerts from someone she trusts.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
     A model journey for **Amara Okafor**. Yours can differ, as long as the break has evidence.
@@ -167,9 +167,9 @@ The research numbers you'll keep reaching for, all from `/Research/Onboarding Re
     | Go digital | Mobile | Already digital-confident | | *(assumption)* |
     | Second product | Mixed | Business account after the next move? | Will her data follow her to a new branch? | *(assumption)* |
 
-    **Her quote:** *"I've moved four times in ten years. Don't make me tell you who I am twice in one week."* A quote is a design tool, not a fact. Don't invent a statistic to go with it.
+    **Her quote:** *"I've moved four times in ten years. Don't make me tell you who I am twice in one week."* A quote is a design tool, not a fact: don't invent a statistic to go with it.
 
-    **So what? A break with evidence is a backlog candidate. A break marked *(assumption)* is a research question, not a story.** Amara's re-entry break carries the 83%, so it goes forward to Part 3.
+    **So what? A break with evidence is a backlog candidate; a break marked *(assumption)* is a research question.** Amara's re-entry break carries the 83%, so it goes forward to Part 3.
 
 <figure class="hp-shot" data-shot="lab10-persona-wiki" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Wiki › Training › P## › Personas › Amara Okafor</span></div>
@@ -180,7 +180,7 @@ The research numbers you'll keep reaching for, all from `/Research/Onboarding Re
 </figure>
 
 !!! reef "Reef ahead: designing for the average member"
-    Average the three personas and you get a 43-year-old with medium digital confidence who applies in the early evening and is happy in either channel. Nobody like that walks into Port Haven, and nobody's break is visible in that average. "58% start online" also means 42% don't, and those 42% include the members Hector says hold the most products. Design for the extremes, and the middle usually comes along.
+    Average the three personas and you get a 43-year-old with medium digital confidence who applies in the early evening and is happy in either channel. Nobody like that walks into Port Haven, and nobody's break shows in that average. "58% start online" also means 42% don't, including the members Hector says hold the most products. Design for the extremes, and the middle usually comes along.
 
 !!! checkpoint "Checkpoint"
     - [ ] My three persona pages exist under `/Training/P##/Personas/` with every **To be developed** section completed
@@ -207,23 +207,23 @@ The research numbers you'll keep reaching for, all from `/Research/Onboarding Re
 1. **Boards › Backlogs**, team `P## Sandbox`, **Features** level. Select **New Work Item**, choose `Feature`, and title it `P## - Member Onboarding Redesign`.
 2. Open it and set:
     - **Area Path** `HarborPoint\Training\P##` and **Iteration Path** `HarborPoint`, which leaves it unscheduled
-    - **Business Value**, **Time Criticality** and **Effort**: your judgment, on the same scales the portfolio uses. Both real onboarding Features have Business Value 13 and Time Criticality 8. Decide whether yours is more or less urgent, and write one sentence in the **Description** saying why.
-    - **Description**: the purpose of the Feature, links to your three persona pages, and one line on which Epic you'd put it under
+    - **Business Value**, **Time Criticality** and **Effort**: your judgment, on the portfolio's scales. Both real onboarding Features have Business Value 13 and Time Criticality 8. Is yours more or less urgent? Say why in one sentence in the **Description**.
+    - **Description**: the Feature's purpose, links to your three persona pages, and one line on which Epic you'd put it under
 3. **Save**. Leave **Parent** empty: the real Epics are read-only for you, and choosing one is a decision in its own right (see the Captain's log).
 
 ### Write persona-driven stories
 
-Add the stories as children of your Feature: on the Features backlog, hover its row and select the **+** at the left (**Add: User Story, Bug**) › **User Story**. A story created this way already has its Parent link, and it inherits the Feature's Area and Iteration. For each story:
+Add the stories as children of your Feature: on the Features backlog, hover its row and select the **+** at the left (**Add: User Story, Bug**) › **User Story**. A story created this way already has its Parent link and inherits the Feature's Area and Iteration. For each story:
 
 - **Title** in the member's voice, prefixed `P## - `
 - **Tags**: exactly one of `persona-dee`, `persona-jordan` or `persona-amara`
 - **Acceptance Criteria**: 2 or 3 Given/When/Then statements, specific to that persona
 - **Story Points**: a rough estimate. Use the real stories you found in Part 1 as anchors (for example, `ID document capture with auto-crop` is a 5)
-- **Iteration Path** `HarborPoint`. Stories added with the row **+** inherit it from the Feature. Stories created any other way pick up your sandbox's default, the current sprint, so check it before you save.
-- **A link to the persona's wiki page**: save the story first, then open its **Links** tab (the chain icon next to **History**) › **Add link** › **Existing item**. Set **Link type** to **Wiki page**, select **Find page**, and filter by the persona's name. Pick *your* copy under `Training › P## › Personas`, select **Add link**, then **Save**. Don't look for Wiki page in the **Related Work** panel on the Details tab: it offers only work-item link types.
+- **Iteration Path** `HarborPoint`. Stories added with the row **+** inherit it; stories created any other way pick up your sandbox's current sprint, so check before you save.
+- **A link to the persona's wiki page**: save the story first, then open its **Links** tab (the chain icon next to **History**) › **Add link** › **Existing item**. Set **Link type** to **Wiki page**, select **Find page**, and filter by the persona's name. Pick *your* copy under `Training › P## › Personas`, select **Add link**, then **Save**. (The **Related Work** panel on the Details tab offers only work-item link types.)
 
 !!! warning "Tags are forever (almost)"
-    Tags can't be renamed or deleted in the web UI, and the spelling is matched exactly. Type `persona-amara` on one story and `persona_amara` on the next, and you've built two personas. Copy the tag from the list in this lab. You'll see what three spellings of one idea do to a dashboard in [Lab 11](lab-11-dashboard-wrong.md).
+    Tags can't be renamed or deleted in the web UI, and spelling is matched exactly: `persona-amara` on one story and `persona_amara` on the next makes two personas. Copy the tag from this lab. In [Lab 11](lab-11-dashboard-wrong.md) you'll see what three spellings of one idea do to a dashboard.
 
 <figure class="hp-shot" data-shot="lab10-story-form" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Work item › User Story › Links tab</span></div>
@@ -240,7 +240,7 @@ Add the stories as children of your Feature: on the Features backlog, hover its 
     - **Jordan**, by phone camera at 11 pm
     - **Amara**, saving her progress, uploading documents remotely, and finishing in branch without re-entering anything
 
-    Then add a comment to your Feature that answers one question: why would the generic story *"As a member, I want to verify my identity so that I can open an account"* fail two of these three members?
+    Then add a comment to your Feature answering: why would the generic story *"As a member, I want to verify my identity so that I can open an account"* fail two of these three members?
 
     Finish with **3 to 6 more stories** (6 to 9 in total) that fix the other breaks on your journey maps.
 
@@ -266,12 +266,12 @@ Add the stories as children of your Feature: on the Features backlog, hover its 
     - Given Amara saved her application online, when she arrives at any branch, then staff open it with zero fields re-entered.
     - Given she uploads documents remotely, when she resumes later on another device, then the uploads are still attached.
 
-    **So what? A generic story passes testing and fails members.** Its natural implementation is the online camera flow, which is Jordan's. Dee gets a channel she doesn't trust and no named person. Amara gets verified online, then re-verified in branch, because nothing says her data must follow her. The three stories share a capability; only their acceptance criteria differ, and that difference is what gets built.
+    **So what? A generic story passes testing and fails members.** Its natural implementation is Jordan's online camera flow. Dee gets a channel she doesn't trust and no named person. Amara gets verified online, then re-verified in branch, because nothing says her data must follow her. The three stories share a capability; only their acceptance criteria differ, and that difference is what gets built.
 
     **More stories that fit the journeys:** Jordan sees his application status and what's missing at any hour. Amara resumes on a different device. Dee gets digital banking set up in branch by the person who opened her account, with fraud alerts explained. Branch onboarding is shortened from 47 minutes for members who started online.
 
 !!! insight "Lighthouse insight: tags today, a field when it's settled"
-    A tag is free and instant, and you can filter boards and queries by it. It also can't be made required, and it drifts the moment two people spell it differently. A custom **Persona** picklist on an inherited process is consistent, can be required, and charts cleanly. It also needs a Project Collection Administrator to add it, and it changes **every project** that uses that process, immediately. Use tags while you're still learning which personas matter. Move to a field once the list is stable and someone owns it. Either way, write the vocabulary down where people will see it.
+    A tag is free and instant, and you can filter boards and queries by it. It can't be made required, though, and it drifts the moment two people spell it differently. A custom **Persona** picklist on an inherited process is consistent, can be required, and charts cleanly, but only a Project Collection Administrator can add it, and it changes **every project** on that process, immediately. Use tags while you're still learning which personas matter; move to a field once the list is stable and someone owns it. Either way, write the vocabulary down where people will see it.
 
 !!! checkpoint "Checkpoint"
     - [ ] `P## - Member Onboarding Redesign` exists in `HarborPoint\Training\P##` with Business Value, Time Criticality, Effort and a Description
@@ -283,7 +283,7 @@ Add the stories as children of your Feature: on the Features backlog, hover its 
 
 ## Part 4 — Prioritize by member impact
 
-**Which fix goes first, and can you defend the order to both Hector and Priya?** You now have 6 to 9 stories and three personas competing for the top. Hector and Priya will each read your order as a verdict on their channel, so make the reasoning visible enough that they argue with your inputs, not with you.
+**Which fix goes first, and can you defend the order to both Hector and Priya?** Each will read your order as a verdict on their channel, so make the reasoning visible enough that they argue with your inputs, not with you.
 
 <figure class="hp-shot" data-shot="lab10-sandbox-backlog" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Backlogs › P## Sandbox › Stories (Parents on)</span></div>
@@ -294,7 +294,7 @@ Add the stories as children of your Feature: on the Features backlog, hover its 
 </figure>
 
 !!! predict "Make a call"
-    Before you score anything, write down two guesses. **Which persona's story will finish at the top** of your table? And will your top 3 lean **branch, digital or a mix**? You'll find out whether the arithmetic agrees with you, and then whether you agree with the arithmetic.
+    Before you score anything, write down two guesses: **which persona's story will finish at the top**, and whether your top 3 will lean **branch, digital or a mix**. You'll find out whether the arithmetic agrees with you, and then whether you agree with the arithmetic.
 
 !!! challenge "Challenge: Score it, then defend it"
     1. Create the wiki page `/Training/P##/Onboarding Priorities` with this table, one row per story:
@@ -304,19 +304,19 @@ Add the stories as children of your Feature: on the Features backlog, hover its 
 
         **Score = Reach × Impact × Confidence ÷ Effort.** **Reach** is how many members this break touches. **Impact** is how much fixing it changes what happens to them. Use **Confidence** 1.0 when a research number supports your inputs, 0.8 when it partly does, and 0.5 when it's an assumption. Next to every Reach and Impact, cite the number you used.
 
-    2. Order your stories in the sandbox: **Boards › Backlogs**, team `P## Sandbox`, **Stories** level, **Parents** on. Collapse your other sandbox Features and drag your stories into score order under `P## - Member Onboarding Redesign`. Clear any filter first, because a filtered backlog can't be reordered.
+    2. Order your stories in the sandbox: **Boards › Backlogs**, team `P## Sandbox`, **Stories** level, **Parents** on. Clear any filter (a filtered backlog can't be reordered), collapse your other sandbox Features, and drag your stories into score order under `P## - Member Onboarding Redesign`.
     3. Under the table, justify your **top 3** in one sentence each, with a number in every sentence.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
     Each persona has one headline number. Ask which one describes the most members, and which one describes the deepest loss. Those two aren't always the same story.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    - **Reach:** online starters are 58% of new members, so Jordan-type breaks score high. Amara-type members are a slice of that 58%, and the research doesn't say how big, so lower your confidence rather than your guess. Dee-type members are a smaller group, but it's the group with the 62%.
+    - **Reach:** online starters are 58% of new members, so Jordan-type breaks score high. Amara-type members are an unmeasured slice of that 58%, so lower your confidence rather than your guess. Dee-type members are a smaller group, but it's the group with the 62%.
     - **Impact:** losing 41% of applications at one step is maximum funnel impact. Re-entering data 83% of the time is high friction, though not always a lost member.
     - **Effort:** your Story Points. A cheap fix with medium reach can beat an expensive one with high reach.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    An illustrative table. The inputs are judgments, and yours can differ, but every one should have a reason.
+    An illustrative table: the inputs are judgments, and yours can differ, but every one needs a reason.
 
     | Story | Persona | Stage | Reach | Impact | Conf. | Effort | Score |
     |---|---|---|:-:|:-:|:-:|:-:|:-:|
@@ -333,12 +333,12 @@ Add the stories as children of your Feature: on the Features backlog, hover its 
     **So what? Every story in that top 3 serves a member who started online. Dee isn't in it.** Read the reef below before you send it.
 
 !!! reef "Reef ahead: equating digital adoption with value"
-    If your top 3 is all digital, check what you were measuring. Reach × funnel impact counts **heads through the door**. It doesn't count what happens next. Branch-onboarded members hold **2.1** products after a year, and digital-only members hold **1.4**. A model that leaves that out will steadily trade relationship depth for login counts, and call it progress. The 62% of over-60s who never activate digital may not be a failure to fix, either. They may be well-served members who become exposed if branches change.
+    If your top 3 is all digital, check what you were measuring. Reach × funnel impact counts **heads through the door**, not what happens next. Branch-onboarded members hold **2.1** products after a year; digital-only members hold **1.4**. A model that leaves that out will steadily trade relationship depth for login counts, and call it progress. And the 62% of over-60s who never activate digital may not be a failure to fix: they may be well-served members who become exposed if branches change.
 
-    Add one more column, **Value per member (1–3)**, and re-score. If Dee's story climbs, your model didn't change the facts. It changed the **objective**, and choosing the objective is a leadership decision. The portfolio already names both candidates: *Digital that feels human* (priority 2) and *Branches as relationship hubs* (priority 4).
+    Add a column, **Value per member (1–3)**, and re-score. If Dee's story climbs, your model didn't change the facts. It changed the **objective**, and choosing the objective is a leadership decision. The portfolio already names both candidates: *Digital that feels human* (priority 2) and *Branches as relationship hubs* (priority 4).
 
 !!! reef "Reef ahead: the loudest stakeholder picks"
-    Order the backlog by whoever wrote last, and it changes every week. Send the scoring table to both Hector and Priya and ask, "Which input is wrong?" A disagreement about one Reach score is a ten-minute conversation. A disagreement about channels takes a whole PI.
+    Order the backlog by whoever wrote last, and it changes every week. Send the scoring table to Hector and Priya and ask, "Which input is wrong?" A disagreement about one Reach score takes ten minutes; a disagreement about channels takes a whole PI.
 
 !!! deliverable "Deliverable"
     `/Training/P##/Onboarding Priorities` with:
@@ -383,7 +383,7 @@ Add the stories as children of your Feature: on the Features backlog, hover its 
 - [ ] The digital channel has a defect
 
 <div class="quiz-why" markdown>
-It's a correlation between a channel and an outcome, and members choose their channel. The number is a strong reason to keep relationship depth in your model. It isn't proof that moving everyone into a branch would add products. Ask the research team how the groups compare before anyone builds a strategy on it.
+It's a correlation, and members choose their channel. The number is a strong reason to keep relationship depth in your model, not proof that moving everyone into a branch would add products. Ask the research team how the groups compare before anyone builds a strategy on it.
 </div>
 
 </div>
@@ -398,7 +398,7 @@ It's a correlation between a channel and an outcome, and members choose their ch
 - [ ] When a team asks for it
 
 <div class="quiz-why" markdown>
-A field brings consistency and can be required, but it's a governance change made by a Project Collection Administrator, and it lands everywhere at once. Tags are right while you're still learning. The trigger to switch is a stable vocabulary plus a report someone will act on.
+A field brings consistency and can be required, but it's a governance change made by a Project Collection Administrator, and it lands everywhere at once. The trigger to switch is a stable vocabulary plus a report someone will act on.
 </div>
 
 </div>
@@ -406,8 +406,8 @@ A field brings consistency and can be required, but it's a governance change mad
 ## Captain's log
 
 !!! log "Captain's log"
-    1. Pick a journey your members or customers take across two of your teams. Who owns the whole journey today? If the answer is "nobody", where does that show up first: in complaints, rework or dropped handoffs?
-    2. Which of your backlog's stories are written for "the user"? Which real people would the acceptance criteria fail?
+    1. Pick a journey your customers take across two of your teams. Who owns the whole journey today? If nobody, where does that show up first: complaints, rework or dropped handoffs?
+    2. Which of your stories are written for "the user"? Which real people would their acceptance criteria fail?
     3. Your sandbox Feature had no parent Epic. In your organization, would it sit under the digital Epic or the branch Epic, and who would make that call?
     4. Whose voice set your backlog order last quarter? Could you show the reasoning on one page?
     5. What does your organization count as "value" in its channel metrics: logins, adoption, products, retention? Which of those would Dee agree with?
@@ -415,20 +415,19 @@ A field brings consistency and can be required, but it's a governance change mad
 !!! bonus "Extra knots"
     1. **Persona coverage chart.** Save a flat query `Shared Queries/Training/P##/Onboarding by persona` (`Area Path` `Under` `HarborPoint\Training\P##`, `Work Item Type` `=` `User Story`, `Tags` `Contains` each persona tag, grouped with **Or**). Add a **Chart for Work Items** widget to a `P##` dashboard, grouped by **Tags**, with **Sum** of Story Points. Is any persona starved of effort? (Group-by-tags may need a preview feature; see the [query cookbook](../resources/query-cookbook.md).)
     2. **Feature-level WSJF-lite** (a cut-down Weighted Shortest Job First: cost of delay over size). Compute (Business Value + Time Criticality) ÷ Effort for Online Account Opening (13 + 8 over 56) and In-Branch Digital Onboarding (13 + 8 over 33). Which scores higher, and what does it say that the lower-scoring one sits under the higher-ranked Epic?
-    3. **A persona story template.** As team admin of `P## Sandbox`, open **Project settings › Boards › Team configuration**, **Templates** tab, and create a User Story template that pre-fills an Acceptance Criteria skeleton (*Given… When… Then…*) and your sandbox area. The editor's field list includes **Tags (Add)**, so a template *can* stamp a persona tag on every new story. Would you want it to, or should a person choose the persona each time?
-
+    3. **A persona story template.** As team admin of `P## Sandbox`, open **Project settings › Boards › Team configuration**, **Templates** tab, and create a User Story template that pre-fills an Acceptance Criteria skeleton (*Given… When… Then…*) and your sandbox area. The editor's field list includes **Tags (Add)**, so a template *can* stamp a persona tag on every new story. Should it, or should a person choose the persona each time?
 
 !!! harbor "Back in your own harbor"
     Three moves for your first week back, about 30 minutes in your own Azure DevOps:
 
-    1. **Find a journey nobody owns.** Pick one service your customers use across two of your teams. Find the Feature each team owns for it on the Features backlog and open its **Links** tab. If there's no **Predecessor/Successor** link between them, the handoff has no owner: write down who should own it.
-    2. **Draft one persona page.** Under your own page in **Overview › Wiki**, use **Add sub-page** to start one persona with a **Quote**, **Goals**, **Frustrations**, **Needs from this service** and one journey break backed by a number you already have. Mark everything else *(assumption)*. Wiki pages are shared, so anyone on the project can read it and improve it.
+    1. **Find a journey nobody owns.** Pick one service your customers use across two of your teams. On the Features backlog, open the **Links** tab of each team's Feature for it. If there's no **Predecessor/Successor** link between them, the handoff has no owner: write down who should own it.
+    2. **Draft one persona page.** Under your own page in **Overview › Wiki**, use **Add sub-page** to start one persona with a **Quote**, **Goals**, **Frustrations**, **Needs from this service** and one journey break backed by a number you already have. Mark everything else *(assumption)*. Anyone on the project can read and improve it.
     3. **Rewrite one generic story with its Product Owner.** Find a story written for "the user" and, together, add Given/When/Then acceptance criteria for the person it would fail. Link it to your persona page from its **Links** tab (**Add link** › **Existing item** › **Wiki page**), and if you add a persona tag, agree the spelling first: tags can't be renamed or deleted in the web UI.
 
 ## Key takeaways
 
 - **The journey has no owner.** The breaks hide at the handoffs between channels, and those handoffs often fall between two teams' Features.
-- **Personas run on evidence.** A persona is a set of behaviors, goals and breaks backed by evidence. Mark everything else as an assumption.
+- **Personas run on evidence.** A persona is behaviors, goals and breaks backed by evidence. Mark everything else as an assumption.
 - **Acceptance criteria are where personas bite.** A persona changes what gets built only when it reaches the acceptance criteria. One generic story usually serves one persona and fails the rest.
 - **Make priority arguable.** A visible scoring model turns "branch vs digital" into "which input is wrong?"
 - **Check the objective, not just the arithmetic.** Counting heads through the door and counting relationship value give different orders, and choosing between them is a leadership decision.

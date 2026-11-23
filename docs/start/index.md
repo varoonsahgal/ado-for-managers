@@ -5,9 +5,9 @@ description: How the HarborPoint labs work, your participant ID, and what to che
 
 # Welcome aboard
 
-You already know your way around Azure DevOps. This course is not about where the buttons are. It's about what a manager can **see**, **conclude** and **decide** with the data that is already sitting in Boards.
+You already know your way around Azure DevOps. This course isn't about where the buttons are. It's about what a manager can **see**, **conclude** and **decide** with the data already sitting in Boards.
 
-For three days you'll work inside **HarborPoint Financial**, a member-owned financial cooperative in the middle of a big transformation program. Its delivery data lives in a real Azure DevOps project: six teams, twenty-four Features, five sprints of history, and every messy, realistic problem you've ever had to explain to a VP.
+For three days you work inside **HarborPoint Financial**, a member-owned financial cooperative in the middle of a big transformation program. Its delivery data lives in a real Azure DevOps project: six teams, twenty-four Features, five sprints of history, and every messy problem you've ever had to explain to a VP. Twelve hands-on labs take you from reading the portfolio to briefing leadership on the next PI. The [course slides](../slides/) hold the instructor's deck and every lab's takeaways.
 
 <div class="msg" data-initials="RE" data-tone="teal" markdown>
 <p class="msg-head"><strong>Ruth Ellison</strong><span>Program Manager, METP · 7:55 AM</span></p>
@@ -25,20 +25,19 @@ Welcome to Project Lighthouse. A word of advice from someone who's run more prog
 
 ## The rhythm of every lab
 
-Each lab is a **mission** with the same shape, so you always know where you are:
+Each lab is a **mission** with the same shape:
 
 1. **Mission briefing**: the situation, your role, and what "done" looks like.
-2. **Speed runs**: think you know this already? Prove it against the clock and skip ahead.
-3. **Make a call**: before the biggest reveal, you write down a guess. Being wrong on paper is how the lesson sticks.
-4. **Guided parts and challenges**: the hands-on work, ending in a judgment call.
-5. **Harbor Pilot hints**: three tiers of help, from a nudge to the full solution.
-6. **Checkpoints**: observable outcomes you tick off. Your progress is saved.
-7. **Knowledge check and Captain's log**: test your judgment, then connect it to your own job.
-8. **Back in your own harbor**: three moves to make in *your* Azure DevOps when you get back, then the one thing to remember. They're all collected on [your field card](../resources/field-card.md) to take home.
+2. **Speed run** (most labs): think you know this already? Prove it against the clock and skip ahead.
+3. **Parts**: the hands-on work. Each Part opens with its question and closes with a **checkpoint** and a one-sentence **takeaway**, the lesson to keep.
+4. **Make a call**: before the biggest reveal, you write down a guess. Being wrong on paper is how the lesson sticks.
+5. **Harbor Pilot hints**: tiered help on every challenge, from a nudge to the full solution.
+6. **Knowledge check and Captain's log**: test your judgment, then connect it to your own job.
+7. **Back in your own harbor**: three moves to make in *your* Azure DevOps, then the lab's one thing to remember. Every lab's one thing, takeaways and moves are collected on [your field card](../resources/field-card.md), one printable page to take home.
 
 ### Try the components
 
-These are live. Go ahead and click them.
+These are live. Click them.
 
 !!! speedrun "Speed run · 2 minutes"
     Without looking anything up: name **three things** a Feature-level manager can learn from a backlog that a sprint taskboard will never tell them.
@@ -63,10 +62,10 @@ These are live. Go ahead and click them.
     Before you open the knowledge check below: a team's velocity doubles in three sprints. Write down, in five words, what you think happened. Then check.
 
 !!! insight "Lighthouse insight"
-    Most status meetings argue about **opinions** of progress. Azure DevOps already holds the **evidence**: dates, states, links, history. Your edge as a manager is knowing which evidence answers which question, and where it lies to you.
+    Most status meetings argue about **opinions** of progress. Azure DevOps already holds the **evidence**: dates, states, links, history. Your edge is knowing which evidence answers which question, and where it lies to you.
 
 !!! reef "Reef ahead: the green dashboard"
-    A dashboard can be green on the outside and red on the inside, a "watermelon". Every lab includes at least one trap like this. Fall into it on purpose here, so you don't fall into it on Monday.
+    A dashboard can be green on the outside and red on the inside: a "watermelon". Every lab has at least one trap like this. Fall into it here, so you don't on Monday.
 
 <div class="quiz" markdown>
 
@@ -78,7 +77,7 @@ These are live. Go ahead and click them.
 - [ ] The velocity chart is broken
 
 <div class="quiz-why" markdown>
-Velocity is a sum of **estimates**, not a measure of output. When the *count* of items finished stays flat while points climb, the yardstick changed, not the speed. Check both before you believe either.
+Velocity is a sum of **estimates**, not a measure of output. When the *count* of items finished stays flat while points climb, the yardstick changed, not the speed. You'll test this on real data in [Lab 6](../day-2/lab-06-which-team-needs-help.md).
 </div>
 
 </div>
@@ -94,22 +93,19 @@ Velocity is a sum of **estimates**, not a measure of output. When the *count* of
     - [ ] I opened all three Harbor Pilot hints above (no shame, that's what they're for)
     - [ ] I answered the knowledge check
 
+!!! takeaway "Takeaway"
+    Before you believe a number, ask how it's made: velocity counts estimates, and only Closed work counts as done.
+
 ## Your participant ID
 
-Your instructor will give you a **participant ID** (for example `P07`). Many things you create in Azure DevOps are named with it so that a whole room of managers can work in one project without colliding. In the labs it appears as `P##`. **Save your ID here** (or with the **Crew** chip in the header) and every `P##` on this site is filled in for you.
+Your instructor gives you a **participant ID** (for example `P07`). A whole room works in one project, so everything you create carries it. The labs write it as `P##`. **Save your ID here** (or with the **Crew** chip in the header) and every `P##` on this site fills in for you.
 
 <div class="hp-pid-form"></div>
 
-| You create… | Where / named | Example |
-|---|---|---|
-| Shared queries | `Shared Queries/Training/P##/` | `Shared Queries/Training/P##/04 Features at risk` |
-| Dashboards | Project dashboard named `P## - …` | `P## - Digital Command Center` |
-| Delivery Plans | `P## - …` | `P## - Fraud Alerts Plan` |
-| Wiki pages | `/Training/P##/…` | `/Training/P##/Sprint Delivery Report` |
-| Work items | Only in your sandbox area `HarborPoint\Training\P##` | `P## - Member Onboarding Redesign` |
+Queries go in `Shared Queries/Training/P##/`, wiki pages under `/Training/P##/`, dashboards and plans are named `P## - …`, and work items live only in your sandbox area `HarborPoint\Training\P##`. The [environment map](environment.md#your-conventions) has the full table.
 
 !!! warning "Look, but don't touch"
-    The six HarborPoint delivery teams' backlogs, boards, estimates, ordering and settings are **shared by everyone in the room**. Treat them as **read-only**. Anything you change, you change for everyone in the room. All hands-on changes happen in your **sandbox** (`HarborPoint\Training\P##` and the **P## Sandbox** team), where you can't break anything that matters.
+    The six HarborPoint delivery teams' backlogs, boards, estimates, ordering and settings are **shared by everyone in the room**, so treat them as **read-only**. Your hands-on changes happen in your **sandbox** (`HarborPoint\Training\P##` and the **P## Sandbox** team), where you can't break anything that matters.
 
 ## Sea states (difficulty)
 
@@ -130,10 +126,10 @@ Your instructor will give you a **participant ID** (for example `P07`). Many thi
     - [ ] I skimmed [Meet HarborPoint](harborpoint.md) and the [environment map](environment.md)
 
 !!! tip "Use two windows"
-    Keep these instructions on one side of your screen and Azure DevOps on the other. Most labs flip between the two constantly.
+    Keep these instructions on one side of your screen and Azure DevOps on the other. Most labs flip between them constantly.
 
 ## Progress and privacy
 
-Checkpoints, completed labs and your participant ID are stored **only in this browser** (local storage). Nothing is sent anywhere. To start over:
+Checkpoints, completed labs and your participant ID are stored **only in this browser**. Nothing is sent anywhere. To start over:
 
 <button type="button" class="hp-btn hp-btn--line" data-hp-reset>Reset my lab progress</button>

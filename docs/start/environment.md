@@ -4,7 +4,7 @@ title: "Your Azure DevOps Environment"
 
 # Your Azure DevOps Environment
 
-This is the field map: where HarborPoint's work lives in Azure DevOps, which team view shows what, and where *your* work goes. Skim it once now and come back whenever a lab says "switch to the … team".
+The field map: where HarborPoint's work lives, which team view shows what, and where *your* work goes. Skim it now; come back whenever a lab says "switch to the … team".
 
 | Setting | Value |
 |:--|:--|
@@ -52,11 +52,11 @@ HarborPoint
 └── PI 5   Sprint 17 · Sprint 18 · Sprint 19 · Sprint 20     next PI
 ```
 
-Sprints are two weeks; a PI is four sprints. Every team's **backlog iteration** is the root, `HarborPoint`, so unscheduled work still shows on backlogs.
+Every team's **backlog iteration** is the root, `HarborPoint`, so unscheduled work still shows on backlogs.
 
 ## Teams: pick the right lens
 
-Almost every view in **Boards** (backlogs, boards, sprints, Velocity, CFD, `@CurrentIteration`) belongs to **one team**. The team selector at the top left of the page decides what you see. Picking the right team is the first step of nearly every lab.
+Almost every view in **Boards** (backlogs, boards, sprints, Velocity, CFD, `@CurrentIteration`) belongs to **one team**, picked in the team selector at the top left. Picking the right team is the first step of nearly every lab.
 
 | Team | Area it covers | Backlog levels | Sprints selected | Use it to see… |
 |:--|:--|:--|:--|:--|
@@ -79,10 +79,10 @@ Almost every view in **Boards** (backlogs, boards, sprints, Velocity, CFD, `@Cur
 </figure>
 
 !!! reef "Reef ahead: the wrong team"
-    "My Feature is missing" is almost always a team-context problem. The **Digital Portfolio** team can't show you Security's work, and a delivery team can't show you Epics. Before you conclude that something isn't there, check the team selector and the backlog level selector.
+    "My Feature is missing" is almost always a team-context problem. **Digital Portfolio** can't show you Security's work, and a delivery team can't show you Epics. Before you conclude something isn't there, check the team and the backlog level.
 
 !!! note "Your sandbox plans the future"
-    Your **P## Sandbox** team selects Sprints 14 to 20: the current sprint plus everything ahead, because you use it to plan work that hasn't started. Its own backlog holds only your sandbox items. When a query needs "this sprint" for a delivery team, use that team (such as `Mobile Banking`) as the `@CurrentIteration` team parameter. Reading a team's sprint in a query changes nothing for that team.
+    Your **P## Sandbox** team selects Sprints 14 to 20, the current sprint and everything ahead, because you use it to plan work that hasn't started. Its backlog holds only your sandbox items. When a query needs a delivery team's "this sprint", use that team (such as `Mobile Banking`) as the `@CurrentIteration` team parameter. Reading a team's sprint in a query changes nothing for that team.
 
 ## Work item types and fields
 
@@ -95,7 +95,7 @@ At Feature altitude you'll use a handful of fields again and again.
 | **User Story** | Title, State, Assigned To, Area Path, Iteration Path (a sprint), **Story Points**, Priority, Tags, Acceptance Criteria. **Parent** = a Feature, or none |
 | **Bug** | Title, State, Assigned To, Area Path, Iteration Path, **Priority** (1 to 4), **Severity** (`1 - Critical` to `4 - Low`), Tags, Repro Steps. Parent = a Feature, or none |
 
-Useful system dates for queries: **Created Date**, **Changed Date** (every save), **Activated Date**, **Resolved Date**, **Closed Date** and **State Change Date**. They're set automatically as items move between states.
+Useful system dates for queries, set automatically: **Created Date**, **Changed Date** (every save), **Activated Date**, **Resolved Date**, **Closed Date** and **State Change Date**.
 
 ### States, and what Azure DevOps counts as "done"
 
@@ -110,11 +110,11 @@ Epics, Features and User Stories move **New → Active → Resolved → Closed**
 | Removed | Removed | No | No (excluded) |
 
 !!! insight "Lighthouse insight: Resolved is not done"
-    Rollup progress bars, Velocity and burndowns credit only **Closed** items. A story sitting in **Resolved** counts as unfinished, however finished it feels to the team. When a chart and a team's story disagree, the state category is the first place to look.
+    Rollup progress bars, Velocity and burndowns credit only **Closed** items. A story in **Resolved** counts as unfinished, however finished it feels to the team. When a chart and a team's story disagree, check the state category first.
 
 ### Canonical tags
 
-Tags are free text, so spelling matters: a query for one spelling misses the others. These are the spellings HarborPoint agreed on.
+Tags are free text, so a query for one spelling misses the others. These are HarborPoint's agreed spellings.
 
 | Tag | Used on | Meaning |
 |:--|:--|:--|
@@ -143,7 +143,7 @@ Some labs ask you to add tags to items in your sandbox. The lab names the tag.
 | **Duplicate / Duplicate Of** | the same work recorded twice | Work item **Links** tab |
 
 !!! info "Why History says “Aisha Karimi (via …)”"
-    HarborPoint's five sprints of history were loaded by your instructor, on behalf of the cast. So a change shows as made by *Aisha Karimi (via your instructor's name)*, on the date it happened in the story. Link changes are the exception: they show the instructor's name and the day the environment was built. When you read a History tab, use its filter (the funnel above the list) to show only the fields you care about.
+    Your instructor loaded HarborPoint's five sprints of history on behalf of the cast, so a change shows as made by *Aisha Karimi (via your instructor's name)*, on the date it happened in the story. Link changes are the exception: they show the instructor's name and the day the environment was built. On a History tab, use the filter (the funnel above the list) to show only the fields you care about.
 
 ## What's already built for you
 
@@ -197,7 +197,7 @@ Some labs ask you to add tags to items in your sandbox. The lab names the tag.
 
 ## Your conventions
 
-A whole room of managers shares one project, so everything you create carries your participant ID. Save your ID on the [Welcome page](index.md#your-participant-id) and every `P##` on this site fills itself in.
+Everything you create carries your participant ID. Save it on the [Welcome page](index.md#your-participant-id) and every `P##` on this site fills itself in.
 
 | You create… | Where, and how it's named | Example |
 |:--|:--|:--|
@@ -207,7 +207,7 @@ A whole room of managers shares one project, so everything you create carries yo
 | Wiki pages | `/Training/P##/<page>` | `/Training/P##/Sprint Delivery Report` |
 | Work items | Only in your sandbox area `HarborPoint\Training\P##`; titles start with `P## - ` | `P## - Member Onboarding Redesign` |
 
-Your sandbox isn't empty. It comes with practice copies used on Day 3, such as `P## - Instant Card Controls (planning copy)` and `P## - Omnichannel Service Requests (sandbox)`, and your query folder may already hold a `Lab 11 - Inherited queries` subfolder. Leave them alone until the lab that uses them. If `Shared Queries/Training/P##/` doesn't exist yet, you'll create it in [Lab 3](../day-1/lab-03-query-toolkit.md).
+Your sandbox isn't empty. It holds practice copies for Day 3, `P## - Instant Card Controls (planning copy)` (Lab 9) and `P## - Omnichannel Service Requests (sandbox)` (Lab 11), and your query folder may already hold a `Lab 11 - Inherited queries` subfolder. Leave them alone until the lab that uses them. If `Shared Queries/Training/P##/` doesn't exist yet, you'll create it in [Lab 3](../day-1/lab-03-query-toolkit.md).
 
 !!! warning "The read-only rule"
     The six delivery teams' work items, backlog order, estimates, boards and team settings are shared by everyone in the room. **Never** edit, move, re-order or re-estimate their items, and never change their team or board settings. Per-user things are fine: column options, view options, filters, and the settings of in-context reports only change *your* view. Everything you change for real happens in your sandbox or under your `P##` names.
@@ -221,7 +221,7 @@ Your sandbox isn't empty. It comes with practice copies used on Day 3, such as `
 | **Contribute** on `Shared Queries/Training` | By default only Project Administrators can save shared queries. The instructor granted this folder to you | You can save a query into `Shared Queries/Training/P##/` |
 | **Team administrator** of `P## Sandbox` | Lets you change your sandbox team's own settings | Your sandbox team's settings open without a permissions error |
 
-If any check fails, tell your instructor before Lab 1. It's a two-minute fix now and a lost lab later.
+If any check fails, tell your instructor before Lab 1: a two-minute fix now, a lost lab later.
 
 ## Where do I find…
 
@@ -235,7 +235,7 @@ If any check fails, tell your instructor before Lab 1. It's a two-minute fix now
 | See what a team is doing this sprint | **Boards › Sprints**, pick the team, **Backlog** or **Taskboard** tab |
 | See Velocity or the CFD | **Boards › Backlogs**, pick the team, **Analytics** tab, then **View full report** on a card |
 | See a sprint burndown | **Boards › Sprints**, pick the team and sprint, **Analytics** tab |
-| Forecast a backlog | **Boards › Backlogs**, level **Stories**, **View options**: Parents Off, In Progress Items Off, Forecasting On (in your sandbox) |
+| Forecast a backlog | **Boards › Backlogs**, level **Stories**, **View options**: Parents Off, In Progress Items Off, Completed Child Items Off, Forecasting On (in your sandbox) |
 | Build or run a query | **Boards › Queries** › **All** › **New query** |
 | See dependencies on a calendar | **Boards › Delivery Plans** |
 | Open a dashboard | **Overview › Dashboards** |

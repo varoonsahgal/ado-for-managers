@@ -24,7 +24,14 @@ Today is the fullest day. The capstone is paced by timers, so the afternoon stay
 
 ## How today's labs connect
 
-Ruth Ellison retires at the end of PI 4, and Dana asks you to act as **Program Manager for METP** while she hands over. The morning gives you three new instruments: an honest forecast for Instant Card Controls, personas that make branch and digital trade-offs arguable, and a hard look at why Member Support's dashboard lies. In the afternoon your crew uses all of it, and everything from Days 1 and 2, to give the Executive Committee a realistic outlook for PI 5 and the decisions it needs to make.
+Yesterday you briefed Dana. Today you take Ruth Ellison's chair: she retires at the end of PI 4, and you act as **Program Manager for METP** while she hands over. The morning sharpens three instruments, one lab each. You tell Dana how much of Instant Card Controls can land by Sprint 17, and why the "fastest" team isn't the answer. You turn Hector and Priya's branch-versus-digital argument into three members and a scoring table. Then you prove that Member Support's dashboard, not the team, has collapsed. In the afternoon your crew uses all of it, plus everything from Days 1 and 2, to give the Executive Committee a realistic outlook for PI 5 and the decisions it must make.
+
+## Today's takeaways
+
+- **[Lab 9](lab-09-meet-the-deadline.md):** Velocity is a rate, not a promise. Subtract who's out and what's committed, then answer "can we?" with a range.
+- **[Lab 10](lab-10-personas.md):** A persona changes what gets built only when it reaches the acceptance criteria.
+- **[Lab 11](lab-11-dashboard-wrong.md):** When a team's numbers fall off a cliff, suspect the record before the team.
+- **[Lab 12](lab-12-capstone.md):** Know who typed each number, speak in ranges, and get the right people to make trade-offs on purpose.
 
 ## You'll leave able to
 

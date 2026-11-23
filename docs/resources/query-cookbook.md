@@ -4,12 +4,12 @@ title: "Query Cookbook"
 
 # Query Cookbook
 
-Thirty ready-to-use queries for managers, written at Feature and portfolio altitude. Each recipe gives you the question it answers, the query type, the clauses, and how to use the result. Power users get the WIQL in a collapsed block.
+Thirty-one ready-to-use manager queries at Feature and portfolio altitude. Each recipe gives the question, the query type, the clauses and how to use the result, with the WIQL in a collapsed block. [Lab 3](../day-1/lab-03-query-toolkit.md) teaches the query types and macros these recipes use.
 
 !!! tip "How to use this page"
     1. **Boards › Queries** › **All** › **New query**, then build the clauses from the table. Or open an existing shared query and use **More actions** (…) › **Save as**.
     2. Save into `Shared Queries/Training/P##/`. Only shared queries can feed dashboard widgets.
-    3. Swap in your own team and area. Examples use `Mobile Banking` and `HarborPoint\Digital`; any team works.
+    3. Swap in your own team and area. Examples use `Mobile Banking` and `HarborPoint\Digital`.
     4. For project-wide Feature recipes (A2 to A6, C2, C3, D1, D2, D5), add the **sandbox fence** `Area Path` `Not Under` `HarborPoint\Training`, or participants' practice copies join your portfolio.
     5. Only **Flat list of work items** queries can be charted. Tree and direct-links queries go on a dashboard through the **Query Results** widget.
 
@@ -193,7 +193,7 @@ Filters for linked work items:
 |:--|:--|:--|:--|
 | | Work Item Type | In | `User Story,Bug` |
 
-**Use it:** before PI planning. A Feature with no children can't be forecast, rolled up or tracked. It's an idea with a date on it.
+**Use it:** before PI planning. A Feature with no children can't be forecast, rolled up or tracked: it's an idea with a date on it. Lab 3's `07 Empty Features` is a variant.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -249,7 +249,7 @@ Filters for linked work items:
 | And | Iteration Path | = | `@CurrentIteration [Mobile Banking]` |
 
 **Columns:** **Parent**, Title, State, Assigned To, Story Points, Tags. The Parent column shows each item's Feature (blank means no Feature).
-**Use it:** a weekly readout. Chart **Pie** by State with **Sum** of Story Points. For a hierarchy, build the same filter as a **Tree of work items** with `Feature` on top and these clauses in the linked filters; it reads well in a **Query Results** widget but can't be charted.
+**Use it:** a weekly readout. Chart **Pie** by State with **Sum** of Story Points. For a hierarchy, build the same filter as a **Tree of work items** with `Feature` on top and these clauses in the linked filters: it suits a **Query Results** widget but can't be charted.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -275,7 +275,7 @@ Filters for linked work items:
 | └ | Or | Iteration Path | = | `@CurrentIteration + 1 [Mobile Banking]` |
 
 **Columns:** Iteration Path, Parent, Title, State, Story Points.
-**Use it:** a stand-up or Monday review that never needs editing: it rolls forward on its own when the sprint changes. Chart a **Stacked bar** of Iteration Path × State: the chart shows only the leaf, which here is exactly the sprint name you want.
+**Use it:** a stand-up or Monday review that rolls forward on its own when the sprint changes. Chart a **Stacked bar** of Iteration Path × State: the chart shows only the leaf, which here is exactly the sprint name.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -326,7 +326,7 @@ Filters for linked work items:
 | And | Tags | Contains | `unplanned` |
 
 **Columns:** Title, Parent, Story Points, Created Date, Assigned To.
-**Use it:** a tile next to the sprint burndown. Unplanned work with no parent Feature is double trouble: it consumes capacity *and* serves no priority. The tag works only if teams use it; the Velocity report's **Planned** bar is the tag-free check.
+**Use it:** a tile next to the sprint burndown. Unplanned work with no parent Feature consumes capacity *and* serves no priority. The tag works only if teams use it; the Velocity report's **Planned** bar is the tag-free check.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -351,7 +351,7 @@ Filters for linked work items:
 | And | Area Path | Under | `HarborPoint\Digital` |
 
 **Columns:** Assigned To, Work Item Type, Parent, Title, Changed Date.
-**Use it:** **Pivot table** with Assigned To as rows and Work Item Type as columns (count). Look for people with many active items across several parents: that's context switching. Ask about it, don't assign blame.
+**Use it:** **Pivot table** with Assigned To as rows and Work Item Type as columns (count). Many active items across several parents is context switching: ask about it, don't assign blame.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -379,7 +379,7 @@ Filters for linked work items:
 | And | Iteration Path | = | `@CurrentIteration - 1 [Mobile Banking]` |
 
 **Columns:** Parent, Title, Story Points, Closed Date.
-**Use it:** the "delivered" line of a status report. Read it through the Parent column: points finished on items with no parent didn't move any Feature. Items that carried over don't appear here; use the **Velocity** report and each item's **History** for that.
+**Use it:** the "delivered" line of a status report. Read it through the Parent column: points on items with no parent didn't move any Feature. Carry-over doesn't appear here; use the **Velocity** report and each item's **History**.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -426,7 +426,7 @@ Filters for linked work items:
 | And | State | = | `Closed` |
 | And | Closed Date | > [Field] | `Target Date` |
 
-**Use it:** a field-to-field comparison. Pick the operator `> [Field]` and the Value list shows only date fields. A Feature closed weeks after its work finished also shows up here, so check its children before calling it late.
+**Use it:** a field-to-field comparison: pick the operator `> [Field]` and the Value list shows only date fields. A Feature closed weeks after its work finished also shows up, so check its children before calling it late.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -452,7 +452,7 @@ Filters for linked work items:
 | And | Closed Date | >= | `@StartOfMonth - 1` |
 | And | Closed Date | < | `@StartOfMonth` |
 
-**Use it:** a **Column** chart by Work Item Type. Throughput is a count, not points, so it can't be inflated by re-estimating. Compare a team with its own past, never with another team.
+**Use it:** a **Column** chart by Work Item Type. Throughput is a count, so re-estimating can't inflate it. Compare a team with its own past, never with another team.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -480,7 +480,7 @@ Filters for linked work items:
 | And | Target Date | <= | `@Today + 14` |
 
 **Columns:** Title, Node Name, State, Target Date, Risk, Tags.
-**Use it:** a **Query Tile** and a **Query Results** widget. A Feature on this list isn't automatically in trouble; one that's nearly done is fine. Check its rollup before you escalate.
+**Use it:** a **Query Tile** and a **Query Results** widget. A nearly done Feature on this list is fine: check its rollup before you escalate.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -506,7 +506,7 @@ Filters for linked work items:
 | ┌ | And | Risk | = | `1 - High` |
 | └ | Or | Tags | Contains | `at-risk` |
 
-**Use it:** a starting point, not a verdict. It shows what teams *say*. Combine it with D1 and the rollups to find what the data says, and look hardest at Features that should be on this list but aren't.
+**Use it:** a shortlist, not a verdict: it shows what teams *say*. Combine it with D1 and the rollups, and look hardest at Features that should be on this list but aren't.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -539,7 +539,7 @@ Filters for linked work items:
 | | Area Path | Not Under | `HarborPoint\Digital\Mobile Banking` |
 
 **Columns:** Work Item Type, Title, State, Area Path, Iteration Path.
-**Use it:** what a Delivery Plan can't show you. A plan draws lines only between cards on the plan, in expanded rows, with dates. This query lists every link, including ones to teams or items that aren't on any plan. Check the linked item's Iteration Path: a predecessor with no sprint is a risk with no date.
+**Use it:** what a Delivery Plan can't show you. A plan draws lines only between dated cards in expanded rows on the plan; this query lists every link, including ones to items on no plan. Check the linked item's Iteration Path: a predecessor with no sprint is a risk with no date. [Lab 7](../day-2/lab-07-cross-team-bottleneck.md) builds a version for one Feature.
 
 <figure class="hp-shot" data-shot="res-cookbook-dependencies" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Boards › Queries › Editor (recipe D3, Work items and direct links)</span></div>
@@ -582,7 +582,7 @@ Filters for linked work items:
 |:--|:--|:--|:--|
 | | State | Not In | `Closed,Removed` |
 
-**Use it:** a standing agenda item for a program sync. Each row is "this item waits on that item". Add Area Path and Iteration Path columns and read across: is the predecessor scheduled before the successor?
+**Use it:** a standing agenda item for a program sync. Each row is "this item waits on that item". Add Area Path and Iteration Path columns: is the predecessor scheduled before the successor?
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -608,7 +608,7 @@ Filters for linked work items:
 | And | State | Not In | `Closed,Removed` |
 | And | Target Date | < | `@Today` |
 
-**Use it:** a **Query Tile** that should read zero. Anything here is either late or finished but never closed. Both are worth a conversation, and they need different ones.
+**Use it:** a **Query Tile** that should read zero. Anything here is late or finished but never closed: two different conversations.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -722,7 +722,7 @@ Filters for linked work items:
 
 ## F · Data hygiene
 
-Reports are only as honest as the data under them. Run these weekly; most should return very little.
+Reports are only as honest as the data under them. Run these weekly; most should return close to zero. [Lab 11](../day-3/lab-11-dashboard-wrong.md) turns F1, F2, F3, F5 and F6 into a team watchlist.
 
 ### F1 · Stale active work {#f1}
 
@@ -732,18 +732,18 @@ Reports are only as honest as the data under them. Run these weekly; most should
 
 | And/Or | Field | Operator | Value |
 |:--|:--|:--|:--|
-| | Work Item Type | In | `Feature,User Story,Bug` |
+| | Work Item Type | In | `User Story,Bug` |
 | And | State | = | `Active` |
 | And | Changed Date | < | `@Today - 14` |
 
-**Use it:** a tile. Stale items are either stuck, abandoned or quietly done. Any comment resets Changed Date, so this catches neglect, not slow work.
+**Use it:** a tile. Stale items are stuck, abandoned or quietly done. Any comment resets Changed Date, so this catches neglect, not slow work. Leave Features and Epics out: nobody edits them while their stories move, so they'd flood the list. [Lab 2](../day-1/lab-02-monday-morning-manager.md) runs a 7-day version.
 
 ??? info "Under the hood: WIQL"
     ```sql
     SELECT [System.Id], [System.WorkItemType], [System.Title], [System.NodeName],
            [System.AssignedTo], [System.ChangedDate]
     FROM WorkItems
-    WHERE [System.WorkItemType] IN ('Feature', 'User Story', 'Bug')
+    WHERE [System.WorkItemType] IN ('User Story', 'Bug')
       AND [System.State] = 'Active'
       AND [System.ChangedDate] < @Today - 14
     ORDER BY [System.ChangedDate]
@@ -761,7 +761,7 @@ Reports are only as honest as the data under them. Run these weekly; most should
 | And | State | = | `Resolved` |
 | And | Resolved Date | < | `@Today - 5` |
 
-**Use it:** a tile. Rollups and Velocity credit only **Closed** items. Items that linger in Resolved make progress look worse than it is, or hide a testing queue. Find out which before you act.
+**Use it:** a tile. Rollups and Velocity credit only **Closed** items, so work lingering in Resolved makes progress look worse than it is, or hides a testing queue. Find out which before you act.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -786,7 +786,7 @@ Reports are only as honest as the data under them. Run these weekly; most should
 | And | Story Points | = | (blank) |
 
 **Columns:** Parent, Title, Node Name, Iteration Path.
-**Use it:** before forecasting. The Forecasting tool counts an unestimated story as zero points, so it looks free. Velocity undercounts unestimated work that gets closed, too.
+**Use it:** before forecasting. The Forecasting tool counts an unestimated story as zero points, so it looks free, and Velocity undercounts unestimated work that gets closed.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -817,7 +817,7 @@ Filters for linked work items:
 |:--|:--|:--|:--|
 | | Work Item Type | = | `Feature` |
 
-**Use it:** an alignment check. Some orphan work is healthy (small fixes, tech debt). A growing share of points on orphans means a team is busy on things no priority asked for. The backlog's **Parents** view option groups the same items under **Unparented Stories**.
+**Use it:** an alignment check. Some orphan work is healthy (small fixes, tech debt); a growing share of points on orphans means a team is busy on things no priority asked for. The backlog's **Parents** view option groups the same items under **Unparented Stories**. Lab 3's `06 Orphan work` narrows this to one team's current sprint.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -845,7 +845,7 @@ Filters for linked work items:
 | │ | Or | Iteration Path | = | `@CurrentIteration - 2 [Mobile Banking]` |
 | └ | Or | Iteration Path | = | `@CurrentIteration - 3 [Mobile Banking]` |
 
-**Use it:** items here are invisible on the current sprint board, yet they still count as open work everywhere else. Each one needs a decision: move it, close it, or remove it.
+**Use it:** items here are invisible on the current sprint board but count as open work everywhere else. Each needs a decision: move it, close it, or remove it.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -871,7 +871,7 @@ Filters for linked work items:
 | And | Area Path | = | `HarborPoint` |
 | And | State | Not In | `Closed,Removed` |
 
-**Use it:** `=` (not `Under`) finds items sitting on the root node itself. They appear on no delivery team's backlog or board, and any query scoped to a team area misses them.
+**Use it:** `=` (not `Under`) finds items on the root node itself. They appear on no delivery team's backlog or board, and any team-scoped query misses them.
 
 ??? info "Under the hood: WIQL"
     ```sql
@@ -897,7 +897,7 @@ Filters for linked work items:
 | │ | Or | ID | In | `@RecentMentions` |
 | └ | Or | ID | In | `@MyRecentActivity` |
 
-**Use it:** your personal start-of-day list. Save it in **My Queries**. `@Me`-style macros show each person their own items, so a shared version works for everyone.
+**Use it:** your start-of-day list. Save it in **My Queries**. These macros show each person their own items, so a shared version works for everyone too.
 
 ??? info "Under the hood: WIQL"
     ```sql

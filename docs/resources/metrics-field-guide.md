@@ -4,11 +4,11 @@ title: "Metrics Field Guide"
 
 # Metrics Field Guide
 
-Every metric in Azure DevOps answers a narrow question, and every one of them can be made to lie. This guide gives you, for each one, what it is, how Azure DevOps calculates it, where to find it, how to read it, how it misleads, and the questions a good manager asks before believing it.
+Every metric in Azure DevOps answers a narrow question, and every one can be made to lie. For each, this guide gives what it is, how Azure DevOps computes it, where to find it, how to read it, how it misleads, and what to ask before believing it.
 
 !!! insight "Three rules before any metric"
     1. **Azure DevOps measures; you interpret.** A chart reports what was recorded, not what happened. Ask "how do we know?" before "what does it mean?"
-    2. **The state category decides what counts.** Charts don't read state names. They read categories, and only **Completed** (Closed) is done.
+    2. **The state category decides what counts.** Charts read categories, not state names, and only **Completed** (Closed) is done.
     3. **Compare a team with its own past, never with another team.** Points are a local currency.
 
 ## How Azure DevOps decides what's "done"
@@ -25,9 +25,19 @@ Every state belongs to a **state category**. Charts, rollups and forecasts work 
 | Removed | Removed | Excluded | Excluded | Excluded | Hidden | n/a |
 
 !!! reef "Reef ahead: \"finished\" vs Closed"
-    If a team's definition of done stops at **Resolved**, every chart under-reports them: velocity sags, rollups stall, and lead times stretch. Before you read any team's metrics, find out where their work actually stops.
+    If a team's definition of done stops at **Resolved**, every chart under-reports it: velocity sags, rollups stall, lead times stretch. Before you read a team's metrics, find out where its work actually stops.
 
-Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edits by a short while; rollup columns show a "Data last refreshed" time on hover. Trend charts are built from **daily snapshots**.
+Analytics isn't real time. Rollups, Velocity, CFD and burndowns can lag edits by a short while (rollup columns show a "Data last refreshed" time on hover), and trend charts are built from **daily snapshots**.
+
+## Read in three families
+
+One chart is an anecdote. Before you judge a team, find a signal in each family. Act when all three agree; when they disagree, ask the team, because the disagreement *is* the finding ([Lab 6](../day-2/lab-06-which-team-needs-help.md)).
+
+| Family | Asks | Metrics in this guide |
+|:--|:--|:--|
+| **Output** | How much finished? | [Velocity](#velocity), [throughput](#throughput), [Completed ÷ Planned](#planned-vs-completed-commitment-reliability) |
+| **Flow** | Where does work wait on the way? | [CFD](#cumulative-flow-diagram-cfd), [cycle time](#cycle-time), [WIP](#work-in-progress-wip), [lead time](#lead-time) |
+| **Outcomes** | What was the output worth? | [Defect trend](#defect-trend), share of work with no parent Feature, [Feature rollups](#feature-progress-rollups) |
 
 ## Sprint and team metrics
 
@@ -39,7 +49,7 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **How Azure DevOps computes it** | **Planned**: items in the sprint at the end of day 1 (a historical snapshot). **Completed**: Completed-category items finished by the sprint's end. **Completed Late**: finished after the end. **Incomplete**: still In Progress. Proposed and Resolved-category items are excluded. With bugs managed as requirements, bugs are included (usually with no points) |
 | **Where** | **Boards › Backlogs** › team › **Analytics** tab › **Velocity** card › **View full report** (**Velocity by** points or **Count of Work Items**; up to 15 iterations). Dashboard: **Velocity** widget, one team per widget, with **Display planned work for iterations** and **Highlight work completed late** |
 | **How to read it** | Look at the *trend* and the *range* over five or six sprints, and at the gap between Planned and Completed. Switch **Velocity by** between points and count: they should tell the same story |
-| **How it misleads** | Points can inflate. Unestimated items add zero. Items left in Resolved don't count. Bars for past sprints depend on states being updated on time |
+| **How it misleads** | Points can inflate. Unestimated items add zero. Items left in Resolved don't count. Carry-over moved to the next sprint shows only as the gap between Planned and Completed, not as Incomplete. Bars for past sprints depend on states being updated on time |
 | **Ask** | Does velocity by *count* move with velocity by *points*? How much of the completed work served a Feature? What was added after day 1? |
 | **Don't** | Compare velocity across teams. Set velocity targets. Reward "more points" |
 
@@ -55,10 +65,10 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 
 | | |
 |:--|:--|
-| **What it is** | The share of planned work a team finished in the sprint: Completed ÷ Planned |
+| **What it is** | The share of planned work a team finished in the sprint: Completed ÷ Planned. Taught in [Lab 4](../day-1/lab-04-sprint-delivery-report.md) |
 | **How Azure DevOps computes it** | It doesn't, directly. Read both bars from the **Velocity** report (Planned comes from the day-1 snapshot) and divide |
 | **Where** | Velocity report or widget with **Display planned work for iterations** on. Select a bar to open a query of those items |
-| **How to read it** | Steady values in the 80s and 90s mean planning and delivery agree. A steady *decline* is the signal, more than any single sprint |
+| **How to read it** | Steady values in the 80s and 90s mean planning and delivery agree. A steady *decline* is the signal, more than any single sprint. Report it per team, with its trend |
 | **How it misleads** | Teams can score 100% by planning less. Mid-sprint additions don't appear in Planned, so a team absorbing urgent work looks unreliable |
 | **Ask** | What's carrying over, and how often has the same item carried? What came in mid-sprint, and who asked for it? |
 | **Don't** | Treat it as a performance score. Punish honest planning |
@@ -70,10 +80,10 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **What it is** | Work remaining in one sprint, day by day, against an ideal line |
 | **How Azure DevOps computes it** | Remaining = items not in the Completed category. **Burndown on** a count or a sum (Story Points). The **Ideal Trend** uses the team's working days and days off. **Total Scope** rises when work is added |
 | **Where** | **Boards › Sprints** › team › sprint › **Analytics** tab (**Burndown Trend**). Dashboard: **Sprint Burndown** widget (**Select Iteration**: `@CurrentIteration` or a specific sprint) |
-| **How to read it** | A staircase is normal. A flat line followed by a cliff means items close in batches at the end. A rising scope line means the sprint was re-planned on the fly |
+| **How to read it** | A staircase is normal. A flat line then a cliff means items close in batches at the end. A rising scope line means the sprint was re-planned on the fly |
 | **How it misleads** | Items parked in Resolved never burn. A widget pointed at a fixed sprint goes stale when the sprint changes |
 | **Ask** | Is the line flat because nothing finished, or because nobody updated states? What raised the scope? |
-| **Don't** | Manage the line day by day. Read it at Feature level instead of hours. This course doesn't use Remaining Work |
+| **Don't** | Manage the line day by day, or in hours: this course doesn't use Remaining Work |
 
 ## Flow metrics
 
@@ -84,7 +94,7 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **What it is** | The **number** of items finished per period |
 | **How Azure DevOps computes it** | Velocity with **Velocity by** = **Count of Work Items**, or a query of items Closed in a date range |
 | **Where** | Velocity report (count), or [Query Cookbook C4](query-cookbook.md#c4) as a chart |
-| **How to read it** | Stable throughput is the best forecasting input you have. It can't be inflated by re-estimating |
+| **How to read it** | Stable throughput is the best forecasting input you have. It can't be inflated by re-estimating. Read it beside velocity: points rising over a flat count is [point inflation](../day-2/lab-06-which-team-needs-help.md) |
 | **How it misleads** | Items differ in size. Splitting work raises throughput without delivering more |
 | **Ask** | Did throughput change, or did item size change? |
 | **Don't** | Compare throughput across teams with different kinds of work |
@@ -93,10 +103,10 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 
 | | |
 |:--|:--|
-| **What it is** | Elapsed days from **creation** to **Completed**: the member's view of how long things take |
+| **What it is** | Elapsed days from **creation** to **Completed**: the requester's view of how long things take |
 | **How Azure DevOps computes it** | Created Date to entering the Completed category. Reopened items count from creation to their *last* completion. Only items completed in the chart period are plotted |
 | **Where** | Dashboard **Lead Time** widget (team, backlog or work item type, rolling period). There's no in-context report |
-| **How to read it** | Dots are completed items; the line is the moving average; the shaded band is the spread. Quote it as a range |
+| **How to read it** | Dots are completed items, the line is the moving average, the shaded band is the spread. Quote it as a range |
 | **How it misleads** | Old ideas that sat in the backlog for months make lead time look terrible, even when delivery is fast |
 | **Ask** | How much of the lead time is waiting before work starts? |
 | **Don't** | Quote the average alone. Use average ± spread |
@@ -108,7 +118,7 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **What it is** | Elapsed days from **starting** work to **Completed**: the team's view |
 | **How Azure DevOps computes it** | From the *first* entry into an In Progress or Resolved state to the *last* entry into Completed. Time in Resolved counts, so a test queue shows up here |
 | **Where** | Dashboard **Cycle Time** widget. Analytics views expose *Cycle Time Days* |
-| **How to read it** | A rising average or a widening band means work is waiting somewhere between start and done. Outliers are retrospective topics |
+| **How to read it** | A rising average or widening band means work waits somewhere between start and done. Outliers are retrospective topics |
 | **How it misleads** | Items moved straight from New to Closed have almost no cycle time. Late state updates distort it both ways |
 | **Ask** | Where in the flow do items wait? Which column grows? |
 | **Don't** | Push people to "work faster". Cycle time falls when you start less and finish more |
@@ -129,7 +139,7 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **How Azure DevOps computes it** | Items in In Progress and Resolved categories. The CFD reports "Average work in progress" (completed items excluded). Board columns can carry WIP limits |
 | **Where** | **Analytics** tab › **Cumulative Flow Diagram** card; the board; a query of `State In Active,Resolved` |
 | **How to read it** | At Feature level: how many Features is one team pushing at once? At story level: how many items per person? |
-| **How it misleads** | Items nobody touches still count, so WIP can look busy when nothing moves |
+| **How it misleads** | Untouched items still count, so WIP can look busy when nothing moves |
 | **Ask** | What would we stop starting so we can finish? |
 | **Don't** | Read high WIP as high productivity |
 
@@ -140,7 +150,7 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **What it is** | Stacked bands of how many items sat in each board column, day by day |
 | **How Azure DevOps computes it** | Daily snapshots of items per **board column** (not state), for one team and backlog level |
 | **Where** | **Boards › Backlogs** › team › **Analytics** › **Cumulative Flow Diagram** › **View full report** (rolling period 14 to 180 days). Dashboard: **Cumulative Flow Diagram (CFD)** widget |
-| **How to read it** | Band **thickness** is WIP in that column. Horizontal distance is roughly time in process. A band that keeps widening is a bottleneck. Flat lines mean nothing moved, or nobody updated it |
+| **How to read it** | Band **thickness** is WIP in that column; horizontal distance is roughly time in process. A band that keeps widening is a bottleneck. Flat lines mean nothing moved, or nobody updated it |
 | **How it misleads** | Columns are team-specific, so two teams' CFDs aren't comparable. It shows no lead or cycle time numbers |
 | **Ask** | Which band is widening, and who works that column? |
 | **Don't** | Use it alone. Pair it with Cycle Time to quantify what you see |
@@ -154,7 +164,7 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **What it is** | A progress bar or total on each Feature or Epic, rolled up from its descendants |
 | **How Azure DevOps computes it** | Through Parent/Child links only. Progress counts only **Completed** (Closed) descendants. **Progress by all Work Items** counts items; **Progress by Story Points** sums points. Rollup ignores your filters and lags Analytics slightly |
 | **Where** | Backlog **Column Options** › **+ Add a rollup column** (quick list or **Configure custom rollup**). Delivery Plan cards with **Show child rollup data** |
-| **How to read it** | Read percentage *and* remaining points next to the Target Date. "70% done" means little until you know what's left and how long remains |
+| **How to read it** | Read percentage *and* remaining points beside the Target Date. "70% done" means little until you know what's left and how long remains. Taught in [Lab 1](../day-1/lab-01-explore-the-program.md) |
 | **How it misleads** | Unestimated children add nothing to points progress. A Feature with no children shows nothing at all. Resolved children count as not done. Count and points can disagree sharply |
 | **Ask** | Is everything decomposed and estimated? What's left, in points, versus the team's real pace? |
 | **Don't** | Report a percentage without the remaining work and the date beside it |
@@ -166,7 +176,7 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **What it is** | Completed work rising toward a total scope line, across one or more teams and several sprints |
 | **How Azure DevOps computes it** | **Burnup** widget: teams (multi-select), a backlog or work item type, optional **Field criteria** (historical: evaluated at each point in time), count or sum, start and end dates, plotted by date or **Iteration**. Options include **Show total scope** and **Show Resolved work items as Completed**, plus a projected completion |
 | **Where** | Dashboard **Burnup** widget (its twin is **Burndown**) |
-| **How to read it** | The gap between the completed line and the scope line is the work left. A rising scope line explains most "why are we still not done?" questions |
+| **How to read it** | The gap between the completed and scope lines is the work left. A rising scope line explains most "why are we still not done?" questions |
 | **How it misleads** | Field criteria and tags are historical, so items tagged after the start date show up as scope increase on the day they were tagged. **Show Resolved as Completed** flatters progress |
 | **Ask** | How much did scope grow, and who agreed to it? |
 | **Don't** | Trust the projection line without checking that scope is stable |
@@ -178,7 +188,7 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | **What it is** | Open bugs over time, by state, severity or team |
 | **How Azure DevOps computes it** | A trend chart (**Stacked area**, **Line** or **Area**) on a flat bug query, over a rolling period. Trend charts come from the work-tracking store, not Analytics |
 | **Where** | **Boards › Queries** › bug query › **Charts** › **New chart**; on a dashboard, **Chart for Work Items**. See [Query Cookbook E1 and E3](query-cookbook.md#e1) |
-| **How to read it** | Arrival rate versus closure rate. A line that rises sprint after sprint is quality debt compounding |
+| **How to read it** | Arrival rate versus closure rate. A line rising sprint after sprint is quality debt compounding |
 | **How it misleads** | Bugs filed in the wrong area escape a team-scoped query. Bugs closed without a fix flatter the trend |
 | **Ask** | How many are escaped defects? Is capacity reserved for fixing bugs? |
 | **Don't** | Reward a low bug count. Teams stop filing bugs |
@@ -190,10 +200,10 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
 | | |
 |:--|:--|
 | **What it is** | An honest "when" or "how much", stated as a range with assumptions |
-| **How Azure DevOps computes it** | The backlog **Forecasting** tool walks the Stories backlog in order, filling each future sprint with the velocity you type, and carries unused velocity forward. It ignores items in progress and ignores iteration assignments. It lives on the Stories level only, and is disabled while **Parents** is on or a filter is active |
+| **How Azure DevOps computes it** | The backlog **Forecasting** tool walks the Stories backlog in order, filling each future sprint with the velocity you type, and carries unused velocity forward. It starts at the next sprint, as if the current one will finish whatever it holds. It ignores items in progress and iteration assignments, and reserves nothing for bugs or support. It lives on the Stories level only, and is disabled while **Parents** is on or a filter is active |
 | **Where** | **Boards › Backlogs** › team › **Stories** › **View options**: Parents Off, In Progress Items Off, Completed Child Items Off, **Forecasting** On. Type the velocity in the banner |
-| **How to read it** | Run it **twice**: once at the low end of recent velocity and once at the high end. The answer is the range between the two lines. Adjust velocity for known capacity changes (days off, people out, mandatory work) first |
-| **How it misleads** | Unestimated stories count as zero points, so they look free. It assumes the team works only on this backlog. One velocity number looks precise and isn't |
+| **How to read it** | Work out **capacity** first: the normal-sprint velocity minus days off, people out and committed work. Then run the tool **twice**, at the team's average and at that capacity. The range between the two lines is your answer ([Lab 9](../day-3/lab-09-meet-the-deadline.md)) |
+| **How it misleads** | Unestimated stories count as zero points, so they look free. It uses one velocity for every sprint and knows nothing about holidays or absences. One number looks precise and isn't |
 | **Ask** | Which assumptions would change the answer? What's the date at the pessimistic end? What could we cut to make the date? |
 | **Don't** | Give a single date. Forecast from another team's velocity |
 
@@ -205,11 +215,11 @@ Analytics also isn't real time. Rollups, Velocity, CFD and burndowns can lag edi
     *"When a measure becomes a target, it ceases to be a good measure."* Set a velocity target and points inflate. Reward low bug counts and bugs stop being filed. Score teams on commitment reliability and they plan less. Use metrics to ask better questions, not to grade people.
 
 !!! insight "Little's Law, intuitively"
-    **Average time in process ≈ work in progress ÷ throughput.** If a team has 12 items in progress and finishes about 4 a week, a new item waits about three weeks. To deliver faster you can finish more (hard) or start less (easy). Cutting WIP is the cheapest speed-up a manager can order.
+    **Average time in process ≈ work in progress ÷ throughput.** A team with 12 items in progress that finishes about 4 a week takes about three weeks per item. To deliver faster, finish more (hard) or start less (easy). Cutting WIP is the cheapest speed-up a manager can order.
 
 ## Signal combinations
 
-One metric is a rumor. Two that disagree are a lead.
+One metric is a rumor. Two that disagree are a lead, and the [three families](#read-in-three-families) tell you where to look next.
 
 | You see… | …together with | It probably means | Check next |
 |:--|:--|:--|:--|

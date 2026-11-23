@@ -25,7 +25,19 @@ day_overview: 1
 
 ## How today's labs connect
 
-You start today as the new **Delivery Manager for Digital Banking**, reporting to Priya Raman. First you learn the program's shape: a ranked list of Epics, the Features that serve them, and the teams that build them. Then Priya wants to know why mobile banking has fallen behind, and you answer at Feature level. By the afternoon you've turned those answers into reusable queries and charts, and into a one-page status report she can forward to Dana.
+You start today as the new **Delivery Manager for Digital Banking**, reporting to Priya Raman, and each lab hands the next one its evidence.
+
+1. **Lab 1** maps the portfolio top down: a ranked list of Epics, the Features that serve them, the teams that build them. You leave with a Feature status view built on rollup columns.
+2. **Lab 2** puts that view to work. Dana wants to know why mobile banking has fallen behind; you answer at Feature level by ten, and find that Mobile's points are high but more than half of last sprint's moved no Feature.
+3. **Lab 3** turns those one-off answers into a shared query toolkit, including the at-risk list and the orphan-work query, so nobody has to ask twice.
+4. **Lab 4** turns the toolkit into charts and a one-page status report for Dana, with a color you can defend and asks with names on them. Day 2 builds your dashboards from these queries.
+
+## Today's takeaways
+
+- [Lab 1](lab-01-explore-the-program.md): the backlog order is the decision. When it disagrees with reality, ask who should decide.
+- [Lab 2](lab-02-monday-morning-manager.md): velocity shows how busy a team was, not what it delivered. Ask which Features the points moved.
+- [Lab 3](lab-03-query-toolkit.md): a saved query is a definition everyone inherits. Name it like its question, and read the result before you forward it.
+- [Lab 4](lab-04-sprint-delivery-report.md): a status color is only as good as its sentence. Report what's left against the time left, and end with a decision.
 
 ## You'll leave able to
 

@@ -10,13 +10,13 @@ summary: "Leadership is worried. Sharpen your dashboard to the indicators that m
 one_thing: "Executives don't need everything you know. Give them the answer first, the two risks that matter, and a decision one named person can say yes or no to."
 next_title: "Lab 9 · Can HarborPoint Meet the Deadline?"
 next_url: "day-3/lab-09-meet-the-deadline/"
-next_hook: "Day 3 opens with a promotion: Ruth retires at the end of PI 4, and you're acting Program Manager. Dana's first request is a big one: all of Instant Card Controls by the end of Sprint 17, before holiday travel. She'd like a yes. She'll take a true answer."
+next_hook: "Day 3 opens with a promotion: Ruth retires at the end of PI 4, and you're acting Program Manager. Dana's first ask: all of Instant Card Controls, whose card-lock API you found unscheduled in Lab 7, by the end of Sprint 17. She'd like a yes. She'll take a true answer."
 ---
 
 !!! briefing "Mission briefing"
-    Thursday's Executive Committee has Project Lighthouse on its agenda for the wrong reasons: leadership has heard "delays" from three directions. Dana Whitfield, the program sponsor, wants one page from you that says which ones matter and what she should decide.
+    Leadership has heard "delays" from three directions, and Thursday's Executive Committee has Project Lighthouse on its agenda for the wrong reasons. Dana Whitfield, the program sponsor, wants one page: which delays matter, and what she should decide.
 
-    You have more evidence than you can use: Lab 5's Command Center with a dozen widgets, Lab 6's verdict on Mobile Banking, Lab 7's options matrix for Real-Time Fraud Alerts. None of it is a briefing yet. Executives need the answer first, then the evidence, then the decisions only they can make.
+    You have more evidence than you can use: Lab 5's Command Center, Lab 6's verdict on Mobile Banking, Lab 7's options for Real-Time Fraud Alerts. None of it is a briefing yet. Executives need the answer first, then the evidence, then the decisions only they can make.
 
     **Done looks like:** one briefing, built in five moves.
 
@@ -34,7 +34,7 @@ The Executive Committee is nervous about Lighthouse. "Delays" is all I keep hear
 
 ## What you'll walk away with
 
-- Separate the risks that threaten portfolio priorities from the noise, and defend your two picks against the alternatives
+- Separate the risks that threaten portfolio priorities from the noise, and defend your two picks
 - Design an executive dashboard as an argument: each widget answers a question and points at a decision
 - Write a one-page BLUF briefing in members' terms, with asks one named person can say yes or no to
 - Answer an executive's hardest questions from the evidence, in under 30 seconds each
@@ -42,18 +42,18 @@ The Executive Committee is nervous about Lighthouse. "Delays" is all I keep hear
 
 ## Before you set sail
 
-- **Access:** Basic, as a Contributor. You can create project dashboards and edit only the ones you create.
-- **From earlier labs** (each has a fallback below if you skipped it): your `P## - Digital Banking Exec View` dashboard from [Lab 5](lab-05-command-center.md), your `04 Features at risk` query from [Lab 3](../day-1/lab-03-query-toolkit.md), your `/Training/P##/Mobile Banking Help Plan` from [Lab 6](lab-06-which-team-needs-help.md), and your options page `/Training/P##/Fraud Alerts Options` and `Fraud Alerts dependencies` query from [Lab 7](lab-07-cross-team-bottleneck.md).
-- **Team data you'll read but never change:** every delivery team. Your writes go to `Shared Queries/Training/P##/`, your own dashboard, and your wiki pages under `/Training/P##/`.
+- **Access:** Basic, as a Contributor. You can create project dashboards and edit only your own.
+- **From earlier labs** (each has a fallback below): your `P## - Digital Banking Exec View` from [Lab 5](lab-05-command-center.md), `04 Features at risk` from [Lab 3](../day-1/lab-03-query-toolkit.md), `/Training/P##/Mobile Banking Help Plan` from [Lab 6](lab-06-which-team-needs-help.md), and `/Training/P##/Fraud Alerts Options` and the `Fraud Alerts dependencies` query from [Lab 7](lab-07-cross-team-bottleneck.md).
+- **Team data you'll read but never change:** every delivery team. You write only to `Shared Queries/Training/P##/`, your own dashboard, and wiki pages under `/Training/P##/`.
 - **You'll create:** the dashboard `P## - METP Executive Status`, a few small queries, and the wiki page `/Training/P##/Executive Briefing`.
-- **Time-box:** 45 minutes. Part 1 is 8, Part 2 is 12, Part 3 is 12, Part 4 is 7 and Part 5 is 6. If you're short on time, keep the dashboard to five widgets and protect Parts 3 and 4.
+- **Time-box:** 45 minutes. Part 1 is 8, Part 2 is 12, Part 3 is 12, Part 4 is 7 and Part 5 is 6. Short on time? Keep the dashboard to five widgets and protect Parts 3 and 4.
 
 ## Part 1 — Choose your two risks
 
-**Which two risks deserve Dana's ten minutes?** She asked for two, not ten. Choosing is the hardest part of the job, so do it before you build anything. A dashboard built before you know your argument turns into a wall of widgets.
+**Which two risks deserve Dana's ten minutes?** She asked for two, not ten. Choose before you build anything: a dashboard built before you know your argument turns into a wall of widgets.
 
 !!! challenge "Challenge: Triage the candidates"
-    Here are seven things someone in the program has called "a delay" this week. Rank them by threat to the **portfolio priorities**, and pick the **two** you'd put in front of the Executive Committee. For each one you *don't* pick, write one line saying why.
+    Seven things someone has called "a delay" this week. Rank them by threat to the **portfolio priorities**, and pick the **two** you'd put in front of the Executive Committee. For each one you *don't* pick, write one line on why.
 
     | Candidate | What people are saying |
     |---|---|
@@ -65,32 +65,32 @@ The Executive Committee is nervous about Lighthouse. "Delays" is all I keep hear
     | **Member Support velocity** | "Their chart fell off a cliff: 18, 17, 19, then 13, then 8" |
     | **Fraud Scoring Engine v2** | Target Date moved back two sprints |
 
-    Use any view you like: your Command Center, the Features backlogs, Velocity reports, your Lab 7 plan. Spend no more than 8 minutes. A good risk has three things: a **portfolio priority** at stake, **evidence** you can show, and a **decision** someone senior can make about it.
+    Use any view: your Command Center, the Features backlogs, Velocity reports, your Lab 7 plan. Spend at most 8 minutes. A good risk has a **portfolio priority** at stake, **evidence** you can show, and a **decision** someone senior can make.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Some candidates are symptoms of the same cause, so group them before you rank them. Then ask of each one: which Epic does it serve, where does that Epic rank, and would anyone above Priya have to decide something?
+    Some candidates are symptoms of one cause, so group them first. Then ask of each: which Epic does it serve, where does that Epic rank, and would anyone above Priya have to decide something?
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
-    - Fraud Scoring Engine v2's slip *is* the Fraud Alerts problem. You traced it in Lab 7.
+    - Fraud Scoring Engine v2's slip *is* the Fraud Alerts problem you traced in Lab 7.
     - Check Deposit, the bug count and the falling commitment reliability all live in one team, which also owns Fraud Alerts.
-    - For In-Branch Digital Onboarding, compare its **Start Date** and **Target Date** with how much is left and Branch Experience's velocity.
-    - Before you believe a velocity cliff, ask what Azure DevOps counts as "completed". Open one of Member Support's past sprints and look for stories that are finished but not **Closed**.
+    - For In-Branch Digital Onboarding, compare its **Start Date** and **Target Date** with what's left and Branch Experience's velocity.
+    - Before you believe a velocity cliff, ask what Azure DevOps counts as "completed". Look in one of Member Support's past sprints for stories finished but not **Closed**.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    **Risk 1: Real-Time Fraud Alerts will miss PI 4.** It serves priority number one, *Protect every member*. It's 4% done (2 of 51 points) and due at the end of Sprint 16. Security moved the risk-score API to Sprint 16 to protect mandatory exam work, and Mobile's confirm/deny story is already `blocked` waiting for it. Fraud Scoring Engine v2's slip belongs here, as the cause. The decision is Simone's (Lab 7).
+    **Risk 1: Real-Time Fraud Alerts will miss PI 4.** Your [Lab 7](lab-07-cross-team-bottleneck.md) finding. It serves priority number one, *Protect every member*, is 4% done (2 of 51 points) and is due at the end of Sprint 16. Security moved the risk-score API to Sprint 16 to protect exam work, so Mobile's confirm/deny story is `blocked`. Fraud Scoring Engine v2's slip belongs here, as the cause. The decision is Simone's.
 
-    **Risk 2: Mobile Banking's delivery health.** It threatens priority number two, *Digital that feels human*, and Fraud Alerts too, because Mobile owns it. Check Deposit misses this sprint at 61%. Mobile delivered 71% of planned points in Sprint 13, down from 87% five sprints ago. Open bugs rose from 9 to 42, 3 of them Critical, and three finished stories wait for the team's only tester. Those are symptoms. The team's health is the risk.
+    **Risk 2: Mobile Banking's delivery health.** Your [Lab 6](lab-06-which-team-needs-help.md) verdict. It threatens priority number two, *Digital that feels human*, and Fraud Alerts too, because Mobile owns it. Check Deposit misses this sprint at 61%; Mobile delivered 71% of planned points in Sprint 13, down from 87%; open bugs rose from 9 to 42, 3 of them Critical; three finished stories wait for the only tester. Those are symptoms. The team's health is the risk.
 
     **Why not the others?**
 
-    - **Audit Evidence Automation** is real and immovable, but it is being protected: Security spends 58% of its sprint on exam work. Its cost shows up in Risk 1. Keep it on the watch list.
-    - **In-Branch Digital Onboarding** started in Sprint 13 and targets Sprint 17. It has 28 points left and Branch Experience has delivered 16 to 18 points every sprint. It's early, not late.
+    - **Audit Evidence Automation** is real and immovable, but it's protected: Security spends 58% of its sprint on exam work. Its cost shows up in Risk 1. Keep it on the watch list.
+    - **In-Branch Digital Onboarding** started in Sprint 13 and targets Sprint 17. It has 28 points left and Branch Experience delivers 16 to 18 points every sprint. It's early, not late.
     - **Member Support's cliff** is a data problem, not a delivery problem. Finished stories were left in **Resolved**, and one Closed story has no Story Points, so velocity undercounts them. You'll prove it in [Lab 11](../day-3/lab-11-dashboard-wrong.md). Tell Dana not to act on that chart yet.
 
-    **So what?** Seven "delays" collapse into two risks with two different owners: a trade only Simone can make, and a team only Dana can protect. Everything else is a watch item or a data question, and your briefing can say so in one line.
+    **So what?** Seven "delays" collapse into two risks with two owners: a trade only Simone can make, and a team only Dana can protect. Everything else is a watch item or a data question, worth one line in your briefing.
 
 !!! reef "Reef ahead: the loudest chart in the room"
-    If Member Support made your top two, you're in good company: a velocity line that drops from 19 to 8 in two sprints looks like an emergency. It isn't. The team delivered about as much as ever; it just stopped closing its stories. Put that chart in front of an Executive Committee and you trigger a rescue nobody needs, aimed at a team that, in Carmen Diaz's words, "has never worked harder." Before you escalate a trend, ask how the number is made.
+    A velocity line that drops from 19 to 8 in two sprints looks like an emergency. It isn't: the team delivered about as much as ever and stopped closing its stories. Escalate it and you trigger a rescue nobody needs, aimed at a team that, in Carmen Diaz's words, "has never worked harder." Before you escalate a trend, ask how the number is made.
 
 !!! checkpoint "Checkpoint"
     - [ ] I picked two risks, each tied to a portfolio priority, with evidence and a decision owner
@@ -101,9 +101,9 @@ The Executive Committee is nervous about Lighthouse. "Delays" is all I keep hear
 
 ## Part 2 — Build the executive view
 
-**What does Dana need to see to believe your two risks?** Your Lab 5 exec view was a smaller Command Center, built to find problems. This one is the evidence for *your* two risks, plus the program's overall health, so every widget has to point at a decision.
+**What does Dana need to see to believe your two risks?** Your [Lab 5](lab-05-command-center.md) Exec View covered Digital Banking. This page covers the whole program, so the program-wide `04 Features at risk` now matches its scope, and every widget is evidence for one of *your* risks or for overall health.
 
-Here's the target: seven widgets, each answering one question.
+The target: seven widgets, each answering one question.
 
 | # | Widget | Question it answers | Decision it informs |
 |:-:|---|---|---|
@@ -115,18 +115,18 @@ Here's the target: seven widgets, each answering one question.
 | 6 | **Burndown**: Mobile open bugs, trend | Is quality getting better or worse? | Mobile stabilization (Risk 2) |
 | 7 | **Query Results**: Fraud Alerts dependencies | Who is Fraud Alerts waiting on? | Simone's trade (Risk 1) |
 
-Lay it out so the eye reads it in order: the BLUF panel across the top, the three tiles beneath it, then the two charts, then Fraud Alerts.
+Lay it out in reading order: the BLUF panel across the top, the three tiles beneath it, then the two charts, then Fraud Alerts.
 
 !!! predict "Make a call"
-    Before you build tile 4, write down a guess. **How many of the Features tagged `PI4-Committed` are Closed today?** And if that number is low, **should the tile turn red?** Keep both answers. The tile and the reef that follows it will test them.
+    Before you build tile 4, guess: **how many Features tagged `PI4-Committed` are Closed today?** And if that number is low, **should the tile turn red?** The tile and the reef after it will test both answers.
 
 !!! speedrun "Speed run · 12 minutes"
-    Create the project dashboard `P## - METP Executive Status` with the seven widgets above. Save every query in `Shared Queries/Training/P##/`. Give each tile **conditional formatting** that turns it red when the number is bad, and write your thresholds into the BLUF panel's legend. Leave the BLUF text as a placeholder; you'll write it in Part 3.
+    Create the project dashboard `P## - METP Executive Status` with the seven widgets above, saving every query in `Shared Queries/Training/P##/`. Give each tile **conditional formatting** that turns it red when the number is bad, and write your thresholds into the BLUF panel's legend. The BLUF text waits for Part 3.
 
 <div class="timer" data-minutes="12" data-label="Speed run"></div>
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Fastest route: open `P## - Digital Banking Exec View` and use **⋯** › **+ Copy Dashboard**, then cut it down. Query widgets accept only **shared** queries, and charts need **flat-list** queries. Query Results is the one widget here that can show a direct-links query.
+    Start empty, or copy your Lab 5 Exec View (**⋯** › **+ Copy Dashboard**, which also copies its queries) and cut it down. Query widgets need **shared** queries, charts need **flat lists**, and only Query Results shows a direct-links query.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     You need four flat queries, plus Lab 7's direct-links query:
@@ -136,10 +136,10 @@ Lay it out so the eye reads it in order: the BLUF panel across the top, the thre
     - `Exec - Mobile open bugs`: the same without the Priority clause
     - `Exec - PI 4 committed Features`: Features tagged `PI4-Committed`. Tile 4 uses a copy with `State = Closed` added.
 
-    In the Query Tile configuration, set **Default background color** to your "bad" color and add a **+ Add rule** for the good case. For the bug trend, use a **Burndown** widget filtered to bugs, starting at the beginning of Sprint 9 (the same widget you read on the Program Overview in Lab 4).
+    In the Query Tile configuration, set **Default background color** to your "bad" color and **+ Add rule** for the good case. For the bug trend, use a **Burndown** widget filtered to bugs from the start of Sprint 9 (the widget you read on the Program Overview in Lab 4).
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (full solution)"
-    **1. The dashboard.** Either open `P## - Digital Banking Exec View` › **⋯** › **+ Copy Dashboard**, or go to **Overview › Dashboards** › **+ New Dashboard**. **Name** `P## - METP Executive Status`. **Dashboard Type** **Project Dashboard**. Tick **Automatically refresh the dashboard every 5 minutes**. If you copy, set **Select folder location for queries** to `Shared Queries/Training/P##`, then delete any widget that isn't in the table.
+    **1. The dashboard.** Open `P## - Digital Banking Exec View` › **⋯** › **+ Copy Dashboard**, or **Overview › Dashboards** › **+ New Dashboard**. **Name** `P## - METP Executive Status`. **Dashboard Type** **Project Dashboard**. Tick **Automatically refresh the dashboard every 5 minutes**. If you copy, set **Select folder location for queries** to `Shared Queries/Training/P##`, then delete any widget that isn't in the table.
 
     **2. The queries.** **Boards › Queries** › **New query**, query type **Flat list of work items**. Save each in `Shared Queries/Training/P##/`.
 
@@ -193,7 +193,7 @@ Lay it out so the eye reads it in order: the BLUF panel across the top, the thre
 
     **Expected result:** the tiles read **8**, **4** and **0**. The stacked bar shows **13** committed Features across six teams: Mobile Banking 3, and Digital Accounts, Security, Core Platform, Branch Experience and Member Support 2 each. All are **Active** except one **New** Feature in Member Support (`Secure Messaging & Chat`). The bug trend climbs from **9** at the start of Sprint 9 to **42**, and its orange Total Scope line keeps pulling away. When several Query Tile rules match, the **last** one in the list wins, so list them from mild to severe.
 
-    **So what?** Every colored tile now points at one of your two risks. The one tile that could start a false alarm, PI 4 Features closed, stays grey on purpose.
+    **So what?** Every colored tile points at one of your two risks. The one tile that could start a false alarm, PI 4 Features closed, stays grey on purpose.
 
 <figure class="hp-shot" data-shot="lab08-tile-rules" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - METP Executive Status › Query Tile › Configuration</span></div>
@@ -203,13 +203,13 @@ Lay it out so the eye reads it in order: the BLUF panel across the top, the thre
 <figcaption markdown>Flip the usual pattern: make the **default** color the bad news (red) and write one rule for the good case (**green at 0**). The tile is red until the problem is actually gone. Operators on offer: `<`, `>`, `<=`, `>=`, `<>` and `=`.</figcaption>
 </figure>
 
-Before you move on, look at the stacked bar. One Member Support Feature is still **New** although its team is building it: another reason not to take Member Support's numbers at face value until Lab 11.
+Look at the stacked bar: one Member Support Feature is still **New** although its team is building it, another reason not to take Member Support's numbers at face value until Lab 11.
 
 !!! reef "Reef ahead: a number with no baseline"
-    "Zero of 13 committed Features closed" sounds like a fire. On its own, it isn't. PI 4 is four sprints long, you're in week 2 of the second, and Features usually close near their Target Dates. The tile means something only next to *when* each Feature is due: Check Deposit was due this sprint and won't close, which matters; the other 12 aren't due yet. That's why tile 4 has no red rule. Give every executive number a comparison: against plan, against last month, or against a threshold you wrote down.
+    "Zero of 13 committed Features closed" sounds like a fire. It isn't: PI 4 is four sprints long, you're in week 2 of the second, and Features usually close near their Target Dates. Check Deposit was due this sprint and won't close; the other 12 aren't due yet. That's why tile 4 has no red rule. Give every executive number a comparison: against plan, last month, or a threshold you wrote down.
 
 !!! insight "Lighthouse insight: a dashboard is an argument for a decision"
-    A Command Center helps you *find* problems, so it can afford twelve widgets. An executive view helps someone *decide*. Test each widget with one question: "If this number changed tomorrow, would Dana do anything differently?" If the answer is no, it belongs on your Command Center, not here.
+    You met cockpit versus windscreen in Lab 5. Here is the test for every widget on the windscreen: "If this number changed tomorrow, would Dana do anything differently?" If not, it belongs on your Command Center.
 
 !!! checkpoint "Checkpoint"
     - [ ] `P## - METP Executive Status` has at most seven widgets, each tied to a question in the table
@@ -221,11 +221,11 @@ Before you move on, look at the stacked bar. One Member Support Feature is still
 
 ## Part 3 — Write the BLUF
 
-**What's the answer, and what do you need?** Your dashboard has a placeholder where those two sentences go. Now write them.
+**What's the answer, and what do you need?** Your dashboard has a placeholder for those two sentences.
 
-**Bottom line up front** means the answer comes first and the supporting detail follows, in order of importance. An executive should be able to stop reading after two sentences and still know what to do.
+**Bottom line up front** means the answer first, then the detail in order of importance. An executive who stops after two sentences should still know what to do.
 
-Before you write, translate. The Executive Committee doesn't think in Story Points. Connect each indicator to what it means for members and for HarborPoint.
+First, translate. The Executive Committee doesn't think in Story Points, so connect each indicator to what it means for members and for HarborPoint.
 
 !!! challenge "Challenge: From metric to member"
     Complete one line per indicator. The middle column is the hard one.
@@ -238,7 +238,7 @@ Before you write, translate. The Executive Committee doesn't think in Story Poin
     | Check Deposit misses its sprint | | |
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Think about what members experience, not what teams experience. Who is exposed while a Feature isn't live? Who meets a defect? Which promise to the Executive Committee does a number put at risk?
+    Think about what members experience, not teams. Who is exposed while a Feature isn't live? Who meets a defect? Which promise to the Executive Committee is at risk?
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading"
     About 45% of the Mobile bugs created since Sprint 11 are tagged `escaped-defect`: members found them in production. Fraud Alerts is how members will learn within seconds that a transaction looks wrong. A 71% delivery rate means that any date built on Mobile's plan is about 30% optimistic.
@@ -253,7 +253,7 @@ Before you write, translate. The Executive Committee doesn't think in Story Poin
 
     **So what?** The middle column is your briefing. An Executive Committee acts on "members find out about fraud from their statement", not on "4% done".
 
-Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (BLUF)` and copy its contents. On your `/Training/P##` page, open the **⋯** menu › **Add sub-page**, name it `Executive Briefing`, paste, and fill it in. Keep it to one page. The template's headings follow BLUF order: **Bottom line**, **Decisions needed**, **Top risks**, **Evidence**, **Options considered**, **What happens next**. The decisions sit second because they're what Dana reads for.
+Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (BLUF)` and copy its contents. On your `/Training/P##` page, open **⋯** › **Add sub-page**, name it `Executive Briefing`, paste, and fill it in, on one page. The template follows BLUF order: **Bottom line**, **Decisions needed**, **Top risks**, **Evidence**, **Options considered**, **What happens next**. Decisions sit second because they're what Dana reads for.
 
 !!! deliverable "Deliverable"
     `/Training/P##/Executive Briefing`, one page, with:
@@ -268,7 +268,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
     Then paste your two-sentence bottom line, the decisions needed and your thresholds legend into the dashboard's **Markdown** widget, with "Updated: Sprint 14, week 2" at the top.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    Write the bottom line last, then move it to the top. Each decision should be something one person can say yes or no to. "Support for Mobile" is not a decision. "Approve no mid-sprint intake for Mobile for two sprints" is.
+    Write the bottom line last, then move it to the top. Each decision is something one person can say yes or no to: "Support for Mobile" is not; "Approve no mid-sprint intake for Mobile for two sprints" is.
 
 ??? pilot "Harbor Pilot · Hint 2: Set the heading (model briefing)"
     > **Bottom line.** PI 4 will not deliver Real-Time Fraud Alerts, our number one priority, unless Simone makes one trade this week. Mobile Banking, which owns it, is overloaded and losing ground on quality, and I need Dana's backing for two sprints of stabilization.
@@ -278,13 +278,13 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
     > 2. **Dana:** approve two sprints of Mobile stabilization: no mid-sprint intake, including marketing requests, and temporary test capacity.
     > 3. **Simone, with the Executive Committee:** rank the Compliance Epic where reality has it, or reserve Security capacity for it through Sprint 18.
     >
-    > **Risk 1: Real-Time Fraud Alerts will miss PI 4.** It's 4% done and due at the PI 4 System Demo (end of Sprint 16). Security moved the risk-score API to Sprint 16 to protect mandatory exam work, and Mobile's confirm/deny screen is built but `blocked` until it arrives. Security spends 58% of this sprint on exam work, and the Compliance Epic is still ranked last of six. *Member impact:* every sprint without it, members learn about fraud from their statement, not their phone.
+    > **Risk 1: Real-Time Fraud Alerts will miss PI 4.** It's 4% done and due at the PI 4 System Demo (end of Sprint 16). Security moved the risk-score API to Sprint 16 to protect mandatory exam work; Mobile's confirm/deny screen is built but `blocked` until it arrives. Security spends 58% of this sprint on exam work, and the Compliance Epic still ranks last of six. *Member impact:* every sprint without it, members learn about fraud from their statement, not their phone.
     >
-    > **Risk 2: Mobile Banking's delivery health.** Mobile Check Deposit 2.0 misses its Sprint 14 date at 61%, with 14 of its remaining 36 points already planned for Sprint 15. Mobile delivered 44 of 62 planned points last sprint (71%, down from 87%), and open bugs rose from 9 to 42, including 3 Critical and an unowned P1. Three finished stories wait for the team's only tester. *Member impact:* defects reach members, and every Mobile date, including Fraud Alerts' integration, is about 30% optimistic.
+    > **Risk 2: Mobile Banking's delivery health.** Mobile Check Deposit 2.0 misses its Sprint 14 date at 61%, with 14 of its remaining 36 points already planned for Sprint 15. Mobile delivered 44 of 62 planned points last sprint (71%, down from 87%); open bugs rose from 9 to 42, including 3 Critical and an unowned P1; three finished stories wait for the only tester. *Member impact:* defects reach members, and every Mobile date, including Fraud Alerts' integration, is about 30% optimistic.
     >
-    > **Options.** For Fraud Alerts: pull the API into Sprint 15 by deferring 8 to 10 points of Adaptive MFA work, ship a smaller MVP (alerts plus confirm/deny) in PI 4, borrow Core Platform capacity, or move the date to Sprint 17. Detail: *Fraud Alerts Options*. For Mobile: stop mid-sprint intake, reserve capacity for bugs, add or borrow test capacity, and re-plan Check Deposit honestly. Detail: *Mobile Banking Help Plan*.
+    > **Options.** Fraud Alerts: pull the API into Sprint 15 by deferring 8 to 10 points of Adaptive MFA work, ship a smaller MVP (alerts plus confirm/deny) in PI 4, borrow Core Platform capacity, or move the date to Sprint 17 (*Fraud Alerts Options*). Mobile: stop mid-sprint intake, reserve capacity for bugs, add or borrow test capacity, re-plan Check Deposit honestly (*Mobile Banking Help Plan*).
     >
-    > **I'll watch next week:** the risk-score API's sprint; whether the confirm/deny story is still `blocked`; Mobile's open Critical bugs and the size of the Resolved queue; Mobile's Sprint 14 delivered-versus-planned; Check Deposit's new Target Date.
+    > **I'll watch next week:** the risk-score API's sprint; whether confirm/deny is still `blocked`; Mobile's open Critical bugs and Resolved queue; Mobile's Sprint 14 delivered-versus-planned; Check Deposit's new Target Date.
 
 ??? pilot "Harbor Pilot · Hint 3: Bring it into port (Markdown panel)"
     The panel is the BLUF in miniature. The widget renders CommonMark only, so no HTML.
@@ -303,7 +303,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
     [Full briefing](<paste your Executive Briefing page URL>) · [Fraud Alerts options](<paste URL>)
     ```
 
-    **So what?** Most people who open the dashboard will read only this panel, so it carries the answer and the asks. The evidence lives in the widgets below it.
+    **So what?** Most people will read only this panel, so it carries the answer and the asks; the evidence lives below it.
 
 <figure class="hp-shot" data-shot="lab08-exec-dashboard" markdown>
 <div class="hp-shot__bar" aria-hidden="true"><i></i><i></i><i></i><span>Overview › Dashboards › P## - METP Executive Status</span></div>
@@ -322,7 +322,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
 </figure>
 
 !!! reef "Reef ahead: RAG without evidence"
-    "Overall status: Amber" tells an executive nothing they can act on, and a color picked by feel invites the watermelon: green outside, red inside. If your briefing has a RAG, attach the evidence and the rule that set it: "Red, because a committed PI 4 objective cannot land by its date without a decision." Better still, lead with the decision.
+    "Overall status: Amber" gives an executive nothing to act on, and a color picked by feel invites the watermelon you met in [Lab 4](../day-1/lab-04-sprint-delivery-report.md). If your briefing has a RAG, attach the rule that set it: "Red, because a committed PI 4 objective cannot land by its date without a decision." Better still, lead with the decision.
 
 !!! checkpoint "Checkpoint"
     - [ ] My briefing's first two sentences answer "are we going to make it?" and "what do you need?"
@@ -335,7 +335,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
 
 ## Part 4 — Survive Dana's questions
 
-**Will your briefing hold up when Dana pushes?** Pair up: one of you is Dana, the other briefs. Three minutes for the briefing, then Dana draws two cards. Swap roles. Working alone? Brief out loud against a timer, then answer two cards picked at random.
+**Will your briefing hold up when Dana pushes?** Pair up: one plays Dana, the other briefs for three minutes, then Dana draws two cards. Swap roles. Alone? Brief out loud against a timer, then answer two random cards.
 
 !!! challenge "Challenge: Dana's question cards"
     Dana picks any two. Answer each in under 30 seconds, using your dashboard or one click from it.
@@ -358,7 +358,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
     5. "In Security, not much this PI: a new engineer needs weeks to be productive and slows the team at first. In Mobile, a tester helps faster than a developer, because finished work is queuing for QA. Trades beat headcount here."
     6. "No. Their delivery is steady at about 18 points a sprint. The drop is finished work left in Resolved and a missing estimate. We're checking the data this week, and I wouldn't act on that chart yet."
 
-    **So what?** Every strong answer has the shape of the briefing: answer, evidence, decision. If one took more than a click to support, put that evidence on the dashboard.
+    **So what?** Every strong answer has the briefing's shape: answer, evidence, decision. If one needed more than a click to support, put that evidence on the dashboard.
 
 !!! checkpoint "Checkpoint"
     - [ ] I delivered my briefing in three minutes or less
@@ -370,13 +370,13 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
 
 ## Part 5 — Set the review rhythm
 
-**How will this picture still be true next week?** A briefing is a snapshot, and Dana's next question will be "and next week?" Ruth's Program Charter lists the program's governance cadence, but a cadence on a wiki page doesn't keep a dashboard honest. A review with an owner, a time-box and a fixed agenda does.
+**How will this picture still be true next week?** A briefing is a snapshot. Ruth's Program Charter lists a governance cadence, but a cadence on a wiki page doesn't keep a dashboard honest. A review with an owner, a time-box and a fixed agenda does.
 
 !!! challenge "Challenge: Design two reviews, 30 minutes each"
-    Design a **weekly delivery review** and a **monthly steering review**. For each: who attends, which dashboard and queries, the agenda, and what comes out of it. Each must fit in 30 minutes.
+    Design a **weekly delivery review** and a **monthly steering review**. For each: who attends, which dashboard and queries, the agenda, and the output. Each must fit in 30 minutes.
 
 ??? pilot "Harbor Pilot · Hint 1: Take a bearing"
-    The two reviews answer different questions. Weekly asks "what changed and what's stuck?" for the people who can act this sprint. Monthly asks "are we still working on the right things?" for the people who own the priorities.
+    Weekly asks "what changed and what's stuck?" of the people who can act this sprint. Monthly asks "are we still working on the right things?" of the people who own the priorities.
 
 ??? pilot "Harbor Pilot · Hint 2: Bring it into port (a model design)"
     | | Weekly delivery review | Monthly steering review |
@@ -388,10 +388,10 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
     | **Output** | Updated dates and tags in Azure DevOps, a refreshed BLUF panel, an escalation list | Recorded decisions, an updated Epic rank, changes to PI objectives |
     | **Rule** | If a date moved in Azure DevOps, the dependent dates move in the same meeting | No decision without options and a named owner |
 
-    **So what?** The rule in the last row is the lesson of Lab 7. The re-plan that hurt Fraud Alerts sat in plain view on one work item for days, and no review was looking at it.
+    **So what?** The last row is Lab 7's lesson: the re-plan that hurt Fraud Alerts sat in plain view on one work item for days, and no review was looking.
 
 !!! insight "Lighthouse insight: a dashboard decays unless someone owns it"
-    A stale dashboard is worse than no dashboard, because people trust it. Give every executive view an owner, a weekly refresh of its Markdown panel with the date at the top, and a place in a recurring review. If the BLUF panel still says "Sprint 14" in Sprint 16, the dashboard is telling the Executive Committee something false in your name.
+    Lab 5 showed why a stale dashboard is worse than none. For an executive view, ownership means a dated weekly refresh of the Markdown panel in a recurring review. A BLUF panel still saying "Sprint 14" in Sprint 16 tells the Executive Committee something false in your name.
 
 !!! checkpoint "Checkpoint"
     - [ ] My weekly and monthly reviews each have attendees, views, a 30-minute agenda and an output
@@ -412,7 +412,7 @@ Now write. Open **Overview › Wiki** › `Templates` › `Executive Briefing (B
 - [ ] A request for Dana to add engineers to Member Support
 
 <div class="quiz-why" markdown>
-Velocity counts only **Closed** stories. Member Support left finished work in **Resolved** and missed an estimate, so the chart undercounts real delivery, which has stayed at about 18 to 19 points. Escalating an unverified trend aims leadership at the wrong problem. Mentioning it briefly gets ahead of the question, because Dana may well have seen the chart.
+Velocity counts only **Closed** stories. Member Support left finished work in **Resolved** and missed an estimate, so the chart undercounts real delivery, which has stayed at about 18 to 19 points. Escalating an unverified trend aims leadership at the wrong problem; a brief mention gets ahead of the question, since Dana may have seen the chart.
 </div>
 
 </div>
@@ -427,7 +427,7 @@ Velocity counts only **Closed** stories. Member Support left finished work in **
 - [ ] "Approval to escalate the Fraud Alerts dependency"
 
 <div class="quiz-why" markdown>
-A good ask names one decider, offers a choice they can say yes or no to, and states its cost. The other three are requests for sympathy. They leave the real decision with a team that doesn't own both priorities.
+A good ask names one decider, offers a yes-or-no choice, and states its cost. The other three are requests for sympathy that leave the real decision with a team that doesn't own both priorities.
 </div>
 
 </div>
@@ -442,7 +442,7 @@ A good ask names one decider, offers a choice they can say yes or no to, and sta
 - [ ] Replace it with velocity, which shows the work being done
 
 <div class="quiz-why" markdown>
-Features close near their Target Dates, and most PI 4 Features aren't due yet. A count with no baseline creates a false alarm or, worse, false comfort. The honest signal is "one committed Feature, Mobile Check Deposit 2.0, is due this sprint and won't close."
+Features close near their Target Dates, and most PI 4 Features aren't due yet. A count with no baseline creates a false alarm or, worse, false comfort. The honest signal: "one committed Feature, Mobile Check Deposit 2.0, is due this sprint and won't close."
 </div>
 
 </div>
@@ -451,15 +451,15 @@ Features close near their Target Dates, and most PI 4 Features aren't due yet. A
 
 !!! log "Captain's log"
     1. Look at the last status report you sent upward. Could the reader find the decision you needed in the first two sentences?
-    2. Which chart in your organization gets the most attention in leadership meetings? How is its number made, and when did someone last check?
-    3. Name one widget on a dashboard you own that wouldn't change any decision if its number changed. Why is it still there?
-    4. When a date moves in one team's backlog, which review in your organization is designed to notice it?
+    2. Which chart gets the most attention in your leadership meetings? How is its number made, and when did someone last check?
+    3. Name one widget you own whose number could change without changing any decision. Why is it still there?
+    4. When a date moves in one team's backlog, which review in your organization is designed to notice?
     5. Which decision is your sponsor not making because nobody has framed it as a choice with costs?
 
 !!! bonus "Extra knots"
-    1. **The 30-second test, executive edition.** Give your dashboard to someone who hasn't seen it. Can they tell you the bottom line and the two decisions in 30 seconds without your help? If not, what would you cut?
-    2. **Trend the right thing.** Mobile's open bug count is a lagging signal. Add a Velocity widget for `Mobile Banking` with **Display planned work for iterations** on, and compare Planned with Completed across five sprints. Is the reliability trend a better early warning than the bug trend? Would you swap it in for one of your seven widgets?
-    3. **Write Marcus's version.** Marcus Reed, the CIO, will ask "how do you know?" about every number. Add a short "Evidence" section to your briefing that links each claim to the query or work item behind it.
+    1. **The 30-second test, executive edition.** Can someone who hasn't seen your dashboard tell you the bottom line and the two decisions in 30 seconds, unaided? If not, what would you cut?
+    2. **Trend the right thing.** Mobile's open bug count is a lagging signal. Add a Velocity widget for `Mobile Banking` with **Display planned work for iterations** on, and compare Planned with Completed across five sprints. Is reliability a better early warning than bugs? Would you swap it in for one of your seven widgets?
+    3. **Write Marcus's version.** Marcus Reed, the CIO, will ask "how do you know?" about every number. Add a short "Evidence" section linking each claim to the query or work item behind it.
 
 !!! harbor "Back in your own harbor"
     Three moves for your first week back, about 30 minutes in your own Azure DevOps:
@@ -472,6 +472,6 @@ Features close near their Target Dates, and most PI 4 Features aren't due yet. A
 
 - **Choose the argument first.** A risk earns executive time only with a priority at stake, evidence that holds up and a decision someone senior can make. Check how the loudest chart is made before you escalate it.
 - **Every widget points at a decision.** Keep the executive view small, tie each widget to a question, and give every number a threshold or a baseline.
-- **Answer first, in members' words.** Lead with the bottom line and the ask. "42 open bugs" means little to an Executive Committee; "members are finding defects in production" means a great deal. Every decision gets one named person.
+- **Answer first, in members' words.** Lead with the bottom line and the ask. "Members are finding defects in production" moves an Executive Committee; "42 open bugs" doesn't. Every decision gets one named person.
 - **Answer questions the same way.** Under pressure, give the answer first, then the evidence one click away, then the decision.
 - **Someone owns the picture.** A dashboard decays unless an owner refreshes it in a recurring review that moves dependent dates when one date moves.
